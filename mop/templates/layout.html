@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ CURRENT_LANGUAGE }}">
+<head>
+    <meta charset="UTF-8">
+    <title>Maps of Power</title>
+    <meta name="keywords"
+          content="Maps of Power, Historical Geography, History, Archeology, Digital Humanities"/>
+    <meta name="description"
+          content="The research initiative 'Maps of Power' serves the methodological and interdisciplinary networking of scholars from the field of Historical Geography."/>
+    <meta name="author"
+          content="Bernhard Koschicek-Krombholz, Mihailo Popovic"/>
+    <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
+</head>
+<body>
+<main role="main">
+
+<div class="btn-group" role="group">
+    {% for language in AVAILABLE_LANGUAGES.items() %}
+      {% if CURRENT_LANGUAGE == language[0] %}
+          <button type="button" class="btn btn-sm">{{ language[1] }}</button>
+      {% else %}
+        <a href="{{ url_for('set_language', language=language[0]) }}" class="text-decoration-none btn btn-sm">
+            {{ language[1] }}
+        </a>
+      {%  endif %}
+    {% endfor %}
+</div>
+
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>
