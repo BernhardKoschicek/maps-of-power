@@ -5,3 +5,8 @@ The research initiative “Maps of Power” serves the methodological and interd
 ## Installation
 
 Just clone it and let the requirements.txt install all packages. Everything this is absolutely WIP!!!
+
+
+$ cd mop/static
+$ pip3 install -e ./
+$ npm --install mapsofpower

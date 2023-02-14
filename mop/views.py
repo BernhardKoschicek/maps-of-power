@@ -5,7 +5,7 @@ from mop import app
 
 
 @app.route('/')
-def tib_home() -> str:
+def home() -> str:
     return render_template('layout.html')
 
 
