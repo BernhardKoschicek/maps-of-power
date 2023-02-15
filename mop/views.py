@@ -1,4 +1,7 @@
+from typing import Optional
+
 from flask import render_template, session, request
+from werkzeug import Response
 from werkzeug.utils import redirect
 
 from mop import app
@@ -10,6 +13,6 @@ def home() -> str:
 
 
 @app.route('/language=<language>')
-def set_language(language=None):
+def set_language(language: Optional[str] = None) -> Response:
     session['language'] = language
     return redirect(request.referrer)

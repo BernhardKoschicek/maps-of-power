@@ -1,13 +1,12 @@
-from pathlib import Path
+from typing import Any
+
 from flask import Flask, Response, session, request
 from flask_babel import Babel
 
 app = Flask(__name__, instance_relative_config=True)
-app.config.from_object('config')
+# app.config.from_object('config')
+# app.config.from_pyfile('production.py')
 babel = Babel(app)
-
-if (Path(app.root_path).parent / 'instance' / 'production.py').is_file():
-    app.config.from_pyfile('production.py')
 
 # pylint: disable=wrong-import-position, import-outside-toplevel
 from mop import views
@@ -21,13 +20,13 @@ def get_locale() -> str:
 
 
 @app.context_processor
-def inject_conf_var():
-    return dict(
-        AVAILABLE_LANGUAGES=app.config['LANGUAGES'],
-        CURRENT_LANGUAGE=session.get(
+def inject_conf_var() -> dict[str, Any]:
+    return {
+        'AVAILABLE_LANGUAGES': app.config['LANGUAGES'],
+        'CURRENT_LANGUAGE': session.get(
             'language',
             request.accept_languages.best_match(
-                app.config['LANGUAGES'].keys())))
+                app.config['LANGUAGES'].keys()))}
 
 
 @app.after_request
