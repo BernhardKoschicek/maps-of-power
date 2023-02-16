@@ -41,7 +41,7 @@
           {{ request.path|display_menu|safe }}
         </ul>
       </div>
-      <div class="translation list-group list-group-flush align-end d-none d-lg-block">
+      <div class="translation list-group list-group-flush align-end d-lg-block">
         {% for language in AVAILABLE_LANGUAGES.items() %}
           <div class="list-group-item bg-dark text-center">
             {% if CURRENT_LANGUAGE == language[0] %}
