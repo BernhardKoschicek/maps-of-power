@@ -11,7 +11,7 @@ def display_menu(route: str) -> str:
                              or item == 'about' and route in ['/'] else ''
         html += \
             f'<li class="nav-item">' \
-            f'<a class="nav-link {active}" href="{url_for(item)}">' \
+            f'<a class="nav-link {active} text-secondary" href="{url_for(item)}">' \
             f'{item.upper()}</a></li>'
     return html
 
