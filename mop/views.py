@@ -8,7 +8,27 @@ from mop import app
 
 
 @app.route('/')
-def home() -> str:
+def about() -> str:
+    return render_template('about.html')
+
+
+@app.route('/projects')
+def projects() -> str:
+    return render_template('layout.html')
+
+
+@app.route('/cooperation')
+def cooperation() -> str:
+    return render_template('layout.html')
+
+
+@app.route('/software')
+def software() -> str:
+    return render_template('layout.html')
+
+
+@app.route('/events')
+def events() -> str:
     return render_template('layout.html')
 
 

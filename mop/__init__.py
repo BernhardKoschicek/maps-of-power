@@ -6,13 +6,13 @@ from sassutils.wsgi import SassMiddleware
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('config')
-# app.config.from_pyfile('production.py')
+app.config.from_pyfile('production.py')
 babel = Babel(app)
 # app.wsgi_app = SassMiddleware(app.wsgi_app, {
 #     'mop': ('static/sass', 'static/css', '/static/css')
 # })
 # pylint: disable=wrong-import-position, import-outside-toplevel
-from mop import views
+from mop import util, views
 
 
 @babel.localeselector

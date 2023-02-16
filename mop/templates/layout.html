@@ -10,48 +10,63 @@
   <meta name="author"
         content="Bernhard Koschicek-Krombholz, Mihailo Popovic"/>
   <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-        crossorigin="anonymous">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="/static/css/style.css">
   <link rel="stylesheet" href="/static/css/color.css">
   <link href="{{ url_for('static', filename='css/color.scss.css') }}"
-      rel="stylesheet" type="text/css">
+        rel="stylesheet" type="text/css">
 
 </head>
 <body>
 <header>
   <nav class="navbar navbar-light bg-accent1 navbar-expand-lg">
     <div class="container-fluid">
-      <div class="embed-responsive logo-container">
-        <a class="navbar-brand" href="{{ url_for('home') }}">
-          <object data="/static/images/mop_logo.svg"
-                  class="embed-responsive-item" type="image/svg+xml"></object>
-        </a>
+      <a class="navbar-brand" href="{{ url_for('about') }}">
+        <img src="/static/images/mop_logo.svg"
+             alt="Maps of Power Logo" height="150"
+             class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {{ request.path|display_menu|safe }}
+        </ul>
+      </div>
+      <div class="list-group list-group-flush align-end">
+        {% for language in AVAILABLE_LANGUAGES.items() %}
+          <div class="list-group-item bg-accent1 text-center">
+            {% if CURRENT_LANGUAGE == language[0] %}
+              <span class="fw-bold">{{ language[1] }}</span>
+            {% else %}
+              <a href="{{ url_for('set_language', language=language[0]) }}"
+                 class="text-decoration-none">
+                {{ language[1] }}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
       </div>
     </div>
   </nav>
 </header>
-<main>
-
-  <div class="btn-group" role="group">
-    {% for language in AVAILABLE_LANGUAGES.items() %}
-    {% if CURRENT_LANGUAGE == language[0] %}
-    <button type="button" class="btn btn-sm btn-light">{{ language[1] }}</button>
-    {% else %}
-    <a href="{{ url_for('set_language', language=language[0]) }}"
-       class="text-decoration-none btn btn-sm">
-      {{ language[1] }}
-    </a>
-    {% endif %}
-    {% endfor %}
-  </div>
-
-  {% block content %}{% endblock %}
-</main>
+<div class="container-fluid">
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </html>
