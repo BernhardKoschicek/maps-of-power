@@ -22,7 +22,7 @@
 </head>
 <body>
 <header>
-  <nav class="navbar navbar-light bg-info navbar-expand-lg">
+  <nav class="navbar navbar-light bg-accent1 navbar-expand-lg">
     <div class="container-fluid">
       <div class="embed-responsive logo-container">
         <a class="navbar-brand" href="{{ url_for('home') }}">
@@ -38,7 +38,7 @@
   <div class="btn-group" role="group">
     {% for language in AVAILABLE_LANGUAGES.items() %}
     {% if CURRENT_LANGUAGE == language[0] %}
-    <button type="button" class="btn btn-sm">{{ language[1] }}</button>
+    <button type="button" class="btn btn-sm btn-light">{{ language[1] }}</button>
     {% else %}
     <a href="{{ url_for('set_language', language=language[0]) }}"
        class="text-decoration-none btn btn-sm">
