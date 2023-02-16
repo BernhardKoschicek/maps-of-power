@@ -21,7 +21,7 @@
         rel="stylesheet" type="text/css">
 
 </head>
-<body>
+<body class="bg-light">
 <header>
   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
     <div class="container-fluid">
@@ -41,7 +41,7 @@
           {{ request.path|display_menu|safe }}
         </ul>
       </div>
-      <div class="list-group list-group-flush align-end">
+      <div class="translation list-group list-group-flush align-end d-none d-lg-block">
         {% for language in AVAILABLE_LANGUAGES.items() %}
           <div class="list-group-item bg-dark text-center">
             {% if CURRENT_LANGUAGE == language[0] %}
@@ -67,4 +67,19 @@
   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
   crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  const navbarCollapse = document.getElementById('navbarNavDropdown');
+  const myElement = document.querySelector('.translation');
+
+  navbarCollapse.addEventListener('show.bs.collapse', function () {
+    myElement.classList.add('d-none');
+  });
+
+  navbarCollapse.addEventListener('hide.bs.collapse', function () {
+    myElement.classList.remove('d-none');
+  });
+</script>
+
+
 </html>
