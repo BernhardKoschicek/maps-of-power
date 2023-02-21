@@ -6,6 +6,7 @@ package_json = {
         "baguettebox.js": "1.11.1",
         "bootstrap-autocomplete": "2.3.7",
         "bootstrap": "^5.1.3",
+        "bootstrap-icons": "1.10.3",
         "datatables.net-buttons-dt": "^1.7.1",
         "datatables.net-buttons": "^1.7.1",
         "datatables.net-dt": "^1.11.5",

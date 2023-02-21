@@ -4,12 +4,13 @@ from flask import render_template, session, request
 from werkzeug import Response
 from werkzeug.utils import redirect
 
+from data.images import category_images
 from mop import app
 
 
 @app.route('/')
 def about() -> str:
-    return render_template('about.html')
+    return render_template('about.html', category_images=category_images)
 
 
 @app.route('/projects')

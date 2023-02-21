@@ -42,19 +42,34 @@
         the research branch Historical Geography of the Byzantine Empire
         essentially dealt with four categories of historical sources:
       </p>
-      <div class="row">
-        <div class="gallery">
-          <a href="{{ url_for('static', filename="images/test_images/hand_urk_passau.png") }}" data-caption="Image caption">
-            <img src="{{ url_for('static', filename="images/test_images/hand_urk_passau.png") }}" alt="First image">
-          </a>
-        </div>
+      <div class="categories row">
+        {% for key, img in category_images.items() %}
+          <div class="col-lg-3">
+            <figure class="figure">
+              <a href="{{ url_for('static', filename=img['src']) }}"
+                 data-caption="{{ img['description'] }}">
+                <img src="{{ url_for('static', filename=img['src']) }}"
+                     alt="{{ key }}" class="img-fluid">
+              </a>
+              <figcaption class="figure-caption">{{ img['caption'] }}</figcaption>
+              <p>{{ img['description'] }}</p>
+            </figure>
+          </div>
+        {% endfor %}
+
       </div>
     </div>
 
   </section>
+
   <script>
-      window.addEventListener('load', function () {
-          baguetteBox.run('.gallery');
+    window.addEventListener('load', function () {
+      baguetteBox.run('.categories', {
+        animation: 'fadeIn',
+        noScrollbars: true,
+        titleTag: true,
+        overlayBackgroundColor: 'rgba(56,67,86, 0.8)'
       });
+    });
   </script>
 {% endblock %}
