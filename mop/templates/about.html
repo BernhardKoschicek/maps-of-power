@@ -6,7 +6,7 @@
       <source src="/static/video/lamb.mp4" type="video/mp4">
     </video>
     <div class="overlay">
-        <h1 class="text-center mx-auto">Welcome to Maps of Power</h1>
+      <h1 class="text-center mx-auto">Welcome to Maps of Power</h1>
     </div>
   </section>
 
@@ -43,12 +43,18 @@
         essentially dealt with four categories of historical sources:
       </p>
       <div class="row">
-        <div class="col-3">
-
+        <div class="gallery">
+          <a href="{{ url_for('static', filename="images/test_images/hand_urk_passau.png") }}" data-caption="Image caption">
+            <img src="{{ url_for('static', filename="images/test_images/hand_urk_passau.png") }}" alt="First image">
+          </a>
         </div>
       </div>
     </div>
 
   </section>
-
+  <script>
+      window.addEventListener('load', function () {
+          baguetteBox.run('.gallery');
+      });
+  </script>
 {% endblock %}
