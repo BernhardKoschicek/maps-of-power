@@ -1,18 +1,21 @@
+from pathlib import Path
 from typing import Any
 
 from flask import Flask, Response, session, request
 from flask_babel import Babel
-from sassutils.wsgi import SassMiddleware
+import sass
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('config')
 app.config.from_pyfile('production.py')
 babel = Babel(app)
-# app.wsgi_app = SassMiddleware(app.wsgi_app, {
-#     'mop': ('static/sass', 'static/css', '/static/css')
-# })
-# pylint: disable=wrong-import-position, import-outside-toplevel
+
 from mop import util, views
+
+STATIC_PATH = Path(__file__).parent / 'static'
+
+sass.compile(dirname=(STATIC_PATH / 'scss', STATIC_PATH / 'css'),
+             output_style='compressed')
 
 
 @babel.localeselector
