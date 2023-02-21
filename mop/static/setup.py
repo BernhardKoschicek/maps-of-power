@@ -4,6 +4,7 @@ package_json = {
     "dependencies": {
         "bootstrap-autocomplete": "2.3.7",
         "bootstrap": "^5.1.3",
+        "baguettebox.js": "1.11.1"
     }
 }
 

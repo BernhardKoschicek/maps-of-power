@@ -7,11 +7,11 @@ from mop import app
 def display_menu(route: str) -> str:
     html = ''
     for item in ['about', 'projects', 'cooperation', 'software', 'events']:
-        active = 'active' if route.startswith('/' + item) \
+        active = 'fw-bold' if route.startswith('/' + item) \
                              or item == 'about' and route in ['/'] else ''
         html += \
             f'<li class="nav-item">' \
-            f'<a class="nav-link {active} text-secondary" href="{url_for(item)}">' \
+            f'<a class="nav-link {active} ' \
+            f'text-secondary" href="{url_for(item)}">' \
             f'{item.upper()}</a></li>'
     return html
-
