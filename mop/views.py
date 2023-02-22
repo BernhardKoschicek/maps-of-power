@@ -5,12 +5,15 @@ from werkzeug import Response
 from werkzeug.utils import redirect
 
 from data.images import category_images
+from model.image import image_gallery
 from mop import app
 
 
 @app.route('/')
 def about() -> str:
-    return render_template('about.html', category_images=category_images)
+    return render_template(
+        'about.html',
+        category_images=image_gallery(category_images))
 
 
 @app.route('/projects')

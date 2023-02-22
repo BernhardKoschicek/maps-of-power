@@ -4,15 +4,21 @@ from typing import Any
 from flask import Flask, Response, session, request
 from flask_babel import Babel
 import sass
+from wand.image import Image
+
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('config')
 app.config.from_pyfile('production.py')
 babel = Babel(app)
 
-from mop import util, views
+from mop import util, views, data, model
 
-STATIC_PATH = Path(__file__).parent / 'static'
+ROOT_PATH = Path(__file__).parent
+
+STATIC_PATH = ROOT_PATH / 'static'
+IMAGE_PATH = STATIC_PATH / 'images'
+THUMBNAIL_PATH = STATIC_PATH / 'thumbnails'
 
 sass.compile(dirname=(STATIC_PATH / 'scss', STATIC_PATH / 'css'),
              output_style='compressed')
@@ -33,6 +39,16 @@ def inject_conf_var() -> dict[str, Any]:
             'language',
             request.accept_languages.best_match(
                 app.config['LANGUAGES'].keys()))}
+
+
+@app.before_first_request
+def create_thumbnails():
+    for file in IMAGE_PATH.rglob("*"):
+        if file.is_file() and file.suffix.lower() in ['.jpg', '.png', '.jpeg']:
+            with Image(filename=file) as src:
+                src.resize(400, 400)
+                src.save(
+                    filename=THUMBNAIL_PATH / file.name)
 
 
 @app.after_request

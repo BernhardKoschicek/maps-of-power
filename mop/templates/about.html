@@ -43,21 +43,52 @@
         essentially dealt with four categories of historical sources:
       </p>
       <div class="categories row">
-        {% for key, img in category_images.items() %}
-          <div class="col-lg-3">
-            <figure class="figure">
-              <a href="{{ url_for('static', filename=img['src']) }}"
-                 data-caption="{{ img['description'] }}">
-                <img src="{{ url_for('static', filename=img['src']) }}"
-                     alt="{{ key }}" class="img-fluid">
-              </a>
-              <figcaption class="figure-caption">{{ img['caption'] }}</figcaption>
-              <p>{{ img['description'] }}</p>
-            </figure>
-          </div>
-        {% endfor %}
-
+        {{ category_images }}
       </div>
+      <p class="fs-5">
+        The paradigm shifts in content and technical-digital innovations in science with the corresponding
+        methodological expansions in the second half of the 20th century and in the 21st century require a
+        methodological rethink. For the initiative, this means increased cooperation of Historical Geography with
+        Byzantine Studies in the broader sense, as well as with Medieval Studies and the Digital Humanities.
+      </p>
+      <p class="fs-5">
+        Therefore, the research initiative “Maps of Power” takes up two research areas that have the potential to act as
+        a link between Byzantine and more Western European oriented Historical Geography and thereby lead to new
+        research results that are significant for society:
+      </p>
+      <p class="fs-5">
+        1) Historical Ecology, which deals with the historical development of ecosystems and landscapes under the
+        influence of natural and anthropogenic factors.
+      </p>
+      <p class="fs-5">
+        2) Sacred Topography (“Sacred Landscapes”), which reflects the presence of the divine/sacred/transcendent in a
+        given area and manifests itself through religious buildings (e.g. churches and monasteries) and religious
+        symbols and actions (e.g. pilgrimage).
+      </p>
+      <p class="fs-5">
+        The aim of Historical Ecology is to focus more on the relationship between nature and humans, or humans and
+        nature, and the transformation of landscape through human intervention. In this context, the term “power” is to
+        be understood as “power” or “control” over someone or something. For thousands of years, human civilisation has
+        influenced vegetation in Europe (by clearing and planting fields, introducing cultivated plants, etc.). At the
+        same time, nature significantly determined the geography of settlements, for example through watercourses, until
+        the era of excessive regulations. Thus, the term “power” is applicable in both directions (nature and man).
+      </p>
+      <p class="fs-5">
+        The object of study of the Sacred Topography of Byzantine landscapes are to a large extent urban and rural
+        churches, on the basis of whose distribution one can explore sacred space, ritual and religious identities. In
+        addition, it will be investigated whether certain landscape features favoured the formation of certain types of
+        cults and the formation of places of worship. The perception of space by people in the Middle Ages plays an
+        important role in this very respect.
+      </p>
+      <p class="fs-5">
+        GIS software, digital cartography and database systems are increasingly used in both research areas.
+      </p>
+      <p class="fs-5">
+        “Maps of Power” takes up these ideas and sees itself as a scholarly platform that would like to implement its
+        own projects as well as network in an interdisciplinary fashion through joint projects. Research results of the
+        initiative are made freely available in a specially programmed portal that makes data searchable, contains
+        digital maps (layers), offers storymaps on various aspects and includes comprehensive photo material.
+      </p>
     </div>
 
   </section>
