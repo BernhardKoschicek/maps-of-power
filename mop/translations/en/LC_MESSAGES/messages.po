@@ -1,0 +1,88 @@
+# English translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-02-22 13:43+0100\n"
+"PO-Revision-Date: 2023-02-22 13:43+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: mop/data/images.py:6
+msgid "image_written_source_description"
+msgstr ""
+
+#: mop/data/images.py:7
+msgid "image_written_source_caption"
+msgstr ""
+
+#: mop/data/images.py:11
+msgid "image_excavations_description"
+msgstr ""
+
+#: mop/data/images.py:12
+msgid "image_excavations_caption"
+msgstr ""
+
+#: mop/data/images.py:16
+msgid "image_toponym_description"
+msgstr ""
+
+#: mop/data/images.py:17
+msgid "image_toponym_caption"
+msgstr ""
+
+#: mop/data/images.py:21
+msgid "image_landscape_description"
+msgstr ""
+
+#: mop/data/images.py:22
+msgid "image_landscape_caption"
+msgstr ""
+
+#: mop/templates/about.html:19
+msgid "about_text_1"
+msgstr ""
+
+#: mop/templates/about.html:39
+msgid "about_text_2"
+msgstr ""
+
+#: mop/templates/about.html:51
+msgid "about_text_3"
+msgstr ""
+
+#: mop/templates/about.html:58
+msgid "about_text_4"
+msgstr ""
+
+#: mop/templates/about.html:64
+msgid "about_point_1"
+msgstr ""
+
+#: mop/templates/about.html:69
+msgid "about_point_2"
+msgstr ""
+
+#: mop/templates/about.html:75
+msgid "about_text_5"
+msgstr ""
+
+#: mop/templates/about.html:84
+msgid "about_text_6"
+msgstr ""
+
+#: mop/templates/about.html:92
+msgid "about_text_7"
+msgstr ""
+

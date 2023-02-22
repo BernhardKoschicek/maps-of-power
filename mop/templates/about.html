@@ -5,40 +5,42 @@
     <video autoplay loop muted playsinline class="hero-video">
       <source src="/static/video/lamb.mp4" type="video/mp4">
     </video>
-    <div class="overlay">
-      <h1 class="text-center mx-auto">Welcome to Maps of Power</h1>
+    <div class="overlay container-fluid align-items-center justify-content-center d-flex">
+      {#      <h1 class="mx-auto">Welcome to Maps of Power</h1>#}
+      <img src="/static/images/mop_logo.svg"
+           alt="Maps of Power Logo" height="500"
+           class="d-inline-block align-text-top mx-auto">
     </div>
   </section>
 
   <section class="pt-5">
     <div class="container text-center text-dark">
-      <h1 class="text-primary">Maps of Power</h1>
-      <h1 class="text-secondary">Maps of Power</h1>
-      <p class="text-start fs-5">
-        The research initiative “Maps of Power” serves the methodological and
+      <p class="fs-5">
+        {{ _('about_text_1') }}
+        The research initiative "Maps of Power" serves the methodological and
         interdisciplinary networking of scholars from the field of Historical
         Geography. The initiative, which has been running since 2019 under the
-        title “Maps of Power: Historical Atlas of Places, Borderzones and
-        Migration Dynamics in Byzantium (TIB Balkans)”, grew out of the idea of
+        title "Maps of Power: Historical Atlas of Places, Borderzones and
+        Migration Dynamics in Byzantium (TIB Balkans)", grew out of the idea of
         deepening historical-geographical research methodologically and placing
         it on a broader level in terms of content. Based on the scholarly
-        project “Tabula Imperii Byzantini (TIB)”, which has been successfully
+        project <a href="https://tib.oeaw.ac.at" class="link-primary" target="_blank">"Tabula Imperii Byzantini
+        (TIB)"</a>, which has been successfully
         conducted at the Austrian Academy of Sciences (Vienna) since 1966, the
         initiative intends to expand the spatial focus of the TIB on the
         Byzantine area in order to include other European areas in the Middle
-        Ages as well. The successfully completed cluster project “Digitising
-        Patterns of Power (DPP): Peripherical Mountains in the Medieval World”
-        [https://dpp.oeaw.ac.at/] can be seen as a pilot project in this
+        Ages as well. The successfully completed cluster project
+        <a href="https://dpp.oeaw.ac.at/" class="link-primary" target="_blank">"Digitising
+          Patterns of Power (DPP): Peripherical Mountains in the Medieval World"</a>
+        can be seen as a pilot project in this
         respect.
       </p>
       <p class="fs-5">
+        {{ _('about_text_2') }}
         In order to do justice to this new idea of spatial expansion, the
-        previous title of the research initiative will be renamed “Maps of
-        Power – Karten der Macht”, which will allow for larger thematic depth
-        and a longer temporal breadth.
-      </p>
-      <p class="fs-5">
-        The research perspectives of the TIB until now as a representative of
+        previous title of the research initiative will be renamed "Maps of
+        Power – Karten der Macht", which will allow for larger thematic depth
+        and a longer temporal breadth. The research perspectives of the TIB until now as a representative of
         the research branch Historical Geography of the Byzantine Empire
         essentially dealt with four categories of historical sources:
       </p>
@@ -46,45 +48,49 @@
         {{ category_images }}
       </div>
       <p class="fs-5">
+           {{ _('about_text_3') }}
         The paradigm shifts in content and technical-digital innovations in science with the corresponding
         methodological expansions in the second half of the 20th century and in the 21st century require a
         methodological rethink. For the initiative, this means increased cooperation of Historical Geography with
         Byzantine Studies in the broader sense, as well as with Medieval Studies and the Digital Humanities.
       </p>
       <p class="fs-5">
-        Therefore, the research initiative “Maps of Power” takes up two research areas that have the potential to act as
+           {{ _('about_text_4') }}
+        Therefore, the research initiative "Maps of Power" takes up two research areas that have the potential to act as
         a link between Byzantine and more Western European oriented Historical Geography and thereby lead to new
         research results that are significant for society:
       </p>
       <p class="fs-5">
+           {{ _('about_point_1') }}
         1) Historical Ecology, which deals with the historical development of ecosystems and landscapes under the
         influence of natural and anthropogenic factors.
       </p>
       <p class="fs-5">
-        2) Sacred Topography (“Sacred Landscapes”), which reflects the presence of the divine/sacred/transcendent in a
+           {{ _('about_point_2') }}
+        2) Sacred Topography ("Sacred Landscapes"), which reflects the presence of the divine/sacred/transcendent in a
         given area and manifests itself through religious buildings (e.g. churches and monasteries) and religious
         symbols and actions (e.g. pilgrimage).
       </p>
       <p class="fs-5">
+           {{ _('about_text_5') }}
         The aim of Historical Ecology is to focus more on the relationship between nature and humans, or humans and
-        nature, and the transformation of landscape through human intervention. In this context, the term “power” is to
-        be understood as “power” or “control” over someone or something. For thousands of years, human civilisation has
+        nature, and the transformation of landscape through human intervention. In this context, the term "power" is to
+        be understood as "power" or "control" over someone or something. For thousands of years, human civilisation has
         influenced vegetation in Europe (by clearing and planting fields, introducing cultivated plants, etc.). At the
         same time, nature significantly determined the geography of settlements, for example through watercourses, until
-        the era of excessive regulations. Thus, the term “power” is applicable in both directions (nature and man).
+        the era of excessive regulations. Thus, the term "power" is applicable in both directions (nature and man).
       </p>
       <p class="fs-5">
+           {{ _('about_text_6') }}
         The object of study of the Sacred Topography of Byzantine landscapes are to a large extent urban and rural
         churches, on the basis of whose distribution one can explore sacred space, ritual and religious identities. In
         addition, it will be investigated whether certain landscape features favoured the formation of certain types of
         cults and the formation of places of worship. The perception of space by people in the Middle Ages plays an
-        important role in this very respect.
+        important role in this very respect. GIS software, digital cartography and database systems are increasingly used in both research areas.
       </p>
       <p class="fs-5">
-        GIS software, digital cartography and database systems are increasingly used in both research areas.
-      </p>
-      <p class="fs-5">
-        “Maps of Power” takes up these ideas and sees itself as a scholarly platform that would like to implement its
+           {{ _('about_text_7') }}
+        "Maps of Power" takes up these ideas and sees itself as a scholarly platform that would like to implement its
         own projects as well as network in an interdisciplinary fashion through joint projects. Research results of the
         initiative are made freely available in a specially programmed portal that makes data searchable, contains
         digital maps (layers), offers storymaps on various aspects and includes comprehensive photo material.

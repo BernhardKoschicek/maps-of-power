@@ -21,11 +21,6 @@ def projects() -> str:
     return render_template('layout.html')
 
 
-@app.route('/cooperation')
-def cooperation() -> str:
-    return render_template('layout.html')
-
-
 @app.route('/software')
 def software() -> str:
     return render_template('layout.html')
