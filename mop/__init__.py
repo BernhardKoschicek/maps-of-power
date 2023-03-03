@@ -12,6 +12,7 @@ app.config.from_object('config')
 app.config.from_pyfile('production.py')
 babel = Babel(app)
 
+# pylint: disable=wrong-import-position, import-outside-toplevel
 from mop import util, views, data, model
 
 ROOT_PATH = Path(__file__).parent
@@ -41,12 +42,13 @@ def inject_conf_var() -> dict[str, Any]:
                 app.config['LANGUAGES'].keys()))}
 
 
+# Make only if thumbnail not exist for production
 @app.before_first_request
 def create_thumbnails():
     for file in IMAGE_PATH.rglob("*"):
         if file.is_file() and file.suffix.lower() in ['.jpg', '.png', '.jpeg']:
             with Image(filename=file) as src:
-                src.resize(400, 400)
+                src.liquid_rescale(400, 400)
                 src.save(
                     filename=THUMBNAIL_PATH / file.name)
 

@@ -6,7 +6,7 @@ from mop import app
 @app.template_filter()
 def display_menu(route: str) -> str:
     html = ''
-    for item in ['about', 'projects', 'cooperation', 'software', 'events']:
+    for item in ['about', 'projects', 'software', 'events']:
         active = 'fw-bold' if route.startswith('/' + item) \
                               or item == 'about' and route in ['/'] else ''
         html += \
