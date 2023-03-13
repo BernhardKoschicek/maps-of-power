@@ -6,7 +6,6 @@ from flask_babel import Babel
 import sass
 from wand.image import Image
 
-
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('config')
 app.config.from_pyfile('production.py')
@@ -21,8 +20,9 @@ STATIC_PATH = ROOT_PATH / 'static'
 IMAGE_PATH = STATIC_PATH / 'images'
 THUMBNAIL_PATH = STATIC_PATH / 'thumbnails'
 
-sass.compile(dirname=(STATIC_PATH / 'scss', STATIC_PATH / 'css'),
-             output_style='compressed')
+sass.compile(
+    dirname=(STATIC_PATH / 'scss', STATIC_PATH / 'css'),
+    output_style='compressed')
 
 
 @babel.localeselector
