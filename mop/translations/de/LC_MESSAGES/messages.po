@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-02-22 13:43+0100\n"
-"PO-Revision-Date: 2023-03-03 16:34+0100\n"
+"POT-Creation-Date: 2023-03-13 11:42+0100\n"
+"PO-Revision-Date: 2023-03-13 11:44+0100\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -16,73 +16,146 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #: mop/data/images.py:6
 msgid "image_written_source_description"
-msgstr "den schriftlichen Quellen (z. B. Urkunden, Geschichtsschreibung, Inschriften usw.)"
+msgstr ""
+"den schriftlichen Quellen (z. B. Urkunden, Geschichtsschreibung, "
+"Inschriften usw.)"
 
 #: mop/data/images.py:7
 msgid "image_written_source_caption"
 msgstr "die Urkunde für das Kloster Rila in Bulgarien (1378)"
 
-#: mop/data/images.py:11
+#: mop/data/images.py:13
 msgid "image_excavations_description"
 msgstr "archäologischen Daten (Ausgrabungen, Denkmälern und deren Überresten)"
 
-#: mop/data/images.py:12
+#: mop/data/images.py:14
 msgid "image_excavations_caption"
 msgstr ""
+"die Ausgrabung des Forums in der römischen Stadt Doclea, Montenegro (2021)"
 
-#: mop/data/images.py:16
+#: mop/data/images.py:19
 msgid "image_toponym_description"
 msgstr "den Orts- und Flurnamen (Toponymen)"
 
-#: mop/data/images.py:17
+#: mop/data/images.py:20
 msgid "image_toponym_caption"
 msgstr ""
+"der Ausschnitt Prilep aus der österreichisch-ungarischen Generalkarte "
+"1:200.000"
 
-#: mop/data/images.py:21
+#: mop/data/images.py:25
 msgid "image_landscape_description"
 msgstr "den naturräumlichen Gegebenheiten von Landschaften"
 
-#: mop/data/images.py:22
+#: mop/data/images.py:26
 msgid "image_landscape_caption"
-msgstr "die Einsiedelei des Heiligen Wolfgang im Salzkammergut, Österreich."
+msgstr "die Bucht von Kotor, Montenegro (2021)"
 
 #: mop/templates/about.html:19
 msgid "about_text_1"
-msgstr "die Forschungsinitiative „Maps of Power – Karten der Macht“ dient der methodologischen und interdisziplinären Vernetzung von Wissenschaftler:innen aus dem historisch-geographischen Bereich. Die seit 2019 unter dem Titel „Maps of Power: Historical Atlas of Places, Borderzones and Migration Dynamics in Byzantium (TIB Balkans)“ geführte Initiative ist aus der Idee erwachsen, die historisch-geographische Forschung methodologisch zu vertiefen und inhaltlich auf eine breitere Ebene zu stellen. Ausgehend von dem wissenschaftlichen Projekt <a href=\"https://tib.oeaw.ac.at\" class=\"link-primary\" target=\"_blank\">„Tabula Imperii Byzantini (TIB)“</a>, welches an der Österreichischen Akademie der Wissenschaften (Wien) seit 1966 erfolgreich betrieben wird, nimmt sich die Initiative vor, den bisherigen räumlichen Fokus der TIB auf das byzantinische Gebiet um weitere europäische Gebiete im Mittelalter zu erweitern. Als Pilotprojekt ist hierbei das abgeschlossene Clusterprojekt <a href=\"https://dpp.oeaw.ac.at/\" class=\"link-primary\" target=\"_blank\">„Digitising Patterns of Power (DPP): Peripherical Mountains in the Medieval World“</a> zu sehen."
+msgstr ""
+"die Forschungsinitiative „Maps of Power – Karten der Macht“ dient der "
+"methodologischen und interdisziplinären Vernetzung von Wissenschaftler:"
+"innen aus dem historisch-geographischen Bereich. Die seit 2019 unter dem "
+"Titel „Maps of Power: Historical Atlas of Places, Borderzones and Migration "
+"Dynamics in Byzantium (TIB Balkans)“ geführte Initiative ist aus der Idee "
+"erwachsen, die historisch-geographische Forschung methodologisch zu "
+"vertiefen und inhaltlich auf eine breitere Ebene zu stellen. Ausgehend von "
+"dem wissenschaftlichen Projekt <a href=\"https://tib.oeaw.ac.at\" "
+"class=\"link-primary\" target=\"_blank\">„Tabula Imperii Byzantini (TIB)“</"
+"a>, welches an der Österreichischen Akademie der Wissenschaften (Wien) seit "
+"1966 erfolgreich betrieben wird, nimmt sich die Initiative vor, den "
+"bisherigen räumlichen Fokus der TIB auf das byzantinische Gebiet um weitere "
+"europäische Gebiete im Mittelalter zu erweitern. Als Pilotprojekt ist "
+"hierbei das abgeschlossene Clusterprojekt <a href=\"https://dpp.oeaw.ac.at/"
+"\" class=\"link-primary\" target=\"_blank\">„Digitising Patterns of Power "
+"(DPP): Peripherical Mountains in the Medieval World“</a> zu sehen."
 
-#: mop/templates/about.html:39
+#: mop/templates/about.html:22
 msgid "about_text_2"
-msgstr "um dieser neuen Idee der räumlichen Erweiterung gerecht zu werden, wird der bisherige Titel der Forschungsinitiative in „Maps of Power – Karten der Macht“ umbenannt, was eine größere thematische Tiefe und eine längere zeitliche Breite ermöglicht. Die bisherigen Forschungsperspektiven der TIB als Vertreterin des Forschungszweiges Historische Geographie des Byzantinischen Reiches befassten sich im Wesentlichen mit vier Kategorien von historischen Quellen:"
+msgstr ""
+"um dieser neuen Idee der räumlichen Erweiterung gerecht zu werden, wird der "
+"bisherige Titel der Forschungsinitiative in „Maps of Power – Karten der "
+"Macht“ umbenannt, was eine größere thematische Tiefe und eine längere "
+"zeitliche Breite ermöglicht. Die bisherigen Forschungsperspektiven der TIB "
+"als Vertreterin des Forschungszweiges Historische Geographie des "
+"Byzantinischen Reiches befassten sich im Wesentlichen mit vier Kategorien "
+"von historischen Quellen:"
 
-#: mop/templates/about.html:51
+#: mop/templates/about.html:28
 msgid "about_text_3"
-msgstr "die inhaltlichen Paradigmenwechsel und technisch-digitalen Innovationen in der Wissenschaft mit den entsprechenden Methodenerweiterungen in der zweiten Hälfte des 20. Jahrhunderts und im 21. Jahrhundert erfordern ein methodisches Umdenken. Dies bedeutet für die Initiative eine verstärkte Zusammenarbeit und Verzahnung der Historischen Geographie mit der Byzantinistik im weiteren Sinne, mit der Mittelalterforschung sowie den Digital Humanities."
+msgstr ""
+"die inhaltlichen Paradigmenwechsel und technisch-digitalen Innovationen in "
+"der Wissenschaft mit den entsprechenden Methodenerweiterungen in der "
+"zweiten Hälfte des 20. Jahrhunderts und im 21. Jahrhundert erfordern ein "
+"methodisches Umdenken. Dies bedeutet für die Initiative eine verstärkte "
+"Zusammenarbeit und Verzahnung der Historischen Geographie mit der "
+"Byzantinistik im weiteren Sinne, mit der Mittelalterforschung sowie den "
+"Digital Humanities."
 
-#: mop/templates/about.html:58
+#: mop/templates/about.html:31
 msgid "about_text_4"
-msgstr "daher greift die Forschungsinitiative „Maps of Power – Karten der Macht“ zwei Forschungsbereiche auf, die das Potential haben, als Bindeglied zwischen der byzantinistisch und der stärker auf Westeuropa orientierten historischen Geographie zu fungieren und dadurch zu neuen, für die Gesellschaft bedeutenden Forschungsergebnissen zu führen:"
+msgstr ""
+"daher greift die Forschungsinitiative „Maps of Power – Karten der Macht“ "
+"zwei Forschungsbereiche auf, die das Potential haben, als Bindeglied "
+"zwischen der byzantinistisch und der stärker auf Westeuropa orientierten "
+"historischen Geographie zu fungieren und dadurch zu neuen, für die "
+"Gesellschaft bedeutenden Forschungsergebnissen zu führen:"
 
-#: mop/templates/about.html:64
+#: mop/templates/about.html:34
 msgid "about_point_1"
-msgstr "die historische Ökologie, die sich mit der historischen Entwicklung von Ökosystemen und Landschaften unter dem Einfluss natürlicher und anthropogener Faktoren befasst."
+msgstr ""
+"die historische Ökologie, die sich mit der historischen Entwicklung von "
+"Ökosystemen und Landschaften unter dem Einfluss natürlicher und "
+"anthropogener Faktoren befasst."
 
-#: mop/templates/about.html:69
+#: mop/templates/about.html:37
 msgid "about_point_2"
-msgstr "die sakrale Topographie („Sacred Landscapes“), die die Präsenz des Göttlichen/Heiligen/Transzendenten in einer Gegend widerspiegelt und sich durch religiöse Bauten (z. B. Kirchen und Klöster) sowie religiöse Symbole und Handlungen (z. B. Pilgerschaft) manifestiert."
+msgstr ""
+"die sakrale Topographie („Sacred Landscapes“), die die Präsenz des "
+"Göttlichen/Heiligen/Transzendenten in einer Gegend widerspiegelt und sich "
+"durch religiöse Bauten (z. B. Kirchen und Klöster) sowie religiöse Symbole "
+"und Handlungen (z. B. Pilgerschaft) manifestiert."
 
-#: mop/templates/about.html:75
+#: mop/templates/about.html:40
 msgid "about_text_5"
-msgstr "das Ziel der historischen Ökologie ist es, das Verhältnis Natur-Mensch bzw. Mensch-Natur und die Veränderung von Landschaft durch menschliches Eingreifen verstärkt in den Mittelpunkt zu rücken. Dabei ist der Begriff „power“ als „Macht“ oder „Kontrolle“ über jemanden oder etwas zu verstehen. Seit tausenden Jahren beeinflusst die menschliche Zivilisation die Vegetation in Europa (durch Rodung und Anlegen von Äckern, Einführung von Kulturpflanzen etc.). Gleichzeitig bestimmte die Natur beispielsweise durch Wasserläufe die Siedlungsgeographie bis zur Epoche der übermäßigen Regulierungen maßgeblich. Somit ist der Begriff „power“ in beide Richtungen (Natur und Mensch) anwendbar."
+msgstr ""
+"das Ziel der historischen Ökologie ist es, das Verhältnis Natur-Mensch bzw. "
+"Mensch-Natur und die Veränderung von Landschaft durch menschliches "
+"Eingreifen verstärkt in den Mittelpunkt zu rücken. Dabei ist der Begriff "
+"„power“ als „Macht“ oder „Kontrolle“ über jemanden oder etwas zu verstehen. "
+"Seit tausenden Jahren beeinflusst die menschliche Zivilisation die "
+"Vegetation in Europa (durch Rodung und Anlegen von Äckern, Einführung von "
+"Kulturpflanzen etc.). Gleichzeitig bestimmte die Natur beispielsweise durch "
+"Wasserläufe die Siedlungsgeographie bis zur Epoche der übermäßigen "
+"Regulierungen maßgeblich. Somit ist der Begriff „power“ in beide Richtungen "
+"(Natur und Mensch) anwendbar."
 
-#: mop/templates/about.html:84
+#: mop/templates/about.html:43
 msgid "about_text_6"
-msgstr "der Untersuchungsgegenstand der sakralen Topographie byzantinischer Landschaften sind zu einem wesentlichen Teil die städtischen und ländlichen Kirchen, anhand deren Verbreitung man sakralen Raum, Ritual und religiöse Identitäten erforschen kann. Zudem wird ergründet, ob bestimmte Landschaftsmerkmale die Formierung bestimmter Arten von Kulten und die Ausbildung von Kultstätten begünstigen. Hierbei spielt die Raumwahrnehmung des Menschen im Mittelalter eine wesentliche Rolle. In beiden Forschungsbereichen werden verstärkt GIS Software, digitale Kartographie und Datenbanksysteme eingesetzt."
+msgstr ""
+"der Untersuchungsgegenstand der sakralen Topographie byzantinischer "
+"Landschaften sind zu einem wesentlichen Teil die städtischen und ländlichen "
+"Kirchen, anhand deren Verbreitung man sakralen Raum, Ritual und religiöse "
+"Identitäten erforschen kann. Zudem wird ergründet, ob bestimmte "
+"Landschaftsmerkmale die Formierung bestimmter Arten von Kulten und die "
+"Ausbildung von Kultstätten begünstigen. Hierbei spielt die Raumwahrnehmung "
+"des Menschen im Mittelalter eine wesentliche Rolle. In beiden "
+"Forschungsbereichen werden verstärkt GIS Software, digitale Kartographie "
+"und Datenbanksysteme eingesetzt."
 
-#: mop/templates/about.html:92
+#: mop/templates/about.html:46
 msgid "about_text_7"
-msgstr "„Maps of Power – Karten der Macht“ greift diese Gedanken auf und versteht sich als eine wissenschaftliche Plattform, die sowohl eigene Projekte umsetzen möchte als auch interdisziplinär im Wege von gemeinsamen Projekten vernetzend wirken möchte. Forschungsergebnisse der Initiative werden in einem eigens dafür programmierten Portal frei zur Verfügung gestellt, das Daten durchsuchbar macht, digitale Karten (Layer) enthält, Storymaps zu verschiedenen Aspekten anbietet und umfassendes Fotomaterial beinhaltet."
+msgstr ""
+"„Maps of Power – Karten der Macht“ greift diese Gedanken auf und versteht "
+"sich als eine wissenschaftliche Plattform, die sowohl eigene Projekte "
+"umsetzen möchte als auch interdisziplinär im Wege von gemeinsamen Projekten "
+"vernetzend wirken möchte. Forschungsergebnisse der Initiative werden in "
+"einem eigens dafür programmierten Portal frei zur Verfügung gestellt, das "
+"Daten durchsuchbar macht, digitale Karten (Layer) enthält, Storymaps zu "
+"verschiedenen Aspekten anbietet und umfassendes Fotomaterial beinhaltet."

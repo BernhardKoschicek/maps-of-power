@@ -5,7 +5,7 @@ from werkzeug import Response
 from werkzeug.utils import redirect
 
 from mop.data.images import category_images
-from mop.model.image import image_gallery
+from mop.display.image import image_gallery
 from mop import app
 
 

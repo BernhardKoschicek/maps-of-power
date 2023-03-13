@@ -9,19 +9,19 @@ category_images = {
             'https://commons.wikimedia.org/wiki/File:Rilska-gramota.jpg'
     },
     'excavation': {
-        'src': 'ausgrabung.jpg',
+        'src': 'doclea.jpg',
         'description': _('image_excavations_description'),
         'caption': _('image_excavations_caption'),
         'citation': ''
     },
     'toponym': {
-        'src': 'tab.jpg',
+        'src': 'map.jpg',
         'description': _('image_toponym_description'),
         'caption': _('image_toponym_caption'),
-        'citation': ''
+        'citation': 'https://www.landkartenarchiv.de/'
     },
     'landscape': {
-        'src': 'hermitage.jpg',
+        'src': 'kotor_bay.jpg',
         'description': _('image_landscape_description'),
         'caption': _('image_landscape_caption'),
         'citation': 'Mihailo St. Popović, 2021'

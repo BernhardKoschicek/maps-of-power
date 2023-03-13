@@ -7,6 +7,16 @@
   z-index: -1;
 }
 
+p::first-letter {
+ text-transform: uppercase;
+ font-size: 1.2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Hero Section */
 .overlay {
   position: absolute;
   top: 0;
@@ -50,7 +60,3 @@
   color: #fff;
 }
 
-
-a {
-  text-decoration: none;
-}

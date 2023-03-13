@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-02-22 13:43+0100\n"
+"POT-Creation-Date: 2023-03-13 11:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: mop/data/images.py:6
 msgid "image_written_source_description"
@@ -25,27 +25,27 @@ msgstr ""
 msgid "image_written_source_caption"
 msgstr ""
 
-#: mop/data/images.py:11
+#: mop/data/images.py:13
 msgid "image_excavations_description"
 msgstr ""
 
-#: mop/data/images.py:12
+#: mop/data/images.py:14
 msgid "image_excavations_caption"
 msgstr ""
 
-#: mop/data/images.py:16
+#: mop/data/images.py:19
 msgid "image_toponym_description"
 msgstr ""
 
-#: mop/data/images.py:17
+#: mop/data/images.py:20
 msgid "image_toponym_caption"
 msgstr ""
 
-#: mop/data/images.py:21
+#: mop/data/images.py:25
 msgid "image_landscape_description"
 msgstr ""
 
-#: mop/data/images.py:22
+#: mop/data/images.py:26
 msgid "image_landscape_caption"
 msgstr ""
 
@@ -53,35 +53,35 @@ msgstr ""
 msgid "about_text_1"
 msgstr ""
 
-#: mop/templates/about.html:39
+#: mop/templates/about.html:22
 msgid "about_text_2"
 msgstr ""
 
-#: mop/templates/about.html:51
+#: mop/templates/about.html:28
 msgid "about_text_3"
 msgstr ""
 
-#: mop/templates/about.html:58
+#: mop/templates/about.html:31
 msgid "about_text_4"
 msgstr ""
 
-#: mop/templates/about.html:64
+#: mop/templates/about.html:34
 msgid "about_point_1"
 msgstr ""
 
-#: mop/templates/about.html:69
+#: mop/templates/about.html:37
 msgid "about_point_2"
 msgstr ""
 
-#: mop/templates/about.html:75
+#: mop/templates/about.html:40
 msgid "about_text_5"
 msgstr ""
 
-#: mop/templates/about.html:84
+#: mop/templates/about.html:43
 msgid "about_text_6"
 msgstr ""
 
-#: mop/templates/about.html:92
+#: mop/templates/about.html:46
 msgid "about_text_7"
 msgstr ""
 

@@ -12,7 +12,7 @@ app.config.from_pyfile('production.py')
 babel = Babel(app)
 
 # pylint: disable=wrong-import-position, import-outside-toplevel
-from mop import util, views, data, model
+from mop import util, views, data, display
 
 ROOT_PATH = Path(__file__).parent
 
@@ -48,7 +48,7 @@ def create_thumbnails():
     for file in IMAGE_PATH.rglob("*"):
         if file.is_file() and file.suffix.lower() in ['.jpg', '.png', '.jpeg']:
             with Image(filename=file) as src:
-                src.liquid_rescale(400, 400)
+                src.resize(400, 400)
                 src.save(
                     filename=THUMBNAIL_PATH / file.name)
 
