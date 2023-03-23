@@ -12,7 +12,7 @@ app.config.from_pyfile('production.py')
 babel = Babel(app)
 
 # pylint: disable=wrong-import-position, import-outside-toplevel
-from mop import util, views, data, display
+from mop import util, views, data, display, filter
 
 ROOT_PATH = Path(__file__).parent
 
