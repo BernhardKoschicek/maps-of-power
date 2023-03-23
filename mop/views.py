@@ -34,7 +34,14 @@ def events() -> str:
     return render_template('layout.html')
 
 
+@app.route('/histgeo')
+def histgeo() -> str:
+    return render_template('histgeo.html')
+
+
 @app.route('/language=<language>')
 def set_language(language: Optional[str] = None) -> Response:
     session['language'] = language
     return redirect(request.referrer)
+
+

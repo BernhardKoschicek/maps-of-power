@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-13 11:42+0100\n"
-"PO-Revision-Date: 2023-03-13 11:44+0100\n"
+"POT-Creation-Date: 2023-03-23 15:45+0100\n"
+"PO-Revision-Date: 2023-03-23 15:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -19,11 +19,55 @@ msgstr ""
 "Generated-By: Babel 2.11.0\n"
 "X-Generator: Poedit 3.2.2\n"
 
+#: mop/util.py:18
+msgid "about"
+msgstr "über"
+
+#: mop/util.py:19
+msgid "projects"
+msgstr "projekte"
+
+#: mop/util.py:20
+msgid "software"
+msgstr "software"
+
+#: mop/util.py:21
+msgid "events"
+msgstr "ereignisse"
+
+#: mop/data/events.py:7 mop/data/events.py:11
+msgid "presentation"
+msgstr "präsentation"
+
+#: mop/data/events.py:15
+msgid "award"
+msgstr "auszeichnung"
+
+#: mop/data/events.py:19
+msgid "science_fair"
+msgstr "wissenschaftsmesse"
+
+#: mop/data/events.py:23
+msgid "book_release"
+msgstr "buch Veröffentlichung"
+
+#: mop/data/events.py:27
+msgid "blogpost"
+msgstr "blogpost"
+
+#: mop/data/events.py:37
+msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgstr ""
+
+#: mop/data/events.py:39
+msgid "serbian_academy_220223"
+msgstr ""
+
 #: mop/data/images.py:6
 msgid "image_written_source_description"
 msgstr ""
-"den schriftlichen Quellen (z. B. Urkunden, Geschichtsschreibung, "
-"Inschriften usw.)"
+"den schriftlichen Quellen (z. B. Urkunden, Geschichtsschreibung, Inschriften "
+"usw.)"
 
 #: mop/data/images.py:7
 msgid "image_written_source_caption"
@@ -35,8 +79,7 @@ msgstr "archäologischen Daten (Ausgrabungen, Denkmälern und deren Überresten)
 
 #: mop/data/images.py:14
 msgid "image_excavations_caption"
-msgstr ""
-"die Ausgrabung des Forums in der römischen Stadt Doclea, Montenegro (2021)"
+msgstr "die Ausgrabung des Forums in der römischen Stadt Doclea, Montenegro (2021)"
 
 #: mop/data/images.py:19
 msgid "image_toponym_description"
@@ -45,8 +88,7 @@ msgstr "den Orts- und Flurnamen (Toponymen)"
 #: mop/data/images.py:20
 msgid "image_toponym_caption"
 msgstr ""
-"der Ausschnitt Prilep aus der österreichisch-ungarischen Generalkarte "
-"1:200.000"
+"der Ausschnitt Prilep aus der österreichisch-ungarischen Generalkarte 1:200.000"
 
 #: mop/data/images.py:25
 msgid "image_landscape_description"
@@ -56,106 +98,114 @@ msgstr "den naturräumlichen Gegebenheiten von Landschaften"
 msgid "image_landscape_caption"
 msgstr "die Bucht von Kotor, Montenegro (2021)"
 
-#: mop/templates/about.html:19
+#: mop/templates/about.html:20
 msgid "about_text_1"
 msgstr ""
 "die Forschungsinitiative „Maps of Power – Karten der Macht“ dient der "
-"methodologischen und interdisziplinären Vernetzung von Wissenschaftler:"
-"innen aus dem historisch-geographischen Bereich. Die seit 2019 unter dem "
-"Titel „Maps of Power: Historical Atlas of Places, Borderzones and Migration "
-"Dynamics in Byzantium (TIB Balkans)“ geführte Initiative ist aus der Idee "
-"erwachsen, die historisch-geographische Forschung methodologisch zu "
-"vertiefen und inhaltlich auf eine breitere Ebene zu stellen. Ausgehend von "
-"dem wissenschaftlichen Projekt <a href=\"https://tib.oeaw.ac.at\" "
-"class=\"link-primary\" target=\"_blank\">„Tabula Imperii Byzantini (TIB)“</"
-"a>, welches an der Österreichischen Akademie der Wissenschaften (Wien) seit "
-"1966 erfolgreich betrieben wird, nimmt sich die Initiative vor, den "
-"bisherigen räumlichen Fokus der TIB auf das byzantinische Gebiet um weitere "
-"europäische Gebiete im Mittelalter zu erweitern. Als Pilotprojekt ist "
-"hierbei das abgeschlossene Clusterprojekt <a href=\"https://dpp.oeaw.ac.at/"
-"\" class=\"link-primary\" target=\"_blank\">„Digitising Patterns of Power "
-"(DPP): Peripherical Mountains in the Medieval World“</a> zu sehen."
+"methodologischen und interdisziplinären Vernetzung von Wissenschaftler:innen aus "
+"dem historisch-geographischen Bereich. Die seit 2019 unter dem Titel „Maps of "
+"Power: Historical Atlas of Places, Borderzones and Migration Dynamics in "
+"Byzantium (TIB Balkans)“ geführte Initiative ist aus der Idee erwachsen, die "
+"historisch-geographische Forschung methodologisch zu vertiefen und inhaltlich "
+"auf eine breitere Ebene zu stellen. Ausgehend von dem wissenschaftlichen Projekt "
+"<a href=\"https://tib.oeaw.ac.at\" class=\"link-primary\" "
+"target=\"_blank\">„Tabula Imperii Byzantini (TIB)“</a>, welches an der "
+"Österreichischen Akademie der Wissenschaften (Wien) seit 1966 erfolgreich "
+"betrieben wird, nimmt sich die Initiative vor, den bisherigen räumlichen Fokus "
+"der TIB auf das byzantinische Gebiet um weitere europäische Gebiete im "
+"Mittelalter zu erweitern. Als Pilotprojekt ist hierbei das abgeschlossene "
+"Clusterprojekt <a href=\"https://dpp.oeaw.ac.at/\" class=\"link-primary\" "
+"target=\"_blank\">„Digitising Patterns of Power (DPP): Peripherical Mountains in "
+"the Medieval World“</a> zu sehen."
 
-#: mop/templates/about.html:22
+#: mop/templates/about.html:23
 msgid "about_text_2"
 msgstr ""
 "um dieser neuen Idee der räumlichen Erweiterung gerecht zu werden, wird der "
-"bisherige Titel der Forschungsinitiative in „Maps of Power – Karten der "
-"Macht“ umbenannt, was eine größere thematische Tiefe und eine längere "
-"zeitliche Breite ermöglicht. Die bisherigen Forschungsperspektiven der TIB "
-"als Vertreterin des Forschungszweiges Historische Geographie des "
-"Byzantinischen Reiches befassten sich im Wesentlichen mit vier Kategorien "
-"von historischen Quellen:"
+"bisherige Titel der Forschungsinitiative in „Maps of Power – Karten der Macht“ "
+"umbenannt, was eine größere thematische Tiefe und eine längere zeitliche Breite "
+"ermöglicht. Die bisherigen Forschungsperspektiven der TIB als Vertreterin des "
+"Forschungszweiges Historische Geographie des Byzantinischen Reiches befassten "
+"sich im Wesentlichen mit vier Kategorien von historischen Quellen:"
 
-#: mop/templates/about.html:28
+#: mop/templates/about.html:29
 msgid "about_text_3"
 msgstr ""
-"die inhaltlichen Paradigmenwechsel und technisch-digitalen Innovationen in "
-"der Wissenschaft mit den entsprechenden Methodenerweiterungen in der "
-"zweiten Hälfte des 20. Jahrhunderts und im 21. Jahrhundert erfordern ein "
-"methodisches Umdenken. Dies bedeutet für die Initiative eine verstärkte "
-"Zusammenarbeit und Verzahnung der Historischen Geographie mit der "
-"Byzantinistik im weiteren Sinne, mit der Mittelalterforschung sowie den "
-"Digital Humanities."
+"die inhaltlichen Paradigmenwechsel und technisch-digitalen Innovationen in der "
+"Wissenschaft mit den entsprechenden Methodenerweiterungen in der zweiten Hälfte "
+"des 20. Jahrhunderts und im 21. Jahrhundert erfordern ein methodisches Umdenken. "
+"Dies bedeutet für die Initiative eine verstärkte Zusammenarbeit und Verzahnung "
+"der Historischen Geographie mit der Byzantinistik im weiteren Sinne, mit der "
+"Mittelalterforschung sowie den Digital Humanities."
 
-#: mop/templates/about.html:31
+#: mop/templates/about.html:32
 msgid "about_text_4"
 msgstr ""
-"daher greift die Forschungsinitiative „Maps of Power – Karten der Macht“ "
-"zwei Forschungsbereiche auf, die das Potential haben, als Bindeglied "
-"zwischen der byzantinistisch und der stärker auf Westeuropa orientierten "
-"historischen Geographie zu fungieren und dadurch zu neuen, für die "
-"Gesellschaft bedeutenden Forschungsergebnissen zu führen:"
+"daher greift die Forschungsinitiative „Maps of Power – Karten der Macht“ zwei "
+"Forschungsbereiche auf, die das Potential haben, als Bindeglied zwischen der "
+"byzantinistisch und der stärker auf Westeuropa orientierten historischen "
+"Geographie zu fungieren und dadurch zu neuen, für die Gesellschaft bedeutenden "
+"Forschungsergebnissen zu führen:"
 
-#: mop/templates/about.html:34
+#: mop/templates/about.html:35
 msgid "about_point_1"
 msgstr ""
 "die historische Ökologie, die sich mit der historischen Entwicklung von "
-"Ökosystemen und Landschaften unter dem Einfluss natürlicher und "
-"anthropogener Faktoren befasst."
+"Ökosystemen und Landschaften unter dem Einfluss natürlicher und anthropogener "
+"Faktoren befasst."
 
-#: mop/templates/about.html:37
+#: mop/templates/about.html:38
 msgid "about_point_2"
 msgstr ""
-"die sakrale Topographie („Sacred Landscapes“), die die Präsenz des "
-"Göttlichen/Heiligen/Transzendenten in einer Gegend widerspiegelt und sich "
-"durch religiöse Bauten (z. B. Kirchen und Klöster) sowie religiöse Symbole "
-"und Handlungen (z. B. Pilgerschaft) manifestiert."
+"die sakrale Topographie („Sacred Landscapes“), die die Präsenz des Göttlichen/"
+"Heiligen/Transzendenten in einer Gegend widerspiegelt und sich durch religiöse "
+"Bauten (z. B. Kirchen und Klöster) sowie religiöse Symbole und Handlungen (z. B. "
+"Pilgerschaft) manifestiert."
 
-#: mop/templates/about.html:40
+#: mop/templates/about.html:41
 msgid "about_text_5"
 msgstr ""
 "das Ziel der historischen Ökologie ist es, das Verhältnis Natur-Mensch bzw. "
-"Mensch-Natur und die Veränderung von Landschaft durch menschliches "
-"Eingreifen verstärkt in den Mittelpunkt zu rücken. Dabei ist der Begriff "
-"„power“ als „Macht“ oder „Kontrolle“ über jemanden oder etwas zu verstehen. "
-"Seit tausenden Jahren beeinflusst die menschliche Zivilisation die "
-"Vegetation in Europa (durch Rodung und Anlegen von Äckern, Einführung von "
-"Kulturpflanzen etc.). Gleichzeitig bestimmte die Natur beispielsweise durch "
-"Wasserläufe die Siedlungsgeographie bis zur Epoche der übermäßigen "
-"Regulierungen maßgeblich. Somit ist der Begriff „power“ in beide Richtungen "
-"(Natur und Mensch) anwendbar."
+"Mensch-Natur und die Veränderung von Landschaft durch menschliches Eingreifen "
+"verstärkt in den Mittelpunkt zu rücken. Dabei ist der Begriff „power“ als "
+"„Macht“ oder „Kontrolle“ über jemanden oder etwas zu verstehen. Seit tausenden "
+"Jahren beeinflusst die menschliche Zivilisation die Vegetation in Europa (durch "
+"Rodung und Anlegen von Äckern, Einführung von Kulturpflanzen etc.). Gleichzeitig "
+"bestimmte die Natur beispielsweise durch Wasserläufe die Siedlungsgeographie bis "
+"zur Epoche der übermäßigen Regulierungen maßgeblich. Somit ist der Begriff "
+"„power“ in beide Richtungen (Natur und Mensch) anwendbar."
 
-#: mop/templates/about.html:43
+#: mop/templates/about.html:44
 msgid "about_text_6"
 msgstr ""
-"der Untersuchungsgegenstand der sakralen Topographie byzantinischer "
-"Landschaften sind zu einem wesentlichen Teil die städtischen und ländlichen "
-"Kirchen, anhand deren Verbreitung man sakralen Raum, Ritual und religiöse "
-"Identitäten erforschen kann. Zudem wird ergründet, ob bestimmte "
-"Landschaftsmerkmale die Formierung bestimmter Arten von Kulten und die "
-"Ausbildung von Kultstätten begünstigen. Hierbei spielt die Raumwahrnehmung "
-"des Menschen im Mittelalter eine wesentliche Rolle. In beiden "
-"Forschungsbereichen werden verstärkt GIS Software, digitale Kartographie "
-"und Datenbanksysteme eingesetzt."
+"der Untersuchungsgegenstand der sakralen Topographie byzantinischer Landschaften "
+"sind zu einem wesentlichen Teil die städtischen und ländlichen Kirchen, anhand "
+"deren Verbreitung man sakralen Raum, Ritual und religiöse Identitäten erforschen "
+"kann. Zudem wird ergründet, ob bestimmte Landschaftsmerkmale die Formierung "
+"bestimmter Arten von Kulten und die Ausbildung von Kultstätten begünstigen. "
+"Hierbei spielt die Raumwahrnehmung des Menschen im Mittelalter eine wesentliche "
+"Rolle. In beiden Forschungsbereichen werden verstärkt GIS Software, digitale "
+"Kartographie und Datenbanksysteme eingesetzt."
 
-#: mop/templates/about.html:46
+#: mop/templates/about.html:47
 msgid "about_text_7"
 msgstr ""
-"„Maps of Power – Karten der Macht“ greift diese Gedanken auf und versteht "
-"sich als eine wissenschaftliche Plattform, die sowohl eigene Projekte "
-"umsetzen möchte als auch interdisziplinär im Wege von gemeinsamen Projekten "
-"vernetzend wirken möchte. Forschungsergebnisse der Initiative werden in "
-"einem eigens dafür programmierten Portal frei zur Verfügung gestellt, das "
-"Daten durchsuchbar macht, digitale Karten (Layer) enthält, Storymaps zu "
-"verschiedenen Aspekten anbietet und umfassendes Fotomaterial beinhaltet."
+"„Maps of Power – Karten der Macht“ greift diese Gedanken auf und versteht sich "
+"als eine wissenschaftliche Plattform, die sowohl eigene Projekte umsetzen möchte "
+"als auch interdisziplinär im Wege von gemeinsamen Projekten vernetzend wirken "
+"möchte. Forschungsergebnisse der Initiative werden in einem eigens dafür "
+"programmierten Portal frei zur Verfügung gestellt, das Daten durchsuchbar macht, "
+"digitale Karten (Layer) enthält, Storymaps zu verschiedenen Aspekten anbietet "
+"und umfassendes Fotomaterial beinhaltet."
+
+#: mop/templates/about.html:65
+msgid "vienna_manifesto"
+msgstr ""
+"Unsere Initiative unterstützt das <a href=\"https://dighum.ec.tuwien.ac.at/"
+"dighum-manifesto/\" target=\"_blank\">\"Wiener Manifest für digitalen "
+"Humanismus\"</a> vollinhaltlich."
+
+#: mop/templates/layout.html:77 mop/templates/layout.html:83
+#: mop/templates/layout.html:89
+msgid "Navigation"
+msgstr ""

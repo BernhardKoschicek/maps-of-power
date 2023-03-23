@@ -10,9 +10,12 @@
   <meta name="author"
         content="Bernhard Koschicek-Krombholz, Mihailo Popovic"/>
   <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
-  <link rel="stylesheet" href="/static/node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/static/node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
-  <link rel="stylesheet" href="/static/node_modules/baguettebox.js/dist/baguetteBox.css">
+  <link rel="stylesheet"
+        href="/static/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="/static/node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+  <link rel="stylesheet"
+        href="/static/node_modules/baguettebox.js/dist/baguetteBox.css">
   <link rel="stylesheet" href="/static/css/color.css">
   <link rel="stylesheet" href="/static/css/style.css">
 
@@ -34,12 +37,20 @@
               aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse container-fluid col-8" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse container-fluid col-8"
+           id="navbarNavDropdown">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-          {{ request.path|display_menu|safe }}
+          {% for item in navbar %}
+            <li class="nav-item">
+              <a class="nav-link text-secondary text-capitalize {{ 'fw-bold' if request.endpoint and url_for(request.endpoint) == item.to }}"
+                 target="{{ '_blank' if item.to.startswith('http') else '' }}"
+                 href="{{ item.to }}">{{ item.name }}</a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
-      <div class="translation list-group list-group-flush align-end d-lg-block col-2">
+      <div
+          class="translation list-group list-group-flush align-end d-lg-block col-2">
         {% for language in AVAILABLE_LANGUAGES.items() %}
           <div class="list-group-item bg-dark text-center">
             {% if CURRENT_LANGUAGE == language[0] %}
@@ -59,41 +70,64 @@
 <main>
   {% block content %}{% endblock %}
 </main>
-<footer>
-  <div class="d-lg-flex justify-content-between">
-    <div class="copyright">
-      <p>developed and maintained by <a href="#" target="_blank">company</a></p>
-    </div>
-    <div>
-      <ul class="d-flex gap-3 list-unstyled">
-        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-        <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-        <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-      </ul>
+<footer class="bg-dark pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-5">
+        <p class="fw-bold text-primary">{{ _('navigation') }}</p>
+        {% for item in content %}
+          <p class="mb-0"><a class="text-capitalize text-secondary" href="{{ url_for(item) }}">{{ item.replace('_', ' ') }}</a></p>
+        {% endfor %}
+      </div>
+      <div class="col-12 col-md-3 mb-5">
+        <p class="fw-bold text-primary">{{ _('navigation') }}</p>
+        {% for item in content %}
+          <p class="mb-0"><a class="text-capitalize text-secondary" href="{{ url_for(item) }}">{{ item.replace('_', ' ') }}</a></p>
+        {% endfor %}
+      </div>
+      <div class="col-12 col-md-3 mb-5">
+        <p class="fw-bold text-primary">{{ _('navigation') }}</p>
+        {% for item in content %}
+          <p class="mb-0"><a class="text-capitalize text-secondary" href="{{ url_for(item) }}">{{ item.replace('_', ' ') }}</a></p>
+        {% endfor %}
+      </div>
+      <div class="col text-lg-end mb-5">
+        <a class="navbar-brand" href="/">
+          <img src="/static/images/mop_logo.svg"
+               alt="Maps of Power Logo"
+               height="150"
+               class="d-inline-block align-text-top">
+        </a>
+      </div>
     </div>
   </div>
 </footer>
 </body>
 <script src="/static/node_modules/jquery/dist/jquery.min.js"></script>
-<script src="/static/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="/static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script
+    src="/static/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+<script
+    src="/static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/static/node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
-<script src="/static/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
-<script src="/static/node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.min.js"></script>
+<script
+    src="/static/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+<script
+    src="/static/node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.min.js"></script>
 <script src="/static/node_modules/baguettebox.js/dist/baguetteBox.js"></script>
-<script src="/static/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+<script
+    src="/static/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
 
 <script>
-  const navbarCollapse = document.getElementById('navbarNavDropdown');
-  const myElement = document.querySelector('.translation');
+    const navbarCollapse = document.getElementById('navbarNavDropdown');
+    const myElement = document.querySelector('.translation');
 
-  navbarCollapse.addEventListener('show.bs.collapse', function () {
-    myElement.classList.add('d-none');
-  });
+    navbarCollapse.addEventListener('show.bs.collapse', function () {
+        myElement.classList.add('d-none');
+    });
 
-  navbarCollapse.addEventListener('hide.bs.collapse', function () {
-    myElement.classList.remove('d-none');
-  });
+    navbarCollapse.addEventListener('hide.bs.collapse', function () {
+        myElement.classList.remove('d-none');
+    });
 </script>
 
 

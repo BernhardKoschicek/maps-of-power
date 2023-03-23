@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-13 11:42+0100\n"
+"POT-Creation-Date: 2023-03-23 15:45+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,50 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+
+#: mop/util.py:18
+msgid "about"
+msgstr ""
+
+#: mop/util.py:19
+msgid "projects"
+msgstr ""
+
+#: mop/util.py:20
+msgid "software"
+msgstr ""
+
+#: mop/util.py:21
+msgid "events"
+msgstr ""
+
+#: mop/data/events.py:7 mop/data/events.py:11
+msgid "presentation"
+msgstr ""
+
+#: mop/data/events.py:15
+msgid "award"
+msgstr ""
+
+#: mop/data/events.py:19
+msgid "science_fair"
+msgstr ""
+
+#: mop/data/events.py:23
+msgid "book_release"
+msgstr ""
+
+#: mop/data/events.py:27
+msgid "blogpost"
+msgstr ""
+
+#: mop/data/events.py:37
+msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgstr ""
+
+#: mop/data/events.py:39
+msgid "serbian_academy_220223"
+msgstr ""
 
 #: mop/data/images.py:6
 msgid "image_written_source_description"
@@ -49,39 +93,48 @@ msgstr ""
 msgid "image_landscape_caption"
 msgstr ""
 
-#: mop/templates/about.html:19
+#: mop/templates/about.html:20
 msgid "about_text_1"
 msgstr ""
 
-#: mop/templates/about.html:22
+#: mop/templates/about.html:23
 msgid "about_text_2"
 msgstr ""
 
-#: mop/templates/about.html:28
+#: mop/templates/about.html:29
 msgid "about_text_3"
 msgstr ""
 
-#: mop/templates/about.html:31
+#: mop/templates/about.html:32
 msgid "about_text_4"
 msgstr ""
 
-#: mop/templates/about.html:34
+#: mop/templates/about.html:35
 msgid "about_point_1"
 msgstr ""
 
-#: mop/templates/about.html:37
+#: mop/templates/about.html:38
 msgid "about_point_2"
 msgstr ""
 
-#: mop/templates/about.html:40
+#: mop/templates/about.html:41
 msgid "about_text_5"
 msgstr ""
 
-#: mop/templates/about.html:43
+#: mop/templates/about.html:44
 msgid "about_text_6"
 msgstr ""
 
-#: mop/templates/about.html:46
+#: mop/templates/about.html:47
 msgid "about_text_7"
+msgstr ""
+
+#: mop/templates/about.html:65
+msgid "vienna_manifesto"
+msgstr ""
+
+#: mop/templates/layout.html:77 mop/templates/layout.html:83
+#: mop/templates/layout.html:89
+msgid "Navigation"
 msgstr ""
 
