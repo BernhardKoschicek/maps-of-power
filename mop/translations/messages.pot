@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-27 13:49+0200\n"
+"POT-Creation-Date: 2023-03-27 15:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: mop/util.py:18
 msgid "about"
@@ -133,8 +133,64 @@ msgstr ""
 msgid "vienna_manifesto"
 msgstr ""
 
-#: mop/templates/histgeo.html:49
-msgid "newsletter_header"
+#: mop/templates/histgeo.html:8
+msgid "histgeo_intro_1"
+msgstr ""
+
+#: mop/templates/histgeo.html:16
+msgid "histgeo_intro_2"
+msgstr ""
+
+#: mop/templates/histgeo.html:28
+msgid "Digital HistGeo Lecture Series"
+msgstr ""
+
+#: mop/templates/histgeo.html:30
+msgid "histgeo_lecture_1"
+msgstr ""
+
+#: mop/templates/histgeo.html:39
+msgid "histgeo_lecture_2"
+msgstr ""
+
+#: mop/templates/histgeo.html:47
+msgid "histgeo_lecture_3"
+msgstr ""
+
+#: mop/templates/histgeo.html:58
+msgid "histgeo_newsletter_1"
+msgstr ""
+
+#: mop/templates/histgeo.html:68
+msgid "histgeo_newsletter_2"
+msgstr ""
+
+#: mop/templates/histgeo.html:76
+msgid "histgeo_newsletter_3"
+msgstr ""
+
+#: mop/templates/histgeo.html:89
+msgid "Citation Rules and Fonts"
+msgstr ""
+
+#: mop/templates/histgeo.html:91
+msgid "histgeo_rules"
+msgstr ""
+
+#: mop/templates/histgeo.html:100 mop/templates/histgeo.html:109
+msgid "Citation Rules"
+msgstr ""
+
+#: mop/templates/histgeo.html:102
+msgid "histgeo_citation_1"
+msgstr ""
+
+#: mop/templates/histgeo.html:113
+msgid "Fonts"
+msgstr ""
+
+#: mop/templates/histgeo.html:115
+msgid "histgeo_fonts_1"
 msgstr ""
 
 #: mop/templates/layout.html:76 mop/templates/layout.html:83

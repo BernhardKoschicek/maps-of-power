@@ -11,6 +11,10 @@ p::first-letter {
  text-transform: uppercase;
  font-size: 1.2em;
 }
+h2::first-letter, h3::first-letter {
+ text-transform: uppercase;
+ font-size: 1.2em;
+}
 
 a {
   text-decoration: none;

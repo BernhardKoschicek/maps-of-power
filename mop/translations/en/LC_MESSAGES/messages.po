@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-27 13:49+0200\n"
-"PO-Revision-Date: 2023-03-27 13:50+0200\n"
+"POT-Creation-Date: 2023-03-27 15:35+0200\n"
+"PO-Revision-Date: 2023-03-27 15:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #: mop/util.py:18
@@ -198,11 +198,88 @@ msgstr ""
 "dighum-manifesto/\" target=\"_blank\">\"Vienna Manifesto on Digital Humanism\"</"
 "a>."
 
-#: mop/templates/histgeo.html:49
-msgid "newsletter_header"
-msgstr "Newsletter registration"
+#: mop/templates/histgeo.html:8
+msgid "histgeo_intro_1"
+msgstr ""
+"new thoughts and ideas are transforming Historical Geography, as are for example "
+"Digital Humanities and a wide range of new methodologies (like GIS – Geographic "
+"Information System and HGIS – Historical Geographic Information System). "
+"Therefore, new methods and theories are increasingly and at a fast pace being "
+"applied to the Historical Geography of Byzantium and adjacent areas (i.e. South-"
+"East Europe and Eastern Europe)."
+
+#: mop/templates/histgeo.html:16
+msgid "histgeo_intro_2"
+msgstr ""
+"this international publication series aims to present original research in the "
+"fields of Historical Geography, Byzantine Studies, Medieval Studies, Balkan "
+"Studies, Archaeology, Geography, Cartography, GIS / HGIS and Cultural Heritage. "
+"We invite manuscripts – monographs as well as conference proceedings – from a "
+"broad range of all these scholarly fields, with a focus on the regions of the "
+"former Byzantine Empire, especially South-East Europe and Eastern Europe, and we "
+"particularly welcome interdisciplinary approaches."
+
+#: mop/templates/histgeo.html:28
+msgid "Digital HistGeo Lecture Series"
+msgstr ""
+
+#: mop/templates/histgeo.html:30
+msgid "histgeo_lecture_1"
+msgstr ""
+
+#: mop/templates/histgeo.html:39
+msgid "histgeo_lecture_2"
+msgstr ""
+
+#: mop/templates/histgeo.html:47
+msgid "histgeo_lecture_3"
+msgstr ""
+
+#: mop/templates/histgeo.html:58
+msgid "histgeo_newsletter_1"
+msgstr ""
+
+#: mop/templates/histgeo.html:68
+msgid "histgeo_newsletter_2"
+msgstr ""
+
+#: mop/templates/histgeo.html:76
+msgid "histgeo_newsletter_3"
+msgstr ""
+
+#: mop/templates/histgeo.html:89
+msgid "Citation Rules and Fonts"
+msgstr "citation Rules and Fonts"
+
+#: mop/templates/histgeo.html:91
+msgid "histgeo_rules"
+msgstr ""
+"our Series is published by the publishing house <a href=\"https://"
+"akademskaknjiga.com/?lang=en\" target=\"_blank\" class=\"fw-bolder link-"
+"primary\">“Akademska knjiga” in Novi Sad, Serbia</a>, which was founded in July "
+"2006 with the aim of publishing important scholarship in the Social Sciences and "
+"the Humanities by national and international authors."
+
+#: mop/templates/histgeo.html:100 mop/templates/histgeo.html:109
+msgid "Citation Rules"
+msgstr ""
+
+#: mop/templates/histgeo.html:102
+msgid "histgeo_citation_1"
+msgstr ""
+
+#: mop/templates/histgeo.html:113
+msgid "Fonts"
+msgstr ""
+
+#: mop/templates/histgeo.html:115
+msgid "histgeo_fonts_1"
+msgstr ""
 
 #: mop/templates/layout.html:76 mop/templates/layout.html:83
 #: mop/templates/layout.html:90
 msgid "navigation"
 msgstr ""
+
+#~ msgid "newsletter_header"
+#~ msgstr "Newsletter registration"
