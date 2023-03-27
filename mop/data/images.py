@@ -2,7 +2,7 @@ from flask_babel import lazy_gettext as _
 
 category_images = {
     'written_source': {
-        'src': 'rilska-gramota.jpg',
+        'src': 'book.png',
         'description': _('image_written_source_description'),
         'caption': _('image_written_source_caption'),
         'citation':
@@ -15,7 +15,7 @@ category_images = {
         'citation': ''
     },
     'toponym': {
-        'src': 'map.jpg',
+        'src': 'map.png',
         'description': _('image_toponym_description'),
         'caption': _('image_toponym_caption'),
         'citation': 'https://www.landkartenarchiv.de/'

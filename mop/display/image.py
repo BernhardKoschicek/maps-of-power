@@ -13,7 +13,7 @@ def image_gallery(images: dict[str, Any]) -> str:
             f'{url_for("static", filename="images/" + value["src"])}"' \
             f' data-caption="{value["description"]}"><img src="' \
             f'{url_for("static", filename="thumbnails/" + value["src"])}"' \
-            f' alt="{key}" class="img-fluid rounded img-thumbnail"></a>'
+            f' alt="{key}" class="img-fluid"></a>'
         if value["caption"]:
             html += '<figcaption class="figure-caption">' \
                     f'{value["caption"]}</figcaption>'
