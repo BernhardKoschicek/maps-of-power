@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2023-03-27 15:35+0200\n"
-"PO-Revision-Date: 2023-03-27 15:49+0200\n"
+"PO-Revision-Date: 2023-03-27 17:49+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -57,11 +57,17 @@ msgstr "blogpost"
 
 #: mop/data/events.py:37
 msgid "presentation at the Serbian Academy of Sciences and Arts"
-msgstr ""
+msgstr "Präsentation in der Serbischen Akademie der Wissenschaften und Künste"
 
 #: mop/data/events.py:39
 msgid "serbian_academy_220223"
 msgstr ""
+"Mihailo Popović wurde vom Institut für Byzantinistik der Serbischen Akademie der "
+"Wissenschaften und Künste eingeladen, um am 22. Februar 2023 in Belgrad einen "
+"wissenschaftlichen Vortrag mit dem Titel „Пројекат Tabula Imperii Byzantini: о "
+"будућности (?) проучавања историјске географије Византије“ [„Das Projekt Tabula "
+"Imperii Byzantini: über die Zukunft (?) der Erforschung der historischen "
+"Geographie von Byzanz“]."
 
 #: mop/data/images.py:6
 msgid "image_written_source_description"

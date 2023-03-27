@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2023-03-27 15:35+0200\n"
-"PO-Revision-Date: 2023-03-27 15:50+0200\n"
+"PO-Revision-Date: 2023-03-27 17:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -57,11 +57,17 @@ msgstr "blogpost"
 
 #: mop/data/events.py:37
 msgid "presentation at the Serbian Academy of Sciences and Arts"
-msgstr ""
+msgstr "presentation at the Serbian Academy of Sciences and Arts"
 
 #: mop/data/events.py:39
 msgid "serbian_academy_220223"
 msgstr ""
+"Mihailo Popović was invited by the Institute for Byzantine Studies of the "
+"Serbian Academy of Sciences and Arts to give a paper entitled “Пројекат Tabula "
+"Imperii Byzantini: о будућности (?) проучавања историјске географије "
+"Византије” [“The Project Tabula Imperii Byzantini: on the Future (?) of the "
+"Research in the Field of the Historical Geography of Byzantium”] on 22 February "
+"2023 in Belgrade."
 
 #: mop/data/images.py:6
 msgid "image_written_source_description"
@@ -98,7 +104,7 @@ msgstr "the Bay of Kotor, Montenegro (2021)"
 #: mop/templates/about.html:20
 msgid "about_text_1"
 msgstr ""
-"the research initiative “Maps of Power” serves the methodological and "
+"the research initiative “Maps of Power\" serves the methodological and "
 "interdisciplinary networking of scholars from the field of Historical Geography. "
 "The initiative, which has been running since 2019 under the title “Maps of "
 "Power: Historical Atlas of Places, Borderzones and Migration Dynamics in "
@@ -195,8 +201,8 @@ msgstr ""
 msgid "vienna_manifesto"
 msgstr ""
 "Our initiative fully supports the <a href=\"https://dighum.ec.tuwien.ac.at/"
-"dighum-manifesto/\" target=\"_blank\">\"Vienna Manifesto on Digital Humanism\"</"
-"a>."
+"dighum-manifesto/\" target=\"_blank\" class=\"link-primary\">\"Vienna Manifesto "
+"on Digital Humanism\"</a>."
 
 #: mop/templates/histgeo.html:8
 msgid "histgeo_intro_1"
@@ -221,31 +227,60 @@ msgstr ""
 
 #: mop/templates/histgeo.html:28
 msgid "Digital HistGeo Lecture Series"
-msgstr ""
+msgstr "digital HistGeo Lecture Series"
 
 #: mop/templates/histgeo.html:30
 msgid "histgeo_lecture_1"
 msgstr ""
+"in order to communicate scholarly results of the “Tabula Imperii Byzantini (TIB) "
+"Balkans” of the Austrian Academy of Sciences and its related sub-projects to "
+"national and international scholars, students as well as the interested public "
+"in Vienna, Austria and the world, Mihailo Popović, Veronika Polloczek, Bernhard "
+"Koschiček-Krombholz and Vratislav Zervan have initiated together the “HistGeo "
+"Lecture Series” in Vienna in January 2019 (in succession of the “DPP Lecture "
+"Series” founded in January 2017)."
 
 #: mop/templates/histgeo.html:39
 msgid "histgeo_lecture_2"
 msgstr ""
+"initially, we had started with lectures in presence in Vienna, which were "
+"unfortunately interrupted by the COVID pandemic. Therefore, we have decided to "
+"stage them online starting with January 2023. They are now called the \"Digital "
+"HistGeo Lecture Series\" and we try to stage them quarterly each year (roughly "
+"in March, June, September and December). "
 
 #: mop/templates/histgeo.html:47
 msgid "histgeo_lecture_3"
 msgstr ""
+"our aim is to present papers containing our own research, but also to attract "
+"and invite speakers, the papers of which have the potential to foster "
+"discussions on new methods and digital tools in the fields of Medieval History, "
+"Byzantine Studies, Balkan Studies, Historical Geography, Cartography, Digital "
+"Humanities, GIScience and Software Engineering."
 
 #: mop/templates/histgeo.html:58
 msgid "histgeo_newsletter_1"
 msgstr ""
+"our HistGeo Newsletter informs you twice a year – in the months of June and "
+"December – on scholarly activities, cooperations, progress, results and new "
+"publications, which have been achieved as cornerstones of the initiative Maps of "
+"Power. Formerly, we published the Newsletter four times a year, but we have "
+"shifted it to two editions per year since 2022."
 
 #: mop/templates/histgeo.html:68
 msgid "histgeo_newsletter_2"
 msgstr ""
+"in the Newsletter’s reports we focus on the fields of Historical Geography, "
+"Historical Atlases, Mapping, Digital Mapping and Digital Humanities in general. "
+"It aims at highlighting the scholarly activities of scholars involved in the "
+"initiative Maps of Power and the TIB Balkans as well as colleagues from other "
+"fields of study."
 
 #: mop/templates/histgeo.html:76
 msgid "histgeo_newsletter_3"
 msgstr ""
+"Please feel free to browse our archive of Newsletters. If you have any questions "
+"or remarks, please do contact us via mapsofpower@oeaw.ac.at"
 
 #: mop/templates/histgeo.html:89
 msgid "Citation Rules and Fonts"
@@ -262,24 +297,26 @@ msgstr ""
 
 #: mop/templates/histgeo.html:100 mop/templates/histgeo.html:109
 msgid "Citation Rules"
-msgstr ""
+msgstr "citation Rules"
 
 #: mop/templates/histgeo.html:102
 msgid "histgeo_citation_1"
 msgstr ""
+"when preparing a manuscript for our Series, please use the following "
+"Instructions:"
 
 #: mop/templates/histgeo.html:113
 msgid "Fonts"
-msgstr ""
+msgstr "fonts"
 
 #: mop/templates/histgeo.html:115
 msgid "histgeo_fonts_1"
-msgstr ""
+msgstr "please use these Font Types for Old Church Slavonic:"
 
 #: mop/templates/layout.html:76 mop/templates/layout.html:83
 #: mop/templates/layout.html:90
 msgid "navigation"
-msgstr ""
+msgstr "navigation"
 
 #~ msgid "newsletter_header"
 #~ msgstr "Newsletter registration"
