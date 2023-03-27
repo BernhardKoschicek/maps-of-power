@@ -43,15 +43,14 @@ def inject_conf_var() -> dict[str, Any]:
 
 
 # Make only if thumbnail not exist for production
-# @app.before_first_request
-# def create_thumbnails():
-#     for file in IMAGE_PATH.rglob("*"):
-#         if file.is_file() and file.suffix.lower()
-#         in ['.jpg', '.png', '.jpeg']:
-#             with Image(filename=file) as src:
-#                 src.resize(400, 400)
-#                 src.save(
-#                     filename=THUMBNAIL_PATH / file.name)
+@app.before_first_request
+def create_thumbnails():
+    for file in IMAGE_PATH.rglob("*"):
+        if file.is_file() and file.suffix.lower() in ['.jpg', '.png', '.jpeg']:
+            with Image(filename=file) as src:
+                src.resize(400, 400)
+                src.save(
+                    filename=THUMBNAIL_PATH / file.name)
 
 
 @app.after_request

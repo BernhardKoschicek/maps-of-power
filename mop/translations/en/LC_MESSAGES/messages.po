@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-23 15:45+0100\n"
-"PO-Revision-Date: 2023-03-23 15:47+0100\n"
+"POT-Creation-Date: 2023-03-27 13:49+0200\n"
+"PO-Revision-Date: 2023-03-27 13:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.11.0\n"
+"Generated-By: Babel 2.9.1\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #: mop/util.py:18
@@ -198,7 +198,11 @@ msgstr ""
 "dighum-manifesto/\" target=\"_blank\">\"Vienna Manifesto on Digital Humanism\"</"
 "a>."
 
-#: mop/templates/layout.html:77 mop/templates/layout.html:83
-#: mop/templates/layout.html:89
-msgid "Navigation"
+#: mop/templates/histgeo.html:49
+msgid "newsletter_header"
+msgstr "Newsletter registration"
+
+#: mop/templates/layout.html:76 mop/templates/layout.html:83
+#: mop/templates/layout.html:90
+msgid "navigation"
 msgstr ""
