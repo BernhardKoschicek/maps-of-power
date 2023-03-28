@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-28 17:25+0200\n"
-"PO-Revision-Date: 2023-03-28 17:55+0200\n"
+"POT-Creation-Date: 2023-03-28 18:20+0200\n"
+"PO-Revision-Date: 2023-03-28 18:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -74,31 +74,31 @@ msgstr ""
 "Research in the Field of the Historical Geography of Byzantium”] on 22 February "
 "2023 in Belgrade."
 
-#: mop/data/histgeo.py:5 mop/data/histgeo.py:18 mop/data/histgeo.py:31
-#: mop/data/histgeo.py:44
+#: mop/data/histgeo.py:7 mop/data/histgeo.py:20 mop/data/histgeo.py:33
+#: mop/data/histgeo.py:46
 msgid "march"
 msgstr "March"
 
-#: mop/data/histgeo.py:8 mop/data/histgeo.py:21 mop/data/histgeo.py:34
-#: mop/data/histgeo.py:44
+#: mop/data/histgeo.py:10 mop/data/histgeo.py:23 mop/data/histgeo.py:36
+#: mop/data/histgeo.py:46
 msgid "june"
 msgstr "June"
 
-#: mop/data/histgeo.py:11 mop/data/histgeo.py:24 mop/data/histgeo.py:37
-#: mop/data/histgeo.py:47
+#: mop/data/histgeo.py:13 mop/data/histgeo.py:26 mop/data/histgeo.py:39
+#: mop/data/histgeo.py:49
 msgid "september"
 msgstr "September"
 
-#: mop/data/histgeo.py:14 mop/data/histgeo.py:27 mop/data/histgeo.py:40
-#: mop/data/histgeo.py:47
+#: mop/data/histgeo.py:16 mop/data/histgeo.py:29 mop/data/histgeo.py:42
+#: mop/data/histgeo.py:49
 msgid "december"
 msgstr "December"
 
-#: mop/data/histgeo.py:58 mop/data/histgeo.py:88
+#: mop/data/histgeo.py:59 mop/data/histgeo.py:89
 msgid "eds."
 msgstr "eds."
 
-#: mop/data/histgeo.py:59
+#: mop/data/histgeo.py:60
 msgid "histgeo_vol1_1"
 msgstr ""
 "on the occasion of the 75th birthday of Professor Dr. Johannes Koder the project "
@@ -110,7 +110,7 @@ msgstr ""
 "edited volume (Festschrift) entitled “Space, Landscapes and Settlements in "
 "Byzantium. Studies in Historical Geography of the Eastern Mediterranean”."
 
-#: mop/data/histgeo.py:59
+#: mop/data/histgeo.py:60
 msgid "histgeo_vol1_2"
 msgstr ""
 "Johannes Koder, full member (w. M.) of the Austrian Academy of Sciences, has "
@@ -121,7 +121,7 @@ msgstr ""
 "oeuvre includes groundbreaking publications on the Historical Geography of the "
 "Eastern Mediterranean and Byzantium."
 
-#: mop/data/histgeo.py:60
+#: mop/data/histgeo.py:61
 msgid "histgeo_vol1_3"
 msgstr ""
 "the edited volume (Festschrift) has been published as volume 1 of the series "
@@ -133,11 +133,11 @@ msgstr ""
 "innovate the historical-geographical research in Byzantine Studies. The series "
 "is printed by the publishing house Akademska Knjiga in Novi Sad. "
 
-#: mop/data/histgeo.py:73
+#: mop/data/histgeo.py:74
 msgid "ed."
 msgstr "ed."
 
-#: mop/data/histgeo.py:74
+#: mop/data/histgeo.py:75
 msgid "histgeo_vol2_1"
 msgstr ""
 "on 9 December 2014, Prof. Dr. Dr. h.c. mult. Herbert Hunger (1914–2000), the "
@@ -152,7 +152,7 @@ msgstr ""
 "inspiration especially for scholars working in the various parts of history, "
 "historical geography and fundamental research."
 
-#: mop/data/histgeo.py:89
+#: mop/data/histgeo.py:90
 msgid "histgeo_vol3_1"
 msgstr ""
 "The Long-Term Project “Tabula Imperii Byzantini (TIB)” (Institute for Medieval "
@@ -178,7 +178,7 @@ msgstr ""
 "we do believe that the existence of such a project in Austria and its "
 "documentation will meet public interest and awareness."
 
-#: mop/data/histgeo.py:104
+#: mop/data/histgeo.py:105
 msgid "histgeo_vol4_1"
 msgstr ""
 "the landscape of the Southeast Peloponnese (Laconia, Greece), a very important "
@@ -196,27 +196,94 @@ msgstr ""
 "content of the painted decoration but also by the choice of location or a deep "
 "relationship with natural elements of the landscape."
 
-#: mop/data/histgeo.py:126
+#: mop/data/histgeo.py:130
+msgid "sgomez_short_bio"
+msgstr ""
+"BA in History, Autónoma University of Madrid, MA in Archaeology, Università Ca’ "
+"Foscari of Venice, MA in Egyptian Archaeology, University College of London"
+
+#: mop/data/histgeo.py:131
+msgid "sgomez_bio_1"
+msgstr ""
+"Silvia Gómez Senovilla, is currently finishing her PhD Research at the "
+"University of Vienna within the frame of the ERC Advanced Grant “The Hyksos "
+"Enigma” (Grant agreement Nº 668640), under the supervision of Prof. Manfred "
+"Bietak."
+
+#: mop/data/histgeo.py:131
+msgid "sgomez_bio_2"
+msgstr ""
+"in her PhD, she examines the structure and disposition of settlements and "
+"domestic areas during the Early and Middle Bronze Ages in ancient Syro-"
+"Mesopotamia and Egypt, with a special emphasis in the eastern Nile Delta at the "
+"city of Avaris-Tell el-Dab’a. By including anthropological and sociological "
+"theories about the use of space, and the inclusion of spatial and statistical "
+"tools, she explores the transformations of the space during this part of the "
+"Bronze Age, and its social implications."
+
+#: mop/data/histgeo.py:137
+msgid "lecture_1_title"
+msgstr "Studying Space in Ancient Settlements"
+
+#: mop/data/histgeo.py:138
+msgid "lecture_1_subtitle"
+msgstr "The Streets of Avaris, the Use of Space, and the Reification Trap"
+
+#: mop/data/histgeo.py:143
+msgid "lecture_1_1"
+msgstr ""
+"archaeology and history deal naturally with the time-space challenge. Despite "
+"numerous advances in the field of spatial analysis and landscape studies derived "
+"from the quantitative revolution that took place in the 70’s of the past "
+"century, a real “spatial turn” in archaeology is sometimes still overlooked. As "
+"pointed out by Edward Soja in one of his most influential works: “[the spatial "
+"turn] cannot be accomplished simply by appending spatial highlights to inherited "
+"critical perspectives and sitting back to watch them glow with logical "
+"conviction”. A problem that stands in the way of the production of -true- "
+"spatial narratives in archaeology is related to three main issues: first, the "
+"treatment of time and temporal scales in archaeology; second, a sometimes-"
+"unconscious oblivion to the fact that social space is not equal to natural -"
+"Euclidean- space, and third that scale is, when dealing with the time-space "
+"conundrum, a fundamental piece in the machinery of unfolding events. The "
+"implicit assumption that the data we work with, collected by us or by other "
+"colleagues, as well as the methodology we use, do not present biases and are not "
+"subjected to a (conscious or unconscious) pre-selection, hindrances as well some "
+"attempts for a true analysis of space and its constituents."
+
+#: mop/data/histgeo.py:143
+msgid "lecture_1_2"
+msgstr ""
+"in this lecture, I will present the current state of my PhD research, where I "
+"deal with the structuration of space in ancient Egypt and Syro-Mesopotamia "
+"during the second millennium BC. The talk will be framed around the main "
+"challenges that may arise when dealing with ancient temporalities, and their "
+"assumed reflection in space, and holds scale as its main component. I will try "
+"as well to highlight and bring into discussion the barriers that a spurious use "
+"of current spatial analysis software such as GIS packages can foster, while "
+"trying to open the debate as to what possibilities can help us to overcome the "
+"sometimes-ubiquitous reliance on purely visual models."
+
+#: mop/data/histgeo.py:147
 msgid "author"
 msgstr "author"
 
-#: mop/data/histgeo.py:127
+#: mop/data/histgeo.py:148
 msgid "pages"
 msgstr "pages"
 
-#: mop/data/histgeo.py:128
+#: mop/data/histgeo.py:149
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:129
+#: mop/data/histgeo.py:150
 msgid "citation"
 msgstr "citation"
 
-#: mop/data/histgeo.py:130
+#: mop/data/histgeo.py:151
 msgid "order"
 msgstr "order"
 
-#: mop/data/histgeo.py:131
+#: mop/data/histgeo.py:152
 msgid "abstract"
 msgstr "abstract"
 
@@ -437,15 +504,15 @@ msgstr ""
 msgid "no"
 msgstr "no"
 
-#: mop/templates/histgeo.html:57
+#: mop/templates/histgeo.html:58
 msgid "volumes"
 msgstr "volumes"
 
-#: mop/templates/histgeo.html:102
+#: mop/templates/histgeo.html:113
 msgid "Citation Rules and Fonts"
 msgstr "citation Rules and Fonts"
 
-#: mop/templates/histgeo.html:104
+#: mop/templates/histgeo.html:115
 msgid "histgeo_rules"
 msgstr ""
 "our Series is published by the publishing house <a href=\"https://"
@@ -454,21 +521,21 @@ msgstr ""
 "2006 with the aim of publishing important scholarship in the Social Sciences and "
 "the Humanities by national and international authors."
 
-#: mop/templates/histgeo.html:108 mop/templates/histgeo.html:116
+#: mop/templates/histgeo.html:119 mop/templates/histgeo.html:127
 msgid "Citation Rules"
 msgstr "citation Rules"
 
-#: mop/templates/histgeo.html:110
+#: mop/templates/histgeo.html:121
 msgid "histgeo_citation_1"
 msgstr ""
 "when preparing a manuscript for our Series, please use the following "
 "Instructions:"
 
-#: mop/templates/histgeo.html:120
+#: mop/templates/histgeo.html:131
 msgid "Fonts"
 msgstr "fonts"
 
-#: mop/templates/histgeo.html:122
+#: mop/templates/histgeo.html:133
 msgid "histgeo_fonts_1"
 msgstr "please use these Font Types for Old Church Slavonic:"
 

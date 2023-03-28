@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-28 17:25+0200\n"
-"PO-Revision-Date: 2023-03-28 17:53+0200\n"
+"POT-Creation-Date: 2023-03-28 18:20+0200\n"
+"PO-Revision-Date: 2023-03-28 18:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -74,31 +74,31 @@ msgstr ""
 "Imperii Byzantini: über die Zukunft (?) der Erforschung der historischen "
 "Geographie von Byzanz“]."
 
-#: mop/data/histgeo.py:5 mop/data/histgeo.py:18 mop/data/histgeo.py:31
-#: mop/data/histgeo.py:44
+#: mop/data/histgeo.py:7 mop/data/histgeo.py:20 mop/data/histgeo.py:33
+#: mop/data/histgeo.py:46
 msgid "march"
 msgstr "März"
 
-#: mop/data/histgeo.py:8 mop/data/histgeo.py:21 mop/data/histgeo.py:34
-#: mop/data/histgeo.py:44
+#: mop/data/histgeo.py:10 mop/data/histgeo.py:23 mop/data/histgeo.py:36
+#: mop/data/histgeo.py:46
 msgid "june"
 msgstr "Juni"
 
-#: mop/data/histgeo.py:11 mop/data/histgeo.py:24 mop/data/histgeo.py:37
-#: mop/data/histgeo.py:47
+#: mop/data/histgeo.py:13 mop/data/histgeo.py:26 mop/data/histgeo.py:39
+#: mop/data/histgeo.py:49
 msgid "september"
 msgstr "September"
 
-#: mop/data/histgeo.py:14 mop/data/histgeo.py:27 mop/data/histgeo.py:40
-#: mop/data/histgeo.py:47
+#: mop/data/histgeo.py:16 mop/data/histgeo.py:29 mop/data/histgeo.py:42
+#: mop/data/histgeo.py:49
 msgid "december"
 msgstr "Dezember"
 
-#: mop/data/histgeo.py:58 mop/data/histgeo.py:88
+#: mop/data/histgeo.py:59 mop/data/histgeo.py:89
 msgid "eds."
 msgstr "Hrsg."
 
-#: mop/data/histgeo.py:59
+#: mop/data/histgeo.py:60
 msgid "histgeo_vol1_1"
 msgstr ""
 "aus Anlaß des 75. Geburtstages von Herrn Professor Dr. Johannes Koder haben die "
@@ -111,7 +111,7 @@ msgstr ""
 "Jubilar mit dem Titel „Space, Landscapes and Settlements in Byzantium. Studies "
 "in Historical Geography of the Eastern Mediterranean” erwachsen. "
 
-#: mop/data/histgeo.py:59
+#: mop/data/histgeo.py:60
 msgid "histgeo_vol1_2"
 msgstr ""
 "Johannes Koder, w. M. hat seit dem Jahre 1966 die Tabula Imperii Byzantini "
@@ -122,7 +122,7 @@ msgstr ""
 "Œuvre umfaßt federführende Arbeiten historisch-geographischen Inhalts zu dem "
 "östlichen Mittelmeerraum und Byzanz."
 
-#: mop/data/histgeo.py:60
+#: mop/data/histgeo.py:61
 msgid "histgeo_vol1_3"
 msgstr ""
 "die Festschrift ist als Band 1 der Reihe „Studies in Historical Geography and "
@@ -134,11 +134,11 @@ msgstr ""
 "historisch-geographische Forschung in der Byzantinistik innovativ zu beleben. "
 "Die Reihe wird bei dem Verlag Akademska Knjiga in Novi Sad gedruckt."
 
-#: mop/data/histgeo.py:73
+#: mop/data/histgeo.py:74
 msgid "ed."
 msgstr "Hg."
 
-#: mop/data/histgeo.py:74
+#: mop/data/histgeo.py:75
 msgid "histgeo_vol2_1"
 msgstr ""
 "Am 9. Dezember 2014 wäre Univ. Prof. Dr. Dr. h.c. mult. Herbert Hunger (1914–"
@@ -154,7 +154,7 @@ msgstr ""
 "Schule der Byzantinistik neuen Forschergenerationen als eine Quelle der "
 "wissenschaftlichen Inspiration zu dienen."
 
-#: mop/data/histgeo.py:89
+#: mop/data/histgeo.py:90
 msgid "histgeo_vol3_1"
 msgstr ""
 "Das Langzeitprojekt “Tabula Imperii Byzantini (TIB)” (Institut für "
@@ -185,7 +185,7 @@ msgstr ""
 "Existenz eines solchen Projekts in Österreich und seine Dokumentation das "
 "öffentliche Interesse wecken werden."
 
-#: mop/data/histgeo.py:104
+#: mop/data/histgeo.py:105
 msgid "histgeo_vol4_1"
 msgstr ""
 "Die Landschaft des südöstlichen Peloponnes (Lakonien, Griechenland), einer sehr "
@@ -204,27 +204,100 @@ msgstr ""
 "widerspiegeln, sondern auch in der Wahl des Standorts oder einer tiefen "
 "Beziehung zu natürlichen Elementen der Landschaft."
 
-#: mop/data/histgeo.py:126
+#: mop/data/histgeo.py:130
+msgid "sgomez_short_bio"
+msgstr ""
+"BA in Geschichte, Autónoma Universität von Madrid, MA in Archäologie, Università "
+"Ca' Foscari von Venedig, MA in Ägyptischer Archäologie, University College von "
+"London"
+
+#: mop/data/histgeo.py:131
+msgid "sgomez_bio_1"
+msgstr ""
+"Silvia Gómez Senovilla, beendet derzeit ihre Doktorarbeit an der Universität "
+"Wien im Rahmen des ERC Advanced Grant \"The Hyksos Enigma\" (Grant agreement Nº "
+"668640), unter der Leitung von Prof. Manfred Bietak."
+
+#: mop/data/histgeo.py:131
+msgid "sgomez_bio_2"
+msgstr ""
+"in ihrer Dissertation untersucht sie die Struktur und Anordnung von Siedlungen "
+"und Wohnbereichen während der frühen und mittleren Bronzezeit im alten Syro-"
+"Mesopotamien und Ägypten, mit besonderem Schwerpunkt im östlichen Nildelta in "
+"der Stadt Avaris-Tell el-Dab'a. Unter Einbeziehung anthropologischer und "
+"soziologischer Theorien über die Nutzung des Raums und unter Einbeziehung "
+"räumlicher und statistischer Instrumente untersucht sie die Veränderungen des "
+"Raums in diesem Teil der Bronzezeit und deren soziale Auswirkungen."
+
+#: mop/data/histgeo.py:137
+msgid "lecture_1_title"
+msgstr "untersuchung des Raums in antiken Siedlungen"
+
+#: mop/data/histgeo.py:138
+msgid "lecture_1_subtitle"
+msgstr "die Straßen von Avaris, die Nutzung des Raums und die Verdinglichungsfalle"
+
+#: mop/data/histgeo.py:143
+msgid "lecture_1_1"
+msgstr ""
+"Die Archäologie und die Geschichtswissenschaft stehen naturgemäß vor der "
+"Herausforderung Zeit-Raum. Trotz zahlreicher Fortschritte auf dem Gebiet der "
+"räumlichen Analyse und der Landschaftsstudien, die sich aus der quantitativen "
+"Revolution in den 70er Jahren des vergangenen Jahrhunderts ergeben haben, wird "
+"eine echte \"räumliche Wende\" in der Archäologie manchmal noch übersehen. Wie "
+"Edward Soja in einem seiner einflussreichsten Werke feststellte: \"[Die "
+"räumliche Wende] kann nicht einfach dadurch vollzogen werden, dass man den "
+"überkommenen kritischen Perspektiven räumliche Akzente hinzufügt und sich "
+"zurücklehnt, um sie mit logischer Überzeugung leuchten zu sehen\". Ein Problem, "
+"das der Produktion von -wahren- räumlichen Erzählungen in der Archäologie im "
+"Wege steht, hängt mit drei Hauptaspekten zusammen: erstens mit der Behandlung "
+"von Zeit und zeitlichen Maßstäben in der Archäologie; zweitens mit einer "
+"manchmal unbewussten Vergessenheit der Tatsache, dass der soziale Raum nicht mit "
+"dem natürlichen -euklidischen- Raum gleichzusetzen ist, und drittens mit der "
+"Tatsache, dass der Maßstab, wenn es um das Zeit-Raum-Rätsel geht, ein "
+"grundlegendes Element in der Maschinerie der sich entfaltenden Ereignisse ist. "
+"Die implizite Annahme, dass die Daten, mit denen wir arbeiten, die von uns oder "
+"anderen Kollegen erhoben wurden, sowie die Methodik, die wir anwenden, keine "
+"Voreingenommenheit aufweisen und nicht einer (bewussten oder unbewussten) "
+"Vorauswahl unterliegen, behindert auch einige Versuche einer echten Analyse des "
+"Raums und seiner Bestandteile."
+
+#: mop/data/histgeo.py:143
+msgid "lecture_1_2"
+msgstr ""
+"in diesem Vortrag werde ich den aktuellen Stand meiner Doktorarbeit vorstellen, "
+"in der ich mich mit der Strukturierung des Raums im alten Ägypten und Syro-"
+"Mesopotamien während des zweiten Jahrtausends v. Chr. beschäftige. Der Vortrag "
+"wird sich um die wichtigsten Herausforderungen drehen, die sich bei der "
+"Beschäftigung mit antiken Zeitlichkeiten und ihrer angenommenen Reflexion im "
+"Raum ergeben können, wobei der Maßstab als Hauptbestandteil gilt. Ich werde auch "
+"versuchen, die Hindernisse aufzuzeigen und zur Diskussion zu stellen, die eine "
+"unreflektierte Verwendung aktueller Raumanalysesoftware wie GIS-Pakete mit sich "
+"bringen kann, und gleichzeitig versuchen, die Debatte darüber zu eröffnen, "
+"welche Möglichkeiten uns helfen können, die manchmal allgegenwärtige "
+"Abhängigkeit von rein visuellen Modellen zu überwinden."
+
+#: mop/data/histgeo.py:147
 msgid "author"
 msgstr "autor"
 
-#: mop/data/histgeo.py:127
+#: mop/data/histgeo.py:148
 msgid "pages"
 msgstr "seiten"
 
-#: mop/data/histgeo.py:128
+#: mop/data/histgeo.py:149
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:129
+#: mop/data/histgeo.py:150
 msgid "citation"
 msgstr "zitat"
 
-#: mop/data/histgeo.py:130
+#: mop/data/histgeo.py:151
 msgid "order"
 msgstr "bestellen"
 
-#: mop/data/histgeo.py:131
+#: mop/data/histgeo.py:152
 msgid "abstract"
 msgstr "kurzfassung"
 
@@ -457,15 +530,15 @@ msgstr ""
 msgid "no"
 msgstr "nr"
 
-#: mop/templates/histgeo.html:57
+#: mop/templates/histgeo.html:58
 msgid "volumes"
 msgstr "bände"
 
-#: mop/templates/histgeo.html:102
+#: mop/templates/histgeo.html:113
 msgid "Citation Rules and Fonts"
 msgstr "zitierregeln und Schriftarten"
 
-#: mop/templates/histgeo.html:104
+#: mop/templates/histgeo.html:115
 msgid "histgeo_rules"
 msgstr ""
 "Unsere Reihe wird vom Verlag <a href=\"https://akademskaknjiga.com/?lang=en\" "
@@ -474,21 +547,21 @@ msgstr ""
 "wichtige sozial- und geisteswissenschaftliche Publikationen von nationalen und "
 "internationalen Autoren zu publizieren."
 
-#: mop/templates/histgeo.html:108 mop/templates/histgeo.html:116
+#: mop/templates/histgeo.html:119 mop/templates/histgeo.html:127
 msgid "Citation Rules"
 msgstr "zitierregeln"
 
-#: mop/templates/histgeo.html:110
+#: mop/templates/histgeo.html:121
 msgid "histgeo_citation_1"
 msgstr ""
 "wenn Sie ein Manuskript für unsere Reihe vorbereiten, beachten Sie bitte die "
 "folgenden Anweisungen"
 
-#: mop/templates/histgeo.html:120
+#: mop/templates/histgeo.html:131
 msgid "Fonts"
 msgstr "schriftarten"
 
-#: mop/templates/histgeo.html:122
+#: mop/templates/histgeo.html:133
 msgid "histgeo_fonts_1"
 msgstr "bitte verwenden Sie diese Schriftarten für das Altkirchenslawische"
 

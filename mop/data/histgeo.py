@@ -1,5 +1,7 @@
 from flask_babel import lazy_gettext as _
 
+from util import get_dates_formatted
+
 newsletters = {
     '2019': [{
         'title': _('march'),
@@ -48,7 +50,6 @@ newsletters = {
         'url': 'https://t210d45f9.emailsys2a.net/mailing/180/6008245/0/e74da87270/index.html'
     }],
 }
-
 
 volumes = {
     1: {
@@ -120,6 +121,27 @@ volumes = {
         'ISBN': '',
         'pages': '',
         'citation': '',
+    },
+}
+
+lecturer = {
+    'sgomez': {
+        'name': 'Silvia Gómez Senovilla',
+        'short_bio': _('sgomez_short_bio'),
+        'bio': [_('sgomez_bio_1'), _('sgomez_bio_2')]
+    }
+}
+
+lectures = {
+    1: {
+        'title': _('lecture_1_title'),
+        'subtitle': _('lecture_1_subtitle'),
+        'date': get_dates_formatted(2023, 2, 16),
+        'time': '16:00',
+        'zoom': 'https://oeaw-ac-at.zoom.us/j/93312567279?pwd=OVgxRGY2MktXWVR4ZC9SNHIwdlRBZz09',
+        'recording': 'sgomez_lecture.mp4',
+        'presenters': [lecturer['sgomez']],
+        'abstract': [_('lecture_1_1'), _('lecture_1_2')]
     },
 }
 
