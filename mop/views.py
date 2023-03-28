@@ -4,7 +4,7 @@ from flask import render_template, session, request
 from werkzeug import Response
 from werkzeug.utils import redirect
 
-from display.events import display_event  # pylint: disable=import-error
+
 from mop.data.images import category_images
 from mop.data.events import event_list
 from mop.display.image import image_gallery
@@ -16,7 +16,7 @@ def about() -> str:
     return render_template(
         'about.html',
         category_images=image_gallery(category_images),
-        events=display_event(event_list))
+        events=event_list)
 
 
 @app.route('/projects')

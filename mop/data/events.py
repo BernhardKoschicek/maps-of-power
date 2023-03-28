@@ -33,11 +33,9 @@ event_list = [{
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 2, 22)}",
     'who': [team['mpopovic']],
-    'icon': '',
+    'icon': 'serbian_academy_220223.jpg',
     'title': _('presentation at the Serbian Academy of Sciences and Arts'),
-    'description': [
-        _('serbian_academy_220223')
-    ],
+    'description': _('serbian_academy_220223'),
     'attachment': [{
         'path': '',
         'type': ''}]
