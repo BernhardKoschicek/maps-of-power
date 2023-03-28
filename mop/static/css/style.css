@@ -12,6 +12,10 @@ p::first-letter {
     font-size: 1.2em;
 }
 
+button::first-letter {
+    text-transform: uppercase;
+}
+
 figcaption::first-letter {
     text-transform: uppercase;
     font-size: 1.2em;

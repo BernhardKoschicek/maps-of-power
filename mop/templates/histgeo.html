@@ -2,7 +2,7 @@
 {% block content %}
   <div class="container">
     <img src="{{ url_for('static', filename='/images/histgeo_logo.png') }}"
-         alt="Logo Historical Geography" class="img-fluid my-5">
+         alt="Logo Historical Geography" class="img-fluid  p-5">
 
     <p>
       {{ _('histgeo_intro_1') }}
@@ -33,12 +33,27 @@
         <p>
           {{ _('histgeo_newsletter_3') }}
         </p>
+      <div class="text-center">
+        {% for date, list in newsletters.items() %}
+          <h4 class="text-primary fs-4 text-accent3 ">{{ date }}</h4>
+          <div class="btn-group mb-3" role="group" aria-label="Newsletter {{ date }}">
+            {% for newsletter in list %}
+              <a href="{{ newsletter['url'] }}" type="button" class="btn btn-outline-accent3 text-dark" target="_blank">
+                {{ _('no') | capitalize }}. {{ loop.index }} / {{ newsletter['title'] | capitalize }}
+              </a>
+
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
       </div>
       <div class="col">
         <iframe src="https://t210d45f9.emailsys2a.net/180/1051/a33e665ee4/subscribe/form.html?_g=1679918436"
                 width="100%" height="550"></iframe>
       </div>
     </div>
+
+    <h2 class="text-accent3 text-center mt-5">{{ _('volumes') }}</h2>
 
 
     <h2 class="text-accent3 text-center mt-5">{{ _('Citation Rules and Fonts') }}</h2>
