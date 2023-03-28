@@ -1,5 +1,5 @@
-from data.team import team  # pylint: disable=import-error
-from util import get_dates_formatted  # pylint: disable=import-error
+from data.team import team
+from util import get_dates_formatted
 from flask_babel import lazy_gettext as _
 
 types = {

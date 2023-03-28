@@ -4,7 +4,7 @@ from flask import render_template, session, request
 from werkzeug import Response
 from werkzeug.utils import redirect
 
-from data.histgeo import newsletters
+from data.histgeo import newsletters, volumes
 from mop.data.images import category_images
 from mop.data.events import event_list
 from mop.display.image import image_gallery
@@ -38,7 +38,8 @@ def events() -> str:
 def histgeo() -> str:
     return render_template(
         'histgeo.html',
-        newsletters=newsletters)
+        newsletters=newsletters,
+        volumes=volumes)
 
 
 @app.route('/language=<language>')

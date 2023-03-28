@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-27 15:35+0200\n"
-"PO-Revision-Date: 2023-03-27 17:59+0200\n"
+"POT-Creation-Date: 2023-03-28 17:25+0200\n"
+"PO-Revision-Date: 2023-03-28 17:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -31,7 +31,7 @@ msgstr "projects"
 msgid "software"
 msgstr "software"
 
-#: mop/util.py:21
+#: mop/util.py:22
 msgid "events"
 msgstr "events"
 
@@ -55,11 +55,16 @@ msgstr "book release"
 msgid "blogpost"
 msgstr "blogpost"
 
-#: mop/data/events.py:37
+#: mop/data/events.py:37 mop/data/events.py:48 mop/data/events.py:59
+#: mop/data/events.py:70 mop/data/events.py:81 mop/data/events.py:92
+#: mop/data/events.py:103 mop/data/events.py:114 mop/data/events.py:125
+#: mop/data/events.py:136 mop/data/events.py:147
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "presentation at the Serbian Academy of Sciences and Arts"
 
-#: mop/data/events.py:39
+#: mop/data/events.py:38 mop/data/events.py:60 mop/data/events.py:71
+#: mop/data/events.py:82 mop/data/events.py:93 mop/data/events.py:104
+#: mop/data/events.py:115 mop/data/events.py:126 mop/data/events.py:148
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović was invited by the Institute for Byzantine Studies of the "
@@ -68,6 +73,152 @@ msgstr ""
 "Византије” [“The Project Tabula Imperii Byzantini: on the Future (?) of the "
 "Research in the Field of the Historical Geography of Byzantium”] on 22 February "
 "2023 in Belgrade."
+
+#: mop/data/histgeo.py:5 mop/data/histgeo.py:18 mop/data/histgeo.py:31
+#: mop/data/histgeo.py:44
+msgid "march"
+msgstr "March"
+
+#: mop/data/histgeo.py:8 mop/data/histgeo.py:21 mop/data/histgeo.py:34
+#: mop/data/histgeo.py:44
+msgid "june"
+msgstr "June"
+
+#: mop/data/histgeo.py:11 mop/data/histgeo.py:24 mop/data/histgeo.py:37
+#: mop/data/histgeo.py:47
+msgid "september"
+msgstr "September"
+
+#: mop/data/histgeo.py:14 mop/data/histgeo.py:27 mop/data/histgeo.py:40
+#: mop/data/histgeo.py:47
+msgid "december"
+msgstr "December"
+
+#: mop/data/histgeo.py:58 mop/data/histgeo.py:88
+msgid "eds."
+msgstr "eds."
+
+#: mop/data/histgeo.py:59
+msgid "histgeo_vol1_1"
+msgstr ""
+"on the occasion of the 75th birthday of Professor Dr. Johannes Koder the project "
+"leaders of the Long-Term Project Tabula Imperii Byzantini (TIB) at the Austrian "
+"Academy of Sciences, Prof. Dr. Andreas Külzer and Doz. Dr. Mihailo Popović (both "
+"Institute for Medieval Research, Division of Byzantine Research), have invited "
+"21 renowned scholars from the academic fields of Historical Geography, "
+"Archaeology, Geography and Cartography to write contributions. The result is an "
+"edited volume (Festschrift) entitled “Space, Landscapes and Settlements in "
+"Byzantium. Studies in Historical Geography of the Eastern Mediterranean”."
+
+#: mop/data/histgeo.py:59
+msgid "histgeo_vol1_2"
+msgstr ""
+"Johannes Koder, full member (w. M.) of the Austrian Academy of Sciences, has "
+"decisively shaped the scholarly work of the Tabula Imperii Byzantini since the "
+"year 1966 as a researcher of the first hour and directed it in the succession of "
+"Prof. Dr. Herbert Hunger from 1995 until 2015. He is the editor of the series "
+"Tabula Imperii Byzantini at the Austrian Academy of Sciences. His scholarly "
+"oeuvre includes groundbreaking publications on the Historical Geography of the "
+"Eastern Mediterranean and Byzantium."
+
+#: mop/data/histgeo.py:60
+msgid "histgeo_vol1_3"
+msgstr ""
+"the edited volume (Festschrift) has been published as volume 1 of the series "
+"“Studies in Historical Geography and Cultural Heritage”. This series was founded "
+"by Mihailo Popović as project leader of the Digital Cluster Project “Digitising "
+"Patterns of Power (DPP): Peripheral Mountains in the Medieval World” at the "
+"Institute for Medieval Research of the Austrian Academy of Sciences in the "
+"spring of 2016 and is edited by Andreas Külzer and Mihailo Popović in order to "
+"innovate the historical-geographical research in Byzantine Studies. The series "
+"is printed by the publishing house Akademska Knjiga in Novi Sad. "
+
+#: mop/data/histgeo.py:73
+msgid "ed."
+msgstr "ed."
+
+#: mop/data/histgeo.py:74
+msgid "histgeo_vol2_1"
+msgstr ""
+"on 9 December 2014, Prof. Dr. Dr. h.c. mult. Herbert Hunger (1914–2000), the "
+"founder of the Institute of Byzantine Studies (today: and Modern Greek Studies) "
+"of the University of Vienna and long-standing president of the Austrian Academy "
+"of Sciences would have celebrated his hundredth birthday. On this occasion, "
+"distinguished scholars from different parts of Europe and the United States of "
+"America met in Vienna to honor the famous researcher and to discuss the "
+"afterlife of his academic work in the fields of international Byzantine Studies. "
+"Prof. Dr. Andreas Külzer collected several significant contributions of the "
+"conference in this volume, which could serve as a source of scientific "
+"inspiration especially for scholars working in the various parts of history, "
+"historical geography and fundamental research."
+
+#: mop/data/histgeo.py:89
+msgid "histgeo_vol3_1"
+msgstr ""
+"The Long-Term Project “Tabula Imperii Byzantini (TIB)” (Institute for Medieval "
+"Research, Division of Byzantine Research) of the Austrian Academy of Sciences "
+"was founded in 1966. It is a very active and innovative scholarly endeavour and "
+"at the same time a keeper of TIB data sets (slides, photographs etc.), which are "
+"of remarkable importance for the Cultural Heritage of the Mediterranean World. "
+"Therefore, the entire TIB team (the active and the emeriti scholars) has "
+"prepared an edited volume in German entitled “Raum und Geschichte: der "
+"historische Atlas ‘Tabula Imperii Byzantini (TIB)’ an der Österreichischen "
+"Akademie der Wissenschaften”. It is funded by the Jubiläumsfonds der "
+"Österreichischen Nationalbank Nr. 17771 via the scholarly project <a "
+"href=\"https://tib.oeaw.ac.at/balkan/subprojects/digtib\" target=\"_blank\">“Die "
+"digitale Tabula Imperii Byzantini (Dig-TIB) als Beitrag zum Weltkulturerbe”</a> "
+"and has been published by the editors Andreas Külzer, Veronika Polloczek and "
+"Mihailo St. Popović as volume 3 of the series “Studies in Historical Geography "
+"and Cultural Heritage” at the publishing house Akademska Knjiga (Novi Sad, "
+"Serbia). The aim of this publication is to introduce, especially to an Austrian "
+"audience, the history, scholarly results, future ideas and plans and "
+"contribution to national as well as international academia of the TIB, since the "
+"TIB is an integral part of Austrian scholarship funded by the Austrian society. "
+"Although Historical Geography is a very specialised branch of Byzantine Studies, "
+"we do believe that the existence of such a project in Austria and its "
+"documentation will meet public interest and awareness."
+
+#: mop/data/histgeo.py:104
+msgid "histgeo_vol4_1"
+msgstr ""
+"the landscape of the Southeast Peloponnese (Laconia, Greece), a very important "
+"region of the Empire in the context of the late Byzantine period, was comprised "
+"of important bishopric centers, such as Mistra and Monemvasia, as well as "
+"numerous villages, powerful monastic foundations, and smaller hermitages "
+"frequently built in caves and isolated settings. Grounded both on systematic "
+"fieldwork and detailed surveys of the monuments, this book is the first "
+"comprehensive study of the eremitical and monastic landscapes of the region. It "
+"investigates the interactions of isolated hermits and established communities, "
+"the relationships of large monasteries to smaller foundations, and the "
+"interweaving of monastic and rural economies. It aims at identifying the monks "
+"themselves, their preoccupations and aspirations, which are reflected not only "
+"by the choice of the patron saints of the holy places they founded or the "
+"content of the painted decoration but also by the choice of location or a deep "
+"relationship with natural elements of the landscape."
+
+#: mop/data/histgeo.py:126
+msgid "author"
+msgstr "author"
+
+#: mop/data/histgeo.py:127
+msgid "pages"
+msgstr "pages"
+
+#: mop/data/histgeo.py:128
+msgid "ISBN"
+msgstr "ISBN"
+
+#: mop/data/histgeo.py:129
+msgid "citation"
+msgstr "citation"
+
+#: mop/data/histgeo.py:130
+msgid "order"
+msgstr "order"
+
+#: mop/data/histgeo.py:131
+msgid "abstract"
+msgstr "abstract"
 
 #: mop/data/images.py:6
 msgid "image_written_source_description"
@@ -197,7 +348,7 @@ msgstr ""
 "data searchable, contains digital maps (layers), offers storymaps on various "
 "aspects and includes comprehensive photo material."
 
-#: mop/templates/about.html:65
+#: mop/templates/about.html:77
 msgid "vienna_manifesto"
 msgstr ""
 "Our initiative fully supports the <a href=\"https://dighum.ec.tuwien.ac.at/"
@@ -214,7 +365,7 @@ msgstr ""
 "applied to the Historical Geography of Byzantium and adjacent areas (i.e. South-"
 "East Europe and Eastern Europe)."
 
-#: mop/templates/histgeo.html:16
+#: mop/templates/histgeo.html:11
 msgid "histgeo_intro_2"
 msgstr ""
 "this international publication series aims to present original research in the "
@@ -225,11 +376,11 @@ msgstr ""
 "former Byzantine Empire, especially South-East Europe and Eastern Europe, and we "
 "particularly welcome interdisciplinary approaches."
 
-#: mop/templates/histgeo.html:28
+#: mop/templates/histgeo.html:13
 msgid "Digital HistGeo Lecture Series"
 msgstr "digital HistGeo Lecture Series"
 
-#: mop/templates/histgeo.html:30
+#: mop/templates/histgeo.html:15
 msgid "histgeo_lecture_1"
 msgstr ""
 "in order to communicate scholarly results of the “Tabula Imperii Byzantini (TIB) "
@@ -240,7 +391,7 @@ msgstr ""
 "Lecture Series” in Vienna in January 2019 (in succession of the “DPP Lecture "
 "Series” founded in January 2017)."
 
-#: mop/templates/histgeo.html:39
+#: mop/templates/histgeo.html:18
 msgid "histgeo_lecture_2"
 msgstr ""
 "initially, we had started with lectures in presence in Vienna, which were "
@@ -249,7 +400,7 @@ msgstr ""
 "HistGeo Lecture Series\" and we try to stage them quarterly each year (roughly "
 "in March, June, September and December). "
 
-#: mop/templates/histgeo.html:47
+#: mop/templates/histgeo.html:21
 msgid "histgeo_lecture_3"
 msgstr ""
 "our aim is to present papers containing our own research, but also to attract "
@@ -258,7 +409,7 @@ msgstr ""
 "Byzantine Studies, Balkan Studies, Historical Geography, Cartography, Digital "
 "Humanities, GIScience and Software Engineering."
 
-#: mop/templates/histgeo.html:58
+#: mop/templates/histgeo.html:28
 msgid "histgeo_newsletter_1"
 msgstr ""
 "our HistGeo Newsletter informs you twice a year – in the months of June and "
@@ -267,7 +418,7 @@ msgstr ""
 "Power. Formerly, we published the Newsletter four times a year, but we have "
 "shifted it to two editions per year since 2022."
 
-#: mop/templates/histgeo.html:68
+#: mop/templates/histgeo.html:31
 msgid "histgeo_newsletter_2"
 msgstr ""
 "in the Newsletter’s reports we focus on the fields of Historical Geography, "
@@ -276,17 +427,25 @@ msgstr ""
 "initiative Maps of Power and the TIB Balkans as well as colleagues from other "
 "fields of study."
 
-#: mop/templates/histgeo.html:76
+#: mop/templates/histgeo.html:34
 msgid "histgeo_newsletter_3"
 msgstr ""
 "Please feel free to browse our archive of Newsletters. If you have any questions "
 "or remarks, please do contact us via mapsofpower@oeaw.ac.at"
 
-#: mop/templates/histgeo.html:89
+#: mop/templates/histgeo.html:44
+msgid "no"
+msgstr "no"
+
+#: mop/templates/histgeo.html:57
+msgid "volumes"
+msgstr "volumes"
+
+#: mop/templates/histgeo.html:102
 msgid "Citation Rules and Fonts"
 msgstr "citation Rules and Fonts"
 
-#: mop/templates/histgeo.html:91
+#: mop/templates/histgeo.html:104
 msgid "histgeo_rules"
 msgstr ""
 "our Series is published by the publishing house <a href=\"https://"
@@ -295,21 +454,21 @@ msgstr ""
 "2006 with the aim of publishing important scholarship in the Social Sciences and "
 "the Humanities by national and international authors."
 
-#: mop/templates/histgeo.html:100 mop/templates/histgeo.html:109
+#: mop/templates/histgeo.html:108 mop/templates/histgeo.html:116
 msgid "Citation Rules"
 msgstr "citation Rules"
 
-#: mop/templates/histgeo.html:102
+#: mop/templates/histgeo.html:110
 msgid "histgeo_citation_1"
 msgstr ""
 "when preparing a manuscript for our Series, please use the following "
 "Instructions:"
 
-#: mop/templates/histgeo.html:113
+#: mop/templates/histgeo.html:120
 msgid "Fonts"
 msgstr "fonts"
 
-#: mop/templates/histgeo.html:115
+#: mop/templates/histgeo.html:122
 msgid "histgeo_fonts_1"
 msgstr "please use these Font Types for Old Church Slavonic:"
 

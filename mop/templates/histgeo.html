@@ -10,7 +10,7 @@
     <p>
       {{ _('histgeo_intro_2') }}
     </p>
-    <h2 class="text-accent3 text-center mt-5">{{ _('Digital HistGeo Lecture Series') }}</h2>
+    <h2 class="text-accent3 text-center mt-5 display-6">{{ _('Digital HistGeo Lecture Series') }}</h2>
     <p>
       {{ _('histgeo_lecture_1') }}
     </p>
@@ -21,9 +21,9 @@
       {{ _('histgeo_lecture_3') }}
     </p>
 
-    <h2 class="text-accent3 text-center mt-5">HistGeo Newsletter</h2>
+    <h2 class="text-accent3 text-center mt-5 display-6">HistGeo Newsletter</h2>
     <div class="row">
-      <div class="col-8">
+      <div class="col-md-12 col-lg-6">
         <p>
           {{ _('histgeo_newsletter_1') }}
         </p>
@@ -33,12 +33,14 @@
         <p>
           {{ _('histgeo_newsletter_3') }}
         </p>
-      <div class="text-center">
+      </div>
+      <div class="text-center col">
         {% for date, list in newsletters.items() %}
           <h4 class="text-primary fs-4 text-accent3 ">{{ date }}</h4>
           <div class="btn-group mb-3" role="group" aria-label="Newsletter {{ date }}">
             {% for newsletter in list %}
-              <a href="{{ newsletter['url'] }}" type="button" class="btn btn-outline-accent3 text-dark" target="_blank">
+              <a href="{{ newsletter['url'] }}" type="button" class="btn btn-outline-accent3 text-dark"
+                 target="_blank">
                 {{ _('no') | capitalize }}. {{ loop.index }} / {{ newsletter['title'] | capitalize }}
               </a>
 
@@ -46,23 +48,75 @@
           </div>
         {% endfor %}
       </div>
-      </div>
-      <div class="col">
-        <iframe src="https://t210d45f9.emailsys2a.net/180/1051/a33e665ee4/subscribe/form.html?_g=1679918436"
-                width="100%" height="550"></iframe>
-      </div>
     </div>
 
-    <h2 class="text-accent3 text-center mt-5">{{ _('volumes') }}</h2>
+    <div class="col">
+      <iframe src="https://t210d45f9.emailsys2a.net/180/1051/a33e665ee4/subscribe/form.html?_g=1680019050"
+              width="100%" height="350"></iframe>
+    </div>
 
+    <h2 class="text-accent3 text-center mt-5 display-6">{{ _('volumes') }}</h2>
+    <div class="accordion" id="accordionHistgeoVolumes">
+      {% for number, volume in volumes.items() %}
+        <div class="accordion-item">
+          <div class="row">
+            <div class="col-1 text-center rounded-end rounded-4" style="background-color: white">
+              <span class="text-accent3 fs-1 fst-italic display-1">{{ number }}</span>
+            </div>
+            <div class="col">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold fs-5" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#accordion-{{ number }}" aria-expanded="false"
+                        aria-controls="accordion-{{ number }}">
+                  {{ volume['title'] }}
+                </button>
+              </h2>
+              <div id="accordion-{{ number }}" class="accordion-collapse collapse"
+                   data-bs-parent="#accordionHistgeoVolumes">
+                <div class="accordion-body" style="background-color: white">
+                  <div class="row">
+                    <div class="col-10">
+                      {% for item in ['author', 'pages', 'ISBN', 'citation', 'order'] %}
+                        <div class="row my-1">
+                          <div class="col-1 text-end"><p>{{ _(item) }}:</p></div>
+                          <div class="col-9">
+                            {% if item == 'order' %}
+                              <a href="{{ volume[item] }}" target="_blank">
+                                <i class="bi bi-cart2 text-accent3 fs-5"></i></a>
+                            {% else %}
+                              <p>
+                                {{ volume[item] }}
+                              </p>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                    <div class="col">
+                      <img src="{{ url_for('static', filename='images/vol-' + number | string + '.png') }}"
+                           alt="vol-{{ number }}" class="img-fluid">
+                    </div>
+                  </div>
 
-    <h2 class="text-accent3 text-center mt-5">{{ _('Citation Rules and Fonts') }}</h2>
+                  <hr class="w-75 mx-auto">
+                  {% for p in volume['abstract'] %}
+                    <p>{{ p }}</p>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+    </div>
+    <h2 class="text-accent3 text-center mt-5 display-6">{{ _('Citation Rules and Fonts') }}</h2>
     <p>
       {{ _('histgeo_rules') }}
     </p>
     <div class="row">
       <div class="col text-center">
-        <h3 class="text-accent3 fs-5 mt-5">{{ _('Citation Rules') }}</h3>
+        <h3 class="text-accent3 fs-5 mt-5 display-5">{{ _('Citation Rules') }}</h3>
         <p>
           {{ _('histgeo_citation_1') }}
         </p>
@@ -74,7 +128,7 @@
         </a>
       </div>
       <div class="col text-center">
-        <h3 class="text-accent3 fs-5 text-center mt-5">{{ _('Fonts') }}</h3>
+        <h3 class="text-accent3 fs-5 text-center mt-5 display-5">{{ _('Fonts') }}</h3>
         <p>
           {{ _('histgeo_fonts_1') }}
         </p>
