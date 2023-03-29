@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-28 18:20+0200\n"
-"PO-Revision-Date: 2023-03-28 18:24+0200\n"
+"POT-Creation-Date: 2023-03-29 12:20+0200\n"
+"PO-Revision-Date: 2023-03-29 12:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -55,16 +55,11 @@ msgstr "buch Veröffentlichung"
 msgid "blogpost"
 msgstr "blogpost"
 
-#: mop/data/events.py:37 mop/data/events.py:48 mop/data/events.py:59
-#: mop/data/events.py:70 mop/data/events.py:81 mop/data/events.py:92
-#: mop/data/events.py:103 mop/data/events.py:114 mop/data/events.py:125
-#: mop/data/events.py:136 mop/data/events.py:147
+#: mop/data/events.py:37
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "Präsentation in der Serbischen Akademie der Wissenschaften und Künste"
 
-#: mop/data/events.py:38 mop/data/events.py:60 mop/data/events.py:71
-#: mop/data/events.py:82 mop/data/events.py:93 mop/data/events.py:104
-#: mop/data/events.py:115 mop/data/events.py:126 mop/data/events.py:148
+#: mop/data/events.py:38
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović wurde vom Institut für Byzantinistik der Serbischen Akademie der "
@@ -237,7 +232,7 @@ msgstr "untersuchung des Raums in antiken Siedlungen"
 msgid "lecture_1_subtitle"
 msgstr "die Straßen von Avaris, die Nutzung des Raums und die Verdinglichungsfalle"
 
-#: mop/data/histgeo.py:143
+#: mop/data/histgeo.py:144
 msgid "lecture_1_1"
 msgstr ""
 "Die Archäologie und die Geschichtswissenschaft stehen naturgemäß vor der "
@@ -262,7 +257,7 @@ msgstr ""
 "Vorauswahl unterliegen, behindert auch einige Versuche einer echten Analyse des "
 "Raums und seiner Bestandteile."
 
-#: mop/data/histgeo.py:143
+#: mop/data/histgeo.py:144
 msgid "lecture_1_2"
 msgstr ""
 "in diesem Vortrag werde ich den aktuellen Stand meiner Doktorarbeit vorstellen, "
@@ -277,27 +272,27 @@ msgstr ""
 "welche Möglichkeiten uns helfen können, die manchmal allgegenwärtige "
 "Abhängigkeit von rein visuellen Modellen zu überwinden."
 
-#: mop/data/histgeo.py:147
+#: mop/data/histgeo.py:148
 msgid "author"
 msgstr "autor"
 
-#: mop/data/histgeo.py:148
+#: mop/data/histgeo.py:149
 msgid "pages"
 msgstr "seiten"
 
-#: mop/data/histgeo.py:149
+#: mop/data/histgeo.py:150
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:150
+#: mop/data/histgeo.py:151
 msgid "citation"
 msgstr "zitat"
 
-#: mop/data/histgeo.py:151
+#: mop/data/histgeo.py:152
 msgid "order"
 msgstr "bestellen"
 
-#: mop/data/histgeo.py:152
+#: mop/data/histgeo.py:153
 msgid "abstract"
 msgstr "kurzfassung"
 
