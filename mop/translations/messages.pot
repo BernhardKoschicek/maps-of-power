@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-28 18:20+0200\n"
+"POT-Creation-Date: 2023-03-29 12:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: mop/util.py:18
 msgid "about"
@@ -53,16 +54,11 @@ msgstr ""
 msgid "blogpost"
 msgstr ""
 
-#: mop/data/events.py:37 mop/data/events.py:48 mop/data/events.py:59
-#: mop/data/events.py:70 mop/data/events.py:81 mop/data/events.py:92
-#: mop/data/events.py:103 mop/data/events.py:114 mop/data/events.py:125
-#: mop/data/events.py:136 mop/data/events.py:147
+#: mop/data/events.py:37
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr ""
 
-#: mop/data/events.py:38 mop/data/events.py:60 mop/data/events.py:71
-#: mop/data/events.py:82 mop/data/events.py:93 mop/data/events.py:104
-#: mop/data/events.py:115 mop/data/events.py:126 mop/data/events.py:148
+#: mop/data/events.py:38
 msgid "serbian_academy_220223"
 msgstr ""
 
@@ -138,35 +134,35 @@ msgstr ""
 msgid "lecture_1_subtitle"
 msgstr ""
 
-#: mop/data/histgeo.py:143
+#: mop/data/histgeo.py:144
 msgid "lecture_1_1"
 msgstr ""
 
-#: mop/data/histgeo.py:143
+#: mop/data/histgeo.py:144
 msgid "lecture_1_2"
 msgstr ""
 
-#: mop/data/histgeo.py:147
+#: mop/data/histgeo.py:148
 msgid "author"
 msgstr ""
 
-#: mop/data/histgeo.py:148
+#: mop/data/histgeo.py:149
 msgid "pages"
 msgstr ""
 
-#: mop/data/histgeo.py:149
+#: mop/data/histgeo.py:150
 msgid "ISBN"
 msgstr ""
 
-#: mop/data/histgeo.py:150
+#: mop/data/histgeo.py:151
 msgid "citation"
 msgstr ""
 
-#: mop/data/histgeo.py:151
+#: mop/data/histgeo.py:152
 msgid "order"
 msgstr ""
 
-#: mop/data/histgeo.py:152
+#: mop/data/histgeo.py:153
 msgid "abstract"
 msgstr ""
 
@@ -314,4 +310,3 @@ msgstr ""
 #: mop/templates/layout.html:90
 msgid "navigation"
 msgstr ""
-
