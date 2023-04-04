@@ -5,49 +5,63 @@ from mop.util import get_dates_formatted
 newsletters = {
     '2019': [{
         'title': _('march'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/1931555/0/4c8ef08a44/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/1931555/0/4c8ef08a44/index.html'
     }, {
         'title': _('june'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/2098849/0/f89bc47dd2/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/2098849/0/f89bc47dd2/index.html'
     }, {
         'title': _('september'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/2304029/0/ae2843a1db/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/2304029/0/ae2843a1db/index.html'
     }, {
         'title': _('december'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/2473597/0/aa3077aebc/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/2473597/0/aa3077aebc/index.html'
     }],
     '2020': [{
         'title': _('march'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/2695141/1800344/67/a3037fe6ef/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/2695141/1800344/67/a3037fe6ef/index.html'
     }, {
         'title': _('june'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/3027457/0/2b15372ebf/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/3027457/0/2b15372ebf/index.html'
     }, {
         'title': _('september'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/3290677/0/e213d9d6ef/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/3290677/0/e213d9d6ef/index.html'
     }, {
         'title': _('december'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/3551107/0/6bb9bf3335/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/3551107/0/6bb9bf3335/index.html'
     }],
     '2021': [{
         'title': _('march'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/3919231/0/d9dd25f276/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/3919231/0/d9dd25f276/index.html'
     }, {
         'title': _('june'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/4245827/1796772/b715f05a17/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/4245827/1796772/b715f05a17/index.html'
     }, {
         'title': _('september'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/4549023/0/2c8778ca96/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/4549023/0/2c8778ca96/index.html'
     }, {
         'title': _('december'),
-        'url': 'https://t210d45f9.emailsys2b.net/mailing/180/4858583/9401703/1373/38501319f6/index.html'
+        'url': 'https://t210d45f9.emailsys2b.net/'
+               'mailing/180/4858583/9401703/1373/38501319f6/index.html'
     }],
     '2022': [{
         'title': _('march') + '-' + _('june'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/5374373/0/3d244bbdd7/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/5374373/0/3d244bbdd7/index.html'
     }, {
         'title': _('september') + '-' + _('december'),
-        'url': 'https://t210d45f9.emailsys2a.net/mailing/180/6008245/0/e74da87270/index.html'
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/6008245/0/e74da87270/index.html'
     }],
 }
 
@@ -59,7 +73,8 @@ volumes = {
         'author': 'Andreas Külzer, Mihailo St. Popović ' + _('eds.'),
         'abstract': [_('histgeo_vol1_1'), _('histgeo_vol1_2'),
                      _('histgeo_vol1_3')],
-        'order': 'https://akademskaknjiga.com/katalog/space-landscapes-and-settlements-in-byzantium/',
+        'order': 'https://akademskaknjiga.com/katalog/space-landscapes-and-'
+                 'settlements-in-byzantium/',
         'ISBN': '978-86-6263-191-6',
         'pages': '526',
         'citation': 'Andreas Külzer, Mihailo St. Popović (eds.), Space, '
@@ -73,13 +88,14 @@ volumes = {
         'title': 'Herbert Hunger und die Wiener Schule der Byzantinistik',
         'author': 'Andreas Külzer ' + _('ed.'),
         'abstract': [_('histgeo_vol2_1')],
-        'order': 'https://akademskaknjiga.com/katalog/herbert-hunger-und-die-wiener-schule-der-byzantinistik/',
+        'order': 'https://akademskaknjiga.com/katalog/herbert-hunger-und-die-'
+                 'wiener-schule-der-byzantinistik/',
         'ISBN': '978-86-6263-243-2',
         'pages': '352',
         'citation': 'Andreas Külzer (ed.), Herbert Hunger und die Wiener '
-                    'Schule der Byzantinistik (Studies in Historical Geography '
-                    'and Cultural Heritage 2). Vienna–Novi Sad (Akademska '
-                    'knjiga) 2019.',
+                    'Schule der Byzantinistik (Studies in Historical '
+                    'Geography and Cultural Heritage 2). Vienna–Novi Sad '
+                    '(Akademska knjiga) 2019.',
     },
     3: {
         'title': 'Raum und Geschichte: der historische Atlas \'Tabula Imperii '
@@ -88,7 +104,9 @@ volumes = {
         'author': 'Andreas Külzer, Veronika Polloczek, Mihailo St. Popović '
                   + _('eds.'),
         'abstract': [_('histgeo_vol3_1')],
-        'order': 'https://akademskaknjiga.com/katalog/raum-und-geschichte-der-historische-atlas-tabula-imperii-byzantini-an-der-osterreichischen-akademie-der-wissenschaften-2/ ',
+        'order': 'https://akademskaknjiga.com/katalog/raum-und-geschichte-der-'
+                 'historische-atlas-tabula-imperii-byzantini-an-der-'
+                 'osterreichischen-akademie-der-wissenschaften-2/ ',
         'ISBN': '978-86-6263-305-7',
         'pages': '240',
         'citation': 'Andreas Külzer, Veronika Polloczek, Mihailo St. Popović '
@@ -103,7 +121,9 @@ volumes = {
                  '(XIe-XVe siècle) : Archéologie, topographie et paysages ',
         'author': 'Ludovic Bender',
         'abstract': [_('histgeo_vol4_1')],
-        'order': 'https://akademskaknjiga.com/katalog/ermitages-et-monasteres-rupestres-byzantins-de-laconie-peloponnese-archeologie-et-paysages/',
+        'order': 'https://akademskaknjiga.com/katalog/ermitages-et-monasteres-'
+                 'rupestres-byzantins-de-laconie-peloponnese-archeologie-et-'
+                 'paysages/',
         'ISBN': '978-86-6263-305-7',
         'pages': '464',
         'citation': 'Ludovic Bender, Ermitages et monastères rupestres de la '
@@ -122,6 +142,20 @@ volumes = {
         'pages': '',
         'citation': '',
     },
+    6: {
+        'title': 'Der den Kordax tanzt: Hommage an Johannes Koder und seine '
+                 'Forschungen über Byzanz und den Balkan.',
+        'author': 'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
+                  + _('eds.'),
+        'abstract': [],
+        'order': '',
+        'ISBN': '',
+        'pages': '',
+        'citation': 'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
+                    '(ed.), Der den Kordax tanzt: Hommage an Johannes Koder '
+                    'und seine Forschungen über Byzanz und den Balkan. Wien – '
+                    'Leipzig 2023 (Eudora Verlag).',
+    },
 }
 
 lecturer = {
@@ -138,7 +172,8 @@ lectures = {
         'subtitle': _('lecture_1_subtitle'),
         'date': get_dates_formatted(2023, 2, 16),
         'time': '16:00',
-        'zoom': 'https://oeaw-ac-at.zoom.us/j/93312567279?pwd=OVgxRGY2MktXWVR4ZC9SNHIwdlRBZz09',
+        'zoom': 'https://oeaw-ac-at.zoom.us/'
+                'j/93312567279?pwd=OVgxRGY2MktXWVR4ZC9SNHIwdlRBZz09',
         'recording': 'sgomez_lecture.mp4',
         'presenters': [lecturer['sgomez']],
         'abstract': [_('lecture_1_1'), _('lecture_1_2')]
