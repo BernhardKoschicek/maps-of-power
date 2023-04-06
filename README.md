@@ -19,3 +19,6 @@ Just clone it and let the requirements.txt install all packages.
     $ calmjs npm --install mapsofpower
 
 Everything this is absolutely WIP!!!
+
+
+    $ libmagickwand-dev
