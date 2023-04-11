@@ -20,8 +20,6 @@ IMAGE_PATH = STATIC_PATH / 'images'
 THUMBNAIL_PATH = STATIC_PATH / 'thumbnails'
 
 
-
-
 @babel.localeselector
 def get_locale() -> str:
     return session.get(
