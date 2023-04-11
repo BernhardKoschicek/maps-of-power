@@ -4,6 +4,7 @@ from typing import Any
 from flask import Flask, Response, session, request
 from flask_babel import Babel
 
+
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('config')
 app.config.from_pyfile('production.py')
@@ -18,9 +19,7 @@ STATIC_PATH = ROOT_PATH / 'static'
 IMAGE_PATH = STATIC_PATH / 'images'
 THUMBNAIL_PATH = STATIC_PATH / 'thumbnails'
 
-# sass.compile(
-#     dirname=(STATIC_PATH / 'scss', STATIC_PATH / 'css'),
-#     output_style='compressed')
+
 
 
 @babel.localeselector
@@ -41,14 +40,21 @@ def inject_conf_var() -> dict[str, Any]:
 
 
 # Make only if thumbnail not exist for production
-# @app.before_first_request
-# def create_thumbnails():
-#     for file in IMAGE_PATH.rglob("*"):
-#         if file.is_file() and file.suffix.lower() in ['.jpg', '.png', '.jpeg']:
-#             with Image(filename=file) as src:
-#                 src.resize(400, 400)
-#                 src.save(
-#                     filename=THUMBNAIL_PATH / file.name)
+@app.before_first_request
+def development_features():
+    if app.config['DEBUG']:
+        import sass
+        from wand.image import Image
+        sass.compile(
+            dirname=(STATIC_PATH / 'scss', STATIC_PATH / 'css'),
+            output_style='compressed')
+        for file in IMAGE_PATH.rglob("*"):
+            if file.is_file() and file.suffix.lower() \
+                    in ['.jpg', '.png', '.jpeg']:
+                with Image(filename=file) as src:
+                    src.resize(400, 400)
+                    src.save(
+                        filename=THUMBNAIL_PATH / file.name)
 
 
 @app.after_request
