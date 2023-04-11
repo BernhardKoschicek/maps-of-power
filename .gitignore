@@ -131,6 +131,5 @@ dmypy.json
 .idea/
 
 
-#mop/static/node_modules
-#mop/static/mapsofpower.egg-info
-/mop/static/node_modules/
+mop/static/node_modules
+mop/static/mapsofpower.egg-info
