@@ -162,7 +162,8 @@ lecturer = {
     'sgomez': {
         'name': 'Silvia Gómez Senovilla',
         'short_bio': _('sgomez_short_bio'),
-        'bio': [_('sgomez_bio_1'), _('sgomez_bio_2')]
+        'bio': [_('sgomez_bio_1'), _('sgomez_bio_2')],
+        'portrait': 'sgomez.jpg'
     }
 }
 
@@ -174,7 +175,7 @@ lectures = {
         'time': '16:00',
         'zoom': 'https://oeaw-ac-at.zoom.us/'
                 'j/93312567279?pwd=OVgxRGY2MktXWVR4ZC9SNHIwdlRBZz09',
-        'recording': 'https://youtu.be/4b_GFAd2odE',
+        'youtube_code': '4b_GFAd2odE',
         'presenters': [lecturer['sgomez']],
         'language': _('english'),
         'abstract': [_('lecture_1_1'), _('lecture_1_2')]

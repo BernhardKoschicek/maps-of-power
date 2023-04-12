@@ -26,6 +26,10 @@ h2::first-letter, h3::first-letter {
     font-size: 1.2em;
 }
 
+li::first-letter {
+    text-transform: uppercase;
+}
+
 a {
     text-decoration: none;
     font-weight: bolder;
