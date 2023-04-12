@@ -2,7 +2,7 @@
 {% block content %}
   <div class="container">
     <img src="{{ url_for('static', filename='/images/histgeo_logo.png') }}"
-         alt="Logo Historical Geography" class="img-fluid  p-5">
+         alt="Logo Historical Geography" class="img-fluid p-5">
 
     <p>
       {{ _('histgeo_intro_1') }}
@@ -20,7 +20,11 @@
     <p>
       {{ _('histgeo_lecture_3') }}
     </p>
-
+    <div>
+      {% for id_, lecture in lectures.items() %}
+        <p><a href="{{ url_for('histgeo', id_=id_) }}">{{ lecture['title'] }}</a></p>
+      {% endfor %}
+    </div>
     <h2 class="text-accent3 text-center mt-5 display-6">HistGeo Newsletter</h2>
     <div class="row">
       <div class="col-md-12 col-lg-6">

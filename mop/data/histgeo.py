@@ -174,8 +174,9 @@ lectures = {
         'time': '16:00',
         'zoom': 'https://oeaw-ac-at.zoom.us/'
                 'j/93312567279?pwd=OVgxRGY2MktXWVR4ZC9SNHIwdlRBZz09',
-        'recording': 'sgomez_lecture.mp4',
+        'recording': 'https://youtu.be/4b_GFAd2odE',
         'presenters': [lecturer['sgomez']],
+        'language': _('english'),
         'abstract': [_('lecture_1_1'), _('lecture_1_2')]
     },
 }

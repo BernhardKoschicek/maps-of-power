@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="mt-2">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('histgeo') }}" class="link-primary">HistGeo</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ lecture['title'] }} - {{ lecture['subtitle'] }}</li>
+  </ol>
+</nav>
+
+<h2 class="text-accent3 text-center display-5">{{ lecture['title'] }}</h2>
+<h2 class="text-accent3 text-center display-6">{{ lecture['subtitle'] }}</h2>
+
+
+
+
+</div>
+
+{% endblock %}
