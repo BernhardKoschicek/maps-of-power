@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2 class="text-primary display-5 text-center">{{ _('events') }}</h2>
+  <div class="container py-2">
+    <div class="row" data-masonry='{"percentPosition": true }'>
+      {% for event in events %}
+        <div class="col-sm-4 col-md-3 py-3">
+          <div class="card border-primary">
+            <img src="{{ url_for('static', filename='images/' + event['icon']) }}"
+                 class="card-img-top"
+                 alt="{{ event['id'] }} Image">
+            <div class="card-body">
+              <h3 class="card-title fs-5">{{ event['title'] }}</h3>
+              <p class="card-text">{{ event['description'] }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

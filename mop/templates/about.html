@@ -2,18 +2,20 @@
 {% block content %}
 
   <section class="hero-section">
-{#    <video autoplay loop muted playsinline class="hero-video">#}
-{#      <source src="/static/video/intro_1080p.mp4" type="video/mp4">#}
-{#    </video>#}
+    {#    <video autoplay loop muted playsinline class="hero-video">#}
+    {#      <source src="/static/video/intro_1080p.mp4" type="video/mp4">#}
+    {#    </video>#}
     <div class="video-container">
-      <iframe src="https://www.youtube-nocookie.com/embed/xF5oxko1SWg?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&disablekb=1&fs=0&showinfo=0&playlist=xF5oxko1SWg" class="yt-background"  allowFullScreen allow="autoplay"></iframe>
-     </div>
+      <iframe
+          src="https://www.youtube-nocookie.com/embed/xF5oxko1SWg?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&disablekb=1&fs=0&showinfo=0&playlist=xF5oxko1SWg"
+          class="yt-background" allowFullScreen allow="autoplay"></iframe>
+    </div>
     <div
         class="overlay container-fluid align-items-center justify-content-center d-flex">
       {#      <h1 class="mx-auto">Welcome to Maps of Power</h1>#}
-{#      <img src="/static/images/mop_logo.svg"#}
-{#           alt="Maps of Power Logo" height="500"#}
-{#           class="d-inline-block align-text-top mx-auto">#}
+      {#      <img src="/static/images/mop_logo.svg"#}
+      {#           alt="Maps of Power Logo" height="500"#}
+      {#           class="d-inline-block align-text-top mx-auto">#}
     </div>
   </section>
 
@@ -50,26 +52,24 @@
         {{ _('about_text_7') }}
       </p>
     </div>
-
   </section>
 
   <section>
-
     <h2 class="text-primary display-5 text-center">{{ _('events') }}</h2>
     <div class="container py-2">
       <div class="row" data-masonry='{"percentPosition": true }'>
         {% for event in events %}
-            <div class="col-sm-4 col-md-3 py-3">
-              <div class="card border-primary">
+          <div class="col-sm-4 col-md-3 py-3">
+            <div class="card border-primary">
               <img src="{{ url_for('static', filename='images/' + event['icon']) }}"
-                  class="card-img-top"
-                  alt="{{ event['id'] }} Image">
-                <div class="card-body">
-                  <h3 class="card-title fs-5">{{ event['title'] }}</h3>
-                  <p class="card-text">{{ event['description'] }}</p>
-                </div>
+                   class="card-img-top"
+                   alt="{{ event['id'] }} Image">
+              <div class="card-body">
+                <h3 class="card-title fs-5">{{ event['title'] }}</h3>
+                <p class="card-text">{{ event['description'] }}</p>
               </div>
             </div>
+          </div>
         {% endfor %}
       </div>
     </div>

@@ -31,7 +31,7 @@ def software() -> str:
 
 @app.route('/events')
 def events() -> str:
-    return render_template('layout.html')
+    return render_template('events.html', events=event_list)
 
 
 @app.route('/histgeo')
