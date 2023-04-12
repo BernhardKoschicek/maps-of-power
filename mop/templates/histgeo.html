@@ -25,7 +25,7 @@
         {% for id_, lecture in lectures.items() %}
           <li class="list-group-item">
             <a href="{{ url_for('histgeo', id_=id_) }}" class="link-accent3">
-               {{ _('no') | capitalize }}. {{ loop.index }} / {{ lecture['date'] }}: {{ lecture['title'] }} - {{ lecture['title'] }} ({% for presenter in lecture['presenters'] %}{{ presenter['name'] }}{{ ", " if not loop.last else "" }}{% endfor %})
+               {{ _('no') | capitalize }}. {{ loop.index }} / {{ lecture['date'] }}: {{ lecture['title'] }} - {{ lecture['subtitle'] }} ({% for presenter in lecture['presenters'] %}{{ presenter['name'] }}{{ ", " if not loop.last else "" }}{% endfor %})
             </a>
           </li>
 
