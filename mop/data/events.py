@@ -29,6 +29,17 @@ types = {
     },
 }
 event_list = [{
+    'id': 'mecern_2023',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2023, 4, 27)}",
+    'who': [team['mpopovic']],
+    'icon': 'mecern_2023.jpg',
+    'title': _('presentation on MECERN conference'),
+    'description': _('mecern_2023'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
     'id': 'serbian_academy_220223',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 2, 22)}",

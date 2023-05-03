@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-12 13:56+0200\n"
+"POT-Creation-Date: 2023-05-03 14:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "software"
 msgstr ""
 
-#: mop/util.py:22
+#: mop/templates/about.html:58 mop/templates/events.html:3 mop/util.py:22
 msgid "events"
 msgstr ""
 
@@ -54,10 +54,18 @@ msgid "blogpost"
 msgstr ""
 
 #: mop/data/events.py:37
-msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgid "presentation on MECERN conference"
 msgstr ""
 
 #: mop/data/events.py:38
+msgid "mecern_2023"
+msgstr ""
+
+#: mop/data/events.py:48
+msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgstr ""
+
+#: mop/data/events.py:49
 msgid "serbian_academy_220223"
 msgstr ""
 
@@ -201,43 +209,43 @@ msgstr ""
 msgid "image_landscape_caption"
 msgstr ""
 
-#: mop/templates/about.html:23
+#: mop/templates/about.html:25
 msgid "about_text_1"
 msgstr ""
 
-#: mop/templates/about.html:26
+#: mop/templates/about.html:28
 msgid "about_text_2"
 msgstr ""
 
-#: mop/templates/about.html:32
+#: mop/templates/about.html:34
 msgid "about_text_3"
 msgstr ""
 
-#: mop/templates/about.html:35
+#: mop/templates/about.html:37
 msgid "about_text_4"
 msgstr ""
 
-#: mop/templates/about.html:38
+#: mop/templates/about.html:40
 msgid "about_point_1"
 msgstr ""
 
-#: mop/templates/about.html:41
+#: mop/templates/about.html:43
 msgid "about_point_2"
 msgstr ""
 
-#: mop/templates/about.html:44
+#: mop/templates/about.html:46
 msgid "about_text_5"
 msgstr ""
 
-#: mop/templates/about.html:47
+#: mop/templates/about.html:49
 msgid "about_text_6"
 msgstr ""
 
-#: mop/templates/about.html:50
+#: mop/templates/about.html:52
 msgid "about_text_7"
 msgstr ""
 
-#: mop/templates/about.html:80
+#: mop/templates/about.html:81
 msgid "vienna_manifesto"
 msgstr ""
 
@@ -309,8 +317,7 @@ msgstr ""
 msgid "histgeo_fonts_1"
 msgstr ""
 
-#: mop/templates/layout.html:78 mop/templates/layout.html:85
-#: mop/templates/layout.html:92
+#: mop/templates/layout.html:78
 msgid "navigation"
 msgstr ""
 

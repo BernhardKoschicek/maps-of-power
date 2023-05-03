@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-12 13:56+0200\n"
-"PO-Revision-Date: 2023-04-12 13:58+0200\n"
+"POT-Creation-Date: 2023-05-03 14:28+0200\n"
+"PO-Revision-Date: 2023-05-03 14:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -31,7 +31,7 @@ msgstr "projects"
 msgid "software"
 msgstr "software"
 
-#: mop/util.py:22
+#: mop/templates/about.html:58 mop/templates/events.html:3 mop/util.py:22
 msgid "events"
 msgstr "events"
 
@@ -56,10 +56,22 @@ msgid "blogpost"
 msgstr "blogpost"
 
 #: mop/data/events.py:37
+msgid "presentation on MECERN conference"
+msgstr "presentation on MECERN conference"
+
+#: mop/data/events.py:38
+msgid "mecern_2023"
+msgstr ""
+"Vratislav Zervan and Mihailo Popović took part in the MECERN conference "
+"“Continuity and Change in Medieval Central Europe” in Bratislava in April 2023 "
+"and presented a joint paper entitled “The Hagiogeography of Saint Archangel "
+"Michael in the Balkans and Central Europe in Medieval Times”."
+
+#: mop/data/events.py:48
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "presentation at the Serbian Academy of Sciences and Arts"
 
-#: mop/data/events.py:38
+#: mop/data/events.py:49
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović was invited by the Institute for Byzantine Studies of the "
@@ -318,7 +330,7 @@ msgstr "the natural features of landscapes"
 msgid "image_landscape_caption"
 msgstr "the Bay of Kotor, Montenegro (2021)"
 
-#: mop/templates/about.html:23
+#: mop/templates/about.html:25
 msgid "about_text_1"
 msgstr ""
 "the research initiative “Maps of Power\" serves the methodological and "
@@ -337,7 +349,7 @@ msgstr ""
 "Power (DPP): Peripherical Mountains in the Medieval World”</a> can be seen as a "
 "pilot project in this respect."
 
-#: mop/templates/about.html:26
+#: mop/templates/about.html:28
 msgid "about_text_2"
 msgstr ""
 "in order to do justice to this new idea of spatial expansion, the previous title "
@@ -347,7 +359,7 @@ msgstr ""
 "branch Historical Geography of the Byzantine Empire essentially dealt with four "
 "categories of historical sources:"
 
-#: mop/templates/about.html:32
+#: mop/templates/about.html:34
 msgid "about_text_3"
 msgstr ""
 "the paradigm shifts in content and technical-digital innovations in science with "
@@ -357,7 +369,7 @@ msgstr ""
 "Byzantine Studies in the broader sense, as well as with Medieval Studies and the "
 "Digital Humanities."
 
-#: mop/templates/about.html:35
+#: mop/templates/about.html:37
 msgid "about_text_4"
 msgstr ""
 "therefore, the research initiative “Maps of Power” takes up two research areas "
@@ -365,13 +377,13 @@ msgstr ""
 "European oriented Historical Geography and thereby lead to new research results "
 "that are significant for society:"
 
-#: mop/templates/about.html:38
+#: mop/templates/about.html:40
 msgid "about_point_1"
 msgstr ""
 "historical Ecology, which deals with the historical development of ecosystems "
 "and landscapes under the influence of natural and anthropogenic factors."
 
-#: mop/templates/about.html:41
+#: mop/templates/about.html:43
 msgid "about_point_2"
 msgstr ""
 "sacred Topography (“Sacred Landscapes”), which reflects the presence of the "
@@ -379,7 +391,7 @@ msgstr ""
 "religious buildings (e.g. churches and monasteries) and religious symbols and "
 "actions (e.g. pilgrimage)."
 
-#: mop/templates/about.html:44
+#: mop/templates/about.html:46
 msgid "about_text_5"
 msgstr ""
 "the aim of Historical Ecology is to focus more on the relationship between "
@@ -392,7 +404,7 @@ msgstr ""
 "watercourses, until the era of excessive regulations. Thus, the term “power” is "
 "applicable in both directions (nature and man)."
 
-#: mop/templates/about.html:47
+#: mop/templates/about.html:49
 msgid "about_text_6"
 msgstr ""
 "the object of study of the Sacred Topography of Byzantine landscapes are to a "
@@ -404,7 +416,7 @@ msgstr ""
 "GIS software, digital cartography and database systems are increasingly used in "
 "both research areas."
 
-#: mop/templates/about.html:50
+#: mop/templates/about.html:52
 msgid "about_text_7"
 msgstr ""
 "“Maps of Power” takes up these ideas and sees itself as a scholarly platform "
@@ -414,7 +426,7 @@ msgstr ""
 "data searchable, contains digital maps (layers), offers storymaps on various "
 "aspects and includes comprehensive photo material."
 
-#: mop/templates/about.html:80
+#: mop/templates/about.html:81
 msgid "vienna_manifesto"
 msgstr ""
 "Our initiative fully supports the <a href=\"https://dighum.ec.tuwien.ac.at/"
@@ -538,8 +550,7 @@ msgstr "fonts"
 msgid "histgeo_fonts_1"
 msgstr "please use these Font Types for Old Church Slavonic:"
 
-#: mop/templates/layout.html:78 mop/templates/layout.html:85
-#: mop/templates/layout.html:92
+#: mop/templates/layout.html:78
 msgid "navigation"
 msgstr "navigation"
 
