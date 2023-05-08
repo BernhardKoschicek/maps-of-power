@@ -10,6 +10,15 @@
   <meta name="author"
         content="Bernhard Koschicek-Krombholz, Mihailo Popovic"/>
   <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+  <link rel="manifest" href="/static/site.webmanifest">
+  <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#73734a">
+  <link rel="shortcut icon" href="/static/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-config" content="/static/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/static/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/static/node_modules/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="/static/node_modules/baguettebox.js/dist/baguetteBox.css">
@@ -43,15 +52,15 @@
             {% endif %}
             <li class="nav-item">
               <a
-                class="nav-link text-secondary text-capitalize {{ 'fw-bold' if request.endpoint and url_for(request.endpoint) == item.to }}"
-                target="{{ '_blank' if item.to.startswith('http') else '' }}"
-                href="{{ item.to }}">{{ item.name }}</a>
+                  class="nav-link text-secondary text-capitalize {{ 'fw-bold' if request.endpoint and url_for(request.endpoint) == item.to }}"
+                  target="{{ '_blank' if item.to.startswith('http') else '' }}"
+                  href="{{ item.to }}">{{ item.name }}</a>
             </li>
           {% endfor %}
         </ul>
       </div>
       <div
-        class="translation list-group list-group-flush align-end d-lg-block col-2">
+          class="translation list-group list-group-flush align-end d-lg-block col-2">
         {% for language in AVAILABLE_LANGUAGES.items() %}
           <div class="list-group-item bg-dark text-center">
             {% if CURRENT_LANGUAGE == language[0] %}
@@ -101,25 +110,25 @@
 </body>
 <script src="/static/node_modules/jquery/dist/jquery.min.js"></script>
 <script
-  src="/static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    src="/static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/static/node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
 <script
-  src="/static/node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.min.js"></script>
+    src="/static/node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.min.js"></script>
 <script src="/static/node_modules/baguettebox.js/dist/baguetteBox.js"></script>
 <script
-  src="/static/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    src="/static/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
 
 <script>
-  const navbarCollapse = document.getElementById('navbarNavDropdown');
-  const myElement = document.querySelector('.translation');
+    const navbarCollapse = document.getElementById('navbarNavDropdown');
+    const myElement = document.querySelector('.translation');
 
-  navbarCollapse.addEventListener('show.bs.collapse', function () {
-    myElement.classList.add('d-none');
-  });
+    navbarCollapse.addEventListener('show.bs.collapse', function () {
+        myElement.classList.add('d-none');
+    });
 
-  navbarCollapse.addEventListener('hide.bs.collapse', function () {
-    myElement.classList.remove('d-none');
-  });
+    navbarCollapse.addEventListener('hide.bs.collapse', function () {
+        myElement.classList.remove('d-none');
+    });
 </script>
 
 
