@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-05-03 14:28+0200\n"
+"POT-Creation-Date: 2023-05-15 17:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "software"
 msgstr ""
 
-#: mop/templates/about.html:58 mop/templates/events.html:3 mop/util.py:22
+#: mop/templates/about.html:69 mop/templates/events.html:3 mop/util.py:22
 msgid "events"
 msgstr ""
 
@@ -89,91 +89,91 @@ msgstr ""
 msgid "december"
 msgstr ""
 
-#: mop/data/histgeo.py:73 mop/data/histgeo.py:105 mop/data/histgeo.py:149
+#: mop/data/histgeo.py:74 mop/data/histgeo.py:111 mop/data/histgeo.py:161
 msgid "eds."
 msgstr ""
 
-#: mop/data/histgeo.py:74
+#: mop/data/histgeo.py:76
 msgid "histgeo_vol1_1"
 msgstr ""
 
-#: mop/data/histgeo.py:74
+#: mop/data/histgeo.py:76
 msgid "histgeo_vol1_2"
 msgstr ""
 
-#: mop/data/histgeo.py:75
+#: mop/data/histgeo.py:76
 msgid "histgeo_vol1_3"
 msgstr ""
 
-#: mop/data/histgeo.py:89
+#: mop/data/histgeo.py:92
 msgid "ed."
 msgstr ""
 
-#: mop/data/histgeo.py:90
+#: mop/data/histgeo.py:93
 msgid "histgeo_vol2_1"
 msgstr ""
 
-#: mop/data/histgeo.py:106
+#: mop/data/histgeo.py:112
 msgid "histgeo_vol3_1"
 msgstr ""
 
-#: mop/data/histgeo.py:123
+#: mop/data/histgeo.py:131
 msgid "histgeo_vol4_1"
 msgstr ""
 
-#: mop/data/histgeo.py:164
+#: mop/data/histgeo.py:177
 msgid "sgomez_short_bio"
 msgstr ""
 
-#: mop/data/histgeo.py:165
+#: mop/data/histgeo.py:178
 msgid "sgomez_bio_1"
 msgstr ""
 
-#: mop/data/histgeo.py:165
+#: mop/data/histgeo.py:178
 msgid "sgomez_bio_2"
 msgstr ""
 
-#: mop/data/histgeo.py:172
+#: mop/data/histgeo.py:185
 msgid "lecture_1_title"
 msgstr ""
 
-#: mop/data/histgeo.py:173
+#: mop/data/histgeo.py:186
 msgid "lecture_1_subtitle"
 msgstr ""
 
-#: mop/data/histgeo.py:180
+#: mop/data/histgeo.py:193
 msgid "english"
 msgstr ""
 
-#: mop/data/histgeo.py:181
+#: mop/data/histgeo.py:194
 msgid "lecture_1_1"
 msgstr ""
 
-#: mop/data/histgeo.py:181
+#: mop/data/histgeo.py:194
 msgid "lecture_1_2"
 msgstr ""
 
-#: mop/data/histgeo.py:185
+#: mop/data/histgeo.py:198
 msgid "author"
 msgstr ""
 
-#: mop/data/histgeo.py:186
+#: mop/data/histgeo.py:199
 msgid "pages"
 msgstr ""
 
-#: mop/data/histgeo.py:187
+#: mop/data/histgeo.py:200
 msgid "ISBN"
 msgstr ""
 
-#: mop/data/histgeo.py:188
+#: mop/data/histgeo.py:201
 msgid "citation"
 msgstr ""
 
-#: mop/data/histgeo.py:189
+#: mop/data/histgeo.py:202
 msgid "order"
 msgstr ""
 
-#: mop/data/histgeo.py:190
+#: mop/data/histgeo.py:203
 msgid "abstract"
 msgstr ""
 
@@ -209,43 +209,51 @@ msgstr ""
 msgid "image_landscape_caption"
 msgstr ""
 
-#: mop/templates/about.html:25
+#: mop/templates/about.html:24
 msgid "about_text_1"
 msgstr ""
 
-#: mop/templates/about.html:28
+#: mop/templates/about.html:27
 msgid "about_text_2"
 msgstr ""
 
-#: mop/templates/about.html:34
+#: mop/templates/about.html:33
 msgid "about_text_3"
 msgstr ""
 
-#: mop/templates/about.html:37
+#: mop/templates/about.html:36
 msgid "about_text_4"
 msgstr ""
 
-#: mop/templates/about.html:40
+#: mop/templates/about.html:42
+msgid "historical ecology"
+msgstr ""
+
+#: mop/templates/about.html:44
 msgid "about_point_1"
 msgstr ""
 
-#: mop/templates/about.html:43
-msgid "about_point_2"
-msgstr ""
-
-#: mop/templates/about.html:46
+#: mop/templates/about.html:47
 msgid "about_text_5"
 msgstr ""
 
-#: mop/templates/about.html:49
+#: mop/templates/about.html:51
+msgid "sacred topography"
+msgstr ""
+
+#: mop/templates/about.html:53
+msgid "about_point_2"
+msgstr ""
+
+#: mop/templates/about.html:56
 msgid "about_text_6"
 msgstr ""
 
-#: mop/templates/about.html:52
+#: mop/templates/about.html:63
 msgid "about_text_7"
 msgstr ""
 
-#: mop/templates/about.html:81
+#: mop/templates/about.html:92
 msgid "vienna_manifesto"
 msgstr ""
 
@@ -273,51 +281,51 @@ msgstr ""
 msgid "histgeo_lecture_3"
 msgstr ""
 
-#: mop/templates/histgeo.html:28 mop/templates/histgeo.html:55
+#: mop/templates/histgeo.html:28 mop/templates/histgeo.html:57
 msgid "no"
 msgstr ""
 
-#: mop/templates/histgeo.html:39
+#: mop/templates/histgeo.html:41
 msgid "histgeo_newsletter_1"
 msgstr ""
 
-#: mop/templates/histgeo.html:42
+#: mop/templates/histgeo.html:44
 msgid "histgeo_newsletter_2"
 msgstr ""
 
-#: mop/templates/histgeo.html:45
+#: mop/templates/histgeo.html:47
 msgid "histgeo_newsletter_3"
 msgstr ""
 
-#: mop/templates/histgeo.html:69
+#: mop/templates/histgeo.html:71
 msgid "volumes"
 msgstr ""
 
-#: mop/templates/histgeo.html:124
+#: mop/templates/histgeo.html:126
 msgid "Citation Rules and Fonts"
 msgstr ""
 
-#: mop/templates/histgeo.html:126
+#: mop/templates/histgeo.html:128
 msgid "histgeo_rules"
 msgstr ""
 
-#: mop/templates/histgeo.html:130 mop/templates/histgeo.html:138
+#: mop/templates/histgeo.html:132 mop/templates/histgeo.html:140
 msgid "Citation Rules"
 msgstr ""
 
-#: mop/templates/histgeo.html:132
+#: mop/templates/histgeo.html:134
 msgid "histgeo_citation_1"
 msgstr ""
 
-#: mop/templates/histgeo.html:142
+#: mop/templates/histgeo.html:144
 msgid "Fonts"
 msgstr ""
 
-#: mop/templates/histgeo.html:144
+#: mop/templates/histgeo.html:146
 msgid "histgeo_fonts_1"
 msgstr ""
 
-#: mop/templates/layout.html:78
+#: mop/templates/layout.html:40
 msgid "navigation"
 msgstr ""
 

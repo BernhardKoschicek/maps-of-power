@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-05-03 14:28+0200\n"
-"PO-Revision-Date: 2023-05-03 14:29+0200\n"
+"POT-Creation-Date: 2023-05-15 17:18+0200\n"
+"PO-Revision-Date: 2023-05-15 17:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -31,7 +31,7 @@ msgstr "projekte"
 msgid "software"
 msgstr "software"
 
-#: mop/templates/about.html:58 mop/templates/events.html:3 mop/util.py:22
+#: mop/templates/about.html:69 mop/templates/events.html:3 mop/util.py:22
 msgid "events"
 msgstr "ereignisse"
 
@@ -101,11 +101,11 @@ msgstr "September"
 msgid "december"
 msgstr "Dezember"
 
-#: mop/data/histgeo.py:73 mop/data/histgeo.py:105 mop/data/histgeo.py:149
+#: mop/data/histgeo.py:74 mop/data/histgeo.py:111 mop/data/histgeo.py:161
 msgid "eds."
 msgstr "Hrsg."
 
-#: mop/data/histgeo.py:74
+#: mop/data/histgeo.py:76
 msgid "histgeo_vol1_1"
 msgstr ""
 "aus Anlaß des 75. Geburtstages von Herrn Professor Dr. Johannes Koder haben die "
@@ -118,7 +118,7 @@ msgstr ""
 "Jubilar mit dem Titel „Space, Landscapes and Settlements in Byzantium. Studies "
 "in Historical Geography of the Eastern Mediterranean” erwachsen. "
 
-#: mop/data/histgeo.py:74
+#: mop/data/histgeo.py:76
 msgid "histgeo_vol1_2"
 msgstr ""
 "Johannes Koder, w. M. hat seit dem Jahre 1966 die Tabula Imperii Byzantini "
@@ -129,7 +129,7 @@ msgstr ""
 "Œuvre umfaßt federführende Arbeiten historisch-geographischen Inhalts zu dem "
 "östlichen Mittelmeerraum und Byzanz."
 
-#: mop/data/histgeo.py:75
+#: mop/data/histgeo.py:76
 msgid "histgeo_vol1_3"
 msgstr ""
 "die Festschrift ist als Band 1 der Reihe „Studies in Historical Geography and "
@@ -141,11 +141,11 @@ msgstr ""
 "historisch-geographische Forschung in der Byzantinistik innovativ zu beleben. "
 "Die Reihe wird bei dem Verlag Akademska Knjiga in Novi Sad gedruckt."
 
-#: mop/data/histgeo.py:89
+#: mop/data/histgeo.py:92
 msgid "ed."
 msgstr "Hg."
 
-#: mop/data/histgeo.py:90
+#: mop/data/histgeo.py:93
 msgid "histgeo_vol2_1"
 msgstr ""
 "Am 9. Dezember 2014 wäre Univ. Prof. Dr. Dr. h.c. mult. Herbert Hunger (1914–"
@@ -161,7 +161,7 @@ msgstr ""
 "Schule der Byzantinistik neuen Forschergenerationen als eine Quelle der "
 "wissenschaftlichen Inspiration zu dienen."
 
-#: mop/data/histgeo.py:106
+#: mop/data/histgeo.py:112
 msgid "histgeo_vol3_1"
 msgstr ""
 "Das Langzeitprojekt “Tabula Imperii Byzantini (TIB)” (Institut für "
@@ -192,7 +192,7 @@ msgstr ""
 "Existenz eines solchen Projekts in Österreich und seine Dokumentation das "
 "öffentliche Interesse wecken werden."
 
-#: mop/data/histgeo.py:123
+#: mop/data/histgeo.py:131
 msgid "histgeo_vol4_1"
 msgstr ""
 "Die Landschaft des südöstlichen Peloponnes (Lakonien, Griechenland), einer sehr "
@@ -211,21 +211,21 @@ msgstr ""
 "widerspiegeln, sondern auch in der Wahl des Standorts oder einer tiefen "
 "Beziehung zu natürlichen Elementen der Landschaft."
 
-#: mop/data/histgeo.py:164
+#: mop/data/histgeo.py:177
 msgid "sgomez_short_bio"
 msgstr ""
 "BA in Geschichte, Autónoma Universität von Madrid, MA in Archäologie, Università "
 "Ca' Foscari von Venedig, MA in Ägyptischer Archäologie, University College von "
 "London"
 
-#: mop/data/histgeo.py:165
+#: mop/data/histgeo.py:178
 msgid "sgomez_bio_1"
 msgstr ""
 "Silvia Gómez Senovilla, beendet derzeit ihre Doktorarbeit an der Universität "
 "Wien im Rahmen des ERC Advanced Grant \"The Hyksos Enigma\" (Grant agreement Nº "
 "668640), unter der Leitung von Prof. Manfred Bietak."
 
-#: mop/data/histgeo.py:165
+#: mop/data/histgeo.py:178
 msgid "sgomez_bio_2"
 msgstr ""
 "in ihrer Dissertation untersucht sie die Struktur und Anordnung von Siedlungen "
@@ -236,19 +236,19 @@ msgstr ""
 "räumlicher und statistischer Instrumente untersucht sie die Veränderungen des "
 "Raums in diesem Teil der Bronzezeit und deren soziale Auswirkungen."
 
-#: mop/data/histgeo.py:172
+#: mop/data/histgeo.py:185
 msgid "lecture_1_title"
 msgstr "Untersuchung des Raums in antiken Siedlungen"
 
-#: mop/data/histgeo.py:173
+#: mop/data/histgeo.py:186
 msgid "lecture_1_subtitle"
 msgstr "Die Straßen von Avaris, die Nutzung des Raums und die Verdinglichungsfalle"
 
-#: mop/data/histgeo.py:180
+#: mop/data/histgeo.py:193
 msgid "english"
 msgstr "Englisch"
 
-#: mop/data/histgeo.py:181
+#: mop/data/histgeo.py:194
 msgid "lecture_1_1"
 msgstr ""
 "Die Archäologie und die Geschichtswissenschaft stehen naturgemäß vor der "
@@ -273,7 +273,7 @@ msgstr ""
 "Vorauswahl unterliegen, behindert auch einige Versuche einer echten Analyse des "
 "Raums und seiner Bestandteile."
 
-#: mop/data/histgeo.py:181
+#: mop/data/histgeo.py:194
 msgid "lecture_1_2"
 msgstr ""
 "in diesem Vortrag werde ich den aktuellen Stand meiner Doktorarbeit vorstellen, "
@@ -288,27 +288,27 @@ msgstr ""
 "welche Möglichkeiten uns helfen können, die manchmal allgegenwärtige "
 "Abhängigkeit von rein visuellen Modellen zu überwinden."
 
-#: mop/data/histgeo.py:185
+#: mop/data/histgeo.py:198
 msgid "author"
 msgstr "autor"
 
-#: mop/data/histgeo.py:186
+#: mop/data/histgeo.py:199
 msgid "pages"
 msgstr "seiten"
 
-#: mop/data/histgeo.py:187
+#: mop/data/histgeo.py:200
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:188
+#: mop/data/histgeo.py:201
 msgid "citation"
 msgstr "zitat"
 
-#: mop/data/histgeo.py:189
+#: mop/data/histgeo.py:202
 msgid "order"
 msgstr "bestellen"
 
-#: mop/data/histgeo.py:190
+#: mop/data/histgeo.py:203
 msgid "abstract"
 msgstr "kurzfassung"
 
@@ -347,7 +347,7 @@ msgstr "den naturräumlichen Gegebenheiten von Landschaften"
 msgid "image_landscape_caption"
 msgstr "die Bucht von Kotor, Montenegro (2021)"
 
-#: mop/templates/about.html:25
+#: mop/templates/about.html:24
 msgid "about_text_1"
 msgstr ""
 "die Forschungsinitiative „Maps of Power – Karten der Macht“ dient der "
@@ -367,7 +367,7 @@ msgstr ""
 "target=\"_blank\">„Digitising Patterns of Power (DPP): Peripherical Mountains in "
 "the Medieval World“</a> zu sehen."
 
-#: mop/templates/about.html:28
+#: mop/templates/about.html:27
 msgid "about_text_2"
 msgstr ""
 "um dieser neuen Idee der räumlichen Erweiterung gerecht zu werden, wird der "
@@ -377,7 +377,7 @@ msgstr ""
 "Forschungszweiges Historische Geographie des Byzantinischen Reiches befassten "
 "sich im Wesentlichen mit vier Kategorien von historischen Quellen:"
 
-#: mop/templates/about.html:34
+#: mop/templates/about.html:33
 msgid "about_text_3"
 msgstr ""
 "die inhaltlichen Paradigmenwechsel und technisch-digitalen Innovationen in der "
@@ -387,7 +387,7 @@ msgstr ""
 "der Historischen Geographie mit der Byzantinistik im weiteren Sinne, mit der "
 "Mittelalterforschung sowie den Digital Humanities."
 
-#: mop/templates/about.html:37
+#: mop/templates/about.html:36
 msgid "about_text_4"
 msgstr ""
 "daher greift die Forschungsinitiative „Maps of Power – Karten der Macht“ zwei "
@@ -396,22 +396,17 @@ msgstr ""
 "Geographie zu fungieren und dadurch zu neuen, für die Gesellschaft bedeutenden "
 "Forschungsergebnissen zu führen:"
 
-#: mop/templates/about.html:40
+#: mop/templates/about.html:42
+msgid "historical ecology"
+msgstr "Historische Ökologie"
+
+#: mop/templates/about.html:44
 msgid "about_point_1"
 msgstr ""
-"die historische Ökologie, die sich mit der historischen Entwicklung von "
-"Ökosystemen und Landschaften unter dem Einfluss natürlicher und anthropogener "
-"Faktoren befasst."
+"... befasst sich mit der historischen Entwicklung von Ökosystemen und "
+"Landschaften unter dem Einfluss natürlicher und anthropogener Faktoren."
 
-#: mop/templates/about.html:43
-msgid "about_point_2"
-msgstr ""
-"die sakrale Topographie („Sacred Landscapes“), die die Präsenz des Göttlichen/"
-"Heiligen/Transzendenten in einer Gegend widerspiegelt und sich durch religiöse "
-"Bauten (z. B. Kirchen und Klöster) sowie religiöse Symbole und Handlungen (z. B. "
-"Pilgerschaft) manifestiert."
-
-#: mop/templates/about.html:46
+#: mop/templates/about.html:47
 msgid "about_text_5"
 msgstr ""
 "das Ziel der historischen Ökologie ist es, das Verhältnis Natur-Mensch bzw. "
@@ -424,7 +419,19 @@ msgstr ""
 "zur Epoche der übermäßigen Regulierungen maßgeblich. Somit ist der Begriff "
 "„power“ in beide Richtungen (Natur und Mensch) anwendbar."
 
-#: mop/templates/about.html:49
+#: mop/templates/about.html:51
+msgid "sacred topography"
+msgstr "Sakrale Topographie"
+
+#: mop/templates/about.html:53
+msgid "about_point_2"
+msgstr ""
+"... („Sacred Landscapes“) spiegelt die Präsenz des Göttlichen/Heiligen/"
+"Transzendenten in einer Gegend wider und manifestiert sich durch religiöse "
+"Bauten (z. B. Kirchen und Klöster) sowie religiöse Symbole und Handlungen (z. B. "
+"Pilgerschaft)."
+
+#: mop/templates/about.html:56
 msgid "about_text_6"
 msgstr ""
 "der Untersuchungsgegenstand der sakralen Topographie byzantinischer Landschaften "
@@ -436,7 +443,7 @@ msgstr ""
 "Rolle. In beiden Forschungsbereichen werden verstärkt GIS Software, digitale "
 "Kartographie und Datenbanksysteme eingesetzt."
 
-#: mop/templates/about.html:52
+#: mop/templates/about.html:63
 msgid "about_text_7"
 msgstr ""
 "„Maps of Power – Karten der Macht“ greift diese Gedanken auf und versteht sich "
@@ -447,7 +454,7 @@ msgstr ""
 "digitale Karten (Layer) enthält, Storymaps zu verschiedenen Aspekten anbietet "
 "und umfassendes Fotomaterial beinhaltet."
 
-#: mop/templates/about.html:81
+#: mop/templates/about.html:92
 msgid "vienna_manifesto"
 msgstr ""
 "Unsere Initiative unterstützt das <a href=\"https://dighum.ec.tuwien.ac.at/"
@@ -511,11 +518,11 @@ msgstr ""
 "Historische Geographie, Kartographie, Digital Humanities, GIScience und Software "
 "Engineering zu fördern."
 
-#: mop/templates/histgeo.html:28 mop/templates/histgeo.html:55
+#: mop/templates/histgeo.html:28 mop/templates/histgeo.html:57
 msgid "no"
 msgstr "nr"
 
-#: mop/templates/histgeo.html:39
+#: mop/templates/histgeo.html:41
 msgid "histgeo_newsletter_1"
 msgstr ""
 "unser HistGeo Newsletter informiert Sie zwei Mal im Jahr - in den Monaten Juni "
@@ -524,7 +531,7 @@ msgstr ""
 "Power entstanden sind. Früher erschien der Newsletter vier Mal im Jahr, seit "
 "2022 haben wir ihn auf zwei Ausgaben pro Jahr umgestellt."
 
-#: mop/templates/histgeo.html:42
+#: mop/templates/histgeo.html:44
 msgid "histgeo_newsletter_2"
 msgstr ""
 "in den Berichten des Newsletters konzentrieren wir uns auf die Historische "
@@ -534,22 +541,22 @@ msgstr ""
 "Balkan beteiligten Wissenschaftler*innen sowie von Kolleg*innen aus anderen "
 "Fachbereichen aufzuzeigen."
 
-#: mop/templates/histgeo.html:45
+#: mop/templates/histgeo.html:47
 msgid "histgeo_newsletter_3"
 msgstr ""
 "ältere Ausgaben unseres Newsletters finden Sie in unserem Archiv. Wenn Sie "
 "Fragen oder Anmerkungen haben sollten, kontaktieren Sie uns bitte über folgende "
 "E-Mail: Mapsofpower@oeaw.ac.at"
 
-#: mop/templates/histgeo.html:69
+#: mop/templates/histgeo.html:71
 msgid "volumes"
 msgstr "bände"
 
-#: mop/templates/histgeo.html:124
+#: mop/templates/histgeo.html:126
 msgid "Citation Rules and Fonts"
 msgstr "zitierregeln und Schriftarten"
 
-#: mop/templates/histgeo.html:126
+#: mop/templates/histgeo.html:128
 msgid "histgeo_rules"
 msgstr ""
 "Unsere Reihe wird vom Verlag <a href=\"https://akademskaknjiga.com/?lang=en\" "
@@ -558,25 +565,25 @@ msgstr ""
 "wichtige sozial- und geisteswissenschaftliche Publikationen von nationalen und "
 "internationalen Autoren zu publizieren."
 
-#: mop/templates/histgeo.html:130 mop/templates/histgeo.html:138
+#: mop/templates/histgeo.html:132 mop/templates/histgeo.html:140
 msgid "Citation Rules"
 msgstr "zitierregeln"
 
-#: mop/templates/histgeo.html:132
+#: mop/templates/histgeo.html:134
 msgid "histgeo_citation_1"
 msgstr ""
 "wenn Sie ein Manuskript für unsere Reihe vorbereiten, beachten Sie bitte die "
 "folgenden Anweisungen"
 
-#: mop/templates/histgeo.html:142
+#: mop/templates/histgeo.html:144
 msgid "Fonts"
 msgstr "schriftarten"
 
-#: mop/templates/histgeo.html:144
+#: mop/templates/histgeo.html:146
 msgid "histgeo_fonts_1"
 msgstr "bitte verwenden Sie diese Schriftarten für das Altkirchenslawische"
 
-#: mop/templates/layout.html:78
+#: mop/templates/layout.html:40
 msgid "navigation"
 msgstr "navigation"
 
