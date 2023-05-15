@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
+{% with bg='bg-dark' %}
+    {% include 'navbar.html'  %}
+{% endwith %}
 {% block content %}
+
   <div class="container">
     <img src="{{ url_for('static', filename='/images/histgeo_logo.png') }}"
          alt="Logo Historical Geography" class="img-fluid p-5">

@@ -21,12 +21,12 @@ def about() -> str:
 
 @app.route('/projects')
 def projects() -> str:
-    return render_template('layout.html')
+    return render_template('projects.html')
 
 
 @app.route('/software')
 def software() -> str:
-    return render_template('layout.html')
+    return render_template('software.html')
 
 
 @app.route('/events')

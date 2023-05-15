@@ -1,4 +1,7 @@
 {% extends "layout.html" %}
+{% with bg='bg-dark' %}
+    {% include 'navbar.html'  %}
+{% endwith %}
 {% block content %}
   <h2 class="text-primary display-5 text-center">{{ _('events') }}</h2>
   <div class="container py-2">

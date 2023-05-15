@@ -1,4 +1,7 @@
 {% extends "layout.html" %}
+{% with bg='bg-dark' %}
+    {% include 'navbar.html'  %}
+{% endwith %}
 {% block content %}
   <div class="container">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="mt-2">
