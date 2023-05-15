@@ -11,12 +11,10 @@ def image_gallery(images: dict[str, Any]) -> str:
         html += \
             f'<a href="' \
             f'{url_for("static", filename="images/" + value["src"])}"' \
-            f' data-caption="{value["description"]}"><img src="' \
+            f' data-caption="{value["caption"]}, {value["citation"]}">' \
+            f'<img src="' \
             f'{url_for("static", filename="thumbnails/" + value["src"])}"' \
-            f' alt="{key}" class="img-fluid"></a>'
-        if value["caption"]:
-            html += '<figcaption class="figure-caption">' \
-                    f'{value["caption"]}</figcaption>'
+            f' alt="{key}" class="img-fluid p-4"></a>'
         if value["description"]:
             html += f'<p>{value["description"]}</p>'
         html += '</figure></div>'

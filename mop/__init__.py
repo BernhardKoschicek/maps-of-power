@@ -37,24 +37,6 @@ def inject_conf_var() -> dict[str, Any]:
                 app.config['LANGUAGES'].keys()))}
 
 
-# Make only if thumbnail not exist for production
-# @app.before_first_request
-# def development_features():
-#     if app.config['DEBUG']:
-#         import sass
-#         from wand.image import Image
-#         sass.compile(
-#             dirname=(STATIC_PATH / 'scss', STATIC_PATH / 'css'),
-#             output_style='compressed')
-#         for file in IMAGE_PATH.rglob("*"):
-#             if file.is_file() and file.suffix.lower() \
-#                     in ['.jpg', '.png', '.jpeg']:
-#                 with Image(filename=file) as src:
-#                     src.resize(400, 400)
-#                     src.save(
-#                         filename=THUMBNAIL_PATH / file.name)
-
-
 @app.after_request
 def apply_caching(response: Response) -> Response:
     response.headers['Strict-Transport-Security'] = \
