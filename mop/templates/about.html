@@ -5,13 +5,12 @@
     {#    <video autoplay loop muted playsinline class="hero-video">#}
     {#      <source src="/static/video/intro_1080p.mp4" type="video/mp4">#}
     {#    </video>#}
-    <div class="video-container">
-      <iframe
-          src="https://www.youtube-nocookie.com/embed/xF5oxko1SWg?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&disablekb=1&fs=0&showinfo=0&playlist=xF5oxko1SWg"
-          class="yt-background" allowFullScreen allow="autoplay"></iframe>
-    </div>
-    <div
-        class="overlay container-fluid align-items-center justify-content-center d-flex">
+    <iframe
+        src="https://www.youtube-nocookie.com/embed/xF5oxko1SWg?autoplay=1&controls=0&disablekb=1&loop=1&modestbranding=1&playsinline=1&color=white&mute=1&
+        &playlist=xF5oxko1SWg"
+        class="yt-background" allowFullScreen allow="autoplay"></iframe>
+    <div class="overlay bg-dark " style="--bs-bg-opacity: .7;">
+      {% include 'navbar.html' %}
       {#      <h1 class="mx-auto">Welcome to Maps of Power</h1>#}
       {#      <img src="/static/images/mop_logo.svg"#}
       {#           alt="Maps of Power Logo" height="500"#}

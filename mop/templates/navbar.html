@@ -1,0 +1,48 @@
+<nav class="navbar navbar-dark navbar-expand-lg" >
+    <div class="container">
+      <div class="col-2">
+        <a class="navbar-brand" href="{{ url_for('about') }}">
+          <img src="/static/images/mop_logo_inv.svg"
+               alt="Maps of Power Logo" height="150"
+               class="d-inline-block align-text-top">
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse container-fluid col-8"
+           id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+          {% for item in navbar %}
+            {% if not loop.first %}
+              <div class="vr text-secondary"></div>
+            {% endif %}
+            <li class="nav-item">
+              <a
+                  class="nav-link text-secondary text-capitalize {{ 'fw-bold' if request.endpoint and url_for(request.endpoint) == item.to }}"
+                  target="{{ '_blank' if item.to.startswith('http') else '' }}"
+                  href="{{ item.to }}">{{ item.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div
+          class="translation list-group list-group-flush align-end d-lg-block col-2">
+        {% for language in AVAILABLE_LANGUAGES.items() %}
+          <div class="list-group-item bg-dark text-center">
+            {% if CURRENT_LANGUAGE == language[0] %}
+              <span class="fw-bold text-secondary">{{ language[1] }}</span>
+            {% else %}
+              <a href="{{ url_for('set_language', language=language[0]) }}"
+                 class="text-decoration-none fw-normal text-secondary">
+                {{ language[1] }}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
