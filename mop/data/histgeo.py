@@ -67,22 +67,25 @@ newsletters = {
 
 volumes = {
     1: {
-        'title': 'Space, Landscapes and Settlements in Byzantium. Studies in '
-                 'Historical Geography of the Eastern Mediterranean Presented '
-                 'to Johannes Koder',
+        'title':
+            'Space, Landscapes and Settlements in Byzantium. Studies in '
+            'Historical Geography of the Eastern Mediterranean Presented '
+            'to Johannes Koder',
         'author': 'Andreas Külzer, Mihailo St. Popović ' + _('eds.'),
-        'abstract': [_('histgeo_vol1_1'), _('histgeo_vol1_2'),
-                     _('histgeo_vol1_3')],
-        'order': 'https://akademskaknjiga.com/katalog/space-landscapes-and-'
-                 'settlements-in-byzantium/',
+        'abstract':
+            [_('histgeo_vol1_1'), _('histgeo_vol1_2'), _('histgeo_vol1_3')],
+        'order':
+            'https://akademskaknjiga.com/katalog/space-landscapes-and-'
+            'settlements-in-byzantium/',
         'ISBN': '978-86-6263-191-6',
         'pages': '526',
-        'citation': 'Andreas Külzer, Mihailo St. Popović (eds.), Space, '
-                    'Landscapes and Settlements in Byzantium. Studies in '
-                    'Historical Geography of the Eastern Mediterranean '
-                    'Presented to Johannes Koder (Studies in Historical '
-                    'Geography and Cultural Heritage 1). Vienna–Novi Sad '
-                    '(Akademska knjiga) 2017.',
+        'citation':
+            'Andreas Külzer, Mihailo St. Popović (eds.), Space, '
+            'Landscapes and Settlements in Byzantium. Studies in '
+            'Historical Geography of the Eastern Mediterranean '
+            'Presented to Johannes Koder (Studies in Historical '
+            'Geography and Cultural Heritage 1). Vienna–Novi Sad '
+            '(Akademska knjiga) 2017.',
     },
     2: {
         'title': 'Herbert Hunger und die Wiener Schule der Byzantinistik',
@@ -92,33 +95,38 @@ volumes = {
                  'wiener-schule-der-byzantinistik/',
         'ISBN': '978-86-6263-243-2',
         'pages': '352',
-        'citation': 'Andreas Külzer (ed.), Herbert Hunger und die Wiener '
-                    'Schule der Byzantinistik (Studies in Historical '
-                    'Geography and Cultural Heritage 2). Vienna–Novi Sad '
-                    '(Akademska knjiga) 2019.',
+        'citation':
+            'Andreas Külzer (ed.), Herbert Hunger und die Wiener '
+            'Schule der Byzantinistik (Studies in Historical '
+            'Geography and Cultural Heritage 2). Vienna–Novi Sad '
+            '(Akademska knjiga) 2019.',
     },
     3: {
-        'title': 'Raum und Geschichte: der historische Atlas \'Tabula Imperii '
-                 'Byzantini (TIB)\' an der Österreichischen Akademie der '
-                 'Wissenschaften ',
-        'author': 'Andreas Külzer, Veronika Polloczek, Mihailo St. Popović '
-                  + _('eds.'),
+        'title':
+            'Raum und Geschichte: der historische Atlas \'Tabula Imperii '
+            'Byzantini (TIB)\' an der Österreichischen Akademie der '
+            'Wissenschaften ',
+        'author':
+            'Andreas Külzer, Veronika Polloczek, Mihailo St. Popović '
+            + _('eds.'),
         'abstract': [_('histgeo_vol3_1')],
         'order': 'https://akademskaknjiga.com/katalog/raum-und-geschichte-der-'
                  'historische-atlas-tabula-imperii-byzantini-an-der-'
                  'osterreichischen-akademie-der-wissenschaften-2/ ',
         'ISBN': '978-86-6263-305-7',
         'pages': '240',
-        'citation': 'Andreas Külzer, Veronika Polloczek, Mihailo St. Popović '
-                    '(eds.), Raum und Geschichte: der historische Atlas '
-                    '\'Tabula Imperii Byzantini (TIB)\' an der '
-                    'Österreichischen Akademie der Wissenschaften (Studies in '
-                    'Historical Geography and Cultural Heritage 3). '
-                    'Vienna–Novi Sad (Akademska knjiga) 2020.',
+        'citation':
+            'Andreas Külzer, Veronika Polloczek, Mihailo St. Popović '
+            '(eds.), Raum und Geschichte: der historische Atlas '
+            '\'Tabula Imperii Byzantini (TIB)\' an der '
+            'Österreichischen Akademie der Wissenschaften (Studies in '
+            'Historical Geography and Cultural Heritage 3). '
+            'Vienna–Novi Sad (Akademska knjiga) 2020.',
     },
     4: {
-        'title': 'Ermitages et monastères rupestres de la Laconie byzantine '
-                 '(XIe-XVe siècle) : Archéologie, topographie et paysages ',
+        'title':
+            'Ermitages et monastères rupestres de la Laconie byzantine '
+            '(XIe-XVe siècle) : Archéologie, topographie et paysages ',
         'author': 'Ludovic Bender',
         'abstract': [_('histgeo_vol4_1')],
         'order': 'https://akademskaknjiga.com/katalog/ermitages-et-monasteres-'
@@ -126,15 +134,17 @@ volumes = {
                  'paysages/',
         'ISBN': '978-86-6263-305-7',
         'pages': '464',
-        'citation': 'Ludovic Bender, Ermitages et monastères rupestres de la '
-                    'Laconie byzantine (XIe-XVe siècle) : Archéologie, '
-                    'topographie et paysages (Studies in Historical Geography '
-                    'and Cultural Heritage 4). Vienna–Novi Sad (Akademska '
-                    'knjiga) 2022.',
+        'citation':
+            'Ludovic Bender, Ermitages et monastères rupestres de la '
+            'Laconie byzantine (XIe-XVe siècle) : Archéologie, '
+            'topographie et paysages (Studies in Historical Geography '
+            'and Cultural Heritage 4). Vienna–Novi Sad (Akademska '
+            'knjiga) 2022.',
     },
     5: {
-        'title': 'Contribution to the Prosopography of the Borderzone. '
-                 'Migration and Elite Change in Pre-Ottoman Macedonia',
+        'title':
+            'Contribution to the Prosopography of the Borderzone. '
+            'Migration and Elite Change in Pre-Ottoman Macedonia',
         'author': 'Vratislav Zervan',
         'abstract': [],
         'order': '',
@@ -143,18 +153,21 @@ volumes = {
         'citation': '',
     },
     6: {
-        'title': 'Der den Kordax tanzt: Hommage an Johannes Koder und seine '
-                 'Forschungen über Byzanz und den Balkan.',
-        'author': 'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
-                  + _('eds.'),
+        'title':
+            'Der den Kordax tanzt: Hommage an Johannes Koder und seine '
+            'Forschungen über Byzanz und den Balkan.',
+        'author':
+            'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
+            + _('eds.'),
         'abstract': [],
         'order': '',
         'ISBN': '',
         'pages': '',
-        'citation': 'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
-                    '(ed.), Der den Kordax tanzt: Hommage an Johannes Koder '
-                    'und seine Forschungen über Byzanz und den Balkan. Wien – '
-                    'Leipzig 2023 (Eudora Verlag).',
+        'citation':
+            'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
+            '(ed.), Der den Kordax tanzt: Hommage an Johannes Koder '
+            'und seine Forschungen über Byzanz und den Balkan. Wien – '
+            'Leipzig 2023 (Eudora Verlag).',
     },
 }
 
