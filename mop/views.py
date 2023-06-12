@@ -4,11 +4,11 @@ from flask import render_template, session, request
 from werkzeug import Response
 from werkzeug.utils import redirect
 
+from mop import app
+from mop.data.events import event_list
 from mop.data.histgeo import newsletters, volumes, lectures
 from mop.data.images import category_images
-from mop.data.events import event_list
 from mop.display.image import image_gallery
-from mop import app
 
 
 @app.route('/')
@@ -29,14 +29,9 @@ def software() -> str:
     return render_template('software.html')
 
 
-@app.route('/events')
-def events() -> str:
-    return render_template('events.html', events=event_list)
-
-
 @app.route('/histgeo')
 @app.route('/histgeo/<int:id_>')
-def histgeo(id_: Optional[int]=None) -> str:
+def histgeo(id_: Optional[int] = None) -> str:
     if id_:
         return render_template(
             'lectures.html',
@@ -46,6 +41,16 @@ def histgeo(id_: Optional[int]=None) -> str:
         lectures=lectures,
         newsletters=newsletters,
         volumes=volumes)
+
+
+@app.route('/events')
+def events() -> str:
+    return render_template('events.html', events=event_list)
+
+
+@app.route('/literature')
+def literature() -> str:
+    return render_template('literature.html', events=event_list)
 
 
 @app.route('/language=<language>')

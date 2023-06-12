@@ -143,9 +143,9 @@ volumes = {
     },
     5: {
         'title':
-            'Contribution to the Prosopography of the Borderzone. '
-            'Migration and Elite Change in Pre-Ottoman Macedonia',
-        'author': 'Vratislav Zervan',
+            'Wilderness Revisited: Its Essence, Perception, Description and '
+            'Image in Byzantium and Beyond',
+        'author': 'Mihailo St. Popović ' + _('eds.'),
         'abstract': [],
         'order': '',
         'ISBN': '',
