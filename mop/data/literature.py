@@ -15,6 +15,42 @@ project_literature = [
         'category': ['mop']
     }]
 
+# Todo: adapt project publication to project literature format
+project_publications = [
+    {
+        "author": "Katrin Haase, Johannes Tripps",
+        "title": "Jenseits von Ost und West, in: Forschungsmagazin der HTWK Leipzig Einblicke 2023",
+        "location": "Leipzig",
+        "date": "2023",
+        "pages": "5",
+        "category": ['holdura'],
+        "external_link": '',
+        "download": 'Einblicke_SakraleLandschaften.pdf'
+    },
+    {
+        "author": "Markus Breier, Karel Kriz, Alexander Pucher, Lukas Neugebauer",
+        "title": "Beyond East and West – Geocommunicating Historical Sacred Landscapes, in: Proc. Int. Cartogr. Assoc., 4, 14, 2021. (https://doi.org/10.5194/ica-proc-4-14-2021)",
+        "location": "Göttingen",
+        "date": "2021",
+        "pages": "5",
+        "category": ['holdura'],
+        "external_link": 'https://doi.org/10.5194/ica-proc-4-14-2021',
+        "download": 'ica-proc-4-14-2021.pdf'
+    },
+    {
+        "author": "A. Bracanović, M. Breier, M. Hernández Cordero u. a.",
+        "title": "On the Crossroads between East and West: Geocommunicating Medieval Sacred Landscapes in Today’s Montenegro – First Project Results. DOI: 10.25536/2022q004",
+        "location": "Krems",
+        "date": "2022",
+        "pages": "33",
+        "category": ['holdura'],
+        "external_link": 'http://dx.doi.org/10.25536/2022q004',
+        "download": 'On_the_Crossroads_memo_quer_04.pdf'
+    },
+]
+
+
+
 further_reading = [
     {
         'author': 'Matthias Bürgi',

@@ -11,6 +11,19 @@ def get_dates_formatted(year: int, month: int, day: int) -> str:
     return datetime(year, month, day).strftime('%d.%m.%Y')
 
 
+def get_table_dates_formatted(year: int, month: int, day: int) -> str:
+    return datetime(year, month, day).strftime('%Y/%m/%d')
+
+
+def youtube_iframe(link_: str) -> str:
+    return '<iframe width="560" height="315" ' \
+           f'src="{link_}" ' \
+           'title="YouTube video  player" ' \
+           'allow="accelerometer; autoplay; clipboard-write;  ' \
+           'encrypted-media; gyroscope; picture-in-picture" ' \
+           'allowfullscreen></iframe>'
+
+
 @app.context_processor
 def inject_menu() -> dict[str, Any]:
     content = ['about', 'projects', 'software', 'events', 'histgeo']
@@ -20,7 +33,7 @@ def inject_menu() -> dict[str, Any]:
         {'name': _('software'), 'to': url_for('software')},
         {'name': 'histgeo', 'to': url_for('histgeo')},
         {'name': _('events'), 'to': url_for('events')},
-        {'name': _('literature'), 'to': url_for('literature')}    ]
+        {'name': _('literature'), 'to': url_for('literature')}]
 
     return dict(
         content=content,

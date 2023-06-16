@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "datatables.net-bs5": "^1.13.4",
-    "datatables.net-buttons-bs5": "^2.3.6",
-    "datatables.net-responsive-bs5": "^2.4.1",
-    "datatables.net-searchbuilder-bs5": "^1.4.2",
-    "datatables.net-searchpanes-bs5": "^2.1.2"
-  }
-}
