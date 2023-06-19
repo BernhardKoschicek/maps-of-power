@@ -24,30 +24,26 @@
       </div>
 
       <div class="col-3 bg-accent2 rounded-4 text-center text-dark">
-        <div class="mt-1">
-          <p>
-            <span class="fw-bolder">{{ _('Funded by') }}:</span>
-          </p>
-          <div class="container-fluid ">
-            {% for fund in project.funded_by %}
-              <a href="{{ fund.url }}" target="_blank">
+        <div class="fw-bolder">{{ _('Funded by') }}:</div>
+        <div class="container-fluid">
+          {% for fund in project.funded_by %}
+            <a href="{{ fund.url }}" target="_blank">
               <img
                   src="{{ url_for('static', filename='images/institutes/'+fund.logo) }}"
                   alt="{{ fund.name }}"
-                  class="img-fluid d-flex p-1">
-              </a>
-            {% endfor %}
-          </div>
+                  class="img-fluid d-flex">
+            </a>
+          {% endfor %}
         </div>
 
         <div class="pt-3">
-            <div class="fw-bolder">{{ _('Project Number') }}:</div>
-            {{ project.project_number }}
+          <div class="fw-bolder">{{ _('Project Number') }}:</div>
+          {{ project.project_number }}
         </div>
 
         <div class="pt-3">
-            <div class="fw-bolder">{{ _('Duration') }}:</div>
-            {{ project.begin }} - {{ project.end }}
+          <div class="fw-bolder">{{ _('Duration') }}:</div>
+          {{ project.begin }} - {{ project.end }}
         </div>
         <div class="pt-3">
           <span class="fw-bolder">PI:</span>
