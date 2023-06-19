@@ -8,7 +8,7 @@ institutes = {
     'dfg': {
         'name': 'Deutsche Forschungsgemeinschaft',
         'url': 'https://www.dfg.de/',
-        'logo': 'dfg.png',
+        'logo': 'dfg_inv.png',
         'member': '',
         'address': ''},
     'mt': {
@@ -51,7 +51,7 @@ institutes = {
     'fwf': {
         'name': 'Austrian Science Fund',
         'url': 'https://www.fwf.ac.at/',
-        'logo': 'fwf.jpg',
+        'logo': 'fwf.svg',
         'member': '',
         'address': ''},
     'oeai': {

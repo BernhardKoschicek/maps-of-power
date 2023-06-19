@@ -4,6 +4,7 @@ from flask import render_template, session, request
 from werkzeug import Response
 from werkzeug.utils import redirect
 
+from data.projects.projects import project_data
 from mop import app
 from mop.data.events import event_list
 from mop.data.histgeo import newsletters, volumes, lectures
@@ -20,8 +21,13 @@ def about() -> str:
 
 
 @app.route('/projects')
-def projects() -> str:
-    return render_template('projects.html')
+@app.route('/projects/<title>')
+def projects(title: Optional[str] = None) -> str:
+    if title:
+        return render_template(
+            'project_details.html',
+            project=project_data[title])
+    return render_template('projects.html', projects=project_data)
 
 
 @app.route('/software')

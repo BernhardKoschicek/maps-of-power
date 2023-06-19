@@ -37,9 +37,10 @@ holdura_results = {
     },
 
 project_holdura = {
+    'acronym': 'holdura',
     'title': _(
         'Beyond East and West: Geocommunicating the Sacred Landscapes '
-        'of “Duklja” and “Raška” through Space and Time (11th-14th Cent.)'),
+        'of "Duklja" and "Raška" through Space and Time (11th-14th Cent.)'),
     'funded_by': [institutes['fwf'], institutes['dfg']],
     'project_number': 'I 4330-G',
     'pi': ['Mihailo Popović'],
@@ -47,13 +48,11 @@ project_holdura = {
         'Mag. Markus Breier', 'Lukas Neugebauer, BSc MSc',
         'Florian Korn, BSc MSc', 'Dipl.-Ing. Leonhard Kreil-Brunauer',
         'Ass. Prof. Dr. Branka Vranešević'],
-    'employees': ['Dorota Vargová', 'Bernhard Koschiček-Krombholz',
-                  'David Schmid'],
+    'employees': [
+        'Dorota Vargová', 'Bernhard Koschiček-Krombholz', 'David Schmid'],
     'begin': get_dates_formatted(2020, 3, 1),
     'end': get_dates_formatted(2023, 8, 31),
     'description': holdura_description,
-    'question':
-        _('Läßt sich im jetzigen Montenegro eine „heilige Landschaft“ aus mittelalterlichen Kirchen und Klöstern rekonstruieren?'),
     'icon': f'holdura_icon.jpg',  # todo: establish path
     'presentations': [],
     'publications': [],

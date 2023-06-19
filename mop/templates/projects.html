@@ -3,5 +3,9 @@
     {% include 'navbar.html'  %}
 {% endwith %}
 {% block content %}
-
+<ul>
+  {% for project in projects.values() %}
+  <li><a href="{{ url_for('projects', title=project['acronym']) }}">{{ project['title'] }}</a></li>
+{%  endfor %}
+</ul>
 {% endblock %}
