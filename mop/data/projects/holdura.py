@@ -53,9 +53,7 @@ project_holdura = {
     'begin': get_dates_formatted(2020, 3, 1),
     'end': get_dates_formatted(2023, 8, 31),
     'description': holdura_description,
-    'icon': 'holdura_icon.jpg',  # todo: establish path
-    'presentations': [],
-    'publications': [],
+    'icon': 'holdura_icon.jpg',
     'outreach': [],
     'videos': [
         youtube_iframe('https://www.youtube-nocookie.com/embed/Nhdx2OeWkN8')],

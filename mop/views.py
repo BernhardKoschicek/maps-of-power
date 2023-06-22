@@ -4,12 +4,15 @@ from flask import render_template, session, request
 from werkzeug import Response
 from werkzeug.utils import redirect
 
+from data.literature import literatures
+from data.presentations import presentations
 from data.projects.projects import project_data
 from mop import app
 from mop.data.events import event_list
 from mop.data.histgeo import newsletters, volumes, lectures
 from mop.data.images import category_images
 from mop.display.image import image_gallery
+from util import get_dict_entries_by_category
 
 
 @app.route('/')
@@ -26,7 +29,13 @@ def projects(title: Optional[str] = None) -> str:
     if title:
         return render_template(
             'project_details.html',
-            project=project_data[title])
+            project=project_data[title],
+            presentations=get_dict_entries_by_category(
+                title,
+                presentations),
+            publications=get_dict_entries_by_category(
+                title,
+                literatures)        )
     return render_template('projects.html', projects=project_data)
 
 
@@ -63,3 +72,5 @@ def literature() -> str:
 def set_language(language: Optional[str] = None) -> Response:
     session['language'] = language
     return redirect(request.referrer)
+
+

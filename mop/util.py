@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Any
+from typing import Any, Union
 
 from flask import url_for
 from flask_babel import lazy_gettext as _
@@ -38,3 +38,10 @@ def inject_menu() -> dict[str, Any]:
     return dict(
         content=content,
         navbar=navbar)
+
+def get_dict_entries_by_category(
+        categories: Union[list[str], str],
+        list_: list[dict[str, Any]]) -> list[dict[str, str]]:
+    categories = [categories] if type(categories) == str else categories
+    return [entry for entry in list_
+            if any(item in categories for item in entry['category'])]
