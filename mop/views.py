@@ -35,7 +35,7 @@ def projects(title: Optional[str] = None) -> str:
                 presentations),
             publications=get_dict_entries_by_category(
                 title,
-                literatures)        )
+                literatures))
     return render_template('projects.html', projects=project_data)
 
 

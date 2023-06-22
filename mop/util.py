@@ -39,6 +39,7 @@ def inject_menu() -> dict[str, Any]:
         content=content,
         navbar=navbar)
 
+
 def get_dict_entries_by_category(
         categories: Union[list[str], str],
         list_: list[dict[str, Any]]) -> list[dict[str, str]]:

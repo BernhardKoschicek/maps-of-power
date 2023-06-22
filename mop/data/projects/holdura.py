@@ -5,7 +5,7 @@ from util import get_dates_formatted, youtube_iframe
 
 # Todo: Translation keys, not whole text
 
-holdura_description = [
+description = [
     _('In the current discourse on the integration of the Western Balkans into the European Union the ongoing and envisaged negotiations with the Republics of Montenegro, Serbia and Albania seem to be of remarkable importance in the contemporary media coverage. They comprise a region, which – in a long ago past – played, under the name of Illyricum (Illyrikon), a vital role in the strategic and administrative considerations of the Byzantine Empire.'),
     _('The project builds upon a scholarly cooperation among the academic fields of Byzantine Studies, Medieval History, Historical Geography, Art History, Geography and Geocommunication (GIScience and Cartography) and focuses on two historic regions of “Duklja” and “Raška” being part of the Illyricum. The research hypothesis is that both historic regions constituted a “Sacred Landscape”, which we intend to decipher and to communicate to academia as well as to the interested public with the joint means of Historical Geography, Art History and Geocommunication.'),
     _('Therefore, the project aims at approaching and researching systematically the following three major questions:'),
@@ -15,7 +15,7 @@ holdura_description = [
     _('The project is exclusively feasible through a multidisciplinary approach and cooperation between three project partners from Austria (Austrian Academy of Sciences, here Priv.-Doz. Mag. Dr. Mihailo Popović; University of Vienna, here Professor Dr. Karel Kriz) and Germany (Hochschule für Technik, Wirtschaft und Kultur Leipzig, here Professor Dr. Johannes Tripps).Moreover, it is closely connected to the ongoing scholarly work of Mihailo Popović on <a href="/current_status/TIB_17">TIB volume 17 “Nea Epeiros and Praevalis”</a> and on the TIB Sub Project <a href="sub_projects/montenegro">“Cultural Heritage in Times of World War I: The Case of the Austro-Hungarian Relief Map of Montenegro (1916-1918)”</a>.')
 ],
 
-holdura_results = {
+results = {
         'text': [
             _('The Team Department of Geography and Regional Research (University of Vienna) has created a customised homepage for our project’s Geocommunication: <a href="https://map.geo.univie.ac.at/bew/" target="_blank">https://map.geo.univie.ac.at/bew/</a>')
         ],
@@ -23,18 +23,51 @@ holdura_results = {
         'icons': [
             {
                 'label': _("relief map of Montenegro"),
-                'link': '/static/3dhop/relief.html',  # Todo: hard link
+                'link': 'https://tib.oeaw.ac.at/static/3dhop/relief.html',
                 'file': None,
                 'icon': 'bi-image-alt',
             },
             {
-                'label': _('browse_tib_balkans_data'),
-                'link': '../balkan/digital/explore',  # Todo: hard link
+                'label': _('explore TIB Balkans data'),
+                'link': 'https://tib.oeaw.ac.at/balkan/digital/explore',
                 'file': None,
                 'icon': 'bi-stack',
             },
         ]
-    },
+    }
+
+
+images = [
+    {
+        'src': 'holdura_doclea_1.jpg',
+        'description': _('Bird\'s eye view of the Doclea archaeological '
+                         'excavation, A: Basilica A, B: Basilica B and'
+                         ' cruciform church, Republic of Montenegro'),
+        'citation': 'L. Neugebauer, 2021',
+        'category': ['holdura']
+    }, {
+        'src': 'holdura_doclea_2.jpg',
+        'description': _('Bird\'s eye view of the Doclea archaeological '
+                         'excavation, the western part of the city in '
+                         'the foreground, Republic of Montenegro'),
+        'citation': 'L. Neugebauer, 2021',
+        'category': ['holdura']
+    }, {
+        'src': 'holdura_sveti_nikola.jpg',
+        'description': _('The monastery of Sveti Nikola Vranjina (in the '
+                         'centre of the picture) on Lake Skadar, '
+                         'Republic of Montenegro'),
+        'citation': 'B. Koschiček-Krombholz, 2021',
+        'category': ['holdura']
+    }, {
+        'src': 'holdura_ratac.jpg',
+        'description': _('The former Latin (Catholic) monastery of Ratac '
+                         'from the 12th/13th century near the town '
+                         'of Bar, Republic of Montenegro.'),
+        'citation': 'M. St. Popović, 2021',
+        'category': ['holdura']
+    }]
+
 
 project_holdura = {
     'acronym': 'holdura',
@@ -52,11 +85,13 @@ project_holdura = {
         'Dorota Vargová', 'Bernhard Koschiček-Krombholz', 'David Schmid'],
     'begin': get_dates_formatted(2020, 3, 1),
     'end': get_dates_formatted(2023, 8, 31),
-    'description': holdura_description,
+    'description': description,
+    'results': results,
     'icon': 'holdura_icon.jpg',
-    'outreach': [],
+    'images': images,
     'videos': [
         youtube_iframe('https://www.youtube-nocookie.com/embed/Nhdx2OeWkN8')],
     'part': 'balkan',
     'oaID': 117730,
 }
+
