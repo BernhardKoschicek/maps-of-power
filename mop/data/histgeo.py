@@ -151,24 +151,7 @@ volumes = {
         'ISBN': '',
         'pages': '',
         'citation': '',
-    },
-    6: {
-        'title':
-            'Der den Kordax tanzt: Hommage an Johannes Koder und seine '
-            'Forschungen über Byzanz und den Balkan.',
-        'author':
-            'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
-            + _('eds.'),
-        'abstract': [],
-        'order': '',
-        'ISBN': '',
-        'pages': '',
-        'citation':
-            'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
-            '(ed.), Der den Kordax tanzt: Hommage an Johannes Koder '
-            'und seine Forschungen über Byzanz und den Balkan. Wien – '
-            'Leipzig 2023 (Eudora Verlag).',
-    },
+    }
 }
 
 lecturer = {
