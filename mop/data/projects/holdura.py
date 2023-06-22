@@ -53,7 +53,7 @@ project_holdura = {
     'begin': get_dates_formatted(2020, 3, 1),
     'end': get_dates_formatted(2023, 8, 31),
     'description': holdura_description,
-    'icon': f'holdura_icon.jpg',  # todo: establish path
+    'icon': 'holdura_icon.jpg',  # todo: establish path
     'presentations': [],
     'publications': [],
     'outreach': [],
