@@ -64,6 +64,11 @@ def events() -> str:
     return render_template('events.html', events=event_list)
 
 
+@app.route('/imprint')
+def imprint() -> str:
+    return render_template('imprint.html')
+
+
 @app.route('/literature')
 def literature() -> str:
     literature_ = defaultdict(list)

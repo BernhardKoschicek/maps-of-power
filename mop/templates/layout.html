@@ -50,26 +50,56 @@
 </main>
 <footer class="bg-dark mt-3 pt-5">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center align-items-center">
             <div class="col-12 col-md-3 mb-5">
-                <p class="fw-bold text-primary">{{ _('navigation') }}</p>
-                {% for item in content %}
-                    <p class="mb-0"><a class="text-capitalize text-secondary"
-                                       href="{{ url_for(item) }}">{{ item.replace('_', ' ') }}</a></p>
-                {% endfor %}
+                <h6 class="fw-bold text-info text-uppercase">{{ _('contact') }}</h6>
+                <p class="text-accent2">
+                    {{ _('Austrian Academy of Sciences') }} <br>
+                    {{ _('Institute for Medieval Research') }} <br>
+                    {{ _('Division of Byzantine Research') }} <br>
+                    Georg-Coch-Platz 2 /5. Stock/ Zimmer 13 <br>
+                    1010 {{ _('Vienna') }}, {{ _('Austria') }}, {{ _('Europe') }} <br>
+                    +43 1 51581 3444 <br>
+                    <a href="mailto:maps-of-power@oeaw.ac.at" class="link-secondary">maps-of-power@oeaw.ac.at</a> <br>
+                </p>
             </div>
-            <div class="col-12 col-md-3 mb-5">
-
-            </div>
-            <div class="col-12 col-md-3 mb-5">
-
-            </div>
-            <div class="col text-lg-end mb-5">
+            <div class="col d-flex justify-content-center align-items-center">
                 <a class="navbar-brand" href="/">
-                    <img src="/static/images/mop_logo.svg"
+                    <img src="{{ url_for('static', filename="images/mop_logo.svg") }}"
                          alt="Maps of Power Logo"
-                         height="150"
-                         class="d-inline-block align-text-top">
+                         height="200"
+                         class="d-inline-block">
+                </a>
+            </div>
+            <div class="col-12 col-md-3 mb-5 text-end">
+                <h6 class="fw-bold text-info text-uppercase">{{ _('navigation') }}</h6>
+                {% for item in navbar %}
+                    <p class="mb-0">
+                        <a class="text-capitalize link-secondary"
+                           href="{{ item.to }}">{{ item.name }}</a>
+                    </p>
+                {% endfor %}
+                <a href="{{ url_for('imprint') }}" class="link-secondary text-capitalize">
+                    {{ _('imprint') }}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark pb-5">
+        <div class="row ">
+            <div class="col d-flex justify-content-end align-items-center">
+                <a class="navbar-brand" href="https://www.oeaw.ac.at/" target="_blank">
+                    <img src="{{ url_for('static', filename="images/institutes/oeaw.png") }}"
+                         alt="Austrian Academy of Sciences"
+                         height="70">
+                </a>
+            </div>
+            <div class="col d-flex justify-content-start align-items-center">
+                <a class="navbar-brand" href="https://www.oeaw.ac.at/imafo/home" target="_blank">
+                    <img src="{{ url_for('static', filename="images/institutes/imafo.png") }}"
+                         alt="Institute for Medieval Studies"
+                         height="70"
+                         class="d-inline-block">
                 </a>
             </div>
         </div>

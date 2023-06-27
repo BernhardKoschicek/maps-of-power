@@ -26,18 +26,14 @@ def youtube_iframe(link_: str) -> str:
 
 @app.context_processor
 def inject_menu() -> dict[str, Any]:
-    content = ['about', 'projects', 'software', 'events', 'histgeo']
     navbar = [
         {'name': _('about'), 'to': url_for('about')},
         {'name': _('projects'), 'to': url_for('projects')},
-        {'name': _('software'), 'to': url_for('software')},
+        # {'name': _('software'), 'to': url_for('software')},
         {'name': 'histgeo', 'to': url_for('histgeo')},
         {'name': _('events'), 'to': url_for('events')},
         {'name': _('literature'), 'to': url_for('literature')}]
-
-    return dict(
-        content=content,
-        navbar=navbar)
+    return {'navbar': navbar}
 
 
 def get_dict_entries_by_category(
