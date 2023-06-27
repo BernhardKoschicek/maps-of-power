@@ -1,12 +1,17 @@
 {% extends "layout.html" %}
 {% with bg='bg-dark' %}
-    {% include 'navbar.html'  %}
+    {% include 'navbar.html' %}
 {% endwith %}
 {% block content %}
-<div class="container mt-3 mb-5">
-    {% for key, lit in literatures.items() %}
-        <h4 class="text-primary display-5 text-center mt-3">{{ key }}</h4>
-        {{ create_table(lit,loop.index , 3) }}
-{% endfor %}
-</div>
+    {% set titles = {
+    'mop': _('Maps of Power'),
+     'holdura': _('Beyond East and West'),
+      'further': _('Further Reading')} %}
+
+    <div class="container mt-3 mb-5">
+        {% for key, lit in literatures.items() %}
+            <h4 class="text-primary display-5 text-center mt-3">{{ titles[key] }}</h4>
+            {{ create_table(lit,loop.index , 3) }}
+        {% endfor %}
+    </div>
 {% endblock %}

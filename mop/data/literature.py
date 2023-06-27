@@ -60,7 +60,7 @@ literatures = [{
     'external_link':
         'https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A6545',
     'download': '',
-    'category': ['further reading']
+    'category': ['further']
 }, {
     'author': 'Béatrice Caseau',
     'title':
@@ -71,7 +71,7 @@ literatures = [{
     'pages': '21-59',
     'external_link': '',
     'download': '',
-    'category': ['further reading']
+    'category': ['further']
 }, {
     'author': 'Peter Howard, Ian Thompson, Emma Waterton, Mick Atha',
     'title': 'The Routledge Companion to Landscape Studies',
@@ -80,7 +80,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['further reading']
+    'category': ['further']
 }, {
     'author': 'Graham Jones',
     'title': 'Saints in the Landscape',
@@ -89,7 +89,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['further reading']
+    'category': ['further']
 }, {
     'author': 'Mihailo St. Popović',
     'title': 'Historische Geographie und Digital Humanities. Eine '
@@ -101,7 +101,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['further reading']
+    'category': ['further']
 }, {
     'author': 'Mihailo St. Popović',
     'title': 'Das Langzeitprojekt TIB im 21. Jahrhundert: '
@@ -116,7 +116,7 @@ literatures = [{
     'pages': '157-180, 231-238',
     'external_link': '',
     'download': '',
-    'category': ['further reading']
+    'category': ['further']
 }, {
     'author': 'Mihailo St. Popović',
     'title': 'A Race Against Time: The Impact of Contemporary '
@@ -129,7 +129,7 @@ literatures = [{
     'pages': '191-210',
     'external_link': 'https://doi.org/10.30687/978-88-6969-590-2/012',
     'download': '',
-    'category': ['further reading']
+    'category': ['further']
 }, {
     'author': 'Oliver Rackham',
     'title': 'The History of the Countryside. The Classic History of '
@@ -139,7 +139,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['further reading']
+    'category': ['further']
 }, {
     'author': 'Sam Turner',
     'title': 'Making a Christian Landscape: The Countryside in '
@@ -149,7 +149,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['further reading']
+    'category': ['further']
 }, {
     'author': 'Athanasios Vionis',
     'title': 'Interdisciplinarity in Byzantine Studies. A '
@@ -161,5 +161,5 @@ literatures = [{
     'pages': '121-140',
     'external_link': 'https://doi.org/10.30687/978-88-6969-590-2/008',
     'download': '',
-    'category': ['further reading']
+    'category': ['further']
 }]

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-27 13:07+0200\n"
-"PO-Revision-Date: 2023-06-27 15:30+0200\n"
+"POT-Creation-Date: 2023-06-27 16:16+0200\n"
+"PO-Revision-Date: 2023-06-27 16:17+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -86,17 +86,15 @@ msgstr ""
 "2023 in Belgrade."
 
 #: mop/data/histgeo.py:7 mop/data/histgeo.py:24 mop/data/histgeo.py:41
-#: mop/data/histgeo.py:58
 msgid "march"
 msgstr "March"
 
 #: mop/data/histgeo.py:11 mop/data/histgeo.py:28 mop/data/histgeo.py:45
-#: mop/data/histgeo.py:58
+#: mop/data/histgeo.py:58 mop/data/histgeo.py:67
 msgid "june"
 msgstr "June"
 
 #: mop/data/histgeo.py:15 mop/data/histgeo.py:32 mop/data/histgeo.py:49
-#: mop/data/histgeo.py:62
 msgid "september"
 msgstr "September"
 
@@ -105,12 +103,12 @@ msgstr "September"
 msgid "december"
 msgstr "December"
 
-#: mop/data/histgeo.py:74 mop/data/histgeo.py:111 mop/data/histgeo.py:148
+#: mop/data/histgeo.py:79 mop/data/histgeo.py:116 mop/data/histgeo.py:153
 #: mop/data/literature.py:6
 msgid "eds."
 msgstr "eds."
 
-#: mop/data/histgeo.py:76
+#: mop/data/histgeo.py:81
 msgid "histgeo_vol1_1"
 msgstr ""
 "on the occasion of the 75th birthday of Professor Dr. Johannes Koder the project "
@@ -122,7 +120,7 @@ msgstr ""
 "edited volume (Festschrift) entitled “Space, Landscapes and Settlements in "
 "Byzantium. Studies in Historical Geography of the Eastern Mediterranean”."
 
-#: mop/data/histgeo.py:76
+#: mop/data/histgeo.py:81
 msgid "histgeo_vol1_2"
 msgstr ""
 "Johannes Koder, full member (w. M.) of the Austrian Academy of Sciences, has "
@@ -133,7 +131,7 @@ msgstr ""
 "oeuvre includes groundbreaking publications on the Historical Geography of the "
 "Eastern Mediterranean and Byzantium."
 
-#: mop/data/histgeo.py:76
+#: mop/data/histgeo.py:81
 msgid "histgeo_vol1_3"
 msgstr ""
 "the edited volume (Festschrift) has been published as volume 1 of the series "
@@ -145,11 +143,11 @@ msgstr ""
 "innovate the historical-geographical research in Byzantine Studies. The series "
 "is printed by the publishing house Akademska Knjiga in Novi Sad. "
 
-#: mop/data/histgeo.py:92
+#: mop/data/histgeo.py:97
 msgid "ed."
 msgstr "ed."
 
-#: mop/data/histgeo.py:93
+#: mop/data/histgeo.py:98
 msgid "histgeo_vol2_1"
 msgstr ""
 "on 9 December 2014, Prof. Dr. Dr. h.c. mult. Herbert Hunger (1914–2000), the "
@@ -164,7 +162,7 @@ msgstr ""
 "inspiration especially for scholars working in the various parts of history, "
 "historical geography and fundamental research."
 
-#: mop/data/histgeo.py:112
+#: mop/data/histgeo.py:117
 msgid "histgeo_vol3_1"
 msgstr ""
 "The Long-Term Project “Tabula Imperii Byzantini (TIB)” (Institute for Medieval "
@@ -190,7 +188,7 @@ msgstr ""
 "we do believe that the existence of such a project in Austria and its "
 "documentation will meet public interest and awareness."
 
-#: mop/data/histgeo.py:131
+#: mop/data/histgeo.py:136
 msgid "histgeo_vol4_1"
 msgstr ""
 "the landscape of the Southeast Peloponnese (Laconia, Greece), a very important "
@@ -208,13 +206,13 @@ msgstr ""
 "content of the painted decoration but also by the choice of location or a deep "
 "relationship with natural elements of the landscape."
 
-#: mop/data/histgeo.py:160
+#: mop/data/histgeo.py:165
 msgid "sgomez_short_bio"
 msgstr ""
 "BA in History, Autónoma University of Madrid, MA in Archaeology, Università Ca’ "
 "Foscari of Venice, MA in Egyptian Archaeology, University College of London"
 
-#: mop/data/histgeo.py:161
+#: mop/data/histgeo.py:166
 msgid "sgomez_bio_1"
 msgstr ""
 "Silvia Gómez Senovilla, is currently finishing her PhD Research at the "
@@ -222,7 +220,7 @@ msgstr ""
 "Enigma” (Grant agreement Nº 668640), under the supervision of Prof. Manfred "
 "Bietak."
 
-#: mop/data/histgeo.py:161
+#: mop/data/histgeo.py:166
 msgid "sgomez_bio_2"
 msgstr ""
 "in her PhD, she examines the structure and disposition of settlements and "
@@ -233,19 +231,19 @@ msgstr ""
 "tools, she explores the transformations of the space during this part of the "
 "Bronze Age, and its social implications."
 
-#: mop/data/histgeo.py:168
+#: mop/data/histgeo.py:173
 msgid "lecture_1_title"
 msgstr "Studying Space in Ancient Settlements"
 
-#: mop/data/histgeo.py:169
+#: mop/data/histgeo.py:174
 msgid "lecture_1_subtitle"
 msgstr "The Streets of Avaris, the Use of Space, and the Reification Trap"
 
-#: mop/data/histgeo.py:176
+#: mop/data/histgeo.py:181
 msgid "english"
 msgstr "englisch"
 
-#: mop/data/histgeo.py:177
+#: mop/data/histgeo.py:182
 msgid "lecture_1_1"
 msgstr ""
 "archaeology and history deal naturally with the time-space challenge. Despite "
@@ -266,7 +264,7 @@ msgstr ""
 "subjected to a (conscious or unconscious) pre-selection, hindrances as well some "
 "attempts for a true analysis of space and its constituents."
 
-#: mop/data/histgeo.py:177
+#: mop/data/histgeo.py:182
 msgid "lecture_1_2"
 msgstr ""
 "in this lecture, I will present the current state of my PhD research, where I "
@@ -279,27 +277,27 @@ msgstr ""
 "trying to open the debate as to what possibilities can help us to overcome the "
 "sometimes-ubiquitous reliance on purely visual models."
 
-#: mop/data/histgeo.py:181
+#: mop/data/histgeo.py:186
 msgid "author"
 msgstr "author"
 
-#: mop/data/histgeo.py:182
+#: mop/data/histgeo.py:187
 msgid "pages"
 msgstr "pages"
 
-#: mop/data/histgeo.py:183
+#: mop/data/histgeo.py:188
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:184
+#: mop/data/histgeo.py:189
 msgid "citation"
 msgstr "citation"
 
-#: mop/data/histgeo.py:185
+#: mop/data/histgeo.py:190
 msgid "order"
 msgstr "order"
 
-#: mop/data/histgeo.py:186
+#: mop/data/histgeo.py:191
 msgid "abstract"
 msgstr "abstract"
 
@@ -339,14 +337,6 @@ msgstr "the Bay of Kotor, Montenegro (2021)"
 msgid "Leipzig"
 msgstr "Leipzig"
 
-#: mop/data/literature.py:15
-msgid "mop"
-msgstr "Maps of Power"
-
-#: mop/data/literature.py:26 mop/data/literature.py:38 mop/data/literature.py:50
-msgid "holdura"
-msgstr "Beyond East and West"
-
 #: mop/data/literature.py:33
 msgid "Göttingen"
 msgstr "Göttingen"
@@ -359,50 +349,43 @@ msgstr "etc."
 msgid "Krems"
 msgstr "Krems"
 
-#: mop/data/literature.py:62 mop/data/literature.py:73 mop/data/literature.py:82
-#: mop/data/literature.py:91 mop/data/literature.py:103 mop/data/literature.py:118
-#: mop/data/literature.py:131 mop/data/literature.py:141 mop/data/literature.py:151
-#: mop/data/literature.py:163
-msgid "further reading"
-msgstr "further reading"
-
-#: mop/data/literature.py:68
+#: mop/data/literature.py:69
 msgid "cambridge, MA"
 msgstr "Cambridge, MA"
 
-#: mop/data/literature.py:68 mop/data/literature.py:77 mop/data/literature.py:136
+#: mop/data/literature.py:69 mop/data/literature.py:78 mop/data/literature.py:137
 msgid "london"
 msgstr "London"
 
-#: mop/data/literature.py:77
+#: mop/data/literature.py:78
 msgid "new york"
 msgstr "New York"
 
-#: mop/data/literature.py:86
+#: mop/data/literature.py:87
 msgid "stroud"
 msgstr "Stroud"
 
-#: mop/data/literature.py:98
+#: mop/data/literature.py:99
 msgid "mainz"
 msgstr "Mainz"
 
-#: mop/data/literature.py:98
+#: mop/data/literature.py:99
 msgid "ruhpolding"
 msgstr "Ruhpolding"
 
-#: mop/data/literature.py:113
+#: mop/data/literature.py:114
 msgid "vienna"
 msgstr "Vienna"
 
-#: mop/data/literature.py:113
+#: mop/data/literature.py:114
 msgid "novi sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:126 mop/data/literature.py:158
+#: mop/data/literature.py:127 mop/data/literature.py:159
 msgid "venice"
 msgstr "Venice"
 
-#: mop/data/literature.py:146
+#: mop/data/literature.py:147
 msgid "exter"
 msgstr "Exeter"
 
@@ -434,7 +417,63 @@ msgstr "eds.Leeds"
 msgid "Florenz"
 msgstr "Florenz"
 
-#: mop/data/projects/holdura.py:9
+#: mop/data/projects/holdura.py:8
+msgid "holdura_result_text_1"
+msgstr ""
+"The Team Department of Geography and Regional Research (University of Vienna) "
+"has created a customised homepage for our project’s Geocommunication: <a "
+"href=\"https://map.geo.univie.ac.at/bew/\" target=\"_blank\" class=\"link-"
+"primary\">https://map.geo.univie.ac.at/bew/</a>"
+
+#: mop/data/projects/holdura.py:12
+msgid "relief map of Montenegro"
+msgstr "Relief map of Montenegro"
+
+#: mop/data/projects/holdura.py:17
+msgid "explore TIB Balkans data"
+msgstr "Explore TIB Balkans data"
+
+#: mop/data/projects/holdura.py:26
+msgid ""
+"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
+"Basilica B and cruciform church, Republic of Montenegro"
+msgstr ""
+"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
+"Basilica B and cruciform church, Republic of Montenegro"
+
+#: mop/data/projects/holdura.py:33
+msgid ""
+"Bird's eye view of the Doclea archaeological excavation, the western part of the "
+"city in the foreground, Republic of Montenegro"
+msgstr ""
+"Bird's eye view of the Doclea archaeological excavation, the western part of the "
+"city in the foreground, Republic of Montenegro"
+
+#: mop/data/projects/holdura.py:40
+msgid ""
+"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on Lake "
+"Skadar, Republic of Montenegro"
+msgstr ""
+"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on Lake "
+"Skadar, Republic of Montenegro"
+
+#: mop/data/projects/holdura.py:47
+msgid ""
+"The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
+"the town of Bar, Republic of Montenegro."
+msgstr ""
+"The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
+"the town of Bar, Republic of Montenegro."
+
+#: mop/data/projects/holdura.py:56
+msgid ""
+"Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
+"\"Raška\" through Space and Time (11th-14th Cent.)"
+msgstr ""
+"Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
+"\"Raška\" through Space and Time (11th-14th Cent.)"
+
+#: mop/data/projects/holdura.py:71
 msgid "holdura_description_1"
 msgstr ""
 "In the current discourse on the integration of the Western Balkans into the "
@@ -444,7 +483,7 @@ msgstr ""
 "– played, under the name of Illyricum (Illyrikon), a vital role in the strategic "
 "and administrative considerations of the Byzantine Empire."
 
-#: mop/data/projects/holdura.py:10
+#: mop/data/projects/holdura.py:72
 msgid "holdura_description_2"
 msgstr ""
 "The project builds upon a scholarly cooperation among the academic fields of "
@@ -456,13 +495,13 @@ msgstr ""
 "as to the interested public with the joint means of Historical Geography, Art "
 "History and Geocommunication."
 
-#: mop/data/projects/holdura.py:11
+#: mop/data/projects/holdura.py:73
 msgid "holdura_description_3"
 msgstr ""
 "Therefore, the project aims at approaching and researching systematically the "
 "following three major questions:"
 
-#: mop/data/projects/holdura.py:12
+#: mop/data/projects/holdura.py:74
 msgid "holdura_description_4"
 msgstr ""
 "(1) In which way did the local rulers and the Churches of Rome and "
@@ -471,14 +510,14 @@ msgstr ""
 "pattern of monuments (i.e. the churches and monasteries) in this “Sacred "
 "Landscape”?"
 
-#: mop/data/projects/holdura.py:13
+#: mop/data/projects/holdura.py:75
 msgid "holdura_description_5"
 msgstr ""
 "(2) Did the volatile religious affiliation of the local rulers have an impact on "
 "the “Sacred Landscape” and where were Latin or Byzantine places of worship "
 "transformed or superimposed in the course of time?"
 
-#: mop/data/projects/holdura.py:14
+#: mop/data/projects/holdura.py:76
 msgid "holdura_description_6"
 msgstr ""
 "(3) Can the religious and cultural influence of the Latin and Byzantine "
@@ -494,7 +533,7 @@ msgstr ""
 "hrf=\"hhttps://map.geo.univie.ac.at/bew/\" class=\"link-primary\">map "
 "application</a>."
 
-#: mop/data/projects/holdura.py:15
+#: mop/data/projects/holdura.py:77
 msgid "holdura_description_7"
 msgstr ""
 "The project is exclusively feasible through a multidisciplinary approach and "
@@ -508,62 +547,6 @@ msgstr ""
 "ac.at/subprojects/montenegro\" class=\"link-primary\">“Cultural Heritage in "
 "Times of World War I: The Case of the Austro-Hungarian Relief Map of Montenegro "
 "(1916-1918)”</a>."
-
-#: mop/data/projects/holdura.py:20
-msgid "holdura_result_text_1"
-msgstr ""
-"The Team Department of Geography and Regional Research (University of Vienna) "
-"has created a customised homepage for our project’s Geocommunication: <a "
-"href=\"https://map.geo.univie.ac.at/bew/\" target=\"_blank\" class=\"link-"
-"primary\">https://map.geo.univie.ac.at/bew/</a>"
-
-#: mop/data/projects/holdura.py:24
-msgid "relief map of Montenegro"
-msgstr "Relief map of Montenegro"
-
-#: mop/data/projects/holdura.py:29
-msgid "explore TIB Balkans data"
-msgstr "Explore TIB Balkans data"
-
-#: mop/data/projects/holdura.py:40
-msgid ""
-"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
-"Basilica B and cruciform church, Republic of Montenegro"
-msgstr ""
-"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
-"Basilica B and cruciform church, Republic of Montenegro"
-
-#: mop/data/projects/holdura.py:47
-msgid ""
-"Bird's eye view of the Doclea archaeological excavation, the western part of the "
-"city in the foreground, Republic of Montenegro"
-msgstr ""
-"Bird's eye view of the Doclea archaeological excavation, the western part of the "
-"city in the foreground, Republic of Montenegro"
-
-#: mop/data/projects/holdura.py:54
-msgid ""
-"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on Lake "
-"Skadar, Republic of Montenegro"
-msgstr ""
-"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on Lake "
-"Skadar, Republic of Montenegro"
-
-#: mop/data/projects/holdura.py:61
-msgid ""
-"The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
-"the town of Bar, Republic of Montenegro."
-msgstr ""
-"The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
-"the town of Bar, Republic of Montenegro."
-
-#: mop/data/projects/holdura.py:70
-msgid ""
-"Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
-"\"Raška\" through Space and Time (11th-14th Cent.)"
-msgstr ""
-"Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
-"\"Raška\" through Space and Time (11th-14th Cent.)"
 
 #: mop/templates/about.html:17
 msgid "about_text_1"
@@ -816,6 +799,18 @@ msgstr "link"
 msgid "recording"
 msgstr "recording"
 
+#: mop/templates/literature.html:7
+msgid "Maps of Power"
+msgstr "Maps of Power"
+
+#: mop/templates/literature.html:8
+msgid "Beyond East and West"
+msgstr "Beyond East and West"
+
+#: mop/templates/literature.html:9
+msgid "Further Reading"
+msgstr "Further Reading"
+
 #: mop/templates/project_details.html:27
 msgid "Funded by"
 msgstr "Funded by"
@@ -850,3 +845,9 @@ msgstr "Presentations"
 
 #~ msgid "newsletter_header"
 #~ msgstr "Newsletter registration"
+
+#~ msgid "mop"
+#~ msgstr "Maps of Power"
+
+#~ msgid "holdura"
+#~ msgstr "Beyond East and West"
