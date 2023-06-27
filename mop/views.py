@@ -1,3 +1,4 @@
+from collections import defaultdict
 from typing import Optional
 
 from flask import render_template, session, request
@@ -65,7 +66,11 @@ def events() -> str:
 
 @app.route('/literature')
 def literature() -> str:
-    return render_template('literature.html', events=event_list)
+    literature_ = defaultdict(list)
+    for lit in literatures:
+        for cat in lit['category']:
+            literature_[cat].append(lit)
+    return render_template('literature.html', literatures=literature_)
 
 
 @app.route('/language=<language>')

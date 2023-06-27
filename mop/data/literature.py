@@ -12,7 +12,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['mop']
+    'category': [_('mop')]
 }, {
     'author': 'Katrin Haase, Johannes Tripps',
     'title':
