@@ -5,9 +5,9 @@ from flask import render_template, session, request
 from werkzeug import Response
 from werkzeug.utils import redirect
 
-from data.literature import literatures
-from data.presentations import presentations
-from data.projects.projects import project_data
+from mop.data.literature import literatures
+from mop.data.presentations import presentations
+from mop.data.projects.projects import project_data
 from mop import app
 from mop.data.events import event_list
 from mop.data.histgeo import newsletters, volumes, lectures

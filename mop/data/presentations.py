@@ -1,6 +1,6 @@
 from flask_babel import lazy_gettext as _
 
-from util import get_table_dates_formatted
+from mop.util import get_table_dates_formatted
 
 presentations = [{
     'presenter': 'Mihailo St. Popović',
