@@ -1,7 +1,7 @@
 from flask_babel import lazy_gettext as _
 
 from mop.data.institutes import institutes
-from util import get_dates_formatted, youtube_iframe
+from mop.util import get_dates_formatted, youtube_iframe
 
 results = {
     'text': [

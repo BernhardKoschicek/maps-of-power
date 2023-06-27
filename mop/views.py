@@ -13,7 +13,7 @@ from mop.data.events import event_list
 from mop.data.histgeo import newsletters, volumes, lectures
 from mop.data.images import category_images
 from mop.display.image import image_gallery
-from util import get_dict_entries_by_category
+from mop.util import get_dict_entries_by_category
 
 
 @app.route('/')
@@ -77,5 +77,3 @@ def literature() -> str:
 def set_language(language: Optional[str] = None) -> Response:
     session['language'] = language
     return redirect(request.referrer)
-
-
