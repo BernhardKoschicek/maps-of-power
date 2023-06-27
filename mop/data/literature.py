@@ -10,7 +10,7 @@ literatures = [{
     'locations': [_('Leipzig')],
     'date': '',
     'pages': '',
-    'link': '',
+    'external_link': '',
     'download': '',
     'category': ['mop']
 }, {
@@ -21,9 +21,9 @@ literatures = [{
     'locations': [_('Leipzig')],
     'date': '2023',
     'pages': '5',
-    'link': '',
+    'external_link': '',
     'download': 'Einblicke_SakraleLandschaften.pdf',
-    'category': ['holdura']
+    'category': [_('holdura')]
 }, {
     'author': 'Markus Breier, Karel Kriz, Alexander Pucher, Lukas Neugebauer',
     'title':
@@ -33,9 +33,9 @@ literatures = [{
     'locations': [_('Göttingen')],
     'date': '2021',
     'pages': '5',
-    'link': 'https://doi.org/10.5194/ica-proc-4-14-2021',
+    'external_link': 'https://doi.org/10.5194/ica-proc-4-14-2021',
     'download': 'ica-proc-4-14-2021.pdf',
-    'category': ['holdura']
+    'category': [_('holdura')]
 }, {
     'author': 'A. Bracanović, M. Breier, M. Hernández Cordero ' + _('etc.'),
     'title':
@@ -45,9 +45,9 @@ literatures = [{
     'locations': [_('Krems')],
     'date': '2022',
     'pages': '33',
-    'link': 'http://dx.doi.org/10.25536/2022q004',
+    'external_link': 'http://dx.doi.org/10.25536/2022q004',
     'download': 'On_the_Crossroads_memo_quer_04.pdf',
-    'category': ['holdura']
+    'category': [_('holdura')]
 }, {
     'author': 'Matthias Bürgi',
     'title':
@@ -57,9 +57,9 @@ literatures = [{
     'locations': '',
     'date': '2008',
     'pages': '370-377',
-    'link': 'https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A6545',
+    'external_link': 'https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A6545',
     'download': '',
-    'category': ['further']
+    'category': [_('further reading')]
 }, {
     'author': 'Béatrice Caseau',
     'title':
@@ -68,27 +68,27 @@ literatures = [{
     'locations': [_('cambridge, MA'), _('london')],
     'date': '2001',
     'pages': '21-59',
-    'link': '',
+    'external_link': '',
     'download': '',
-    'category': ['further']
+    'category': [_('further reading')]
 }, {
     'author': 'Peter Howard, Ian Thompson, Emma Waterton, Mick Atha',
     'title': 'The Routledge Companion to Landscape Studies',
     'locations': [_('london'), _('new york')],
     'date': '2020',
     'pages': '',
-    'link': '',
+    'external_link': '',
     'download': '',
-    'category': ['further']
+    'category': [_('further reading')]
 }, {
     'author': 'Graham Jones',
     'title': 'Saints in the Landscape',
     'locations': [_('stroud')],
     'date': '2007',
     'pages': '',
-    'link': '',
+    'external_link': '',
     'download': '',
-    'category': ['further']
+    'category': [_('further reading')]
 }, {
     'author': 'Mihailo St. Popović',
     'title': 'Historische Geographie und Digital Humanities. Eine '
@@ -98,9 +98,9 @@ literatures = [{
     'locations': [_('mainz'), _('ruhpolding')],
     'date': '2014',
     'pages': '',
-    'link': '',
+    'external_link': '',
     'download': '',
-    'category': ['further']
+    'category': [_('further reading')]
 }, {
     'author': 'Mihailo St. Popović',
     'title': 'Das Langzeitprojekt TIB im 21. Jahrhundert: '
@@ -113,9 +113,9 @@ literatures = [{
     'locations': [_('vienna'), _('novi sad')],
     'date': '2020',
     'pages': '157-180, 231-238',
-    'link': '',
+    'external_link': '',
     'download': '',
-    'category': ['further']
+    'category': [_('further reading')]
 }, {
     'author': 'Mihailo St. Popović',
     'title': 'A Race Against Time: The Impact of Contemporary '
@@ -126,9 +126,9 @@ literatures = [{
     'locations': [_('venice')],
     'date': '2022',
     'pages': '191-210',
-    'link': 'http://doi.org/10.30687/978-88-6969-590-2/012',
+    'external_link': 'http://doi.org/10.30687/978-88-6969-590-2/012',
     'download': '',
-    'category': ['further']
+    'category': [_('further reading')]
 }, {
     'author': 'Oliver Rackham',
     'title': 'The History of the Countryside. The Classic History of '
@@ -136,9 +136,9 @@ literatures = [{
     'locations': [_('london')],
     'date': '2020',
     'pages': '',
-    'link': '',
+    'external_link': '',
     'download': '',
-    'category': ['further']
+    'category': [_('further reading')]
 }, {
     'author': 'Sam Turner',
     'title': 'Making a Christian Landscape: The Countryside in '
@@ -146,9 +146,9 @@ literatures = [{
     'locations': [_('exter')],
     'date': '2006',
     'pages': '',
-    'link': '',
+    'external_link': '',
     'download': '',
-    'category': ['further']
+    'category': [_('further reading')]
 }, {
     'author': 'Athanasios Vionis',
     'title': 'Interdisciplinarity in Byzantine Studies. A '
@@ -158,7 +158,7 @@ literatures = [{
     'locations': [_('venice')],
     'date': '2022',
     'pages': '121-140',
-    'link': 'http://doi.org/10.30687/978-88-6969-590-2/008',
+    'external_link': 'http://doi.org/10.30687/978-88-6969-590-2/008',
     'download': '',
-    'category': ['further']
+    'category': [_('further reading')]
 }]

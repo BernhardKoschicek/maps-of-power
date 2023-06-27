@@ -5,7 +5,7 @@
 
 {% block title %}{{ project.title }}{% endblock %}
 {% block content %}
-  <div class="container mt-3">
+  <div class="container mt-3 mb-5">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ url_for('projects') }}" class="link-primary">{{ _('projects') }}</a>
@@ -101,7 +101,7 @@
     {% endif %}
     {% if project.results %}
       <h3 id="results" class="pt-5 text-center">
-        <a href="#results" class="text-decoration-none">{{ _('results') }}</a>
+        <a href="#results" class="text-decoration-none link-primary">{{ _('results') }}</a>
       </h3>
       {% for text in project.results['text'] %}
         <p>{{ text | safe }}</p>
@@ -118,15 +118,15 @@
           {% for link in project.results['icons'] %}
             <div class="col-3 ">
               {% if link.link %}
-                <a href="{{ link.link }}" class="text-decoration-none"
+                <a href="{{ link.link }}" class="text-decoration-none link-primary"
                    target="_blank">
               {% endif %}
               {% if link.file %}
                 <a href="{{ url_for('static', filename='repository/projects/' + link.file) }}"
-                   class="text-decoration-none">
+                   class="text-decoration-none link-primary">
               {% endif %}
-              <i class="{{ link.icon }} display-4"></i>
-              <p>{{ link.label }}</p>
+              <i class="{{ link.icon }} display-4 text-accent2"></i>
+              <p class="mt-1">{{ link.label }}</p>
               </a></a>
             </div>
           {% endfor %}
@@ -136,13 +136,13 @@
 
     {% if publications %}
       <h4 id="publications" class="pt-5 text-center">
-        <a href="#publications" class="text-decoration-none">{{ _('Publications') }}</a>
+        <a href="#publications" class="text-decoration-none link-primary">{{ _('Publications') }}</a>
       </h4>
       {{ create_table(publications, 'publications', 3) }}
     {% endif %}
     {% if presentations %}
       <h4 id="presentations" class="pt-5 text-center">
-        <a href="#presentations" class="text-decoration-none">{{ _('Presentations') }}</a>
+        <a href="#presentations" class="text-decoration-none link-primary">{{ _('Presentations') }}</a>
       </h4>
       {{ create_table(presentations, 'presentations', 4) }}
     {% endif %}
