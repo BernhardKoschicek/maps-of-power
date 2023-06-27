@@ -8,7 +8,7 @@ presentations = [{
         'Пројекат Tabula Imperii Byzantini: о будућности (?) проучавања '
         'историјске географије Византије ',
     'conference': 'Serbian Academy of Sciences and Arts – SANU',
-    'location': _('Belgrade'),
+    'location': [_('Belgrade')],
     'date': get_table_dates_formatted(2022, 2, 22),
     'external_link': '',
     'download': '',
@@ -23,7 +23,7 @@ presentations = [{
     'conference':
         'Deutsche Gesellschaft für Kartographie e.V., '
         'Sektion Halle – Leipzig',
-    'location': _('Leipzig'),
+    'location': [_('Leipzig')],
     'date': get_table_dates_formatted(2022, 11, 10),
     'external_link': '',
     'download': '',
@@ -34,7 +34,7 @@ presentations = [{
         'Doing Historical Geography in A Digital Age: The Case of The '
         'Tabula Imperii Byzantini Balkans and Its Public Outreach',
     'conference': '2022 Byzantine Studies Conference',
-    'location': _('Los Angeles'),
+    'location': [_('Los Angeles')],
     'date': get_table_dates_formatted(2022, 11, 6),
     'external_link': 'https://bsana.net/annual-conference/',
     'download': '',
@@ -48,7 +48,7 @@ presentations = [{
     'conference':
         'Global Eurasia, Workshop II: Handlungsspielräume, Netzwerke und '
         'transregionale Kontexte',
-    'location': _('Vienna'),
+    'location': [_('Vienna')],
     'date': get_table_dates_formatted(2022, 5, 12),
     'external_link': '',
     'download': '',
@@ -61,7 +61,7 @@ presentations = [{
     'conference':
         'Seminar Series: The Balkans Between Empires, Aristotle '
         'University of Thessaloniki, Ibn Haldun University Istanbul',
-    'location': _('Thessaloniki'),
+    'location': [_('Thessaloniki')],
     'date': get_table_dates_formatted(2022, 4, 1),
     'external_link': '',
     'download': '',
@@ -72,7 +72,7 @@ presentations = [{
         'Beyond East and West – '
         'Geocommunicating Historical Sacred Landscapes',
     'conference': 'International Medieval Congress, University of Leeds',
-    'location': _('Leeds'),
+    'location': [_('Leeds')],
     'date': get_table_dates_formatted(2021, 7, 7),
     'external_link': '',
     'download': '',
@@ -84,7 +84,7 @@ presentations = [{
         'Beyond East and West – '
         'Geocommunicating Historical Sacred Landscapes',
     'conference': '30th International Cartographic Conference 2021',
-    'location': _('Florenz'),
+    'location': [_('Florenz')],
     'date': get_table_dates_formatted(2021, 12, 18),
     'external_link': '',
     'download': '',
@@ -95,7 +95,7 @@ presentations = [{
         'An Ecclesiastical History of Medieval Duklja:'
         ' A Landscape Defined by Rite',
     'conference': 'International Medieval Congress',
-    'location': _('Leeds'),
+    'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
@@ -107,7 +107,7 @@ presentations = [{
         'Imperial Crown of King Stefan Uroš III Dečanski in the '
         'Cetinje Monastery',
     'conference': 'International Medieval Congress',
-    'location': _('Leeds'),
+    'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
@@ -118,7 +118,7 @@ presentations = [{
         'Mapping Cultural Heritage beyond the Eye: The Case of the Crown '
         'of the Serbian King Stefan Dečanski',
     'conference': 'International Medieval Congress',
-    'location': _('Leeds'),
+    'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
@@ -129,7 +129,7 @@ presentations = [{
         'Beyond East and West: Sacred Landscapes in the Territory of '
         'Today\'s Montenegro, 11th-14th Centuries',
     'conference': 'International Medieval Congress',
-    'location': _('Leeds'),
+    'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
@@ -140,7 +140,7 @@ presentations = [{
         'Modern Cartographic Representations of Medieval Borders '
         'and Border Zones',
     'conference': 'International Medieval Congress',
-    'location': _('Leeds'),
+    'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
@@ -150,7 +150,7 @@ presentations = [{
     'title':
         'Experiencing Historical Landscapes Using Visual Storytelling',
     'conference': 'International Medieval Congress',
-    'location': _('Leeds'),
+    'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
@@ -161,7 +161,7 @@ presentations = [{
         'Beyond East and West - A Framework for Researching and '
         'Communicating Historical Landscapes',
     'conference': 'EuroCarto 2022',
-    'location': _('Vienna'),
+    'location': [_('Vienna')],
     'date': get_table_dates_formatted(2022, 9, 19),
     'external_link': '',
     'download': 'eurocarto_2022.pdf',
@@ -173,7 +173,7 @@ presentations = [{
         'Map-Based Communication',
     'conference':
         '5. Geographie-Werkstatt des Österreichischem Geographieverbands',
-    'location': _('Vienna'),
+    'location': [_('Vienna')],
     'date': get_table_dates_formatted(2022, 9, 20),
     'external_link': '',
     'download': '2022-09-20_Geographiewerkstatt_Poster.jpg',

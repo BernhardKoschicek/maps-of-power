@@ -12,7 +12,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': [_('mop')]
+    'category': ['mop']
 }, {
     'author': 'Katrin Haase, Johannes Tripps',
     'title':
@@ -23,7 +23,7 @@ literatures = [{
     'pages': '5',
     'external_link': '',
     'download': 'Einblicke_SakraleLandschaften.pdf',
-    'category': [_('holdura')]
+    'category': ['holdura']
 }, {
     'author': 'Markus Breier, Karel Kriz, Alexander Pucher, Lukas Neugebauer',
     'title':
@@ -35,7 +35,7 @@ literatures = [{
     'pages': '5',
     'external_link': 'https://doi.org/10.5194/ica-proc-4-14-2021',
     'download': 'ica-proc-4-14-2021.pdf',
-    'category': [_('holdura')]
+    'category': ['holdura']
 }, {
     'author': 'A. Bracanović, M. Breier, M. Hernández Cordero ' + _('etc.'),
     'title':
@@ -45,9 +45,9 @@ literatures = [{
     'locations': [_('Krems')],
     'date': '2022',
     'pages': '33',
-    'external_link': 'http://dx.doi.org/10.25536/2022q004',
+    'external_link': 'https://dx.doi.org/10.25536/2022q004',
     'download': 'On_the_Crossroads_memo_quer_04.pdf',
-    'category': [_('holdura')]
+    'category': ['holdura']
 }, {
     'author': 'Matthias Bürgi',
     'title':
@@ -57,9 +57,10 @@ literatures = [{
     'locations': '',
     'date': '2008',
     'pages': '370-377',
-    'external_link': 'https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A6545',
+    'external_link':
+        'https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A6545',
     'download': '',
-    'category': [_('further reading')]
+    'category': ['further reading']
 }, {
     'author': 'Béatrice Caseau',
     'title':
@@ -70,7 +71,7 @@ literatures = [{
     'pages': '21-59',
     'external_link': '',
     'download': '',
-    'category': [_('further reading')]
+    'category': ['further reading']
 }, {
     'author': 'Peter Howard, Ian Thompson, Emma Waterton, Mick Atha',
     'title': 'The Routledge Companion to Landscape Studies',
@@ -79,7 +80,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': [_('further reading')]
+    'category': ['further reading']
 }, {
     'author': 'Graham Jones',
     'title': 'Saints in the Landscape',
@@ -88,7 +89,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': [_('further reading')]
+    'category': ['further reading']
 }, {
     'author': 'Mihailo St. Popović',
     'title': 'Historische Geographie und Digital Humanities. Eine '
@@ -100,7 +101,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': [_('further reading')]
+    'category': ['further reading']
 }, {
     'author': 'Mihailo St. Popović',
     'title': 'Das Langzeitprojekt TIB im 21. Jahrhundert: '
@@ -115,7 +116,7 @@ literatures = [{
     'pages': '157-180, 231-238',
     'external_link': '',
     'download': '',
-    'category': [_('further reading')]
+    'category': ['further reading']
 }, {
     'author': 'Mihailo St. Popović',
     'title': 'A Race Against Time: The Impact of Contemporary '
@@ -126,9 +127,9 @@ literatures = [{
     'locations': [_('venice')],
     'date': '2022',
     'pages': '191-210',
-    'external_link': 'http://doi.org/10.30687/978-88-6969-590-2/012',
+    'external_link': 'https://doi.org/10.30687/978-88-6969-590-2/012',
     'download': '',
-    'category': [_('further reading')]
+    'category': ['further reading']
 }, {
     'author': 'Oliver Rackham',
     'title': 'The History of the Countryside. The Classic History of '
@@ -138,7 +139,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': [_('further reading')]
+    'category': ['further reading']
 }, {
     'author': 'Sam Turner',
     'title': 'Making a Christian Landscape: The Countryside in '
@@ -148,7 +149,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': [_('further reading')]
+    'category': ['further reading']
 }, {
     'author': 'Athanasios Vionis',
     'title': 'Interdisciplinarity in Byzantine Studies. A '
@@ -158,7 +159,7 @@ literatures = [{
     'locations': [_('venice')],
     'date': '2022',
     'pages': '121-140',
-    'external_link': 'http://doi.org/10.30687/978-88-6969-590-2/008',
+    'external_link': 'https://doi.org/10.30687/978-88-6969-590-2/008',
     'download': '',
-    'category': [_('further reading')]
+    'category': ['further reading']
 }]

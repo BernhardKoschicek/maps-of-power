@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-05-15 17:18+0200\n"
-"PO-Revision-Date: 2023-05-15 17:22+0200\n"
+"POT-Creation-Date: 2023-06-27 13:07+0200\n"
+"PO-Revision-Date: 2023-06-27 15:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -16,24 +16,28 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.11.0\n"
-"X-Generator: Poedit 3.2.2\n"
+"Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
-#: mop/util.py:18
+#: mop/util.py:31
 msgid "about"
 msgstr "über"
 
-#: mop/util.py:19
+#: mop/templates/project_details.html:11 mop/util.py:32
 msgid "projects"
 msgstr "projekte"
 
-#: mop/util.py:20
+#: mop/util.py:33
 msgid "software"
 msgstr "software"
 
-#: mop/templates/about.html:69 mop/templates/events.html:3 mop/util.py:22
+#: mop/templates/about.html:62 mop/templates/events.html:6 mop/util.py:35
 msgid "events"
 msgstr "ereignisse"
+
+#: mop/util.py:36
+msgid "literature"
+msgstr "Literatur"
 
 #: mop/data/events.py:7 mop/data/events.py:11
 msgid "presentation"
@@ -101,7 +105,8 @@ msgstr "September"
 msgid "december"
 msgstr "Dezember"
 
-#: mop/data/histgeo.py:74 mop/data/histgeo.py:111 mop/data/histgeo.py:161
+#: mop/data/histgeo.py:74 mop/data/histgeo.py:111 mop/data/histgeo.py:148
+#: mop/data/literature.py:6
 msgid "eds."
 msgstr "Hrsg."
 
@@ -211,21 +216,21 @@ msgstr ""
 "widerspiegeln, sondern auch in der Wahl des Standorts oder einer tiefen "
 "Beziehung zu natürlichen Elementen der Landschaft."
 
-#: mop/data/histgeo.py:177
+#: mop/data/histgeo.py:160
 msgid "sgomez_short_bio"
 msgstr ""
 "BA in Geschichte, Autónoma Universität von Madrid, MA in Archäologie, Università "
 "Ca' Foscari von Venedig, MA in Ägyptischer Archäologie, University College von "
 "London"
 
-#: mop/data/histgeo.py:178
+#: mop/data/histgeo.py:161
 msgid "sgomez_bio_1"
 msgstr ""
 "Silvia Gómez Senovilla, beendet derzeit ihre Doktorarbeit an der Universität "
 "Wien im Rahmen des ERC Advanced Grant \"The Hyksos Enigma\" (Grant agreement Nº "
 "668640), unter der Leitung von Prof. Manfred Bietak."
 
-#: mop/data/histgeo.py:178
+#: mop/data/histgeo.py:161
 msgid "sgomez_bio_2"
 msgstr ""
 "in ihrer Dissertation untersucht sie die Struktur und Anordnung von Siedlungen "
@@ -236,19 +241,19 @@ msgstr ""
 "räumlicher und statistischer Instrumente untersucht sie die Veränderungen des "
 "Raums in diesem Teil der Bronzezeit und deren soziale Auswirkungen."
 
-#: mop/data/histgeo.py:185
+#: mop/data/histgeo.py:168
 msgid "lecture_1_title"
 msgstr "Untersuchung des Raums in antiken Siedlungen"
 
-#: mop/data/histgeo.py:186
+#: mop/data/histgeo.py:169
 msgid "lecture_1_subtitle"
 msgstr "Die Straßen von Avaris, die Nutzung des Raums und die Verdinglichungsfalle"
 
-#: mop/data/histgeo.py:193
+#: mop/data/histgeo.py:176
 msgid "english"
 msgstr "Englisch"
 
-#: mop/data/histgeo.py:194
+#: mop/data/histgeo.py:177
 msgid "lecture_1_1"
 msgstr ""
 "Die Archäologie und die Geschichtswissenschaft stehen naturgemäß vor der "
@@ -273,7 +278,7 @@ msgstr ""
 "Vorauswahl unterliegen, behindert auch einige Versuche einer echten Analyse des "
 "Raums und seiner Bestandteile."
 
-#: mop/data/histgeo.py:194
+#: mop/data/histgeo.py:177
 msgid "lecture_1_2"
 msgstr ""
 "in diesem Vortrag werde ich den aktuellen Stand meiner Doktorarbeit vorstellen, "
@@ -288,27 +293,27 @@ msgstr ""
 "welche Möglichkeiten uns helfen können, die manchmal allgegenwärtige "
 "Abhängigkeit von rein visuellen Modellen zu überwinden."
 
-#: mop/data/histgeo.py:198
+#: mop/data/histgeo.py:181
 msgid "author"
 msgstr "autor"
 
-#: mop/data/histgeo.py:199
+#: mop/data/histgeo.py:182
 msgid "pages"
 msgstr "seiten"
 
-#: mop/data/histgeo.py:200
+#: mop/data/histgeo.py:183
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:201
+#: mop/data/histgeo.py:184
 msgid "citation"
 msgstr "zitat"
 
-#: mop/data/histgeo.py:202
+#: mop/data/histgeo.py:185
 msgid "order"
 msgstr "bestellen"
 
-#: mop/data/histgeo.py:203
+#: mop/data/histgeo.py:186
 msgid "abstract"
 msgstr "kurzfassung"
 
@@ -347,7 +352,241 @@ msgstr "den naturräumlichen Gegebenheiten von Landschaften"
 msgid "image_landscape_caption"
 msgstr "die Bucht von Kotor, Montenegro (2021)"
 
-#: mop/templates/about.html:24
+#: mop/data/literature.py:10 mop/data/literature.py:21 mop/data/presentations.py:26
+msgid "Leipzig"
+msgstr "Leipzig"
+
+#: mop/data/literature.py:15
+msgid "mop"
+msgstr "Maps of Power"
+
+#: mop/data/literature.py:26 mop/data/literature.py:38 mop/data/literature.py:50
+msgid "holdura"
+msgstr "Beyond East and West"
+
+#: mop/data/literature.py:33
+msgid "Göttingen"
+msgstr "Göttingen"
+
+#: mop/data/literature.py:40
+msgid "etc."
+msgstr "u.a."
+
+#: mop/data/literature.py:45
+msgid "Krems"
+msgstr "Krems"
+
+#: mop/data/literature.py:62 mop/data/literature.py:73 mop/data/literature.py:82
+#: mop/data/literature.py:91 mop/data/literature.py:103 mop/data/literature.py:118
+#: mop/data/literature.py:131 mop/data/literature.py:141 mop/data/literature.py:151
+#: mop/data/literature.py:163
+msgid "further reading"
+msgstr "weiterführende Literatur"
+
+#: mop/data/literature.py:68
+msgid "cambridge, MA"
+msgstr "Cambridge, MA"
+
+#: mop/data/literature.py:68 mop/data/literature.py:77 mop/data/literature.py:136
+msgid "london"
+msgstr "London"
+
+#: mop/data/literature.py:77
+msgid "new york"
+msgstr "New York"
+
+#: mop/data/literature.py:86
+msgid "stroud"
+msgstr "Stroud"
+
+#: mop/data/literature.py:98
+msgid "mainz"
+msgstr "Mainz"
+
+#: mop/data/literature.py:98
+msgid "ruhpolding"
+msgstr "Ruhpolding"
+
+#: mop/data/literature.py:113
+msgid "vienna"
+msgstr "Wien"
+
+#: mop/data/literature.py:113
+msgid "novi sad"
+msgstr "Novi Sad"
+
+#: mop/data/literature.py:126 mop/data/literature.py:158
+msgid "venice"
+msgstr "Venedig"
+
+#: mop/data/literature.py:146
+msgid "exter"
+msgstr "Exeter"
+
+#: mop/data/presentations.py:11
+msgid "Belgrade"
+msgstr "Belgrad"
+
+#: mop/data/presentations.py:37
+msgid "Los Angeles"
+msgstr "Los Angeles"
+
+#: mop/data/presentations.py:51 mop/data/presentations.py:164
+#: mop/data/presentations.py:176
+msgid "Vienna"
+msgstr "Wien"
+
+#: mop/data/presentations.py:64
+msgid "Thessaloniki"
+msgstr "Thessaloniki"
+
+#: mop/data/presentations.py:75 mop/data/presentations.py:98
+#: mop/data/presentations.py:110 mop/data/presentations.py:121
+#: mop/data/presentations.py:132 mop/data/presentations.py:143
+#: mop/data/presentations.py:153
+msgid "Leeds"
+msgstr "Leeds"
+
+#: mop/data/presentations.py:87
+msgid "Florenz"
+msgstr "Florenz"
+
+#: mop/data/projects/holdura.py:9
+msgid "holdura_description_1"
+msgstr ""
+"Im aktuellen Diskurs über die Integration der westlichen Balkanstaaten in die "
+"Europäische Union scheinen die laufenden und geplanten Verhandlungen mit den "
+"Republiken Montenegro, Serbien und Albanien in der aktuellen "
+"Medienberichterstattung von bemerkenswerter Bedeutung zu sein. Sie umfassen eine "
+"Region, die in der Vergangenheit unter dem Namen Illyricum (Illyrikon) eine "
+"wichtige Rolle in den strategischen und administrativen Überlegungen des "
+"byzantinischen Reiches spielte."
+
+#: mop/data/projects/holdura.py:10
+msgid "holdura_description_2"
+msgstr ""
+"Das Projekt basiert auf einer wissenschaftlichen Zusammenarbeit zwischen den "
+"akademischen Bereichen Byzantinistik, Mittelalterliche Geschichte, Historische "
+"Geographie, Kunstgeschichte, Geographie und Geokommunikation (GIScience und "
+"Kartographie) und konzentriert sich auf die beiden historischen Regionen "
+"\"Duklja\" und \"Raška\", die Teil des Illyricum sind. Die Forschungshypothese "
+"ist, dass beide historischen Regionen eine \"Heilige Landschaft\" bildeten, die "
+"wir entschlüsseln und mit den gemeinsamen Mitteln der Historischen Geographie, "
+"der Kunstgeschichte und der Geokommunikation sowohl der Wissenschaft als auch "
+"der interessierten Öffentlichkeit vermitteln wollen."
+
+#: mop/data/projects/holdura.py:11
+msgid "holdura_description_3"
+msgstr ""
+"Daher zielt das Projekt darauf ab, die folgenden drei Hauptfragen systematisch "
+"anzugehen und zu untersuchen:"
+
+#: mop/data/projects/holdura.py:12
+msgid "holdura_description_4"
+msgstr ""
+"(1) Auf welche Weise interagierten die lokalen Herrscher und die Kirchen von Rom "
+"und Konstantinopel in den Regionen \"Duklja\" und \"Raška\" vom 11. bis zum 14. "
+"Jahrhundert und wie spiegelt sich eben diese Interaktion im Verteilungsmuster "
+"der Monumente (d.h. der Kirchen und Klöster) in dieser \"Heiligen Landschaft\" "
+"wider?"
+
+#: mop/data/projects/holdura.py:13
+msgid "holdura_description_5"
+msgstr ""
+"(2) Wirkte sich die schwankende Religionszugehörigkeit der lokalen Herrscher auf "
+"die \"Sakrale Landschaft\" aus und wo wurden lateinische oder byzantinische "
+"Kultstätten im Laufe der Zeit umgewandelt oder überlagert?"
+
+#: mop/data/projects/holdura.py:14
+msgid "holdura_description_6"
+msgstr ""
+"(3) Lässt sich der religiöse und kulturelle Einfluss des lateinischen und "
+"byzantinischen (orthodoxen) Glaubens anhand kleiner lateinischer (d. h. "
+"\"westlicher\") sowie byzantinischer und slawischer (d. h. \"östlicher\") "
+"Kunstobjekte nicht nur im Küstengebiet, sondern auch in dessen Hinterland und in "
+"Italien nachzeichnen? Beide historischen Regionen könnten sich als eine Zone "
+"\"jenseits von Ost und West\" erweisen, die vom 11. bis zum 14. Jahrhundert "
+"bemerkenswerten Transformationsprozessen unterworfen war und ein großes "
+"Potenzial an Daten bietet, die sich sowohl für Visualisierungen als auch für "
+"eine Formalisierung durch die GIS-Wissenschaft eignen. Die Integration und "
+"Präsentation der Forschungsdaten (d.h. der schriftlichen Quellen, Denkmäler und "
+"Kunstobjekte) des Projekts wird durch eine bereits bestehende Datenbank und eine "
+"<a href=\"https://map.geo.univie.ac.at/bew/\" class=\"link-primary\">Online-"
+"Kartenanwendung</a> erreicht."
+
+#: mop/data/projects/holdura.py:15
+msgid "holdura_description_7"
+msgstr ""
+"Das Projekt ist ausschließlich durch einen multidisziplinären Ansatz und die "
+"Zusammenarbeit von drei Projektpartnern aus Österreich (Österreichische Akademie "
+"der Wissenschaften, hier Priv.-Doz. Mag. Dr. Mihailo Popović; Universität Wien, "
+"hier Professor Dr. Karel Kriz) und Deutschland (Hochschule für Technik, "
+"Wirtschaft und Kultur Leipzig, hier Professor Dr. Johannes Tripps). Darüber "
+"hinaus steht es in engem Zusammenhang mit den laufenden wissenschaftlichen "
+"Arbeiten von Mihailo Popović zum <a href=\"https://tib.oeaw.ac.at/current_status/"
+"TIB_17\" class=\"link-primary\">TIB-Band 17 \"Nea Epeiros und Praevalis\"</a> "
+"und zum TIB-Teilprojekt <a href=\"https://tib.oeaw.ac.at/subprojects/"
+"montenegro\" class=\"link-primary\">\"Cultural Heritage in Times of World War I: "
+"Der Fall der österreichisch-ungarischen Reliefkarte von Montenegro "
+"(1916-1918)\"</a>."
+
+#: mop/data/projects/holdura.py:20
+msgid "holdura_result_text_1"
+msgstr ""
+"Das Team des Instituts für Geographie und Regionalforschung (Universität Wien) "
+"hat eine maßgeschneiderte Homepage zwecks Geokommunikation unseres Projektes "
+"erstellt: <a href=\"https://map.geo.univie.ac.at/bew/\" target=\"_blank\" "
+"class=\"link-primary\">https://map.geo.univie.ac.at/bew/</a>"
+
+#: mop/data/projects/holdura.py:24
+msgid "relief map of Montenegro"
+msgstr "Reliefkarte von Montenegro"
+
+#: mop/data/projects/holdura.py:29
+msgid "explore TIB Balkans data"
+msgstr "TIB-Balkan-Daten erkunden"
+
+#: mop/data/projects/holdura.py:40
+msgid ""
+"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
+"Basilica B and cruciform church, Republic of Montenegro"
+msgstr ""
+"Vogelperspektive der archäologischen Grabung Doclea, A: Basilika A, B: Basilika "
+"B und kreuzförmige Kirche, Republik Montenegro"
+
+#: mop/data/projects/holdura.py:47
+msgid ""
+"Bird's eye view of the Doclea archaeological excavation, the western part of the "
+"city in the foreground, Republic of Montenegro"
+msgstr ""
+"Vogelperspektive der archäologischen Grabung Doclea, der westliche Teil der "
+"Stadt im Vordergrund, Republik Montenegro"
+
+#: mop/data/projects/holdura.py:54
+msgid ""
+"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on Lake "
+"Skadar, Republic of Montenegro"
+msgstr ""
+"Das Kloster Sveti Nikola Vranjina (in der Bildmitte) am Skadar See, Republik "
+"Montenegro"
+
+#: mop/data/projects/holdura.py:61
+msgid ""
+"The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
+"the town of Bar, Republic of Montenegro."
+msgstr ""
+"Das vormals lateinische (katholische) Kloster Ratac aus dem 12./13. Jh. bei der "
+"Stadt Bar, Republik Montenegro."
+
+#: mop/data/projects/holdura.py:70
+msgid ""
+"Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
+"\"Raška\" through Space and Time (11th-14th Cent.)"
+msgstr ""
+"Jenseits von Ost und West: Geokommunikation der heiligen Landschaften \"Duklja\" "
+"und \"Raška\" durch Raum und Zeit (11.-14. Jh.)"
+
+#: mop/templates/about.html:17
 msgid "about_text_1"
 msgstr ""
 "die Forschungsinitiative „Maps of Power – Karten der Macht“ dient der "
@@ -367,17 +606,17 @@ msgstr ""
 "target=\"_blank\">„Digitising Patterns of Power (DPP): Peripherical Mountains in "
 "the Medieval World“</a> zu sehen."
 
-#: mop/templates/about.html:27
+#: mop/templates/about.html:20
 msgid "about_text_2"
 msgstr ""
-"um dieser neuen Idee der räumlichen Erweiterung gerecht zu werden, wird der "
+"um dieser neuen Idee der räumlichen Erweiterung gerecht zu werden, wurde der "
 "bisherige Titel der Forschungsinitiative in „Maps of Power – Karten der Macht“ "
 "umbenannt, was eine größere thematische Tiefe und eine längere zeitliche Breite "
 "ermöglicht. Die bisherigen Forschungsperspektiven der TIB als Vertreterin des "
 "Forschungszweiges Historische Geographie des Byzantinischen Reiches befassten "
 "sich im Wesentlichen mit vier Kategorien von historischen Quellen:"
 
-#: mop/templates/about.html:33
+#: mop/templates/about.html:26
 msgid "about_text_3"
 msgstr ""
 "die inhaltlichen Paradigmenwechsel und technisch-digitalen Innovationen in der "
@@ -387,7 +626,7 @@ msgstr ""
 "der Historischen Geographie mit der Byzantinistik im weiteren Sinne, mit der "
 "Mittelalterforschung sowie den Digital Humanities."
 
-#: mop/templates/about.html:36
+#: mop/templates/about.html:29
 msgid "about_text_4"
 msgstr ""
 "daher greift die Forschungsinitiative „Maps of Power – Karten der Macht“ zwei "
@@ -396,17 +635,17 @@ msgstr ""
 "Geographie zu fungieren und dadurch zu neuen, für die Gesellschaft bedeutenden "
 "Forschungsergebnissen zu führen:"
 
-#: mop/templates/about.html:42
+#: mop/templates/about.html:35
 msgid "historical ecology"
 msgstr "Historische Ökologie"
 
-#: mop/templates/about.html:44
+#: mop/templates/about.html:37
 msgid "about_point_1"
 msgstr ""
 "... befasst sich mit der historischen Entwicklung von Ökosystemen und "
 "Landschaften unter dem Einfluss natürlicher und anthropogener Faktoren."
 
-#: mop/templates/about.html:47
+#: mop/templates/about.html:40
 msgid "about_text_5"
 msgstr ""
 "das Ziel der historischen Ökologie ist es, das Verhältnis Natur-Mensch bzw. "
@@ -419,11 +658,11 @@ msgstr ""
 "zur Epoche der übermäßigen Regulierungen maßgeblich. Somit ist der Begriff "
 "„power“ in beide Richtungen (Natur und Mensch) anwendbar."
 
-#: mop/templates/about.html:51
+#: mop/templates/about.html:44
 msgid "sacred topography"
 msgstr "Sakrale Topographie"
 
-#: mop/templates/about.html:53
+#: mop/templates/about.html:46
 msgid "about_point_2"
 msgstr ""
 "... („Sacred Landscapes“) spiegelt die Präsenz des Göttlichen/Heiligen/"
@@ -431,7 +670,7 @@ msgstr ""
 "Bauten (z. B. Kirchen und Klöster) sowie religiöse Symbole und Handlungen (z. B. "
 "Pilgerschaft)."
 
-#: mop/templates/about.html:56
+#: mop/templates/about.html:49
 msgid "about_text_6"
 msgstr ""
 "der Untersuchungsgegenstand der sakralen Topographie byzantinischer Landschaften "
@@ -443,7 +682,7 @@ msgstr ""
 "Rolle. In beiden Forschungsbereichen werden verstärkt GIS Software, digitale "
 "Kartographie und Datenbanksysteme eingesetzt."
 
-#: mop/templates/about.html:63
+#: mop/templates/about.html:56
 msgid "about_text_7"
 msgstr ""
 "„Maps of Power – Karten der Macht“ greift diese Gedanken auf und versteht sich "
@@ -454,14 +693,14 @@ msgstr ""
 "digitale Karten (Layer) enthält, Storymaps zu verschiedenen Aspekten anbietet "
 "und umfassendes Fotomaterial beinhaltet."
 
-#: mop/templates/about.html:92
+#: mop/templates/about.html:85
 msgid "vienna_manifesto"
 msgstr ""
 "Unsere Initiative unterstützt das <a href=\"https://dighum.ec.tuwien.ac.at/"
 "dighum-manifesto/\" target=\"_blank\" class=\"link-primary\">\"Wiener Manifest "
 "für digitalen Humanismus\"</a> vollinhaltlich."
 
-#: mop/templates/histgeo.html:8
+#: mop/templates/histgeo.html:12
 msgid "histgeo_intro_1"
 msgstr ""
 "neue Gedanken und Ideen verändern die Historische Geographie, wie zum Beispiel "
@@ -471,7 +710,7 @@ msgstr ""
 "immer schneller auf die Historische Geographie von Byzanz und der angrenzenden "
 "Gebiete (d. h. Südosteuropa und Osteuropa) angewandt."
 
-#: mop/templates/histgeo.html:11
+#: mop/templates/histgeo.html:15
 msgid "histgeo_intro_2"
 msgstr ""
 "diese internationale Reihe verfolgt das Ziel, Forschungsarbeiten aus den "
@@ -483,11 +722,11 @@ msgstr ""
 "(insbesondere Südosteuropa und Osteuropa) einzureichen, und wir begrüßen "
 "insbesondere interdisziplinäre Ansätze."
 
-#: mop/templates/histgeo.html:13
+#: mop/templates/histgeo.html:17
 msgid "Digital HistGeo Lecture Series"
 msgstr "digitale HistGeo Vortragsreihe"
 
-#: mop/templates/histgeo.html:15
+#: mop/templates/histgeo.html:19
 msgid "histgeo_lecture_1"
 msgstr ""
 "um die wissenschaftlichen Ergebnisse der \"Tabula Imperii Byzantini (TIB) "
@@ -499,7 +738,7 @@ msgstr ""
 "Series\" im Jänner 2019 in Wien begründet (in Nachfolge der im Jänner 2017 "
 "begonnenen \"DPP Lecture Series\"). "
 
-#: mop/templates/histgeo.html:18
+#: mop/templates/histgeo.html:22
 msgid "histgeo_lecture_2"
 msgstr ""
 "ursprünglich hatten wir mit Vorträgen in Präsenz in Wien begonnen, die leider "
@@ -508,7 +747,7 @@ msgstr ""
 "Lecture Series\", und wir beabsichtigen, sie vierteljährlich zu veranstalten "
 "(nach Möglichkeit im März, Juni, September und Dezember)."
 
-#: mop/templates/histgeo.html:21
+#: mop/templates/histgeo.html:25
 msgid "histgeo_lecture_3"
 msgstr ""
 "unser Ziel ist es, Vorträge zu präsentieren, die unsere eigene Forschung "
@@ -518,11 +757,11 @@ msgstr ""
 "Historische Geographie, Kartographie, Digital Humanities, GIScience und Software "
 "Engineering zu fördern."
 
-#: mop/templates/histgeo.html:28 mop/templates/histgeo.html:57
+#: mop/templates/histgeo.html:32 mop/templates/histgeo.html:61
 msgid "no"
 msgstr "nr"
 
-#: mop/templates/histgeo.html:41
+#: mop/templates/histgeo.html:45
 msgid "histgeo_newsletter_1"
 msgstr ""
 "unser HistGeo Newsletter informiert Sie zwei Mal im Jahr - in den Monaten Juni "
@@ -531,7 +770,7 @@ msgstr ""
 "Power entstanden sind. Früher erschien der Newsletter vier Mal im Jahr, seit "
 "2022 haben wir ihn auf zwei Ausgaben pro Jahr umgestellt."
 
-#: mop/templates/histgeo.html:44
+#: mop/templates/histgeo.html:48
 msgid "histgeo_newsletter_2"
 msgstr ""
 "in den Berichten des Newsletters konzentrieren wir uns auf die Historische "
@@ -541,22 +780,22 @@ msgstr ""
 "Balkan beteiligten Wissenschaftler*innen sowie von Kolleg*innen aus anderen "
 "Fachbereichen aufzuzeigen."
 
-#: mop/templates/histgeo.html:47
+#: mop/templates/histgeo.html:51
 msgid "histgeo_newsletter_3"
 msgstr ""
 "ältere Ausgaben unseres Newsletters finden Sie in unserem Archiv. Wenn Sie "
 "Fragen oder Anmerkungen haben sollten, kontaktieren Sie uns bitte über folgende "
 "E-Mail: Mapsofpower@oeaw.ac.at"
 
-#: mop/templates/histgeo.html:71
+#: mop/templates/histgeo.html:75
 msgid "volumes"
 msgstr "bände"
 
-#: mop/templates/histgeo.html:126
+#: mop/templates/histgeo.html:130
 msgid "Citation Rules and Fonts"
 msgstr "zitierregeln und Schriftarten"
 
-#: mop/templates/histgeo.html:128
+#: mop/templates/histgeo.html:132
 msgid "histgeo_rules"
 msgstr ""
 "Unsere Reihe wird vom Verlag <a href=\"https://akademskaknjiga.com/?lang=en\" "
@@ -565,44 +804,76 @@ msgstr ""
 "wichtige sozial- und geisteswissenschaftliche Publikationen von nationalen und "
 "internationalen Autoren zu publizieren."
 
-#: mop/templates/histgeo.html:132 mop/templates/histgeo.html:140
+#: mop/templates/histgeo.html:136 mop/templates/histgeo.html:144
 msgid "Citation Rules"
 msgstr "zitierregeln"
 
-#: mop/templates/histgeo.html:134
+#: mop/templates/histgeo.html:138
 msgid "histgeo_citation_1"
 msgstr ""
 "wenn Sie ein Manuskript für unsere Reihe vorbereiten, beachten Sie bitte die "
 "folgenden Anweisungen"
 
-#: mop/templates/histgeo.html:144
+#: mop/templates/histgeo.html:148
 msgid "Fonts"
 msgstr "schriftarten"
 
-#: mop/templates/histgeo.html:146
+#: mop/templates/histgeo.html:150
 msgid "histgeo_fonts_1"
 msgstr "bitte verwenden Sie diese Schriftarten für das Altkirchenslawische"
 
-#: mop/templates/layout.html:40
+#: mop/templates/layout.html:55
 msgid "navigation"
 msgstr "navigation"
 
-#: mop/templates/lectures.html:37
+#: mop/templates/lectures.html:40
 msgid "date"
 msgstr "Datum"
 
-#: mop/templates/lectures.html:38
+#: mop/templates/lectures.html:41
 msgid "time"
 msgstr "Uhrzeit"
 
-#: mop/templates/lectures.html:39
+#: mop/templates/lectures.html:42
 msgid "language"
 msgstr "Sprache"
 
-#: mop/templates/lectures.html:40 mop/templates/lectures.html:42
+#: mop/templates/lectures.html:43 mop/templates/lectures.html:45
 msgid "link"
 msgstr "Link"
 
-#: mop/templates/lectures.html:52
+#: mop/templates/lectures.html:55
 msgid "recording"
 msgstr "Aufzeichnung"
+
+#: mop/templates/project_details.html:27
+msgid "Funded by"
+msgstr "Finanziert durch"
+
+#: mop/templates/project_details.html:40
+msgid "Project Number"
+msgstr "Projektnummer"
+
+#: mop/templates/project_details.html:45
+msgid "Duration"
+msgstr "Dauer"
+
+#: mop/templates/project_details.html:57 mop/templates/projects.html:29
+msgid "Employees"
+msgstr "Mitarbeiter:innen"
+
+#: mop/templates/project_details.html:65
+msgid "Cooperation and External Employees"
+msgstr "Kooperationen und externe Mitarbeiter:innen"
+
+#: mop/templates/project_details.html:104
+msgid "results"
+msgstr "Resultate"
+
+#: mop/templates/project_details.html:139
+msgid "Publications"
+msgstr "Publikationen"
+
+#: mop/templates/project_details.html:145
+msgid "Presentations"
+msgstr "Präsentationen"

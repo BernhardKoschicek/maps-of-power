@@ -55,13 +55,18 @@ newsletters = {
                'mailing/180/4858583/9401703/1373/38501319f6/index.html'
     }],
     '2022': [{
-        'title': _('march') + '-' + _('june'),
+        'title': _('june'),
         'url': 'https://t210d45f9.emailsys2a.net/'
                'mailing/180/5374373/0/3d244bbdd7/index.html'
     }, {
-        'title': _('september') + '-' + _('december'),
+        'title': _('december'),
         'url': 'https://t210d45f9.emailsys2a.net/'
                'mailing/180/6008245/0/e74da87270/index.html'
+    }],
+    '2023': [{
+        'title': _('june'),
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/6774474/0/39bcfcd223/index.html'
     }],
 }
 

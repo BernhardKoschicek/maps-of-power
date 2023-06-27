@@ -8,29 +8,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-05-15 17:18+0200\n"
+"POT-Creation-Date: 2023-06-27 13:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.11.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: mop/util.py:18
+#: mop/util.py:31
 msgid "about"
 msgstr ""
 
-#: mop/util.py:19
+#: mop/templates/project_details.html:11 mop/util.py:32
 msgid "projects"
 msgstr ""
 
-#: mop/util.py:20
+#: mop/util.py:33
 msgid "software"
 msgstr ""
 
-#: mop/templates/about.html:69 mop/templates/events.html:3 mop/util.py:22
+#: mop/templates/about.html:62 mop/templates/events.html:6 mop/util.py:35
 msgid "events"
+msgstr ""
+
+#: mop/util.py:36
+msgid "literature"
 msgstr ""
 
 #: mop/data/events.py:7 mop/data/events.py:11
@@ -89,7 +93,8 @@ msgstr ""
 msgid "december"
 msgstr ""
 
-#: mop/data/histgeo.py:74 mop/data/histgeo.py:111 mop/data/histgeo.py:161
+#: mop/data/histgeo.py:74 mop/data/histgeo.py:111 mop/data/histgeo.py:148
+#: mop/data/literature.py:6
 msgid "eds."
 msgstr ""
 
@@ -121,59 +126,59 @@ msgstr ""
 msgid "histgeo_vol4_1"
 msgstr ""
 
-#: mop/data/histgeo.py:177
+#: mop/data/histgeo.py:160
 msgid "sgomez_short_bio"
 msgstr ""
 
-#: mop/data/histgeo.py:178
+#: mop/data/histgeo.py:161
 msgid "sgomez_bio_1"
 msgstr ""
 
-#: mop/data/histgeo.py:178
+#: mop/data/histgeo.py:161
 msgid "sgomez_bio_2"
 msgstr ""
 
-#: mop/data/histgeo.py:185
+#: mop/data/histgeo.py:168
 msgid "lecture_1_title"
 msgstr ""
 
-#: mop/data/histgeo.py:186
+#: mop/data/histgeo.py:169
 msgid "lecture_1_subtitle"
 msgstr ""
 
-#: mop/data/histgeo.py:193
+#: mop/data/histgeo.py:176
 msgid "english"
 msgstr ""
 
-#: mop/data/histgeo.py:194
+#: mop/data/histgeo.py:177
 msgid "lecture_1_1"
 msgstr ""
 
-#: mop/data/histgeo.py:194
+#: mop/data/histgeo.py:177
 msgid "lecture_1_2"
 msgstr ""
 
-#: mop/data/histgeo.py:198
+#: mop/data/histgeo.py:181
 msgid "author"
 msgstr ""
 
-#: mop/data/histgeo.py:199
+#: mop/data/histgeo.py:182
 msgid "pages"
 msgstr ""
 
-#: mop/data/histgeo.py:200
+#: mop/data/histgeo.py:183
 msgid "ISBN"
 msgstr ""
 
-#: mop/data/histgeo.py:201
+#: mop/data/histgeo.py:184
 msgid "citation"
 msgstr ""
 
-#: mop/data/histgeo.py:202
+#: mop/data/histgeo.py:185
 msgid "order"
 msgstr ""
 
-#: mop/data/histgeo.py:203
+#: mop/data/histgeo.py:186
 msgid "abstract"
 msgstr ""
 
@@ -209,143 +214,348 @@ msgstr ""
 msgid "image_landscape_caption"
 msgstr ""
 
-#: mop/templates/about.html:24
+#: mop/data/literature.py:10 mop/data/literature.py:21
+#: mop/data/presentations.py:26
+msgid "Leipzig"
+msgstr ""
+
+#: mop/data/literature.py:15
+msgid "mop"
+msgstr ""
+
+#: mop/data/literature.py:26 mop/data/literature.py:38
+#: mop/data/literature.py:50
+msgid "holdura"
+msgstr ""
+
+#: mop/data/literature.py:33
+msgid "Göttingen"
+msgstr ""
+
+#: mop/data/literature.py:40
+msgid "etc."
+msgstr ""
+
+#: mop/data/literature.py:45
+msgid "Krems"
+msgstr ""
+
+#: mop/data/literature.py:62 mop/data/literature.py:73
+#: mop/data/literature.py:82 mop/data/literature.py:91
+#: mop/data/literature.py:103 mop/data/literature.py:118
+#: mop/data/literature.py:131 mop/data/literature.py:141
+#: mop/data/literature.py:151 mop/data/literature.py:163
+msgid "further reading"
+msgstr ""
+
+#: mop/data/literature.py:68
+msgid "cambridge, MA"
+msgstr ""
+
+#: mop/data/literature.py:68 mop/data/literature.py:77
+#: mop/data/literature.py:136
+msgid "london"
+msgstr ""
+
+#: mop/data/literature.py:77
+msgid "new york"
+msgstr ""
+
+#: mop/data/literature.py:86
+msgid "stroud"
+msgstr ""
+
+#: mop/data/literature.py:98
+msgid "mainz"
+msgstr ""
+
+#: mop/data/literature.py:98
+msgid "ruhpolding"
+msgstr ""
+
+#: mop/data/literature.py:113
+msgid "vienna"
+msgstr ""
+
+#: mop/data/literature.py:113
+msgid "novi sad"
+msgstr ""
+
+#: mop/data/literature.py:126 mop/data/literature.py:158
+msgid "venice"
+msgstr ""
+
+#: mop/data/literature.py:146
+msgid "exter"
+msgstr ""
+
+#: mop/data/presentations.py:11
+msgid "Belgrade"
+msgstr ""
+
+#: mop/data/presentations.py:37
+msgid "Los Angeles"
+msgstr ""
+
+#: mop/data/presentations.py:51 mop/data/presentations.py:164
+#: mop/data/presentations.py:176
+msgid "Vienna"
+msgstr ""
+
+#: mop/data/presentations.py:64
+msgid "Thessaloniki"
+msgstr ""
+
+#: mop/data/presentations.py:75 mop/data/presentations.py:98
+#: mop/data/presentations.py:110 mop/data/presentations.py:121
+#: mop/data/presentations.py:132 mop/data/presentations.py:143
+#: mop/data/presentations.py:153
+msgid "Leeds"
+msgstr ""
+
+#: mop/data/presentations.py:87
+msgid "Florenz"
+msgstr ""
+
+#: mop/data/projects/holdura.py:9
+msgid "holdura_description_1"
+msgstr ""
+
+#: mop/data/projects/holdura.py:10
+msgid "holdura_description_2"
+msgstr ""
+
+#: mop/data/projects/holdura.py:11
+msgid "holdura_description_3"
+msgstr ""
+
+#: mop/data/projects/holdura.py:12
+msgid "holdura_description_4"
+msgstr ""
+
+#: mop/data/projects/holdura.py:13
+msgid "holdura_description_5"
+msgstr ""
+
+#: mop/data/projects/holdura.py:14
+msgid "holdura_description_6"
+msgstr ""
+
+#: mop/data/projects/holdura.py:15
+msgid "holdura_description_7"
+msgstr ""
+
+#: mop/data/projects/holdura.py:20
+msgid "holdura_result_text_1"
+msgstr ""
+
+#: mop/data/projects/holdura.py:24
+msgid "relief map of Montenegro"
+msgstr ""
+
+#: mop/data/projects/holdura.py:29
+msgid "explore TIB Balkans data"
+msgstr ""
+
+#: mop/data/projects/holdura.py:40
+msgid ""
+"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, "
+"B: Basilica B and cruciform church, Republic of Montenegro"
+msgstr ""
+
+#: mop/data/projects/holdura.py:47
+msgid ""
+"Bird's eye view of the Doclea archaeological excavation, the western part"
+" of the city in the foreground, Republic of Montenegro"
+msgstr ""
+
+#: mop/data/projects/holdura.py:54
+msgid ""
+"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on "
+"Lake Skadar, Republic of Montenegro"
+msgstr ""
+
+#: mop/data/projects/holdura.py:61
+msgid ""
+"The former Latin (Catholic) monastery of Ratac from the 12th/13th century"
+" near the town of Bar, Republic of Montenegro."
+msgstr ""
+
+#: mop/data/projects/holdura.py:70
+msgid ""
+"Beyond East and West: Geocommunicating the Sacred Landscapes of "
+"\"Duklja\" and \"Raška\" through Space and Time (11th-14th Cent.)"
+msgstr ""
+
+#: mop/templates/about.html:17
 msgid "about_text_1"
 msgstr ""
 
-#: mop/templates/about.html:27
+#: mop/templates/about.html:20
 msgid "about_text_2"
 msgstr ""
 
-#: mop/templates/about.html:33
+#: mop/templates/about.html:26
 msgid "about_text_3"
 msgstr ""
 
-#: mop/templates/about.html:36
+#: mop/templates/about.html:29
 msgid "about_text_4"
 msgstr ""
 
-#: mop/templates/about.html:42
+#: mop/templates/about.html:35
 msgid "historical ecology"
 msgstr ""
 
-#: mop/templates/about.html:44
+#: mop/templates/about.html:37
 msgid "about_point_1"
 msgstr ""
 
-#: mop/templates/about.html:47
+#: mop/templates/about.html:40
 msgid "about_text_5"
 msgstr ""
 
-#: mop/templates/about.html:51
+#: mop/templates/about.html:44
 msgid "sacred topography"
 msgstr ""
 
-#: mop/templates/about.html:53
+#: mop/templates/about.html:46
 msgid "about_point_2"
 msgstr ""
 
-#: mop/templates/about.html:56
+#: mop/templates/about.html:49
 msgid "about_text_6"
 msgstr ""
 
-#: mop/templates/about.html:63
+#: mop/templates/about.html:56
 msgid "about_text_7"
 msgstr ""
 
-#: mop/templates/about.html:92
+#: mop/templates/about.html:85
 msgid "vienna_manifesto"
 msgstr ""
 
-#: mop/templates/histgeo.html:8
+#: mop/templates/histgeo.html:12
 msgid "histgeo_intro_1"
 msgstr ""
 
-#: mop/templates/histgeo.html:11
+#: mop/templates/histgeo.html:15
 msgid "histgeo_intro_2"
 msgstr ""
 
-#: mop/templates/histgeo.html:13
+#: mop/templates/histgeo.html:17
 msgid "Digital HistGeo Lecture Series"
 msgstr ""
 
-#: mop/templates/histgeo.html:15
+#: mop/templates/histgeo.html:19
 msgid "histgeo_lecture_1"
 msgstr ""
 
-#: mop/templates/histgeo.html:18
+#: mop/templates/histgeo.html:22
 msgid "histgeo_lecture_2"
 msgstr ""
 
-#: mop/templates/histgeo.html:21
+#: mop/templates/histgeo.html:25
 msgid "histgeo_lecture_3"
 msgstr ""
 
-#: mop/templates/histgeo.html:28 mop/templates/histgeo.html:57
+#: mop/templates/histgeo.html:32 mop/templates/histgeo.html:61
 msgid "no"
 msgstr ""
 
-#: mop/templates/histgeo.html:41
+#: mop/templates/histgeo.html:45
 msgid "histgeo_newsletter_1"
 msgstr ""
 
-#: mop/templates/histgeo.html:44
+#: mop/templates/histgeo.html:48
 msgid "histgeo_newsletter_2"
 msgstr ""
 
-#: mop/templates/histgeo.html:47
+#: mop/templates/histgeo.html:51
 msgid "histgeo_newsletter_3"
 msgstr ""
 
-#: mop/templates/histgeo.html:71
+#: mop/templates/histgeo.html:75
 msgid "volumes"
 msgstr ""
 
-#: mop/templates/histgeo.html:126
+#: mop/templates/histgeo.html:130
 msgid "Citation Rules and Fonts"
 msgstr ""
 
-#: mop/templates/histgeo.html:128
+#: mop/templates/histgeo.html:132
 msgid "histgeo_rules"
 msgstr ""
 
-#: mop/templates/histgeo.html:132 mop/templates/histgeo.html:140
+#: mop/templates/histgeo.html:136 mop/templates/histgeo.html:144
 msgid "Citation Rules"
 msgstr ""
 
-#: mop/templates/histgeo.html:134
+#: mop/templates/histgeo.html:138
 msgid "histgeo_citation_1"
 msgstr ""
 
-#: mop/templates/histgeo.html:144
+#: mop/templates/histgeo.html:148
 msgid "Fonts"
 msgstr ""
 
-#: mop/templates/histgeo.html:146
+#: mop/templates/histgeo.html:150
 msgid "histgeo_fonts_1"
 msgstr ""
 
-#: mop/templates/layout.html:40
+#: mop/templates/layout.html:55
 msgid "navigation"
 msgstr ""
 
-#: mop/templates/lectures.html:37
+#: mop/templates/lectures.html:40
 msgid "date"
 msgstr ""
 
-#: mop/templates/lectures.html:38
+#: mop/templates/lectures.html:41
 msgid "time"
 msgstr ""
 
-#: mop/templates/lectures.html:39
+#: mop/templates/lectures.html:42
 msgid "language"
 msgstr ""
 
-#: mop/templates/lectures.html:40 mop/templates/lectures.html:42
+#: mop/templates/lectures.html:43 mop/templates/lectures.html:45
 msgid "link"
 msgstr ""
 
-#: mop/templates/lectures.html:52
+#: mop/templates/lectures.html:55
 msgid "recording"
+msgstr ""
+
+#: mop/templates/project_details.html:27
+msgid "Funded by"
+msgstr ""
+
+#: mop/templates/project_details.html:40
+msgid "Project Number"
+msgstr ""
+
+#: mop/templates/project_details.html:45
+msgid "Duration"
+msgstr ""
+
+#: mop/templates/project_details.html:57 mop/templates/projects.html:29
+msgid "Employees"
+msgstr ""
+
+#: mop/templates/project_details.html:65
+msgid "Cooperation and External Employees"
+msgstr ""
+
+#: mop/templates/project_details.html:104
+msgid "results"
+msgstr ""
+
+#: mop/templates/project_details.html:139
+msgid "Publications"
+msgstr ""
+
+#: mop/templates/project_details.html:145
+msgid "Presentations"
 msgstr ""
 

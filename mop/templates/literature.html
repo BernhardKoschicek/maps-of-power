@@ -6,7 +6,7 @@
 <div class="container mt-3 mb-5">
     {% for key, lit in literatures.items() %}
         <h4 class="text-primary display-5 text-center mt-3">{{ key }}</h4>
-        {{ create_table(lit, key, 3) }}
+        {{ create_table(lit,loop.index , 3) }}
 {% endfor %}
 </div>
 {% endblock %}

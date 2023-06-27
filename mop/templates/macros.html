@@ -14,7 +14,11 @@
             <tr>
                 {% for key, value in item.items() if not key in not_shown %}
                     <td>
-                        {{ value }}
+                        {% if value is iterable and value is not string %}
+                            {{ value|join('–') }}
+                        {% else %}
+                            {{ value }}
+                        {% endif %}
                     </td>
                 {% endfor %}
                 <td>

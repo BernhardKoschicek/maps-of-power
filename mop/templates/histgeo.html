@@ -58,7 +58,7 @@
             {% for newsletter in list %}
               <a href="{{ newsletter['url'] }}" type="button" class="btn btn-outline-accent3 text-dark"
                  target="_blank">
-                {{ _('no') | capitalize }}. {{ loop.index }} / {{ newsletter['title'] | capitalize }}
+                {{ _('no') | capitalize }}. {{ loop.index }} / {{ newsletter['title'] | safe | capitalize }}
               </a>
 
             {% endfor %}
