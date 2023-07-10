@@ -45,7 +45,7 @@ institutes = {
         'address': ''},
     'abf': {
         'name': 'Abteilung Byzanzforschung (ABF)',
-        'url': 'https://www.oeaw.ac.at/en/byzantine-research/',
+        'url': 'https://www.oeaw.ac.at/byzanz',
         'logo': 'byzantine_research.jpg',
         'member': 'Österreichische Akademie der Wissenschaften (ÖAW) '
                   '<br> Institut für Mittelalterforschung (IMAFO)',

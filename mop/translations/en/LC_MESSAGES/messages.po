@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-27 17:04+0200\n"
-"PO-Revision-Date: 2023-06-27 17:10+0200\n"
+"POT-Creation-Date: 2023-07-11 00:41+0200\n"
+"PO-Revision-Date: 2023-07-11 00:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "about"
 msgstr "about"
 
-#: mop/templates/project_details.html:11 mop/util.py:31
+#: mop/templates/project_details.html:12 mop/util.py:31
 msgid "projects"
 msgstr "projects"
 
@@ -329,90 +329,178 @@ msgstr "the natural features of landscapes"
 msgid "image_landscape_caption"
 msgstr "the Bay of Kotor, Montenegro (2021)"
 
-#: mop/data/literature.py:10 mop/data/literature.py:21 mop/data/presentations.py:26
+#: mop/data/literature.py:10 mop/data/literature.py:32 mop/data/presentations.py:81
 msgid "Leipzig"
 msgstr "Leipzig"
 
-#: mop/data/literature.py:33
+#: mop/data/literature.py:21
+msgid "Novi Sad"
+msgstr "Novi Sad"
+
+#: mop/data/literature.py:44
 msgid "Göttingen"
 msgstr "Göttingen"
 
-#: mop/data/literature.py:40
+#: mop/data/literature.py:51
 msgid "etc."
 msgstr "etc."
 
-#: mop/data/literature.py:45
+#: mop/data/literature.py:56
 msgid "Krems"
 msgstr "Krems"
 
-#: mop/data/literature.py:69
+#: mop/data/literature.py:80
 msgid "cambridge, MA"
 msgstr "Cambridge, MA"
 
-#: mop/data/literature.py:69 mop/data/literature.py:78 mop/data/literature.py:137
+#: mop/data/literature.py:80 mop/data/literature.py:89 mop/data/literature.py:148
 msgid "london"
 msgstr "London"
 
-#: mop/data/literature.py:78
+#: mop/data/literature.py:89
 msgid "new york"
 msgstr "New York"
 
-#: mop/data/literature.py:87
+#: mop/data/literature.py:98
 msgid "stroud"
 msgstr "Stroud"
 
-#: mop/data/literature.py:99
+#: mop/data/literature.py:110
 msgid "mainz"
 msgstr "Mainz"
 
-#: mop/data/literature.py:99
+#: mop/data/literature.py:110
 msgid "ruhpolding"
 msgstr "Ruhpolding"
 
-#: mop/data/literature.py:114
+#: mop/data/literature.py:125
 msgid "vienna"
 msgstr "Vienna"
 
-#: mop/data/literature.py:114
+#: mop/data/literature.py:125
 msgid "novi sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:127 mop/data/literature.py:159
+#: mop/data/literature.py:138 mop/data/literature.py:170
 msgid "venice"
 msgstr "Venice"
 
-#: mop/data/literature.py:147
+#: mop/data/literature.py:158
 msgid "exter"
 msgstr "Exeter"
 
-#: mop/data/presentations.py:11
+#: mop/data/presentations.py:11 mop/data/presentations.py:22
+#: mop/data/presentations.py:32 mop/data/presentations.py:43
+#: mop/data/presentations.py:55 mop/data/presentations.py:130
+#: mop/data/presentations.py:153 mop/data/presentations.py:165
+#: mop/data/presentations.py:176 mop/data/presentations.py:187
+#: mop/data/presentations.py:198 mop/data/presentations.py:208
+msgid "Leeds"
+msgstr "eds.Leeds"
+
+#: mop/data/presentations.py:66
 msgid "Belgrade"
 msgstr "Belgrade"
 
-#: mop/data/presentations.py:37
+#: mop/data/presentations.py:92
 msgid "Los Angeles"
 msgstr "Los Angeles"
 
-#: mop/data/presentations.py:51 mop/data/presentations.py:164
-#: mop/data/presentations.py:176 mop/templates/imprint.html:14
+#: mop/data/presentations.py:106 mop/data/presentations.py:219
+#: mop/data/presentations.py:231 mop/templates/imprint.html:14
 #: mop/templates/layout.html:61
 msgid "Vienna"
 msgstr "Vienna"
 
-#: mop/data/presentations.py:64
+#: mop/data/presentations.py:119
 msgid "Thessaloniki"
 msgstr "Thessaloniki"
 
-#: mop/data/presentations.py:75 mop/data/presentations.py:98
-#: mop/data/presentations.py:110 mop/data/presentations.py:121
-#: mop/data/presentations.py:132 mop/data/presentations.py:143
-#: mop/data/presentations.py:153
-msgid "Leeds"
-msgstr "eds.Leeds"
-
-#: mop/data/presentations.py:87
+#: mop/data/presentations.py:142
 msgid "Florenz"
 msgstr "Florenz"
+
+#: mop/data/projects/barbyz.py:8
+msgid ""
+"From Barbarians to Christians and Rhomaioi. The Process of Byzantinization in "
+"the Central Balkans (late 10th – mid-13th century)"
+msgstr ""
+"From Barbarians to Christians and Rhomaioi. The Process of Byzantinization in "
+"the Central Balkans (late 10th – mid-13th century)"
+
+#: mop/data/projects/barbyz.py:33
+msgid "barbyz_description_1"
+msgstr ""
+"The main objective of the project is to explain the key factors that influenced "
+"the course and characteristics of the Byzantinization process, which is defined "
+"as an integration of the local Balkan communities into the value system of the "
+"dominant culture. This process depended on both the Empire’s “soft power” and on "
+"the formal inclusion of the given area into its borders. The research is "
+"conducted in three main directions:"
+
+#: mop/data/projects/barbyz.py:34
+msgid "barbyz_description_2"
+msgstr ""
+"<ol>\n"
+"<li>Models of Byzantine government in the central Balkans (late 10th – mid-13th "
+"century)</li>\n"
+"<li>The Archbishopric of Ohrid (from its founding in the beginning of the 11th "
+"to the mid-13th century)</li>\n"
+"<li>Political, ideological and social aspects of Byzantinization</li>\n"
+"</ol>"
+
+#: mop/data/projects/barbyz.py:35
+msgid "barbyz_description_3"
+msgstr ""
+"The Byzantinization process did not unfold identically in all parts of the "
+"central Balkans, which is why the research is organized into four geographical "
+"and historical zones: the northeastern Balkans (parts of the old Bulgarian state "
+"between the Danube and the mount Balkan), the central Balkans (a part of "
+"Macedonia and neighboring regions under the jurisdiction of the Archbishopric of "
+"Ohrid), the Danube-Morava region (Srem-Belgrade-Braničevo-Niš), and the "
+"northwestern parts of the central Balkans (Serbian and Croatian zone). "
+
+#: mop/data/projects/barbyz.py:36
+msgid "barbyz_description_4"
+msgstr ""
+"Within the time frame of the project there are several chronological phases in "
+"which the Byzantinization can be outlined more clearly. The criterion for "
+"distinguishing different phases depended on whether the area under consideration "
+"was part of the Empire, or just under its cultural and political influence:"
+
+#: mop/data/projects/barbyz.py:37
+msgid "barbyz_description_5"
+msgstr ""
+"<ol>\n"
+"<li>The period of the so-called first Byzantine “Reconquista” or the reign of "
+"John I Tzimiskes (969–976), when the Empire penetrated the Balkan interior.</"
+"li>\n"
+"<li>The reign of Basil II (976–1025) or the second Reconquista which resulted in "
+"the establishment of a more comprehensive Byzantine control of the Balkan "
+"interior.</li>\n"
+"<li>The death of Basil II in 1025 until the Latin conquest of Constantinople in "
+"1204, when the Archbishopric of Ohrid became an increasingly significant "
+"instrument in the implementation of Byzantinization.</li>\n"
+"<li>From 1204 until the restoration of the Byzantine Empire in 1261, when "
+"Byzantium started to withdraw from the Balkans both politically and militarily.</"
+"li>\n"
+"</ol>"
+
+#: mop/data/projects/barbyz.py:38
+msgid "barbyz_description_6"
+msgstr ""
+"The project team is composed of well-established researchers in different "
+"fields: Byzantine and medieval Serbian history, art history, legal history, "
+"history of architecture and classics.   The interdisciplinary research employs "
+"both traditional and current methods of critical examination and analysis of "
+"written and documentary sources, as well as the methods of historical analogy "
+"and historical regression. The expected results of the project are threefold: "
+"(a) to identify the indicators of cultural and economic progress, using the "
+"example of local communities in the medieval central Balkans; (b) to determine "
+"the factors that supported and ensured it; and (c) to identify the historical "
+"consequences of its comprehensive or partial integration. Successful completion "
+"of the project will be useful for further research in the field of Byzantine "
+"studies as well as the history of the medieval Balkans."
 
 #: mop/data/projects/holdura.py:8
 msgid "holdura_result_text_1"
@@ -470,7 +558,7 @@ msgstr ""
 "Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
 "\"Raška\" through Space and Time (11th-14th Cent.)"
 
-#: mop/data/projects/holdura.py:71
+#: mop/data/projects/holdura.py:72
 msgid "holdura_description_1"
 msgstr ""
 "In the current discourse on the integration of the Western Balkans into the "
@@ -480,7 +568,7 @@ msgstr ""
 "– played, under the name of Illyricum (Illyrikon), a vital role in the strategic "
 "and administrative considerations of the Byzantine Empire."
 
-#: mop/data/projects/holdura.py:72
+#: mop/data/projects/holdura.py:73
 msgid "holdura_description_2"
 msgstr ""
 "The project builds upon a scholarly cooperation among the academic fields of "
@@ -492,13 +580,13 @@ msgstr ""
 "as to the interested public with the joint means of Historical Geography, Art "
 "History and Geocommunication."
 
-#: mop/data/projects/holdura.py:73
+#: mop/data/projects/holdura.py:74
 msgid "holdura_description_3"
 msgstr ""
 "Therefore, the project aims at approaching and researching systematically the "
 "following three major questions:"
 
-#: mop/data/projects/holdura.py:74
+#: mop/data/projects/holdura.py:75
 msgid "holdura_description_4"
 msgstr ""
 "(1) In which way did the local rulers and the Churches of Rome and "
@@ -507,14 +595,14 @@ msgstr ""
 "pattern of monuments (i.e. the churches and monasteries) in this “Sacred "
 "Landscape”?"
 
-#: mop/data/projects/holdura.py:75
+#: mop/data/projects/holdura.py:76
 msgid "holdura_description_5"
 msgstr ""
 "(2) Did the volatile religious affiliation of the local rulers have an impact on "
 "the “Sacred Landscape” and where were Latin or Byzantine places of worship "
 "transformed or superimposed in the course of time?"
 
-#: mop/data/projects/holdura.py:76
+#: mop/data/projects/holdura.py:77
 msgid "holdura_description_6"
 msgstr ""
 "(3) Can the religious and cultural influence of the Latin and Byzantine "
@@ -530,7 +618,7 @@ msgstr ""
 "hrf=\"hhttps://map.geo.univie.ac.at/bew/\" class=\"link-primary\">map "
 "application</a>."
 
-#: mop/data/projects/holdura.py:77
+#: mop/data/projects/holdura.py:78
 msgid "holdura_description_7"
 msgstr ""
 "The project is exclusively feasible through a multidisciplinary approach and "
@@ -772,7 +860,7 @@ msgstr "fonts"
 msgid "histgeo_fonts_1"
 msgstr "please use these Font Types for Old Church Slavonic:"
 
-#: mop/templates/imprint.html:7 mop/templates/layout.html:83
+#: mop/templates/imprint.html:7 mop/templates/layout.html:84
 msgid "imprint"
 msgstr "imprint"
 
@@ -940,7 +1028,7 @@ msgstr "Division of Byzantine Research"
 msgid "Europe"
 msgstr "Europe"
 
-#: mop/templates/layout.html:75
+#: mop/templates/layout.html:76
 msgid "navigation"
 msgstr "navigation"
 
@@ -976,35 +1064,39 @@ msgstr "Beyond East and West"
 msgid "Further Reading"
 msgstr "Further Reading"
 
-#: mop/templates/project_details.html:27
+#: mop/templates/project_details.html:28
 msgid "Funded by"
 msgstr "Funded by"
 
-#: mop/templates/project_details.html:40
+#: mop/templates/project_details.html:41
 msgid "Project Number"
 msgstr "Project Number"
 
-#: mop/templates/project_details.html:45
+#: mop/templates/project_details.html:46
 msgid "Duration"
 msgstr "Duration"
 
-#: mop/templates/project_details.html:57 mop/templates/projects.html:29
+#: mop/templates/project_details.html:50
+msgid "Hosted by"
+msgstr "Hosted by"
+
+#: mop/templates/project_details.html:72 mop/templates/projects.html:29
 msgid "Employees"
 msgstr "Employees"
 
-#: mop/templates/project_details.html:65
+#: mop/templates/project_details.html:80
 msgid "Cooperation and External Employees"
 msgstr "Cooperation and External Employees"
 
-#: mop/templates/project_details.html:104
+#: mop/templates/project_details.html:119
 msgid "results"
 msgstr "Results"
 
-#: mop/templates/project_details.html:139
+#: mop/templates/project_details.html:154
 msgid "Publications"
 msgstr "Publications"
 
-#: mop/templates/project_details.html:145
+#: mop/templates/project_details.html:160
 msgid "Presentations"
 msgstr "Presentations"
 
