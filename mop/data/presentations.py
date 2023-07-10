@@ -3,6 +3,61 @@ from flask_babel import lazy_gettext as _
 from mop.util import get_table_dates_formatted
 
 presentations = [{
+    'presenter': 'Branka Vranešević',
+    'title':
+        'Initials with Teratological Motifs in the Belgrade Prophetologion: '
+        'Witnesses of Entanglement between East and West',
+    'conference': 'International Medieval Congress',
+    'location': [_('Leeds')],
+    'date': get_table_dates_formatted(2023, 7, 6),
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+}, {
+    'presenter': 'Johannes Tripps',
+    'title':
+        'Objects of Private Devotion as Witnesses to Entanglement between '
+        'Venice and the Árpád and Nemanjić Dynasties',
+    'conference': 'International Medieval Congress',
+    'location': [_('Leeds')],
+    'date': get_table_dates_formatted(2023, 7, 6),
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+}, {
+    'presenter': 'Bernhard Koschiček-Krombholz',
+    'title':
+        'OpenAtlas: Handling Entangled Data in a Linked Data World',
+    'conference': 'International Medieval Congress',
+    'location': [_('Leeds')],
+    'date': get_table_dates_formatted(2023, 7, 6),
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+}, {
+    'presenter': 'Mihailo St. Popović',
+    'title':
+        'A Mother and Two Sons: the Serbian Rulers Helen, Dragutin, and '
+        'Milutin and Their Entangled Realms in Medieval Serbia',
+    'conference': 'International Medieval Congress',
+    'location': [_('Leeds')],
+    'date': get_table_dates_formatted(2023, 7, 6),
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+}, {
+    'presenter': 'Dorota Vargová',
+    'title':
+        'Stefan Uroš I and Helen of Anjou: The Royal Couple\'s Influence on '
+        'the Confessional Structure of the Principality of Zeta in the Late '
+        '13th and Early 14th Century ',
+    'conference': 'International Medieval Congress',
+    'location': [_('Leeds')],
+    'date': get_table_dates_formatted(2023, 7, 6),
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+}, {
     'presenter': 'Mihailo St. Popović',
     'title':
         'Пројекат Tabula Imperii Byzantini: о будућности (?) проучавања '

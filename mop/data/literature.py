@@ -13,6 +13,17 @@ literatures = [{
     'external_link': '',
     'download': '',
     'category': ['mop']
+},{
+    'author': 'Branka Vranešević',
+    'title': 'Iconography of the Parapet Slab from the Church of St. Thomas '
+             'in Kuti: New Reflections and Possible Interpretations. Zbornik '
+             'Matice srpske za likovne umetnosti (in print)',
+    'locations': [_('Novi Sad')],
+    'date': '2023',
+    'pages': '',
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
 }, {
     'author': 'Katrin Haase, Johannes Tripps',
     'title':

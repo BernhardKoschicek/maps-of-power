@@ -1,4 +1,18 @@
 institutes = {
+    'sasa': {
+        'name': 'Institute for Byzantine Studies '
+                'of the Serbian Academy of Sciences and Arts',
+        'url': 'https://www.sanu.ac.rs/en/sasa-institutes/'
+               'institute-for-byzantine-studies/',
+        'logo': 'sasa.png',
+        'member': '',
+        'address': ''},
+    'sfrs': {
+        'name': 'Science Fund of the Republic of Serbia',
+        'url': 'https://fondzanauku.gov.rs/?lang=en',
+        'logo': 'sfrs.png',
+        'member': '',
+        'address': ''},
     'zf': {
         'name': 'Zukunftsfonds',
         'url': 'http://www.zukunftsfonds-austria.at/',
@@ -62,12 +76,14 @@ institutes = {
         'address': ''},
     'oenb': {
         'name': 'Jubiläumsfonds der Oesterreichischen Nationalbank',
-        'url': 'https://www.oenb.at/Ueber-Uns/Forschungsfoerderung/Jubilaeumsfonds.html',
+        'url': 'https://www.oenb.at/Ueber-Uns/'
+               'Forschungsfoerderung/Jubilaeumsfonds.html',
         'logo': 'oenb.png',
         'member': '',
         'address': ''},
     'oead': {
-        'name': 'Austrian Agency for International Cooperation in Education and Research',
+        'name': 'Austrian Agency for International'
+                ' Cooperation in Education and Research',
         'url': 'https://oead.at/de/',
         'logo': 'oead.svg',
         'member': '',

@@ -8,9 +8,10 @@
   <div class="container mt-3 mb-5">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ url_for('projects') }}" class="link-primary">{{ _('projects') }}</a>
+        <li class="breadcrumb-item"><a href="{{ url_for('projects') }}"
+                                       class="link-primary">{{ _('projects') }}</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">{{ project.acronym }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ project.acronym | replace('_', ' ') }}</li>
       </ol>
     </nav>
 
@@ -45,6 +46,20 @@
           <div class="fw-bolder">{{ _('Duration') }}:</div>
           {{ project.begin }} - {{ project.end }}
         </div>
+
+        <div class="fw-bolder mt-2">{{ _('Hosted by') }}:</div>
+        <div class="container-fluid">
+          {% for host in project.host_institutes %}
+            <a href="{{ host.url }}" target="_blank">
+              <img
+                  src="{{ url_for('static', filename='images/institutes/'+host.logo) }}"
+                  alt="{{ host.name }}"
+                  class="img-fluid d-flex"
+                  style="max-height: 80px;">
+            </a>
+          {% endfor %}
+        </div>
+
         <div class="pt-3">
           <span class="fw-bolder">PI:</span>
           <ul class="text-decoration-none list-unstyled">

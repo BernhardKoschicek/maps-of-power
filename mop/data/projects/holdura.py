@@ -56,6 +56,7 @@ project_holdura = {
     'title': _(
         'Beyond East and West: Geocommunicating the Sacred Landscapes '
         'of "Duklja" and "Raška" through Space and Time (11th-14th Cent.)'),
+    'host_institutes': [institutes['abf']],
     'funded_by': [institutes['fwf'], institutes['dfg']],
     'project_number': 'I 4330-G',
     'pi': ['Mihailo Popović'],
@@ -81,6 +82,5 @@ project_holdura = {
     'images': images,
     'videos': [
         youtube_iframe('https://www.youtube-nocookie.com/embed/Nhdx2OeWkN8')],
-    'part': 'balkan',
     'oaID': 117730,
 }
