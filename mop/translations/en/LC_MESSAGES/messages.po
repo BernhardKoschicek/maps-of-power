@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2023-07-11 00:41+0200\n"
-"PO-Revision-Date: 2023-07-11 00:53+0200\n"
+"PO-Revision-Date: 2023-07-11 01:02+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -396,7 +396,7 @@ msgstr "Exeter"
 #: mop/data/presentations.py:176 mop/data/presentations.py:187
 #: mop/data/presentations.py:198 mop/data/presentations.py:208
 msgid "Leeds"
-msgstr "eds.Leeds"
+msgstr "Leeds"
 
 #: mop/data/presentations.py:66
 msgid "Belgrade"
