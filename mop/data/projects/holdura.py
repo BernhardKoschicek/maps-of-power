@@ -56,6 +56,7 @@ project_holdura = {
     'title': _(
         'Beyond East and West: Geocommunicating the Sacred Landscapes '
         'of "Duklja" and "Raška" through Space and Time (11th-14th Cent.)'),
+    'website': 'https://tib.oeaw.ac.at/subprojects/holdura',
     'host_institutes': [institutes['abf']],
     'funded_by': [institutes['fwf'], institutes['dfg']],
     'project_number': 'I 4330-G',

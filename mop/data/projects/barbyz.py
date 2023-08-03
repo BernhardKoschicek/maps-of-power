@@ -36,6 +36,9 @@ project_barbyz = {
         'From Barbarians to Christians and Rhomaioi. The Process of '
         'Byzantinization in the Central Balkans (late 10th – mid-13th '
         'century)'),
+    'website':
+        'http://www.byzinst-sasa.rs/eng/project-barbyz_10-13/119/2022/'
+        '04/08/project-barbyz_10-13.html',
     'host_institutes': [institutes['sasa']],
     'funded_by': [institutes['sfrs']],
     'project_number': '7748349',
