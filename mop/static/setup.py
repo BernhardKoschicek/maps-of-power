@@ -14,7 +14,7 @@ package_json = {
 
 setup(
     name='mapsofpower',
-    setup_requires=['calmjs', 'libsass >= 0.6.0'],
+    setup_requires=['calmjs'],
     sass_manifests={
         'mop': ('static/sass', 'static/css', '/static/css')},
     package_json=package_json,
