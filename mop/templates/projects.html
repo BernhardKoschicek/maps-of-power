@@ -7,25 +7,26 @@
     {% for project in projects.values() %}
       <a href="{{ url_for('projects', title=project['acronym']) }}" class="link-primary">
         <div class="row bg-accent2 rounded-4 p-3 m-3">
-          <div class="col-6">
+          <div class="col-8">
             <h3>
               {{ project['title'] }}
             </h3>
             <h5>
               {{ project.begin }} - {{ project.end }}
             </h5>
-          </div>
-{#          <div class="col-2">#}
-{#            <img src="{{ url_for('static', filename='images/projects/' + project['acronym'] + '/' + project['icon']) }}"#}
-{#                 alt="project['acronym']">#}
-{#          </div>#}
-          <div class="col text-end">
+
             <span class="fw-bolder">PI:</span>
             <ul class="text-decoration-none list-unstyled">
               {% for pi in project.pi %}
                 <li>{{ pi }}</li>
               {% endfor %}
             </ul>
+          </div>
+          {#          <div class="col-2">#}
+          {#            <img src="{{ url_for('static', filename='images/projects/' + project['acronym'] + '/' + project['icon']) }}"#}
+          {#                 alt="project['acronym']">#}
+          {#          </div>#}
+          <div class="col text-end">
             <span class="fw-bolder">{{ _('Employees') }}:</span>
             <ul class="text-decoration-none list-unstyled">
               {% for emp in project.employees %}
