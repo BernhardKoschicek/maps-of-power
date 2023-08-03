@@ -3,6 +3,33 @@ from flask_babel import lazy_gettext as _
 from mop.data.institutes import institutes
 from mop.util import get_dates_formatted
 
+images = [{
+    'src': 'barbyz_1.jpg',
+    'description': _('Surveying in North Macedonia'),
+    'citation': 'Marka Tomić',
+    'category': ['barbyz_10-13']
+}, {
+    'src': 'barbyz_2.jpg',
+    'description': _('Surveying in North Macedonia'),
+    'citation': 'Marka Tomić',
+    'category': ['barbyz_10-13']
+}, {
+    'src': 'barbyz_3.jpg',
+    'description': _('Surveying in North Macedonia'),
+    'citation': 'Marka Tomić',
+    'category': ['barbyz_10-13']
+}, {
+    'src': 'barbyz_4.jpg',
+    'description': _('Surveying in North Macedonia'),
+    'citation': 'Marka Tomić',
+    'category': ['barbyz_10-13']
+}, {
+    'src': 'barbyz_5.jpg',
+    'description': _('Surveying in North Macedonia'),
+    'citation': 'Marka Tomić',
+    'category': ['barbyz_10-13']
+}]
+
 project_barbyz = {
     'acronym': 'barbyz_10-13',
     'title': _(
@@ -39,7 +66,7 @@ project_barbyz = {
     ],
     'results': '',
     'icon': '',
-    'images': '',
+    'images': images,
     'videos': '',
     'oaID': '',
 }
