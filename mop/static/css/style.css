@@ -1,3 +1,7 @@
+body {
+font-family: 'Mulish', sans-serif;
+}
+
 #bg-video {
     position: fixed;
     top: 0;

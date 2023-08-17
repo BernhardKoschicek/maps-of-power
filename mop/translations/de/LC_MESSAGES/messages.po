@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-07-11 00:41+0200\n"
-"PO-Revision-Date: 2023-07-11 00:53+0200\n"
+"POT-Creation-Date: 2023-08-03 14:04+0200\n"
+"PO-Revision-Date: 2023-08-03 14:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #: mop/util.py:30
@@ -437,7 +437,13 @@ msgstr "Thessaloniki"
 msgid "Florenz"
 msgstr "Florenz"
 
-#: mop/data/projects/barbyz.py:8
+#: mop/data/projects/barbyz.py:8 mop/data/projects/barbyz.py:13
+#: mop/data/projects/barbyz.py:18 mop/data/projects/barbyz.py:23
+#: mop/data/projects/barbyz.py:28
+msgid "Surveying in North Macedonia"
+msgstr "Surveying in Nordmazedonien"
+
+#: mop/data/projects/barbyz.py:35
 msgid ""
 "From Barbarians to Christians and Rhomaioi. The Process of Byzantinization in "
 "the Central Balkans (late 10th – mid-13th century)"
@@ -445,7 +451,7 @@ msgstr ""
 "Von Barbaren zu Christen und Rhomaioi. Der Prozess der Byzantinisierung auf dem "
 "Zentralbalkan (Ende 10. - Mitte 13. Jahrhundert)"
 
-#: mop/data/projects/barbyz.py:33
+#: mop/data/projects/barbyz.py:63
 msgid "barbyz_description_1"
 msgstr ""
 "Das Hauptziel des Projekts besteht darin, die Schlüsselfaktoren zu erklären, die "
@@ -456,7 +462,7 @@ msgstr ""
 "Gebiets in seine Grenzen ab. Die Forschung wird in drei Hauptrichtungen "
 "durchgeführt:"
 
-#: mop/data/projects/barbyz.py:34
+#: mop/data/projects/barbyz.py:64
 msgid "barbyz_description_2"
 msgstr ""
 "<ol>\n"
@@ -467,7 +473,7 @@ msgstr ""
 "<li>Politische, ideologische und soziale Aspekte der Byzantinisierung</li>\n"
 "</ol>"
 
-#: mop/data/projects/barbyz.py:35
+#: mop/data/projects/barbyz.py:65
 msgid "barbyz_description_3"
 msgstr ""
 "Der Prozess der Byzantinisierung verlief nicht in allen Teilen des zentralen "
@@ -478,7 +484,7 @@ msgstr ""
 "Erzbistums Ohrid), die Donau-Morava-Region (Srem-Belgrad-Braničevo-Niš) und die "
 "nordwestlichen Teile des zentralen Balkans (serbische und kroatische Zone)."
 
-#: mop/data/projects/barbyz.py:36
+#: mop/data/projects/barbyz.py:66
 msgid "barbyz_description_4"
 msgstr ""
 "Innerhalb des zeitlichen Rahmens des Projekts gibt es mehrere chronologische "
@@ -487,7 +493,7 @@ msgstr ""
 "betrachtete Gebiet Teil des Reiches war oder nur unter seinem kulturellen und "
 "politischen Einfluss stand:"
 
-#: mop/data/projects/barbyz.py:37
+#: mop/data/projects/barbyz.py:67
 msgid "barbyz_description_5"
 msgstr ""
 "<ol>\n"
@@ -505,7 +511,7 @@ msgstr ""
 "zurückzuziehen.</li>\n"
 "</ol>"
 
-#: mop/data/projects/barbyz.py:38
+#: mop/data/projects/barbyz.py:68
 msgid "barbyz_description_6"
 msgstr ""
 "Das Projektteam setzt sich aus anerkannten Forschern verschiedener "
@@ -580,7 +586,7 @@ msgstr ""
 "Jenseits von Ost und West: Geokommunikation der heiligen Landschaften \"Duklja\" "
 "und \"Raška\" durch Raum und Zeit (11.-14. Jh.)"
 
-#: mop/data/projects/holdura.py:72
+#: mop/data/projects/holdura.py:73
 msgid "holdura_description_1"
 msgstr ""
 "Im aktuellen Diskurs über die Integration der westlichen Balkanstaaten in die "
@@ -591,7 +597,7 @@ msgstr ""
 "wichtige Rolle in den strategischen und administrativen Überlegungen des "
 "byzantinischen Reiches spielte."
 
-#: mop/data/projects/holdura.py:73
+#: mop/data/projects/holdura.py:74
 msgid "holdura_description_2"
 msgstr ""
 "Das Projekt basiert auf einer wissenschaftlichen Zusammenarbeit zwischen den "
@@ -604,13 +610,13 @@ msgstr ""
 "der Kunstgeschichte und der Geokommunikation sowohl der Wissenschaft als auch "
 "der interessierten Öffentlichkeit vermitteln wollen."
 
-#: mop/data/projects/holdura.py:74
+#: mop/data/projects/holdura.py:75
 msgid "holdura_description_3"
 msgstr ""
 "Daher zielt das Projekt darauf ab, die folgenden drei Hauptfragen systematisch "
 "anzugehen und zu untersuchen:"
 
-#: mop/data/projects/holdura.py:75
+#: mop/data/projects/holdura.py:76
 msgid "holdura_description_4"
 msgstr ""
 "(1) Auf welche Weise interagierten die lokalen Herrscher und die Kirchen von Rom "
@@ -619,14 +625,14 @@ msgstr ""
 "der Monumente (d.h. der Kirchen und Klöster) in dieser \"Heiligen Landschaft\" "
 "wider?"
 
-#: mop/data/projects/holdura.py:76
+#: mop/data/projects/holdura.py:77
 msgid "holdura_description_5"
 msgstr ""
 "(2) Wirkte sich die schwankende Religionszugehörigkeit der lokalen Herrscher auf "
 "die \"Sakrale Landschaft\" aus und wo wurden lateinische oder byzantinische "
 "Kultstätten im Laufe der Zeit umgewandelt oder überlagert?"
 
-#: mop/data/projects/holdura.py:77
+#: mop/data/projects/holdura.py:78
 msgid "holdura_description_6"
 msgstr ""
 "(3) Lässt sich der religiöse und kulturelle Einfluss des lateinischen und "
@@ -643,7 +649,7 @@ msgstr ""
 "<a href=\"https://map.geo.univie.ac.at/bew/\" class=\"link-primary\">Online-"
 "Kartenanwendung</a> erreicht."
 
-#: mop/data/projects/holdura.py:78
+#: mop/data/projects/holdura.py:79
 msgid "holdura_description_7"
 msgstr ""
 "Das Projekt ist ausschließlich durch einen multidisziplinären Ansatz und die "
@@ -1118,7 +1124,7 @@ msgstr "Dauer"
 msgid "Hosted by"
 msgstr "Beherbergendes Institut"
 
-#: mop/templates/project_details.html:72 mop/templates/projects.html:29
+#: mop/templates/project_details.html:72 mop/templates/projects.html:30
 msgid "Employees"
 msgstr "Mitarbeiter:innen"
 
@@ -1126,15 +1132,19 @@ msgstr "Mitarbeiter:innen"
 msgid "Cooperation and External Employees"
 msgstr "Kooperationen und externe Mitarbeiter:innen"
 
-#: mop/templates/project_details.html:119
+#: mop/templates/project_details.html:92
+msgid "further information"
+msgstr "Weitere Informationen"
+
+#: mop/templates/project_details.html:127
 msgid "results"
 msgstr "Resultate"
 
-#: mop/templates/project_details.html:154
+#: mop/templates/project_details.html:162
 msgid "Publications"
 msgstr "Publikationen"
 
-#: mop/templates/project_details.html:160
+#: mop/templates/project_details.html:168
 msgid "Presentations"
 msgstr "Präsentationen"
 

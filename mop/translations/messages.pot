@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-07-11 00:41+0200\n"
+"POT-Creation-Date: 2023-08-03 14:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: mop/util.py:30
 msgid "about"
@@ -301,33 +301,39 @@ msgstr ""
 msgid "Florenz"
 msgstr ""
 
-#: mop/data/projects/barbyz.py:8
+#: mop/data/projects/barbyz.py:8 mop/data/projects/barbyz.py:13
+#: mop/data/projects/barbyz.py:18 mop/data/projects/barbyz.py:23
+#: mop/data/projects/barbyz.py:28
+msgid "Surveying in North Macedonia"
+msgstr ""
+
+#: mop/data/projects/barbyz.py:35
 msgid ""
 "From Barbarians to Christians and Rhomaioi. The Process of "
 "Byzantinization in the Central Balkans (late 10th – mid-13th century)"
 msgstr ""
 
-#: mop/data/projects/barbyz.py:33
+#: mop/data/projects/barbyz.py:63
 msgid "barbyz_description_1"
 msgstr ""
 
-#: mop/data/projects/barbyz.py:34
+#: mop/data/projects/barbyz.py:64
 msgid "barbyz_description_2"
 msgstr ""
 
-#: mop/data/projects/barbyz.py:35
+#: mop/data/projects/barbyz.py:65
 msgid "barbyz_description_3"
 msgstr ""
 
-#: mop/data/projects/barbyz.py:36
+#: mop/data/projects/barbyz.py:66
 msgid "barbyz_description_4"
 msgstr ""
 
-#: mop/data/projects/barbyz.py:37
+#: mop/data/projects/barbyz.py:67
 msgid "barbyz_description_5"
 msgstr ""
 
-#: mop/data/projects/barbyz.py:38
+#: mop/data/projects/barbyz.py:68
 msgid "barbyz_description_6"
 msgstr ""
 
@@ -373,31 +379,31 @@ msgid ""
 "\"Duklja\" and \"Raška\" through Space and Time (11th-14th Cent.)"
 msgstr ""
 
-#: mop/data/projects/holdura.py:72
+#: mop/data/projects/holdura.py:73
 msgid "holdura_description_1"
 msgstr ""
 
-#: mop/data/projects/holdura.py:73
+#: mop/data/projects/holdura.py:74
 msgid "holdura_description_2"
 msgstr ""
 
-#: mop/data/projects/holdura.py:74
+#: mop/data/projects/holdura.py:75
 msgid "holdura_description_3"
 msgstr ""
 
-#: mop/data/projects/holdura.py:75
+#: mop/data/projects/holdura.py:76
 msgid "holdura_description_4"
 msgstr ""
 
-#: mop/data/projects/holdura.py:76
+#: mop/data/projects/holdura.py:77
 msgid "holdura_description_5"
 msgstr ""
 
-#: mop/data/projects/holdura.py:77
+#: mop/data/projects/holdura.py:78
 msgid "holdura_description_6"
 msgstr ""
 
-#: mop/data/projects/holdura.py:78
+#: mop/data/projects/holdura.py:79
 msgid "holdura_description_7"
 msgstr ""
 
@@ -711,7 +717,7 @@ msgstr ""
 msgid "Hosted by"
 msgstr ""
 
-#: mop/templates/project_details.html:72 mop/templates/projects.html:29
+#: mop/templates/project_details.html:72 mop/templates/projects.html:30
 msgid "Employees"
 msgstr ""
 
@@ -719,15 +725,19 @@ msgstr ""
 msgid "Cooperation and External Employees"
 msgstr ""
 
-#: mop/templates/project_details.html:119
+#: mop/templates/project_details.html:92
+msgid "further information"
+msgstr ""
+
+#: mop/templates/project_details.html:127
 msgid "results"
 msgstr ""
 
-#: mop/templates/project_details.html:154
+#: mop/templates/project_details.html:162
 msgid "Publications"
 msgstr ""
 
-#: mop/templates/project_details.html:160
+#: mop/templates/project_details.html:168
 msgid "Presentations"
 msgstr ""
 

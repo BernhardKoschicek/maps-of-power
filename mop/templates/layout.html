@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="{{ CURRENT_LANGUAGE }}">
 <head>
-    <meta charset="UTF-8">
-    <title>Maps of Power</title>
-    <meta name="keywords"
-          content="Maps of Power, Historical Geography, History, Archeology, Digital Humanities"/>
-    <meta name="description"
-          content="The research initiative 'Maps of Power' serves the methodological and interdisciplinary networking of scholars from the field of Historical Geography."/>
-    <meta name="author"
-          content="Bernhard Koschicek-Krombholz, Mihailo Popovic"/>
-    <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
-    <link rel="manifest" href="/static/site.webmanifest">
-    <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#73734a">
-    <link rel="shortcut icon" href="/static/favicon.ico">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-config" content="/static/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/static/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/static/node_modules/baguettebox.js/dist/baguetteBox.css">
-    <link rel="stylesheet" href="/static/node_modules/datatables.net-bs5/css/dataTables.bootstrap5.css">
-    <link rel="stylesheet" href="/static/css/color.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/datatables.css">
+  <meta charset="UTF-8">
+  <title>Maps of Power</title>
+  <meta name="keywords"
+        content="Maps of Power, Historical Geography, History, Archeology, Digital Humanities"/>
+  <meta name="description"
+        content="The research initiative 'Maps of Power' serves the methodological and interdisciplinary networking of scholars from the field of Historical Geography."/>
+  <meta name="author"
+        content="Bernhard Koschicek-Krombholz, Mihailo Popovic"/>
+  <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+  <link rel="manifest" href="/static/site.webmanifest">
+  <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#73734a">
+  <link rel="shortcut icon" href="/static/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-config" content="/static/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/static/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/node_modules/baguettebox.js/dist/baguetteBox.css">
+  <link rel="stylesheet" href="/static/node_modules/datatables.net-bs5/css/dataTables.bootstrap5.css">
+  <link rel="stylesheet" href="/static/css/color.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/fonts.css">
+  <link rel="stylesheet" href="/static/css/datatables.css">
 
-    <script src="/static/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="/static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/static/node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
-    <script src="/static/node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.min.js"></script>
-    <script src="/static/node_modules/baguettebox.js/dist/baguetteBox.js"></script>
-    <script src="/static/node_modules/muuri/dist/muuri.js"></script>
-    <script src="/static/node_modules/datatables.net/js/jquery.dataTables.js"></script>
-    <script src="/static/node_modules/datatables.net-bs5/js/dataTables.bootstrap5.js"></script>
-    <script src="/static/node_modules/datatables.net-buttons-bs5/js/buttons.bootstrap5.js"></script>
-    <script src="/static/node_modules/datatables.net-responsive-bs5/js/responsive.bootstrap5.js"></script>
-    <script src="/static/node_modules/datatables.net-searchbuilder-bs5/js/searchBuilder.bootstrap5.js"></script>
-    <script src="/static/node_modules/datatables.net-searchpanes-bs5/js/searchPanes.bootstrap5.js"></script>
+  <script src="/static/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
+  <script src="/static/node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.min.js"></script>
+  <script src="/static/node_modules/baguettebox.js/dist/baguetteBox.js"></script>
+  <script src="/static/node_modules/muuri/dist/muuri.js"></script>
+  <script src="/static/node_modules/datatables.net/js/jquery.dataTables.js"></script>
+  <script src="/static/node_modules/datatables.net-bs5/js/dataTables.bootstrap5.js"></script>
+  <script src="/static/node_modules/datatables.net-buttons-bs5/js/buttons.bootstrap5.js"></script>
+  <script src="/static/node_modules/datatables.net-responsive-bs5/js/responsive.bootstrap5.js"></script>
+  <script src="/static/node_modules/datatables.net-searchbuilder-bs5/js/searchBuilder.bootstrap5.js"></script>
+  <script src="/static/node_modules/datatables.net-searchpanes-bs5/js/searchPanes.bootstrap5.js"></script>
+
 
 </head>
 <body class="bg-light">
@@ -46,65 +48,65 @@
 <header>
 </header>
 <main>
-    {% block content %}{% endblock %}
+  {% block content %}{% endblock %}
 </main>
 <footer class="bg-dark mt-3 pt-5">
-    <div class="container">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-12 col-md-3 mb-5">
-                <h6 class="fw-bold text-info text-uppercase">{{ _('contact') }}</h6>
-                <p class="text-accent2">
-                    {{ _('Austrian Academy of Sciences') }} <br>
-                    {{ _('Institute for Medieval Research') }} <br>
-                    {{ _('Division of Byzantine Research') }} <br>
-                    Georg-Coch-Platz 2 /5. Stock/ Zimmer 13 <br>
-                    1010 {{ _('Vienna') }}, {{ _('Austria') }}, {{ _('Europe') }} <br>
-                    Doz. Mag. Dr. Mihailo St. Popović <br>
-                    +43 1 51581 3444 <br>
-                    <a href="mailto:maps-of-power@oeaw.ac.at" class="link-secondary">maps-of-power@oeaw.ac.at</a> <br>
-                </p>
-            </div>
-            <div class="col d-flex justify-content-center align-items-center">
-                <a class="navbar-brand" href="/">
-                    <img src="{{ url_for('static', filename="images/mop_logo.svg") }}"
-                         alt="Maps of Power Logo"
-                         height="200"
-                         class="d-inline-block">
-                </a>
-            </div>
-            <div class="col-12 col-md-3 mb-5 text-end">
-                <h6 class="fw-bold text-info text-uppercase">{{ _('navigation') }}</h6>
-                {% for item in navbar %}
-                    <p class="mb-0">
-                        <a class="text-capitalize link-secondary"
-                           href="{{ item.to }}">{{ item.name }}</a>
-                    </p>
-                {% endfor %}
-                <a href="{{ url_for('imprint') }}" class="link-secondary text-capitalize">
-                    {{ _('imprint') }}
-                </a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-3 mb-5">
+        <h6 class="fw-bold text-info text-uppercase">{{ _('contact') }}</h6>
+        <p class="text-accent2">
+          {{ _('Austrian Academy of Sciences') }} <br>
+          {{ _('Institute for Medieval Research') }} <br>
+          {{ _('Division of Byzantine Research') }} <br>
+          Georg-Coch-Platz 2 /5. Stock/ Zimmer 13 <br>
+          1010 {{ _('Vienna') }}, {{ _('Austria') }}, {{ _('Europe') }} <br>
+          Doz. Mag. Dr. Mihailo St. Popović <br>
+          +43 1 51581 3444 <br>
+          <a href="mailto:maps-of-power@oeaw.ac.at" class="link-secondary">maps-of-power@oeaw.ac.at</a> <br>
+        </p>
+      </div>
+      <div class="col d-flex justify-content-center align-items-center">
+        <a class="navbar-brand" href="/">
+          <img src="{{ url_for('static', filename="images/mop_logo.svg") }}"
+               alt="Maps of Power Logo"
+               height="200"
+               class="d-inline-block">
+        </a>
+      </div>
+      <div class="col-12 col-md-3 mb-5 text-end">
+        <h6 class="fw-bold text-info text-uppercase">{{ _('navigation') }}</h6>
+        {% for item in navbar %}
+          <p class="mb-0">
+            <a class="text-capitalize link-secondary"
+               href="{{ item.to }}">{{ item.name }}</a>
+          </p>
+        {% endfor %}
+        <a href="{{ url_for('imprint') }}" class="link-secondary text-capitalize">
+          {{ _('imprint') }}
+        </a>
+      </div>
     </div>
-    <div class="container-fluid bg-dark pb-5">
-        <div class="row ">
-            <div class="col d-flex justify-content-end align-items-center">
-                <a class="navbar-brand" href="https://www.oeaw.ac.at/" target="_blank">
-                    <img src="{{ url_for('static', filename="images/institutes/oeaw.png") }}"
-                         alt="Austrian Academy of Sciences"
-                         height="70">
-                </a>
-            </div>
-            <div class="col d-flex justify-content-start align-items-center">
-                <a class="navbar-brand" href="https://www.oeaw.ac.at/imafo/home" target="_blank">
-                    <img src="{{ url_for('static', filename="images/institutes/imafo.png") }}"
-                         alt="Institute for Medieval Studies"
-                         height="70"
-                         class="d-inline-block">
-                </a>
-            </div>
-        </div>
+  </div>
+  <div class="container-fluid bg-dark pb-5">
+    <div class="row ">
+      <div class="col d-flex justify-content-end align-items-center">
+        <a class="navbar-brand" href="https://www.oeaw.ac.at/" target="_blank">
+          <img src="{{ url_for('static', filename="images/institutes/oeaw.png") }}"
+               alt="Austrian Academy of Sciences"
+               height="70">
+        </a>
+      </div>
+      <div class="col d-flex justify-content-start align-items-center">
+        <a class="navbar-brand" href="https://www.oeaw.ac.at/imafo/home" target="_blank">
+          <img src="{{ url_for('static', filename="images/institutes/imafo.png") }}"
+               alt="Institute for Medieval Studies"
+               height="70"
+               class="d-inline-block">
+        </a>
+      </div>
     </div>
+  </div>
 </footer>
 </body>
 <script>

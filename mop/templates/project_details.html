@@ -86,6 +86,14 @@
         </div>
       </div>
     </div>
+    {% if project.website %}
+      <div class="row pt-5 images">
+        <div class="col text-center">
+          {{ _('further information') }}:
+          <a href="{{ project.website }}" target="_blank" class="link-primary">{{ project.website }}</a>
+        </div>
+      </div>
+    {% endif %}
 
     <div class="row pt-5 images">
       {% for img in project.images %}
