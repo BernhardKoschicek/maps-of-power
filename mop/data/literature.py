@@ -13,7 +13,7 @@ literatures = [{
     'external_link': '',
     'download': '',
     'category': ['mop']
-},{
+}, {
     'author': 'Branka Vranešević',
     'title': 'Iconography of the Parapet Slab from the Church of St. Thomas '
              'in Kuti: New Reflections and Possible Interpretations. Zbornik '
@@ -32,7 +32,9 @@ literatures = [{
     'locations': [_('Leipzig')],
     'date': '2023',
     'pages': '5',
-    'external_link': '',
+    'external_link':
+        'https://www.htwk-leipzig.de/forschen/'
+        'aktuelles/detailansicht/artikel/6277',
     'download': 'Einblicke_SakraleLandschaften.pdf',
     'category': ['holdura']
 }, {
