@@ -23,6 +23,32 @@ view_classes = {
         'display_name': _('Artefacts'),
         'description': _('Physical objects')}}
 
+system_classes = {
+    'acquisition': 'event',
+    'activity': 'event',
+    'administrative_unit': 'type',
+    'artifact': 'artifact',
+    'bibliography': 'reference',
+    'creation': 'event',
+    'edition': 'reference',
+    'event': 'event',
+    'external_reference': 'reference',
+    'feature': 'place',
+    'file': 'file',
+    'group': 'actor',
+    'human_remains': 'artifact',
+    'move': 'event',
+    'object_location': 'place',
+    'person': 'actor',
+    'place': 'place',
+    'production': 'event',
+    'reference_system': 'reference_system',
+    'source': 'source',
+    'source_translation': 'source_translation',
+    'stratigraphic_unit': 'place',
+    'type': 'type',
+}
+
 
 def get_oa_by_view_class(view: str, project_id: object) -> list[Entity]:
     if view not in view_classes:

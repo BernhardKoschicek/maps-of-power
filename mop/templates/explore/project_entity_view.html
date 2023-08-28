@@ -22,8 +22,9 @@
           <a href="{{ url_for('projects', title=path[0]) }}" class="link-primary">{{ path[0] }}</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="{{ url_for('project_explore_table', project=path[0],  view=path[1]) }}"
-             class="link-primary">{{ _(path[1]) }}</a>
+          <a href="{{ url_for('project_explore_table',
+          project=path[0],  view=system_classes[entity.system_class | lower]) }}"
+             class="link-primary">{{ system_classes[entity.system_class | lower] }}</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           {{ entity.name }}
@@ -181,10 +182,11 @@
 
                 {% for item in value %}
                   <tr>
-                    <td> <a href="{{ url_for('entity_project_view', id_=item.relation_to_id, project=path[0], view=path[1]) }}"
-                         class="text-decoration-none">
-                        {{ item.label }}
-                      </a>
+                    <td><a
+                        href="{{ url_for('entity_project_view', id_=item.relation_to_id, project=path[0], view=path[1]) }}"
+                        class="text-decoration-none">
+                      {{ item.label }}
+                    </a>
                     </td>
                     <td>
                       {{ item.system_class }}

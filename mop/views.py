@@ -8,7 +8,7 @@ from werkzeug.utils import redirect
 
 from model.api_calls import get_entities_linked_to_entity
 from model.entity import Entity
-from model.explore import view_classes, get_oa_by_view_class
+from model.explore import view_classes, get_oa_by_view_class, system_classes
 from mop import app
 from mop.data.events import event_list
 from mop.data.histgeo import newsletters, volumes, lectures
@@ -98,7 +98,7 @@ def project_explore_table(project: str, view: str) -> str:
         data=data,
         project=project_data[project],
         view_classes=view_classes[view],
-    view=view)
+        view=view)
 
 
 @app.route('/projects')
@@ -121,7 +121,8 @@ def entity_project_view(
         if entity.depictions else None,
         relations=relations,
         related_places=related_places,
-        path=(project, view))
+        path=(project, view),
+        system_classes=system_classes)
 
 
 @app.route('/software')
