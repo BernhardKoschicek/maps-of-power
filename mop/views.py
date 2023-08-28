@@ -44,7 +44,8 @@ def explore() -> str:
 
 @app.route('/explore')
 @app.route('/explore/entity/<id_>')
-def entity_view(id_: int) -> str:
+@app.route('/projects/<project>/explore/<view>/<id_>')
+def entity_view(id_: int, project: Optional[str], view: Optional[str]) -> str:
     entity = Entity.get_entity_from_oa(id_)
     linked_entities = get_entities_linked_to_entity(id_)
     relations = get_relations(
@@ -58,16 +59,16 @@ def entity_view(id_: int) -> str:
         images=numpy.array_split(entity.depictions, 4)
         if entity.depictions else None,
         relations=relations,
-        related_places=related_places)
+        related_places=related_places,
+        path=(project, view))
 
 
-@app.route('/explore')
-@app.route('/explore/<project>/<view>')
+@app.route('/projects')
+@app.route('/projects/<project>/explore/<view>')
 def explore_table(project: str, view: str) -> str:
     data = False
     try:
         data = get_oa_by_view_class(view, project_data[project]['oaID'])
-        print(data)
     except:
         pass
     return render_template(

@@ -30,8 +30,5 @@ def get_oa_by_view_class(view: str, project_id: object) -> list[Entity]:
     data = [Entity(entry['features'][0])
             for entry in get_view_class(
             f'{view}?limit=0&'
-            f'show=description&search='
-            '{"typeID":[{"operator":"equal",'
-            f'"values":[{project_id}]'
-            '}]}')]
+            f'show=description&type_id={project_id}')]
     return data
