@@ -34,50 +34,6 @@ def events() -> str:
     return render_template('events.html', events=event_list)
 
 
-@app.route('/explore')
-def explore() -> str:
-    return render_template(
-        'explore/explore.html',
-        subprojects_dict=project_data,
-        view_classes=view_classes)
-
-
-@app.route('/explore')
-@app.route('/explore/entity/<id_>')
-@app.route('/projects/<project>/explore/<view>/<id_>')
-def entity_view(id_: int, project: Optional[str], view: Optional[str]) -> str:
-    entity = Entity.get_entity_from_oa(id_)
-    linked_entities = get_entities_linked_to_entity(id_)
-    relations = get_relations(
-        get_relation_entities(linked_entities, entity.relations))
-    related_places = get_related_geoms(relations['places']) \
-        if 'places' in relations else []
-    return render_template(
-        'explore/entity_view.html',
-        entity=entity,
-        type_hierarchy=get_types_sorted(entity.types),
-        images=numpy.array_split(entity.depictions, 4)
-        if entity.depictions else None,
-        relations=relations,
-        related_places=related_places,
-        path=(project, view))
-
-
-@app.route('/projects')
-@app.route('/projects/<project>/explore/<view>')
-def explore_table(project: str, view: str) -> str:
-    data = False
-    try:
-        data = get_oa_by_view_class(view, project_data[project]['oaID'])
-    except:
-        pass
-    return render_template(
-        'explore/entity_table.html',
-        data=data,
-        project=project_data[project],
-        view_classes=view_classes[view])
-
-
 @app.route('/histgeo')
 @app.route('/histgeo/<int:id_>')
 def histgeo(id_: Optional[int] = None) -> str:
@@ -127,6 +83,45 @@ def projects(title: Optional[str] = None) -> str:
                 literatures),
             view_classes=view_classes)
     return render_template('projects.html', projects=project_data)
+
+
+@app.route('/projects')
+@app.route('/projects/<project>/explore/<view>')
+def project_explore_table(project: str, view: str) -> str:
+    data = False
+    try:
+        data = get_oa_by_view_class(view, project_data[project]['oaID'])
+    except:
+        pass
+    return render_template(
+        'explore/project_explore_table.html',
+        data=data,
+        project=project_data[project],
+        view_classes=view_classes[view],
+    view=view)
+
+
+@app.route('/projects')
+@app.route('/projects/<project>/explore/<view>/<id_>')
+def entity_project_view(
+        id_: int,
+        project: Optional[str],
+        view: Optional[str]) -> str:
+    entity = Entity.get_entity_from_oa(id_)
+    linked_entities = get_entities_linked_to_entity(id_)
+    relations = get_relations(
+        get_relation_entities(linked_entities, entity.relations))
+    related_places = get_related_geoms(relations['places']) \
+        if 'places' in relations else []
+    return render_template(
+        'explore/project_entity_view.html',
+        entity=entity,
+        type_hierarchy=get_types_sorted(entity.types),
+        images=numpy.array_split(entity.depictions, 4)
+        if entity.depictions else None,
+        relations=relations,
+        related_places=related_places,
+        path=(project, view))
 
 
 @app.route('/software')

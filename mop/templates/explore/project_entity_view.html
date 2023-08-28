@@ -22,7 +22,7 @@
           <a href="{{ url_for('projects', title=path[0]) }}" class="link-primary">{{ path[0] }}</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="{{ url_for('explore_table', project=path[0],  view=path[1]) }}"
+          <a href="{{ url_for('project_explore_table', project=path[0],  view=path[1]) }}"
              class="link-primary">{{ _(path[1]) }}</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
@@ -32,7 +32,7 @@
     </nav>
   </div>
 
-  <div class="container p-5">
+  <div class="container">
     <div class="row">
       <div class="col-10">
         {{ entity.name }}
@@ -136,10 +136,10 @@
           {% for reference in relations['references'] %}
             <a tabindex="0" class="text-decoration-none fst-italic" role="button" data-bs-toggle="popover"
                data-bs-trigger="focus"
-               title="<a href='{{ url_for('entity_view', id_=reference.relation_to_id) }}'
+               title="<a href='{{ url_for('entity_project_view', id_=reference.relation_to_id, project=path[0], view=path[1]) }}'
                         class='text-decoration-none'>{{ reference.label }}</a>"
                data-bs-content="<p class=''>{{ reference.description }}</p>
-                                  <a href='{{ url_for('entity_view', id_=reference.relation_to_id) }}'
+                                  <a href='{{ url_for('entity_project_view', id_=reference.relation_to_id, project=path[0], view=path[1]) }}'
                                   class='text-decoration-none btn btn-violet-light'>{{ reference.label }}</a>">
               {{ reference.label }}{% if reference.relation_description %} —
                 {{ reference.relation_description }}{% endif %}</a>
@@ -181,8 +181,7 @@
 
                 {% for item in value %}
                   <tr>
-                    <td>
-                      <a href="{{ url_for('entity_view', id_=item.relation_to_id) }}"
+                    <td> <a href="{{ url_for('entity_project_view', id_=item.relation_to_id, project=path[0], view=path[1]) }}"
                          class="text-decoration-none">
                         {{ item.label }}
                       </a>
@@ -316,7 +315,7 @@
 
   <a tabindex="0" class="text-decoration-none fst-italic" role="button" data-bs-toggle="popover"
      data-bs-trigger="focus"
-     title="{{ type.hierarchy }} > <a href='{{ url_for('entity_view', id_=type.identifier) }}'
+     title="{{ type.hierarchy }} > <a href='{{ url_for('entity_project_view', id_=type.identifier, project=path[0], view=path[1]) }}'
             class='text-decoration-none'>{{ type.label }}</a>"
      data-bs-content="{% if type.description %}<p>{{ type.description }}</p>{% endif %}">
     {{ type.label }}{% if type.description %} — {{ type.description }}{% endif %}</a>

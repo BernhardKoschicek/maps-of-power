@@ -157,7 +157,7 @@
             <div class="pt-5">
               <div class="row justify-content-md-center">
                 {% for view, values in view_classes.items() %}
-                  <a href="{{ url_for('explore_table', view=view, project=project.acronym) }}"
+                  <a href="{{ url_for('project_explore_table', view=view, project=project.acronym) }}"
                      class="{{ view }}-background  rounded-3 col-md-8 col-xl-6 col-xxl-3 p-5 m-3 oa-access-tab-boxes">
                     <div class="">
                       <p class="fw-bold">{{ values['display_name'] }}</p>

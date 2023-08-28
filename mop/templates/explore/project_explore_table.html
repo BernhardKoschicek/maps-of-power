@@ -29,11 +29,11 @@
           {% for entity in data %}
             <tr>
               <td>
-                <a href="{{ url_for('entity_view', id_=entity.id_, project=project.acronym, view=entity.system_class) }}"
+                <a href="{{ url_for('entity_project_view', id_=entity.id_, project=project.acronym, view=view) }}"
                    class="text-decoration-none">{{ entity.id_ }}</a>
               </td>
               <td>
-                <a href="{{ url_for('entity_view', id_=entity.id_, project=project.acronym, view=entity.system_class | lower) }}"
+                <a href="{{ url_for('entity_project_view', id_=entity.id_, project=project.acronym, view=view) }}"
                    class="text-decoration-none fw-bold">{{ entity.name }}</a>
               </td>
               <td> {{ entity.system_class }}</td>
