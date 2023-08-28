@@ -32,6 +32,7 @@ def inject_menu() -> dict[str, Any]:
         # {'name': _('software'), 'to': url_for('software')},
         {'name': 'histgeo', 'to': url_for('histgeo')},
         {'name': _('events'), 'to': url_for('events')},
+        {'name': _('explore'), 'to': url_for('explore')},
         {'name': _('literature'), 'to': url_for('literature')}]
     return {'navbar': navbar}
 

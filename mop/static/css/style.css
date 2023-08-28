@@ -1,5 +1,5 @@
 body {
-font-family: 'Mulish', sans-serif;
+    font-family: 'Mulish', sans-serif;
 }
 
 #bg-video {
@@ -68,3 +68,36 @@ a {
     position: absolute;
 }
 
+#floating-navbar {
+    position: sticky;
+    top: 100px; /* Adjust as needed */
+    height: max-content; /* Adjust to match container height */
+    overflow-y: auto;
+    background-color: #f8f9fa; /* Add your desired background color */
+    padding: 10px; /* Add padding for better appearance */
+    margin-top: 50px;
+}
+.scrollspy-project {
+    position: relative;
+    height: 300px;
+    overflow: auto;
+}
+/* Adjust the main content area to maintain layout */
+#main-content {
+    padding-left: 20px; /* Adjust to match the width of the navbar */
+}
+
+
+.oa-access-tab-boxes {
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+
+}
+
+a.oa-access-tab-boxes {
+    color: white;
+}
+
+a.oa-access-tab-boxes:hover {
+    color: white;
+    background-color: rgba(67, 57, 28, 0.43);
+}

@@ -71,5 +71,5 @@ project_barbyz = {
     'icon': '',
     'images': images,
     'videos': '',
-    'oaID': '',
+    'oaID': '133694',
 }
