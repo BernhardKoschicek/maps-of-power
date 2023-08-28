@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% with bg='bg-dark' %}
+    {% include 'navbar.html'  %}
+{% endwith %}
+{% block content %}
+  <div class="container top7 text-center">
+    <h1 class="display-6">{{ project['title'] }}</h1>
+    <h3> {{ view_classes['display_name'] }}</h3>
+  </div>
+  <section>
+    <div class="container">
+      <div class="col-md-12 ">
+      {% if not data %}
+        <div class="text-center top10 display-6">
+          <p>"{{ view_classes['display_name'] }}" {{_('is currently unavailable')}}</p>
+        </div>
+      {% else %}
+        <table id="entity_table" class="row-border table table-striped dataTable"
+               style="width:100%">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>{{_('Class')}}</th>
+            <th>{{_('Description')}}</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for entity in data %}
+            <tr>
+              <td>
+                <a href="{{ url_for('entity_view', id_=entity.id_) }}"
+                   class="text-decoration-none">{{ entity.id_ }}</a>
+              </td>
+              <td>
+                <a href="{{ url_for('entity_view', id_=entity.id_) }}"
+                   class="text-decoration-none fw-bold">{{ entity.name }}</a>
+              </td>
+              <td> {{ entity.system_class }}</td>
+              <td> {{ entity.description }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+    </div>
+  </section>
+
+  <script>
+      $(document).ready(function () {
+          $('#entity_table').DataTable({
+              'order': [[1, 'asc']],
+              'columnDefs': [
+                  {
+                      'targets': 3,
+                      'render': DataTable.render.ellipsis(300, true)
+                  },
+                  {
+                      'targets': 1,
+                      'render': DataTable.render.ellipsis(120, true)
+                  }]
+          });
+      });
+  </script>
+{% endblock %}
+
+

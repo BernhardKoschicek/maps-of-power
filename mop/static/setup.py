@@ -2,6 +2,8 @@ from setuptools import setup
 
 package_json = {
     "dependencies": {
+        "@fancyapps/ui": "^5.0.22",
+        "@mapbox/leaflet-pip": "^1.1.0",
         "baguettebox.js": "1.11.1",
         "bootstrap-autocomplete": "2.3.7",
         "bootstrap": "^5.1.3",
@@ -11,6 +13,12 @@ package_json = {
         "datatables.net-responsive-bs5": "^2.4.1",
         "datatables.net-searchbuilder-bs5": "^1.4.2",
         "datatables.net-searchpanes-bs5": "^2.1.2",
+        "leaflet-imageoverlay-rotated": "^v0.2.1",
+        "leaflet-draw": "^1.0.4",
+        "leaflet-groupedlayercontrol": "^0.6.1",
+        "leaflet.fullscreen": "2.2.0",
+        "leaflet.markercluster": "^1.5.3",
+        "leaflet": "^1.7.1",
         "jquery": "^3.6.0",
         "jquery-ui-dist": "^1.13.1",
         "muuri": "^0.9.5"

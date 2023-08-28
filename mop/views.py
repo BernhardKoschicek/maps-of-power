@@ -1,11 +1,14 @@
 from collections import defaultdict
 from typing import Optional
 
+import numpy
 from flask import render_template, session, request
 from werkzeug import Response
 from werkzeug.utils import redirect
 
-from data.explore import view_classes
+from model.api_calls import get_entities_linked_to_entity
+from model.entity import Entity
+from model.explore import view_classes, get_oa_by_view_class
 from mop import app
 from mop.data.events import event_list
 from mop.data.histgeo import newsletters, volumes, lectures
@@ -14,7 +17,8 @@ from mop.data.literature import literatures
 from mop.data.presentations import presentations
 from mop.data.projects.projects import project_data
 from mop.display.image import image_gallery
-from mop.util import get_dict_entries_by_category
+from mop.util import get_dict_entries_by_category, get_relations, \
+    get_relation_entities, get_related_geoms, get_types_sorted
 
 
 @app.route('/')
@@ -33,9 +37,44 @@ def events() -> str:
 @app.route('/explore')
 def explore() -> str:
     return render_template(
-        'explore.html',
+        'explore/explore.html',
         subprojects_dict=project_data,
         view_classes=view_classes)
+
+
+@app.route('/explore')
+@app.route('/explore/entity/<id_>')
+def entity_view(id_: int) -> str:
+    entity = Entity.get_entity_from_oa(id_)
+    linked_entities = get_entities_linked_to_entity(id_)
+    relations = get_relations(
+        get_relation_entities(linked_entities, entity.relations))
+    related_places = get_related_geoms(relations['places']) \
+        if 'places' in relations else []
+    return render_template(
+        'explore/entity_view.html',
+        entity=entity,
+        type_hierarchy=get_types_sorted(entity.types),
+        images=numpy.array_split(entity.depictions, 4)
+        if entity.depictions else None,
+        relations=relations,
+        related_places=related_places)
+
+
+@app.route('/explore')
+@app.route('/explore/<project>/<view>')
+def explore_table(project: str, view: str) -> str:
+    data = False
+    try:
+        data = get_oa_by_view_class(view, project_data[project]['oaID'])
+        print(data)
+    except:
+        pass
+    return render_template(
+        'explore/entity_table.html',
+        data=data,
+        project=project_data[project],
+        view_classes=view_classes[view])
 
 
 @app.route('/histgeo')

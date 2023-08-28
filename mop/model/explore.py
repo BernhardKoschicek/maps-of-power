@@ -1,5 +1,8 @@
 from flask_babel import lazy_gettext as _
 
+from model.api_calls import get_view_class
+from model.entity import Entity
+
 view_classes = {
     'actor': {
         'display_name': _('Actors'),
@@ -19,3 +22,16 @@ view_classes = {
     'artifact': {
         'display_name': _('Artefacts'),
         'description': _('Physical objects')}}
+
+
+def get_oa_by_view_class(view: str, project_id: object) -> list[Entity]:
+    if view not in view_classes:
+        return []
+    data = [Entity(entry['features'][0])
+            for entry in get_view_class(
+            f'{view}?limit=0&'
+            f'show=description&search='
+            '{"typeID":[{"operator":"equal",'
+            f'"values":[{project_id}]'
+            '}]}')]
+    return data
