@@ -10,8 +10,6 @@ from model.util import flatten_list_and_remove_duplicates
 from mop import app
 
 
-
-
 def get_dates_formatted(year: int, month: int, day: int) -> str:
     return datetime(year, month, day).strftime('%d.%m.%Y')
 
