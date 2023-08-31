@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-31 13:04+0200\n"
+"POT-Creation-Date: 2023-08-31 13:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,39 +33,47 @@ msgstr ""
 msgid "literature"
 msgstr ""
 
-#: mop/data/events.py:7 mop/data/events.py:11
+#: mop/data/events.py:8 mop/data/events.py:12
 msgid "presentation"
 msgstr ""
 
-#: mop/data/events.py:15
+#: mop/data/events.py:16
 msgid "award"
 msgstr ""
 
-#: mop/data/events.py:19
+#: mop/data/events.py:20
 msgid "science_fair"
 msgstr ""
 
-#: mop/data/events.py:23
+#: mop/data/events.py:24
 msgid "book_release"
 msgstr ""
 
-#: mop/data/events.py:27
+#: mop/data/events.py:28
 msgid "blogpost"
 msgstr ""
 
-#: mop/data/events.py:37
-msgid "presentation on MECERN conference"
-msgstr ""
-
 #: mop/data/events.py:38
-msgid "mecern_2023"
+msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr ""
 
-#: mop/data/events.py:48
-msgid "presentation at the Serbian Academy of Sciences and Arts"
+#: mop/data/events.py:39
+msgid "imc_leeds_23"
 msgstr ""
 
 #: mop/data/events.py:49
+msgid "presentation on MECERN conference"
+msgstr ""
+
+#: mop/data/events.py:50
+msgid "mecern_2023"
+msgstr ""
+
+#: mop/data/events.py:60
+msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgstr ""
+
+#: mop/data/events.py:61
 msgid "serbian_academy_220223"
 msgstr ""
 

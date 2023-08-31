@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-31 13:04+0200\n"
-"PO-Revision-Date: 2023-08-31 13:08+0200\n"
+"POT-Creation-Date: 2023-08-31 13:14+0200\n"
+"PO-Revision-Date: 2023-08-31 13:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -35,31 +35,46 @@ msgstr "ereignisse"
 msgid "literature"
 msgstr "Literatur"
 
-#: mop/data/events.py:7 mop/data/events.py:11
+#: mop/data/events.py:8 mop/data/events.py:12
 msgid "presentation"
 msgstr "präsentation"
 
-#: mop/data/events.py:15
+#: mop/data/events.py:16
 msgid "award"
 msgstr "auszeichnung"
 
-#: mop/data/events.py:19
+#: mop/data/events.py:20
 msgid "science_fair"
 msgstr "wissenschaftsmesse"
 
-#: mop/data/events.py:23
+#: mop/data/events.py:24
 msgid "book_release"
 msgstr "buch Veröffentlichung"
 
-#: mop/data/events.py:27
+#: mop/data/events.py:28
 msgid "blogpost"
 msgstr "blogpost"
 
-#: mop/data/events.py:37
+#: mop/data/events.py:38
+msgid "TIB Balkans at the IMC Leeds 2023"
+msgstr "TIB Balkan auf dem IMC Leeds 2023"
+
+#: mop/data/events.py:39
+msgid "imc_leeds_23"
+msgstr ""
+"MitarbeiterInnen des Teams TIB Balkan haben gemeinsam mit KollegInnen des "
+"Naturhistorischen Museums, der Ludwig Boltzmann Gesellschaft, der Hochschule für "
+"Technik, Wirtschaft und Kultur Leipzig, der Universität Belgrad und des ACDH-CH "
+"der Österreichischen Akademie der Wissenschaften ihre neuesten "
+"wissenschaftlichen Ergebnisse in drei Sitzungen mit dem Titel „Entanglements "
+"across Medieval Space, Objects, and Data“ am 6. Juli 2023 beim IMC Leeds "
+"präsentiert."
+
+#: mop/data/events.py:49
 msgid "presentation on MECERN conference"
 msgstr "Präsentation auf der MECERN-Konferenz"
 
-#: mop/data/events.py:38
+#: mop/data/events.py:50
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan und Mihailo Popović haben an der MECERN Konferenz „Continuity "
@@ -67,11 +82,11 @@ msgstr ""
 "und einen gemeinsamen Vortrag über „The Hagiogeography of Saint Archangel "
 "Michael in the Balkans and Central Europe in Medieval Times“ gehalten."
 
-#: mop/data/events.py:48
+#: mop/data/events.py:60
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "Präsentation in der Serbischen Akademie der Wissenschaften und Künste"
 
-#: mop/data/events.py:49
+#: mop/data/events.py:61
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović wurde vom Institut für Byzantinistik der Serbischen Akademie der "

@@ -1,6 +1,7 @@
+from flask_babel import lazy_gettext as _
+
 from mop.data.team import team
 from mop.util import get_dates_formatted
-from flask_babel import lazy_gettext as _
 
 types = {
     'presentation': {
@@ -29,6 +30,17 @@ types = {
     },
 }
 event_list = [{
+    'id': 'imc_leeds_23',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2023, 7, 6)}",
+    'who': '',
+    'icon': 'imc_leeds_23.jpg',
+    'title': _('TIB Balkans at the IMC Leeds 2023'),
+    'description': _('imc_leeds_23'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
     'id': 'mecern_2023',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 4, 27)}",
@@ -39,7 +51,7 @@ event_list = [{
     'attachment': [{
         'path': '',
         'type': ''}]
-},{
+}, {
     'id': 'serbian_academy_220223',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 2, 22)}",
@@ -50,5 +62,4 @@ event_list = [{
     'attachment': [{
         'path': '',
         'type': ''}]
-},
-]
+}]

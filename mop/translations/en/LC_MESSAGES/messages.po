@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-31 13:04+0200\n"
-"PO-Revision-Date: 2023-08-31 13:09+0200\n"
+"POT-Creation-Date: 2023-08-31 13:14+0200\n"
+"PO-Revision-Date: 2023-08-31 13:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -35,31 +35,45 @@ msgstr "events"
 msgid "literature"
 msgstr "literature"
 
-#: mop/data/events.py:7 mop/data/events.py:11
+#: mop/data/events.py:8 mop/data/events.py:12
 msgid "presentation"
 msgstr "presentation"
 
-#: mop/data/events.py:15
+#: mop/data/events.py:16
 msgid "award"
 msgstr "award"
 
-#: mop/data/events.py:19
+#: mop/data/events.py:20
 msgid "science_fair"
 msgstr "science fair"
 
-#: mop/data/events.py:23
+#: mop/data/events.py:24
 msgid "book_release"
 msgstr "book release"
 
-#: mop/data/events.py:27
+#: mop/data/events.py:28
 msgid "blogpost"
 msgstr "blogpost"
 
-#: mop/data/events.py:37
+#: mop/data/events.py:38
+msgid "TIB Balkans at the IMC Leeds 2023"
+msgstr "TIB Balkans at the IMC Leeds 2023"
+
+#: mop/data/events.py:39
+msgid "imc_leeds_23"
+msgstr ""
+"Scholars of the TIB Balkans presented their newest scholarly results together "
+"with colleagues of the Natural History Museum Vienna, the Ludwig Boltzmann "
+"Gesellschaft, the Leipzig University of Applied Sciences (HTWK Leipzig), the "
+"University Belgrade and the ACDH-CH of the Austrian Academy of Sciences in three "
+"sessions entitled “Entanglements across Medieval Space, Objects, and Data” on 6 "
+"July 2023 at the IMC Leeds."
+
+#: mop/data/events.py:49
 msgid "presentation on MECERN conference"
 msgstr "presentation on MECERN conference"
 
-#: mop/data/events.py:38
+#: mop/data/events.py:50
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan and Mihailo Popović took part in the MECERN conference "
@@ -67,11 +81,11 @@ msgstr ""
 "and presented a joint paper entitled “The Hagiogeography of Saint Archangel "
 "Michael in the Balkans and Central Europe in Medieval Times”."
 
-#: mop/data/events.py:48
+#: mop/data/events.py:60
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "presentation at the Serbian Academy of Sciences and Arts"
 
-#: mop/data/events.py:49
+#: mop/data/events.py:61
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović was invited by the Institute for Byzantine Studies of the "
