@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-03 14:04+0200\n"
-"PO-Revision-Date: 2023-08-03 14:08+0200\n"
+"POT-Creation-Date: 2023-08-31 13:04+0200\n"
+"PO-Revision-Date: 2023-08-31 13:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -27,7 +27,7 @@ msgstr "über"
 msgid "projects"
 msgstr "projekte"
 
-#: mop/templates/about.html:62 mop/templates/events.html:6 mop/util.py:34
+#: mop/templates/about.html:71 mop/templates/events.html:6 mop/util.py:34
 msgid "events"
 msgstr "ereignisse"
 
@@ -354,55 +354,55 @@ msgstr "Leipzig"
 msgid "Novi Sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:44
+#: mop/data/literature.py:46
 msgid "Göttingen"
 msgstr "Göttingen"
 
-#: mop/data/literature.py:51
+#: mop/data/literature.py:53
 msgid "etc."
 msgstr "u.a."
 
-#: mop/data/literature.py:56
+#: mop/data/literature.py:58
 msgid "Krems"
 msgstr "Krems"
 
-#: mop/data/literature.py:80
+#: mop/data/literature.py:82
 msgid "cambridge, MA"
 msgstr "Cambridge, MA"
 
-#: mop/data/literature.py:80 mop/data/literature.py:89 mop/data/literature.py:148
+#: mop/data/literature.py:82 mop/data/literature.py:91 mop/data/literature.py:150
 msgid "london"
 msgstr "London"
 
-#: mop/data/literature.py:89
+#: mop/data/literature.py:91
 msgid "new york"
 msgstr "New York"
 
-#: mop/data/literature.py:98
+#: mop/data/literature.py:100
 msgid "stroud"
 msgstr "Stroud"
 
-#: mop/data/literature.py:110
+#: mop/data/literature.py:112
 msgid "mainz"
 msgstr "Mainz"
 
-#: mop/data/literature.py:110
+#: mop/data/literature.py:112
 msgid "ruhpolding"
 msgstr "Ruhpolding"
 
-#: mop/data/literature.py:125
+#: mop/data/literature.py:127
 msgid "vienna"
 msgstr "Wien"
 
-#: mop/data/literature.py:125
+#: mop/data/literature.py:127
 msgid "novi sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:138 mop/data/literature.py:170
+#: mop/data/literature.py:140 mop/data/literature.py:172
 msgid "venice"
 msgstr "Venedig"
 
-#: mop/data/literature.py:158
+#: mop/data/literature.py:160
 msgid "exter"
 msgstr "Exeter"
 
@@ -425,7 +425,7 @@ msgstr "Los Angeles"
 
 #: mop/data/presentations.py:106 mop/data/presentations.py:219
 #: mop/data/presentations.py:231 mop/templates/imprint.html:14
-#: mop/templates/layout.html:61
+#: mop/templates/layout.html:63
 msgid "Vienna"
 msgstr "Wien"
 
@@ -708,7 +708,7 @@ msgstr ""
 #: mop/templates/about.html:29
 msgid "about_text_4"
 msgstr ""
-"daher greift die Forschungsinitiative „Maps of Power – Karten der Macht“ zwei "
+"daher greift die Forschungsinitiative „Maps of Power – Karten der Macht“ drei "
 "Forschungsbereiche auf, die das Potential haben, als Bindeglied zwischen der "
 "byzantinistisch und der stärker auf Westeuropa orientierten historischen "
 "Geographie zu fungieren und dadurch zu neuen, für die Gesellschaft bedeutenden "
@@ -761,7 +761,30 @@ msgstr ""
 "Rolle. In beiden Forschungsbereichen werden verstärkt GIS Software, digitale "
 "Kartographie und Datenbanksysteme eingesetzt."
 
-#: mop/templates/about.html:56
+#: mop/templates/about.html:53
+msgid "cultural heritage"
+msgstr "Kulturerbe"
+
+#: mop/templates/about.html:55
+msgid "about_point_3"
+msgstr ""
+"… als wesentlichem Pfeiler der Forschung in der Historischen Geographie kommt "
+"dem Kulturerbe weltweit immer größere Bedeutung zu."
+
+#: mop/templates/about.html:58
+msgid "about_text_8"
+msgstr ""
+"Es ist das materielle und immaterielle Erbe einer Gruppe oder Gesellschaft, das "
+"von vergangenen auf die gegenwärtigen Generationen gekommen ist und das für "
+"zukünftige Generationen bewahrt werden sollte. In unserer Initiative nehmen wir "
+"auf Denkmäler als materielles Erbe Bezug. Deren Lokalisierung, Beschreibung, "
+"Dokumentation und Erforschung sowie Präsentation mit Mitteln der Digital "
+"Humanities ist gerade in Zeiten von Kriegen, Naturkatastrophen und "
+"infrastrukturellen Großprojekten eine unserer zentralen Aufgaben. Der Bereich "
+"des Kulturerbes bietet zudem sehr gute Vergleichsmöglichkeiten zwischen Ost und "
+"West, der wir in Zukunft stärker gerecht werden möchten."
+
+#: mop/templates/about.html:65
 msgid "about_text_7"
 msgstr ""
 "„Maps of Power – Karten der Macht“ greift diese Gedanken auf und versteht sich "
@@ -772,7 +795,7 @@ msgstr ""
 "digitale Karten (Layer) enthält, Storymaps zu verschiedenen Aspekten anbietet "
 "und umfassendes Fotomaterial beinhaltet."
 
-#: mop/templates/about.html:85
+#: mop/templates/about.html:94
 msgid "vienna_manifesto"
 msgstr ""
 "Unsere Initiative unterstützt das <a href=\"https://dighum.ec.tuwien.ac.at/"
@@ -901,7 +924,7 @@ msgstr "schriftarten"
 msgid "histgeo_fonts_1"
 msgstr "bitte verwenden Sie diese Schriftarten für das Altkirchenslawische"
 
-#: mop/templates/imprint.html:7 mop/templates/layout.html:84
+#: mop/templates/imprint.html:7 mop/templates/layout.html:86
 msgid "imprint"
 msgstr "impressum"
 
@@ -916,7 +939,7 @@ msgstr ""
 msgid "Media owner"
 msgstr "Medieninhaber"
 
-#: mop/templates/imprint.html:10 mop/templates/layout.html:57
+#: mop/templates/imprint.html:10 mop/templates/layout.html:59
 msgid "Austrian Academy of Sciences"
 msgstr "Österreichische Akademie der Wissenschaften"
 
@@ -926,7 +949,7 @@ msgid ""
 "by Federal Law Gazette (BGBl) I 31/2018)"
 msgstr "Juristische Person öffentlichen Rechts (BGBl 569/1921 idF BGBl I 31/2018)"
 
-#: mop/templates/imprint.html:14 mop/templates/layout.html:61
+#: mop/templates/imprint.html:14 mop/templates/layout.html:63
 msgid "Austria"
 msgstr "Österreich"
 
@@ -1056,23 +1079,23 @@ msgstr ""
 msgid "Further information on data protection on websites of the OeAW."
 msgstr "Weitere Informationen zum Datenschutz auf Internetseiten der ÖAW."
 
-#: mop/templates/layout.html:55
+#: mop/templates/layout.html:57
 msgid "contact"
 msgstr "kontakt"
 
-#: mop/templates/layout.html:58
+#: mop/templates/layout.html:60
 msgid "Institute for Medieval Research"
 msgstr "Institut für Mittelalterforschung"
 
-#: mop/templates/layout.html:59
+#: mop/templates/layout.html:61
 msgid "Division of Byzantine Research"
 msgstr "Abteilung für Byzanzforschung"
 
-#: mop/templates/layout.html:61
+#: mop/templates/layout.html:63
 msgid "Europe"
 msgstr "Europa"
 
-#: mop/templates/layout.html:76
+#: mop/templates/layout.html:78
 msgid "navigation"
 msgstr "navigation"
 
