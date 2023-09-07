@@ -36,7 +36,7 @@
   <div class="container">
     <div class="row">
       <div class="col-10">
-        {{ entity.name }}
+        <h2 class="text-primary">{{ entity.name }}</h2>
       </div>
       <div class="col text-end">
         <div class="pt-2 btn-group text-end">
@@ -58,17 +58,7 @@
     <div class="row">
       <div class="col-6 row">
         <div class="col-12">
-          {{ entity.alias }}
-          {% if entity.links %}
-            {% for system in entity.links %}
-              <a href="{{ system.identifier }}"
-                 class="btn btn-violet-light px-2 py-1 pill"
-                 target="_blank">
-                {{ system.referenceSystem }}
-              </a>
-            {% endfor %}
-          {% endif %}
-
+          <p>{{ entity.alias }}</p>
           <div class="pt-3">
             {% if entity.begin %}
               <span class="fw-bold">Begin</span> {{ entity.begin }}
@@ -78,11 +68,9 @@
               <span class="fw-bold">End</span> {{ entity.end }}
             {% endif %}
           </div>
-
-
         </div>
         <div class="col-12 pt-3">
-          Properties
+          <h3 class="text-primary">{{ _('properties') }}</h3>
           <table class="table table-striped hover order-column w-100">
             <tr>
               <th class="table-active">ID</th>
@@ -108,17 +96,27 @@
             {% endif %}
           </table>
         </div>
+        <div>
+          {% if entity.links %}
+            {% for system in entity.links %}
+              <a href="{{ system.identifier }}"
+                 class="btn btn-accent2 px-2 py-1 pill"
+                 target="_blank">
+                {{ system.referenceSystem }}
+              </a>
+            {% endfor %}
+          {% endif %}
+        </div>
       </div>
       <div class="col-6 pt-5">
         <div id="map"></div>
-
       </div>
     </div>
 
     <div class="row pt-5">
       {% if entity.description %}
         <div class="col-md-12 pt-3">
-          Description
+          <h3 class="text-primary">{{ _('description') }}</h3>
           <div id="description">
             <p class="">
               {{ entity.description
@@ -133,15 +131,15 @@
 
       {% if relations['references'] %}
         <div class="col-md-12 pt-3">
-          Literature
+          <h3 class="text-primary">{{ _('literature') }}</h3>
           {% for reference in relations['references'] %}
-            <a tabindex="0" class="text-decoration-none fst-italic" role="button" data-bs-toggle="popover"
+            <a tabindex="0" class="text-decoration-none fst-italic link-primary" role="button" data-bs-toggle="popover"
                data-bs-trigger="focus"
                title="<a href='{{ url_for('entity_project_view', id_=reference.relation_to_id, project=path[0], view=path[1]) }}'
-                        class='text-decoration-none'>{{ reference.label }}</a>"
+                        class='text-decoration-none link-primary'>{{ reference.label }}</a>"
                data-bs-content="<p class=''>{{ reference.description }}</p>
                                   <a href='{{ url_for('entity_project_view', id_=reference.relation_to_id, project=path[0], view=path[1]) }}'
-                                  class='text-decoration-none btn btn-violet-light'>{{ reference.label }}</a>">
+                                  class='text-decoration-none btn btn-accent2'>{{ reference.label }}</a>">
               {{ reference.label }}{% if reference.relation_description %} —
                 {{ reference.relation_description }}{% endif %}</a>
             {% if loop.last %}{% else %}, {% endif %}
@@ -151,10 +149,10 @@
 
       <div class="col-md-12 pt-5">
         {% for key, value in relations.items() if key not in ['types', 'references'] %}
-        {% if loop.first %}<h3>Relations</h3>{% endif %}
-          <h5 class="pt-3">
+          {% if loop.first %}<h3 class="text-primary">Relations</h3>{% endif %}
+          <h5 class="pt-3 text-primary">
             {{ key | replace('_', ' ') | title }} ({{ value|length }})
-            <a class="btn btn-violet p-1" data-bs-toggle="collapse"
+            <a class="btn btn-accent2 p-1" data-bs-toggle="collapse"
                href="#collapse-{{ key }}" role="button" aria-expanded="false"
                aria-controls="collapse-{{ key }}">
               <i class="bi bi-caret-down-fill" onclick="myFunction(this)"></i>
@@ -184,7 +182,7 @@
                   <tr>
                     <td><a
                         href="{{ url_for('entity_project_view', id_=item.relation_to_id, project=path[0], view=path[1]) }}"
-                        class="text-decoration-none">
+                        class="text-decoration-none link-primary">
                       {{ item.label }}
                     </a>
                     </td>
@@ -242,7 +240,7 @@
 
 
       {% if entity.depictions %}
-        Files
+        <h3 class="text-primary">{{ _('files') }}</h3>
         <div class="row pt-5">
           {% for list in images %}
             {% for img in list %}
@@ -315,11 +313,11 @@
 
 {% macro type_popover(type) %}
 
-  <a tabindex="0" class="text-decoration-none fst-italic" role="button" data-bs-toggle="popover"
+  <a tabindex="0" class="text-decoration-none fst-italic link-primary" role="button" data-bs-toggle="popover"
      data-bs-trigger="focus"
      title="{{ type.hierarchy }} > <a href='{{ url_for('entity_project_view', id_=type.identifier, project=path[0], view=path[1]) }}'
-            class='text-decoration-none'>{{ type.label }}</a>"
+            class='text-decoration-none link-primary'>{{ type.label }}</a>"
      data-bs-content="{% if type.description %}<p>{{ type.description }}</p>{% endif %}">
-    {{ type.label }}{% if type.description %} — {{ type.description }}{% endif %}</a>
+    {{ type.label }}</a>
 {% endmacro %}
 
