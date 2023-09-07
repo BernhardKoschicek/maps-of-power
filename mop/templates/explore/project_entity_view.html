@@ -150,8 +150,8 @@
       {% endif %}
 
       <div class="col-md-12 pt-5">
-        <h3>Relations</h3>
         {% for key, value in relations.items() if key not in ['types', 'references'] %}
+        {% if loop.first %}<h3>Relations</h3>{% endif %}
           <h5 class="pt-3">
             {{ key | replace('_', ' ') | title }} ({{ value|length }})
             <a class="btn btn-violet p-1" data-bs-toggle="collapse"
