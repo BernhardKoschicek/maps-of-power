@@ -29,8 +29,8 @@
                         </a>
                     {% endif %}
                     {% if item.download %}
-                        <a href="{{ url_for('static', filename='repository/publications/' + item.download ) }}"
-                           class="text-decoration-none">
+                        <a href="{{ url_for('static', filename='repository/' + item.download ) }}"
+                           class="text-decoration-none" target="_blank">
                             <i class="bi bi-file-earmark-arrow-down lead link-primary p-1"></i>
                         </a>
                     {% endif %}
