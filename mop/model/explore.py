@@ -1,7 +1,7 @@
 from flask_babel import lazy_gettext as _
 
-from model.api_calls import get_view_class
-from model.entity import Entity
+from mop.model.api_calls import get_view_class
+from mop.model.entity import Entity
 
 view_classes = {
     'actor': {
