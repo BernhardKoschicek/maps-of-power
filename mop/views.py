@@ -6,9 +6,9 @@ from flask import render_template, session, request
 from werkzeug import Response
 from werkzeug.utils import redirect
 
-from model.api_calls import get_entities_linked_to_entity
-from model.entity import Entity
-from model.explore import view_classes, get_oa_by_view_class, system_classes
+from mop.model.api_calls import get_entities_linked_to_entity
+from mop.model.entity import Entity
+from mop.model.explore import view_classes, get_oa_by_view_class, system_classes
 from mop import app
 from mop.data.events import event_list
 from mop.data.histgeo import newsletters, volumes, lectures
