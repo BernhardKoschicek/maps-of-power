@@ -30,6 +30,17 @@ types = {
     },
 }
 event_list = [{
+    'id': 'tripps_070923',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2023, 9, 7)}",
+    'who': '',
+    'icon': 'tripps_070923.jpg',
+    'title': _('Paper on the Crown of the Saint King Stefan Dečanski'),
+    'description': _('tripps_070923'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
     'id': 'imc_leeds_23',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 7, 6)}",

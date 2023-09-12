@@ -8,28 +8,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-31 13:14+0200\n"
+"POT-Creation-Date: 2023-09-12 09:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.11.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: mop/util.py:30
+#: mop/util.py:33
 msgid "about"
 msgstr ""
 
-#: mop/templates/project_details.html:12 mop/util.py:31
+#: mop/templates/explore/project_entity_view.html:19
+#: mop/templates/project_details.html:30 mop/util.py:34
 msgid "projects"
 msgstr ""
 
-#: mop/templates/about.html:71 mop/templates/events.html:6 mop/util.py:34
+#: mop/templates/about.html:71 mop/templates/events.html:6 mop/util.py:37
 msgid "events"
 msgstr ""
 
-#: mop/util.py:35
+#: mop/templates/explore/project_entity_view.html:134 mop/util.py:38
 msgid "literature"
 msgstr ""
 
@@ -54,26 +55,34 @@ msgid "blogpost"
 msgstr ""
 
 #: mop/data/events.py:38
-msgid "TIB Balkans at the IMC Leeds 2023"
+msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr ""
 
 #: mop/data/events.py:39
-msgid "imc_leeds_23"
+msgid "tripps_070923"
 msgstr ""
 
 #: mop/data/events.py:49
-msgid "presentation on MECERN conference"
+msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr ""
 
 #: mop/data/events.py:50
-msgid "mecern_2023"
+msgid "imc_leeds_23"
 msgstr ""
 
 #: mop/data/events.py:60
-msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgid "presentation on MECERN conference"
 msgstr ""
 
 #: mop/data/events.py:61
+msgid "mecern_2023"
+msgstr ""
+
+#: mop/data/events.py:71
+msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgstr ""
+
+#: mop/data/events.py:72
 msgid "serbian_academy_220223"
 msgstr ""
 
@@ -297,7 +306,7 @@ msgstr ""
 
 #: mop/data/presentations.py:106 mop/data/presentations.py:219
 #: mop/data/presentations.py:231 mop/templates/imprint.html:14
-#: mop/templates/layout.html:63
+#: mop/templates/layout.html:68
 msgid "Vienna"
 msgstr ""
 
@@ -413,6 +422,54 @@ msgstr ""
 
 #: mop/data/projects/holdura.py:79
 msgid "holdura_description_7"
+msgstr ""
+
+#: mop/model/explore.py:8
+msgid "Actors"
+msgstr ""
+
+#: mop/model/explore.py:9
+msgid "Persons and Groups"
+msgstr ""
+
+#: mop/model/explore.py:11
+msgid "Places"
+msgstr ""
+
+#: mop/model/explore.py:12
+msgid "Physical places and their locations"
+msgstr ""
+
+#: mop/model/explore.py:14
+msgid "Events"
+msgstr ""
+
+#: mop/model/explore.py:15
+msgid "Linking places and actors"
+msgstr ""
+
+#: mop/model/explore.py:17
+msgid "Sources"
+msgstr ""
+
+#: mop/model/explore.py:18
+msgid "Documents, manuscripts, etc."
+msgstr ""
+
+#: mop/model/explore.py:20
+msgid "References"
+msgstr ""
+
+#: mop/model/explore.py:21
+msgid "Research literature"
+msgstr ""
+
+#: mop/model/explore.py:23
+msgid "Artefacts"
+msgstr ""
+
+#: mop/model/explore.py:24
+msgid "Physical objects"
 msgstr ""
 
 #: mop/templates/about.html:17
@@ -543,7 +600,7 @@ msgstr ""
 msgid "histgeo_fonts_1"
 msgstr ""
 
-#: mop/templates/imprint.html:7 mop/templates/layout.html:86
+#: mop/templates/imprint.html:7 mop/templates/layout.html:91
 msgid "imprint"
 msgstr ""
 
@@ -557,7 +614,7 @@ msgstr ""
 msgid "Media owner"
 msgstr ""
 
-#: mop/templates/imprint.html:10 mop/templates/layout.html:59
+#: mop/templates/imprint.html:10 mop/templates/layout.html:64
 msgid "Austrian Academy of Sciences"
 msgstr ""
 
@@ -567,7 +624,7 @@ msgid ""
 "amended by Federal Law Gazette (BGBl) I 31/2018)"
 msgstr ""
 
-#: mop/templates/imprint.html:14 mop/templates/layout.html:63
+#: mop/templates/imprint.html:14 mop/templates/layout.html:68
 msgid "Austria"
 msgstr ""
 
@@ -669,23 +726,23 @@ msgstr ""
 msgid "Further information on data protection on websites of the OeAW."
 msgstr ""
 
-#: mop/templates/layout.html:57
+#: mop/templates/layout.html:62
 msgid "contact"
 msgstr ""
 
-#: mop/templates/layout.html:60
+#: mop/templates/layout.html:65
 msgid "Institute for Medieval Research"
 msgstr ""
 
-#: mop/templates/layout.html:61
+#: mop/templates/layout.html:66
 msgid "Division of Byzantine Research"
 msgstr ""
 
-#: mop/templates/layout.html:63
+#: mop/templates/layout.html:68
 msgid "Europe"
 msgstr ""
 
-#: mop/templates/layout.html:78
+#: mop/templates/layout.html:83
 msgid "navigation"
 msgstr ""
 
@@ -721,43 +778,82 @@ msgstr ""
 msgid "Further Reading"
 msgstr ""
 
-#: mop/templates/project_details.html:28
+#: mop/templates/project_details.html:47
 msgid "Funded by"
 msgstr ""
 
-#: mop/templates/project_details.html:41
+#: mop/templates/project_details.html:60
 msgid "Project Number"
 msgstr ""
 
-#: mop/templates/project_details.html:46
+#: mop/templates/project_details.html:65
 msgid "Duration"
 msgstr ""
 
-#: mop/templates/project_details.html:50
+#: mop/templates/project_details.html:69
 msgid "Hosted by"
 msgstr ""
 
-#: mop/templates/project_details.html:72 mop/templates/projects.html:30
+#: mop/templates/project_details.html:91 mop/templates/projects.html:30
 msgid "Employees"
 msgstr ""
 
-#: mop/templates/project_details.html:80
+#: mop/templates/project_details.html:99
 msgid "Cooperation and External Employees"
 msgstr ""
 
-#: mop/templates/project_details.html:92
+#: mop/templates/project_details.html:111
 msgid "further information"
 msgstr ""
 
-#: mop/templates/project_details.html:127
+#: mop/templates/project_details.html:119
+msgid "media"
+msgstr ""
+
+#: mop/templates/project_details.html:153
+msgid "explore"
+msgstr ""
+
+#: mop/templates/project_details.html:171
+msgid ""
+"The access and use of our data is subject to the Creative Commons License"
+" CC BY 4.0 (<a "
+"href=\"https://creativecommons.org/licenses/by/4.0/\">https://creativecommons.org/licenses/by/4.0/</a>)."
+msgstr ""
+
+#: mop/templates/project_details.html:182
 msgid "results"
 msgstr ""
 
-#: mop/templates/project_details.html:162
-msgid "Publications"
+#: mop/templates/project_details.html:217
+msgid "publications"
 msgstr ""
 
-#: mop/templates/project_details.html:168
-msgid "Presentations"
+#: mop/templates/project_details.html:223
+msgid "presentations"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:73
+msgid "properties"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:119
+msgid "description"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:243
+msgid "files"
+msgstr ""
+
+#: mop/templates/explore/project_explore_table.html:15
+msgid "is currently unavailable"
+msgstr ""
+
+#: mop/templates/explore/project_explore_table.html:24
+msgid "Class"
+msgstr ""
+
+#: mop/templates/explore/project_explore_table.html:25
+msgid "Description"
 msgstr ""
 
