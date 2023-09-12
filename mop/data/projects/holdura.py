@@ -13,11 +13,6 @@ results = {
         'link': 'https://tib.oeaw.ac.at/static/3dhop/relief.html',
         'file': None,
         'icon': 'bi-image-alt',
-    }, {
-        'label': _('explore TIB Balkans data'),
-        'link': 'https://tib.oeaw.ac.at/balkan/digital/explore',
-        'file': None,
-        'icon': 'bi-stack',
     }]
 }
 
