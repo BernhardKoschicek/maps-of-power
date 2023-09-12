@@ -4,9 +4,9 @@ from typing import Any, Union, Optional
 from flask import url_for
 from flask_babel import lazy_gettext as _
 
-from model.entity import Relation
-from model.types import Types
-from model.util import flatten_list_and_remove_duplicates
+from mop.model.entity import Relation
+from mop.model.types import Types
+from mop.model.util import flatten_list_and_remove_duplicates
 from mop import app
 
 
