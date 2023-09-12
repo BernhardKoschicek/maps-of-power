@@ -16,3 +16,4 @@ werkzeug==1.0.1
 wtforms==2.2.1
 libsass==0.22.0
 setuptools==67.5.0
+numpy~=1.19.5
