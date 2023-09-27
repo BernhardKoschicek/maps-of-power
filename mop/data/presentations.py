@@ -3,6 +3,15 @@ from flask_babel import lazy_gettext as _
 from mop.util import get_table_dates_formatted
 
 presentations = [{
+    'presenter': 'Johannes Tripps',
+    'title': 'The Metamorphosing crown of Saint Stefan Decanski',
+    'conference': '',
+    'location': [_('Belgrade')],
+    'date': get_table_dates_formatted(2023, 9, 7),
+    'external_link': 'https://www.youtube-nocookie.com/embed/HF7fLgHFnaI?si=AIghTnDMknsnvlvm',
+    'download': '',
+    'category': ['holdura']
+},{
     'presenter': 'Branka Vranešević',
     'title':
         'Initials with Teratological Motifs in the Belgrade Prophetologion: '
