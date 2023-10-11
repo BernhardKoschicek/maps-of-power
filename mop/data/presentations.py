@@ -3,15 +3,37 @@ from flask_babel import lazy_gettext as _
 from mop.util import get_table_dates_formatted
 
 presentations = [{
+    'presenter': 'Mihailo St. Popović',
+    'title': 'Serbian Noblewomen and the Clergy in the Middle Ages: '
+             'A Comparison between Mara Branković and Jelena Anžujska '
+             'regarding Athonite Monks and Franciscan Friars',
+    'conference': 'Workshop „A Special Relationship? Gender on Medieval '
+                  'Mount Athos“',
+    'location': [_('Oxford')],
+    'date': get_table_dates_formatted(2023, 9, 29),
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+}, {
+    'presenter': 'Mihailo St. Popović',
+    'title': 'On the Usefulness of OpenAtlas in Historical Geography',
+    'conference': '',
+    'location': [_('Belgrade')],
+    'date': get_table_dates_formatted(2023, 9, 19),
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+}, {
     'presenter': 'Johannes Tripps',
     'title': 'The Metamorphosing crown of Saint Stefan Decanski',
     'conference': '',
     'location': [_('Belgrade')],
     'date': get_table_dates_formatted(2023, 9, 7),
-    'external_link': 'https://www.youtube-nocookie.com/embed/HF7fLgHFnaI?si=AIghTnDMknsnvlvm',
+    'external_link': 'https://www.youtube-nocookie.com/'
+                     'embed/HF7fLgHFnaI?si=AIghTnDMknsnvlvm',
     'download': '',
     'category': ['holdura']
-},{
+}, {
     'presenter': 'Branka Vranešević',
     'title':
         'Initials with Teratological Motifs in the Belgrade Prophetologion: '
