@@ -30,11 +30,11 @@
               <tr>
                 <td>
                   <a href="{{ url_for('entity_project_view', id_=entity.id_, project=project.acronym, view=view) }}"
-                     class="text-decoration-none">{{ entity.id_ }}</a>
+                     class="text-decoration-none link-primary">{{ entity.id_ }}</a>
                 </td>
                 <td>
                   <a href="{{ url_for('entity_project_view', id_=entity.id_, project=project.acronym, view=view) }}"
-                     class="text-decoration-none fw-bold">{{ entity.name }}</a>
+                     class="text-decoration-none fw-bold link-primary">{{ entity.name }}</a>
                 </td>
                 <td> {{ entity.system_class }}</td>
                 <td> {{ entity.description }}</td>
@@ -58,7 +58,7 @@
                   },
                   {
                       'targets': 1,
-                      'render': DataTable.render.ellipsis(120, true)
+                      'render': DataTable.render.ellipsis(180, true)
                   }]
           });
       });
