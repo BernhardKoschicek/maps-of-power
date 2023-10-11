@@ -22,13 +22,15 @@ images = [
     {
         'src': 'border_all.png',
         'description': _(
-            'Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from Different Authors'),
+            'Interpretation of the Byzantino-Serbian Border between 1228 and '
+            '1334 from Different Authors'),
         'citation': 'Bernhard Koschicek, 2018',
         'category': ['borderzones']
     }, {
         'src': 'fortifications.png',
         'description': _(
-            'Fortifications in the Northern Macedonian Region in the 13/14th century'),
+            'Fortifications in the Northern Macedonian Region in the '
+            '13/14th century'),
         'citation': 'Bernhard Koschicek, 2019',
         'category': ['borderzones']
     }, {
@@ -39,7 +41,8 @@ images = [
     }, {
         'src': 'borderzones_markovi_kuli.jpg',
         'description': _(
-            'Markovi Kuli Castle near Prilep from the south, Republic of Northern Macedonia'),
+            'Markovi Kuli Castle near Prilep from the south, Republic '
+            'of Northern Macedonia'),
         'citation': 'M. St. Popović, TIB 16, 2007',
         'category': ['borderzones']
     },
@@ -60,7 +63,8 @@ images = [
     {
         'src': 'borderzones_ohrid_samuilova.jpg',
         'description': _(
-            'Ohrid and Samuilova tvrdina Castle, Republic of Northern Macedonia'),
+            'Ohrid and Samuilova tvrdina Castle, '
+            'Republic of Northern Macedonia'),
         'citation': 'M. St. Popović, TIB 16, 2018',
         'category': ['borderzones']
     }, ]
@@ -68,7 +72,8 @@ images = [
 project_borderzones = {
     'acronym': 'borderzones',
     'title': _(
-        'Byzantino-Serbian Border Zones in Transition: Migration and Elite Change in pre-Ottoman Macedonia (1282–1355)'),
+        'Byzantino-Serbian Border Zones in Transition: Migration and Elite '
+        'Change in pre-Ottoman Macedonia (1282–1355)'),
     'host_institutes': [institutes['abf']],
     'funded_by': [institutes['fwf']],
     'project_number': 'P 30384-G28',
