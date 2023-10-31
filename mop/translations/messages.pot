@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-10-31 11:08+0100\n"
+"POT-Creation-Date: 2023-10-31 11:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,34 +55,50 @@ msgid "blogpost"
 msgstr ""
 
 #: mop/data/events.py:38
-msgid "Paper on the Crown of the Saint King Stefan Dečanski"
+msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr ""
 
 #: mop/data/events.py:39
-msgid "tripps_070923"
+msgid "belgrade_190923"
 msgstr ""
 
 #: mop/data/events.py:49
-msgid "TIB Balkans at the IMC Leeds 2023"
+msgid "Workshop on Medieval Athos in Oxford"
 msgstr ""
 
 #: mop/data/events.py:50
-msgid "imc_leeds_23"
+msgid "athos_oxford_290923"
 msgstr ""
 
 #: mop/data/events.py:60
-msgid "presentation on MECERN conference"
+msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr ""
 
 #: mop/data/events.py:61
-msgid "mecern_2023"
+msgid "tripps_070923"
 msgstr ""
 
 #: mop/data/events.py:71
-msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr ""
 
 #: mop/data/events.py:72
+msgid "imc_leeds_23"
+msgstr ""
+
+#: mop/data/events.py:82
+msgid "presentation on MECERN conference"
+msgstr ""
+
+#: mop/data/events.py:83
+msgid "mecern_2023"
+msgstr ""
+
+#: mop/data/events.py:93
+msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgstr ""
+
+#: mop/data/events.py:94
 msgid "serbian_academy_220223"
 msgstr ""
 

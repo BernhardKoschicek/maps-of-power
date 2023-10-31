@@ -30,6 +30,28 @@ types = {
     },
 }
 event_list = [{
+    'id': 'belgrade_190923',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2023, 9, 19)}",
+    'who': '',
+    'icon': 'belgrade_190923.png',
+    'title': _('Two Presentations on the Usefulness of OpenAtlas'),
+    'description': _('belgrade_190923'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
+    'id': 'athos_oxford_290923',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2023, 9, 29)}",
+    'who': [team['mpopovic']],
+    'icon': 'athos_oxford_290923.png',
+    'title': _('Workshop on Medieval Athos in Oxford'),
+    'description': _('athos_oxford_290923'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
     'id': 'tripps_070923',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 9, 7)}",

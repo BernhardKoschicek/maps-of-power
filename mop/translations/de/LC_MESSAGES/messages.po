@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-10-31 11:08+0100\n"
-"PO-Revision-Date: 2023-10-31 11:09+0100\n"
+"POT-Creation-Date: 2023-10-31 11:20+0100\n"
+"PO-Revision-Date: 2023-10-31 11:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -57,10 +57,40 @@ msgid "blogpost"
 msgstr "blogpost"
 
 #: mop/data/events.py:38
+msgid "Two Presentations on the Usefulness of OpenAtlas"
+msgstr "Zwei Vorträge über die Nützlichkeit von OpenAtlas"
+
+#: mop/data/events.py:39
+msgid "belgrade_190923"
+msgstr ""
+"Am 19. September 2023 haben Bernhard Koschiček-Krombholz und Mihailo St. Popović "
+"je einen Vortrag an der Serbischen Akademie der Wissenschaften und Künste in "
+"Belgrad gehalten. Während Bernhard Koschiček-Krombholz über „OpenAtlas: A "
+"Database System for the Humanities and Beyond“ gesprochen hat, hatte der Vortrag "
+"von Mihailo St. Popović „On the Usefulness of OpenAtlas in Historical Geography“ "
+"zum Thema. Danach tauschten sie sich intensiv mit dem Team des Projektes „Von "
+"Barbaren zu Christen und Rhomaioi. Der Prozess der Byzantinisierung auf dem "
+"Zentralbalkan (Ende 10. - Mitte 13. Jahrhundert)“ zu Aspekten der Digital "
+"Humanities aus."
+
+#: mop/data/events.py:49
+msgid "Workshop on Medieval Athos in Oxford"
+msgstr "Workshop über den mittelalterlichen Athos in Oxford"
+
+#: mop/data/events.py:50
+msgid "athos_oxford_290923"
+msgstr ""
+"Am 29. September 2023 hielt Mihailo St. Popović einen Vortrag mit dem Titel "
+"„Serbian Noblewomen and the Clergy in the Middle Ages: A Comparison between Mara "
+"Branković and Jelena Anžujska regarding Athonite Monks and Franciscan Friars“ im "
+"Rahmen des Workshops „A Special Relationship? Gender on Medieval Mount Athos“ in "
+"Oxford, Großbritannien."
+
+#: mop/data/events.py:60
 msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr "Vortrag über die Krone des Heiligen Königs Stefan Dečanski"
 
-#: mop/data/events.py:39
+#: mop/data/events.py:61
 msgid "tripps_070923"
 msgstr ""
 "Professor Dr. Johannes Tripps (Hochschule für Technik, Wirtschaft und Kultur "
@@ -72,11 +102,11 @@ msgstr ""
 "@MapsOfPower\" target=\"_blank\" class=\"link-primary\">https://www.youtube.com/"
 "@MapsOfPower</a>"
 
-#: mop/data/events.py:49
+#: mop/data/events.py:71
 msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr "TIB Balkan auf dem IMC Leeds 2023"
 
-#: mop/data/events.py:50
+#: mop/data/events.py:72
 msgid "imc_leeds_23"
 msgstr ""
 "MitarbeiterInnen des Teams TIB Balkan haben gemeinsam mit KollegInnen des "
@@ -87,11 +117,11 @@ msgstr ""
 "across Medieval Space, Objects, and Data“ am 6. Juli 2023 beim IMC Leeds "
 "präsentiert."
 
-#: mop/data/events.py:60
+#: mop/data/events.py:82
 msgid "presentation on MECERN conference"
 msgstr "Präsentation auf der MECERN-Konferenz"
 
-#: mop/data/events.py:61
+#: mop/data/events.py:83
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan und Mihailo Popović haben an der MECERN Konferenz „Continuity "
@@ -99,11 +129,11 @@ msgstr ""
 "und einen gemeinsamen Vortrag über „The Hagiogeography of Saint Archangel "
 "Michael in the Balkans and Central Europe in Medieval Times“ gehalten."
 
-#: mop/data/events.py:71
+#: mop/data/events.py:93
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "Präsentation in der Serbischen Akademie der Wissenschaften und Künste"
 
-#: mop/data/events.py:72
+#: mop/data/events.py:94
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović wurde vom Institut für Byzantinistik der Serbischen Akademie der "
