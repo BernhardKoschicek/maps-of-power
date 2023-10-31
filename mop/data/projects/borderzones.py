@@ -9,7 +9,7 @@ results = {
     'icons': [{
         'label': _('Final project report'),
         'link': None,
-        'file': 'borderzones/FWF_P 30384-G28_Final Report.pdf',
+        'file': 'FWF_P 30384-G28_Final_Report.pdf',
         'icon': 'bi bi-journals',
     }, {
         'label': 'Maps of Power',
