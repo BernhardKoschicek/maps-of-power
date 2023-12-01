@@ -4,6 +4,18 @@ from mop.util import get_table_dates_formatted
 
 presentations = [{
     'presenter': 'Mihailo St. Popović',
+    'title': 'Српске племкиње и монаштво у средњем веку: поређење Јелене'
+             ' Анжујске и Маре Бранковић у њиховим односима према '
+             'бенедиктинцима/фрањевцима и светогорским монасима',
+    'conference': 'Друштво пријатеља Свете Горе Атонске / ' +
+                  _('The Society of the Friends of Holy Mount Athos'),
+    'location': [_('Belgrade')],
+    'date': get_table_dates_formatted(2023, 10, 26),
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+},{
+    'presenter': 'Mihailo St. Popović',
     'title': 'Serbian Noblewomen and the Clergy in the Middle Ages: '
              'A Comparison between Mara Branković and Jelena Anžujska '
              'regarding Athonite Monks and Franciscan Friars',

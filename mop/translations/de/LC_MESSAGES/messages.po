@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-10-31 11:20+0100\n"
-"PO-Revision-Date: 2023-10-31 11:20+0100\n"
+"POT-Creation-Date: 2023-12-01 12:00+0100\n"
+"PO-Revision-Date: 2023-12-01 12:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -162,7 +162,7 @@ msgid "december"
 msgstr "Dezember"
 
 #: mop/data/histgeo.py:79 mop/data/histgeo.py:116 mop/data/histgeo.py:153
-#: mop/data/literature.py:6
+#: mop/data/literature.py:62
 msgid "eds."
 msgstr "Hrsg."
 
@@ -408,100 +408,117 @@ msgstr "den naturräumlichen Gegebenheiten von Landschaften"
 msgid "image_landscape_caption"
 msgstr "die Bucht von Kotor, Montenegro (2021)"
 
-#: mop/data/literature.py:10 mop/data/literature.py:32
-#: mop/data/presentations.py:112
-msgid "Leipzig"
-msgstr "Leipzig"
+#: mop/data/literature.py:13
+msgid "Bucharest"
+msgstr "Bukarest"
 
-#: mop/data/literature.py:21
-msgid "Novi Sad"
-msgstr "Novi Sad"
+#: mop/data/literature.py:13
+msgid "Brăila"
+msgstr "Brăila"
 
-#: mop/data/literature.py:46
-msgid "Göttingen"
-msgstr "Göttingen"
-
-#: mop/data/literature.py:53
-msgid "etc."
-msgstr "u.a."
-
-#: mop/data/literature.py:58
-msgid "Krems"
-msgstr "Krems"
-
-#: mop/data/literature.py:82
-msgid "cambridge, MA"
-msgstr "Cambridge, MA"
-
-#: mop/data/literature.py:82 mop/data/literature.py:91 mop/data/literature.py:150
-msgid "london"
-msgstr "London"
-
-#: mop/data/literature.py:91
-msgid "new york"
-msgstr "New York"
-
-#: mop/data/literature.py:100
-msgid "stroud"
-msgstr "Stroud"
-
-#: mop/data/literature.py:112
-msgid "mainz"
-msgstr "Mainz"
-
-#: mop/data/literature.py:112
-msgid "ruhpolding"
-msgstr "Ruhpolding"
-
-#: mop/data/literature.py:127
-msgid "vienna"
-msgstr "Wien"
-
-#: mop/data/literature.py:127
-msgid "novi sad"
-msgstr "Novi Sad"
-
-#: mop/data/literature.py:140 mop/data/literature.py:172
-msgid "venice"
-msgstr "Venedig"
-
-#: mop/data/literature.py:160
-msgid "exter"
-msgstr "Exeter"
-
-#: mop/data/presentations.py:12
-msgid "Oxford"
-msgstr "Oxford"
-
-#: mop/data/presentations.py:21 mop/data/presentations.py:30
-#: mop/data/presentations.py:97
+#: mop/data/literature.py:26 mop/data/literature.py:53 mop/data/presentations.py:12
+#: mop/data/presentations.py:33 mop/data/presentations.py:42
+#: mop/data/presentations.py:109
 msgid "Belgrade"
 msgstr "Belgrad"
 
-#: mop/data/presentations.py:42 mop/data/presentations.py:53
-#: mop/data/presentations.py:63 mop/data/presentations.py:74
-#: mop/data/presentations.py:86 mop/data/presentations.py:161
-#: mop/data/presentations.py:184 mop/data/presentations.py:196
-#: mop/data/presentations.py:207 mop/data/presentations.py:218
-#: mop/data/presentations.py:229 mop/data/presentations.py:239
+#: mop/data/literature.py:39
+msgid "Darmstadt"
+msgstr "Darmstadt"
+
+#: mop/data/literature.py:66 mop/data/literature.py:88
+#: mop/data/presentations.py:124
+msgid "Leipzig"
+msgstr "Leipzig"
+
+#: mop/data/literature.py:77
+msgid "Novi Sad"
+msgstr "Novi Sad"
+
+#: mop/data/literature.py:102
+msgid "Göttingen"
+msgstr "Göttingen"
+
+#: mop/data/literature.py:109
+msgid "etc."
+msgstr "u.a."
+
+#: mop/data/literature.py:114
+msgid "Krems"
+msgstr "Krems"
+
+#: mop/data/literature.py:138
+msgid "cambridge, MA"
+msgstr "Cambridge, MA"
+
+#: mop/data/literature.py:138 mop/data/literature.py:147 mop/data/literature.py:206
+msgid "london"
+msgstr "London"
+
+#: mop/data/literature.py:147
+msgid "new york"
+msgstr "New York"
+
+#: mop/data/literature.py:156
+msgid "stroud"
+msgstr "Stroud"
+
+#: mop/data/literature.py:168
+msgid "mainz"
+msgstr "Mainz"
+
+#: mop/data/literature.py:168
+msgid "ruhpolding"
+msgstr "Ruhpolding"
+
+#: mop/data/literature.py:183
+msgid "vienna"
+msgstr "Wien"
+
+#: mop/data/literature.py:183
+msgid "novi sad"
+msgstr "Novi Sad"
+
+#: mop/data/literature.py:196 mop/data/literature.py:228
+msgid "venice"
+msgstr "Venedig"
+
+#: mop/data/literature.py:216
+msgid "exter"
+msgstr "Exeter"
+
+#: mop/data/presentations.py:11
+msgid "The Society of the Friends of Holy Mount Athos"
+msgstr "Die Gesellschaft der Freunde des Heiligen Berges Athos"
+
+#: mop/data/presentations.py:24
+msgid "Oxford"
+msgstr "Oxford"
+
+#: mop/data/presentations.py:54 mop/data/presentations.py:65
+#: mop/data/presentations.py:75 mop/data/presentations.py:86
+#: mop/data/presentations.py:98 mop/data/presentations.py:173
+#: mop/data/presentations.py:196 mop/data/presentations.py:208
+#: mop/data/presentations.py:219 mop/data/presentations.py:230
+#: mop/data/presentations.py:241 mop/data/presentations.py:251
 msgid "Leeds"
 msgstr "Leeds"
 
-#: mop/data/presentations.py:123
+#: mop/data/presentations.py:135
 msgid "Los Angeles"
 msgstr "Los Angeles"
 
-#: mop/data/presentations.py:137 mop/data/presentations.py:250
-#: mop/data/presentations.py:262 mop/templates/imprint.html:14
+#: mop/data/presentations.py:149 mop/data/presentations.py:262
+#: mop/data/presentations.py:274 mop/templates/imprint.html:14
 #: mop/templates/layout.html:69
 msgid "Vienna"
 msgstr "Wien"
 
-#: mop/data/presentations.py:150
+#: mop/data/presentations.py:162
 msgid "Thessaloniki"
 msgstr "Thessaloniki"
 
-#: mop/data/presentations.py:173
+#: mop/data/presentations.py:185
 msgid "Florenz"
 msgstr "Florenz"
 
@@ -1531,3 +1548,6 @@ msgstr "Klasse"
 
 #~ msgid "explore TIB Balkans data"
 #~ msgstr "TIB-Balkan-Daten erkunden"
+
+#~ msgid "Belgrad"
+#~ msgstr "Belgrad"

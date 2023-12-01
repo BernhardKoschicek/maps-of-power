@@ -2,6 +2,62 @@ from flask_babel import lazy_gettext as _
 
 literatures = [{
     'author':
+        'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
+    'title':
+        'Byzantium and the Balkans in the Middle Ages through the Looking '
+        'Glass of Historical Geography (Romanian Academy, Institute of '
+        'Archaeology of Iaşi, Florilegium magistrorum historiae '
+        'archaeologiaeque Antiquitatis et Medii Aevi 25). Bucureşti–Brăila '
+        '(Editura Academiei Române, Editura Istros a Muzeului Brăilei '
+        '„Carol I“)',
+    'locations': [_('Bucharest'), _('Brăila')],
+    'date': '2023',
+    'pages': '',
+    'external_link': '',
+    'download': '',
+    'category': ['mop']
+},{
+    'author':
+        'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
+    'title':
+        'To Put the Church on the Map: Early Medieval Ecclesiastical '
+        'Structures and Tendencies in the Region of Duklja (6th–11th '
+        'Centuries). Initial, A Review of Medieval Studies 11 (in print)',
+    'locations': [_('Belgrade')],
+    'date': '2023',
+    'pages': '',
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+},{
+    'author':
+        'Katrin Haase',
+    'title':
+        'Jenseits von Ost und West: Auf den Spuren der „Heiligen '
+        'Landschaften“ in den Balkanregionen. Antike Welt, Zeitschrift für '
+        'Archäologie und Kulturgeschichte 6',
+    'locations': [_('Darmstadt')],
+    'date': '2023',
+    'pages': '73-76',
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+},{
+    'author':
+        'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
+    'title':
+        'Combined Approach to the Reconstruction of the “Sacred Landscape” of '
+        'Duklja and Raška in the Times of Stefan Nemanja based on Historical '
+        'Geography, Art and Church History. Zbornik Radova Vizantološkog '
+        'Instituta 60 (preprint)',
+    'locations': [_('Belgrade')],
+    'date': '2023',
+    'pages': '373-402',
+    'external_link': '',
+    'download': '20_Popovic_Vranesevic_Vargova.pdf',
+    'category': ['holdura']
+},{
+    'author':
         'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
         + _('eds.'),
     'title':
@@ -15,14 +71,14 @@ literatures = [{
     'category': ['mop']
 }, {
     'author': 'Branka Vranešević',
-    'title': 'Iconography of the Parapet Slab from the Church of St. Thomas '
-             'in Kuti: New Reflections and Possible Interpretations. Zbornik '
-             'Matice srpske za likovne umetnosti (in print)',
+    'title': 'The Iconography of the Parapet Slab from the Church of St.Thomas'
+             ' in Kuti: New Reflections and Possible Interpretations. '
+             'Zbornik Matice srpske za likovne umetnosti 51 (preprint)',
     'locations': [_('Novi Sad')],
     'date': '2023',
     'pages': '',
     'external_link': '',
-    'download': '',
+    'download': 'Likovno_51_papir_1_za_split-11-26_Branka_Vranesevic.pdf',
     'category': ['holdura']
 }, {
     'author': 'Katrin Haase, Johannes Tripps',
