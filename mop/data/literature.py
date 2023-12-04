@@ -46,7 +46,7 @@ literatures = [{
     'author':
         'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
     'title':
-        'Combined Approach to the Reconstruction of the “Sacred Landscape” of '
+        'A Combined Approach to the Reconstruction of the “Sacred Landscape” of '
         'Duklja and Raška in the Times of Stefan Nemanja based on Historical '
         'Geography, Art and Church History. Zbornik Radova Vizantološkog '
         'Instituta 60 (preprint)',

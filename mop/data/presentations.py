@@ -37,7 +37,7 @@ presentations = [{
     'category': ['holdura']
 }, {
     'presenter': 'Johannes Tripps',
-    'title': 'The Metamorphosing crown of Saint Stefan Decanski',
+    'title': 'The Metamorphosing Crown of Saint Stefan Dečanski',
     'conference': '',
     'location': [_('Belgrade')],
     'date': get_table_dates_formatted(2023, 9, 7),
