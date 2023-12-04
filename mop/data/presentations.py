@@ -14,7 +14,7 @@ presentations = [{
     'external_link': '',
     'download': '',
     'category': ['holdura']
-},{
+}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'Serbian Noblewomen and the Clergy in the Middle Ages: '
              'A Comparison between Mara Branković and Jelena Anžujska '
