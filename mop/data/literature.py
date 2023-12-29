@@ -2,6 +2,20 @@ from flask_babel import lazy_gettext as _
 
 literatures = [{
     'author':
+        'Mihailo St. Popović, Branka Vranešević,'
+        ' Moisés Hernández Cordero, Johannes Tripps,',
+    'title':
+        'Towards the Imperial Dignity: A Contribution to the Study of the '
+        'Imperial Crown of King Stefan Uroš III Dečanski in the Cetinje '
+        'Monastery. Zbornik Matice srpske za likovne umetnosti (in print)',
+    'locations': [_('Novi Sad')],
+    'date': '2024',
+    'pages': '',
+    'external_link': '',
+    'download': '',
+    'category': ['holdura']
+},{
+    'author':
         'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
     'title':
         'Byzantium and the Balkans in the Middle Ages through the Looking '
@@ -39,17 +53,17 @@ literatures = [{
     'locations': [_('Darmstadt')],
     'date': '2023',
     'pages': '73-76',
-    'external_link': '',
+    'external_link': 'https://wbg-zeitschriften.de/produkt/die-iberer/',
     'download': '',
     'category': ['holdura']
 },{
     'author':
         'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
     'title':
-        'A Combined Approach to the Reconstruction of the “Sacred Landscape” of '
-        'Duklja and Raška in the Times of Stefan Nemanja based on Historical '
-        'Geography, Art and Church History. Zbornik Radova Vizantološkog '
-        'Instituta 60 (preprint)',
+        'A Combined Approach to the Reconstruction of the “Sacred Landscape” '
+        'of Duklja and Raška in the Times of Stefan Nemanja based on '
+        'Historical Geography, Art and Church History. Zbornik Radova '
+        'Vizantološkog Instituta 60 (preprint)',
     'locations': [_('Belgrade')],
     'date': '2023',
     'pages': '373-402',
@@ -76,7 +90,7 @@ literatures = [{
              'Zbornik Matice srpske za likovne umetnosti 51 (preprint)',
     'locations': [_('Novi Sad')],
     'date': '2023',
-    'pages': '',
+    'pages': '11-26',
     'external_link': '',
     'download': 'Likovno_51_papir_1_za_split-11-26_Branka_Vranesevic.pdf',
     'category': ['holdura']
