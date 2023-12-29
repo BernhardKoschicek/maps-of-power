@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-12-01 12:00+0100\n"
+"POT-Creation-Date: 2023-12-29 11:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "projects"
 msgstr ""
 
-#: mop/templates/about.html:71 mop/templates/events.html:6 mop/util.py:37
+#: mop/templates/about.html:74 mop/templates/events.html:6 mop/util.py:37
 msgid "events"
 msgstr ""
 
@@ -667,7 +667,11 @@ msgstr ""
 msgid "about_text_7"
 msgstr ""
 
-#: mop/templates/about.html:94
+#: mop/templates/about.html:68
+msgid "about_text_7a"
+msgstr ""
+
+#: mop/templates/about.html:97
 msgid "vienna_manifesto"
 msgstr ""
 

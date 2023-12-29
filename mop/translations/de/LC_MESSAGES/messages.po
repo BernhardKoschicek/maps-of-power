@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-12-01 12:00+0100\n"
-"PO-Revision-Date: 2023-12-01 12:03+0100\n"
+"POT-Creation-Date: 2023-12-29 11:28+0100\n"
+"PO-Revision-Date: 2023-12-29 11:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.9.1\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: mop/util.py:33
 msgid "about"
@@ -28,7 +28,7 @@ msgstr "über"
 msgid "projects"
 msgstr "projekte"
 
-#: mop/templates/about.html:71 mop/templates/events.html:6 mop/util.py:37
+#: mop/templates/about.html:74 mop/templates/events.html:6 mop/util.py:37
 msgid "events"
 msgstr "ereignisse"
 
@@ -1114,7 +1114,14 @@ msgstr ""
 "digitale Karten (Layer) enthält, Storymaps zu verschiedenen Aspekten anbietet "
 "und umfassendes Fotomaterial beinhaltet."
 
-#: mop/templates/about.html:94
+#: mop/templates/about.html:68
+msgid "about_text_7a"
+msgstr ""
+"Daten aus unseren laufenden und abgeschlossenen Projekten können über das "
+"Frontend <a href=\"/frontend\" target=\"_blank\" class=\"link-primary\">„Maps of "
+"Power“</a> abgerufen und visualisiert werden."
+
+#: mop/templates/about.html:97
 msgid "vienna_manifesto"
 msgstr ""
 "Unsere Initiative unterstützt das <a href=\"https://dighum.ec.tuwien.ac.at/"

@@ -128,3 +128,8 @@ def entity_project_view(
 @app.route('/software')
 def software() -> str:
     return render_template('software.html')
+
+
+@app.route('/frontend')
+def frontend() -> str:
+    return redirect("https://map.geo.univie.ac.at/projects/mop/")
