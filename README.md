@@ -15,8 +15,7 @@ seen as a pilot project in this respect.
 Just clone it and let the requirements.txt install all packages.
 
     $ cd mop/static
-    $ pip3 install -e ./
-    $ calmjs npm --install mapsofpower
+    $ npm install
 
 Everything this is absolutely WIP!!!
 
