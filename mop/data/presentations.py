@@ -14,7 +14,7 @@ presentations = [{
     'external_link': '',
     'download': '',
     'category': ['holdura']
-},{
+}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'Serbian Noblewomen and the Clergy in the Middle Ages: '
              'A Comparison between Mara Branković and Jelena Anžujska '
@@ -37,7 +37,7 @@ presentations = [{
     'category': ['holdura']
 }, {
     'presenter': 'Johannes Tripps',
-    'title': 'The Metamorphosing crown of Saint Stefan Decanski',
+    'title': 'The Metamorphosing Crown of Saint Stefan Dečanski',
     'conference': '',
     'location': [_('Belgrade')],
     'date': get_table_dates_formatted(2023, 9, 7),
