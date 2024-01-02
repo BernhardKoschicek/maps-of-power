@@ -133,5 +133,4 @@ def software() -> str:
 @app.route('/atlas')
 @app.route('/frontend')
 def frontend() -> str:
-    return render_template('atlas.html')
-    # return redirect("https://map.geo.univie.ac.at/projects/mop/")
+    return redirect("https://map.geo.univie.ac.at/projects/mop/")
