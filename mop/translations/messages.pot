@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2023 ORGANIZATION
+# Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-12-29 11:28+0100\n"
+"POT-Creation-Date: 2024-01-12 11:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,6 +24,10 @@ msgstr ""
 #: mop/templates/explore/project_entity_view.html:19
 #: mop/templates/project_details.html:30 mop/util.py:34
 msgid "projects"
+msgstr ""
+
+#: mop/util.py:35
+msgid "atlas"
 msgstr ""
 
 #: mop/templates/about.html:74 mop/templates/events.html:6 mop/util.py:37
@@ -121,7 +125,7 @@ msgid "december"
 msgstr ""
 
 #: mop/data/histgeo.py:79 mop/data/histgeo.py:116 mop/data/histgeo.py:153
-#: mop/data/literature.py:62
+#: mop/data/literature.py:76
 msgid "eds."
 msgstr ""
 
@@ -241,83 +245,83 @@ msgstr ""
 msgid "image_landscape_caption"
 msgstr ""
 
-#: mop/data/literature.py:13
+#: mop/data/literature.py:11 mop/data/literature.py:91
+msgid "Novi Sad"
+msgstr ""
+
+#: mop/data/literature.py:27
 msgid "Bucharest"
 msgstr ""
 
-#: mop/data/literature.py:13
+#: mop/data/literature.py:27
 msgid "Brăila"
 msgstr ""
 
-#: mop/data/literature.py:26 mop/data/literature.py:53
+#: mop/data/literature.py:40 mop/data/literature.py:67
 #: mop/data/presentations.py:12 mop/data/presentations.py:33
 #: mop/data/presentations.py:42 mop/data/presentations.py:109
 msgid "Belgrade"
 msgstr ""
 
-#: mop/data/literature.py:39
+#: mop/data/literature.py:53
 msgid "Darmstadt"
 msgstr ""
 
-#: mop/data/literature.py:66 mop/data/literature.py:88
+#: mop/data/literature.py:80 mop/data/literature.py:102
 #: mop/data/presentations.py:124
 msgid "Leipzig"
 msgstr ""
 
-#: mop/data/literature.py:77
-msgid "Novi Sad"
-msgstr ""
-
-#: mop/data/literature.py:102
+#: mop/data/literature.py:116
 msgid "Göttingen"
 msgstr ""
 
-#: mop/data/literature.py:109
+#: mop/data/literature.py:123
 msgid "etc."
 msgstr ""
 
-#: mop/data/literature.py:114
+#: mop/data/literature.py:128
 msgid "Krems"
 msgstr ""
 
-#: mop/data/literature.py:138
+#: mop/data/literature.py:152
 msgid "cambridge, MA"
 msgstr ""
 
-#: mop/data/literature.py:138 mop/data/literature.py:147
-#: mop/data/literature.py:206
+#: mop/data/literature.py:152 mop/data/literature.py:161
+#: mop/data/literature.py:220
 msgid "london"
 msgstr ""
 
-#: mop/data/literature.py:147
+#: mop/data/literature.py:161
 msgid "new york"
 msgstr ""
 
-#: mop/data/literature.py:156
+#: mop/data/literature.py:170
 msgid "stroud"
 msgstr ""
 
-#: mop/data/literature.py:168
+#: mop/data/literature.py:182
 msgid "mainz"
 msgstr ""
 
-#: mop/data/literature.py:168
+#: mop/data/literature.py:182
 msgid "ruhpolding"
 msgstr ""
 
-#: mop/data/literature.py:183
+#: mop/data/literature.py:197
 msgid "vienna"
 msgstr ""
 
-#: mop/data/literature.py:183
+#: mop/data/literature.py:197
 msgid "novi sad"
 msgstr ""
 
-#: mop/data/literature.py:196 mop/data/literature.py:228
+#: mop/data/literature.py:210 mop/data/literature.py:242
 msgid "venice"
 msgstr ""
 
-#: mop/data/literature.py:216
+#: mop/data/literature.py:230
 msgid "exter"
 msgstr ""
 
@@ -518,6 +522,52 @@ msgstr ""
 
 #: mop/data/projects/holdura.py:74
 msgid "holdura_description_7"
+msgstr ""
+
+#: mop/data/projects/tracing.py:10
+msgid ""
+"The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in "
+"the Valley of the River Vardar"
+msgstr ""
+
+#: mop/data/projects/tracing.py:17
+msgid ""
+"Inscription in Honour of the German Emperor Wilhelm II at the Entrance to"
+" the Road Tunnel"
+msgstr ""
+
+#: mop/data/projects/tracing.py:24
+msgid "German Military Cemetery from the First World War near Bitola"
+msgstr ""
+
+#: mop/data/projects/tracing.py:29
+msgid "War Relics from the First World War in Mariovo"
+msgstr ""
+
+#: mop/data/projects/tracing.py:37
+msgid ""
+"Tracing Archaeological Remains and Scholarly Research of the Central "
+"Powers in the Region of Prilep-Bitola during WW I (1915-1918)"
+msgstr ""
+
+#: mop/data/projects/tracing.py:58
+msgid "tracing_description_1"
+msgstr ""
+
+#: mop/data/projects/tracing.py:59
+msgid "tracing_description_2"
+msgstr ""
+
+#: mop/data/projects/tracing.py:60
+msgid "tracing_description_3"
+msgstr ""
+
+#: mop/data/projects/tracing.py:61
+msgid "tracing_description_4"
+msgstr ""
+
+#: mop/data/projects/tracing.py:62
+msgid "tracing_description_5"
 msgstr ""
 
 #: mop/data/projects/vlachs.py:19 mop/data/projects/vlachs.py:25

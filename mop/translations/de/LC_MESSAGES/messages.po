@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-12-29 11:28+0100\n"
-"PO-Revision-Date: 2023-12-29 11:30+0100\n"
+"POT-Creation-Date: 2024-01-12 11:20+0100\n"
+"PO-Revision-Date: 2024-01-12 12:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -27,6 +27,10 @@ msgstr "über"
 #: mop/templates/project_details.html:30 mop/util.py:34
 msgid "projects"
 msgstr "projekte"
+
+#: mop/util.py:35
+msgid "atlas"
+msgstr "Atlas"
 
 #: mop/templates/about.html:74 mop/templates/events.html:6 mop/util.py:37
 msgid "events"
@@ -162,7 +166,7 @@ msgid "december"
 msgstr "Dezember"
 
 #: mop/data/histgeo.py:79 mop/data/histgeo.py:116 mop/data/histgeo.py:153
-#: mop/data/literature.py:62
+#: mop/data/literature.py:76
 msgid "eds."
 msgstr "Hrsg."
 
@@ -408,82 +412,82 @@ msgstr "den naturräumlichen Gegebenheiten von Landschaften"
 msgid "image_landscape_caption"
 msgstr "die Bucht von Kotor, Montenegro (2021)"
 
-#: mop/data/literature.py:13
+#: mop/data/literature.py:11 mop/data/literature.py:91
+msgid "Novi Sad"
+msgstr "Novi Sad"
+
+#: mop/data/literature.py:27
 msgid "Bucharest"
 msgstr "Bukarest"
 
-#: mop/data/literature.py:13
+#: mop/data/literature.py:27
 msgid "Brăila"
 msgstr "Brăila"
 
-#: mop/data/literature.py:26 mop/data/literature.py:53 mop/data/presentations.py:12
+#: mop/data/literature.py:40 mop/data/literature.py:67 mop/data/presentations.py:12
 #: mop/data/presentations.py:33 mop/data/presentations.py:42
 #: mop/data/presentations.py:109
 msgid "Belgrade"
 msgstr "Belgrad"
 
-#: mop/data/literature.py:39
+#: mop/data/literature.py:53
 msgid "Darmstadt"
 msgstr "Darmstadt"
 
-#: mop/data/literature.py:66 mop/data/literature.py:88
+#: mop/data/literature.py:80 mop/data/literature.py:102
 #: mop/data/presentations.py:124
 msgid "Leipzig"
 msgstr "Leipzig"
 
-#: mop/data/literature.py:77
-msgid "Novi Sad"
-msgstr "Novi Sad"
-
-#: mop/data/literature.py:102
+#: mop/data/literature.py:116
 msgid "Göttingen"
 msgstr "Göttingen"
 
-#: mop/data/literature.py:109
+#: mop/data/literature.py:123
 msgid "etc."
 msgstr "u.a."
 
-#: mop/data/literature.py:114
+#: mop/data/literature.py:128
 msgid "Krems"
 msgstr "Krems"
 
-#: mop/data/literature.py:138
+#: mop/data/literature.py:152
 msgid "cambridge, MA"
 msgstr "Cambridge, MA"
 
-#: mop/data/literature.py:138 mop/data/literature.py:147 mop/data/literature.py:206
+#: mop/data/literature.py:152 mop/data/literature.py:161 mop/data/literature.py:220
 msgid "london"
 msgstr "London"
 
-#: mop/data/literature.py:147
+#: mop/data/literature.py:161
 msgid "new york"
 msgstr "New York"
 
-#: mop/data/literature.py:156
+#: mop/data/literature.py:170
 msgid "stroud"
 msgstr "Stroud"
 
-#: mop/data/literature.py:168
+#: mop/data/literature.py:182
 msgid "mainz"
 msgstr "Mainz"
 
-#: mop/data/literature.py:168
+#: mop/data/literature.py:182
 msgid "ruhpolding"
 msgstr "Ruhpolding"
 
-#: mop/data/literature.py:183
+#: mop/data/literature.py:197
 msgid "vienna"
 msgstr "Wien"
 
-#: mop/data/literature.py:183
+#: mop/data/literature.py:197
 msgid "novi sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:196 mop/data/literature.py:228
+#: mop/data/literature.py:210 mop/data/literature.py:242
 msgid "venice"
 msgstr "Venedig"
 
-#: mop/data/literature.py:216
+#: mop/data/literature.py:230
 msgid "exter"
 msgstr "Exeter"
 
@@ -858,6 +862,87 @@ msgstr ""
 "montenegro\" class=\"link-primary\">\"Cultural Heritage in Times of World War I: "
 "Der Fall der österreichisch-ungarischen Reliefkarte von Montenegro "
 "(1916-1918)\"</a>."
+
+#: mop/data/projects/tracing.py:10
+msgid ""
+"The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in the "
+"Valley of the River Vardar"
+msgstr ""
+"Der Straßentunnel zu Ehren des Deutschen Kaisers Wilhelm II. aus dem Jahre 1916 "
+"im Flußtal des Vardar"
+
+#: mop/data/projects/tracing.py:17
+msgid ""
+"Inscription in Honour of the German Emperor Wilhelm II at the Entrance to the "
+"Road Tunnel"
+msgstr ""
+"Inschrift zu Ehren des deutschen Kaisers Wilhelm II. bei der Einfahrt in den "
+"Straßentunnel"
+
+#: mop/data/projects/tracing.py:24
+msgid "German Military Cemetery from the First World War near Bitola"
+msgstr "Deutscher Soldatenfriedhof aus dem Ersten Weltkrieg bei Bitola"
+
+#: mop/data/projects/tracing.py:29
+msgid "War Relics from the First World War in Mariovo"
+msgstr "Kriegsrelikte aus dem Ersten Weltkrieg in Mariovo"
+
+#: mop/data/projects/tracing.py:37
+msgid ""
+"Tracing Archaeological Remains and Scholarly Research of the Central Powers in "
+"the Region of Prilep-Bitola during WW I (1915-1918)"
+msgstr ""
+"Auf den Spuren der archäologischen Überreste und der wissenschaftlichen "
+"Forschung der Mittelmächte in der Region Prilep-Bitola während des Ersten "
+"Weltkriegs (1915-1918)"
+
+#: mop/data/projects/tracing.py:58
+msgid "tracing_description_1"
+msgstr ""
+"Unser Projekt zielt darauf ab, die südliche Balkanhalbinsel während des Ersten "
+"Weltkriegs (1914-1918) und insbesondere die Regionen Prilep-Bitola und Mariovo "
+"hinter der sogenannten <span class=\"fst-italic\">Salonikifront</span> oder "
+"<span class=\"fst-italic\">Mazedonischen Front</span> in der jetzigen Republik "
+"Nordmazedonien zu erforschen."
+
+#: mop/data/projects/tracing.py:59
+msgid "tracing_description_2"
+msgstr ""
+"Eng verbunden mit Kriegen und bewaffneten Konflikten sind ihre verheerenden "
+"Auswirkungen auf das Weltkulturerbe. In unserem Projekt möchten wir der Frage "
+"des Kulturerbes und der Erforschung desselben während des Ersten Weltkriegs "
+"nachgehen."
+
+#: mop/data/projects/tracing.py:60
+msgid "tracing_description_3"
+msgstr ""
+"Verschiedene historische und kirchliche Denkmäler waren von den Zerstörungen "
+"entlang der <span class=\"fst-italic\">Salonikifront</span> stark betroffen. "
+"Beispiele dafür sind die Kirche des Heiligen Christophorus im Dorf Krstoar und "
+"die Kirche des Heiligen Nikolaus im Dorf Gradešnica. Die Auswertung der "
+"einschlägigen Quellen, insbesondere der bildlichen, zu den einzelnen Denkmälern "
+"in der Region aus byzantinischer und nachbyzantinischer Zeit bedarf noch "
+"gründlicher wissenschaftlicher Untersuchungen, um ein umfassendes Bild des "
+"jeweiligen Kulturerbes zu erhalten."
+
+#: mop/data/projects/tracing.py:61
+msgid "tracing_description_4"
+msgstr "Drei Forschungsfragen stehen im Fokus unseres Interesses:"
+
+#: mop/data/projects/tracing.py:62
+msgid "tracing_description_5"
+msgstr ""
+"<ul>\n"
+"<li>Wo war das Kulturerbe hinter der <span class=\"fst-italic\">Salonikifront</"
+"span> in den Regionen Prilep-Bitola und Mariovo von den Kämpfen betroffen und "
+"wie haben die Mittelmächte die Schäden dokumentiert?</li>\n"
+"<li>Wo fanden archäologische Ausgrabungen durch die Mittelmächte in den Regionen "
+"Prilep-Bitola und Mariovo statt und wer waren die beteiligten Wissenschaftler?</"
+"li>\n"
+"<li>Welche militärische Infrastruktur der Mittelmächte läßt sich in den Regionen "
+"noch <span class=\"fst-italic\">in situ</span> nachweisen (d. h. Schützengräben, "
+"Bunker, Straßen, Brücken, Tunnel, Eisenbahnen, Seilbahnen, Friedhöfe)?</li>\n"
+"</ul>"
 
 #: mop/data/projects/vlachs.py:19 mop/data/projects/vlachs.py:25
 #: mop/data/projects/vlachs.py:31
