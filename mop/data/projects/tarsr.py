@@ -38,7 +38,7 @@ project_tarsr = {
         'Tracing Archaeological Remains and Scholarly Research of the Central '
         'Powers in the Region of Prilep-Bitola during WW I (1915-1918)'),
     'website': '',
-    'host_institutes': [institutes['abf']],
+    'host_institutes': [institutes['abf'], institutes['ukim']],
     'funded_by': [institutes['oead']],
     'project_number': 'MK 07/2024',
     'pi': [

@@ -129,4 +129,10 @@ institutes = {
         'url': 'http://www.uai-iua.org/en',
         'logo': 'uai.jpg',
         'member': '',
+        'address': ''},
+    'ukim': {
+        'name': 'Ss. Cyril and Methodius University',
+        'url': 'https://www.ukim.edu.mk/',
+        'logo': 'ukim.jpg',
+        'member': '',
         'address': ''}}
