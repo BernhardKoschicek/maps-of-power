@@ -133,6 +133,6 @@ institutes = {
     'ukim': {
         'name': 'Ss. Cyril and Methodius University',
         'url': 'https://www.ukim.edu.mk/',
-        'logo': 'ukim.jpg',
+        'logo': 'ukim_i_fzf.png',
         'member': '',
         'address': ''}}
