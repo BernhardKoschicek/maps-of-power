@@ -5,9 +5,9 @@ literatures = [{
         'Mihailo St. Popović, Branka Vranešević,'
         ' Moisés Hernández Cordero, Johannes Tripps,',
     'title':
-        'Towards the Imperial Dignity: A Contribution to the Study of the '
-        'Imperial Crown of King Stefan Uroš III Dečanski in the Cetinje '
-        'Monastery. Zbornik Matice srpske za likovne umetnosti (in print)',
+        'On the Subject of Imperial Dignity: a Contribution to the Study of '
+        'the Crown of King Stefan Uroš III Dečanski in the Monastery of '
+        'Cetinje',
     'locations': [_('Novi Sad')],
     'date': '2024',
     'pages': '',

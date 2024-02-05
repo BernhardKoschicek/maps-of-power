@@ -67,6 +67,10 @@ newsletters = {
         'title': _('june'),
         'url': 'https://t210d45f9.emailsys2a.net/'
                'mailing/180/6774474/0/39bcfcd223/index.html'
+    }, {
+        'title': _('december'),
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/7255820/0/dbc8fdb280/index.html'
     }],
 }
 
