@@ -63,12 +63,12 @@ literatures = [{
         'A Combined Approach to the Reconstruction of the “Sacred Landscape” '
         'of Duklja and Raška in the Times of Stefan Nemanja based on '
         'Historical Geography, Art and Church History. Zbornik Radova '
-        'Vizantološkog Instituta 60 (preprint)',
+        'Vizantološkog Instituta 60/2',
     'locations': [_('Belgrade')],
     'date': '2023',
-    'pages': '373-402',
+    'pages': '899-928',
     'external_link': '',
-    'download': '20_Popovic_Vranesevic_Vargova.pdf',
+    'download': 'combined_approach_sacred_landscape.pdf',
     'category': ['holdura']
 },{
     'author':
