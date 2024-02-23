@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from typing import Any
 
@@ -18,6 +19,12 @@ ROOT_PATH = Path(__file__).parent
 STATIC_PATH = ROOT_PATH / 'static'
 IMAGE_PATH = STATIC_PATH / 'images'
 THUMBNAIL_PATH = STATIC_PATH / 'thumbnails'
+
+
+@app.before_request
+def before_request() -> None:
+    os.environ['http_proxy'] = app.config['API_PROXY']
+    os.environ['https_proxy'] = app.config['API_PROXY']
 
 
 @babel.localeselector

@@ -10,5 +10,5 @@ SESSION_COOKIE_SECURE = False
 REMEMBER_COOKIE_SECURE = True
 SESSION_COOKIE_SAMESITE = 'Lax'
 
-API_PATH = 'https://mop-openatlas.oeaw.ac.at/api/0.3/'
-PROXIES = {}
+API_PATH = ''
+API_PROXY = ''
