@@ -68,7 +68,7 @@ literatures = [{
     'date': '2023',
     'pages': '899-928',
     'external_link': '',
-    'download': 'combined_approach_sacred_landscape.pdf',
+    'download': 'MPopovicBVranesevicDVargova_SacredLandscapeDukljaRaska.pdf',
     'category': ['holdura']
 },{
     'author':
