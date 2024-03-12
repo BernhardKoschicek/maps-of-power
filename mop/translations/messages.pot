@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-12 11:20+0100\n"
+"POT-Creation-Date: 2024-03-12 12:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.10.3\n"
 
 #: mop/util.py:33
 msgid "about"
@@ -120,96 +120,116 @@ msgid "september"
 msgstr ""
 
 #: mop/data/histgeo.py:19 mop/data/histgeo.py:36 mop/data/histgeo.py:53
-#: mop/data/histgeo.py:62
+#: mop/data/histgeo.py:62 mop/data/histgeo.py:71
 msgid "december"
 msgstr ""
 
-#: mop/data/histgeo.py:79 mop/data/histgeo.py:116 mop/data/histgeo.py:153
+#: mop/data/histgeo.py:83 mop/data/histgeo.py:120 mop/data/histgeo.py:157
 #: mop/data/literature.py:76
 msgid "eds."
 msgstr ""
 
-#: mop/data/histgeo.py:81
+#: mop/data/histgeo.py:85
 msgid "histgeo_vol1_1"
 msgstr ""
 
-#: mop/data/histgeo.py:81
+#: mop/data/histgeo.py:85
 msgid "histgeo_vol1_2"
 msgstr ""
 
-#: mop/data/histgeo.py:81
+#: mop/data/histgeo.py:85
 msgid "histgeo_vol1_3"
 msgstr ""
 
-#: mop/data/histgeo.py:97
+#: mop/data/histgeo.py:101
 msgid "ed."
 msgstr ""
 
-#: mop/data/histgeo.py:98
+#: mop/data/histgeo.py:102
 msgid "histgeo_vol2_1"
 msgstr ""
 
-#: mop/data/histgeo.py:117
+#: mop/data/histgeo.py:121
 msgid "histgeo_vol3_1"
 msgstr ""
 
-#: mop/data/histgeo.py:136
+#: mop/data/histgeo.py:140
 msgid "histgeo_vol4_1"
 msgstr ""
 
-#: mop/data/histgeo.py:165
+#: mop/data/histgeo.py:169
 msgid "sgomez_short_bio"
 msgstr ""
 
-#: mop/data/histgeo.py:166
+#: mop/data/histgeo.py:170
 msgid "sgomez_bio_1"
 msgstr ""
 
-#: mop/data/histgeo.py:166
+#: mop/data/histgeo.py:170
 msgid "sgomez_bio_2"
 msgstr ""
 
-#: mop/data/histgeo.py:173
-msgid "lecture_1_title"
-msgstr ""
-
-#: mop/data/histgeo.py:174
-msgid "lecture_1_subtitle"
+#: mop/data/histgeo.py:174 mop/data/histgeo.py:175
+msgid "gbidaut_short_bio"
 msgstr ""
 
 #: mop/data/histgeo.py:181
+msgid "lecture_1_title"
+msgstr ""
+
+#: mop/data/histgeo.py:182
+msgid "lecture_1_subtitle"
+msgstr ""
+
+#: mop/data/histgeo.py:189 mop/data/histgeo.py:201
 msgid "english"
 msgstr ""
 
-#: mop/data/histgeo.py:182
+#: mop/data/histgeo.py:190
 msgid "lecture_1_1"
 msgstr ""
 
-#: mop/data/histgeo.py:182
+#: mop/data/histgeo.py:190
 msgid "lecture_1_2"
 msgstr ""
 
-#: mop/data/histgeo.py:186
+#: mop/data/histgeo.py:193
+msgid "lecture_2_title"
+msgstr ""
+
+#: mop/data/histgeo.py:194
+msgid "lecture_2_subtitle"
+msgstr ""
+
+#: mop/data/histgeo.py:202
+msgid "lecture_2_1"
+msgstr ""
+
+#: mop/data/histgeo.py:202
+msgid "lecture_2_2"
+msgstr ""
+
+#: mop/data/histgeo.py:206
 msgid "author"
 msgstr ""
 
-#: mop/data/histgeo.py:187
+#: mop/data/histgeo.py:207
 msgid "pages"
 msgstr ""
 
-#: mop/data/histgeo.py:188
+#: mop/data/histgeo.py:208
 msgid "ISBN"
 msgstr ""
 
-#: mop/data/histgeo.py:189
+#: mop/data/histgeo.py:209
 msgid "citation"
 msgstr ""
 
-#: mop/data/histgeo.py:190
+#: mop/data/histgeo.py:210
 msgid "order"
 msgstr ""
 
-#: mop/data/histgeo.py:191
+#: mop/data/histgeo.py:211
 msgid "abstract"
 msgstr ""
 
@@ -524,49 +544,49 @@ msgstr ""
 msgid "holdura_description_7"
 msgstr ""
 
-#: mop/data/projects/tracing.py:10
+#: mop/data/projects/tarsr.py:10
 msgid ""
 "The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in "
 "the Valley of the River Vardar"
 msgstr ""
 
-#: mop/data/projects/tracing.py:17
+#: mop/data/projects/tarsr.py:17
 msgid ""
 "Inscription in Honour of the German Emperor Wilhelm II at the Entrance to"
 " the Road Tunnel"
 msgstr ""
 
-#: mop/data/projects/tracing.py:24
+#: mop/data/projects/tarsr.py:24
 msgid "German Military Cemetery from the First World War near Bitola"
 msgstr ""
 
-#: mop/data/projects/tracing.py:29
+#: mop/data/projects/tarsr.py:29
 msgid "War Relics from the First World War in Mariovo"
 msgstr ""
 
-#: mop/data/projects/tracing.py:37
+#: mop/data/projects/tarsr.py:37
 msgid ""
 "Tracing Archaeological Remains and Scholarly Research of the Central "
 "Powers in the Region of Prilep-Bitola during WW I (1915-1918)"
 msgstr ""
 
-#: mop/data/projects/tracing.py:58
+#: mop/data/projects/tarsr.py:58
 msgid "tracing_description_1"
 msgstr ""
 
-#: mop/data/projects/tracing.py:59
+#: mop/data/projects/tarsr.py:59
 msgid "tracing_description_2"
 msgstr ""
 
-#: mop/data/projects/tracing.py:60
+#: mop/data/projects/tarsr.py:60
 msgid "tracing_description_3"
 msgstr ""
 
-#: mop/data/projects/tracing.py:61
+#: mop/data/projects/tarsr.py:61
 msgid "tracing_description_4"
 msgstr ""
 
-#: mop/data/projects/tracing.py:62
+#: mop/data/projects/tarsr.py:62
 msgid "tracing_description_5"
 msgstr ""
 

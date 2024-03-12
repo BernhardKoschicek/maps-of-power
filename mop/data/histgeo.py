@@ -168,8 +168,12 @@ lecturer = {
         'name': 'Silvia Gómez Senovilla',
         'short_bio': _('sgomez_short_bio'),
         'bio': [_('sgomez_bio_1'), _('sgomez_bio_2')],
-        'portrait': 'sgomez.jpg'
-    }
+        'portrait': 'sgomez.jpg'    },
+    'gbidaut': {
+        'name': 'Guillaume Bidaut',
+        'short_bio': _('gbidaut_short_bio'),
+        'bio': [_('gbidaut_short_bio')],
+        'portrait': 'gbidaut.jpg'},
 }
 
 lectures = {
@@ -184,6 +188,18 @@ lectures = {
         'presenters': [lecturer['sgomez']],
         'language': _('english'),
         'abstract': [_('lecture_1_1'), _('lecture_1_2')]
+    },
+    2: {
+        'title': _('lecture_2_title'),
+        'subtitle': _('lecture_2_subtitle'),
+        'date': get_dates_formatted(2024, 6, 24),
+        'time': '16:00',
+        'zoom': 'https://oeaw-ac-at.zoom.us/'
+                'j/63575279089?pwd=bTVnZkEvQ1Y0b2tWMVlJN2VQVHNXQT09',
+        'youtube_code': '',
+        'presenters': [lecturer['gbidaut']],
+        'language': _('english'),
+        'abstract': [_('lecture_2_1'), _('lecture_2_2')]
     },
 }
 

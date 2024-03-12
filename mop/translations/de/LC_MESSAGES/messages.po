@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-12 11:20+0100\n"
-"PO-Revision-Date: 2024-01-12 12:08+0100\n"
+"POT-Creation-Date: 2024-03-12 12:44+0100\n"
+"PO-Revision-Date: 2024-03-12 12:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Generator: Poedit 3.4.2\n"
+"Generated-By: Babel 2.10.3\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: mop/util.py:33
 msgid "about"
@@ -161,16 +161,16 @@ msgid "september"
 msgstr "September"
 
 #: mop/data/histgeo.py:19 mop/data/histgeo.py:36 mop/data/histgeo.py:53
-#: mop/data/histgeo.py:62
+#: mop/data/histgeo.py:62 mop/data/histgeo.py:71
 msgid "december"
 msgstr "Dezember"
 
-#: mop/data/histgeo.py:79 mop/data/histgeo.py:116 mop/data/histgeo.py:153
+#: mop/data/histgeo.py:83 mop/data/histgeo.py:120 mop/data/histgeo.py:157
 #: mop/data/literature.py:76
 msgid "eds."
 msgstr "Hrsg."
 
-#: mop/data/histgeo.py:81
+#: mop/data/histgeo.py:85
 msgid "histgeo_vol1_1"
 msgstr ""
 "aus Anlaß des 75. Geburtstages von Herrn Professor Dr. Johannes Koder haben die "
@@ -183,7 +183,7 @@ msgstr ""
 "Jubilar mit dem Titel „Space, Landscapes and Settlements in Byzantium. Studies "
 "in Historical Geography of the Eastern Mediterranean” erwachsen. "
 
-#: mop/data/histgeo.py:81
+#: mop/data/histgeo.py:85
 msgid "histgeo_vol1_2"
 msgstr ""
 "Johannes Koder, w. M. hat seit dem Jahre 1966 die Tabula Imperii Byzantini "
@@ -194,7 +194,7 @@ msgstr ""
 "Œuvre umfaßt federführende Arbeiten historisch-geographischen Inhalts zu dem "
 "östlichen Mittelmeerraum und Byzanz."
 
-#: mop/data/histgeo.py:81
+#: mop/data/histgeo.py:85
 msgid "histgeo_vol1_3"
 msgstr ""
 "die Festschrift ist als Band 1 der Reihe „Studies in Historical Geography and "
@@ -206,11 +206,11 @@ msgstr ""
 "historisch-geographische Forschung in der Byzantinistik innovativ zu beleben. "
 "Die Reihe wird bei dem Verlag Akademska Knjiga in Novi Sad gedruckt."
 
-#: mop/data/histgeo.py:97
+#: mop/data/histgeo.py:101
 msgid "ed."
 msgstr "Hg."
 
-#: mop/data/histgeo.py:98
+#: mop/data/histgeo.py:102
 msgid "histgeo_vol2_1"
 msgstr ""
 "Am 9. Dezember 2014 wäre Univ. Prof. Dr. Dr. h.c. mult. Herbert Hunger (1914–"
@@ -226,7 +226,7 @@ msgstr ""
 "Schule der Byzantinistik neuen Forschergenerationen als eine Quelle der "
 "wissenschaftlichen Inspiration zu dienen."
 
-#: mop/data/histgeo.py:117
+#: mop/data/histgeo.py:121
 msgid "histgeo_vol3_1"
 msgstr ""
 "Das Langzeitprojekt “Tabula Imperii Byzantini (TIB)” (Institut für "
@@ -257,7 +257,7 @@ msgstr ""
 "Existenz eines solchen Projekts in Österreich und seine Dokumentation das "
 "öffentliche Interesse wecken werden."
 
-#: mop/data/histgeo.py:136
+#: mop/data/histgeo.py:140
 msgid "histgeo_vol4_1"
 msgstr ""
 "Die Landschaft des südöstlichen Peloponnes (Lakonien, Griechenland), einer sehr "
@@ -276,21 +276,21 @@ msgstr ""
 "widerspiegeln, sondern auch in der Wahl des Standorts oder einer tiefen "
 "Beziehung zu natürlichen Elementen der Landschaft."
 
-#: mop/data/histgeo.py:165
+#: mop/data/histgeo.py:169
 msgid "sgomez_short_bio"
 msgstr ""
 "BA in Geschichte, Autónoma Universität von Madrid, MA in Archäologie, Università "
 "Ca' Foscari von Venedig, MA in Ägyptischer Archäologie, University College von "
 "London"
 
-#: mop/data/histgeo.py:166
+#: mop/data/histgeo.py:170
 msgid "sgomez_bio_1"
 msgstr ""
 "Silvia Gómez Senovilla, beendet derzeit ihre Doktorarbeit an der Universität "
 "Wien im Rahmen des ERC Advanced Grant \"The Hyksos Enigma\" (Grant agreement Nº "
 "668640), unter der Leitung von Prof. Manfred Bietak."
 
-#: mop/data/histgeo.py:166
+#: mop/data/histgeo.py:170
 msgid "sgomez_bio_2"
 msgstr ""
 "in ihrer Dissertation untersucht sie die Struktur und Anordnung von Siedlungen "
@@ -301,19 +301,26 @@ msgstr ""
 "räumlicher und statistischer Instrumente untersucht sie die Veränderungen des "
 "Raums in diesem Teil der Bronzezeit und deren soziale Auswirkungen."
 
-#: mop/data/histgeo.py:173
+#: mop/data/histgeo.py:174 mop/data/histgeo.py:175
+msgid "gbidaut_short_bio"
+msgstr ""
+"BA in Geschichte, Université Paris 1 Panthéon-Sorbonne, MA in Geschichte, École "
+"des hautes études en sciences sociales in Paris, Graduiertendiploma in "
+"Geschichte und Griechischen Studien, École normale supérieure in Paris"
+
+#: mop/data/histgeo.py:181
 msgid "lecture_1_title"
 msgstr "Untersuchung des Raums in antiken Siedlungen"
 
-#: mop/data/histgeo.py:174
+#: mop/data/histgeo.py:182
 msgid "lecture_1_subtitle"
 msgstr "Die Straßen von Avaris, die Nutzung des Raums und die Verdinglichungsfalle"
 
-#: mop/data/histgeo.py:181
+#: mop/data/histgeo.py:189 mop/data/histgeo.py:201
 msgid "english"
 msgstr "Englisch"
 
-#: mop/data/histgeo.py:182
+#: mop/data/histgeo.py:190
 msgid "lecture_1_1"
 msgstr ""
 "Die Archäologie und die Geschichtswissenschaft stehen naturgemäß vor der "
@@ -338,7 +345,7 @@ msgstr ""
 "Vorauswahl unterliegen, behindert auch einige Versuche einer echten Analyse des "
 "Raums und seiner Bestandteile."
 
-#: mop/data/histgeo.py:182
+#: mop/data/histgeo.py:190
 msgid "lecture_1_2"
 msgstr ""
 "in diesem Vortrag werde ich den aktuellen Stand meiner Doktorarbeit vorstellen, "
@@ -353,27 +360,81 @@ msgstr ""
 "welche Möglichkeiten uns helfen können, die manchmal allgegenwärtige "
 "Abhängigkeit von rein visuellen Modellen zu überwinden."
 
-#: mop/data/histgeo.py:186
+#: mop/data/histgeo.py:193
+msgid "lecture_2_title"
+msgstr "Die Kartierung von Mobilität, die Konstruktion von Gemeinschaft"
+
+#: mop/data/histgeo.py:194
+msgid "lecture_2_subtitle"
+msgstr ""
+"Überlegungen zur Definition, Repräsentation und Räumlichkeit von "
+"Hirtengemeinschaften auf dem byzantinischen und frühosmanischen Balkan"
+
+#: mop/data/histgeo.py:202
+msgid "lecture_2_1"
+msgstr ""
+"Der vormoderne Balkan zeichnete sich durch ein hohes Maß an Diversität aus, in "
+"dem mehrere Staatswesen und politische Modelle, Sprachgemeinschaften und soziale "
+"Organisationsformen interagierten, sich überlagerten und sich kreuzten. Diese "
+"Vielfalt setzt sich bis in die Gegenwart fort, wo sie durch den Blick des "
+"westlichen Orientalismus (oder Balkanismus, wie Maria Todorova ihn nannte), "
+"konkurrierende Imperialismen und die Verallgemeinerung des nationalstaatlichen "
+"Paradigmas neu geformt und neu konzipiert wurde. Daher muß die wissenschaftliche "
+"Beschäftigung mit den vormodernen Gesellschaften des Balkans die Schichtung und "
+"Verflechtung vergangener und gegenwärtiger Kategorien von kollektiver Identität "
+"und von Raum besonders berücksichtigen."
+
+#: mop/data/histgeo.py:202
+msgid "lecture_2_2"
+msgstr ""
+"In diesem Vortrag werde ich den aktuellen Stand meiner Doktorarbeit vorstellen, "
+"die sich mit der sozialen Organisation, den wirtschaftlichen Strukturen und den "
+"politischen Netzwerken von Hirtengemeinschaften auf dem südlichen Balkan "
+"(Mazedonien, Epirus und Thessalien) von der mittelbyzantinischen bis zur "
+"frühosmanischen Zeit (10.-15. Jahrhundert) beschäftigt. Dieser Vortrag wird sich "
+"auf die ersten Ergebnisse und die methodischen Fragen konzentrieren, die sie für "
+"die Geschichte und die Historische Geographie des Balkans aufwerfen. Die erste "
+"Gruppe von Herausforderungen betrifft die Ausarbeitung relevanter analytischer "
+"Kategorien. Vormoderne Hirtengemeinschaften waren meist mündliche "
+"Gesellschaften, die geographisch und symbolisch peripher zu den klösterlichen, "
+"städtischen und politischen Zentren lagen, in denen die gebildeten Eliten den "
+"Großteil der überlieferten Quellen produzierten. Wie sollten sie also definiert "
+"und identifiziert werden, ohne die von Außenstehenden geschaffenen Kategorien "
+"als bare Münze zu nehmen? Darüber hinaus haben diese Kategorien – von denen "
+"einige bis in die Gegenwart verwendet werden – historisch gesehen zwischen der "
+"Verwendung als wirtschaftliche und/oder ethnische Bezeichnungen geschwankt. "
+"Daher werde ich untersuchen, wie sich ein nominaler Essentialismus vermeiden "
+"lässt, der zeitgenössische ethnonationale Bedeutungen auf die Vergangenheit "
+"projiziert, ohne die Kohärenz dieser Kollektive aufzulösen. Die zweite Gruppe "
+"von Herausforderungen dreht sich um die Rekonstruktion und Kartierung der "
+"räumlichen Gegebenheiten von Gruppen, deren Mobilität ein wesentliches Merkmal "
+"war. In Anbetracht der Bedeutung ihres geographischen Kontexts werde ich die "
+"Probleme darlegen, die sich aus dem Mangel an ortsspezifischen Quellen und deren "
+"ungleichmäßiger Verteilung ergeben, und erörtern, inwieweit GIS-Tools unser "
+"Verständnis ihrer räumlichen Praktiken und Darstellungen fördern oder behindern "
+"können."
+
+#: mop/data/histgeo.py:206
 msgid "author"
 msgstr "autor"
 
-#: mop/data/histgeo.py:187
+#: mop/data/histgeo.py:207
 msgid "pages"
 msgstr "seiten"
 
-#: mop/data/histgeo.py:188
+#: mop/data/histgeo.py:208
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:189
+#: mop/data/histgeo.py:209
 msgid "citation"
 msgstr "zitat"
 
-#: mop/data/histgeo.py:190
+#: mop/data/histgeo.py:210
 msgid "order"
 msgstr "bestellen"
 
-#: mop/data/histgeo.py:191
+#: mop/data/histgeo.py:211
 msgid "abstract"
 msgstr "kurzfassung"
 
@@ -863,7 +924,7 @@ msgstr ""
 "Der Fall der österreichisch-ungarischen Reliefkarte von Montenegro "
 "(1916-1918)\"</a>."
 
-#: mop/data/projects/tracing.py:10
+#: mop/data/projects/tarsr.py:10
 msgid ""
 "The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in the "
 "Valley of the River Vardar"
@@ -871,7 +932,7 @@ msgstr ""
 "Der Straßentunnel zu Ehren des Deutschen Kaisers Wilhelm II. aus dem Jahre 1916 "
 "im Flußtal des Vardar"
 
-#: mop/data/projects/tracing.py:17
+#: mop/data/projects/tarsr.py:17
 msgid ""
 "Inscription in Honour of the German Emperor Wilhelm II at the Entrance to the "
 "Road Tunnel"
@@ -879,15 +940,15 @@ msgstr ""
 "Inschrift zu Ehren des deutschen Kaisers Wilhelm II. bei der Einfahrt in den "
 "Straßentunnel"
 
-#: mop/data/projects/tracing.py:24
+#: mop/data/projects/tarsr.py:24
 msgid "German Military Cemetery from the First World War near Bitola"
 msgstr "Deutscher Soldatenfriedhof aus dem Ersten Weltkrieg bei Bitola"
 
-#: mop/data/projects/tracing.py:29
+#: mop/data/projects/tarsr.py:29
 msgid "War Relics from the First World War in Mariovo"
 msgstr "Kriegsrelikte aus dem Ersten Weltkrieg in Mariovo"
 
-#: mop/data/projects/tracing.py:37
+#: mop/data/projects/tarsr.py:37
 msgid ""
 "Tracing Archaeological Remains and Scholarly Research of the Central Powers in "
 "the Region of Prilep-Bitola during WW I (1915-1918)"
@@ -896,7 +957,7 @@ msgstr ""
 "Forschung der Mittelmächte in der Region Prilep-Bitola während des Ersten "
 "Weltkriegs (1915-1918)"
 
-#: mop/data/projects/tracing.py:58
+#: mop/data/projects/tarsr.py:58
 msgid "tracing_description_1"
 msgstr ""
 "Unser Projekt zielt darauf ab, die südliche Balkanhalbinsel während des Ersten "
@@ -905,7 +966,7 @@ msgstr ""
 "<span class=\"fst-italic\">Mazedonischen Front</span> in der jetzigen Republik "
 "Nordmazedonien zu erforschen."
 
-#: mop/data/projects/tracing.py:59
+#: mop/data/projects/tarsr.py:59
 msgid "tracing_description_2"
 msgstr ""
 "Eng verbunden mit Kriegen und bewaffneten Konflikten sind ihre verheerenden "
@@ -913,7 +974,7 @@ msgstr ""
 "des Kulturerbes und der Erforschung desselben während des Ersten Weltkriegs "
 "nachgehen."
 
-#: mop/data/projects/tracing.py:60
+#: mop/data/projects/tarsr.py:60
 msgid "tracing_description_3"
 msgstr ""
 "Verschiedene historische und kirchliche Denkmäler waren von den Zerstörungen "
@@ -925,11 +986,11 @@ msgstr ""
 "gründlicher wissenschaftlicher Untersuchungen, um ein umfassendes Bild des "
 "jeweiligen Kulturerbes zu erhalten."
 
-#: mop/data/projects/tracing.py:61
+#: mop/data/projects/tarsr.py:61
 msgid "tracing_description_4"
 msgstr "Drei Forschungsfragen stehen im Fokus unseres Interesses:"
 
-#: mop/data/projects/tracing.py:62
+#: mop/data/projects/tarsr.py:62
 msgid "tracing_description_5"
 msgstr ""
 "<ul>\n"
