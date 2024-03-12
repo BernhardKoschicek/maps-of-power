@@ -132,5 +132,5 @@ def software() -> str:
 
 @app.route('/atlas')
 @app.route('/frontend')
-def frontend() -> str:
-    return redirect("https://map.geo.univie.ac.at/projects/mop/")
+def frontend() -> Response:
+    return redirect("https://atlas.maps-of-power.at/")
