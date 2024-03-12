@@ -39,7 +39,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><span class="fw-bold">{{ _('date') }}:</span> {{ lecture['date'] }}</li>
             <li class="list-group-item"><span class="fw-bold">{{ _('time') }}:</span> {{ lecture['time'] }}</li>
-            <li class="list-group-item"><span class="fw-bold">{{ _('language') }}:</span> {{ lecture['language'] }}</li>
+            <li class="list-group-item"><span class="fw-bold">{{ _('language') }}:</span> {{ lecture['language'] | title}}</li>
             <li class="list-group-item"><span class="fw-bold">{{ _('link') }}:</span>
               {% if lecture['zoom'] %}
                 <a href="{{ lecture['zoom'] }}" target="_blank" class="link-primary">Zoom {{ _('link') }}</a>
