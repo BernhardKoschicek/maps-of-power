@@ -36,12 +36,12 @@ literatures = [{
     'title':
         'To Put the Church on the Map: Early Medieval Ecclesiastical '
         'Structures and Tendencies in the Region of Duklja (6th–11th '
-        'Centuries). Initial, A Review of Medieval Studies 11 (in print)',
+        'Centuries). Initial, A Review of Medieval Studies 11 [peer reviewed]',
     'locations': [_('Belgrade')],
     'date': '2023',
-    'pages': '',
+    'pages': '3-33',
     'external_link': '',
-    'download': '',
+    'download': 'DVargovaBVranesevicMPopovic_To_Put_the_Church_on_the_Map.pdf',
     'category': ['holdura']
 },{
     'author':
