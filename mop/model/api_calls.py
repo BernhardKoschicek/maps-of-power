@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Any, List, Optional
 
 import requests
 
@@ -10,7 +10,7 @@ PROXIES = {
     "https": app.config['API_PROXY']}
 
 
-def get_view_class(parameter: str):
+def get_view_class(parameter: str)-> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/view_class/"
     return requests.get(
         f"{url}{parameter}",
@@ -18,7 +18,7 @@ def get_view_class(parameter: str):
         timeout=30).json()['results']
 
 
-def system_class_results(parameter: str):
+def system_class_results(parameter: str) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/system_class/"
     return requests.get(
         f"{url}{parameter}",
@@ -26,7 +26,7 @@ def system_class_results(parameter: str):
         timeout=30).json()['results']
 
 
-def get_typed_entities_all_results(id_: int):
+def get_typed_entities_all_results(id_: int)-> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/type_entities_all/"
     return requests.get(
         f"{url}{id_}",
@@ -43,7 +43,9 @@ def get_type_tree() -> List[TypeTree]:
     return [TypeTree(types) for types in type_tree.values()]
 
 
-def get_entities_linked_to_entity(id_: int, show: Optional[List[str]] = None):
+def get_entities_linked_to_entity(
+        id_: int,
+        show: Optional[List[str]] = None)-> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/entities_linked_to_entity/"
     show_ = ''.join([f'&show={value}' for value in show] if show else '')
     return requests.get(
@@ -52,7 +54,7 @@ def get_entities_linked_to_entity(id_: int, show: Optional[List[str]] = None):
         timeout=30).json()['results']
 
 
-def get_entity(id_: int):
+def get_entity(id_: int) -> dict[str, Any]:
     url = f"{app.config['API_PATH']}/entity/"
     return requests.get(
         f"{url}{id_}",
@@ -60,7 +62,7 @@ def get_entity(id_: int):
         timeout=30).json()['features'][0]
 
 
-def api_call(url):
+def api_call(url: str) -> dict[str, Any]:
     return requests.get(
         url,
         proxies=PROXIES,

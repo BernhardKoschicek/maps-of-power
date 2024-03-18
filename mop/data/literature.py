@@ -14,7 +14,7 @@ literatures = [{
     'external_link': '',
     'download': '',
     'category': ['holdura']
-},{
+}, {
     'author':
         'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
     'title':
@@ -30,7 +30,7 @@ literatures = [{
     'external_link': '',
     'download': '',
     'category': ['mop']
-},{
+}, {
     'author':
         'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
     'title':
@@ -43,7 +43,7 @@ literatures = [{
     'external_link': '',
     'download': 'DVargovaBVranesevicMPopovic_To_Put_the_Church_on_the_Map.pdf',
     'category': ['holdura']
-},{
+}, {
     'author':
         'Katrin Haase',
     'title':
@@ -56,7 +56,7 @@ literatures = [{
     'external_link': 'https://wbg-zeitschriften.de/produkt/die-iberer/',
     'download': '',
     'category': ['holdura']
-},{
+}, {
     'author':
         'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
     'title':
@@ -70,7 +70,7 @@ literatures = [{
     'external_link': '',
     'download': 'MPopovicBVranesevicDVargova_SacredLandscapeDukljaRaska.pdf',
     'category': ['holdura']
-},{
+}, {
     'author':
         'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
         + _('eds.'),

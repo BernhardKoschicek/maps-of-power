@@ -8,7 +8,8 @@ from werkzeug.utils import redirect
 
 from mop.model.api_calls import get_entities_linked_to_entity
 from mop.model.entity import Entity
-from mop.model.explore import view_classes, get_oa_by_view_class, system_classes
+from mop.model.explore import (
+    view_classes, get_oa_by_view_class, system_classes)
 from mop import app
 from mop.data.events import event_list
 from mop.data.histgeo import newsletters, volumes, lectures
@@ -17,8 +18,9 @@ from mop.data.literature import literatures
 from mop.data.presentations import presentations
 from mop.data.projects.projects import project_data
 from mop.display.image import image_gallery
-from mop.util import get_dict_entries_by_category, get_relations, \
-    get_relation_entities, get_related_geoms, get_types_sorted
+from mop.util import (
+    get_dict_entries_by_category, get_relations, get_relation_entities,
+    get_related_geoms, get_types_sorted)
 
 
 @app.route('/')
@@ -88,10 +90,10 @@ def projects(title: Optional[str] = None) -> str:
 @app.route('/projects')
 @app.route('/projects/<project>/explore/<view>')
 def project_explore_table(project: str, view: str) -> str:
-    data = False
+    data = []
     try:
         data = get_oa_by_view_class(view, project_data[project]['oaID'])
-    except:
+    except Exception:
         pass
     return render_template(
         'explore/project_explore_table.html',

@@ -42,7 +42,7 @@ def inject_menu() -> dict[str, Any]:
 def get_dict_entries_by_category(
         categories: Union[list[str], str],
         list_: list[dict[str, Any]]) -> list[dict[str, str]]:
-    categories = [categories] if type(categories) == str else categories
+    categories = [categories] if isinstance(categories, str) else categories
     return [entry for entry in list_
             if any(item in categories for item in entry['category'])]
 
@@ -64,14 +64,14 @@ def get_relation_entities(
     for relation in relations:
         (linked_entities[relation['relationTo'].rsplit('/', 1)[-1]].
          update(relation))
-    list_ = [value for value in linked_entities.values()]
+    list_ = list(linked_entities.values())
     return [Relation(entity) for entity in list_]
 
 
 def get_types_sorted(types: list[Types]) -> Optional[dict[str, Any]]:
     if not types:
         return None
-    type_hierarchy = {}
+    type_hierarchy: dict[str, Any] = {}
     for type_ in types:
         type_hierarchy.setdefault(type_.root, []).append(type_)
     return type_hierarchy
@@ -79,35 +79,32 @@ def get_types_sorted(types: list[Types]) -> Optional[dict[str, Any]]:
 
 def get_relations(
         relations: list[Relation]) -> dict[str, list[Relation]]:
-    relation_dict = {}
+    relation_dict: dict[str, Any] = {}
     for relation in relations:
-        if relation.relation_system_class in \
-                ['file', 'appellation',
-                 'object_location', 'reference_system']:
-            continue
-        elif relation.relation_system_class == 'type':
-            relation_dict.setdefault('types', []).append(relation)
-        elif relation.relation_system_class == 'source':
-            relation_dict.setdefault('sources', []).append(relation)
-        elif relation.relation_system_class == 'source_translation':
-            (relation_dict.setdefault('source_translations', [])
-             .append(relation))
-        elif relation.relation_system_class in \
-                ['place', 'feature', 'stratigraphic_unit']:
-            relation_dict.setdefault('places', []).append(relation)
-        elif relation.relation_system_class == 'administrative_unit':
-            relation_dict.setdefault(
-                'administrative_unit', []).append(relation)
-        elif relation.relation_system_class in ['artifact', 'human_remains']:
-            relation_dict.setdefault('artifacts', []).append(relation)
-        elif relation.relation_system_class in \
-                ['bibliography', 'edition', 'external_reference']:
-            relation_dict.setdefault('references', []).append(relation)
-        elif relation.relation_system_class in \
-                ['acquisition', 'activity', 'event', 'move', 'production']:
-            relation_dict.setdefault('events', []).append(relation)
-        elif relation.relation_system_class in ['group', 'person']:
-            relation_dict.setdefault('actors', []).append(relation)
-        else:
-            relation_dict.setdefault('others', []).append(relation)
+        match relation.relation_system_class:
+            case 'file' | 'appellation' | \
+                 'object_location' | 'reference_system':
+                continue
+            case 'type':
+                relation_dict.setdefault('types', []).append(relation)
+            case 'source':
+                relation_dict.setdefault('sources', []).append(relation)
+            case 'source_translation':
+                (relation_dict.setdefault('source_translations', [])
+                 .append(relation))
+            case 'place' | 'feature' | 'stratigraphic_unit':
+                relation_dict.setdefault('places', []).append(relation)
+            case 'administrative_unit':
+                relation_dict.setdefault('administrative_unit', []).append(
+                    relation)
+            case 'artifact' | 'human_remains':
+                relation_dict.setdefault('artifacts', []).append(relation)
+            case 'bibliography' | 'edition' | 'external_reference':
+                relation_dict.setdefault('references', []).append(relation)
+            case 'acquisition' | 'activity' | 'event' | 'move' | 'production':
+                relation_dict.setdefault('events', []).append(relation)
+            case 'group' | 'person':
+                relation_dict.setdefault('actors', []).append(relation)
+            case _:
+                relation_dict.setdefault('others', []).append(relation)
     return relation_dict

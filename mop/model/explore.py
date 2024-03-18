@@ -1,3 +1,5 @@
+from typing import Optional
+
 from flask_babel import lazy_gettext as _
 
 from mop.model.api_calls import get_view_class
@@ -50,11 +52,11 @@ system_classes = {
 }
 
 
-def get_oa_by_view_class(view: str, project_id: object) -> list[Entity]:
-    if view not in view_classes:
-        return []
-    data = [Entity(entry['features'][0])
-            for entry in get_view_class(
+def get_oa_by_view_class(
+        view: str,
+        project_id: object) -> list[Optional[Entity]]:
+    return [] if view not in view_classes else \
+        [Entity(entry['features'][0])
+         for entry in get_view_class(
             f'{view}?limit=0&'
             f'show=description&type_id={project_id}')]
-    return data
