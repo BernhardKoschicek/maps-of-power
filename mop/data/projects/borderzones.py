@@ -4,18 +4,13 @@ from mop.data.institutes import institutes
 from mop.util import get_dates_formatted
 
 results = {
-    'text': [_('map_application_text')],
+    'text': [],
     'list': [],
     'icons': [{
         'label': _('Final project report'),
         'link': None,
         'file': 'FWF_P 30384-G28_Final_Report.pdf',
         'icon': 'bi bi-journals',
-    }, {
-        'label': 'Maps of Power',
-        'link': '',
-        'file': None,
-        'icon': 'bi bi-map-fill',
     }]}
 
 images = [

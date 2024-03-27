@@ -9,6 +9,11 @@ results = {
     ],
     'list': [],
     'icons': [{
+        'label': _('Final project report'),
+        'link': None,
+        'file': 'FWF_DFG_I 4330_Final Report.pdf',
+        'icon': 'bi bi-journals',
+    },{
         'label': _("relief map of Montenegro"),
         'link': 'https://tib.oeaw.ac.at/static/3dhop/relief.html',
         'file': None,
