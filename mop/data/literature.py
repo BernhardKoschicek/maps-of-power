@@ -16,7 +16,7 @@ literatures = [{
     'category': ['holdura']
 }, {
     'author':
-        'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
+        'Mihailo St. Popović',
     'title':
         'Byzantium and the Balkans in the Middle Ages through the Looking '
         'Glass of Historical Geography (Romanian Academy, Institute of '
@@ -26,7 +26,7 @@ literatures = [{
         '„Carol I“)',
     'locations': [_('Bucharest'), _('Brăila')],
     'date': '2023',
-    'pages': '',
+    'pages': '337',
     'external_link': '',
     'download': '',
     'category': ['mop']
@@ -78,10 +78,10 @@ literatures = [{
         'Der den Kordax tanzt: Hommage an Johannes Koder und seine '
         'Forschungen über Byzanz und den Balkan',
     'locations': [_('Leipzig')],
-    'date': '',
-    'pages': '',
+    'date': '2024',
+    'pages': '176',
     'external_link': '',
-    'download': '',
+    'download': 'Festschrift_Johannes_Koder.pdf',
     'category': ['mop']
 }, {
     'author': 'Branka Vranešević',

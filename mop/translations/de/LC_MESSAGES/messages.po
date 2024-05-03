@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-12 12:44+0100\n"
-"PO-Revision-Date: 2024-03-12 12:46+0100\n"
+"POT-Creation-Date: 2024-05-03 10:37+0200\n"
+"PO-Revision-Date: 2024-05-03 10:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -61,10 +61,30 @@ msgid "blogpost"
 msgstr "blogpost"
 
 #: mop/data/events.py:38
+msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
+msgstr "Überreichung einer Festschrift an Johannes Koder"
+
+#: mop/data/events.py:39
+msgid "koder_festschrift_230424"
+msgstr ""
+"Aus Anlaß des 80. Geburtstags von Professor Johannes Koder brachten Freunde, "
+"Wegbegleiter, Schüler und Kollegen eine Festschrift mit dem Titel „Der den "
+"Kordax tanzt: Hommage an Johannes Koder und seine Forschungen über Byzanz und "
+"den Balkan“ am 23. April 2024 in Wien dar, deren Beiträge sich inhaltlich auf "
+"die Forschungsinteressen des Jubilars beziehen. Aus diesem Grunde finden sich in "
+"diesem Band archäologische, toponomastische, historische, philologische, "
+"historisch-geographische und kunsthistorische Themen. Weiterführende "
+"Informationen zum Buch unter: <a href=\"https://eudora-verlag.de/de/product/der-"
+"den-kodax-tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-vratislav-"
+"zervan-ralf-c-mueller/\" target=\"_blank\">https://eudora-verlag.de/de/product/"
+"der-den-kodax-tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-vratislav-"
+"zervan-ralf-c-mueller/</a>"
+
+#: mop/data/events.py:49
 msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr "Zwei Vorträge über die Nützlichkeit von OpenAtlas"
 
-#: mop/data/events.py:39
+#: mop/data/events.py:50
 msgid "belgrade_190923"
 msgstr ""
 "Am 19. September 2023 haben Bernhard Koschiček-Krombholz und Mihailo St. Popović "
@@ -77,11 +97,11 @@ msgstr ""
 "Zentralbalkan (Ende 10. - Mitte 13. Jahrhundert)“ zu Aspekten der Digital "
 "Humanities aus."
 
-#: mop/data/events.py:49
+#: mop/data/events.py:60
 msgid "Workshop on Medieval Athos in Oxford"
 msgstr "Workshop über den mittelalterlichen Athos in Oxford"
 
-#: mop/data/events.py:50
+#: mop/data/events.py:61
 msgid "athos_oxford_290923"
 msgstr ""
 "Am 29. September 2023 hielt Mihailo St. Popović einen Vortrag mit dem Titel "
@@ -90,11 +110,11 @@ msgstr ""
 "Rahmen des Workshops „A Special Relationship? Gender on Medieval Mount Athos“ in "
 "Oxford, Großbritannien."
 
-#: mop/data/events.py:60
+#: mop/data/events.py:71
 msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr "Vortrag über die Krone des Heiligen Königs Stefan Dečanski"
 
-#: mop/data/events.py:61
+#: mop/data/events.py:72
 msgid "tripps_070923"
 msgstr ""
 "Professor Dr. Johannes Tripps (Hochschule für Technik, Wirtschaft und Kultur "
@@ -106,11 +126,11 @@ msgstr ""
 "@MapsOfPower\" target=\"_blank\" class=\"link-primary\">https://www.youtube.com/"
 "@MapsOfPower</a>"
 
-#: mop/data/events.py:71
+#: mop/data/events.py:82
 msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr "TIB Balkan auf dem IMC Leeds 2023"
 
-#: mop/data/events.py:72
+#: mop/data/events.py:83
 msgid "imc_leeds_23"
 msgstr ""
 "MitarbeiterInnen des Teams TIB Balkan haben gemeinsam mit KollegInnen des "
@@ -121,11 +141,11 @@ msgstr ""
 "across Medieval Space, Objects, and Data“ am 6. Juli 2023 beim IMC Leeds "
 "präsentiert."
 
-#: mop/data/events.py:82
+#: mop/data/events.py:93
 msgid "presentation on MECERN conference"
 msgstr "Präsentation auf der MECERN-Konferenz"
 
-#: mop/data/events.py:83
+#: mop/data/events.py:94
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan und Mihailo Popović haben an der MECERN Konferenz „Continuity "
@@ -133,11 +153,11 @@ msgstr ""
 "und einen gemeinsamen Vortrag über „The Hagiogeography of Saint Archangel "
 "Michael in the Balkans and Central Europe in Medieval Times“ gehalten."
 
-#: mop/data/events.py:93
+#: mop/data/events.py:104
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "Präsentation in der Serbischen Akademie der Wissenschaften und Künste"
 
-#: mop/data/events.py:94
+#: mop/data/events.py:105
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović wurde vom Institut für Byzantinistik der Serbischen Akademie der "
@@ -680,21 +700,12 @@ msgstr ""
 "Gebiet der Byzantinistik und der Geschichte des mittelalterlichen Balkans von "
 "Nutzen sein. "
 
-#: mop/data/projects/borderzones.py:7
-msgid "map_application_text"
-msgstr ""
-"Das Frontend „Maps of Power: Historical Atlas of Places, Borderzones and "
-"Migration Dynamics in Byzantium (TIB Balkans)“ ist derzeit aus technischen "
-"Gründen nicht abrufbar, weil derzeit eine Version 2.0 programmiert wird. Diese "
-"neue Version wird den Namen „Maps of Power“ haben und im Herbst 2023 online "
-"gehen. Für weiterführende Informationen: <a href=\"maps-of-power.oeaw.ac.at\" "
-"target=\"_blank\">maps-of-power.oeaw.ac.at</a>"
-
-#: mop/data/projects/borderzones.py:10 mop/data/projects/vlachs.py:10
+#: mop/data/projects/borderzones.py:10 mop/data/projects/holdura.py:12
+#: mop/data/projects/vlachs.py:10
 msgid "Final project report"
 msgstr "Projektabschlussbericht"
 
-#: mop/data/projects/borderzones.py:24
+#: mop/data/projects/borderzones.py:19
 msgid ""
 "Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from "
 "Different Authors"
@@ -702,32 +713,32 @@ msgstr ""
 "Interpretation der byzantinisch-serbischen Grenze zwischen 1228 und 1334 durch "
 "verschiedene Autoren"
 
-#: mop/data/projects/borderzones.py:31
+#: mop/data/projects/borderzones.py:26
 msgid "Fortifications in the Northern Macedonian Region in the 13/14th century"
 msgstr "Festungsanlagen in der nordmakedonischen Region im 13/14. Jahrhundert"
 
-#: mop/data/projects/borderzones.py:38
+#: mop/data/projects/borderzones.py:33
 msgid "Road Model based on a k. u k. Marching Map"
 msgstr "Straßenmodell basierend auf einer k. u k. Marschkarte"
 
-#: mop/data/projects/borderzones.py:43
+#: mop/data/projects/borderzones.py:38
 msgid ""
 "Markovi Kuli Castle near Prilep from the south, Republic of Northern Macedonia"
 msgstr "Die Burg Markovi Kuli bei Prilep von Süden, Republik Nordmazedonien"
 
-#: mop/data/projects/borderzones.py:51
+#: mop/data/projects/borderzones.py:46
 msgid "The Kale elevation in Skopje, Republic of Northern Macedonia"
 msgstr "Die Erhebung Kale in Skopje, Republik Nordmazedonien"
 
-#: mop/data/projects/borderzones.py:58
+#: mop/data/projects/borderzones.py:53
 msgid "The old city gate of Ohrid, Republic of Northern Macedonia"
 msgstr "Das alte Stadttor von Ohrid, Republik Nordmazedonien"
 
-#: mop/data/projects/borderzones.py:65
+#: mop/data/projects/borderzones.py:60
 msgid "Ohrid and Samuilova tvrdina Castle, Republic of Northern Macedonia"
 msgstr "Ohrid und die Burg Samuilova tvrdina, Republik Nordmazedonien"
 
-#: mop/data/projects/borderzones.py:74
+#: mop/data/projects/borderzones.py:69
 msgid ""
 "Byzantino-Serbian Border Zones in Transition: Migration and Elite Change in pre-"
 "Ottoman Macedonia (1282–1355)"
@@ -735,7 +746,7 @@ msgstr ""
 "Byzantinisch-serbische Grenzregionen im Wandel: Migration und Elitenwechsel im "
 "vorosmanischen Mazedonien (1282-1355)"
 
-#: mop/data/projects/borderzones.py:86
+#: mop/data/projects/borderzones.py:81
 msgid "borderzones_description_1"
 msgstr ""
 "Der europäische Kontinent als Ganzes und die Europäische Union im Besonderen "
@@ -750,7 +761,7 @@ msgstr ""
 "Dynamik der Grenzen prägt gleichzeitig die Dynamik der Siedlungsmuster und der "
 "Verkehrsnetze."
 
-#: mop/data/projects/borderzones.py:87
+#: mop/data/projects/borderzones.py:82
 msgid "borderzones_description_2"
 msgstr ""
 "Das jeweilige Einzelprojekt konzentriert sich auf die Grenzen des byzantinischen "
@@ -766,7 +777,7 @@ msgstr ""
 "insbesondere in fünf ausgewählten Zielgebieten (Strumica-Tal, Lesnovo, Skopje, "
 "Ohrid, Prilep)."
 
-#: mop/data/projects/borderzones.py:88
+#: mop/data/projects/borderzones.py:83
 msgid "borderzones_description_3"
 msgstr ""
 "Obwohl umfangreiche Publikationen zur Bevölkerung und zur Migration im "
@@ -777,7 +788,7 @@ msgstr ""
 "Byzantium and the Medieval Serbian Oecumene\" und \"Cross-Border Societies and "
 "Elite Change in Byzantine Macedonia\"."
 
-#: mop/data/projects/borderzones.py:89
+#: mop/data/projects/borderzones.py:84
 msgid "borderzones_description_4"
 msgstr ""
 "Den Ausgangspunkt bilden die mittelalterlichen Schriftquellen, d.h. serbische "
@@ -801,11 +812,11 @@ msgstr ""
 "erstellt: <a href=\"https://map.geo.univie.ac.at/bew/\" target=\"_blank\" "
 "class=\"link-primary\">https://map.geo.univie.ac.at/bew/</a>"
 
-#: mop/data/projects/holdura.py:12
+#: mop/data/projects/holdura.py:17
 msgid "relief map of Montenegro"
 msgstr "Reliefkarte von Montenegro"
 
-#: mop/data/projects/holdura.py:21
+#: mop/data/projects/holdura.py:26
 msgid ""
 "Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
 "Basilica B and cruciform church, Republic of Montenegro"
@@ -813,7 +824,7 @@ msgstr ""
 "Vogelperspektive der archäologischen Grabung Doclea, A: Basilika A, B: Basilika "
 "B und kreuzförmige Kirche, Republik Montenegro"
 
-#: mop/data/projects/holdura.py:28
+#: mop/data/projects/holdura.py:33
 msgid ""
 "Bird's eye view of the Doclea archaeological excavation, the western part of the "
 "city in the foreground, Republic of Montenegro"
@@ -821,7 +832,7 @@ msgstr ""
 "Vogelperspektive der archäologischen Grabung Doclea, der westliche Teil der "
 "Stadt im Vordergrund, Republik Montenegro"
 
-#: mop/data/projects/holdura.py:35
+#: mop/data/projects/holdura.py:40
 msgid ""
 "The monastery of Sveti Nikola Vranjina (in the centre of the picture) on Lake "
 "Skadar, Republic of Montenegro"
@@ -829,7 +840,7 @@ msgstr ""
 "Das Kloster Sveti Nikola Vranjina (in der Bildmitte) am Skadar See, Republik "
 "Montenegro"
 
-#: mop/data/projects/holdura.py:42
+#: mop/data/projects/holdura.py:47
 msgid ""
 "The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
 "the town of Bar, Republic of Montenegro."
@@ -837,7 +848,7 @@ msgstr ""
 "Das vormals lateinische (katholische) Kloster Ratac aus dem 12./13. Jh. bei der "
 "Stadt Bar, Republik Montenegro."
 
-#: mop/data/projects/holdura.py:51
+#: mop/data/projects/holdura.py:56
 msgid ""
 "Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
 "\"Raška\" through Space and Time (11th-14th Cent.)"
@@ -845,7 +856,7 @@ msgstr ""
 "Jenseits von Ost und West: Geokommunikation der heiligen Landschaften \"Duklja\" "
 "und \"Raška\" durch Raum und Zeit (11.-14. Jh.)"
 
-#: mop/data/projects/holdura.py:68
+#: mop/data/projects/holdura.py:73
 msgid "holdura_description_1"
 msgstr ""
 "Im aktuellen Diskurs über die Integration der westlichen Balkanstaaten in die "
@@ -856,7 +867,7 @@ msgstr ""
 "wichtige Rolle in den strategischen und administrativen Überlegungen des "
 "byzantinischen Reiches spielte."
 
-#: mop/data/projects/holdura.py:69
+#: mop/data/projects/holdura.py:74
 msgid "holdura_description_2"
 msgstr ""
 "Das Projekt basiert auf einer wissenschaftlichen Zusammenarbeit zwischen den "
@@ -869,13 +880,13 @@ msgstr ""
 "der Kunstgeschichte und der Geokommunikation sowohl der Wissenschaft als auch "
 "der interessierten Öffentlichkeit vermitteln wollen."
 
-#: mop/data/projects/holdura.py:70
+#: mop/data/projects/holdura.py:75
 msgid "holdura_description_3"
 msgstr ""
 "Daher zielt das Projekt darauf ab, die folgenden drei Hauptfragen systematisch "
 "anzugehen und zu untersuchen:"
 
-#: mop/data/projects/holdura.py:71
+#: mop/data/projects/holdura.py:76
 msgid "holdura_description_4"
 msgstr ""
 "(1) Auf welche Weise interagierten die lokalen Herrscher und die Kirchen von Rom "
@@ -884,14 +895,14 @@ msgstr ""
 "der Monumente (d.h. der Kirchen und Klöster) in dieser \"Heiligen Landschaft\" "
 "wider?"
 
-#: mop/data/projects/holdura.py:72
+#: mop/data/projects/holdura.py:77
 msgid "holdura_description_5"
 msgstr ""
 "(2) Wirkte sich die schwankende Religionszugehörigkeit der lokalen Herrscher auf "
 "die \"Sakrale Landschaft\" aus und wo wurden lateinische oder byzantinische "
 "Kultstätten im Laufe der Zeit umgewandelt oder überlagert?"
 
-#: mop/data/projects/holdura.py:73
+#: mop/data/projects/holdura.py:78
 msgid "holdura_description_6"
 msgstr ""
 "(3) Lässt sich der religiöse und kulturelle Einfluss des lateinischen und "
@@ -908,7 +919,7 @@ msgstr ""
 "<a href=\"https://map.geo.univie.ac.at/bew/\" class=\"link-primary\">Online-"
 "Kartenanwendung</a> erreicht."
 
-#: mop/data/projects/holdura.py:74
+#: mop/data/projects/holdura.py:79
 msgid "holdura_description_7"
 msgstr ""
 "Das Projekt ist ausschließlich durch einen multidisziplinären Ansatz und die "
@@ -1082,51 +1093,51 @@ msgstr ""
 "Interpretationsebene erreicht und die Aufnahme der erarbeiteten Daten in die "
 "\"Maps of Power\" Datenbank vorbereitet werden kann."
 
-#: mop/model/explore.py:8
+#: mop/model/explore.py:10
 msgid "Actors"
 msgstr "Akteure"
 
-#: mop/model/explore.py:9
+#: mop/model/explore.py:11
 msgid "Persons and Groups"
 msgstr "Personen und Gruppen"
 
-#: mop/model/explore.py:11
+#: mop/model/explore.py:13
 msgid "Places"
 msgstr "Orte"
 
-#: mop/model/explore.py:12
+#: mop/model/explore.py:14
 msgid "Physical places and their locations"
 msgstr "Physische Orte und ihre Lage"
 
-#: mop/model/explore.py:14
+#: mop/model/explore.py:16
 msgid "Events"
 msgstr "Eeignisse"
 
-#: mop/model/explore.py:15
+#: mop/model/explore.py:17
 msgid "Linking places and actors"
 msgstr "Verknüpfung von Orten und Akteuren"
 
-#: mop/model/explore.py:17
+#: mop/model/explore.py:19
 msgid "Sources"
 msgstr "Quellen"
 
-#: mop/model/explore.py:18
+#: mop/model/explore.py:20
 msgid "Documents, manuscripts, etc."
 msgstr "Dokumente, Manuskripte, usw."
 
-#: mop/model/explore.py:20
+#: mop/model/explore.py:22
 msgid "References"
 msgstr "Referenzen"
 
-#: mop/model/explore.py:21
+#: mop/model/explore.py:23
 msgid "Research literature"
 msgstr "Forschungsliteratur"
 
-#: mop/model/explore.py:23
+#: mop/model/explore.py:25
 msgid "Artefacts"
 msgstr "Artefakte"
 
-#: mop/model/explore.py:24
+#: mop/model/explore.py:26
 msgid "Physical objects"
 msgstr "Physische Objekte"
 
@@ -1704,3 +1715,12 @@ msgstr "Klasse"
 
 #~ msgid "Belgrad"
 #~ msgstr "Belgrad"
+
+#~ msgid "map_application_text"
+#~ msgstr ""
+#~ "Das Frontend „Maps of Power: Historical Atlas of Places, Borderzones and "
+#~ "Migration Dynamics in Byzantium (TIB Balkans)“ ist derzeit aus technischen "
+#~ "Gründen nicht abrufbar, weil derzeit eine Version 2.0 programmiert wird. "
+#~ "Diese neue Version wird den Namen „Maps of Power“ haben und im Herbst 2023 "
+#~ "online gehen. Für weiterführende Informationen: <a href=\"maps-of-power.oeaw."
+#~ "ac.at\" target=\"_blank\">maps-of-power.oeaw.ac.at</a>"

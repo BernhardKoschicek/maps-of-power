@@ -10,7 +10,7 @@ PROXIES = {
     "https": app.config['API_PROXY']}
 
 
-def get_view_class(parameter: str)-> list[dict[str, Any]]:
+def get_view_class(parameter: str) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/view_class/"
     return requests.get(
         f"{url}{parameter}",
@@ -26,7 +26,7 @@ def system_class_results(parameter: str) -> list[dict[str, Any]]:
         timeout=30).json()['results']
 
 
-def get_typed_entities_all_results(id_: int)-> list[dict[str, Any]]:
+def get_typed_entities_all_results(id_: int) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/type_entities_all/"
     return requests.get(
         f"{url}{id_}",
@@ -45,7 +45,7 @@ def get_type_tree() -> List[TypeTree]:
 
 def get_entities_linked_to_entity(
         id_: int,
-        show: Optional[List[str]] = None)-> list[dict[str, Any]]:
+        show: Optional[List[str]] = None) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/entities_linked_to_entity/"
     show_ = ''.join([f'&show={value}' for value in show] if show else '')
     return requests.get(

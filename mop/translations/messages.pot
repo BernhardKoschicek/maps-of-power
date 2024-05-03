@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-12 12:44+0100\n"
+"POT-Creation-Date: 2024-05-03 10:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,50 +59,58 @@ msgid "blogpost"
 msgstr ""
 
 #: mop/data/events.py:38
-msgid "Two Presentations on the Usefulness of OpenAtlas"
+msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
 msgstr ""
 
 #: mop/data/events.py:39
-msgid "belgrade_190923"
+msgid "koder_festschrift_230424"
 msgstr ""
 
 #: mop/data/events.py:49
-msgid "Workshop on Medieval Athos in Oxford"
+msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr ""
 
 #: mop/data/events.py:50
-msgid "athos_oxford_290923"
+msgid "belgrade_190923"
 msgstr ""
 
 #: mop/data/events.py:60
-msgid "Paper on the Crown of the Saint King Stefan Dečanski"
+msgid "Workshop on Medieval Athos in Oxford"
 msgstr ""
 
 #: mop/data/events.py:61
-msgid "tripps_070923"
+msgid "athos_oxford_290923"
 msgstr ""
 
 #: mop/data/events.py:71
-msgid "TIB Balkans at the IMC Leeds 2023"
+msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr ""
 
 #: mop/data/events.py:72
-msgid "imc_leeds_23"
+msgid "tripps_070923"
 msgstr ""
 
 #: mop/data/events.py:82
-msgid "presentation on MECERN conference"
+msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr ""
 
 #: mop/data/events.py:83
-msgid "mecern_2023"
+msgid "imc_leeds_23"
 msgstr ""
 
 #: mop/data/events.py:93
-msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgid "presentation on MECERN conference"
 msgstr ""
 
 #: mop/data/events.py:94
+msgid "mecern_2023"
+msgstr ""
+
+#: mop/data/events.py:104
+msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgstr ""
+
+#: mop/data/events.py:105
 msgid "serbian_academy_220223"
 msgstr ""
 
@@ -416,65 +424,62 @@ msgstr ""
 msgid "barbyz_description_6"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:7
-msgid "map_application_text"
-msgstr ""
-
-#: mop/data/projects/borderzones.py:10 mop/data/projects/vlachs.py:10
+#: mop/data/projects/borderzones.py:10 mop/data/projects/holdura.py:12
+#: mop/data/projects/vlachs.py:10
 msgid "Final project report"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:24
+#: mop/data/projects/borderzones.py:19
 msgid ""
 "Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from"
 " Different Authors"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:31
+#: mop/data/projects/borderzones.py:26
 msgid "Fortifications in the Northern Macedonian Region in the 13/14th century"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:38
+#: mop/data/projects/borderzones.py:33
 msgid "Road Model based on a k. u k. Marching Map"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:43
+#: mop/data/projects/borderzones.py:38
 msgid ""
 "Markovi Kuli Castle near Prilep from the south, Republic of Northern "
 "Macedonia"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:51
+#: mop/data/projects/borderzones.py:46
 msgid "The Kale elevation in Skopje, Republic of Northern Macedonia"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:58
+#: mop/data/projects/borderzones.py:53
 msgid "The old city gate of Ohrid, Republic of Northern Macedonia"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:65
+#: mop/data/projects/borderzones.py:60
 msgid "Ohrid and Samuilova tvrdina Castle, Republic of Northern Macedonia"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:74
+#: mop/data/projects/borderzones.py:69
 msgid ""
 "Byzantino-Serbian Border Zones in Transition: Migration and Elite Change "
 "in pre-Ottoman Macedonia (1282–1355)"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:86
+#: mop/data/projects/borderzones.py:81
 msgid "borderzones_description_1"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:87
+#: mop/data/projects/borderzones.py:82
 msgid "borderzones_description_2"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:88
+#: mop/data/projects/borderzones.py:83
 msgid "borderzones_description_3"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:89
+#: mop/data/projects/borderzones.py:84
 msgid "borderzones_description_4"
 msgstr ""
 
@@ -482,65 +487,65 @@ msgstr ""
 msgid "holdura_result_text_1"
 msgstr ""
 
-#: mop/data/projects/holdura.py:12
+#: mop/data/projects/holdura.py:17
 msgid "relief map of Montenegro"
 msgstr ""
 
-#: mop/data/projects/holdura.py:21
+#: mop/data/projects/holdura.py:26
 msgid ""
 "Bird's eye view of the Doclea archaeological excavation, A: Basilica A, "
 "B: Basilica B and cruciform church, Republic of Montenegro"
 msgstr ""
 
-#: mop/data/projects/holdura.py:28
+#: mop/data/projects/holdura.py:33
 msgid ""
 "Bird's eye view of the Doclea archaeological excavation, the western part"
 " of the city in the foreground, Republic of Montenegro"
 msgstr ""
 
-#: mop/data/projects/holdura.py:35
+#: mop/data/projects/holdura.py:40
 msgid ""
 "The monastery of Sveti Nikola Vranjina (in the centre of the picture) on "
 "Lake Skadar, Republic of Montenegro"
 msgstr ""
 
-#: mop/data/projects/holdura.py:42
+#: mop/data/projects/holdura.py:47
 msgid ""
 "The former Latin (Catholic) monastery of Ratac from the 12th/13th century"
 " near the town of Bar, Republic of Montenegro."
 msgstr ""
 
-#: mop/data/projects/holdura.py:51
+#: mop/data/projects/holdura.py:56
 msgid ""
 "Beyond East and West: Geocommunicating the Sacred Landscapes of "
 "\"Duklja\" and \"Raška\" through Space and Time (11th-14th Cent.)"
 msgstr ""
 
-#: mop/data/projects/holdura.py:68
+#: mop/data/projects/holdura.py:73
 msgid "holdura_description_1"
 msgstr ""
 
-#: mop/data/projects/holdura.py:69
+#: mop/data/projects/holdura.py:74
 msgid "holdura_description_2"
 msgstr ""
 
-#: mop/data/projects/holdura.py:70
+#: mop/data/projects/holdura.py:75
 msgid "holdura_description_3"
 msgstr ""
 
-#: mop/data/projects/holdura.py:71
+#: mop/data/projects/holdura.py:76
 msgid "holdura_description_4"
 msgstr ""
 
-#: mop/data/projects/holdura.py:72
+#: mop/data/projects/holdura.py:77
 msgid "holdura_description_5"
 msgstr ""
 
-#: mop/data/projects/holdura.py:73
+#: mop/data/projects/holdura.py:78
 msgid "holdura_description_6"
 msgstr ""
 
-#: mop/data/projects/holdura.py:74
+#: mop/data/projects/holdura.py:79
 msgid "holdura_description_7"
 msgstr ""
 
@@ -633,51 +638,51 @@ msgstr ""
 msgid "vlachs_description_2"
 msgstr ""
 
-#: mop/model/explore.py:8
+#: mop/model/explore.py:10
 msgid "Actors"
 msgstr ""
 
-#: mop/model/explore.py:9
+#: mop/model/explore.py:11
 msgid "Persons and Groups"
 msgstr ""
 
-#: mop/model/explore.py:11
+#: mop/model/explore.py:13
 msgid "Places"
 msgstr ""
 
-#: mop/model/explore.py:12
+#: mop/model/explore.py:14
 msgid "Physical places and their locations"
 msgstr ""
 
-#: mop/model/explore.py:14
+#: mop/model/explore.py:16
 msgid "Events"
 msgstr ""
 
-#: mop/model/explore.py:15
+#: mop/model/explore.py:17
 msgid "Linking places and actors"
 msgstr ""
 
-#: mop/model/explore.py:17
+#: mop/model/explore.py:19
 msgid "Sources"
 msgstr ""
 
-#: mop/model/explore.py:18
+#: mop/model/explore.py:20
 msgid "Documents, manuscripts, etc."
 msgstr ""
 
-#: mop/model/explore.py:20
+#: mop/model/explore.py:22
 msgid "References"
 msgstr ""
 
-#: mop/model/explore.py:21
+#: mop/model/explore.py:23
 msgid "Research literature"
 msgstr ""
 
-#: mop/model/explore.py:23
+#: mop/model/explore.py:25
 msgid "Artefacts"
 msgstr ""
 
-#: mop/model/explore.py:24
+#: mop/model/explore.py:26
 msgid "Physical objects"
 msgstr ""
 

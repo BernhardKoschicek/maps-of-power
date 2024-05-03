@@ -30,6 +30,17 @@ types = {
     },
 }
 event_list = [{
+    'id': 'koder_festschrift_230424',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2024, 4, 23)}",
+    'who': '',
+    'icon': 'koder_festschrift_230424.jpg',
+    'title': _('Presentation of an Edited Volume in Honor of Johannes Koder'),
+    'description': _('koder_festschrift_230424'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
     'id': 'belgrade_190923',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 9, 19)}",
