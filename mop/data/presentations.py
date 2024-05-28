@@ -4,6 +4,16 @@ from mop.util import get_table_dates_formatted
 
 presentations = [{
     'presenter': 'Mihailo St. Popović',
+    'title': ' Wie die Byzantinistik Denkmalschutz betreibt … '
+             '(Posterpräsentation/Poster Session)',
+    'conference': 'Lange Nacht der Forschung 2024',
+    'location': [_('Vienna')],
+    'date': get_table_dates_formatted(2024, 5, 24),
+    'external_link': '',
+    'download': '',
+    'category': ['barbyz_10-13']
+}, {
+    'presenter': 'Mihailo St. Popović',
     'title': 'Српске племкиње и монаштво у средњем веку: поређење Јелене'
              ' Анжујске и Маре Бранковић у њиховим односима према '
              'бенедиктинцима/фрањевцима и светогорским монасима',
