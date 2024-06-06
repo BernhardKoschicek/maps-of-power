@@ -11,7 +11,7 @@ presentations = [{
     'date': get_table_dates_formatted(2024, 5, 24),
     'external_link': '',
     'download': 'MPopovic_Plakate_LNF.pdf',
-    'category': ['barbyz_10-13']
+    'category': ['tarsr']
 }, {
     'presenter': 'Mihailo St. Popović',
     'title': 'Српске племкиње и монаштво у средњем веку: поређење Јелене'
