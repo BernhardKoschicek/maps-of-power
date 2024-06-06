@@ -10,7 +10,7 @@ presentations = [{
     'location': [_('Vienna')],
     'date': get_table_dates_formatted(2024, 5, 24),
     'external_link': '',
-    'download': '',
+    'download': 'MPopovic_Plakate_LNF.pdf',
     'category': ['barbyz_10-13']
 }, {
     'presenter': 'Mihailo St. Popović',
