@@ -30,8 +30,30 @@ types = {
     },
 }
 event_list = [{
-    'id': 'koder_festschrift_230424',
+    'id': 'workshop_oxford_300524',
+    'type': types['science_fair'],
+    'date': f"{get_dates_formatted(2024, 5, 30)}",
+    'who': '',
+    'icon': 'workshop_oxford_300524.jpg',
+    'title': _('Workshop in Oxford'),
+    'description': _('workshop_oxford_300524'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
+    'id': 'lange_nacht_der_forschung_240524',
     'type': types['presentation'],
+    'date': f"{get_dates_formatted(2024, 5, 24)}",
+    'who': '',
+    'icon': 'lange_nacht_der_forschung_240524.jpg',
+    'title': _('The Long Night of Research in Vienna'),
+    'description': _('lange_nacht_der_forschung_240524'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
+    'id': 'koder_festschrift_230424',
+    'type': types['book_release'],
     'date': f"{get_dates_formatted(2024, 4, 23)}",
     'who': '',
     'icon': 'koder_festschrift_230424.jpg',
