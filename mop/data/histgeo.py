@@ -196,7 +196,7 @@ lectures = {
         'time': '16:00',
         'zoom': 'https://oeaw-ac-at.zoom.us/'
                 'j/63575279089?pwd=bTVnZkEvQ1Y0b2tWMVlJN2VQVHNXQT09',
-        'youtube_code': '',
+        'youtube_code': 'mg2UZHzx410',
         'presenters': [lecturer['gbidaut']],
         'language': _('english'),
         'abstract': [_('lecture_2_1'), _('lecture_2_2')]
