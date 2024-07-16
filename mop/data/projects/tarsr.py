@@ -50,7 +50,7 @@ project_tarsr = {
         f'Ordanče Petrov ({_("Prilep")})',
         f'Filip Markovski ({_("Bitola")})',
         f'Hristijan Petrovski ({_("Skopje")})',
-        f'Dorota Vargová  ({_("Vienna")})',
+        f'Guillaume Bidaut ({_("Paris")})',
         f'Lukas Neugebauer ({_("Vienna")})'],
     'begin': get_dates_formatted(2024, 1, 1),
     'end': get_dates_formatted(2025, 12, 31),

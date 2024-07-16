@@ -4,7 +4,18 @@ from mop.util import get_table_dates_formatted
 
 presentations = [{
     'presenter': 'Mihailo St. Popović',
-    'title': ' Wie die Byzantinistik Denkmalschutz betreibt … '
+    'title': 'A Monumental Crisis in Times of War: Endangered or Researched '
+             'Medieval Cultural Heritage in Macedonia during the First '
+             'World War?',
+    'conference': 'International Medieval Congress',
+    'location': [_('Leeds')],
+    'date': get_table_dates_formatted(2024, 7, 2),
+    'external_link': '',
+    'download': 'MPopovic_Plakate_LNF.pdf',
+    'category': ['tarsr']
+},{
+    'presenter': 'Mihailo St. Popović',
+    'title': 'Wie die Byzantinistik Denkmalschutz betreibt … '
              '(Posterpräsentation/Poster Session)',
     'conference': 'Lange Nacht der Forschung 2024',
     'location': [_('Vienna')],
