@@ -11,7 +11,7 @@ presentations = [{
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2024, 7, 2),
     'external_link': '',
-    'download': 'MPopovic_Plakate_LNF.pdf',
+    'download': '',
     'category': ['tarsr']
 },{
     'presenter': 'Mihailo St. Popović',
