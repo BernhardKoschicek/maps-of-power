@@ -37,6 +37,12 @@ institutes = {
         'logo': 'oeaw.png',
         'member': '',
         'address': ''},
+    'oeai': {
+        'name': 'Austrian Archaeological Institute',
+        'url': 'https://www.oeaw.ac.at/en/oeai/',
+        'logo': 'oeai.jpg',
+        'member': '',
+        'address': ''},
     'imafo': {
         'name': 'Institute for Medieval Research',
         'url': 'https://www.oeaw.ac.at/imafo/',
@@ -66,12 +72,6 @@ institutes = {
         'name': 'Austrian Science Fund',
         'url': 'https://www.fwf.ac.at/',
         'logo': 'fwf.svg',
-        'member': '',
-        'address': ''},
-    'oeai': {
-        'name': 'Austrian Archaeological Institute',
-        'url': 'https://www.oeaw.ac.at/oeai/',
-        'logo': 'oeai.png',
         'member': '',
         'address': ''},
     'oenb': {
@@ -104,6 +104,12 @@ institutes = {
         'name': 'Belgrade City Museum',
         'url': 'http://www.mgb.org.rs/en/',
         'logo': 'bcm.png',
+        'member': '',
+        'address': ''},
+    'bg_uni': {
+        'name': 'University of Belgrade',
+        'url': 'https://www.bg.ac.rs/',
+        'logo': 'belgrad_university.png',
         'member': '',
         'address': ''},
     'nls': {

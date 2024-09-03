@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-06-24 17:01+0200\n"
-"PO-Revision-Date: 2024-06-24 17:06+0200\n"
+"POT-Creation-Date: 2024-09-03 11:28+0200\n"
+"PO-Revision-Date: 2024-09-03 11:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Generator: Poedit 3.4.4\n"
+"Generated-By: Babel 2.10.3\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: mop/util.py:33
 msgid "about"
@@ -534,9 +534,9 @@ msgstr "Bukarest"
 msgid "Brăila"
 msgstr "Brăila"
 
-#: mop/data/literature.py:40 mop/data/literature.py:67 mop/data/presentations.py:22
-#: mop/data/presentations.py:43 mop/data/presentations.py:52
-#: mop/data/presentations.py:119
+#: mop/data/literature.py:40 mop/data/literature.py:67 mop/data/presentations.py:33
+#: mop/data/presentations.py:54 mop/data/presentations.py:63
+#: mop/data/presentations.py:130
 msgid "Belgrade"
 msgstr "Belgrad"
 
@@ -545,7 +545,7 @@ msgid "Darmstadt"
 msgstr "Darmstadt"
 
 #: mop/data/literature.py:80 mop/data/literature.py:102
-#: mop/data/presentations.py:134
+#: mop/data/presentations.py:145
 msgid "Leipzig"
 msgstr "Leipzig"
 
@@ -601,38 +601,39 @@ msgstr "Venedig"
 msgid "exter"
 msgstr "Exeter"
 
-#: mop/data/presentations.py:10 mop/data/presentations.py:159
-#: mop/data/presentations.py:272 mop/data/presentations.py:284
+#: mop/data/presentations.py:11 mop/data/presentations.py:75
+#: mop/data/presentations.py:86 mop/data/presentations.py:96
+#: mop/data/presentations.py:107 mop/data/presentations.py:119
+#: mop/data/presentations.py:194 mop/data/presentations.py:217
+#: mop/data/presentations.py:229 mop/data/presentations.py:240
+#: mop/data/presentations.py:251 mop/data/presentations.py:262
+#: mop/data/presentations.py:272
+msgid "Leeds"
+msgstr "Leeds"
+
+#: mop/data/presentations.py:21 mop/data/presentations.py:170
+#: mop/data/presentations.py:283 mop/data/presentations.py:295
 #: mop/templates/imprint.html:14 mop/templates/layout.html:69
 msgid "Vienna"
 msgstr "Wien"
 
-#: mop/data/presentations.py:21
+#: mop/data/presentations.py:32
 msgid "The Society of the Friends of Holy Mount Athos"
 msgstr "Die Gesellschaft der Freunde des Heiligen Berges Athos"
 
-#: mop/data/presentations.py:34
+#: mop/data/presentations.py:45
 msgid "Oxford"
 msgstr "Oxford"
 
-#: mop/data/presentations.py:64 mop/data/presentations.py:75
-#: mop/data/presentations.py:85 mop/data/presentations.py:96
-#: mop/data/presentations.py:108 mop/data/presentations.py:183
-#: mop/data/presentations.py:206 mop/data/presentations.py:218
-#: mop/data/presentations.py:229 mop/data/presentations.py:240
-#: mop/data/presentations.py:251 mop/data/presentations.py:261
-msgid "Leeds"
-msgstr "Leeds"
-
-#: mop/data/presentations.py:145
+#: mop/data/presentations.py:156
 msgid "Los Angeles"
 msgstr "Los Angeles"
 
-#: mop/data/presentations.py:172
+#: mop/data/presentations.py:183
 msgid "Thessaloniki"
 msgstr "Thessaloniki"
 
-#: mop/data/presentations.py:195
+#: mop/data/presentations.py:206
 msgid "Florenz"
 msgstr "Florenz"
 
@@ -963,6 +964,82 @@ msgstr ""
 "montenegro\" class=\"link-primary\">\"Cultural Heritage in Times of World War I: "
 "Der Fall der österreichisch-ungarischen Reliefkarte von Montenegro "
 "(1916-1918)\"</a>."
+
+#: mop/data/projects/idcew.py:10
+msgid "The Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
+msgstr ""
+"Die Klosterkirche zur Heiligen Dreifaltigkeit in Sopoćani in den 1970er Jahren"
+
+#: mop/data/projects/idcew.py:11 mop/data/projects/idcew.py:17
+#: mop/data/projects/idcew.py:23
+msgid "Photograph Collection \"Dipl. Kfm. Wolfgang Milan (1924-2015)\""
+msgstr "Photosammlung „Dipl. Kfm. Wolfgang Milan (1924-2015)“"
+
+#: mop/data/projects/idcew.py:16
+msgid ""
+"The Apse of the Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
+msgstr ""
+"Die Apsis der Klosterkirche zur Heiligen Dreifaltigkeit in Sopoćani in den "
+"1970er Jahren"
+
+#: mop/data/projects/idcew.py:22
+msgid ""
+"The Church of the Annunciation of the Holy Mother of God in Gradac Monastery in "
+"the 1970s"
+msgstr "Die Klosterkirche Mariä Verkündigung in Gradac in den 1970er Jahren "
+
+#: mop/data/projects/idcew.py:27
+msgid ""
+"The Church of the Annunciation of the Holy Mother of God in Gradac Monastery in "
+"2007"
+msgstr "Die Klosterkirche Mariä Verkündigung in Gradac im Jahre 2007"
+
+#: mop/data/projects/idcew.py:35
+msgid ""
+"Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor connecting "
+"East and West in the 13th/14th Centuries (IDCEW)"
+msgstr ""
+"Helena - eine katholische Adelige, serbische Königin und interreligiöse "
+"Stifterin zwischen Ost und West im 13. und 14. Jahrhundert (IDCEW)  "
+
+#: mop/data/projects/idcew.py:54
+msgid "idcew_description_1"
+msgstr ""
+"Das Projekt zielt darauf ab, das Leben und Wirken der mittelalterlichen "
+"serbischen Königin Helena zu erforschen, die im 13./14. Jahrhundert lebte und "
+"mit dem serbischen König Uroš I. verheiratet war. Die Surveys und "
+"Drohnenaufnahmen im Bearbeitungsgebiet werden in Kooperation mit dem "
+"Österreichischen Archäologischen Institut (ÖAI) der Österreichischen Akademie "
+"der Wissenschaften durchgeführt werden. Helenas Leben muß als dasjenige einer "
+"Person verstanden werden, die aufgrund ihrer französischen Abstammung und ihrer "
+"engen Beziehung zur Adelsfamilie von Anjou Brücken zwischen dem orthodoxen Osten "
+"und dem lateinischen Westen schlug. Viele Fragen zu Helenas Leben, ihrem "
+"Herrschaftsbereich und ihren Stiftungen bedürfen weiterer eingehender Forschung."
+
+#: mop/data/projects/idcew.py:55
+msgid "idcew_description_2"
+msgstr ""
+"Zu diesen Fragen gehören:\n"
+"<ul>\n"
+"<li>Eine Neuauswertung der Dokumente Helenas (d. h. Urkunden und Briefe), um "
+"ihren Herrschaftsbereich in Zeta, Trebinje, Plav und im Oberlauf des Flusses "
+"Ibar genauer zu definieren (auch mit den Mitteln der Kartographie, Toponymie und "
+"GIS)</li>\n"
+"<li>In diesem Zusammenhang wird eine Neuedition der bisher unzureichend edierten "
+"Urkunden für das Kloster Sveti Nikola na Vranjini einen Beitrag zu unseren "
+"Forschungsfragen leisten</li>\n"
+"<li>Eine Rekonstruktion der „Sakralen Topographie“ (Kontaktzone) von Helenas "
+"Herrschaftsbereich durch die Analyse der Architektur der jeweiligen Bauwerke "
+"(Kirchen und Klöster) des 13. und 14. Jahrhunderts, insbesondere von Sopoćani "
+"und Gradac in den Verwaltungsbezirken Raška und Moravica (Serbien) im Hinblick "
+"auf östliche (orthodoxe) und westliche (lateinische, katholische) Einflüsse</"
+"li>\n"
+"<li>Die Schenkungen von Ikonen und anderen Kleinkunstgegenständen durch Helena "
+"an Kirchen und Klöster in ihrem Herrschaftsbereich sowie in Italien (vgl. dazu "
+"die Ikone der Heiligen Peter und Paul im Vatikan), ihre Analyse im Hinblick auf "
+"östliche (orthodoxe) und westliche (lateinische, katholische) Einflüsse und "
+"Helenas Nachleben in der serbischen Kunst des 18. und 19. Jahrhunderts</li>\n"
+"</ul>"
 
 #: mop/data/projects/tarsr.py:10
 msgid ""
