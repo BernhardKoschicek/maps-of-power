@@ -60,6 +60,7 @@ project_tarsr = {
         _('tracing_description_3'),
         _('tracing_description_4'),
         _('tracing_description_5'),
+        _('tracing_description_6'),
     ],
     'results': '',
     'icon': '',

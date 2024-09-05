@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-09-03 11:28+0200\n"
-"PO-Revision-Date: 2024-09-03 11:30+0200\n"
+"POT-Creation-Date: 2024-09-05 11:48+0200\n"
+"PO-Revision-Date: 2024-09-05 11:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -1078,6 +1078,16 @@ msgstr ""
 "and Mariovo (i.e. trenches, bunkers, roads, bridges, tunnels, railways, "
 "ropeways, cemeteries)?</li>\n"
 "</ul>"
+
+#: mop/data/projects/tarsr.py:63
+msgid "tracing_description_6"
+msgstr ""
+"The project and its novel approaches and methods in Historical Geography have "
+"been introduced by Mihailo Popović to the interested public in the digital "
+"version of the Austrian daily newspaper “Der Standard”. The online article can "
+"be accessed via: <a href=\"https://www.derstandard.at/story/3000000234089/im-"
+"fadenkreuz-der-kriegsfotografie\" target=\"_blank\">https://www.derstandard.at/"
+"story/3000000234089/im-fadenkreuz-der-kriegsfotografie</a>"
 
 #: mop/data/projects/vlachs.py:19 mop/data/projects/vlachs.py:25
 #: mop/data/projects/vlachs.py:31
