@@ -136,6 +136,18 @@ institutes = {
         'logo': 'uai.jpg',
         'member': '',
         'address': ''},
+    'noe': {
+        'name': 'Land Niederösterreich, Abteilung Wissenschaft und Forschung',
+        'url': 'https://www.noe.gv.at/',
+        'logo': 'noe.jpg',
+        'member': '',
+        'address': ''},
+    'iti': {
+        'name': 'Katholische Hochschule ITI',
+        'url': 'https://iti.ac.at/',
+        'logo': 'iti.png',
+        'member': '',
+        'address': ''},
     'ukim': {
         'name': 'Ss. Cyril and Methodius University',
         'url': 'https://www.ukim.edu.mk/',

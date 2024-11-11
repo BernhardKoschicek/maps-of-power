@@ -49,7 +49,7 @@ project_idcew = {
         f'Vladimir Simić ({_("Belgrade")})',
         f'Žarko Vujošević ({_("Belgrade")})'],
     'begin': get_dates_formatted(2024, 7, 1),
-    'end': get_dates_formatted(2025, 6, 30),
+    'end': get_dates_formatted(2026, 6, 30),
     'description': [
         _('idcew_description_1'),
         _('idcew_description_2')

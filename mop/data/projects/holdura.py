@@ -5,7 +5,8 @@ from mop.util import get_dates_formatted, youtube_iframe
 
 results = {
     'text': [
-        _('holdura_result_text_1')
+        _('holdura_result_text_1'),
+        _('holdura_result_text_2')
     ],
     'list': [],
     'icons': [{

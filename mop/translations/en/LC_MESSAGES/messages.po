@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-09-05 11:48+0200\n"
-"PO-Revision-Date: 2024-09-05 11:50+0200\n"
+"POT-Creation-Date: 2024-11-11 15:05+0100\n"
+"PO-Revision-Date: 2024-11-11 15:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -698,7 +698,7 @@ msgstr ""
 "of the project will be useful for further research in the field of Byzantine "
 "studies as well as the history of the medieval Balkans."
 
-#: mop/data/projects/borderzones.py:10 mop/data/projects/holdura.py:12
+#: mop/data/projects/borderzones.py:10 mop/data/projects/holdura.py:13
 #: mop/data/projects/vlachs.py:10
 msgid "Final project report"
 msgstr "Final project report"
@@ -798,6 +798,67 @@ msgstr ""
 "Moreover, tools from Digital Humanities in mapping and visualisation will be "
 "applied in order to communicate the achieved results to the interested public."
 
+#: mop/data/projects/dgse.py:10
+msgid "The (Moated) Castle of Ebreichsdorf"
+msgstr "The (Moated) Castle of Ebreichsdorf"
+
+#: mop/data/projects/dgse.py:16
+msgid ""
+"Ebreichsdorf in the Survey conducted under Emperor Joseph II (https://www."
+"arcanum.com/en/)"
+msgstr ""
+"Ebreichsdorf in the Survey conducted under Emperor Joseph II (https://www."
+"arcanum.com/en/)"
+
+#: mop/data/projects/dgse.py:22
+msgid "View of the Area around the Castle of Ebreichsdorf from the East"
+msgstr "View of the Area around the Castle of Ebreichsdorf from the East"
+
+#: mop/data/projects/dgse.py:29
+msgid ""
+"Digital Humanities using the Example of the Castle of Ebreichsdorf in the Lower "
+"Austrian Industrial District"
+msgstr ""
+"Digital Humanities using the Example of the Castle of Ebreichsdorf in the Lower "
+"Austrian Industrial District"
+
+#: mop/data/projects/dgse.py:50
+msgid "dgse_description_1"
+msgstr ""
+"One of the great scientific and popular science challenges of our time is how "
+"historical and cultural-historical content can be brought to the local, broad "
+"public in times of increased digitalisation due to the pandemic. How can "
+"corresponding sustainable familiarisation and learning effects be achieved in "
+"their context when it comes to local historical heritage? This question relates "
+"to a very important aspect of science, namely the field of “Digital Humanities”, "
+"which is undoubtedly also of great importance for Lower Austria and will "
+"continue to be so in the near and distant future."
+
+#: mop/data/projects/dgse.py:51
+msgid "dgse_description_2"
+msgstr ""
+"Our object of study is the (moated) castle of Ebreichsdorf, which is located "
+"around 60 kilometres to the South-East of the capital of St. Pölten in the "
+"industrial district of Lower Austria and has been privately owned by the Drasche-"
+"Wartinberg family since 1909. It is located in a region that is of outstanding "
+"historical importance for both Austria and Europe, as it is situated at the "
+"crossroads between North and South and East and West, thus connecting the Polish "
+"and Bohemian countries with Northern Italy and South-East Europe with Central "
+"Europe."
+
+#: mop/data/projects/dgse.py:52
+msgid "dgse_description_3"
+msgstr ""
+"The aims of our project are reflected in the following two research questions, "
+"which build on each other and simultaneously form two work packages:\n"
+"<ul>\n"
+"<li>a) What role did the Castle of Ebreichsdorf Castle (now the palace) play in "
+"the history of the region from the 10th to the 16th century and what did the "
+"landscape surrounding it look like at that time?</li>\n"
+"<li>b) Was the Castle of Ebreichsdorf a link between the Latin West and the "
+"Byzantine East?</li>\n"
+"<ul>"
+
 #: mop/data/projects/holdura.py:8
 msgid "holdura_result_text_1"
 msgstr ""
@@ -806,11 +867,19 @@ msgstr ""
 "href=\"https://map.geo.univie.ac.at/bew/\" target=\"_blank\" class=\"link-"
 "primary\">https://map.geo.univie.ac.at/bew/</a>"
 
-#: mop/data/projects/holdura.py:17
+#: mop/data/projects/holdura.py:9
+msgid "holdura_result_text_2"
+msgstr ""
+"A short film on our project made by our colleague Lukas Neugebauer was selected "
+"and shown at the 2024 RAM Film Festival in Rovereto, Italy (2 October to 6 "
+"October 2024) and the 5th APOX Film Festival on the Island of Lošinj, Croatia (3 "
+"October to 10 October 2024)."
+
+#: mop/data/projects/holdura.py:18
 msgid "relief map of Montenegro"
 msgstr "Relief map of Montenegro"
 
-#: mop/data/projects/holdura.py:26
+#: mop/data/projects/holdura.py:27
 msgid ""
 "Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
 "Basilica B and cruciform church, Republic of Montenegro"
@@ -818,7 +887,7 @@ msgstr ""
 "Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
 "Basilica B and cruciform church, Republic of Montenegro"
 
-#: mop/data/projects/holdura.py:33
+#: mop/data/projects/holdura.py:34
 msgid ""
 "Bird's eye view of the Doclea archaeological excavation, the western part of the "
 "city in the foreground, Republic of Montenegro"
@@ -826,7 +895,7 @@ msgstr ""
 "Bird's eye view of the Doclea archaeological excavation, the western part of the "
 "city in the foreground, Republic of Montenegro"
 
-#: mop/data/projects/holdura.py:40
+#: mop/data/projects/holdura.py:41
 msgid ""
 "The monastery of Sveti Nikola Vranjina (in the centre of the picture) on Lake "
 "Skadar, Republic of Montenegro"
@@ -834,7 +903,7 @@ msgstr ""
 "The monastery of Sveti Nikola Vranjina (in the centre of the picture) on Lake "
 "Skadar, Republic of Montenegro"
 
-#: mop/data/projects/holdura.py:47
+#: mop/data/projects/holdura.py:48
 msgid ""
 "The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
 "the town of Bar, Republic of Montenegro."
@@ -842,7 +911,7 @@ msgstr ""
 "The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
 "the town of Bar, Republic of Montenegro."
 
-#: mop/data/projects/holdura.py:56
+#: mop/data/projects/holdura.py:57
 msgid ""
 "Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
 "\"Raška\" through Space and Time (11th-14th Cent.)"
@@ -850,7 +919,7 @@ msgstr ""
 "Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
 "\"Raška\" through Space and Time (11th-14th Cent.)"
 
-#: mop/data/projects/holdura.py:73
+#: mop/data/projects/holdura.py:74
 msgid "holdura_description_1"
 msgstr ""
 "In the current discourse on the integration of the Western Balkans into the "
@@ -860,7 +929,7 @@ msgstr ""
 "– played, under the name of Illyricum (Illyrikon), a vital role in the strategic "
 "and administrative considerations of the Byzantine Empire."
 
-#: mop/data/projects/holdura.py:74
+#: mop/data/projects/holdura.py:75
 msgid "holdura_description_2"
 msgstr ""
 "The project builds upon a scholarly cooperation among the academic fields of "
@@ -872,13 +941,13 @@ msgstr ""
 "as to the interested public with the joint means of Historical Geography, Art "
 "History and Geocommunication."
 
-#: mop/data/projects/holdura.py:75
+#: mop/data/projects/holdura.py:76
 msgid "holdura_description_3"
 msgstr ""
 "Therefore, the project aims at approaching and researching systematically the "
 "following three major questions:"
 
-#: mop/data/projects/holdura.py:76
+#: mop/data/projects/holdura.py:77
 msgid "holdura_description_4"
 msgstr ""
 "(1) In which way did the local rulers and the Churches of Rome and "
@@ -887,14 +956,14 @@ msgstr ""
 "pattern of monuments (i.e. the churches and monasteries) in this “Sacred "
 "Landscape”?"
 
-#: mop/data/projects/holdura.py:77
+#: mop/data/projects/holdura.py:78
 msgid "holdura_description_5"
 msgstr ""
 "(2) Did the volatile religious affiliation of the local rulers have an impact on "
 "the “Sacred Landscape” and where were Latin or Byzantine places of worship "
 "transformed or superimposed in the course of time?"
 
-#: mop/data/projects/holdura.py:78
+#: mop/data/projects/holdura.py:79
 msgid "holdura_description_6"
 msgstr ""
 "(3) Can the religious and cultural influence of the Latin and Byzantine "
@@ -910,7 +979,7 @@ msgstr ""
 "hrf=\"hhttps://map.geo.univie.ac.at/bew/\" class=\"link-primary\">map "
 "application</a>."
 
-#: mop/data/projects/holdura.py:79
+#: mop/data/projects/holdura.py:80
 msgid "holdura_description_7"
 msgstr ""
 "The project is exclusively feasible through a multidisciplinary approach and "
