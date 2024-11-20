@@ -41,7 +41,7 @@ project_dgse = {
     'cooperation': [],
     'employees': [
        'Nikola Arnautović',
-       'Marija Djokić Petrović',
+       'Marija Đokić Petrović',
        'Silvia Gómez-Senovilla',
     ],
     'begin': get_dates_formatted(2025, 1, 1),

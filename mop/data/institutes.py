@@ -138,7 +138,8 @@ institutes = {
         'address': ''},
     'noe': {
         'name': 'Land Niederösterreich, Abteilung Wissenschaft und Forschung',
-        'url': 'https://www.noe.gv.at/',
+        'url': 'https://sciencecenter.noe.gv.at/massnahme/'
+               '4da6e8c1-306b-4381-b20a-4128644b95b3',
         'logo': 'noe.jpg',
         'member': '',
         'address': ''},
