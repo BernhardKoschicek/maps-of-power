@@ -8,19 +8,20 @@ images = [{
     'src': 'dgse_1.jpg',
     'description':
         _('The (Moated) Castle of Ebreichsdorf'),
-    'citation': '',
+    'citation': 'Richard Drasche-Wartinberg',
     'category': ['dgse']
 }, {
     'src': 'dgse_2.jpg',
     'description':
-        _('Ebreichsdorf in the Survey conducted under Emperor Joseph II (https://www.arcanum.com/en/)'),
-    'citation': '',
+        _('Ebreichsdorf in the Survey conducted under Emperor Joseph II'),
+    'citation': '<a href="https://www.arcanum.com/en/" target="_blank">'
+                'https://www.arcanum.com/en/</a>',
     'category': ['dgse']
 }, {
     'src': 'dgse_3.jpg',
     'description':
         _('View of the Area around the Castle of Ebreichsdorf from the East'),
-    'citation': '',
+    'citation': 'M. Popović',
     'category': ['dgse']
 }]
 
