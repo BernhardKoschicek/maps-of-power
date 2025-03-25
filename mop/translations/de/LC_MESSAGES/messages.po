@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-12-09 11:04+0100\n"
-"PO-Revision-Date: 2024-12-09 11:09+0100\n"
+"POT-Creation-Date: 2025-03-25 12:24+0100\n"
+"PO-Revision-Date: 2025-03-25 12:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -61,10 +61,23 @@ msgid "blogpost"
 msgstr "blogpost"
 
 #: mop/data/events.py:38
+msgid "Lecture at the Haus Wittgenstein"
+msgstr "Vortrag im Haus Wittgenstein"
+
+#: mop/data/events.py:39
+msgid "wittgenstein_13022025"
+msgstr ""
+"Am 13. Februar 2025 hat Mihailo Popović einen Vortrag mit dem Titel „Berge und "
+"Wildnis auf der südlichen Balkanhalbinsel im Spiegel der Lebensbeschreibungen "
+"der Heiligen Ivan Rilski, Prohor Pčinjski, Gavrilo Lesnovski und Joakim "
+"Osogovski“ im Rahmen des Lectorium Bulgaricum im Haus Wittgenstein in Wien "
+"gehalten."
+
+#: mop/data/events.py:49
 msgid "Workshop in Oxford"
 msgstr "Workshop in Oxford"
 
-#: mop/data/events.py:39
+#: mop/data/events.py:50
 msgid "workshop_oxford_300524"
 msgstr ""
 "Ende Mai 2024 nahm Mihailo Popović an einem Workshop <a href=\"https://www.ames."
@@ -74,11 +87,11 @@ msgstr ""
 "and How to Overcome Them\" hielt, der sich dem Bereich \"Sakrale Topographie\" "
 "der Maps of Power Initiative zuordnen lässt."
 
-#: mop/data/events.py:49
+#: mop/data/events.py:60
 msgid "The Long Night of Research in Vienna"
 msgstr "Die Lange Nacht der Forschung in Wien"
 
-#: mop/data/events.py:50
+#: mop/data/events.py:61
 msgid "lange_nacht_der_forschung_240524"
 msgstr ""
 "Am Freitag, 24. Mai 2024, nahm Mihailo Popović an der Langen Nacht der Forschung "
@@ -89,11 +102,11 @@ msgstr ""
 "während des Ersten Weltkriegs (1915-1918)\"</a> als Poster, das zum Bereich "
 "\"Kulturerbe\" der Maps of Power Initiative beiträgt."
 
-#: mop/data/events.py:60
+#: mop/data/events.py:71
 msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
 msgstr "Überreichung einer Festschrift an Johannes Koder"
 
-#: mop/data/events.py:61
+#: mop/data/events.py:72
 msgid "koder_festschrift_230424"
 msgstr ""
 "Aus Anlaß des 80. Geburtstags von Professor Johannes Koder brachten Freunde, "
@@ -109,11 +122,11 @@ msgstr ""
 "der-den-kodax-tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-vratislav-"
 "zervan-ralf-c-mueller/</a>"
 
-#: mop/data/events.py:71
+#: mop/data/events.py:82
 msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr "Zwei Vorträge über die Nützlichkeit von OpenAtlas"
 
-#: mop/data/events.py:72
+#: mop/data/events.py:83
 msgid "belgrade_190923"
 msgstr ""
 "Am 19. September 2023 haben Bernhard Koschiček-Krombholz und Mihailo St. Popović "
@@ -126,11 +139,11 @@ msgstr ""
 "Zentralbalkan (Ende 10. - Mitte 13. Jahrhundert)“ zu Aspekten der Digital "
 "Humanities aus."
 
-#: mop/data/events.py:82
+#: mop/data/events.py:93
 msgid "Workshop on Medieval Athos in Oxford"
 msgstr "Workshop über den mittelalterlichen Athos in Oxford"
 
-#: mop/data/events.py:83
+#: mop/data/events.py:94
 msgid "athos_oxford_290923"
 msgstr ""
 "Am 29. September 2023 hielt Mihailo St. Popović einen Vortrag mit dem Titel "
@@ -139,11 +152,11 @@ msgstr ""
 "Rahmen des Workshops „A Special Relationship? Gender on Medieval Mount Athos“ in "
 "Oxford, Großbritannien."
 
-#: mop/data/events.py:93
+#: mop/data/events.py:104
 msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr "Vortrag über die Krone des Heiligen Königs Stefan Dečanski"
 
-#: mop/data/events.py:94
+#: mop/data/events.py:105
 msgid "tripps_070923"
 msgstr ""
 "Professor Dr. Johannes Tripps (Hochschule für Technik, Wirtschaft und Kultur "
@@ -155,11 +168,11 @@ msgstr ""
 "@MapsOfPower\" target=\"_blank\" class=\"link-primary\">https://www.youtube.com/"
 "@MapsOfPower</a>"
 
-#: mop/data/events.py:104
+#: mop/data/events.py:115
 msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr "TIB Balkan auf dem IMC Leeds 2023"
 
-#: mop/data/events.py:105
+#: mop/data/events.py:116
 msgid "imc_leeds_23"
 msgstr ""
 "MitarbeiterInnen des Teams TIB Balkan haben gemeinsam mit KollegInnen des "
@@ -170,11 +183,11 @@ msgstr ""
 "across Medieval Space, Objects, and Data“ am 6. Juli 2023 beim IMC Leeds "
 "präsentiert."
 
-#: mop/data/events.py:115
+#: mop/data/events.py:126
 msgid "presentation on MECERN conference"
 msgstr "Präsentation auf der MECERN-Konferenz"
 
-#: mop/data/events.py:116
+#: mop/data/events.py:127
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan und Mihailo Popović haben an der MECERN Konferenz „Continuity "
@@ -182,11 +195,11 @@ msgstr ""
 "und einen gemeinsamen Vortrag über „The Hagiogeography of Saint Archangel "
 "Michael in the Balkans and Central Europe in Medieval Times“ gehalten."
 
-#: mop/data/events.py:126
+#: mop/data/events.py:137
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "Präsentation in der Serbischen Akademie der Wissenschaften und Künste"
 
-#: mop/data/events.py:127
+#: mop/data/events.py:138
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović wurde vom Institut für Byzantinistik der Serbischen Akademie der "
@@ -214,12 +227,17 @@ msgstr "September"
 msgid "december"
 msgstr "Dezember"
 
-#: mop/data/histgeo.py:83 mop/data/histgeo.py:120 mop/data/histgeo.py:157
+#: mop/data/histgeo.py:76
+#, fuzzy
+msgid "December"
+msgstr "Dezember"
+
+#: mop/data/histgeo.py:88 mop/data/histgeo.py:125 mop/data/histgeo.py:162
 #: mop/data/literature.py:76
 msgid "eds."
 msgstr "Hrsg."
 
-#: mop/data/histgeo.py:85
+#: mop/data/histgeo.py:90
 msgid "histgeo_vol1_1"
 msgstr ""
 "aus Anlaß des 75. Geburtstages von Herrn Professor Dr. Johannes Koder haben die "
@@ -232,7 +250,7 @@ msgstr ""
 "Jubilar mit dem Titel „Space, Landscapes and Settlements in Byzantium. Studies "
 "in Historical Geography of the Eastern Mediterranean” erwachsen. "
 
-#: mop/data/histgeo.py:85
+#: mop/data/histgeo.py:90
 msgid "histgeo_vol1_2"
 msgstr ""
 "Johannes Koder, w. M. hat seit dem Jahre 1966 die Tabula Imperii Byzantini "
@@ -243,7 +261,7 @@ msgstr ""
 "Œuvre umfaßt federführende Arbeiten historisch-geographischen Inhalts zu dem "
 "östlichen Mittelmeerraum und Byzanz."
 
-#: mop/data/histgeo.py:85
+#: mop/data/histgeo.py:90
 msgid "histgeo_vol1_3"
 msgstr ""
 "die Festschrift ist als Band 1 der Reihe „Studies in Historical Geography and "
@@ -255,11 +273,11 @@ msgstr ""
 "historisch-geographische Forschung in der Byzantinistik innovativ zu beleben. "
 "Die Reihe wird bei dem Verlag Akademska Knjiga in Novi Sad gedruckt."
 
-#: mop/data/histgeo.py:101
+#: mop/data/histgeo.py:106
 msgid "ed."
 msgstr "Hg."
 
-#: mop/data/histgeo.py:102
+#: mop/data/histgeo.py:107
 msgid "histgeo_vol2_1"
 msgstr ""
 "Am 9. Dezember 2014 wäre Univ. Prof. Dr. Dr. h.c. mult. Herbert Hunger (1914–"
@@ -275,7 +293,7 @@ msgstr ""
 "Schule der Byzantinistik neuen Forschergenerationen als eine Quelle der "
 "wissenschaftlichen Inspiration zu dienen."
 
-#: mop/data/histgeo.py:121
+#: mop/data/histgeo.py:126
 msgid "histgeo_vol3_1"
 msgstr ""
 "Das Langzeitprojekt “Tabula Imperii Byzantini (TIB)” (Institut für "
@@ -306,7 +324,7 @@ msgstr ""
 "Existenz eines solchen Projekts in Österreich und seine Dokumentation das "
 "öffentliche Interesse wecken werden."
 
-#: mop/data/histgeo.py:140
+#: mop/data/histgeo.py:145
 msgid "histgeo_vol4_1"
 msgstr ""
 "Die Landschaft des südöstlichen Peloponnes (Lakonien, Griechenland), einer sehr "
@@ -325,21 +343,21 @@ msgstr ""
 "widerspiegeln, sondern auch in der Wahl des Standorts oder einer tiefen "
 "Beziehung zu natürlichen Elementen der Landschaft."
 
-#: mop/data/histgeo.py:169
+#: mop/data/histgeo.py:174
 msgid "sgomez_short_bio"
 msgstr ""
 "BA in Geschichte, Autónoma Universität von Madrid, MA in Archäologie, Università "
 "Ca' Foscari von Venedig, MA in Ägyptischer Archäologie, University College von "
 "London"
 
-#: mop/data/histgeo.py:170
+#: mop/data/histgeo.py:175
 msgid "sgomez_bio_1"
 msgstr ""
 "Silvia Gómez Senovilla, beendet derzeit ihre Doktorarbeit an der Universität "
 "Wien im Rahmen des ERC Advanced Grant \"The Hyksos Enigma\" (Grant agreement Nº "
 "668640), unter der Leitung von Prof. Manfred Bietak."
 
-#: mop/data/histgeo.py:170
+#: mop/data/histgeo.py:175
 msgid "sgomez_bio_2"
 msgstr ""
 "in ihrer Dissertation untersucht sie die Struktur und Anordnung von Siedlungen "
@@ -350,26 +368,26 @@ msgstr ""
 "räumlicher und statistischer Instrumente untersucht sie die Veränderungen des "
 "Raums in diesem Teil der Bronzezeit und deren soziale Auswirkungen."
 
-#: mop/data/histgeo.py:174 mop/data/histgeo.py:175
+#: mop/data/histgeo.py:179 mop/data/histgeo.py:180
 msgid "gbidaut_short_bio"
 msgstr ""
 "BA in Geschichte, Université Paris 1 Panthéon-Sorbonne, MA in Geschichte, École "
 "des hautes études en sciences sociales in Paris, Graduiertendiploma in "
 "Geschichte und Griechischen Studien, École normale supérieure in Paris"
 
-#: mop/data/histgeo.py:181
+#: mop/data/histgeo.py:186
 msgid "lecture_1_title"
 msgstr "Untersuchung des Raums in antiken Siedlungen"
 
-#: mop/data/histgeo.py:182
+#: mop/data/histgeo.py:187
 msgid "lecture_1_subtitle"
 msgstr "Die Straßen von Avaris, die Nutzung des Raums und die Verdinglichungsfalle"
 
-#: mop/data/histgeo.py:189 mop/data/histgeo.py:201
+#: mop/data/histgeo.py:194 mop/data/histgeo.py:206
 msgid "english"
 msgstr "Englisch"
 
-#: mop/data/histgeo.py:190
+#: mop/data/histgeo.py:195
 msgid "lecture_1_1"
 msgstr ""
 "Die Archäologie und die Geschichtswissenschaft stehen naturgemäß vor der "
@@ -394,7 +412,7 @@ msgstr ""
 "Vorauswahl unterliegen, behindert auch einige Versuche einer echten Analyse des "
 "Raums und seiner Bestandteile."
 
-#: mop/data/histgeo.py:190
+#: mop/data/histgeo.py:195
 msgid "lecture_1_2"
 msgstr ""
 "in diesem Vortrag werde ich den aktuellen Stand meiner Doktorarbeit vorstellen, "
@@ -409,17 +427,17 @@ msgstr ""
 "welche Möglichkeiten uns helfen können, die manchmal allgegenwärtige "
 "Abhängigkeit von rein visuellen Modellen zu überwinden."
 
-#: mop/data/histgeo.py:193
+#: mop/data/histgeo.py:198
 msgid "lecture_2_title"
 msgstr "Die Kartierung von Mobilität, die Konstruktion von Gemeinschaft"
 
-#: mop/data/histgeo.py:194
+#: mop/data/histgeo.py:199
 msgid "lecture_2_subtitle"
 msgstr ""
 "Überlegungen zur Definition, Repräsentation und Räumlichkeit von "
 "Hirtengemeinschaften auf dem byzantinischen und frühosmanischen Balkan"
 
-#: mop/data/histgeo.py:202
+#: mop/data/histgeo.py:207
 msgid "lecture_2_1"
 msgstr ""
 "Der vormoderne Balkan zeichnete sich durch ein hohes Maß an Diversität aus, in "
@@ -433,7 +451,7 @@ msgstr ""
 "Verflechtung vergangener und gegenwärtiger Kategorien von kollektiver Identität "
 "und von Raum besonders berücksichtigen."
 
-#: mop/data/histgeo.py:202
+#: mop/data/histgeo.py:207
 msgid "lecture_2_2"
 msgstr ""
 "In diesem Vortrag werde ich den aktuellen Stand meiner Doktorarbeit vorstellen, "
@@ -463,27 +481,27 @@ msgstr ""
 "Verständnis ihrer räumlichen Praktiken und Darstellungen fördern oder behindern "
 "können."
 
-#: mop/data/histgeo.py:206
+#: mop/data/histgeo.py:211
 msgid "author"
 msgstr "autor"
 
-#: mop/data/histgeo.py:207
+#: mop/data/histgeo.py:212
 msgid "pages"
 msgstr "seiten"
 
-#: mop/data/histgeo.py:208
+#: mop/data/histgeo.py:213
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:209
+#: mop/data/histgeo.py:214
 msgid "citation"
 msgstr "zitat"
 
-#: mop/data/histgeo.py:210
+#: mop/data/histgeo.py:215
 msgid "order"
 msgstr "bestellen"
 
-#: mop/data/histgeo.py:211
+#: mop/data/histgeo.py:216
 msgid "abstract"
 msgstr "kurzfassung"
 
@@ -839,16 +857,15 @@ msgid "The (Moated) Castle of Ebreichsdorf"
 msgstr "Das (Wasser)Schloß Ebreichsdorf"
 
 #: mop/data/projects/dgse.py:16
-msgid ""
-"Ebreichsdorf in the Survey conducted under Emperor Joseph II (https://www."
-"arcanum.com/en/)"
+#, fuzzy
+msgid "Ebreichsdorf in the Survey conducted under Emperor Joseph II"
 msgstr "Ebreichsdorf in der Josephinischen Landesaufnahme"
 
-#: mop/data/projects/dgse.py:22
+#: mop/data/projects/dgse.py:23
 msgid "View of the Area around the Castle of Ebreichsdorf from the East"
 msgstr "Blick auf das Gebiet um das Schloß Ebreichsdorf von Osten"
 
-#: mop/data/projects/dgse.py:29
+#: mop/data/projects/dgse.py:30
 msgid ""
 "Digital Humanities using the Example of the Castle of Ebreichsdorf in the Lower "
 "Austrian Industrial District"
@@ -856,7 +873,7 @@ msgstr ""
 "Digitale Geisteswissenschaften am Beispiel des Schlosses Ebreichsdorf im "
 "niederösterreichischen Industrieviertel"
 
-#: mop/data/projects/dgse.py:50
+#: mop/data/projects/dgse.py:51
 msgid "dgse_description_1"
 msgstr ""
 "Eine der großen wissenschaftlichen und populärwissenschaftlichen "
@@ -870,7 +887,7 @@ msgstr ""
 "der ohne Zweifel auch für Niederösterreich von großer Bedeutung ist bzw. in "
 "naher und ferner Zukunft weiterhin sein wird."
 
-#: mop/data/projects/dgse.py:51
+#: mop/data/projects/dgse.py:52
 msgid "dgse_description_2"
 msgstr ""
 "Unser Untersuchungsobjekt ist das (Wasser)Schloß Ebreichsdorf, das rund 60 km "
@@ -882,7 +899,7 @@ msgstr ""
 "die polnischen und böhmischen Länder mit Norditalien und Südosteuropa mit "
 "Mitteleuropa verbindet."
 
-#: mop/data/projects/dgse.py:52
+#: mop/data/projects/dgse.py:53
 msgid "dgse_description_3"
 msgstr ""
 "Die Ziele unseres Projekts spiegeln sich in den folgenden zwei Forschungsfragen "

@@ -30,6 +30,17 @@ types = {
     },
 }
 event_list = [{
+    'id': 'wittgenstein_13022025',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2025, 2, 13)}",
+    'who': '',
+    'icon': 'wittgenstein_13022025.jpg',
+    'title': _('Lecture at the Haus Wittgenstein'),
+    'description': _('wittgenstein_13022025'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
     'id': 'workshop_oxford_300524',
     'type': types['science_fair'],
     'date': f"{get_dates_formatted(2024, 5, 30)}",

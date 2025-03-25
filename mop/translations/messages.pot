@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2024 ORGANIZATION
+# Copyright (C) 2025 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-12-09 11:04+0100\n"
+"POT-Creation-Date: 2025-03-25 12:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,74 +59,82 @@ msgid "blogpost"
 msgstr ""
 
 #: mop/data/events.py:38
-msgid "Workshop in Oxford"
+msgid "Lecture at the Haus Wittgenstein"
 msgstr ""
 
 #: mop/data/events.py:39
-msgid "workshop_oxford_300524"
+msgid "wittgenstein_13022025"
 msgstr ""
 
 #: mop/data/events.py:49
-msgid "The Long Night of Research in Vienna"
+msgid "Workshop in Oxford"
 msgstr ""
 
 #: mop/data/events.py:50
-msgid "lange_nacht_der_forschung_240524"
+msgid "workshop_oxford_300524"
 msgstr ""
 
 #: mop/data/events.py:60
-msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
+msgid "The Long Night of Research in Vienna"
 msgstr ""
 
 #: mop/data/events.py:61
-msgid "koder_festschrift_230424"
+msgid "lange_nacht_der_forschung_240524"
 msgstr ""
 
 #: mop/data/events.py:71
-msgid "Two Presentations on the Usefulness of OpenAtlas"
+msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
 msgstr ""
 
 #: mop/data/events.py:72
-msgid "belgrade_190923"
+msgid "koder_festschrift_230424"
 msgstr ""
 
 #: mop/data/events.py:82
-msgid "Workshop on Medieval Athos in Oxford"
+msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr ""
 
 #: mop/data/events.py:83
-msgid "athos_oxford_290923"
+msgid "belgrade_190923"
 msgstr ""
 
 #: mop/data/events.py:93
-msgid "Paper on the Crown of the Saint King Stefan Dečanski"
+msgid "Workshop on Medieval Athos in Oxford"
 msgstr ""
 
 #: mop/data/events.py:94
-msgid "tripps_070923"
+msgid "athos_oxford_290923"
 msgstr ""
 
 #: mop/data/events.py:104
-msgid "TIB Balkans at the IMC Leeds 2023"
+msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr ""
 
 #: mop/data/events.py:105
-msgid "imc_leeds_23"
+msgid "tripps_070923"
 msgstr ""
 
 #: mop/data/events.py:115
-msgid "presentation on MECERN conference"
+msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr ""
 
 #: mop/data/events.py:116
-msgid "mecern_2023"
+msgid "imc_leeds_23"
 msgstr ""
 
 #: mop/data/events.py:126
-msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgid "presentation on MECERN conference"
 msgstr ""
 
 #: mop/data/events.py:127
+msgid "mecern_2023"
+msgstr ""
+
+#: mop/data/events.py:137
+msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgstr ""
+
+#: mop/data/events.py:138
 msgid "serbian_academy_220223"
 msgstr ""
 
@@ -148,112 +156,116 @@ msgstr ""
 msgid "december"
 msgstr ""
 
-#: mop/data/histgeo.py:83 mop/data/histgeo.py:120 mop/data/histgeo.py:157
+#: mop/data/histgeo.py:76
+msgid "December"
+msgstr ""
+
+#: mop/data/histgeo.py:88 mop/data/histgeo.py:125 mop/data/histgeo.py:162
 #: mop/data/literature.py:76
 msgid "eds."
 msgstr ""
 
-#: mop/data/histgeo.py:85
+#: mop/data/histgeo.py:90
 msgid "histgeo_vol1_1"
 msgstr ""
 
-#: mop/data/histgeo.py:85
+#: mop/data/histgeo.py:90
 msgid "histgeo_vol1_2"
 msgstr ""
 
-#: mop/data/histgeo.py:85
+#: mop/data/histgeo.py:90
 msgid "histgeo_vol1_3"
 msgstr ""
 
-#: mop/data/histgeo.py:101
+#: mop/data/histgeo.py:106
 msgid "ed."
 msgstr ""
 
-#: mop/data/histgeo.py:102
+#: mop/data/histgeo.py:107
 msgid "histgeo_vol2_1"
 msgstr ""
 
-#: mop/data/histgeo.py:121
+#: mop/data/histgeo.py:126
 msgid "histgeo_vol3_1"
 msgstr ""
 
-#: mop/data/histgeo.py:140
+#: mop/data/histgeo.py:145
 msgid "histgeo_vol4_1"
 msgstr ""
 
-#: mop/data/histgeo.py:169
+#: mop/data/histgeo.py:174
 msgid "sgomez_short_bio"
 msgstr ""
 
-#: mop/data/histgeo.py:170
+#: mop/data/histgeo.py:175
 msgid "sgomez_bio_1"
 msgstr ""
 
-#: mop/data/histgeo.py:170
+#: mop/data/histgeo.py:175
 msgid "sgomez_bio_2"
 msgstr ""
 
-#: mop/data/histgeo.py:174 mop/data/histgeo.py:175
+#: mop/data/histgeo.py:179 mop/data/histgeo.py:180
 msgid "gbidaut_short_bio"
 msgstr ""
 
-#: mop/data/histgeo.py:181
+#: mop/data/histgeo.py:186
 msgid "lecture_1_title"
 msgstr ""
 
-#: mop/data/histgeo.py:182
+#: mop/data/histgeo.py:187
 msgid "lecture_1_subtitle"
 msgstr ""
 
-#: mop/data/histgeo.py:189 mop/data/histgeo.py:201
+#: mop/data/histgeo.py:194 mop/data/histgeo.py:206
 msgid "english"
 msgstr ""
 
-#: mop/data/histgeo.py:190
+#: mop/data/histgeo.py:195
 msgid "lecture_1_1"
 msgstr ""
 
-#: mop/data/histgeo.py:190
+#: mop/data/histgeo.py:195
 msgid "lecture_1_2"
 msgstr ""
 
-#: mop/data/histgeo.py:193
+#: mop/data/histgeo.py:198
 msgid "lecture_2_title"
 msgstr ""
 
-#: mop/data/histgeo.py:194
+#: mop/data/histgeo.py:199
 msgid "lecture_2_subtitle"
 msgstr ""
 
-#: mop/data/histgeo.py:202
+#: mop/data/histgeo.py:207
 msgid "lecture_2_1"
 msgstr ""
 
-#: mop/data/histgeo.py:202
+#: mop/data/histgeo.py:207
 msgid "lecture_2_2"
 msgstr ""
 
-#: mop/data/histgeo.py:206
+#: mop/data/histgeo.py:211
 msgid "author"
 msgstr ""
 
-#: mop/data/histgeo.py:207
+#: mop/data/histgeo.py:212
 msgid "pages"
 msgstr ""
 
-#: mop/data/histgeo.py:208
+#: mop/data/histgeo.py:213
 msgid "ISBN"
 msgstr ""
 
-#: mop/data/histgeo.py:209
+#: mop/data/histgeo.py:214
 msgid "citation"
 msgstr ""
 
-#: mop/data/histgeo.py:210
+#: mop/data/histgeo.py:215
 msgid "order"
 msgstr ""
 
-#: mop/data/histgeo.py:211
+#: mop/data/histgeo.py:216
 msgid "abstract"
 msgstr ""
 
@@ -505,30 +517,28 @@ msgid "The (Moated) Castle of Ebreichsdorf"
 msgstr ""
 
 #: mop/data/projects/dgse.py:16
-msgid ""
-"Ebreichsdorf in the Survey conducted under Emperor Joseph II "
-"(https://www.arcanum.com/en/)"
+msgid "Ebreichsdorf in the Survey conducted under Emperor Joseph II"
 msgstr ""
 
-#: mop/data/projects/dgse.py:22
+#: mop/data/projects/dgse.py:23
 msgid "View of the Area around the Castle of Ebreichsdorf from the East"
 msgstr ""
 
-#: mop/data/projects/dgse.py:29
+#: mop/data/projects/dgse.py:30
 msgid ""
 "Digital Humanities using the Example of the Castle of Ebreichsdorf in the"
 " Lower Austrian Industrial District"
 msgstr ""
 
-#: mop/data/projects/dgse.py:50
+#: mop/data/projects/dgse.py:51
 msgid "dgse_description_1"
 msgstr ""
 
-#: mop/data/projects/dgse.py:51
+#: mop/data/projects/dgse.py:52
 msgid "dgse_description_2"
 msgstr ""
 
-#: mop/data/projects/dgse.py:52
+#: mop/data/projects/dgse.py:53
 msgid "dgse_description_3"
 msgstr ""
 
