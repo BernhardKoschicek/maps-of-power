@@ -72,6 +72,11 @@ newsletters = {
         'url': 'https://t210d45f9.emailsys2a.net/'
                'mailing/180/7255820/0/dbc8fdb280/index.html'
     }],
+    '2024': [{
+        'title': _('December'),
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/7964576/0/7067e91da4/index.html'
+    }]
 }
 
 volumes = {
