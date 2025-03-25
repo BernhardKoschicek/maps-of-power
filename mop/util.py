@@ -50,7 +50,8 @@ def get_dict_entries_by_category(
 def get_related_geoms(places: list[Relation]) -> list[dict[str, Any]]:
     geoms = []
     for place in places:
-        geoms.append(place.geometry)
+        if place.geometry:
+            geoms.append(place.geometry)
     return flatten_list_and_remove_duplicates(geoms)
 
 

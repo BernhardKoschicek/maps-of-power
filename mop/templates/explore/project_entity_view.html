@@ -243,7 +243,7 @@
         <h3 class="text-primary">{{ _('files') }}</h3>
         <div class="row pt-5">
           {% for list in images %}
-            {% for img in list %}
+            {% for img in list if img.public_shareable %}
               <div class="col-lg-2 d-flex justify-content-center align-items-center">
                 <figure>
                   <a href="{{ img.url }}" data-fancybox="gallery"

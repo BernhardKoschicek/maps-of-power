@@ -113,8 +113,9 @@ def entity_project_view(
     linked_entities = get_entities_linked_to_entity(id_)
     relations = get_relations(
         get_relation_entities(linked_entities, entity.relations))
-    related_places = get_related_geoms(relations['places']) \
-        if 'places' in relations else []
+    related_places = []
+    if 'places' in relations:
+        related_places = get_related_geoms(relations['places'])
     return render_template(
         'explore/project_entity_view.html',
         entity=entity,

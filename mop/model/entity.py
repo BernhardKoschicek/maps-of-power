@@ -12,6 +12,9 @@ class Depiction:
         self.title = data['title']
         self.license = data['license']
         self.url = data['url']
+        self.creator = data['creator']
+        self.license_holder = data['licenseHolder']
+        self.public_shareable = data['publicShareable']
         self.extension = os.path.splitext(self.url.rsplit('/', 1)[-1])[1]
 
 
