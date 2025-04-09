@@ -65,7 +65,7 @@ institutes = {
     'univie': {
         'name': 'University of Vienna',
         'url': 'https://www.univie.ac.at/',
-        'logo': 'uni_vienna.jpg',
+        'logo': 'uni_vienna.png',
         'member': '',
         'address': ''},
     'fwf': {
