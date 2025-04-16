@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-03-25 12:24+0100\n"
-"PO-Revision-Date: 2025-03-25 12:25+0100\n"
+"POT-Creation-Date: 2025-04-16 18:23+0200\n"
+"PO-Revision-Date: 2025-04-16 18:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -631,7 +631,7 @@ msgstr "Leeds"
 
 #: mop/data/presentations.py:21 mop/data/presentations.py:170
 #: mop/data/presentations.py:283 mop/data/presentations.py:295
-#: mop/templates/imprint.html:14 mop/templates/layout.html:69
+#: mop/templates/imprint.html:14 mop/templates/layout.html:89
 msgid "Vienna"
 msgstr "Wien"
 
@@ -1470,10 +1470,10 @@ msgstr ""
 "„Maps of Power – Karten der Macht“ greift diese Gedanken auf und versteht sich "
 "als eine wissenschaftliche Plattform, die sowohl eigene Projekte umsetzen möchte "
 "als auch interdisziplinär im Wege von gemeinsamen Projekten vernetzend wirken "
-"möchte. Forschungsergebnisse der Initiative werden in einem eigens dafür "
+"möchte. Forschungsergebnisse der Initiative werden laufend in eine eigene "
+"OpenAtlas Datenbank (https://openatlas.eu/) eingegeben und in einem eigens dafür "
 "programmierten Portal frei zur Verfügung gestellt, das Daten durchsuchbar macht, "
-"digitale Karten (Layer) enthält, Storymaps zu verschiedenen Aspekten anbietet "
-"und umfassendes Fotomaterial beinhaltet."
+"digitale Karten (Layer) enthält und umfassendes Fotomaterial beinhaltet."
 
 #: mop/templates/about.html:68
 msgid "about_text_7a"
@@ -1611,7 +1611,7 @@ msgstr "schriftarten"
 msgid "histgeo_fonts_1"
 msgstr "bitte verwenden Sie diese Schriftarten für das Altkirchenslawische"
 
-#: mop/templates/imprint.html:7 mop/templates/layout.html:92
+#: mop/templates/imprint.html:7 mop/templates/layout.html:114
 msgid "imprint"
 msgstr "impressum"
 
@@ -1626,7 +1626,7 @@ msgstr ""
 msgid "Media owner"
 msgstr "Medieninhaber"
 
-#: mop/templates/imprint.html:10 mop/templates/layout.html:65
+#: mop/templates/imprint.html:10 mop/templates/layout.html:85
 msgid "Austrian Academy of Sciences"
 msgstr "Österreichische Akademie der Wissenschaften"
 
@@ -1636,7 +1636,7 @@ msgid ""
 "by Federal Law Gazette (BGBl) I 31/2018)"
 msgstr "Juristische Person öffentlichen Rechts (BGBl 569/1921 idF BGBl I 31/2018)"
 
-#: mop/templates/imprint.html:14 mop/templates/layout.html:69
+#: mop/templates/imprint.html:14 mop/templates/layout.html:89
 msgid "Austria"
 msgstr "Österreich"
 
@@ -1766,23 +1766,23 @@ msgstr ""
 msgid "Further information on data protection on websites of the OeAW."
 msgstr "Weitere Informationen zum Datenschutz auf Internetseiten der ÖAW."
 
-#: mop/templates/layout.html:63
+#: mop/templates/layout.html:83
 msgid "contact"
 msgstr "kontakt"
 
-#: mop/templates/layout.html:66
+#: mop/templates/layout.html:86
 msgid "Institute for Medieval Research"
 msgstr "Institut für Mittelalterforschung"
 
-#: mop/templates/layout.html:67
+#: mop/templates/layout.html:87
 msgid "Division of Byzantine Research"
 msgstr "Abteilung für Byzanzforschung"
 
-#: mop/templates/layout.html:69
+#: mop/templates/layout.html:89
 msgid "Europe"
 msgstr "Europa"
 
-#: mop/templates/layout.html:84
+#: mop/templates/layout.html:105
 msgid "navigation"
 msgstr "navigation"
 

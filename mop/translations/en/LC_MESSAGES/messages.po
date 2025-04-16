@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-03-25 12:24+0100\n"
-"PO-Revision-Date: 2025-03-25 12:24+0100\n"
+"POT-Creation-Date: 2025-04-16 18:23+0200\n"
+"PO-Revision-Date: 2025-04-16 18:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -606,7 +606,7 @@ msgstr "Leeds"
 
 #: mop/data/presentations.py:21 mop/data/presentations.py:170
 #: mop/data/presentations.py:283 mop/data/presentations.py:295
-#: mop/templates/imprint.html:14 mop/templates/layout.html:69
+#: mop/templates/imprint.html:14 mop/templates/layout.html:89
 msgid "Vienna"
 msgstr "Vienna"
 
@@ -1421,9 +1421,10 @@ msgstr ""
 "“Maps of Power” takes up these ideas and sees itself as a scholarly platform "
 "that would like to implement its own projects as well as network in an "
 "interdisciplinary fashion through joint projects. Research results of the "
-"initiative are made freely available in a specially programmed portal that makes "
-"data searchable, contains digital maps (layers), offers storymaps on various "
-"aspects and includes comprehensive photo material."
+"initiative are continuously entered into a separate OpenAtlas database (https://"
+"openatlas.eu/) and made freely available in a specially programmed portal that "
+"makes data searchable, contains digital maps (layers) and includes comprehensive "
+"photo material."
 
 #: mop/templates/about.html:68
 msgid "about_text_7a"
@@ -1556,7 +1557,7 @@ msgstr "fonts"
 msgid "histgeo_fonts_1"
 msgstr "please use these Font Types for Old Church Slavonic:"
 
-#: mop/templates/imprint.html:7 mop/templates/layout.html:92
+#: mop/templates/imprint.html:7 mop/templates/layout.html:114
 msgid "imprint"
 msgstr "imprint"
 
@@ -1572,7 +1573,7 @@ msgstr ""
 msgid "Media owner"
 msgstr "Media owner"
 
-#: mop/templates/imprint.html:10 mop/templates/layout.html:65
+#: mop/templates/imprint.html:10 mop/templates/layout.html:85
 msgid "Austrian Academy of Sciences"
 msgstr "Austrian Academy of Sciences"
 
@@ -1584,7 +1585,7 @@ msgstr ""
 "Corporate body under public law (Federal Law Gazette (BGBl) 569/1921 as amended "
 "by Federal Law Gazette (BGBl) I 31/2018)"
 
-#: mop/templates/imprint.html:14 mop/templates/layout.html:69
+#: mop/templates/imprint.html:14 mop/templates/layout.html:89
 msgid "Austria"
 msgstr "Austria"
 
@@ -1708,23 +1709,23 @@ msgstr ""
 msgid "Further information on data protection on websites of the OeAW."
 msgstr "Further information on data protection on websites of the OeAW."
 
-#: mop/templates/layout.html:63
+#: mop/templates/layout.html:83
 msgid "contact"
 msgstr "contact"
 
-#: mop/templates/layout.html:66
+#: mop/templates/layout.html:86
 msgid "Institute for Medieval Research"
 msgstr "Institute for Medieval Research"
 
-#: mop/templates/layout.html:67
+#: mop/templates/layout.html:87
 msgid "Division of Byzantine Research"
 msgstr "Division of Byzantine Research"
 
-#: mop/templates/layout.html:69
+#: mop/templates/layout.html:89
 msgid "Europe"
 msgstr "Europe"
 
-#: mop/templates/layout.html:84
+#: mop/templates/layout.html:105
 msgid "navigation"
 msgstr "navigation"
 
