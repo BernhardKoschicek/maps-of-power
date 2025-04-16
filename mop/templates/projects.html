@@ -5,7 +5,8 @@
 {% block content %}
   <div class="container mt-5">
     {% for project in projects.values() %}
-      <a href="{{ url_for('projects', title=project['acronym']) }}" class="link-primary">
+      <a href="{{ url_for('projects', title=project['acronym']) }}"
+         class="link-primary">
         <div class="row bg-accent2 rounded-4 p-3 m-3">
           <div class="col-8">
             <h3>
@@ -26,14 +27,16 @@
           {#            <img src="{{ url_for('static', filename='images/projects/' + project['acronym'] + '/' + project['icon']) }}"#}
           {#                 alt="project['acronym']">#}
           {#          </div>#}
-          <div class="col text-end">
-            <span class="fw-bolder">{{ _('Employees') }}:</span>
-            <ul class="text-decoration-none list-unstyled">
-              {% for emp in project.employees %}
-                <li>{{ emp }}</li>
-              {% endfor %}
-            </ul>
-          </div>
+          {% if project.employees %}
+            <div class="col text-end">
+              <span class="fw-bolder">{{ _('Employees') }}:</span>
+              <ul class="text-decoration-none list-unstyled">
+                {% for emp in project.employees %}
+                  <li>{{ emp }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
         </div>
       </a>
     {% endfor %}

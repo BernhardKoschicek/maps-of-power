@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-16 18:23+0200\n"
-"PO-Revision-Date: 2025-04-16 18:27+0200\n"
+"POT-Creation-Date: 2025-04-16 18:59+0200\n"
+"PO-Revision-Date: 2025-04-16 19:01+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -1219,6 +1219,60 @@ msgstr ""
 "https://www.derstandard.at/story/3000000234089/im-fadenkreuz-der-"
 "kriegsfotografie</a>\n"
 " "
+
+#: mop/data/projects/tib_balkan.py:8 mop/data/projects/tib_balkan.py:13
+msgid "The Monastery of Saint Naum on Lake Ohrid"
+msgstr "Das Kloster Sveti Naum am Ohrid-See"
+
+#: mop/data/projects/tib_balkan.py:18 mop/data/projects/tib_balkan.py:23
+msgid "The Church of Sveti Jovan Kaneo in Ohrid"
+msgstr "Die Kirche Sveti Jovan Kaneo in Ohrid"
+
+#: mop/data/projects/tib_balkan.py:30
+msgid "Reverse Engineering of the Tabula Imperii Byzantini Balkans"
+msgstr "Reverse Engineering der Tabula Imperii Byzantini Balkan"
+
+#: mop/data/projects/tib_balkan.py:43
+msgid "tib_balkan_description_1"
+msgstr ""
+"Im Jahre 1966 gab Professor Dr. Herbert Hunger (1914-2000) die Gründung des "
+"Projekts Tabula Imperii Byzantini (im folgenden: TIB) der Österreichischen "
+"Akademie der Wissenschaften auf dem 13. Internationalen Kongreß für "
+"Byzantinistik im englischen Oxford bekannt. Seitdem erforscht die TIB "
+"systematisch die historische Geographie des Byzantinischen Reiches vom Beginn "
+"des 4. Jahrhunderts bis zur Mitte des 15. Jahrhunderts. Ziel des Projektes TIB "
+"ist es, einen historischen Atlas des byzantinischen Raumes von der Spätantike "
+"bis zur Frühen Neuzeit zu erstellen. Der Schwerpunkt der Forschungen liegt seit "
+"den 1960er Jahren auf der Balkanhalbinsel und Kleinasien."
+
+#: mop/data/projects/tib_balkan.py:44
+msgid "tib_balkan_description_2"
+msgstr ""
+"Seit 1976 erscheinen TIB Bände zu den byzantinischen Provinzen und Regionen auf "
+"dem Balkan in regelmäßiger Abfolge. 1976 wurde der Band über „Hellas und "
+"Thessalien“ (TIB 1) veröffentlicht, 1981 über „Nikopolis und Kephallēnia“ (TIB "
+"3), 1991 über „Thrakien (Thrakē, Rodopē und Haimimontos)“ (TIB 6), 1998 über "
+"„Aigaion Pelagos (Die nördliche Ägäis)“ (TIB 10), 2008 über „Ostthrakien "
+"(Eurōpē)“ (TIB 12) und 2022 über „Makedonien, südlicher Teil“ (TIB 11). Das Ziel "
+"im Bereich der TIB Balkan bestand und besteht mit der Gründung des Projektes "
+"darin, die Donaugrenze als nördliche Grenze des Byzantinischen Reiches durch die "
+"wissenschaftliche Aufarbeitung der entsprechenden Regionen zu erreichen."
+
+#: mop/data/projects/tib_balkan.py:45
+msgid "tib_balkan_description_3"
+msgstr ""
+"Im Projekt „Reverse Engineering der Tabula Imperii Byzantini Balkan“ streben wir "
+"nunmehr danach, die oben aufgezählten TIB-Bände, die im Druck erschienen sind "
+"und größtenteils analog (also ohne digitale Komponente) vorliegen, mit der "
+"Methode des Reverse Engineering systematisch aufzuarbeiten. Hierbei scannen wir "
+"die veröffentlichten Bände per OCR (weil nur TIB 11 und TIB 12 im pdf "
+"vorliegen), geben die entsprechenden Lemmata in die Maps of Power OpenAtlas "
+"Datenbank ein und ergänzen diese Datensätze mit Scans von schwarz-weiß "
+"Photographien und Dias zur Balkanhalbinsel aus dem TIB Archiv, die zwischen den "
+"1960er Jahren und 2008 aufgenommen wurden, die wir sichten und die wir teilweise "
+"erst scannen müssen. Dadurch arbeiten wir analoge, archivierte Daten auf, "
+"bewahren sie für die Zukunft und machen sie der Forschung und Öffentlichkeit "
+"zugänglich (s. u. Erkunden)."
 
 #: mop/data/projects/vlachs.py:19 mop/data/projects/vlachs.py:25
 #: mop/data/projects/vlachs.py:31
