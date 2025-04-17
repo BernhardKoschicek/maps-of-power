@@ -48,5 +48,5 @@ project_tib_balkan = {
     'icon': '',
     'images': images,
     'videos': '',
-    'oaID': '124483',
+    'oaID': ['124486', '124485', '124487', '124484']
 }
