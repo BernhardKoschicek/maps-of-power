@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-16 18:59+0200\n"
-"PO-Revision-Date: 2025-04-16 19:01+0200\n"
+"POT-Creation-Date: 2025-05-23 16:50+0200\n"
+"PO-Revision-Date: 2025-05-23 16:52+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -24,7 +24,7 @@ msgid "about"
 msgstr "über"
 
 #: mop/templates/explore/project_entity_view.html:19
-#: mop/templates/project_details.html:30 mop/util.py:34
+#: mop/templates/project_details.html:34 mop/util.py:34
 msgid "projects"
 msgstr "projekte"
 
@@ -61,10 +61,23 @@ msgid "blogpost"
 msgstr "blogpost"
 
 #: mop/data/events.py:38
+msgid "Report in the Newspaper Die Presse"
+msgstr "Bericht in der Zeitung Die Presse"
+
+#: mop/data/events.py:39
+msgid "presse_03052025"
+msgstr ""
+"Die Tageszeitung Die Presse berichtet in ihrer Printausgabe vom 3. Mai 2025 über "
+"die wissenschaftliche Arbeit von Mihailo Popović unter dem Titel „Unterwegs mit "
+"Notizbuch, Kompass und Melone“. Weitere Informationen unter: <a href=\"https://"
+"www.diepresse.com/19640086/auf-feldforschung-mit-notizbuch-kompass-und-melone\" "
+"target=\"_blank\">Die Presse</a>"
+
+#: mop/data/events.py:49
 msgid "Lecture at the Haus Wittgenstein"
 msgstr "Vortrag im Haus Wittgenstein"
 
-#: mop/data/events.py:39
+#: mop/data/events.py:50
 msgid "wittgenstein_13022025"
 msgstr ""
 "Am 13. Februar 2025 hat Mihailo Popović einen Vortrag mit dem Titel „Berge und "
@@ -73,11 +86,11 @@ msgstr ""
 "Osogovski“ im Rahmen des Lectorium Bulgaricum im Haus Wittgenstein in Wien "
 "gehalten."
 
-#: mop/data/events.py:49
+#: mop/data/events.py:60
 msgid "Workshop in Oxford"
 msgstr "Workshop in Oxford"
 
-#: mop/data/events.py:50
+#: mop/data/events.py:61
 msgid "workshop_oxford_300524"
 msgstr ""
 "Ende Mai 2024 nahm Mihailo Popović an einem Workshop <a href=\"https://www.ames."
@@ -87,11 +100,11 @@ msgstr ""
 "and How to Overcome Them\" hielt, der sich dem Bereich \"Sakrale Topographie\" "
 "der Maps of Power Initiative zuordnen lässt."
 
-#: mop/data/events.py:60
+#: mop/data/events.py:71
 msgid "The Long Night of Research in Vienna"
 msgstr "Die Lange Nacht der Forschung in Wien"
 
-#: mop/data/events.py:61
+#: mop/data/events.py:72
 msgid "lange_nacht_der_forschung_240524"
 msgstr ""
 "Am Freitag, 24. Mai 2024, nahm Mihailo Popović an der Langen Nacht der Forschung "
@@ -102,11 +115,11 @@ msgstr ""
 "während des Ersten Weltkriegs (1915-1918)\"</a> als Poster, das zum Bereich "
 "\"Kulturerbe\" der Maps of Power Initiative beiträgt."
 
-#: mop/data/events.py:71
+#: mop/data/events.py:82
 msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
 msgstr "Überreichung einer Festschrift an Johannes Koder"
 
-#: mop/data/events.py:72
+#: mop/data/events.py:83
 msgid "koder_festschrift_230424"
 msgstr ""
 "Aus Anlaß des 80. Geburtstags von Professor Johannes Koder brachten Freunde, "
@@ -122,11 +135,11 @@ msgstr ""
 "der-den-kodax-tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-vratislav-"
 "zervan-ralf-c-mueller/</a>"
 
-#: mop/data/events.py:82
+#: mop/data/events.py:93
 msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr "Zwei Vorträge über die Nützlichkeit von OpenAtlas"
 
-#: mop/data/events.py:83
+#: mop/data/events.py:94
 msgid "belgrade_190923"
 msgstr ""
 "Am 19. September 2023 haben Bernhard Koschiček-Krombholz und Mihailo St. Popović "
@@ -139,11 +152,11 @@ msgstr ""
 "Zentralbalkan (Ende 10. - Mitte 13. Jahrhundert)“ zu Aspekten der Digital "
 "Humanities aus."
 
-#: mop/data/events.py:93
+#: mop/data/events.py:104
 msgid "Workshop on Medieval Athos in Oxford"
 msgstr "Workshop über den mittelalterlichen Athos in Oxford"
 
-#: mop/data/events.py:94
+#: mop/data/events.py:105
 msgid "athos_oxford_290923"
 msgstr ""
 "Am 29. September 2023 hielt Mihailo St. Popović einen Vortrag mit dem Titel "
@@ -152,11 +165,11 @@ msgstr ""
 "Rahmen des Workshops „A Special Relationship? Gender on Medieval Mount Athos“ in "
 "Oxford, Großbritannien."
 
-#: mop/data/events.py:104
+#: mop/data/events.py:115
 msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr "Vortrag über die Krone des Heiligen Königs Stefan Dečanski"
 
-#: mop/data/events.py:105
+#: mop/data/events.py:116
 msgid "tripps_070923"
 msgstr ""
 "Professor Dr. Johannes Tripps (Hochschule für Technik, Wirtschaft und Kultur "
@@ -168,11 +181,11 @@ msgstr ""
 "@MapsOfPower\" target=\"_blank\" class=\"link-primary\">https://www.youtube.com/"
 "@MapsOfPower</a>"
 
-#: mop/data/events.py:115
+#: mop/data/events.py:126
 msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr "TIB Balkan auf dem IMC Leeds 2023"
 
-#: mop/data/events.py:116
+#: mop/data/events.py:127
 msgid "imc_leeds_23"
 msgstr ""
 "MitarbeiterInnen des Teams TIB Balkan haben gemeinsam mit KollegInnen des "
@@ -183,11 +196,11 @@ msgstr ""
 "across Medieval Space, Objects, and Data“ am 6. Juli 2023 beim IMC Leeds "
 "präsentiert."
 
-#: mop/data/events.py:126
+#: mop/data/events.py:137
 msgid "presentation on MECERN conference"
 msgstr "Präsentation auf der MECERN-Konferenz"
 
-#: mop/data/events.py:127
+#: mop/data/events.py:138
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan und Mihailo Popović haben an der MECERN Konferenz „Continuity "
@@ -195,11 +208,11 @@ msgstr ""
 "und einen gemeinsamen Vortrag über „The Hagiogeography of Saint Archangel "
 "Michael in the Balkans and Central Europe in Medieval Times“ gehalten."
 
-#: mop/data/events.py:137
+#: mop/data/events.py:148
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "Präsentation in der Serbischen Akademie der Wissenschaften und Künste"
 
-#: mop/data/events.py:138
+#: mop/data/events.py:149
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović wurde vom Institut für Byzantinistik der Serbischen Akademie der "
@@ -228,12 +241,11 @@ msgid "december"
 msgstr "Dezember"
 
 #: mop/data/histgeo.py:76
-#, fuzzy
 msgid "December"
 msgstr "Dezember"
 
 #: mop/data/histgeo.py:88 mop/data/histgeo.py:125 mop/data/histgeo.py:162
-#: mop/data/literature.py:76
+#: mop/data/literature.py:91
 msgid "eds."
 msgstr "Hrsg."
 
@@ -540,118 +552,126 @@ msgstr "den naturräumlichen Gegebenheiten von Landschaften"
 msgid "image_landscape_caption"
 msgstr "die Bucht von Kotor, Montenegro (2021)"
 
-#: mop/data/literature.py:11 mop/data/literature.py:91
+#: mop/data/literature.py:12
+msgid "Berlin"
+msgstr "Berlin"
+
+#: mop/data/literature.py:26 mop/data/literature.py:106
 msgid "Novi Sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:27
+#: mop/data/literature.py:42
 msgid "Bucharest"
 msgstr "Bukarest"
 
-#: mop/data/literature.py:27
+#: mop/data/literature.py:42
 msgid "Brăila"
 msgstr "Brăila"
 
-#: mop/data/literature.py:40 mop/data/literature.py:67 mop/data/presentations.py:33
-#: mop/data/presentations.py:54 mop/data/presentations.py:63
-#: mop/data/presentations.py:130
+#: mop/data/literature.py:55 mop/data/literature.py:82 mop/data/presentations.py:42
+#: mop/data/presentations.py:63 mop/data/presentations.py:72
+#: mop/data/presentations.py:139
 msgid "Belgrade"
 msgstr "Belgrad"
 
-#: mop/data/literature.py:53
+#: mop/data/literature.py:68
 msgid "Darmstadt"
 msgstr "Darmstadt"
 
-#: mop/data/literature.py:80 mop/data/literature.py:102
-#: mop/data/presentations.py:145
+#: mop/data/literature.py:95 mop/data/literature.py:117
+#: mop/data/presentations.py:154
 msgid "Leipzig"
 msgstr "Leipzig"
 
-#: mop/data/literature.py:116
+#: mop/data/literature.py:131
 msgid "Göttingen"
 msgstr "Göttingen"
 
-#: mop/data/literature.py:123
+#: mop/data/literature.py:138
 msgid "etc."
 msgstr "u.a."
 
-#: mop/data/literature.py:128
+#: mop/data/literature.py:143
 msgid "Krems"
 msgstr "Krems"
 
-#: mop/data/literature.py:152
+#: mop/data/literature.py:167
 msgid "cambridge, MA"
 msgstr "Cambridge, MA"
 
-#: mop/data/literature.py:152 mop/data/literature.py:161 mop/data/literature.py:220
+#: mop/data/literature.py:167 mop/data/literature.py:176 mop/data/literature.py:235
 msgid "london"
 msgstr "London"
 
-#: mop/data/literature.py:161
+#: mop/data/literature.py:176
 msgid "new york"
 msgstr "New York"
 
-#: mop/data/literature.py:170
+#: mop/data/literature.py:185
 msgid "stroud"
 msgstr "Stroud"
 
-#: mop/data/literature.py:182
+#: mop/data/literature.py:197
 msgid "mainz"
 msgstr "Mainz"
 
-#: mop/data/literature.py:182
+#: mop/data/literature.py:197
 msgid "ruhpolding"
 msgstr "Ruhpolding"
 
-#: mop/data/literature.py:197
+#: mop/data/literature.py:212
 msgid "vienna"
 msgstr "Wien"
 
-#: mop/data/literature.py:197
+#: mop/data/literature.py:212
 msgid "novi sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:210 mop/data/literature.py:242
+#: mop/data/literature.py:225 mop/data/literature.py:257
 msgid "venice"
 msgstr "Venedig"
 
-#: mop/data/literature.py:230
+#: mop/data/literature.py:245
 msgid "exter"
 msgstr "Exeter"
 
-#: mop/data/presentations.py:11 mop/data/presentations.py:75
-#: mop/data/presentations.py:86 mop/data/presentations.py:96
-#: mop/data/presentations.py:107 mop/data/presentations.py:119
-#: mop/data/presentations.py:194 mop/data/presentations.py:217
-#: mop/data/presentations.py:229 mop/data/presentations.py:240
-#: mop/data/presentations.py:251 mop/data/presentations.py:262
-#: mop/data/presentations.py:272
+#: mop/data/presentations.py:9
+msgid "Ebreichsdorf"
+msgstr "Ebreichsdorf"
+
+#: mop/data/presentations.py:20 mop/data/presentations.py:84
+#: mop/data/presentations.py:95 mop/data/presentations.py:105
+#: mop/data/presentations.py:116 mop/data/presentations.py:128
+#: mop/data/presentations.py:203 mop/data/presentations.py:226
+#: mop/data/presentations.py:238 mop/data/presentations.py:249
+#: mop/data/presentations.py:260 mop/data/presentations.py:271
+#: mop/data/presentations.py:281
 msgid "Leeds"
 msgstr "Leeds"
 
-#: mop/data/presentations.py:21 mop/data/presentations.py:170
-#: mop/data/presentations.py:283 mop/data/presentations.py:295
+#: mop/data/presentations.py:30 mop/data/presentations.py:179
+#: mop/data/presentations.py:292 mop/data/presentations.py:304
 #: mop/templates/imprint.html:14 mop/templates/layout.html:89
 msgid "Vienna"
 msgstr "Wien"
 
-#: mop/data/presentations.py:32
+#: mop/data/presentations.py:41
 msgid "The Society of the Friends of Holy Mount Athos"
 msgstr "Die Gesellschaft der Freunde des Heiligen Berges Athos"
 
-#: mop/data/presentations.py:45
+#: mop/data/presentations.py:54
 msgid "Oxford"
 msgstr "Oxford"
 
-#: mop/data/presentations.py:156
+#: mop/data/presentations.py:165
 msgid "Los Angeles"
 msgstr "Los Angeles"
 
-#: mop/data/presentations.py:183
+#: mop/data/presentations.py:192
 msgid "Thessaloniki"
 msgstr "Thessaloniki"
 
-#: mop/data/presentations.py:206
+#: mop/data/presentations.py:215
 msgid "Florenz"
 msgstr "Florenz"
 
@@ -853,19 +873,22 @@ msgstr ""
 "interessierten Öffentlichkeit zu vermitteln."
 
 #: mop/data/projects/dgse.py:10
-msgid "The (Moated) Castle of Ebreichsdorf"
-msgstr "Das (Wasser)Schloß Ebreichsdorf"
+msgid "The Parish Church of Saint Andrew in Ebreichsdorf from the South-East"
+msgstr "Die Pfarrkirche zum Heiligen Andreas in Ebreichsdorf von Südosten"
 
-#: mop/data/projects/dgse.py:16
-#, fuzzy
-msgid "Ebreichsdorf in the Survey conducted under Emperor Joseph II"
-msgstr "Ebreichsdorf in der Josephinischen Landesaufnahme"
+#: mop/data/projects/dgse.py:15
+msgid "The Luckate Stein"
+msgstr "Der Luckate Stein"
 
-#: mop/data/projects/dgse.py:23
+#: mop/data/projects/dgse.py:22
 msgid "View of the Area around the Castle of Ebreichsdorf from the East"
 msgstr "Blick auf das Gebiet um das Schloß Ebreichsdorf von Osten"
 
-#: mop/data/projects/dgse.py:30
+#: mop/data/projects/dgse.py:28
+msgid "The Castle of Pottendorf"
+msgstr "Schloß Pottendorf"
+
+#: mop/data/projects/dgse.py:35
 msgid ""
 "Digital Humanities using the Example of the Castle of Ebreichsdorf in the Lower "
 "Austrian Industrial District"
@@ -873,7 +896,7 @@ msgstr ""
 "Digitale Geisteswissenschaften am Beispiel des Schlosses Ebreichsdorf im "
 "niederösterreichischen Industrieviertel"
 
-#: mop/data/projects/dgse.py:51
+#: mop/data/projects/dgse.py:57
 msgid "dgse_description_1"
 msgstr ""
 "Eine der großen wissenschaftlichen und populärwissenschaftlichen "
@@ -887,7 +910,7 @@ msgstr ""
 "der ohne Zweifel auch für Niederösterreich von großer Bedeutung ist bzw. in "
 "naher und ferner Zukunft weiterhin sein wird."
 
-#: mop/data/projects/dgse.py:52
+#: mop/data/projects/dgse.py:58
 msgid "dgse_description_2"
 msgstr ""
 "Unser Untersuchungsobjekt ist das (Wasser)Schloß Ebreichsdorf, das rund 60 km "
@@ -899,7 +922,7 @@ msgstr ""
 "die polnischen und böhmischen Länder mit Norditalien und Südosteuropa mit "
 "Mitteleuropa verbindet."
 
-#: mop/data/projects/dgse.py:53
+#: mop/data/projects/dgse.py:59
 msgid "dgse_description_3"
 msgstr ""
 "Die Ziele unseres Projekts spiegeln sich in den folgenden zwei Forschungsfragen "
@@ -1872,47 +1895,47 @@ msgstr "Jenseits von Ost und West"
 msgid "Further Reading"
 msgstr "Weiterführende Literatur"
 
-#: mop/templates/project_details.html:41
+#: mop/templates/project_details.html:46
 msgid "description"
 msgstr "Beschreibung"
 
-#: mop/templates/project_details.html:48
+#: mop/templates/project_details.html:54
 msgid "Funded by"
 msgstr "Finanziert durch"
 
-#: mop/templates/project_details.html:61
+#: mop/templates/project_details.html:69
 msgid "Project Number"
 msgstr "Projektnummer"
 
-#: mop/templates/project_details.html:66
+#: mop/templates/project_details.html:76
 msgid "Duration"
 msgstr "Dauer"
 
-#: mop/templates/project_details.html:70
+#: mop/templates/project_details.html:81
 msgid "Hosted by"
 msgstr "Beherbergendes Institut"
 
-#: mop/templates/project_details.html:92 mop/templates/projects.html:30
+#: mop/templates/project_details.html:104 mop/templates/projects.html:32
 msgid "Employees"
 msgstr "Mitarbeiter:innen"
 
-#: mop/templates/project_details.html:101
+#: mop/templates/project_details.html:115
 msgid "Cooperation and External Employees"
 msgstr "Kooperationen und externe Mitarbeiter:innen"
 
-#: mop/templates/project_details.html:114
+#: mop/templates/project_details.html:128
 msgid "further information"
 msgstr "Weitere Informationen"
 
-#: mop/templates/project_details.html:122
+#: mop/templates/project_details.html:138
 msgid "media"
 msgstr "Medien"
 
-#: mop/templates/project_details.html:156
+#: mop/templates/project_details.html:177
 msgid "explore"
 msgstr "Erkunden"
 
-#: mop/templates/project_details.html:174
+#: mop/templates/project_details.html:196
 msgid ""
 "The access and use of our data is subject to the Creative Commons License CC BY "
 "4.0 (<a\n"
@@ -1923,17 +1946,17 @@ msgstr ""
 "CC BY 4.0 (<a href=\"https://creativecommons.org/licenses/by/4.0/\">https://"
 "creativecommons.org/licenses/by/4.0/</a>)."
 
-#: mop/templates/project_details.html:182
+#: mop/templates/project_details.html:205
 msgid "results"
 msgstr "Resultate"
 
-#: mop/templates/project_details.html:217
+#: mop/templates/project_details.html:244
 msgid "publications"
 msgstr "Publikationen"
 
-#: mop/templates/project_details.html:223
+#: mop/templates/project_details.html:251
 msgid "presentations"
-msgstr "Päsentation"
+msgstr "Präsentation"
 
 #: mop/templates/explore/project_entity_view.html:73
 msgid "properties"
@@ -1982,3 +2005,9 @@ msgstr "Klasse"
 #~ "Diese neue Version wird den Namen „Maps of Power“ haben und im Herbst 2023 "
 #~ "online gehen. Für weiterführende Informationen: <a href=\"maps-of-power.oeaw."
 #~ "ac.at\" target=\"_blank\">maps-of-power.oeaw.ac.at</a>"
+
+#~ msgid "The (Moated) Castle of Ebreichsdorf"
+#~ msgstr "Das (Wasser)Schloß Ebreichsdorf"
+
+#~ msgid "Ebreichsdorf in the Survey conducted under Emperor Joseph II"
+#~ msgstr "Ebreichsdorf in der Josephinischen Landesaufnahme"

@@ -30,6 +30,17 @@ types = {
     },
 }
 event_list = [{
+    'id': 'presse_03052025',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2025, 5, 3)}",
+    'who': '',
+    'icon': 'presse_03052025.jpg',
+    'title': _('Report in the Newspaper Die Presse'),
+    'description': _('presse_03052025'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
     'id': 'wittgenstein_13022025',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2025, 2, 13)}",
