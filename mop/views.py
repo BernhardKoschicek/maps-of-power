@@ -104,11 +104,12 @@ def project_explore_table(project: str, view: str) -> str:
 
 
 @app.route('/projects')
+@app.route('/entity/<int:id_>')
 @app.route('/projects/<project>/explore/<view>/<id_>')
 def entity_project_view(
         id_: int,
-        project: Optional[str],
-        view: Optional[str]) -> str:
+        project: Optional[str] = None,
+        view: Optional[str] = None) -> str:
     entity = Entity.get_entity_from_oa(id_)
     linked_entities = get_entities_linked_to_entity(id_)
     relations = get_relations(
@@ -128,6 +129,7 @@ def entity_project_view(
         system_classes=system_classes)
 
 
+
 @app.route('/software')
 def software() -> str:
     return render_template('software.html')
@@ -136,6 +138,7 @@ def software() -> str:
 @app.route('/iiif_viewer')
 def iiif_viewer() -> str:
     manifest = request.args.get('manifest')
+    manifest = f'{manifest}?url={request.url_root}/entity/'
     return render_template('iiif_viewer.html', manifest=manifest)
 
 

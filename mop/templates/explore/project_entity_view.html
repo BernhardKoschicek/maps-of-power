@@ -11,20 +11,23 @@
   <link rel="stylesheet"
         href="/static/node_modules/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css">
   <link rel="stylesheet" href="/static/node_modules/leaflet.fullscreen/Control.FullScreen.css">
-
   <div class="container mt-3 mb-5">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="{{ url_for('projects') }}" class="link-primary">{{ _('projects') }}</a>
         </li>
+        {% if path[0] %}
         <li class="breadcrumb-item">
           <a href="{{ url_for('projects', title=path[0]) }}" class="link-primary">{{ path[0] }}</a>
         </li>
+        {% endif %}
         <li class="breadcrumb-item">
-          <a href="{{ url_for('project_explore_table',
-          project=path[0],  view=system_classes[entity.system_class | lower]) }}"
-             class="link-primary">{{ system_classes[entity.system_class | lower] }}</a>
+          <a href="{{
+            url_for('project_explore_table',
+            project=path[0],
+            view=system_classes[entity.system_class | lower]) }}"
+            class="link-primary">{{ system_classes[entity.system_class | lower] }}</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           {{ entity.name }}
