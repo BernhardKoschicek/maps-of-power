@@ -256,12 +256,14 @@
                   </a>
                   <figcaption class="small text-center pt-1 text-break">
                     {{ img.title }}
+                    {% if img.iiif_manifest %}
                     <br />
                     <a href="{{ url_for('iiif_viewer', manifest=img.iiif_manifest) }}"
                     target="_blank">
                       <img src="{{ url_for('static', filename='images/icons/iiif.png') }}"
                          alt="iiif_logo" style="width: 32px">
                     </a>
+                    {% endif %}
                   </figcaption>
                 </figure>
               </div>
