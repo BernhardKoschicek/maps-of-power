@@ -20,6 +20,7 @@
         "leaflet": "^1.7.1",
         "jquery": "^3.7.0",
         "jquery-ui-dist": "^1.13.1",
+        "mirador": "^3.3.0",
         "muuri": "^0.9.5"
     },
     "devDependencies": {},

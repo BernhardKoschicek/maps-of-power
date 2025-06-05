@@ -133,6 +133,12 @@ def software() -> str:
     return render_template('software.html')
 
 
+@app.route('/iiif_viewer')
+def iiif_viewer() -> str:
+    manifest = request.args.get('manifest')
+    return render_template('iiif_viewer.html', manifest=manifest)
+
+
 @app.route('/atlas')
 @app.route('/frontend')
 def frontend() -> Response:

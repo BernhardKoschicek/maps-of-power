@@ -251,7 +251,15 @@
                     <img src="{{ img.url + '?image_size=thumbnail' }}"
                          class="img-fluid mx-auto d-block" alt="{{ img.title }}">
                   </a>
-                  <figcaption class="small text-center pt-1 text-break">{{ img.title }}</figcaption>
+                  <figcaption class="small text-center pt-1 text-break">
+                    {{ img.title }}
+                    <br />
+                    <a href="{{ url_for('iiif_viewer', manifest=img.iiif_manifest) }}"
+                    target="_blank">
+                      <img src="{{ url_for('static', filename='images/icons/iiif.png') }}"
+                         alt="iiif_logo" style="width: 32px">
+                    </a>
+                  </figcaption>
                 </figure>
               </div>
             {% endfor %}
