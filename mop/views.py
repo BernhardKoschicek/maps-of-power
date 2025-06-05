@@ -138,7 +138,7 @@ def software() -> str:
 @app.route('/iiif_viewer')
 def iiif_viewer() -> str:
     manifest = request.args.get('manifest')
-    manifest = f'{manifest}?url={request.url_root}/entity/'
+    manifest = f'{manifest}?url={request.url_root}entity/'
     return render_template('iiif_viewer.html', manifest=manifest)
 
 
