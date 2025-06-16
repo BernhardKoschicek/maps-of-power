@@ -7,21 +7,26 @@ from mop.util import get_dates_formatted
 images = [{
     'src': 'dgse_1.jpg',
     'description':
-        _('The (Moated) Castle of Ebreichsdorf'),
-    'citation': 'Richard Drasche-Wartinberg',
+        _('The Parish Church of Saint Andrew in Ebreichsdorf from the South-East'),
+    'citation': 'Elisabeth Humer-Popović',
     'category': ['dgse']
 }, {
     'src': 'dgse_2.jpg',
-    'description':
-        _('Ebreichsdorf in the Survey conducted under Emperor Joseph II'),
-    'citation': '<a href="https://www.arcanum.com/en/" target="_blank">'
-                'https://www.arcanum.com/en/</a>',
+    'description': _('The Luckate Stein'),
+    'citation': 'Elisabeth Humer-Popović',
     'category': ['dgse']
-}, {
+},
+    {
     'src': 'dgse_3.jpg',
     'description':
         _('View of the Area around the Castle of Ebreichsdorf from the East'),
     'citation': 'M. Popović',
+    'category': ['dgse']
+},
+    {
+    'src': 'dgse_4.jpg',
+    'description': _('The Castle of Pottendorf'),
+    'citation': 'Wikipedia (https://de.wikipedia.org/wiki/Schloss_Pottendorf#/media/Datei:Pottendorf_-_Schloss,_S%C3%BCdansicht2.JPG)',
     'category': ['dgse']
 }]
 
@@ -44,6 +49,7 @@ project_dgse = {
        'Nikola Arnautović',
        'Marija Đokić Petrović',
        'Silvia Gómez-Senovilla',
+        'Veronika Kochesser-Latzer'
     ],
     'begin': get_dates_formatted(2025, 1, 1),
     'end': get_dates_formatted(2026, 12, 31),

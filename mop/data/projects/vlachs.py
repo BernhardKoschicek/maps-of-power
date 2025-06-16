@@ -103,5 +103,5 @@ project_vlachs = {
     'icon': 'vlachs_icon.jpg',
     'images': images,
     'videos': [],
-    'oaID': 8247,
+    'oaID': '8247',
 }

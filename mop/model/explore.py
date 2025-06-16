@@ -54,9 +54,13 @@ system_classes = {
 
 def get_oa_by_view_class(
         view: str,
-        project_id: object) -> list[Optional[Entity]]:
-    return [] if view not in view_classes else \
-        [Entity(entry['features'][0])
-         for entry in get_view_class(
-            f'{view}?limit=0&'
-            f'show=description&type_id={project_id}')]
+        project_id: str | list[str]) -> list[Optional[Entity]]:
+    if view not in view_classes:
+        return []
+    param =  f'{view}?limit=0&show=description'
+    if isinstance(project_id, list):
+        for id_ in project_id:
+            param += f'&type_id={id_}'
+    else:
+        param += f'&type_id={project_id}'
+    return [Entity(entry['features'][0]) for entry in get_view_class(param)]

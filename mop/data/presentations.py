@@ -3,6 +3,15 @@ from flask_babel import lazy_gettext as _
 from mop.util import get_table_dates_formatted
 
 presentations = [{
+    'presenter': 'Schloß Ebreichsdorf/Castle of Ebreichsdorf',
+    'title': 'Erstes Projekttreffen / First Project Meeting',
+    'conference': '',
+    'location': [_('Ebreichsdorf')],
+    'date': get_table_dates_formatted(2025, 5, 15),
+    'external_link': '',
+    'download': '',
+    'category': ['dgse']
+},{
     'presenter': 'Mihailo St. Popović',
     'title': 'A Monumental Crisis in Times of War: Endangered or Researched '
              'Medieval Cultural Heritage in Macedonia during the First '

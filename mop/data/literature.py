@@ -1,6 +1,21 @@
 from flask_babel import lazy_gettext as _
 
 literatures = [{
+    'author': 'Mihailo St. Popović',
+    'title':
+        '„Friedensarbeit inmitten tollsten Krieges“ – Hochschulkurse, '
+        'Denkmalkunde und Archäologie im Hinterland des deutschen Abschnittes '
+        'der Salonikifront während und nach dem Ersten Weltkrieg. '
+        'kunsttexte.de - Journal für Kunst- und Bildgeschichte  2025/1 – '
+        'Ostblick, Themenheft: Kunstschutz-Initiativen im Ersten Weltkrieg '
+        'in Ostmitteleuropa',
+    'locations': [_('Berlin')],
+    'date': '2025',
+    'pages': '12',
+    'external_link': 'https://journals.ub.uni-heidelberg.de/index.php/kunsttexte/article/view/101426/105841',
+    'download': '',
+    'category': ['tarsr']
+}, {
     'author':
         'Mihailo St. Popović, Branka Vranešević,'
         ' Moisés Hernández Cordero, Johannes Tripps,',

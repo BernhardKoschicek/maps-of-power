@@ -4,9 +4,11 @@ from mop.data.projects.dgse import project_dgse
 from mop.data.projects.holdura import project_holdura
 from mop.data.projects.idcew import project_idcew
 from mop.data.projects.tarsr import project_tarsr
+from mop.data.projects.tib_balkan import project_tib_balkan
 from mop.data.projects.vlachs import project_vlachs
 
 project_data = {
+    'tib_balkan': project_tib_balkan,
     'dgse': project_dgse,
     'idcew': project_idcew,
     'tarsr': project_tarsr,

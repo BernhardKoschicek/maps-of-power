@@ -15,6 +15,9 @@ class Depiction:
         self.creator = data['creator']
         self.license_holder = data['licenseHolder']
         self.public_shareable = data['publicShareable']
+        self.mimetype = data['mimetype']
+        self.iiif_base_path = data['IIIFBasePath']
+        self.iiif_manifest = data['IIIFManifest']
         self.extension = os.path.splitext(self.url.rsplit('/', 1)[-1])[1]
 
 
