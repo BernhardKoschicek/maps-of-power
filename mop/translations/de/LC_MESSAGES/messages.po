@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-02 13:23+0200\n"
-"PO-Revision-Date: 2025-07-02 15:10+0200\n"
+"POT-Creation-Date: 2025-07-02 15:30+0200\n"
+"PO-Revision-Date: 2025-07-02 15:34+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -19,24 +19,24 @@ msgstr ""
 "Generated-By: Babel 2.10.3\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: mop/util.py:33
+#: mop/util.py:39
 msgid "about"
 msgstr "über"
 
 #: mop/templates/explore/project_entity_view.html:18
-#: mop/templates/project_details.html:34 mop/util.py:34
+#: mop/templates/project_details.html:34 mop/util.py:40
 msgid "projects"
 msgstr "projekte"
 
-#: mop/util.py:35
+#: mop/util.py:41
 msgid "atlas"
 msgstr "Atlas"
 
-#: mop/templates/about.html:74 mop/templates/events.html:6 mop/util.py:37
+#: mop/templates/about.html:74 mop/templates/events.html:6 mop/util.py:43
 msgid "events"
 msgstr "ereignisse"
 
-#: mop/templates/explore/project_entity_view.html:137 mop/util.py:38
+#: mop/templates/explore/project_entity_view.html:137 mop/util.py:44
 msgid "literature"
 msgstr "Literatur"
 
@@ -61,10 +61,38 @@ msgid "blogpost"
 msgstr "blogpost"
 
 #: mop/data/events.py:38
+msgid "Summer School in Brno"
+msgstr "Sommerschule in Brünn"
+
+#: mop/data/events.py:39
+msgid "brno_summer_school_260625"
+msgstr ""
+"Žarko Vujošević und Mihailo Popović haben bei der Sommerschule Scriptorium "
+"Brunense einen gemeinsamen Vortrag über serbische Diplomatik mit dem Titel "
+"„Documentary Spaces - Spaces of Power“ in Brünn, Tschechien, am 26. Juni 2025 "
+"gehalten. <a href=\"https://archivnictvi.phil.muni.cz/en/news-and-events/events/"
+"scriptorium-brunense-1\" target=\"_blank\">Mehr Information dazu</a>"
+
+#: mop/data/events.py:49
+msgid "Discourse on DH and AI"
+msgstr "Diskurs über DH und KI"
+
+#: mop/data/events.py:50
+msgid "heidelberg_200625"
+msgstr ""
+"Am 20. Juni 2025 hat Mihailo Popović einen Vortrag zu DH und KI mit dem Titel <a "
+"href=\"https://www.uni-heidelberg.de/de/veranstaltungen/ueber-die-sinnhaftigkeit-"
+"der-und-die-nachhaltigkeit-in-den-digitalen-geisteswissenschaften-2025-06-20\" "
+"target=\"_blank\">„Über die Sinnhaftigkeit der und die Nachhaltigkeit in den "
+"Digitalen Geisteswissenschaften: Erkenntnisse aus der Perspektive der "
+"Historischen Geographie, Byzantinistik und Südosteuropaforschung“ an der "
+"Universität Heidelberg gehalten</a>."
+
+#: mop/data/events.py:60
 msgid "Report in the Newspaper Die Presse"
 msgstr "Bericht in der Zeitung Die Presse"
 
-#: mop/data/events.py:39
+#: mop/data/events.py:61
 msgid "presse_03052025"
 msgstr ""
 "Die Tageszeitung Die Presse berichtet in ihrer Printausgabe vom 3. Mai 2025 über "
@@ -73,11 +101,11 @@ msgstr ""
 "www.diepresse.com/19640086/auf-feldforschung-mit-notizbuch-kompass-und-melone\" "
 "target=\"_blank\">Die Presse</a>"
 
-#: mop/data/events.py:49
+#: mop/data/events.py:71
 msgid "Lecture at the Haus Wittgenstein"
 msgstr "Vortrag im Haus Wittgenstein"
 
-#: mop/data/events.py:50
+#: mop/data/events.py:72
 msgid "wittgenstein_13022025"
 msgstr ""
 "Am 13. Februar 2025 hat Mihailo Popović einen Vortrag mit dem Titel „Berge und "
@@ -86,11 +114,11 @@ msgstr ""
 "Osogovski“ im Rahmen des Lectorium Bulgaricum im Haus Wittgenstein in Wien "
 "gehalten."
 
-#: mop/data/events.py:60
+#: mop/data/events.py:82
 msgid "Workshop in Oxford"
 msgstr "Workshop in Oxford"
 
-#: mop/data/events.py:61
+#: mop/data/events.py:83
 msgid "workshop_oxford_300524"
 msgstr ""
 "Ende Mai 2024 nahm Mihailo Popović an einem Workshop <a href=\"https://www.ames."
@@ -100,11 +128,11 @@ msgstr ""
 "and How to Overcome Them\" hielt, der sich dem Bereich \"Sakrale Topographie\" "
 "der Maps of Power Initiative zuordnen lässt."
 
-#: mop/data/events.py:71
+#: mop/data/events.py:93
 msgid "The Long Night of Research in Vienna"
 msgstr "Die Lange Nacht der Forschung in Wien"
 
-#: mop/data/events.py:72
+#: mop/data/events.py:94
 msgid "lange_nacht_der_forschung_240524"
 msgstr ""
 "Am Freitag, 24. Mai 2024, nahm Mihailo Popović an der Langen Nacht der Forschung "
@@ -115,11 +143,11 @@ msgstr ""
 "während des Ersten Weltkriegs (1915-1918)\"</a> als Poster, das zum Bereich "
 "\"Kulturerbe\" der Maps of Power Initiative beiträgt."
 
-#: mop/data/events.py:82
+#: mop/data/events.py:104
 msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
 msgstr "Überreichung einer Festschrift an Johannes Koder"
 
-#: mop/data/events.py:83
+#: mop/data/events.py:105
 msgid "koder_festschrift_230424"
 msgstr ""
 "Aus Anlaß des 80. Geburtstags von Professor Johannes Koder brachten Freunde, "
@@ -135,11 +163,11 @@ msgstr ""
 "der-den-kodax-tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-vratislav-"
 "zervan-ralf-c-mueller/</a>"
 
-#: mop/data/events.py:93
+#: mop/data/events.py:115
 msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr "Zwei Vorträge über die Nützlichkeit von OpenAtlas"
 
-#: mop/data/events.py:94
+#: mop/data/events.py:116
 msgid "belgrade_190923"
 msgstr ""
 "Am 19. September 2023 haben Bernhard Koschiček-Krombholz und Mihailo St. Popović "
@@ -152,11 +180,11 @@ msgstr ""
 "Zentralbalkan (Ende 10. - Mitte 13. Jahrhundert)“ zu Aspekten der Digital "
 "Humanities aus."
 
-#: mop/data/events.py:104
+#: mop/data/events.py:126
 msgid "Workshop on Medieval Athos in Oxford"
 msgstr "Workshop über den mittelalterlichen Athos in Oxford"
 
-#: mop/data/events.py:105
+#: mop/data/events.py:127
 msgid "athos_oxford_290923"
 msgstr ""
 "Am 29. September 2023 hielt Mihailo St. Popović einen Vortrag mit dem Titel "
@@ -165,11 +193,11 @@ msgstr ""
 "Rahmen des Workshops „A Special Relationship? Gender on Medieval Mount Athos“ in "
 "Oxford, Großbritannien."
 
-#: mop/data/events.py:115
+#: mop/data/events.py:137
 msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr "Vortrag über die Krone des Heiligen Königs Stefan Dečanski"
 
-#: mop/data/events.py:116
+#: mop/data/events.py:138
 msgid "tripps_070923"
 msgstr ""
 "Professor Dr. Johannes Tripps (Hochschule für Technik, Wirtschaft und Kultur "
@@ -181,11 +209,11 @@ msgstr ""
 "@MapsOfPower\" target=\"_blank\" class=\"link-primary\">https://www.youtube.com/"
 "@MapsOfPower</a>"
 
-#: mop/data/events.py:126
+#: mop/data/events.py:148
 msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr "TIB Balkan auf dem IMC Leeds 2023"
 
-#: mop/data/events.py:127
+#: mop/data/events.py:149
 msgid "imc_leeds_23"
 msgstr ""
 "MitarbeiterInnen des Teams TIB Balkan haben gemeinsam mit KollegInnen des "
@@ -196,11 +224,11 @@ msgstr ""
 "across Medieval Space, Objects, and Data“ am 6. Juli 2023 beim IMC Leeds "
 "präsentiert."
 
-#: mop/data/events.py:137
+#: mop/data/events.py:159
 msgid "presentation on MECERN conference"
 msgstr "Präsentation auf der MECERN-Konferenz"
 
-#: mop/data/events.py:138
+#: mop/data/events.py:160
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan und Mihailo Popović haben an der MECERN Konferenz „Continuity "
@@ -208,11 +236,11 @@ msgstr ""
 "und einen gemeinsamen Vortrag über „The Hagiogeography of Saint Archangel "
 "Michael in the Balkans and Central Europe in Medieval Times“ gehalten."
 
-#: mop/data/events.py:148
+#: mop/data/events.py:170
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "Präsentation in der Serbischen Akademie der Wissenschaften und Künste"
 
-#: mop/data/events.py:149
+#: mop/data/events.py:171
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović wurde vom Institut für Byzantinistik der Serbischen Akademie der "
@@ -568,9 +596,9 @@ msgstr "Bukarest"
 msgid "Brăila"
 msgstr "Brăila"
 
-#: mop/data/literature.py:55 mop/data/literature.py:82 mop/data/presentations.py:42
-#: mop/data/presentations.py:63 mop/data/presentations.py:72
-#: mop/data/presentations.py:139
+#: mop/data/literature.py:55 mop/data/literature.py:82 mop/data/presentations.py:54
+#: mop/data/presentations.py:75 mop/data/presentations.py:84
+#: mop/data/presentations.py:151
 msgid "Belgrade"
 msgstr "Belgrad"
 
@@ -579,7 +607,7 @@ msgid "Darmstadt"
 msgstr "Darmstadt"
 
 #: mop/data/literature.py:95 mop/data/literature.py:117
-#: mop/data/presentations.py:154
+#: mop/data/presentations.py:166
 msgid "Leipzig"
 msgstr "Leipzig"
 
@@ -635,43 +663,47 @@ msgstr "Venedig"
 msgid "exter"
 msgstr "Exeter"
 
-#: mop/data/presentations.py:9
+#: mop/data/presentations.py:12
+msgid "Heidelberg"
+msgstr "Heidelberg"
+
+#: mop/data/presentations.py:21
 msgid "Ebreichsdorf"
 msgstr "Ebreichsdorf"
 
-#: mop/data/presentations.py:20 mop/data/presentations.py:84
-#: mop/data/presentations.py:95 mop/data/presentations.py:105
-#: mop/data/presentations.py:116 mop/data/presentations.py:128
-#: mop/data/presentations.py:203 mop/data/presentations.py:226
-#: mop/data/presentations.py:238 mop/data/presentations.py:249
-#: mop/data/presentations.py:260 mop/data/presentations.py:271
-#: mop/data/presentations.py:281
+#: mop/data/presentations.py:32 mop/data/presentations.py:96
+#: mop/data/presentations.py:107 mop/data/presentations.py:117
+#: mop/data/presentations.py:128 mop/data/presentations.py:140
+#: mop/data/presentations.py:215 mop/data/presentations.py:238
+#: mop/data/presentations.py:250 mop/data/presentations.py:261
+#: mop/data/presentations.py:272 mop/data/presentations.py:283
+#: mop/data/presentations.py:293
 msgid "Leeds"
 msgstr "Leeds"
 
-#: mop/data/presentations.py:30 mop/data/presentations.py:179
-#: mop/data/presentations.py:292 mop/data/presentations.py:304
+#: mop/data/presentations.py:42 mop/data/presentations.py:191
+#: mop/data/presentations.py:304 mop/data/presentations.py:316
 #: mop/templates/imprint.html:14 mop/templates/layout.html:89
 msgid "Vienna"
 msgstr "Wien"
 
-#: mop/data/presentations.py:41
+#: mop/data/presentations.py:53
 msgid "The Society of the Friends of Holy Mount Athos"
 msgstr "Die Gesellschaft der Freunde des Heiligen Berges Athos"
 
-#: mop/data/presentations.py:54
+#: mop/data/presentations.py:66
 msgid "Oxford"
 msgstr "Oxford"
 
-#: mop/data/presentations.py:165
+#: mop/data/presentations.py:177
 msgid "Los Angeles"
 msgstr "Los Angeles"
 
-#: mop/data/presentations.py:192
+#: mop/data/presentations.py:204
 msgid "Thessaloniki"
 msgstr "Thessaloniki"
 
-#: mop/data/presentations.py:215
+#: mop/data/presentations.py:227
 msgid "Florenz"
 msgstr "Florenz"
 

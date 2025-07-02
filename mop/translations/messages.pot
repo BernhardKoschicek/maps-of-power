@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-02 13:23+0200\n"
+"POT-Creation-Date: 2025-07-02 15:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: mop/util.py:33
+#: mop/util.py:39
 msgid "about"
 msgstr ""
 
 #: mop/templates/explore/project_entity_view.html:18
-#: mop/templates/project_details.html:34 mop/util.py:34
+#: mop/templates/project_details.html:34 mop/util.py:40
 msgid "projects"
 msgstr ""
 
-#: mop/util.py:35
+#: mop/util.py:41
 msgid "atlas"
 msgstr ""
 
-#: mop/templates/about.html:74 mop/templates/events.html:6 mop/util.py:37
+#: mop/templates/about.html:74 mop/templates/events.html:6 mop/util.py:43
 msgid "events"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:137 mop/util.py:38
+#: mop/templates/explore/project_entity_view.html:137 mop/util.py:44
 msgid "literature"
 msgstr ""
 
@@ -59,90 +59,106 @@ msgid "blogpost"
 msgstr ""
 
 #: mop/data/events.py:38
-msgid "Report in the Newspaper Die Presse"
+msgid "Summer School in Brno"
 msgstr ""
 
 #: mop/data/events.py:39
-msgid "presse_03052025"
+msgid "brno_summer_school_260625"
 msgstr ""
 
 #: mop/data/events.py:49
-msgid "Lecture at the Haus Wittgenstein"
+msgid "Discourse on DH and AI"
 msgstr ""
 
 #: mop/data/events.py:50
-msgid "wittgenstein_13022025"
+msgid "heidelberg_200625"
 msgstr ""
 
 #: mop/data/events.py:60
-msgid "Workshop in Oxford"
+msgid "Report in the Newspaper Die Presse"
 msgstr ""
 
 #: mop/data/events.py:61
-msgid "workshop_oxford_300524"
+msgid "presse_03052025"
 msgstr ""
 
 #: mop/data/events.py:71
-msgid "The Long Night of Research in Vienna"
+msgid "Lecture at the Haus Wittgenstein"
 msgstr ""
 
 #: mop/data/events.py:72
-msgid "lange_nacht_der_forschung_240524"
+msgid "wittgenstein_13022025"
 msgstr ""
 
 #: mop/data/events.py:82
-msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
+msgid "Workshop in Oxford"
 msgstr ""
 
 #: mop/data/events.py:83
-msgid "koder_festschrift_230424"
+msgid "workshop_oxford_300524"
 msgstr ""
 
 #: mop/data/events.py:93
-msgid "Two Presentations on the Usefulness of OpenAtlas"
+msgid "The Long Night of Research in Vienna"
 msgstr ""
 
 #: mop/data/events.py:94
-msgid "belgrade_190923"
+msgid "lange_nacht_der_forschung_240524"
 msgstr ""
 
 #: mop/data/events.py:104
-msgid "Workshop on Medieval Athos in Oxford"
+msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
 msgstr ""
 
 #: mop/data/events.py:105
-msgid "athos_oxford_290923"
+msgid "koder_festschrift_230424"
 msgstr ""
 
 #: mop/data/events.py:115
-msgid "Paper on the Crown of the Saint King Stefan Dečanski"
+msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr ""
 
 #: mop/data/events.py:116
-msgid "tripps_070923"
+msgid "belgrade_190923"
 msgstr ""
 
 #: mop/data/events.py:126
-msgid "TIB Balkans at the IMC Leeds 2023"
+msgid "Workshop on Medieval Athos in Oxford"
 msgstr ""
 
 #: mop/data/events.py:127
-msgid "imc_leeds_23"
+msgid "athos_oxford_290923"
 msgstr ""
 
 #: mop/data/events.py:137
-msgid "presentation on MECERN conference"
+msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr ""
 
 #: mop/data/events.py:138
-msgid "mecern_2023"
+msgid "tripps_070923"
 msgstr ""
 
 #: mop/data/events.py:148
-msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr ""
 
 #: mop/data/events.py:149
+msgid "imc_leeds_23"
+msgstr ""
+
+#: mop/data/events.py:159
+msgid "presentation on MECERN conference"
+msgstr ""
+
+#: mop/data/events.py:160
+msgid "mecern_2023"
+msgstr ""
+
+#: mop/data/events.py:170
+msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgstr ""
+
+#: mop/data/events.py:171
 msgid "serbian_academy_220223"
 msgstr ""
 
@@ -326,8 +342,8 @@ msgid "Brăila"
 msgstr ""
 
 #: mop/data/literature.py:55 mop/data/literature.py:82
-#: mop/data/presentations.py:42 mop/data/presentations.py:63
-#: mop/data/presentations.py:72 mop/data/presentations.py:139
+#: mop/data/presentations.py:54 mop/data/presentations.py:75
+#: mop/data/presentations.py:84 mop/data/presentations.py:151
 msgid "Belgrade"
 msgstr ""
 
@@ -336,7 +352,7 @@ msgid "Darmstadt"
 msgstr ""
 
 #: mop/data/literature.py:95 mop/data/literature.py:117
-#: mop/data/presentations.py:154
+#: mop/data/presentations.py:166
 msgid "Leipzig"
 msgstr ""
 
@@ -393,43 +409,47 @@ msgstr ""
 msgid "exter"
 msgstr ""
 
-#: mop/data/presentations.py:9
+#: mop/data/presentations.py:12
+msgid "Heidelberg"
+msgstr ""
+
+#: mop/data/presentations.py:21
 msgid "Ebreichsdorf"
 msgstr ""
 
-#: mop/data/presentations.py:20 mop/data/presentations.py:84
-#: mop/data/presentations.py:95 mop/data/presentations.py:105
-#: mop/data/presentations.py:116 mop/data/presentations.py:128
-#: mop/data/presentations.py:203 mop/data/presentations.py:226
-#: mop/data/presentations.py:238 mop/data/presentations.py:249
-#: mop/data/presentations.py:260 mop/data/presentations.py:271
-#: mop/data/presentations.py:281
+#: mop/data/presentations.py:32 mop/data/presentations.py:96
+#: mop/data/presentations.py:107 mop/data/presentations.py:117
+#: mop/data/presentations.py:128 mop/data/presentations.py:140
+#: mop/data/presentations.py:215 mop/data/presentations.py:238
+#: mop/data/presentations.py:250 mop/data/presentations.py:261
+#: mop/data/presentations.py:272 mop/data/presentations.py:283
+#: mop/data/presentations.py:293
 msgid "Leeds"
 msgstr ""
 
-#: mop/data/presentations.py:30 mop/data/presentations.py:179
-#: mop/data/presentations.py:292 mop/data/presentations.py:304
+#: mop/data/presentations.py:42 mop/data/presentations.py:191
+#: mop/data/presentations.py:304 mop/data/presentations.py:316
 #: mop/templates/imprint.html:14 mop/templates/layout.html:89
 msgid "Vienna"
 msgstr ""
 
-#: mop/data/presentations.py:41
+#: mop/data/presentations.py:53
 msgid "The Society of the Friends of Holy Mount Athos"
 msgstr ""
 
-#: mop/data/presentations.py:54
+#: mop/data/presentations.py:66
 msgid "Oxford"
 msgstr ""
 
-#: mop/data/presentations.py:165
+#: mop/data/presentations.py:177
 msgid "Los Angeles"
 msgstr ""
 
-#: mop/data/presentations.py:192
+#: mop/data/presentations.py:204
 msgid "Thessaloniki"
 msgstr ""
 
-#: mop/data/presentations.py:215
+#: mop/data/presentations.py:227
 msgid "Florenz"
 msgstr ""
 
