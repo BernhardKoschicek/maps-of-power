@@ -101,3 +101,10 @@ a.oa-access-tab-boxes:hover {
     color: white;
     background-color: rgba(67, 57, 28, 0.43);
 }
+
+.video-image-size {
+max-width: 200px;
+max-height: 200px;
+width: auto; /* Ensures the image scales down proportionally if larger than 200px */
+height: auto; /* Ensures the image scales down proportionally if larger than 200px */
+}

@@ -30,6 +30,28 @@ types = {
     },
 }
 event_list = [{
+    'id': 'brno_summer_school_260625',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2025, 6, 26)}",
+    'who': '',
+    'icon': 'brno_summer_school_260625.jpg',
+    'title': _('Summer School in Brno'),
+    'description': _('brno_summer_school_260625'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
+    'id': 'heidelberg_200625',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2025, 6, 20)}",
+    'who': '',
+    'icon': 'heidelberg_200625.jpg',
+    'title': _('Discourse on DH and AI'),
+    'description': _('heidelberg_200625'),
+    'attachment': [{
+        'path': '',
+        'type': ''}]
+},{
     'id': 'presse_03052025',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2025, 5, 3)}",

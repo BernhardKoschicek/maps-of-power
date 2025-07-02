@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-23 16:50+0200\n"
-"PO-Revision-Date: 2025-05-23 16:52+0200\n"
+"POT-Creation-Date: 2025-07-02 13:23+0200\n"
+"PO-Revision-Date: 2025-07-02 15:10+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "about"
 msgstr "über"
 
-#: mop/templates/explore/project_entity_view.html:19
+#: mop/templates/explore/project_entity_view.html:18
 #: mop/templates/project_details.html:34 mop/util.py:34
 msgid "projects"
 msgstr "projekte"
@@ -36,7 +36,7 @@ msgstr "Atlas"
 msgid "events"
 msgstr "ereignisse"
 
-#: mop/templates/explore/project_entity_view.html:134 mop/util.py:38
+#: mop/templates/explore/project_entity_view.html:137 mop/util.py:38
 msgid "literature"
 msgstr "Literatur"
 
@@ -947,9 +947,11 @@ msgstr ""
 msgid "holdura_result_text_2"
 msgstr ""
 "Ein von unserem Kollegen Lukas Neugebauer gedrehter Kurzfilm über unser Projekt "
-"wurde ausgewählt und auf dem RAM Filmfestival 2024 in Rovereto, Italien (2. "
-"Oktober bis 6. Oktober 2024) und dem 5. APOX Filmfestival auf der Insel Lošinj, "
-"Kroatien (3. Oktober bis 10. Oktober 2024) gezeigt."
+"wurde ausgezeichnet und auf dem RAM Filmfestival 2024 in Rovereto, Italien (2. "
+"Oktober bis 6. Oktober 2024), dem 5. APOX Filmfestival auf der Insel Lošinj, "
+"Kroatien (3. Oktober bis 10. Oktober 2024) und dem 25. Internationalen "
+"Filmfestival des archäologischen Films am Nationalmuseum in Belgrad, Serbien "
+"(20. Mai bis 25. Mai 2025) gezeigt."
 
 #: mop/data/projects/holdura.py:18
 msgid "relief map of Montenegro"
@@ -1958,16 +1960,16 @@ msgstr "Publikationen"
 msgid "presentations"
 msgstr "Präsentation"
 
-#: mop/templates/explore/project_entity_view.html:73
+#: mop/templates/explore/project_entity_view.html:76
 msgid "properties"
 msgstr "Eigenschaften"
 
-#: mop/templates/explore/project_entity_view.html:119
+#: mop/templates/explore/project_entity_view.html:122
 #: mop/templates/explore/project_explore_table.html:25
 msgid "Description"
 msgstr "Beschreibung"
 
-#: mop/templates/explore/project_entity_view.html:243
+#: mop/templates/explore/project_entity_view.html:246
 msgid "files"
 msgstr "Dateien"
 

@@ -1,7 +1,7 @@
 from flask_babel import lazy_gettext as _
 
 from mop.data.institutes import institutes
-from mop.util import get_dates_formatted, youtube_iframe
+from mop.util import get_dates_formatted, get_image_frame, youtube_iframe
 
 results = {
     'text': [
@@ -14,7 +14,7 @@ results = {
         'link': None,
         'file': 'FWF_DFG_I 4330_Final Report.pdf',
         'icon': 'bi bi-journals',
-    },{
+    }, {
         'label': _("relief map of Montenegro"),
         'link': 'https://tib.oeaw.ac.at/static/3dhop/relief.html',
         'file': None,
@@ -83,6 +83,8 @@ project_holdura = {
     'icon': 'holdura_icon.jpg',
     'images': images,
     'videos': [
-        youtube_iframe('https://www.youtube-nocookie.com/embed/Nhdx2OeWkN8')],
+        get_image_frame('/static/images/projects/holdura/apox_schwarz.png'),
+        youtube_iframe('https://www.youtube-nocookie.com/embed/NV4TT4QnFNI'),
+        get_image_frame('/static/images/projects/holdura/ram_schwarz.png')],
     'oaID': '117730',
 }

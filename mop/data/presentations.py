@@ -3,6 +3,18 @@ from flask_babel import lazy_gettext as _
 from mop.util import get_table_dates_formatted
 
 presentations = [{
+    'presenter': 'Mihailo Popović',
+    'title': 'Über die Sinnhaftigkeit der und die Nachhaltigkeit in den '
+             'Digitalen Geisteswissenschaften: Erkenntnisse aus der '
+             'Perspektive der Historischen Geographie, Byzantinistik und '
+             'Südosteuropaforschung',
+    'conference': 'Ringvorlesung Master Mittelalterstudien',
+    'location': [_('Heidelberg')],
+    'date': get_table_dates_formatted(2025, 6, 10),
+    'external_link': '',
+    'download': '',
+    'category': ['dgse']
+}, {
     'presenter': 'Schloß Ebreichsdorf/Castle of Ebreichsdorf',
     'title': 'Erstes Projekttreffen / First Project Meeting',
     'conference': '',
@@ -11,7 +23,7 @@ presentations = [{
     'external_link': '',
     'download': '',
     'category': ['dgse']
-},{
+}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'A Monumental Crisis in Times of War: Endangered or Researched '
              'Medieval Cultural Heritage in Macedonia during the First '
@@ -22,7 +34,7 @@ presentations = [{
     'external_link': '',
     'download': '',
     'category': ['tarsr']
-},{
+}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'Wie die Byzantinistik Denkmalschutz betreibt … '
              '(Posterpräsentation/Poster Session)',

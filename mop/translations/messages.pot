@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-23 16:50+0200\n"
+"POT-Creation-Date: 2025-07-02 13:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "about"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:19
+#: mop/templates/explore/project_entity_view.html:18
 #: mop/templates/project_details.html:34 mop/util.py:34
 msgid "projects"
 msgstr ""
@@ -34,7 +34,7 @@ msgstr ""
 msgid "events"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:134 mop/util.py:38
+#: mop/templates/explore/project_entity_view.html:137 mop/util.py:38
 msgid "literature"
 msgstr ""
 
@@ -1208,16 +1208,16 @@ msgstr ""
 msgid "presentations"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:73
+#: mop/templates/explore/project_entity_view.html:76
 msgid "properties"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:119
+#: mop/templates/explore/project_entity_view.html:122
 #: mop/templates/explore/project_explore_table.html:25
 msgid "Description"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:243
+#: mop/templates/explore/project_entity_view.html:246
 msgid "files"
 msgstr ""
 

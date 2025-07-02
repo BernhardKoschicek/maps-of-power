@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-23 16:50+0200\n"
-"PO-Revision-Date: 2025-05-23 16:53+0200\n"
+"POT-Creation-Date: 2025-07-02 13:23+0200\n"
+"PO-Revision-Date: 2025-07-02 15:09+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "about"
 msgstr "about"
 
-#: mop/templates/explore/project_entity_view.html:19
+#: mop/templates/explore/project_entity_view.html:18
 #: mop/templates/project_details.html:34 mop/util.py:34
 msgid "projects"
 msgstr "projects"
@@ -36,7 +36,7 @@ msgstr "Atlas"
 msgid "events"
 msgstr "events"
 
-#: mop/templates/explore/project_entity_view.html:134 mop/util.py:38
+#: mop/templates/explore/project_entity_view.html:137 mop/util.py:38
 msgid "literature"
 msgstr "literature"
 
@@ -67,7 +67,7 @@ msgstr "Report in the Newspaper Die Presse"
 #: mop/data/events.py:39
 msgid "presse_03052025"
 msgstr ""
-"n its print edition of 3 May 2025 the daily newspaper Die Presse reports on the "
+"In its print edition of 3 May 2025 the daily newspaper Die Presse reports on the "
 "scientific work of Mihailo Popović under the title ‘Unterwegs mit Notizbuch, "
 "Kompass und Melone (On the Road with Notebook, Compass and Melon’). Further "
 "information can be found via: <a href=\"https://www.diepresse.com/19640086/auf-"
@@ -910,10 +910,12 @@ msgstr ""
 #: mop/data/projects/holdura.py:9
 msgid "holdura_result_text_2"
 msgstr ""
-"A short film on our project made by our colleague Lukas Neugebauer was selected "
+"A short film on our project made by our colleague Lukas Neugebauer was awarded "
 "and shown at the 2024 RAM Film Festival in Rovereto, Italy (2 October to 6 "
-"October 2024) and the 5th APOX Film Festival on the Island of Lošinj, Croatia (3 "
-"October to 10 October 2024)."
+"October 2024), the 5th APOX Film Festival on the Island of Lošinj, Croatia (3 "
+"October to 10 October 2024) and the 25th International Film Festival of "
+"Archaeological Film at the National Museum in Belgrade, Serbia (20 May to 25 May "
+"2025)."
 
 #: mop/data/projects/holdura.py:18
 msgid "relief map of Montenegro"
@@ -1900,16 +1902,16 @@ msgstr "Publications"
 msgid "presentations"
 msgstr "Presentations"
 
-#: mop/templates/explore/project_entity_view.html:73
+#: mop/templates/explore/project_entity_view.html:76
 msgid "properties"
 msgstr "Properties"
 
-#: mop/templates/explore/project_entity_view.html:119
+#: mop/templates/explore/project_entity_view.html:122
 #: mop/templates/explore/project_explore_table.html:25
 msgid "Description"
 msgstr "Description"
 
-#: mop/templates/explore/project_entity_view.html:243
+#: mop/templates/explore/project_entity_view.html:246
 msgid "files"
 msgstr "Files"
 

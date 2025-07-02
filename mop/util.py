@@ -27,6 +27,12 @@ def youtube_iframe(link_: str) -> str:
            'allowfullscreen></iframe>'
 
 
+with app.app_context():
+    def get_image_frame(filepath: str) -> str:
+        return f'<img src="{filepath}" ' \
+               'class="img-fluid video-image-size" alt="">'
+
+
 @app.context_processor
 def inject_menu() -> dict[str, Any]:
     navbar = [
