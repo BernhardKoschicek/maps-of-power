@@ -1,23 +1,103 @@
-# Maps of Power Website
+# 🗺️ Maps of Power
 
-The research initiative “Maps of Power” serves the methodological and interdisciplinary networking of scholars from the
-field of Historical Geography. The initiative, which has been running since 2019 under the title “Maps of Power:
-Historical Atlas of Places, Borderzones and Migration Dynamics in Byzantium (TIB Balkans)”, grew out of the idea of
-deepening historical-geographical research methodologically and placing it on a broader level in terms of content.
-Based on the scholarly project “Tabula Imperii Byzantini (TIB)”, which has been successfully conducted at the Austrian
-Academy of Sciences (Vienna) since 1966, the initiative intends to expand the spatial focus of the TIB on the Byzantine
-area in order to include other European areas in the Middle Ages as well. The successfully completed cluster project
-["Digitising Patterns of Power (DPP): Peripherical Mountains in the Medieval World"](https://dpp.oeaw.ac.at/) can be
-seen as a pilot project in this respect.
+The research initiative **Maps of Power** serves the methodological and interdisciplinary networking of scholars in the field of *Historical Geography*.  
+Founded in 2019 under the title **"Maps of Power: Historical Atlas of Places, Borderzones and Migration Dynamics in Byzantium (TIB Balkans)"**, it emerged from the idea of deepening historical-geographical research methodologically and broadening it thematically.
 
-## Installation
+Building on the long-running project **[Tabula Imperii Byzantini (TIB)](https://tib.oeaw.ac.at/)** — conducted at the *Austrian Academy of Sciences (Vienna)* since 1966 — the initiative aims to expand the spatial focus of the TIB beyond the Byzantine world to include other European regions of the Middle Ages.
 
-Just clone it and let the requirements.txt install all packages.
+The successfully completed cluster project **["Digitising Patterns of Power (DPP): Peripherical Mountains in the Medieval World"](https://dpp.oeaw.ac.at/)** can be seen as a methodological and conceptual precursor to this work.
 
-    $ cd mop/static
-    $ npm install
+---
 
-Everything this is absolutely WIP!!!
+## ⚙️ Installation
 
+### Prerequisites
+Make sure you have the following installed:
 
-    $ libmagickwand-dev
+- [Python 3.9+](https://www.python.org/downloads/)
+- [Node.js 18+ and npm](https://nodejs.org/)
+- ImageMagick (for `libmagickwand-dev`)
+
+On Debian/Ubuntu systems, you can install dependencies via:
+```bash
+sudo apt install libmagickwand-dev python3 python3-venv nodejs npm
+```
+
+### Clone and set up the repository
+```bash
+# Clone the repository
+git clone https://github.com/BernhardKoschicek/maps-of-power.git
+cd maps-of-power
+```
+
+### Python environment setup
+```bash
+# (Optional) Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Install required Python packages
+pip install -r requirements.txt
+```
+
+### Frontend setup
+```bash
+cd mop/static
+npm install
+```
+
+### Run the project
+*(Adjust these commands to your setup if a framework or entry point differs.)*
+```bash
+npm run dev
+# or
+python app.py
+```
+
+---
+
+## 📁 Project Structure
+
+```
+maps-of-power/
+├── mop/                # Core application directory
+│   ├── static/         # Frontend (JS/CSS assets)
+│   ├── templates/      # HTML templates
+│   └── ...
+├── requirements.txt    # Python dependencies
+├── package.json        # Frontend dependencies
+└── README.md           # You are here
+```
+
+---
+
+## 🧠 Development Status
+
+> ⚠️ This project is currently a **work in progress (WIP)**.  
+> Expect frequent changes, experimental features, and evolving structures.
+
+Contributions and feedback from the research and developer community are warmly welcome.
+
+---
+
+## 🧩 Related Projects
+
+- [Tabula Imperii Byzantini (TIB)](https://tib.oeaw.ac.at/)
+- [Digitising Patterns of Power (DPP)](https://dpp.oeaw.ac.at/)
+
+---
+
+## 📄 License
+
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
+See the [LICENSE](./LICENSE) file for details.
+
+---
+
+## 🧑‍💻 Authors & Credits
+
+Developed and maintained by the *Maps of Power* research group.  
+Hosted and supported by the **Austrian Academy of Sciences (ÖAW)**.  
+For inquiries or collaboration, please contact the project team.
+
+---
