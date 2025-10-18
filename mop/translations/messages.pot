@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-02 15:30+0200\n"
+"POT-Creation-Date: 2025-10-18 14:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,7 +167,7 @@ msgid "march"
 msgstr ""
 
 #: mop/data/histgeo.py:11 mop/data/histgeo.py:28 mop/data/histgeo.py:45
-#: mop/data/histgeo.py:58 mop/data/histgeo.py:67
+#: mop/data/histgeo.py:58 mop/data/histgeo.py:67 mop/data/histgeo.py:81
 msgid "june"
 msgstr ""
 
@@ -184,112 +184,112 @@ msgstr ""
 msgid "December"
 msgstr ""
 
-#: mop/data/histgeo.py:88 mop/data/histgeo.py:125 mop/data/histgeo.py:162
+#: mop/data/histgeo.py:93 mop/data/histgeo.py:130 mop/data/histgeo.py:167
 #: mop/data/literature.py:91
 msgid "eds."
 msgstr ""
 
-#: mop/data/histgeo.py:90
+#: mop/data/histgeo.py:95
 msgid "histgeo_vol1_1"
 msgstr ""
 
-#: mop/data/histgeo.py:90
+#: mop/data/histgeo.py:95
 msgid "histgeo_vol1_2"
 msgstr ""
 
-#: mop/data/histgeo.py:90
+#: mop/data/histgeo.py:95
 msgid "histgeo_vol1_3"
 msgstr ""
 
-#: mop/data/histgeo.py:106
+#: mop/data/histgeo.py:111
 msgid "ed."
 msgstr ""
 
-#: mop/data/histgeo.py:107
+#: mop/data/histgeo.py:112
 msgid "histgeo_vol2_1"
 msgstr ""
 
-#: mop/data/histgeo.py:126
+#: mop/data/histgeo.py:131
 msgid "histgeo_vol3_1"
 msgstr ""
 
-#: mop/data/histgeo.py:145
+#: mop/data/histgeo.py:150
 msgid "histgeo_vol4_1"
 msgstr ""
 
-#: mop/data/histgeo.py:174
+#: mop/data/histgeo.py:179
 msgid "sgomez_short_bio"
 msgstr ""
 
-#: mop/data/histgeo.py:175
+#: mop/data/histgeo.py:180
 msgid "sgomez_bio_1"
 msgstr ""
 
-#: mop/data/histgeo.py:175
+#: mop/data/histgeo.py:180
 msgid "sgomez_bio_2"
 msgstr ""
 
-#: mop/data/histgeo.py:179 mop/data/histgeo.py:180
+#: mop/data/histgeo.py:184 mop/data/histgeo.py:185
 msgid "gbidaut_short_bio"
 msgstr ""
 
-#: mop/data/histgeo.py:186
+#: mop/data/histgeo.py:191
 msgid "lecture_1_title"
 msgstr ""
 
-#: mop/data/histgeo.py:187
+#: mop/data/histgeo.py:192
 msgid "lecture_1_subtitle"
 msgstr ""
 
-#: mop/data/histgeo.py:194 mop/data/histgeo.py:206
+#: mop/data/histgeo.py:199 mop/data/histgeo.py:211
 msgid "english"
 msgstr ""
 
-#: mop/data/histgeo.py:195
+#: mop/data/histgeo.py:200
 msgid "lecture_1_1"
 msgstr ""
 
-#: mop/data/histgeo.py:195
+#: mop/data/histgeo.py:200
 msgid "lecture_1_2"
 msgstr ""
 
-#: mop/data/histgeo.py:198
+#: mop/data/histgeo.py:203
 msgid "lecture_2_title"
 msgstr ""
 
-#: mop/data/histgeo.py:199
+#: mop/data/histgeo.py:204
 msgid "lecture_2_subtitle"
 msgstr ""
 
-#: mop/data/histgeo.py:207
+#: mop/data/histgeo.py:212
 msgid "lecture_2_1"
 msgstr ""
 
-#: mop/data/histgeo.py:207
+#: mop/data/histgeo.py:212
 msgid "lecture_2_2"
 msgstr ""
 
-#: mop/data/histgeo.py:211
+#: mop/data/histgeo.py:216
 msgid "author"
 msgstr ""
 
-#: mop/data/histgeo.py:212
+#: mop/data/histgeo.py:217
 msgid "pages"
 msgstr ""
 
-#: mop/data/histgeo.py:213
+#: mop/data/histgeo.py:218
 msgid "ISBN"
 msgstr ""
 
-#: mop/data/histgeo.py:214
+#: mop/data/histgeo.py:219
 msgid "citation"
 msgstr ""
 
-#: mop/data/histgeo.py:215
+#: mop/data/histgeo.py:220
 msgid "order"
 msgstr ""
 
-#: mop/data/histgeo.py:216
+#: mop/data/histgeo.py:221
 msgid "abstract"
 msgstr ""
 

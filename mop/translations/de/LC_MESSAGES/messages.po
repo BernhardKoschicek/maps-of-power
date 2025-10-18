@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-02 15:30+0200\n"
-"PO-Revision-Date: 2025-07-02 15:34+0200\n"
+"POT-Creation-Date: 2025-10-18 14:02+0200\n"
+"PO-Revision-Date: 2025-10-18 14:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -255,7 +255,7 @@ msgid "march"
 msgstr "März"
 
 #: mop/data/histgeo.py:11 mop/data/histgeo.py:28 mop/data/histgeo.py:45
-#: mop/data/histgeo.py:58 mop/data/histgeo.py:67
+#: mop/data/histgeo.py:58 mop/data/histgeo.py:67 mop/data/histgeo.py:81
 msgid "june"
 msgstr "Juni"
 
@@ -272,12 +272,12 @@ msgstr "Dezember"
 msgid "December"
 msgstr "Dezember"
 
-#: mop/data/histgeo.py:88 mop/data/histgeo.py:125 mop/data/histgeo.py:162
+#: mop/data/histgeo.py:93 mop/data/histgeo.py:130 mop/data/histgeo.py:167
 #: mop/data/literature.py:91
 msgid "eds."
 msgstr "Hrsg."
 
-#: mop/data/histgeo.py:90
+#: mop/data/histgeo.py:95
 msgid "histgeo_vol1_1"
 msgstr ""
 "aus Anlaß des 75. Geburtstages von Herrn Professor Dr. Johannes Koder haben die "
@@ -290,7 +290,7 @@ msgstr ""
 "Jubilar mit dem Titel „Space, Landscapes and Settlements in Byzantium. Studies "
 "in Historical Geography of the Eastern Mediterranean” erwachsen. "
 
-#: mop/data/histgeo.py:90
+#: mop/data/histgeo.py:95
 msgid "histgeo_vol1_2"
 msgstr ""
 "Johannes Koder, w. M. hat seit dem Jahre 1966 die Tabula Imperii Byzantini "
@@ -301,7 +301,7 @@ msgstr ""
 "Œuvre umfaßt federführende Arbeiten historisch-geographischen Inhalts zu dem "
 "östlichen Mittelmeerraum und Byzanz."
 
-#: mop/data/histgeo.py:90
+#: mop/data/histgeo.py:95
 msgid "histgeo_vol1_3"
 msgstr ""
 "die Festschrift ist als Band 1 der Reihe „Studies in Historical Geography and "
@@ -313,11 +313,11 @@ msgstr ""
 "historisch-geographische Forschung in der Byzantinistik innovativ zu beleben. "
 "Die Reihe wird bei dem Verlag Akademska Knjiga in Novi Sad gedruckt."
 
-#: mop/data/histgeo.py:106
+#: mop/data/histgeo.py:111
 msgid "ed."
 msgstr "Hg."
 
-#: mop/data/histgeo.py:107
+#: mop/data/histgeo.py:112
 msgid "histgeo_vol2_1"
 msgstr ""
 "Am 9. Dezember 2014 wäre Univ. Prof. Dr. Dr. h.c. mult. Herbert Hunger (1914–"
@@ -333,7 +333,7 @@ msgstr ""
 "Schule der Byzantinistik neuen Forschergenerationen als eine Quelle der "
 "wissenschaftlichen Inspiration zu dienen."
 
-#: mop/data/histgeo.py:126
+#: mop/data/histgeo.py:131
 msgid "histgeo_vol3_1"
 msgstr ""
 "Das Langzeitprojekt “Tabula Imperii Byzantini (TIB)” (Institut für "
@@ -364,7 +364,7 @@ msgstr ""
 "Existenz eines solchen Projekts in Österreich und seine Dokumentation das "
 "öffentliche Interesse wecken werden."
 
-#: mop/data/histgeo.py:145
+#: mop/data/histgeo.py:150
 msgid "histgeo_vol4_1"
 msgstr ""
 "Die Landschaft des südöstlichen Peloponnes (Lakonien, Griechenland), einer sehr "
@@ -383,21 +383,21 @@ msgstr ""
 "widerspiegeln, sondern auch in der Wahl des Standorts oder einer tiefen "
 "Beziehung zu natürlichen Elementen der Landschaft."
 
-#: mop/data/histgeo.py:174
+#: mop/data/histgeo.py:179
 msgid "sgomez_short_bio"
 msgstr ""
 "BA in Geschichte, Autónoma Universität von Madrid, MA in Archäologie, Università "
 "Ca' Foscari von Venedig, MA in Ägyptischer Archäologie, University College von "
 "London"
 
-#: mop/data/histgeo.py:175
+#: mop/data/histgeo.py:180
 msgid "sgomez_bio_1"
 msgstr ""
 "Silvia Gómez Senovilla, beendet derzeit ihre Doktorarbeit an der Universität "
 "Wien im Rahmen des ERC Advanced Grant \"The Hyksos Enigma\" (Grant agreement Nº "
 "668640), unter der Leitung von Prof. Manfred Bietak."
 
-#: mop/data/histgeo.py:175
+#: mop/data/histgeo.py:180
 msgid "sgomez_bio_2"
 msgstr ""
 "in ihrer Dissertation untersucht sie die Struktur und Anordnung von Siedlungen "
@@ -408,26 +408,26 @@ msgstr ""
 "räumlicher und statistischer Instrumente untersucht sie die Veränderungen des "
 "Raums in diesem Teil der Bronzezeit und deren soziale Auswirkungen."
 
-#: mop/data/histgeo.py:179 mop/data/histgeo.py:180
+#: mop/data/histgeo.py:184 mop/data/histgeo.py:185
 msgid "gbidaut_short_bio"
 msgstr ""
 "BA in Geschichte, Université Paris 1 Panthéon-Sorbonne, MA in Geschichte, École "
 "des hautes études en sciences sociales in Paris, Graduiertendiploma in "
 "Geschichte und Griechischen Studien, École normale supérieure in Paris"
 
-#: mop/data/histgeo.py:186
+#: mop/data/histgeo.py:191
 msgid "lecture_1_title"
 msgstr "Untersuchung des Raums in antiken Siedlungen"
 
-#: mop/data/histgeo.py:187
+#: mop/data/histgeo.py:192
 msgid "lecture_1_subtitle"
 msgstr "Die Straßen von Avaris, die Nutzung des Raums und die Verdinglichungsfalle"
 
-#: mop/data/histgeo.py:194 mop/data/histgeo.py:206
+#: mop/data/histgeo.py:199 mop/data/histgeo.py:211
 msgid "english"
 msgstr "Englisch"
 
-#: mop/data/histgeo.py:195
+#: mop/data/histgeo.py:200
 msgid "lecture_1_1"
 msgstr ""
 "Die Archäologie und die Geschichtswissenschaft stehen naturgemäß vor der "
@@ -452,7 +452,7 @@ msgstr ""
 "Vorauswahl unterliegen, behindert auch einige Versuche einer echten Analyse des "
 "Raums und seiner Bestandteile."
 
-#: mop/data/histgeo.py:195
+#: mop/data/histgeo.py:200
 msgid "lecture_1_2"
 msgstr ""
 "in diesem Vortrag werde ich den aktuellen Stand meiner Doktorarbeit vorstellen, "
@@ -467,17 +467,17 @@ msgstr ""
 "welche Möglichkeiten uns helfen können, die manchmal allgegenwärtige "
 "Abhängigkeit von rein visuellen Modellen zu überwinden."
 
-#: mop/data/histgeo.py:198
+#: mop/data/histgeo.py:203
 msgid "lecture_2_title"
 msgstr "Die Kartierung von Mobilität, die Konstruktion von Gemeinschaft"
 
-#: mop/data/histgeo.py:199
+#: mop/data/histgeo.py:204
 msgid "lecture_2_subtitle"
 msgstr ""
 "Überlegungen zur Definition, Repräsentation und Räumlichkeit von "
 "Hirtengemeinschaften auf dem byzantinischen und frühosmanischen Balkan"
 
-#: mop/data/histgeo.py:207
+#: mop/data/histgeo.py:212
 msgid "lecture_2_1"
 msgstr ""
 "Der vormoderne Balkan zeichnete sich durch ein hohes Maß an Diversität aus, in "
@@ -491,7 +491,7 @@ msgstr ""
 "Verflechtung vergangener und gegenwärtiger Kategorien von kollektiver Identität "
 "und von Raum besonders berücksichtigen."
 
-#: mop/data/histgeo.py:207
+#: mop/data/histgeo.py:212
 msgid "lecture_2_2"
 msgstr ""
 "In diesem Vortrag werde ich den aktuellen Stand meiner Doktorarbeit vorstellen, "
@@ -521,27 +521,27 @@ msgstr ""
 "Verständnis ihrer räumlichen Praktiken und Darstellungen fördern oder behindern "
 "können."
 
-#: mop/data/histgeo.py:211
+#: mop/data/histgeo.py:216
 msgid "author"
 msgstr "autor"
 
-#: mop/data/histgeo.py:212
+#: mop/data/histgeo.py:217
 msgid "pages"
 msgstr "seiten"
 
-#: mop/data/histgeo.py:213
+#: mop/data/histgeo.py:218
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:214
+#: mop/data/histgeo.py:219
 msgid "citation"
 msgstr "zitat"
 
-#: mop/data/histgeo.py:215
+#: mop/data/histgeo.py:220
 msgid "order"
 msgstr "bestellen"
 
-#: mop/data/histgeo.py:216
+#: mop/data/histgeo.py:221
 msgid "abstract"
 msgstr "kurzfassung"
 
@@ -1977,8 +1977,8 @@ msgid ""
 "creativecommons.org/licenses/by/4.0/</a>)."
 msgstr ""
 "Der Zugang und die Nutzung unserer Daten unterliegt der Creative Commons Lizenz "
-"CC BY 4.0 (<a href=\"https://creativecommons.org/licenses/by/4.0/\">https://"
-"creativecommons.org/licenses/by/4.0/</a>)."
+"CC BY 4.0 International (<a href=\"https://creativecommons.org/licenses/by/4.0/"
+"deed.en/\">https://creativecommons.org/licenses/by/4.0/deed.en</a>)."
 
 #: mop/templates/project_details.html:205
 msgid "results"
