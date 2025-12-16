@@ -46,8 +46,7 @@ project_idcew = {
     'cooperation': [],
     'employees': [
         f'Moisés Hernández Cordero ({_("Vienna")})',
-        f'Vladimir Simić ({_("Belgrade")})',
-        f'Žarko Vujošević ({_("Belgrade")})'],
+        f'Vladimir Simić ({_("Belgrade")})'],
     'begin': get_dates_formatted(2024, 7, 1),
     'end': get_dates_formatted(2026, 6, 30),
     'description': [
