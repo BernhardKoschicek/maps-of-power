@@ -1,21 +1,21 @@
 # Translations template for PROJECT.
-# Copyright (C) 2025 ORGANIZATION
+# Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-10-18 14:02+0200\n"
+"POT-Creation-Date: 2026-01-11 21:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: mop/util.py:39
 msgid "about"
@@ -344,6 +344,7 @@ msgstr ""
 #: mop/data/literature.py:55 mop/data/literature.py:82
 #: mop/data/presentations.py:54 mop/data/presentations.py:75
 #: mop/data/presentations.py:84 mop/data/presentations.py:151
+#: mop/data/projects/idcew.py:45 mop/data/projects/idcew.py:49
 msgid "Belgrade"
 msgstr ""
 
@@ -429,6 +430,8 @@ msgstr ""
 
 #: mop/data/presentations.py:42 mop/data/presentations.py:191
 #: mop/data/presentations.py:304 mop/data/presentations.py:316
+#: mop/data/projects/idcew.py:44 mop/data/projects/idcew.py:48
+#: mop/data/projects/tarsr.py:45 mop/data/projects/tarsr.py:54
 #: mop/templates/imprint.html:14 mop/templates/layout.html:89
 msgid "Vienna"
 msgstr ""
@@ -459,7 +462,7 @@ msgstr ""
 msgid "Surveying in North Macedonia"
 msgstr ""
 
-#: mop/data/projects/barbyz.py:35
+#: mop/data/projects/barbyz.py:36
 msgid ""
 "From Barbarians to Christians and Rhomaioi. The Process of "
 "Byzantinization in the Central Balkans (late 10th – mid-13th century)"
@@ -494,13 +497,13 @@ msgstr ""
 msgid "Final project report"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:19
+#: mop/data/projects/borderzones.py:20
 msgid ""
 "Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from"
 " Different Authors"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:26
+#: mop/data/projects/borderzones.py:27
 msgid "Fortifications in the Northern Macedonian Region in the 13/14th century"
 msgstr ""
 
@@ -508,25 +511,25 @@ msgstr ""
 msgid "Road Model based on a k. u k. Marching Map"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:38
+#: mop/data/projects/borderzones.py:39
 msgid ""
 "Markovi Kuli Castle near Prilep from the south, Republic of Northern "
 "Macedonia"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:46
+#: mop/data/projects/borderzones.py:47
 msgid "The Kale elevation in Skopje, Republic of Northern Macedonia"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:53
+#: mop/data/projects/borderzones.py:54
 msgid "The old city gate of Ohrid, Republic of Northern Macedonia"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:60
+#: mop/data/projects/borderzones.py:61
 msgid "Ohrid and Samuilova tvrdina Castle, Republic of Northern Macedonia"
 msgstr ""
 
-#: mop/data/projects/borderzones.py:69
+#: mop/data/projects/borderzones.py:70
 msgid ""
 "Byzantino-Serbian Border Zones in Transition: Migration and Elite Change "
 "in pre-Ottoman Macedonia (1282–1355)"
@@ -564,7 +567,7 @@ msgstr ""
 msgid "The Castle of Pottendorf"
 msgstr ""
 
-#: mop/data/projects/dgse.py:35
+#: mop/data/projects/dgse.py:36
 msgid ""
 "Digital Humanities using the Example of the Castle of Ebreichsdorf in the"
 " Lower Austrian Industrial District"
@@ -618,7 +621,7 @@ msgid ""
 " near the town of Bar, Republic of Montenegro."
 msgstr ""
 
-#: mop/data/projects/holdura.py:57
+#: mop/data/projects/holdura.py:58
 msgid ""
 "Beyond East and West: Geocommunicating the Sacred Landscapes of "
 "\"Duklja\" and \"Raška\" through Space and Time (11th-14th Cent.)"
@@ -679,18 +682,40 @@ msgid ""
 "Monastery in 2007"
 msgstr ""
 
-#: mop/data/projects/idcew.py:35
+#: mop/data/projects/idcew.py:36
 msgid ""
 "Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor "
 "connecting East and West in the 13th/14th Centuries (IDCEW)"
 msgstr ""
 
-#: mop/data/projects/idcew.py:54
+#: mop/data/projects/idcew.py:53
 msgid "idcew_description_1"
 msgstr ""
 
-#: mop/data/projects/idcew.py:55
+#: mop/data/projects/idcew.py:54
 msgid "idcew_description_2"
+msgstr ""
+
+#: mop/data/projects/rhr.py:8
+msgid "The French King Louis XIV (1638-1715)"
+msgstr ""
+
+#: mop/data/projects/rhr.py:13
+msgid "The Crusaders conquer Constantinople (Eugène Delacroix, 1840)"
+msgstr ""
+
+#: mop/data/projects/rhr.py:26
+msgid ""
+"The Reception History of Rumelia in Austria and France (Late 17th- Early "
+"20th Centuries) (RHR)"
+msgstr ""
+
+#: mop/data/projects/rhr.py:39
+msgid "rhr_description_1"
+msgstr ""
+
+#: mop/data/projects/rhr.py:40
+msgid "rhr_description_2"
 msgstr ""
 
 #: mop/data/projects/tarsr.py:10
@@ -713,10 +738,27 @@ msgstr ""
 msgid "War Relics from the First World War in Mariovo"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:37
+#: mop/data/projects/tarsr.py:38
 msgid ""
 "Tracing Archaeological Remains and Scholarly Research of the Central "
 "Powers in the Region of Prilep-Bitola during WW I (1915-1918)"
+msgstr ""
+
+#: mop/data/projects/tarsr.py:46 mop/data/projects/tarsr.py:49
+#: mop/data/projects/tarsr.py:52
+msgid "Skopje"
+msgstr ""
+
+#: mop/data/projects/tarsr.py:50
+msgid "Prilep"
+msgstr ""
+
+#: mop/data/projects/tarsr.py:51
+msgid "Bitola"
+msgstr ""
+
+#: mop/data/projects/tarsr.py:53
+msgid "Paris"
 msgstr ""
 
 #: mop/data/projects/tarsr.py:58
@@ -751,7 +793,7 @@ msgstr ""
 msgid "The Church of Sveti Jovan Kaneo in Ohrid"
 msgstr ""
 
-#: mop/data/projects/tib_balkan.py:30
+#: mop/data/projects/tib_balkan.py:31
 msgid "Reverse Engineering of the Tabula Imperii Byzantini Balkans"
 msgstr ""
 
@@ -796,7 +838,7 @@ msgid ""
 " (14th Cent.)"
 msgstr ""
 
-#: mop/data/projects/vlachs.py:81
+#: mop/data/projects/vlachs.py:82
 msgid ""
 "The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the"
 " Historical Region of Macedonia (11th-16th Cent.)"

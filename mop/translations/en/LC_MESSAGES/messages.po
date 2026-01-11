@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-10-18 14:02+0200\n"
-"PO-Revision-Date: 2025-10-18 14:04+0200\n"
+"POT-Creation-Date: 2026-01-11 21:29+0100\n"
+"PO-Revision-Date: 2026-01-11 21:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.10.3\n"
-"X-Generator: Poedit 3.2.2\n"
+"Generated-By: Babel 2.17.0\n"
+"X-Generator: Poedit 3.6\n"
 
 #: mop/util.py:39
 msgid "about"
@@ -243,10 +243,9 @@ msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović was invited by the Institute for Byzantine Studies of the "
 "Serbian Academy of Sciences and Arts to give a paper entitled “Пројекат Tabula "
-"Imperii Byzantini: о будућности (?) проучавања историјске географије "
-"Византије” [“The Project Tabula Imperii Byzantini: on the Future (?) of the "
-"Research in the Field of the Historical Geography of Byzantium”] on 22 February "
-"2023 in Belgrade."
+"Imperii Byzantini: о будућности (?) проучавања историјске географије Византије” "
+"[“The Project Tabula Imperii Byzantini: on the Future (?) of the Research in the "
+"Field of the Historical Geography of Byzantium”] on 22 February 2023 in Belgrade."
 
 #: mop/data/histgeo.py:7 mop/data/histgeo.py:24 mop/data/histgeo.py:41
 msgid "march"
@@ -430,8 +429,8 @@ msgstr ""
 "conviction”. A problem that stands in the way of the production of -true- "
 "spatial narratives in archaeology is related to three main issues: first, the "
 "treatment of time and temporal scales in archaeology; second, a sometimes-"
-"unconscious oblivion to the fact that social space is not equal to natural -"
-"Euclidean- space, and third that scale is, when dealing with the time-space "
+"unconscious oblivion to the fact that social space is not equal to natural "
+"-Euclidean- space, and third that scale is, when dealing with the time-space "
 "conundrum, a fundamental piece in the machinery of unfolding events. The "
 "implicit assumption that the data we work with, collected by us or by other "
 "colleagues, as well as the methodology we use, do not present biases and are not "
@@ -573,7 +572,8 @@ msgstr "Brăila"
 
 #: mop/data/literature.py:55 mop/data/literature.py:82 mop/data/presentations.py:54
 #: mop/data/presentations.py:75 mop/data/presentations.py:84
-#: mop/data/presentations.py:151
+#: mop/data/presentations.py:151 mop/data/projects/idcew.py:45
+#: mop/data/projects/idcew.py:49
 msgid "Belgrade"
 msgstr "Belgrade"
 
@@ -658,6 +658,8 @@ msgstr "Leeds"
 
 #: mop/data/presentations.py:42 mop/data/presentations.py:191
 #: mop/data/presentations.py:304 mop/data/presentations.py:316
+#: mop/data/projects/idcew.py:44 mop/data/projects/idcew.py:48
+#: mop/data/projects/tarsr.py:45 mop/data/projects/tarsr.py:54
 #: mop/templates/imprint.html:14 mop/templates/layout.html:89
 msgid "Vienna"
 msgstr "Vienna"
@@ -688,7 +690,7 @@ msgstr "Florenz"
 msgid "Surveying in North Macedonia"
 msgstr "Surveying in North Macedonia"
 
-#: mop/data/projects/barbyz.py:35
+#: mop/data/projects/barbyz.py:36
 msgid ""
 "From Barbarians to Christians and Rhomaioi. The Process of Byzantinization in "
 "the Central Balkans (late 10th – mid-13th century)"
@@ -775,7 +777,7 @@ msgstr ""
 msgid "Final project report"
 msgstr "Final project report"
 
-#: mop/data/projects/borderzones.py:19
+#: mop/data/projects/borderzones.py:20
 msgid ""
 "Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from "
 "Different Authors"
@@ -783,7 +785,7 @@ msgstr ""
 "Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from "
 "Different Authors"
 
-#: mop/data/projects/borderzones.py:26
+#: mop/data/projects/borderzones.py:27
 msgid "Fortifications in the Northern Macedonian Region in the 13/14th century"
 msgstr "Fortifications in the Northern Macedonian Region in the 13/14th century"
 
@@ -791,25 +793,25 @@ msgstr "Fortifications in the Northern Macedonian Region in the 13/14th century"
 msgid "Road Model based on a k. u k. Marching Map"
 msgstr "Road Model based on a k. u k. Marching Map"
 
-#: mop/data/projects/borderzones.py:38
+#: mop/data/projects/borderzones.py:39
 msgid ""
 "Markovi Kuli Castle near Prilep from the south, Republic of Northern Macedonia"
 msgstr ""
 "Markovi Kuli Castle near Prilep from the south, Republic of Northern Macedonia"
 
-#: mop/data/projects/borderzones.py:46
+#: mop/data/projects/borderzones.py:47
 msgid "The Kale elevation in Skopje, Republic of Northern Macedonia"
 msgstr "The Kale elevation in Skopje, Republic of Northern Macedonia"
 
-#: mop/data/projects/borderzones.py:53
+#: mop/data/projects/borderzones.py:54
 msgid "The old city gate of Ohrid, Republic of Northern Macedonia"
 msgstr "The old city gate of Ohrid, Republic of Northern Macedonia"
 
-#: mop/data/projects/borderzones.py:60
+#: mop/data/projects/borderzones.py:61
 msgid "Ohrid and Samuilova tvrdina Castle, Republic of Northern Macedonia"
 msgstr "Ohrid and Samuilova tvrdina Castle, Republic of Northern Macedonia"
 
-#: mop/data/projects/borderzones.py:69
+#: mop/data/projects/borderzones.py:70
 msgid ""
 "Byzantino-Serbian Border Zones in Transition: Migration and Elite Change in pre-"
 "Ottoman Macedonia (1282–1355)"
@@ -835,15 +837,15 @@ msgstr ""
 msgid "borderzones_description_2"
 msgstr ""
 "The respective stand-alone project focuses on the borders of the Byzantine "
-"(Eastern Roman) Empire in medieval South-East Europe, namely in pre-Ottoman (i."
-"e. Byzantine) Macedonia. Far-reaching political changes occurred in the Southern "
-"Balkan Peninsula from the end of the 13th until the middle of the 14th century, "
-"when the Serbian medieval kingdom expanded to the South under the king Stefan "
-"Uroš II Milutin at the expense of the Byzantine Empire, which lasted until the "
-"death of tsar Stefan Uroš IV Dušan (1355). This again had a severe impact on the "
-"border zones and cross-border societies between both realms in pre-Ottoman (i.e. "
-"Byzantine) Macedonia in the same period, especially in five selected target "
-"areas (the Strumica Valley, Lesnovo, Skopje, Ohrid, Prilep)."
+"(Eastern Roman) Empire in medieval South-East Europe, namely in pre-Ottoman "
+"(i.e. Byzantine) Macedonia. Far-reaching political changes occurred in the "
+"Southern Balkan Peninsula from the end of the 13th until the middle of the 14th "
+"century, when the Serbian medieval kingdom expanded to the South under the king "
+"Stefan Uroš II Milutin at the expense of the Byzantine Empire, which lasted "
+"until the death of tsar Stefan Uroš IV Dušan (1355). This again had a severe "
+"impact on the border zones and cross-border societies between both realms in pre-"
+"Ottoman (i.e. Byzantine) Macedonia in the same period, especially in five "
+"selected target areas (the Strumica Valley, Lesnovo, Skopje, Ohrid, Prilep)."
 
 #: mop/data/projects/borderzones.py:83
 msgid "borderzones_description_3"
@@ -886,7 +888,7 @@ msgstr "View of the Area around the Castle of Ebreichsdorf from the East"
 msgid "The Castle of Pottendorf"
 msgstr "The Castle of Pottendorf"
 
-#: mop/data/projects/dgse.py:35
+#: mop/data/projects/dgse.py:36
 msgid ""
 "Digital Humanities using the Example of the Castle of Ebreichsdorf in the Lower "
 "Austrian Industrial District"
@@ -985,7 +987,7 @@ msgstr ""
 "The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
 "the town of Bar, Republic of Montenegro."
 
-#: mop/data/projects/holdura.py:57
+#: mop/data/projects/holdura.py:58
 msgid ""
 "Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
 "\"Raška\" through Space and Time (11th-14th Cent.)"
@@ -1063,10 +1065,10 @@ msgstr ""
 "Kultur Leipzig, here Professor Dr. Johannes Tripps).Moreover, it is closely "
 "connected to the ongoing scholarly work of Mihailo Popović on <a href=\"https://"
 "tib.oeaw.ac.at/current_status/TIB_17\" class=\"link-primary\">TIB volume 17 “Nea "
-"Epeiros and Praevalis”</a> and on the TIB Subproject <a href=\"https://tib.oeaw."
-"ac.at/subprojects/montenegro\" class=\"link-primary\">“Cultural Heritage in "
-"Times of World War I: The Case of the Austro-Hungarian Relief Map of Montenegro "
-"(1916-1918)”</a>."
+"Epeiros and Praevalis”</a> and on the TIB Subproject <a href=\"https://"
+"tib.oeaw.ac.at/subprojects/montenegro\" class=\"link-primary\">“Cultural "
+"Heritage in Times of World War I: The Case of the Austro-Hungarian Relief Map of "
+"Montenegro (1916-1918)”</a>."
 
 #: mop/data/projects/idcew.py:10
 msgid "The Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
@@ -1099,7 +1101,7 @@ msgstr ""
 "The Church of the Annunciation of the Holy Mother of God in Gradac Monastery in "
 "2007"
 
-#: mop/data/projects/idcew.py:35
+#: mop/data/projects/idcew.py:36
 msgid ""
 "Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor connecting "
 "East and West in the 13th/14th Centuries (IDCEW)"
@@ -1107,7 +1109,7 @@ msgstr ""
 "Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor connecting "
 "East and West in the 13th/14th Centuries (IDCEW)"
 
-#: mop/data/projects/idcew.py:54
+#: mop/data/projects/idcew.py:53
 msgid "idcew_description_1"
 msgstr ""
 "The project aims to address the life and deeds of the medieval Serbian Queen "
@@ -1120,7 +1122,7 @@ msgstr ""
 "noble family of Anjou. Many questions regarding Helen’s life, realm and "
 "endowments need further in-depth research."
 
-#: mop/data/projects/idcew.py:55
+#: mop/data/projects/idcew.py:54
 msgid "idcew_description_2"
 msgstr ""
 "These questions include:\n"
@@ -1142,6 +1144,56 @@ msgstr ""
 "and Western (Latin, Catholic) influences and Helen’s afterlife in Serbian art of "
 "the 18th and 19th centuries</li>\n"
 "</ul>"
+
+#: mop/data/projects/rhr.py:8
+msgid "The French King Louis XIV (1638-1715)"
+msgstr "The French King Louis XIV (1638-1715)"
+
+#: mop/data/projects/rhr.py:13
+msgid "The Crusaders conquer Constantinople (Eugène Delacroix, 1840)"
+msgstr "The Crusaders conquer Constantinople (Eugène Delacroix, 1840)"
+
+#: mop/data/projects/rhr.py:26
+msgid ""
+"The Reception History of Rumelia in Austria and France (Late 17th- Early 20th "
+"Centuries) (RHR)"
+msgstr ""
+"The Reception History of Rumelia in Austria and France (Late 17th- Early 20th "
+"Centuries) (RHR)"
+
+#: mop/data/projects/rhr.py:39
+msgid "rhr_description_1"
+msgstr ""
+"The project has the aim to elaborate on three research questions regarding the "
+"presence and reception of Rumelia in Austria and France (Late 17th- Early 20th "
+"Centuries) by addressing its visual impact across the centuries. The Ottoman "
+"conquest of South-Eastern Europe during the 14th and 15th centuries led to a "
+"caesura in the history of the Balkan Peninsula and turned this region into a "
+"terra incognita from a Central and Western European point of view, which would "
+"only return to the pan-European perspective in Early Modern times."
+
+#: mop/data/projects/rhr.py:40
+msgid "rhr_description_2"
+msgstr ""
+"Our three research questions include:<br />\n"
+"a) Our first research question is addressing the “sacred space” of Rumelia "
+"coming to the Habsburg capital of Vienna in the second half of the 17th century. "
+"This “sacred space” is embodied by Orthodox icons, which were pouring to Vienna "
+"in the wake of the Habsburg-Ottoman struggle in South-Eastern Europe.\n"
+"<br />\n"
+"b) Our second research question is concerned with the cartographic acquisition "
+"of data by French cartographers in Rumelia by order of King Louis XIV, which "
+"resulted in three crucial Recueils. Two of them still need in-depth research "
+"with regard to their thematic map content.\n"
+"<br />\n"
+"c) Our third research question shall explore the popular imaginary of Rumelia’s "
+"heirs as advertised in Austria and France through large scale events like world "
+"fairs and exhibitions, as well as mass visual culture (postcards, collectible "
+"prints, engravings, caricature). In the 19th and early 20th centuries both "
+"countries pioneered in Slavic and Byzantine Studies, sending scholars to and "
+"educating scholars from the Balkan Peninsula, whose works were instrumental in "
+"the emergence of strong, and often clashing, national narratives and identities "
+"in the Balkans."
 
 #: mop/data/projects/tarsr.py:10
 msgid ""
@@ -1167,13 +1219,30 @@ msgstr "German Military Cemetery from the First World War near Bitola"
 msgid "War Relics from the First World War in Mariovo"
 msgstr "War Relics from the First World War in Mariovo"
 
-#: mop/data/projects/tarsr.py:37
+#: mop/data/projects/tarsr.py:38
 msgid ""
 "Tracing Archaeological Remains and Scholarly Research of the Central Powers in "
 "the Region of Prilep-Bitola during WW I (1915-1918)"
 msgstr ""
 "Tracing Archaeological Remains and Scholarly Research of the Central Powers in "
 "the Region of Prilep-Bitola during WW I (1915-1918)"
+
+#: mop/data/projects/tarsr.py:46 mop/data/projects/tarsr.py:49
+#: mop/data/projects/tarsr.py:52
+msgid "Skopje"
+msgstr "Skopje"
+
+#: mop/data/projects/tarsr.py:50
+msgid "Prilep"
+msgstr "Prilep"
+
+#: mop/data/projects/tarsr.py:51
+msgid "Bitola"
+msgstr "Bitola"
+
+#: mop/data/projects/tarsr.py:53
+msgid "Paris"
+msgstr "Paris"
 
 #: mop/data/projects/tarsr.py:58
 msgid "tracing_description_1"
@@ -1240,7 +1309,7 @@ msgstr "The Monastery of Saint Naum on Lake Ohrid"
 msgid "The Church of Sveti Jovan Kaneo in Ohrid"
 msgstr "The Church of Sveti Jovan Kaneo in Ohrid"
 
-#: mop/data/projects/tib_balkan.py:30
+#: mop/data/projects/tib_balkan.py:31
 msgid "Reverse Engineering of the Tabula Imperii Byzantini Balkans"
 msgstr "Reverse Engineering of the Tabula Imperii Byzantini Balkans"
 
@@ -1318,7 +1387,7 @@ msgstr ""
 "The Source-Based Presence of Vlachs in the Historical Region of Macedonia (14th "
 "Cent.)"
 
-#: mop/data/projects/vlachs.py:81
+#: mop/data/projects/vlachs.py:82
 msgid ""
 "The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the "
 "Historical Region of Macedonia (11th-16th Cent.)"
@@ -1418,15 +1487,15 @@ msgstr ""
 "Power: Historical Atlas of Places, Borderzones and Migration Dynamics in "
 "Byzantium (TIB Balkans)”, grew out of the idea of deepening historical-"
 "geographical research methodologically and placing it on a broader level in "
-"terms of content. Based on the scholarly project <a href=\"https://tib.oeaw.ac."
-"at\" class=\"link-primary\" target=\"_blank\">“Tabula Imperii Byzantini (TIB)”</"
-"a>, which has been successfully conducted at the Austrian Academy of Sciences "
-"(Vienna) since 1966, the initiative intends to expand the spatial focus of the "
-"TIB on the Byzantine area in order to include other European areas in the Middle "
-"Ages as well. The successfully completed cluster project <a href=\"https://dpp."
-"oeaw.ac.at/\" class=\"link-primary\" target=\"_blank\">“Digitising Patterns of "
-"Power (DPP): Peripherical Mountains in the Medieval World”</a> can be seen as a "
-"pilot project in this respect."
+"terms of content. Based on the scholarly project <a href=\"https://"
+"tib.oeaw.ac.at\" class=\"link-primary\" target=\"_blank\">“Tabula Imperii "
+"Byzantini (TIB)”</a>, which has been successfully conducted at the Austrian "
+"Academy of Sciences (Vienna) since 1966, the initiative intends to expand the "
+"spatial focus of the TIB on the Byzantine area in order to include other "
+"European areas in the Middle Ages as well. The successfully completed cluster "
+"project <a href=\"https://dpp.oeaw.ac.at/\" class=\"link-primary\" "
+"target=\"_blank\">“Digitising Patterns of Power (DPP): Peripherical Mountains in "
+"the Medieval World”</a> can be seen as a pilot project in this respect."
 
 #: mop/templates/about.html:20
 msgid "about_text_2"
@@ -1919,8 +1988,8 @@ msgid ""
 "creativecommons.org/licenses/by/4.0/</a>)."
 msgstr ""
 "The access and use of our data is subject to the Creative Commons License CC BY "
-"4.0 International (<a href=\"https://creativecommons.org/licenses/by/4.0/deed."
-"en\">https://creativecommons.org/licenses/by/4.0/deed.en</a>)."
+"4.0 International (<a href=\"https://creativecommons.org/licenses/by/4.0/"
+"deed.en\">https://creativecommons.org/licenses/by/4.0/deed.en</a>)."
 
 #: mop/templates/project_details.html:205
 msgid "results"
@@ -1982,8 +2051,8 @@ msgstr "Class"
 #~ "Migration Dynamics in Byzantium (TIB Balkans)” cannot be accessed at the "
 #~ "moment due to technical reasons, because a version 2.0 is under construction "
 #~ "at the moment. The new version will bear the name “Maps of Power” and be "
-#~ "online in autumn 2023. For further Information: <a href=\"maps-of-power.oeaw."
-#~ "ac.at\" target=\"_blank\">maps-of-power.oeaw.ac.at</a>"
+#~ "online in autumn 2023. For further Information: <a href=\"maps-of-"
+#~ "power.oeaw.ac.at\" target=\"_blank\">maps-of-power.oeaw.ac.at</a>"
 
 #~ msgid "The (Moated) Castle of Ebreichsdorf"
 #~ msgstr "The (Moated) Castle of Ebreichsdorf"

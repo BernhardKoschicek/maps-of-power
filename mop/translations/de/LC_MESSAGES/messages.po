@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-10-18 14:02+0200\n"
-"PO-Revision-Date: 2025-10-18 14:03+0200\n"
+"POT-Creation-Date: 2026-01-11 21:29+0100\n"
+"PO-Revision-Date: 2026-01-11 21:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: de <LL@li.org>\n"
 "Language: de\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.10.3\n"
-"X-Generator: Poedit 3.2.2\n"
+"Generated-By: Babel 2.17.0\n"
+"X-Generator: Poedit 3.6\n"
 
 #: mop/util.py:39
 msgid "about"
@@ -121,12 +121,12 @@ msgstr "Workshop in Oxford"
 #: mop/data/events.py:83
 msgid "workshop_oxford_300524"
 msgstr ""
-"Ende Mai 2024 nahm Mihailo Popović an einem Workshop <a href=\"https://www.ames."
-"ox.ac.uk/event/workshop-mountains-and-historian\" target=\"_blank\">\"Mountains "
-"and the Historian\"</a> an der Universität Oxford teil, wo er den Vortrag "
-"\"Terrifying Aspects of Mountains and their Wilderness in the Medieval Balkans "
-"and How to Overcome Them\" hielt, der sich dem Bereich \"Sakrale Topographie\" "
-"der Maps of Power Initiative zuordnen lässt."
+"Ende Mai 2024 nahm Mihailo Popović an einem Workshop <a href=\"https://"
+"www.ames.ox.ac.uk/event/workshop-mountains-and-historian\" "
+"target=\"_blank\">\"Mountains and the Historian\"</a> an der Universität Oxford "
+"teil, wo er den Vortrag \"Terrifying Aspects of Mountains and their Wilderness "
+"in the Medieval Balkans and How to Overcome Them\" hielt, der sich dem Bereich "
+"\"Sakrale Topographie\" der Maps of Power Initiative zuordnen lässt."
 
 #: mop/data/events.py:93
 msgid "The Long Night of Research in Vienna"
@@ -598,7 +598,8 @@ msgstr "Brăila"
 
 #: mop/data/literature.py:55 mop/data/literature.py:82 mop/data/presentations.py:54
 #: mop/data/presentations.py:75 mop/data/presentations.py:84
-#: mop/data/presentations.py:151
+#: mop/data/presentations.py:151 mop/data/projects/idcew.py:45
+#: mop/data/projects/idcew.py:49
 msgid "Belgrade"
 msgstr "Belgrad"
 
@@ -683,6 +684,8 @@ msgstr "Leeds"
 
 #: mop/data/presentations.py:42 mop/data/presentations.py:191
 #: mop/data/presentations.py:304 mop/data/presentations.py:316
+#: mop/data/projects/idcew.py:44 mop/data/projects/idcew.py:48
+#: mop/data/projects/tarsr.py:45 mop/data/projects/tarsr.py:54
 #: mop/templates/imprint.html:14 mop/templates/layout.html:89
 msgid "Vienna"
 msgstr "Wien"
@@ -713,7 +716,7 @@ msgstr "Florenz"
 msgid "Surveying in North Macedonia"
 msgstr "Surveying in Nordmazedonien"
 
-#: mop/data/projects/barbyz.py:35
+#: mop/data/projects/barbyz.py:36
 msgid ""
 "From Barbarians to Christians and Rhomaioi. The Process of Byzantinization in "
 "the Central Balkans (late 10th – mid-13th century)"
@@ -805,7 +808,7 @@ msgstr ""
 msgid "Final project report"
 msgstr "Projektabschlussbericht"
 
-#: mop/data/projects/borderzones.py:19
+#: mop/data/projects/borderzones.py:20
 msgid ""
 "Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from "
 "Different Authors"
@@ -813,7 +816,7 @@ msgstr ""
 "Interpretation der byzantinisch-serbischen Grenze zwischen 1228 und 1334 durch "
 "verschiedene Autoren"
 
-#: mop/data/projects/borderzones.py:26
+#: mop/data/projects/borderzones.py:27
 msgid "Fortifications in the Northern Macedonian Region in the 13/14th century"
 msgstr "Festungsanlagen in der nordmakedonischen Region im 13/14. Jahrhundert"
 
@@ -821,24 +824,24 @@ msgstr "Festungsanlagen in der nordmakedonischen Region im 13/14. Jahrhundert"
 msgid "Road Model based on a k. u k. Marching Map"
 msgstr "Straßenmodell basierend auf einer k. u k. Marschkarte"
 
-#: mop/data/projects/borderzones.py:38
+#: mop/data/projects/borderzones.py:39
 msgid ""
 "Markovi Kuli Castle near Prilep from the south, Republic of Northern Macedonia"
 msgstr "Die Burg Markovi Kuli bei Prilep von Süden, Republik Nordmazedonien"
 
-#: mop/data/projects/borderzones.py:46
+#: mop/data/projects/borderzones.py:47
 msgid "The Kale elevation in Skopje, Republic of Northern Macedonia"
 msgstr "Die Erhebung Kale in Skopje, Republik Nordmazedonien"
 
-#: mop/data/projects/borderzones.py:53
+#: mop/data/projects/borderzones.py:54
 msgid "The old city gate of Ohrid, Republic of Northern Macedonia"
 msgstr "Das alte Stadttor von Ohrid, Republik Nordmazedonien"
 
-#: mop/data/projects/borderzones.py:60
+#: mop/data/projects/borderzones.py:61
 msgid "Ohrid and Samuilova tvrdina Castle, Republic of Northern Macedonia"
 msgstr "Ohrid und die Burg Samuilova tvrdina, Republik Nordmazedonien"
 
-#: mop/data/projects/borderzones.py:69
+#: mop/data/projects/borderzones.py:70
 msgid ""
 "Byzantino-Serbian Border Zones in Transition: Migration and Elite Change in pre-"
 "Ottoman Macedonia (1282–1355)"
@@ -920,7 +923,7 @@ msgstr "Blick auf das Gebiet um das Schloß Ebreichsdorf von Osten"
 msgid "The Castle of Pottendorf"
 msgstr "Schloß Pottendorf"
 
-#: mop/data/projects/dgse.py:35
+#: mop/data/projects/dgse.py:36
 msgid ""
 "Digital Humanities using the Example of the Castle of Ebreichsdorf in the Lower "
 "Austrian Industrial District"
@@ -1021,7 +1024,7 @@ msgstr ""
 "Das vormals lateinische (katholische) Kloster Ratac aus dem 12./13. Jh. bei der "
 "Stadt Bar, Republik Montenegro."
 
-#: mop/data/projects/holdura.py:57
+#: mop/data/projects/holdura.py:58
 msgid ""
 "Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
 "\"Raška\" through Space and Time (11th-14th Cent.)"
@@ -1137,7 +1140,7 @@ msgid ""
 "2007"
 msgstr "Die Klosterkirche Mariä Verkündigung in Gradac im Jahre 2007"
 
-#: mop/data/projects/idcew.py:35
+#: mop/data/projects/idcew.py:36
 msgid ""
 "Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor connecting "
 "East and West in the 13th/14th Centuries (IDCEW)"
@@ -1145,7 +1148,7 @@ msgstr ""
 "Helena - eine katholische Adelige, serbische Königin und interreligiöse "
 "Stifterin zwischen Ost und West im 13. und 14. Jahrhundert (IDCEW)  "
 
-#: mop/data/projects/idcew.py:54
+#: mop/data/projects/idcew.py:53
 msgid "idcew_description_1"
 msgstr ""
 "Das Projekt zielt darauf ab, das Leben und Wirken der mittelalterlichen "
@@ -1159,7 +1162,7 @@ msgstr ""
 "und dem lateinischen Westen schlug. Viele Fragen zu Helenas Leben, ihrem "
 "Herrschaftsbereich und ihren Stiftungen bedürfen weiterer eingehender Forschung."
 
-#: mop/data/projects/idcew.py:55
+#: mop/data/projects/idcew.py:54
 msgid "idcew_description_2"
 msgstr ""
 "Zu diesen Fragen gehören:\n"
@@ -1183,6 +1186,57 @@ msgstr ""
 "östliche (orthodoxe) und westliche (lateinische, katholische) Einflüsse und "
 "Helenas Nachleben in der serbischen Kunst des 18. und 19. Jahrhunderts</li>\n"
 "</ul>"
+
+#: mop/data/projects/rhr.py:8
+msgid "The French King Louis XIV (1638-1715)"
+msgstr "Der französische König Ludwig XIV. (1638-1715)"
+
+#: mop/data/projects/rhr.py:13
+msgid "The Crusaders conquer Constantinople (Eugène Delacroix, 1840)"
+msgstr "Die Kreuzfahrer erobern Konstantinopel (Eugène Delacroix, 1840)"
+
+#: mop/data/projects/rhr.py:26
+msgid ""
+"The Reception History of Rumelia in Austria and France (Late 17th- Early 20th "
+"Centuries) (RHR)"
+msgstr ""
+"Die Rezeptionsgeschichte Rumeliens in Österreich und Frankreich (Ende des 17. "
+"bis Anfang des 20. Jahrhunderts) (RHR)"
+
+#: mop/data/projects/rhr.py:39
+msgid "rhr_description_1"
+msgstr ""
+"Das Projekt verfolgt das Ziel, drei Forschungsfragen zur Präsenz und Rezeption "
+"Rumeliens in Österreich und Frankreich (Ende des 17. bis Anfang des 20. "
+"Jahrhunderts) zu untersuchen, indem es sich mit dessen visueller Wirkung über "
+"die Jahrhunderte hinweg befaßt. Die osmanische Eroberung Südosteuropas im 14. "
+"und 15. Jahrhundert führte zu einer Zäsur in der Geschichte der Balkanhalbinsel "
+"und machte diese Region aus mittel- und westeuropäischer Sicht zu einer terra "
+"incognita, die erst in der Frühen Neuzeit wieder in den paneuropäischen "
+"Blickwinkel rückte."
+
+#: mop/data/projects/rhr.py:40
+msgid "rhr_description_2"
+msgstr ""
+"Unsere drei Forschungsfragen lauten:<br />\n"
+"a) Unsere erste Forschungsfrage befaßt sich mit der „sakralen Topographie“ "
+"Rumeliens, die in der zweiten Hälfte des 17. Jahrhunderts nach Wien, in die "
+"Hauptstadt der Habsburger, gelangte. Diese „sakrale Topographie“ wird durch "
+"orthodoxe Ikonen verkörpert, die nach dem Habsburgisch-Osmanischen Konflikt in "
+"Südosteuropa nach Wien strömten.<br />\n"
+"b) Unsere zweite Forschungsfrage befaßt sich mit der kartographischen Erfassung "
+"durch französische Kartografen in Rumelien im Auftrag des Königs Ludwig XIV., "
+"die zu drei wichtigen Recueils führten. Zwei davon müssen hinsichtlich ihres "
+"thematischen Karteninhalts noch eingehend untersucht werden.<br />\n"
+"c) Unsere dritte Forschungsfrage untersucht die populäre Vorstellung von den "
+"Erben Rumeliens, wie sie in Österreich und Frankreich durch Großveranstaltungen "
+"wie Weltausstellungen und Messen sowie durch die visuelle Massenkultur "
+"(Postkarten, Sammlerdrucke, Stiche, Karikaturen) vermittelt wurde. Im 19. und "
+"frühen 20. Jahrhundert leisteten beide Länder Pionierarbeit in der Slawistik und "
+"Byzantinistik, indem sie Wissenschaftler auf die Balkanhalbinsel entsandten und "
+"dort Wissenschaftler ausbildeten, deren Werke maßgeblich zur Entstehung starker "
+"und oft miteinander kollidierender nationaler Narrative und Identitäten auf dem "
+"Balkan beitrugen."
 
 #: mop/data/projects/tarsr.py:10
 msgid ""
@@ -1208,7 +1262,7 @@ msgstr "Deutscher Soldatenfriedhof aus dem Ersten Weltkrieg bei Bitola"
 msgid "War Relics from the First World War in Mariovo"
 msgstr "Kriegsrelikte aus dem Ersten Weltkrieg in Mariovo"
 
-#: mop/data/projects/tarsr.py:37
+#: mop/data/projects/tarsr.py:38
 msgid ""
 "Tracing Archaeological Remains and Scholarly Research of the Central Powers in "
 "the Region of Prilep-Bitola during WW I (1915-1918)"
@@ -1216,6 +1270,23 @@ msgstr ""
 "Auf den Spuren der archäologischen Überreste und der wissenschaftlichen "
 "Forschung der Mittelmächte in der Region Prilep-Bitola während des Ersten "
 "Weltkriegs (1915-1918)"
+
+#: mop/data/projects/tarsr.py:46 mop/data/projects/tarsr.py:49
+#: mop/data/projects/tarsr.py:52
+msgid "Skopje"
+msgstr "Skopje"
+
+#: mop/data/projects/tarsr.py:50
+msgid "Prilep"
+msgstr "Prilep"
+
+#: mop/data/projects/tarsr.py:51
+msgid "Bitola"
+msgstr "Bitola"
+
+#: mop/data/projects/tarsr.py:53
+msgid "Paris"
+msgstr "Paris"
 
 #: mop/data/projects/tarsr.py:58
 msgid "tracing_description_1"
@@ -1285,7 +1356,7 @@ msgstr "Das Kloster Sveti Naum am Ohrid-See"
 msgid "The Church of Sveti Jovan Kaneo in Ohrid"
 msgstr "Die Kirche Sveti Jovan Kaneo in Ohrid"
 
-#: mop/data/projects/tib_balkan.py:30
+#: mop/data/projects/tib_balkan.py:31
 msgid "Reverse Engineering of the Tabula Imperii Byzantini Balkans"
 msgstr "Reverse Engineering der Tabula Imperii Byzantini Balkan"
 
@@ -1364,7 +1435,7 @@ msgstr ""
 "Die quellengestützte Präsenz der Vlachen in der historischen Region Makedonien "
 "(14. Jh.)"
 
-#: mop/data/projects/vlachs.py:81
+#: mop/data/projects/vlachs.py:82
 msgid ""
 "The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the "
 "Historical Region of Macedonia (11th-16th Cent.)"
@@ -2037,8 +2108,8 @@ msgstr "Klasse"
 #~ "Migration Dynamics in Byzantium (TIB Balkans)“ ist derzeit aus technischen "
 #~ "Gründen nicht abrufbar, weil derzeit eine Version 2.0 programmiert wird. "
 #~ "Diese neue Version wird den Namen „Maps of Power“ haben und im Herbst 2023 "
-#~ "online gehen. Für weiterführende Informationen: <a href=\"maps-of-power.oeaw."
-#~ "ac.at\" target=\"_blank\">maps-of-power.oeaw.ac.at</a>"
+#~ "online gehen. Für weiterführende Informationen: <a href=\"maps-of-"
+#~ "power.oeaw.ac.at\" target=\"_blank\">maps-of-power.oeaw.ac.at</a>"
 
 #~ msgid "The (Moated) Castle of Ebreichsdorf"
 #~ msgstr "Das (Wasser)Schloß Ebreichsdorf"

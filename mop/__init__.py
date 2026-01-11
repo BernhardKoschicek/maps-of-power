@@ -33,6 +33,7 @@ def get_locale() -> str:
         'language',
         request.accept_languages.best_match(app.config['LANGUAGES'].keys()))
 
+#babel = Babel(app, locale_selector=get_locale)
 
 @app.context_processor
 def inject_conf_var() -> dict[str, Any]:
