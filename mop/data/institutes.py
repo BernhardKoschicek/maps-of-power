@@ -149,6 +149,12 @@ institutes = {
         'logo': 'iti.png',
         'member': '',
         'address': ''},
+    'om': {
+        'name': 'Orient & Méditerranée',
+        'url': 'https://www.orient-mediterranee.com/',
+        'logo': 'logo-om_2.svg',
+        'member': '',
+        'address': ''},
     'ukim': {
         'name': 'Ss. Cyril and Methodius University',
         'url': 'https://www.ukim.edu.mk/',

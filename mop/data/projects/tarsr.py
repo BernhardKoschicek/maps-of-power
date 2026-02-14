@@ -3,6 +3,16 @@ from flask_babel import lazy_gettext as _
 from mop.data.institutes import institutes
 from mop.util import get_dates_formatted
 
+results = {
+    'text': [    ],
+    'list': [],
+    'icons': [{
+        'label': _('Final project report'),
+        'link': None,
+        'file': 'MK_07_2024_Project_Report.pdf',
+        'icon': 'bi bi-journals',
+    }]
+}
 
 images = [{
     'src': 'tarsr_1.jpg',
@@ -62,7 +72,7 @@ project_tarsr = {
         _('tracing_description_5'),
         _('tracing_description_6'),
     ],
-    'results': '',
+    'results': results,
     'icon': '',
     'images': images,
     'videos': [],

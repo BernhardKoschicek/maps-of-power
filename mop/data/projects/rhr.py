@@ -19,13 +19,13 @@ images = [{
                 'Domaine public,'
                 ' https://commons.wikimedia.org/w/index.php?curid=150159',
     'category': ['rhr']
-},  {
+}, {
     'src': 'rhr_01.jpg',
     'description': _('Reception of the Serbian King Petar I in Skopje in 1912,'
                      ' depicted in a French illustration'),
     'citation': '',
     'category': ['rhr']
-},{
+}, {
     'src': 'rhr_02.jpg',
     'description': _('The Greek and Serbian pavilions at the World Exhibition'
                      ' in Paris in 1900'),
@@ -40,7 +40,7 @@ project_rhr = {
         'The Reception History of Rumelia in Austria and France '
         '(Late 17th- Early 20th Centuries) (RHR)'),
     'website': '',
-    'host_institutes': [institutes['univie']],
+    'host_institutes': [institutes['univie'], institutes['om']],
     'funded_by': [institutes['oead']],
     'project_number': 'FR 06/2026',
     'pi': ['Mihailo Popović (Vienna)', 'Lilyana Yordanova (Paris)'],
