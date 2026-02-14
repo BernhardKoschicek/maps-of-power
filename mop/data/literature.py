@@ -3,6 +3,18 @@ from flask_babel import lazy_gettext as _
 literatures = [{
     'author': 'Mihailo St. Popović',
     'title':
+        'Српске племкиње и монаштво у средњем веку: поређење Јелене Анжујске '
+        'и Маре Бранковић у њиховим односима према бенедиктинцима/фрањевцима '
+        'и светогорским монасима, in: Дванаеста казивања о Светој Гори',
+    'locations': [_('Belgrad')],
+    'date': '2025',
+    'pages': '57-80',
+    'external_link': '',
+    'download': 'MPopovicSrpskeplemkinje.pdf',
+    'category': ['idcew']
+},{
+    'author': 'Mihailo St. Popović',
+    'title':
         '„Friedensarbeit inmitten tollsten Krieges“ – Hochschulkurse, '
         'Denkmalkunde und Archäologie im Hinterland des deutschen Abschnittes '
         'der Salonikifront während und nach dem Ersten Weltkrieg. '
@@ -12,7 +24,8 @@ literatures = [{
     'locations': [_('Berlin')],
     'date': '2025',
     'pages': '12',
-    'external_link': 'https://journals.ub.uni-heidelberg.de/index.php/kunsttexte/article/view/101426/105841',
+    'external_link': 'https://journals.ub.uni-heidelberg.de/index.php/'
+                     'kunsttexte/article/view/101426/105841',
     'download': '',
     'category': ['tarsr']
 }, {
@@ -22,12 +35,12 @@ literatures = [{
     'title':
         'On the Subject of Imperial Dignity: a Contribution to the Study of '
         'the Crown of King Stefan Uroš III Dečanski in the Monastery of '
-        'Cetinje',
+        'Cetinje. Zbornik Matice srpske za likovne umetnosti 52',
     'locations': [_('Novi Sad')],
     'date': '2024',
-    'pages': '',
+    'pages': '27-50',
     'external_link': '',
-    'download': '',
+    'download': 'MPopovic_et_al_The_Crown_of_King_Stefan_Uros_Decanski.pdf',
     'category': ['holdura']
 }, {
     'author':

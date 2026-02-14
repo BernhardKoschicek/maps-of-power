@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-11 21:29+0100\n"
+"POT-Creation-Date: 2026-02-14 14:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -700,21 +700,31 @@ msgstr ""
 msgid "The French King Louis XIV (1638-1715)"
 msgstr ""
 
-#: mop/data/projects/rhr.py:13
+#: mop/data/projects/rhr.py:14
 msgid "The Crusaders conquer Constantinople (Eugène Delacroix, 1840)"
 msgstr ""
 
-#: mop/data/projects/rhr.py:26
+#: mop/data/projects/rhr.py:24
+msgid ""
+"Reception of the Serbian King Petar I in Skopje in 1912, depicted in a "
+"French illustration"
+msgstr ""
+
+#: mop/data/projects/rhr.py:30
+msgid "The Greek and Serbian pavilions at the World Exhibition in Paris in 1900"
+msgstr ""
+
+#: mop/data/projects/rhr.py:40
 msgid ""
 "The Reception History of Rumelia in Austria and France (Late 17th- Early "
 "20th Centuries) (RHR)"
 msgstr ""
 
-#: mop/data/projects/rhr.py:39
+#: mop/data/projects/rhr.py:53
 msgid "rhr_description_1"
 msgstr ""
 
-#: mop/data/projects/rhr.py:40
+#: mop/data/projects/rhr.py:54
 msgid "rhr_description_2"
 msgstr ""
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-11 21:29+0100\n"
-"PO-Revision-Date: 2026-01-11 21:33+0100\n"
+"POT-Creation-Date: 2026-02-14 14:06+0100\n"
+"PO-Revision-Date: 2026-02-14 14:07+0100\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -1149,11 +1149,23 @@ msgstr ""
 msgid "The French King Louis XIV (1638-1715)"
 msgstr "The French King Louis XIV (1638-1715)"
 
-#: mop/data/projects/rhr.py:13
+#: mop/data/projects/rhr.py:14
 msgid "The Crusaders conquer Constantinople (Eugène Delacroix, 1840)"
 msgstr "The Crusaders conquer Constantinople (Eugène Delacroix, 1840)"
 
-#: mop/data/projects/rhr.py:26
+#: mop/data/projects/rhr.py:24
+msgid ""
+"Reception of the Serbian King Petar I in Skopje in 1912, depicted in a French "
+"illustration"
+msgstr ""
+"Reception of the Serbian King Petar I in Skopje in 1912, depicted in a French "
+"illustration"
+
+#: mop/data/projects/rhr.py:30
+msgid "The Greek and Serbian pavilions at the World Exhibition in Paris in 1900"
+msgstr "The Greek and Serbian pavilions at the World Exhibition in Paris in 1900"
+
+#: mop/data/projects/rhr.py:40
 msgid ""
 "The Reception History of Rumelia in Austria and France (Late 17th- Early 20th "
 "Centuries) (RHR)"
@@ -1161,7 +1173,7 @@ msgstr ""
 "The Reception History of Rumelia in Austria and France (Late 17th- Early 20th "
 "Centuries) (RHR)"
 
-#: mop/data/projects/rhr.py:39
+#: mop/data/projects/rhr.py:53
 msgid "rhr_description_1"
 msgstr ""
 "The project has the aim to elaborate on three research questions regarding the "
@@ -1172,7 +1184,7 @@ msgstr ""
 "terra incognita from a Central and Western European point of view, which would "
 "only return to the pan-European perspective in Early Modern times."
 
-#: mop/data/projects/rhr.py:40
+#: mop/data/projects/rhr.py:54
 msgid "rhr_description_2"
 msgstr ""
 "Our three research questions include:<br />\n"

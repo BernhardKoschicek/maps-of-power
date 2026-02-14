@@ -20,18 +20,22 @@ STATIC_PATH = ROOT_PATH / 'static'
 IMAGE_PATH = STATIC_PATH / 'images'
 THUMBNAIL_PATH = STATIC_PATH / 'thumbnails'
 
+def get_locale() -> str:
+    if 'language' in session:
+        return session['language']
+    return request.accept_languages.best_match(app.config['LANGUAGES']) or 'en'
+
 
 @app.before_request
 def before_request() -> None:
     os.environ['http_proxy'] = app.config['API_PROXY']
     os.environ['https_proxy'] = app.config['API_PROXY']
+    if hasattr(babel, 'localeselector'):
+        babel.localeselector(get_locale)
+    else:
+        babel.locale_selector_func = get_locale
 
 
-@babel.localeselector
-def get_locale() -> str:
-    return session.get(
-        'language',
-        request.accept_languages.best_match(app.config['LANGUAGES'].keys()))
 
 #babel = Babel(app, locale_selector=get_locale)
 
