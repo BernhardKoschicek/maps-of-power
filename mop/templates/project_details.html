@@ -47,71 +47,75 @@
             {% endfor %}
           </div>
 
-          <div class="col-3 bg-accent2 rounded-4 text-center text-dark">
+          <div class="col-3 project-sidebar">
             {% if project.funded_by %}
-              <div class="fw-bolder mt-2">{{ _('Funded by') }}:</div>
-              <div class="container-fluid">
-                {% for fund in project.funded_by %}
-                  <a href="{{ fund.url }}" target="_blank">
-                    <img
-                      src="{{ url_for('static', filename='images/institutes/'+fund.logo, v=ASSETS_VERSION) }}"
-                      alt="{{ fund.name }}"
-                      class="img-fluid d-flex mx-auto">
-                  </a>
-                {% endfor %}
+              <div class="sidebar-section">
+                <div class="sidebar-label">{{ _('Funded by') }}:</div>
+                <div class="logo-grid">
+                  {% for fund in project.funded_by %}
+                    <a href="{{ fund.url }}" target="_blank" class="logo-item" title="{{ fund.name }}">
+                      <img
+                        src="{{ url_for('static', filename='images/institutes/'+fund.logo, v=ASSETS_VERSION) }}"
+                        alt="{{ fund.name }}"
+                        class="img-fluid">
+                    </a>
+                  {% endfor %}
+                </div>
               </div>
             {% endif %}
 
             {% if project.project_number %}
-              <div class="pt-3">
-                <div class="fw-bolder">{{ _('Project Number') }}:</div>
-                {{ project.project_number }}
+              <div class="sidebar-section">
+                <div class="sidebar-label">{{ _('Project Number') }}:</div>
+                <div class="sidebar-value">{{ project.project_number }}</div>
               </div>
             {% endif %}
 
             {% if project.begin %}
-              <div class="pt-3">
-                <div class="fw-bolder">{{ _('Duration') }}:</div>
-                {{ project.begin }} - {{ project.end }}
+              <div class="sidebar-section">
+                <div class="sidebar-label">{{ _('Duration') }}:</div>
+                <div class="sidebar-value">{{ project.begin }} - {{ project.end }}</div>
               </div>
             {% endif %}
 
-            <div class="fw-bolder mt-2">{{ _('Hosted by') }}:</div>
-            <div class="container-fluid">
-              {% for host in project.host_institutes %}
-                <a href="{{ host.url }}" target="_blank">
-                  <img
-                    src="{{ url_for('static', filename='images/institutes/'+host.logo, v=ASSETS_VERSION) }}"
-                    alt="{{ host.name }}"
-                    class="img-fluid d-flex mx-auto"
-                    style="max-height: 120px;">
-                </a>
-              {% endfor %}
+            <div class="sidebar-section">
+              <div class="sidebar-label">{{ _('Hosted by') }}:</div>
+              <div class="logo-grid">
+                {% for host in project.host_institutes %}
+                  <a href="{{ host.url }}" target="_blank" class="logo-item" title="{{ host.name }}">
+                    <img
+                      src="{{ url_for('static', filename='images/institutes/'+host.logo, v=ASSETS_VERSION) }}"
+                      alt="{{ host.name }}"
+                      class="img-fluid">
+                  </a>
+                {% endfor %}
+              </div>
             </div>
 
-            <div class="pt-3">
-              <span class="fw-bolder">PI:</span>
-              <ul class="text-decoration-none list-unstyled">
+            <div class="sidebar-section">
+              <div class="sidebar-label">PI:</div>
+              <ul class="list-unstyled sidebar-list">
                 {% for pi in project.pi %}
                   <li>{{ pi }}</li>
                 {% endfor %}
               </ul>
             </div>
+
             {% if project.employees %}
-              <div class="pt-3">
-                <span class="fw-bolder">{{ _('Employees') }}:</span>
-                <ul class="text-decoration-none list-unstyled">
+              <div class="sidebar-section">
+                <div class="sidebar-label">{{ _('Employees') }}:</div>
+                <ul class="list-unstyled sidebar-list">
                   {% for emp in project.employees %}
                     <li>{{ emp }}</li>
                   {% endfor %}
                 </ul>
               </div>
             {% endif %}
+
             {% if project.cooperation %}
-              <div class="pt-3">
-                <span
-                  class="fw-bolder">{{ _('Cooperation and External Employees') }}:</span>
-                <ul class="text-decoration-none list-unstyled">
+              <div class="sidebar-section">
+                <div class="sidebar-label">{{ _('Cooperation and External Employees') }}:</div>
+                <ul class="list-unstyled sidebar-list">
                   {% for emp in project.cooperation %}
                     <li>{{ emp }}</li>
                   {% endfor %}

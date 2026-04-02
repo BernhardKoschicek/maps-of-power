@@ -37,7 +37,7 @@
                      class="text-decoration-none fw-bold link-primary">{{ entity.name }}</a>
                 </td>
                 <td> {{ entity.system_class }}</td>
-                <td> {{ entity.description }}</td>
+                <td> {{ entity.description or '' | safe }}</td>
               </tr>
             {% endfor %}
             </tbody>
