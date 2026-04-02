@@ -1,171 +1,285 @@
 {% extends "layout.html" %}
 {% with bg='bg-dark' %}
-    {% include 'navbar.html'  %}
+  {% include 'navbar.html' %}
 {% endwith %}
 {% block content %}
-
-  <div class="container">
-    <img src="{{ url_for('static', filename='images/histgeo_logo.png', v=ASSETS_VERSION) }}"
-         alt="Logo Historical Geography" class="img-fluid p-5">
-
-    <p>
-      {{ _('histgeo_intro_1') }}
-    </p>
-    <p>
-      {{ _('histgeo_intro_2') }}
-    </p>
-    <h2 class="text-accent3 text-center mt-5 display-6">{{ _('Digital HistGeo Lecture Series') }}</h2>
-    <p>
-      {{ _('histgeo_lecture_1') }}
-    </p>
-    <p>
-      {{ _('histgeo_lecture_2') }}
-    </p>
-    <p>
-      {{ _('histgeo_lecture_3') }}
-    </p>
-    <div>
-      <ul class="list-group list-group-flush">
-        {% for id_, lecture in lectures.items() %}
-          <li class="list-group-item">
-            <a href="{{ url_for('histgeo', id_=id_) }}" class="link-accent3">
-               {{ _('no') | capitalize }}. {{ loop.index }} / {{ lecture['date'] }}: {{ lecture['title'] }}
-              - {{ lecture['subtitle'] }} ({% for presenter in lecture['presenters'] %}{{ presenter['name'] }}
-              {{ ", " if not loop.last else "" }}{% endfor %})
-            </a>
-          </li>
-
-        {% endfor %}
-      </ul>
+  <div class="container mt-5 pt-5">
+    <!-- HistGeo Banner Section -->
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <img src="{{ url_for('static', filename='images/histgeo_logo.png', v=ASSETS_VERSION) }}"
+             alt="Logo Historical Geography" class="img-fluid w-100 rounded shadow-sm">
+      </div>
     </div>
-    <h2 class="text-accent3 text-center mt-5 display-6">HistGeo Newsletter</h2>
-    <div class="row">
-      <div class="col-md-12 col-lg-6">
-        <p>
-          {{ _('histgeo_newsletter_1') }}
+
+    <!-- Intro Text Section -->
+    <div class="row mb-5">
+      <div class="col-lg-12 mx-auto">
+        <p class="lead">
+          {{ _('histgeo_intro_1') }}
         </p>
-        <p>
-          {{ _('histgeo_newsletter_2') }}
-        </p>
-        <p>
-          {{ _('histgeo_newsletter_3') }}
+        <p class="lead">
+          {{ _('histgeo_intro_2') }}
         </p>
       </div>
-      <div class="text-center col">
-        {% for date, list in newsletters.items() %}
-          <h4 class="text-primary fs-4 text-accent3 ">{{ date }}</h4>
-          <div class="btn-group mb-3" role="group" aria-label="Newsletter {{ date }}">
-            {% for newsletter in list %}
-              <a href="{{ newsletter['url'] }}" type="button" class="btn btn-outline-accent3 text-dark"
-                 target="_blank">
-                {{ _('no') | capitalize }}. {{ loop.index }} / {{ newsletter['title'] | safe | capitalize }}
-              </a>
+    </div>
+    <section class="mb-5">
+      <h2 class="text-accent3 text-center mb-4 display-6">{{ _('Digital HistGeo Lecture Series') }}</h2>
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <p>
+            {{ _('histgeo_lecture_1') }}
+          </p>
+          <p>
+            {{ _('histgeo_lecture_2') }}
+          </p>
+          <p>
+            {{ _('histgeo_lecture_3') }}
+          </p>
+        </div>
+      </div>
+      <div class="list-group shadow-sm">
+        {% for id_, lecture in lectures.items() %}
+          <a href="{{ url_for('histgeo', id_=id_) }}"
+             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            <div>
+              <span class="text-accent3 fw-bold me-2">{{ _('no') | capitalize }}. {{ loop.index }}</span>
+              <span class="text-muted me-2">[{{ lecture['date'] }}]</span>
+              <span class="fw-semibold">{{ lecture['title'] }}</span>
+              {% if lecture['subtitle'] %}
+                <span class="text-muted"> - {{ lecture['subtitle'] }}</span>
+              {% endif %}
+            </div>
+            <div class="text-end small text-muted">
+              {% for presenter in lecture['presenters'] %}
+                {{ presenter['name'] }}{{ ", " if not loop.last else "" }}
+              {% endfor %}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
 
-            {% endfor %}
+    <section class="mb-5">
+      <h2 class="text-accent3 text-center mb-4 display-6">HistGeo Newsletter</h2>
+      <div class="card shadow-sm border-0 bg-light mb-4">
+        <div class="card-body">
+          <p>
+            {{ _('histgeo_newsletter_1') }}
+          </p>
+          <p>
+            {{ _('histgeo_newsletter_2') }}
+          </p>
+          <p>
+            {{ _('histgeo_newsletter_3') }}
+          </p>
+          <div class="mt-4">
+            <iframe src="https://t210d45f9.emailsys2a.net/180/1051/a33e665ee4/subscribe/form.html?_g=1680019050"
+                    width="100%" height="300" class="rounded border"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="newsletter-grid">
+        {% for date, list in newsletters.items() %}
+          <div class="newsletter-item p-2">
+            <div class="newsletter-item-content">
+              <div class="card shadow-sm h-100">
+                <div class="card-header bg-white border-bottom-0 pt-3 pb-0">
+                  <h4 class="text-accent3 fs-5 mb-0">{{ date }}</h4>
+                </div>
+                <div class="card-body pt-2 pb-3">
+                  <div class="d-grid gap-2">
+                    {% for newsletter in list %}
+                      <a href="{{ newsletter['url'] }}" class="btn btn-sm btn-outline-accent3 text-start" target="_blank">
+                        <i class="bi bi-envelope-open me-2"></i>
+                        {{ _('no') | capitalize }}. {{ loop.index }}: {{ newsletter['title'] | safe | capitalize }}
+                      </a>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         {% endfor %}
       </div>
-    </div>
+    </section>
 
-    <div class="col">
-      <iframe src="https://t210d45f9.emailsys2a.net/180/1051/a33e665ee4/subscribe/form.html?_g=1680019050"
-              width="100%" height="350"></iframe>
-    </div>
-
-    <h2 class="text-accent3 text-center mt-5 display-6">{{ _('volumes') }}</h2>
-    <div class="accordion" id="accordionHistgeoVolumes">
-      {% for number, volume in volumes.items() %}
-        <div class="accordion-item">
-          <div class="row">
-            <div class="col-1 text-center rounded-end rounded-4" style="background-color: white">
-              <span class="text-accent3 fs-1 fst-italic display-1">{{ number }}</span>
-            </div>
-            <div class="col">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-semibold fs-5" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#accordion-{{ number }}" aria-expanded="false"
-                        aria-controls="accordion-{{ number }}">
-                  {{ volume['title'] }}
-                </button>
-              </h2>
-              <div id="accordion-{{ number }}" class="accordion-collapse collapse"
-                   data-bs-parent="#accordionHistgeoVolumes">
-                <div class="accordion-body" style="background-color: white">
-                  <div class="row">
-                    <div class="col-10">
-                      {% for item in ['author', 'pages', 'ISBN', 'citation', 'order'] %}
-                        <div class="row my-1">
-                          <div class="col-1 text-end"><p>{{ _(item) }}:</p></div>
-                          <div class="col-9">
-                            {% if item == 'order' %}
-                              <a href="{{ volume[item] }}" target="_blank">
-                                <i class="bi bi-cart2 text-accent3 fs-5"></i></a>
-                            {% else %}
-                              <p>
-                                {{ volume[item] }}
-                              </p>
-                            {% endif %}
-                          </div>
+    <section class="mb-5">
+      <h2 class="text-accent3 text-center mb-4 display-6">{{ _('volumes') }}</h2>
+      <div class="accordion accordion-flush shadow-sm rounded overflow-hidden" id="accordionHistgeoVolumes">
+        {% for number, volume in volumes.items() %}
+          <div class="accordion-item border mb-2 rounded">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordion-{{ number }}" aria-expanded="false"
+                      aria-controls="accordion-{{ number }}">
+                <div class="d-flex align-items-center w-100">
+                  <span class="text-accent3 fs-3 fw-bold me-4" style="min-width: 2rem;">{{ number }}</span>
+                  <span class="fw-semibold">{{ volume['title'] }}</span>
+                </div>
+              </button>
+            </h2>
+            <div id="accordion-{{ number }}" class="accordion-collapse collapse"
+                 data-bs-parent="#accordionHistgeoVolumes">
+              <div class="accordion-body bg-white pt-4">
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="row mb-2">
+                      <div class="col-sm-2 text-muted fw-bold">{{ _('author') | capitalize}}:</div>
+                      <div class="col-sm-10">{{ volume['author'] }}</div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="col-sm-2 text-muted fw-bold">{{ _('pages') | capitalize }}:</div>
+                      <div class="col-sm-10">{{ volume['pages'] }}</div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="col-sm-2 text-muted fw-bold">ISBN:</div>
+                      <div class="col-sm-10">{{ volume['ISBN'] }}</div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="col-sm-2 text-muted fw-bold">{{ _('citation') | capitalize}}:</div>
+                      <div class="col-sm-10 fst-italic">{{ volume['citation'] }}</div>
+                    </div>
+                    {% if volume['order'] %}
+                      <div class="row mb-3">
+                        <div class="col-sm-2 text-muted fw-bold">{{ _('order') | capitalize}}:</div>
+                        <div class="col-sm-10">
+                          <a href="{{ volume['order'] }}" target="_blank" class="btn btn-sm btn-accent3 text-white">
+                            <i class="bi bi-cart2 me-1"></i> {{ _('order') | capitalize }}
+                          </a>
                         </div>
-                      {% endfor %}
-                    </div>
-                    <div class="col">
-                      <img src="{{ url_for('static', filename='images/vol-' + number | string + '.png', v=ASSETS_VERSION) }}"
-                           alt="vol-{{ number }}" class="img-fluid">
-                    </div>
+                      </div>
+                    {% endif %}
                   </div>
+                  <div class="col-md-3 text-center">
+                    <img src="{{ url_for('static', filename='images/vol-' + number | string + '.png', v=ASSETS_VERSION) }}"
+                         alt="vol-{{ number }}" class="img-fluid rounded shadow-sm" style="max-height: 250px;">
+                  </div>
+                </div>
 
-                  <hr class="w-75 mx-auto">
+                <hr class="my-4">
+                <div class="px-md-3">
                   {% for p in volume['abstract'] %}
-                    <p>{{ p }}</p>
+                    <p class="text-primary">{{ p }}</p>
                   {% endfor %}
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        {% endfor %}
+      </div>
+    </section>
 
-      {% endfor %}
-    </div>
-    <h2 class="text-accent3 text-center mt-5 display-6">{{ _('Citation Rules and Fonts') }}</h2>
-    <p>
-      {{ _('histgeo_rules') }}
-    </p>
-    <div class="row">
-      <div class="col text-center">
-        <h3 class="text-accent3 fs-5 mt-5 display-5">{{ _('Citation Rules') }}</h3>
-        <p>
-          {{ _('histgeo_citation_1') }}
+    <section class="mb-5 py-5 bg-white rounded shadow-sm">
+      <div class="container px-4">
+        <h2 class="text-accent3 text-center mb-4 display-6">{{ _('Citation Rules and Fonts') }}</h2>
+        <p class="text-center mb-5 mx-auto" style="max-width: 800px;">
+          {{ _('histgeo_rules') }}
         </p>
-        <a
-            href="{{ url_for('static', filename='repository/Studies-in-Historical-Geography-and-Cultural-Heritage_Instructions.pdf', v=ASSETS_VERSION) }}"
-            class="link-secondary" target="_blank">
-          <i class="bi bi-filetype-pdf fs-1"></i>
-          <p class="link-primary">{{ _('Citation Rules') }}</p>
-        </a>
-      </div>
-      <div class="col text-center">
-        <h3 class="text-accent3 fs-5 text-center mt-5 display-5">{{ _('Fonts') }}</h3>
-        <p>
-          {{ _('histgeo_fonts_1') }}
-        </p>
-        <div class="row">
-          <div class="col text-center">
-            <a href="{{ url_for('static', filename='fonts/BukyVede-Italic.ttf', v=ASSETS_VERSION) }}"
-               class="link-secondary" target="_blank">
-              <i class="bi bi-filetype-ttf fs-1"></i>
-              <p class="link-primary">BukyVede-Italic.ttf</p>
+
+        <div class="row g-4 text-center">
+          <div class="col-md-6 border-end">
+            <h3 class="text-accent3 h5 mb-3">{{ _('Citation Rules') }}</h3>
+            <p class="small text-muted mb-4">
+              {{ _('histgeo_citation_1') }}
+            </p>
+            <a href="{{ url_for('static', filename='repository/Studies-in-Historical-Geography-and-Cultural-Heritage_Instructions.pdf', v=ASSETS_VERSION) }}"
+               class="d-inline-block p-3 border rounded text-decoration-none link-dark bg-white shadow-sm hover-shadow"
+               target="_blank">
+              <i class="bi bi-file-earmark-pdf text-danger fs-1"></i>
+              <p class="mt-2 mb-0 fw-bold">{{ _('Download PDF') }}</p>
             </a>
           </div>
-          <div class="col text-center">
-            <a href="{{ url_for('static', filename='fonts/BukyVede-Regular.ttf', v=ASSETS_VERSION) }}"
-               class="link-secondary" target="_blank">
-              <i class="bi bi-filetype-ttf fs-1"></i>
-              <p class="link-primary">BukyVede-Regular.ttf</p>
-            </a>
+          <div class="col-md-6">
+            <h3 class="text-accent3 h5 mb-3">{{ _('Fonts') }}</h3>
+            <p class="small text-muted mb-4">
+              {{ _('histgeo_fonts_1') }}
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="{{ url_for('static', filename='fonts/BukyVede-Italic.ttf', v=ASSETS_VERSION) }}"
+                 class="p-2 border rounded text-decoration-none link-dark bg-white shadow-sm hover-shadow"
+                 target="_blank">
+                <i class="bi bi-type text-primary fs-2"></i>
+                <p class="small mt-1 mb-0">BukyVede-Italic.ttf</p>
+              </a>
+              <a href="{{ url_for('static', filename='fonts/BukyVede-Regular.ttf', v=ASSETS_VERSION) }}"
+                 class="p-2 border rounded text-decoration-none link-dark bg-white shadow-sm hover-shadow"
+                 target="_blank">
+                <i class="bi bi-type text-primary fs-2"></i>
+                <p class="small mt-1 mb-0">BukyVede-Regular.ttf</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
+
+  <style>
+    .newsletter-grid {
+      position: relative;
+    }
+    .newsletter-item {
+      display: block;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+    @media (min-width: 768px) {
+      .newsletter-item {
+        width: 50%;
+      }
+    }
+    @media (min-width: 1200px) {
+      .newsletter-item {
+        width: 33.333%;
+      }
+    }
+    .newsletter-item-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .btn-accent3 {
+      background-color: var(--bs-accent3);
+      border-color: var(--bs-accent3);
+    }
+    .btn-accent3:hover {
+      background-color: #e67615;
+      border-color: #e67615;
+      color: white;
+    }
+    .btn-outline-accent3 {
+      color: var(--bs-accent3);
+      border-color: var(--bs-accent3);
+    }
+    .btn-outline-accent3:hover {
+      background-color: var(--bs-accent3);
+      border-color: var(--bs-accent3);
+      color: white;
+    }
+    .hover-shadow {
+      transition: box-shadow 0.3s ease;
+    }
+    .hover-shadow:hover {
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    }
+  </style>
+
+  <script>
+    let newsletterGrid;
+    document.addEventListener('DOMContentLoaded', function () {
+      newsletterGrid = new Muuri('.newsletter-grid', {
+        dragEnabled: false,
+        layout: {
+          fillGaps: true
+        }
+      });
+      // Refresh layout after some time to ensure everything is settled
+      setTimeout(function() {
+          newsletterGrid.refreshItems().layout();
+      }, 500);
+    });
+  </script>
 {% endblock %}
