@@ -15,16 +15,14 @@
 
   <div class="container-fluid mt-3 mb-5">
     <div class="row">
-      <div id="floating-navbar" class="col-md bg-light list-group">
+      <div id="floating-navbar" class="col-md list-group">
         {% for item in side_nav if item %}
           <a
-            class="list-group-item list-group-item-action list-group-item-accent1"
+            class="list-group-item list-group-item-action"
             href="#{{ item }}">{{ _(item) }}</a>
         {% endfor %}
       </div>
-      <div class="col-8 mx-auto position-relative" id="main-content"
-           data-bs-spy="scroll" data-bs-target="#floating-navbar"
-           data-bs-offset="0" tabindex="0">
+      <div class="col-8 mx-auto position-relative" id="main-content">
 
         <div class="container mb-5">
           <nav aria-label="breadcrumb">
@@ -40,7 +38,7 @@
           </nav>
         </div>
         <h1 id="description"
-            class="text-primary display-5 text-center">{{ project.title }}</h1>
+            class="text-primary display-5 text-center mt-5">{{ project.title }}</h1>
         <div class="row mt-5">
           <div class="col-9">
             <h4 style="display: none">{{ _('description') }}</h4>
@@ -266,6 +264,36 @@
         titleTag: true,
         overlayBackgroundColor: 'rgba(56,67,86, 0.8)'
       });
+
+      const sections = document.querySelectorAll('h1[id], h3[id], h4[id]');
+      const navLinks = document.querySelectorAll('#floating-navbar a');
+
+      function updateActiveState() {
+        let activeId = null;
+        const scrollPosition = window.scrollY + 180; // Increased offset for better detection
+
+        sections.forEach(section => {
+          if (section.getBoundingClientRect().top + window.scrollY <= scrollPosition) {
+            activeId = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (activeId && link.getAttribute('href') === `#${activeId}`) {
+            link.classList.add('active');
+          }
+        });
+
+        // Default to first item if at top
+        if (window.scrollY < 100 && navLinks.length > 0) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          navLinks[0].classList.add('active');
+        }
+      }
+
+      window.addEventListener('scroll', updateActiveState);
+      updateActiveState(); // Initial call
     });
   </script>
 {% endblock %}

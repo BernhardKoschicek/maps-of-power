@@ -73,9 +73,33 @@ a {
     top: 100px; /* Adjust as needed */
     height: max-content; /* Adjust to match container height */
     overflow-y: auto;
-    background-color: #f8f9fa; /* Add your desired background color */
     padding: 10px; /* Add padding for better appearance */
     margin-top: 50px;
+    text-align: right;
+}
+
+#floating-navbar .list-group-item {
+    border: none;
+    background-color: transparent;
+    color: var(--bs-dark);
+    border-right: 3px solid transparent;
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+#floating-navbar .list-group-item:hover {
+    background-color: rgba(158, 174, 192, 0.1); /* accent2 with opacity */
+    color: var(--bs-primary);
+}
+
+#floating-navbar .list-group-item.active {
+    background-color: transparent;
+    color: var(--bs-primary) !important;
+    border-right-color: var(--bs-primary) !important;
+    font-weight: bold;
 }
 .scrollspy-project {
     position: relative;
