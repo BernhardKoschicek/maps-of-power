@@ -113,15 +113,16 @@ def entity_project_view(
     entity = Entity.get_entity_from_oa(id_)
     linked_entities = get_entities_linked_to_entity(id_)
     relations = get_relations(
-        get_relation_entities(linked_entities, entity.relations))
+        get_relation_entities(linked_entities, entity.relations or []))
     related_places = []
     if 'places' in relations:
         related_places = get_related_geoms(relations['places'])
     return render_template(
         'explore/project_entity_view.html',
         entity=entity,
-        type_hierarchy=get_types_sorted(entity.types),
-        images=numpy.array_split(entity.depictions, 4)
+        type_hierarchy=get_types_sorted(entity.types or []),
+        images=numpy.array_split(
+            entity.depictions, 4)  # type: ignore[arg-type]
         if entity.depictions else None,
         relations=relations,
         related_places=related_places,

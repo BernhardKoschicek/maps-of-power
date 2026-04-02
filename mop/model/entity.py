@@ -1,3 +1,4 @@
+from dataclasses import dataclass, field
 import os
 from typing import Any, Optional
 
@@ -6,7 +7,20 @@ from mop.model.util import split_date_string, format_date, uc_first
 from mop.model.api_calls import get_entity
 
 
+@dataclass
 class Depiction:
+    link: str
+    title: str
+    license: str
+    url: str
+    creator: str
+    license_holder: str
+    public_shareable: bool
+    mimetype: str
+    iiif_base_path: str
+    iiif_manifest: str
+    extension: str
+
     def __init__(self, data: dict[str, Any]):
         self.link = data['@id']
         self.title = data['title']
@@ -21,7 +35,26 @@ class Depiction:
         self.extension = os.path.splitext(self.url.rsplit('/', 1)[-1])[1]
 
 
+@dataclass
 class Entity:
+    id_: str = field(init=False)
+    name: str = field(init=False)
+    description: str = field(init=False)
+    system_class: str = field(init=False)
+    types: Optional[list[Types]] = field(default=None, init=False)
+    alias: Optional[str] = field(default=None, init=False)
+    relations: Optional[list[dict[str, Any]]] = field(default=None, init=False)
+    depictions: Optional[list[Depiction]] = field(default=None, init=False)
+    links: Optional[list[dict[str, Any]]] = field(default=None, init=False)
+    begin_from: Optional[str] = field(default=None, init=False)
+    begin_to: Optional[str] = field(default=None, init=False)
+    begin_comment: Optional[str] = field(default=None, init=False)
+    end_from: Optional[str] = field(default=None, init=False)
+    end_to: Optional[str] = field(default=None, init=False)
+    begin: Optional[str] = field(default=None, init=False)
+    end: Optional[str] = field(default=None, init=False)
+    geometry: Optional[Any] = field(default=None, init=False)
+
     def __init__(self, data: dict[str, Any]) -> None:
         self.id_ = data['@id'].rsplit('/', 1)[-1]
         self.name = data['properties']['title']
@@ -54,7 +87,7 @@ class Entity:
             self.end = format_date(self.end_from, self.end_to)
 
     @staticmethod
-    def get_entity_from_oa(id_: int):
+    def get_entity_from_oa(id_: int) -> 'Entity':
         return Entity(get_entity(id_))
 
     @staticmethod
@@ -76,8 +109,8 @@ class Entity:
     #     return [Relation(relation) for relation in data] if data else None
 
     @staticmethod
-    def get_description(data: list[dict[str, Any]]) -> Optional[list[str]]:
-        return [i['value'] for i in data][0] if data else None
+    def get_description(data: list[dict[str, Any]]) -> str:
+        return [i['value'] for i in data][0] if data else ''
 
     @staticmethod
     def handling_geometry(
@@ -89,7 +122,16 @@ class Entity:
         return None
 
 
+@dataclass
 class Relation(Entity):
+    label: str = field(init=False)
+    relation_to_id: str = field(init=False)
+    relation_to: str = field(init=False)
+    relation_type: str = field(init=False)
+    relation_system_class: str = field(init=False)
+    relation_description: Optional[str] = field(init=False)
+    type: str = field(init=False)
+
     def __init__(self, data: dict[str, Any]):
         super().__init__(data)
         self.label = data['label']
@@ -97,5 +139,5 @@ class Relation(Entity):
         self.relation_to = data['relationTo']
         self.relation_type = data['relationType']
         self.relation_system_class = data['relationSystemClass']
-        self.relation_description = data['relationDescription']
+        self.relation_description = data.get('relationDescription')
         self.type = data['type']

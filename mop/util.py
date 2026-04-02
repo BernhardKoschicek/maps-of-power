@@ -27,10 +27,9 @@ def youtube_iframe(link_: str) -> str:
            'allowfullscreen></iframe>'
 
 
-with app.app_context():
-    def get_image_frame(filepath: str) -> str:
-        return f'<img src="{filepath}" ' \
-               'class="img-fluid video-image-size" alt="">'
+def get_image_frame(filepath: str) -> str:
+    return f'<img src="{filepath}" ' \
+           'class="img-fluid video-image-size" alt="">'
 
 
 @app.context_processor
@@ -47,7 +46,7 @@ def inject_menu() -> dict[str, Any]:
 
 def get_dict_entries_by_category(
         categories: Union[list[str], str],
-        list_: list[dict[str, Any]]) -> list[dict[str, str]]:
+        list_: list[dict[str, Any]]) -> list[dict[str, Any]]:
     categories = [categories] if isinstance(categories, str) else categories
     return [entry for entry in list_
             if any(item in categories for item in entry['category'])]

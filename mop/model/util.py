@@ -17,4 +17,9 @@ def format_date(
 
 
 def flatten_list_and_remove_duplicates(list_: list[Any]) -> list[Any]:
-    return [item for sublist in list_ for item in sublist if item not in list_]
+    result: list[Any] = []
+    for sublist in list_:
+        for item in sublist:
+            if item not in result:
+                result.append(item)
+    return result

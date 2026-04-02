@@ -1,7 +1,21 @@
-from typing import Any, Dict
+from dataclasses import dataclass
+from typing import Any, Dict, List
 
 
+@dataclass
 class TypeTree:
+    id: int
+    name: str
+    description: str
+    origin_id: int
+    first: int
+    last: int
+    root: int
+    subs: List[Dict[str, Any]]
+    count: int
+    count_subs: int
+    category: str
+
     def __init__(self, data: Dict[str, Any]):
         self.id = data['id']
         self.name = data['name']
