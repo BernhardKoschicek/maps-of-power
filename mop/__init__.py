@@ -1,4 +1,5 @@
 import os
+import time
 from pathlib import Path
 from typing import Any
 
@@ -9,6 +10,8 @@ from flask_babel import Babel
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('config')
 app.config.from_pyfile('production.py')
+
+ASSETS_VERSION = int(time.time())
 
 
 def get_locale() -> str:
@@ -39,7 +42,8 @@ def before_request() -> None:
 def inject_conf_var() -> dict[str, Any]:
     return {
         'AVAILABLE_LANGUAGES': app.config['LANGUAGES'],
-        'CURRENT_LANGUAGE': get_locale()}
+        'CURRENT_LANGUAGE': get_locale(),
+        'ASSETS_VERSION': ASSETS_VERSION}
 
 
 @app.after_request

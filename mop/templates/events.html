@@ -9,7 +9,7 @@
       {% for event in events %}
         <div class="col-sm-4 col-md-3 py-3">
           <div class="card border-primary">
-            <img src="{{ url_for('static', filename='images/' + event['icon']) }}"
+            <img src="{{ url_for('static', filename='images/' + event['icon'], v=ASSETS_VERSION) }}"
                  class="card-img-top"
                  alt="{{ event['id'] }} Image">
             <div class="card-body">

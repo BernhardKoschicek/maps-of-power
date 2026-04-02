@@ -56,7 +56,7 @@
                 {% for fund in project.funded_by %}
                   <a href="{{ fund.url }}" target="_blank">
                     <img
-                      src="{{ url_for('static', filename='images/institutes/'+fund.logo) }}"
+                      src="{{ url_for('static', filename='images/institutes/'+fund.logo, v=ASSETS_VERSION) }}"
                       alt="{{ fund.name }}"
                       class="img-fluid d-flex mx-auto">
                   </a>
@@ -83,7 +83,7 @@
               {% for host in project.host_institutes %}
                 <a href="{{ host.url }}" target="_blank">
                   <img
-                    src="{{ url_for('static', filename='images/institutes/'+host.logo) }}"
+                    src="{{ url_for('static', filename='images/institutes/'+host.logo, v=ASSETS_VERSION) }}"
                     alt="{{ host.name }}"
                     class="img-fluid d-flex mx-auto"
                     style="max-height: 120px;">
@@ -143,10 +143,10 @@
                 <div class="col-lg-3">
                   <figure class="figure">
                     <a
-                      href="{{ url_for('static', filename='images/projects/' + project.acronym + '/' + img.src) }}"
+                      href="{{ url_for('static', filename='images/projects/' + project.acronym + '/' + img.src, v=ASSETS_VERSION) }}"
                       data-caption="{{ img.description }}, {{ img.citation }}">
                       <img
-                        src="{{ url_for('static', filename="thumbnails/" + img.src) }}"
+                        src="{{ url_for('static', filename="thumbnails/" + img.src, v=ASSETS_VERSION) }}"
                         alt="{{ img.src }}"
                         class="img-fluid">
                     </a>
@@ -226,7 +226,7 @@
                   {% endif %}
                   {% if link.file %}
                     <a
-                      href="{{ url_for('static', filename='repository/' + link.file) }}"
+                      href="{{ url_for('static', filename='repository/' + link.file, v=ASSETS_VERSION) }}"
                       class="text-decoration-none link-primary">
                   {% endif %}
                   <i class="{{ link.icon }} display-4 text-accent2"></i>

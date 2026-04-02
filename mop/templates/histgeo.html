@@ -5,7 +5,7 @@
 {% block content %}
 
   <div class="container">
-    <img src="{{ url_for('static', filename='/images/histgeo_logo.png') }}"
+    <img src="{{ url_for('static', filename='images/histgeo_logo.png', v=ASSETS_VERSION) }}"
          alt="Logo Historical Geography" class="img-fluid p-5">
 
     <p>
@@ -110,7 +110,7 @@
                       {% endfor %}
                     </div>
                     <div class="col">
-                      <img src="{{ url_for('static', filename='images/vol-' + number | string + '.png') }}"
+                      <img src="{{ url_for('static', filename='images/vol-' + number | string + '.png', v=ASSETS_VERSION) }}"
                            alt="vol-{{ number }}" class="img-fluid">
                     </div>
                   </div>
@@ -138,7 +138,7 @@
           {{ _('histgeo_citation_1') }}
         </p>
         <a
-            href="{{ url_for('static', filename='repository/Studies-in-Historical-Geography-and-Cultural-Heritage_Instructions.pdf' ) }}"
+            href="{{ url_for('static', filename='repository/Studies-in-Historical-Geography-and-Cultural-Heritage_Instructions.pdf', v=ASSETS_VERSION) }}"
             class="link-secondary" target="_blank">
           <i class="bi bi-filetype-pdf fs-1"></i>
           <p class="link-primary">{{ _('Citation Rules') }}</p>
@@ -151,14 +151,14 @@
         </p>
         <div class="row">
           <div class="col text-center">
-            <a href="{{ url_for('static', filename='/fonts/BukyVede-Italic.ttf') }}"
+            <a href="{{ url_for('static', filename='fonts/BukyVede-Italic.ttf', v=ASSETS_VERSION) }}"
                class="link-secondary" target="_blank">
               <i class="bi bi-filetype-ttf fs-1"></i>
               <p class="link-primary">BukyVede-Italic.ttf</p>
             </a>
           </div>
           <div class="col text-center">
-            <a href="{{ url_for('static', filename='/fonts/BukyVede-Regular.ttf') }}"
+            <a href="{{ url_for('static', filename='fonts/BukyVede-Regular.ttf', v=ASSETS_VERSION) }}"
                class="link-secondary" target="_blank">
               <i class="bi bi-filetype-ttf fs-1"></i>
               <p class="link-primary">BukyVede-Regular.ttf</p>

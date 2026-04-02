@@ -2,7 +2,7 @@
     <div class="container">
       <div class="col-2">
         <a class="navbar-brand" href="{{ url_for('about') }}">
-          <img src="/static/images/mop_logo_inv.svg"
+          <img src="{{ url_for('static', filename='images/mop_logo_inv.svg', v=ASSETS_VERSION) }}"
                alt="Maps of Power Logo" height="150"
                class="d-inline-block align-text-top">
         </a>
