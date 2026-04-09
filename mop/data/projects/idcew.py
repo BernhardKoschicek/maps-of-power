@@ -8,7 +8,8 @@ images = [{
     'src': 'idcew_1.jpg',
     'description':
         _('The Church of the Holy Trinity in Sopoćani Monastery in the 1970s'),
-    'citation': _('Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
+    'citation':
+        _('Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
     'category': ['idcew']
 }, {
     'src': 'idcew_2.jpg',

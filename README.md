@@ -1,6 +1,6 @@
 # 🗺️ Maps of Power
 
-The research initiative **Maps of Power** serves the methodological and interdisciplinary networking of scholars in the field of *Historical Geography*.  
+The research initiative **Maps of Power** serves the methodological and interdisciplinary networking of scholars in the field of *Historical Geography*.
 Founded in 2019 under the title **"Maps of Power: Historical Atlas of Places, Borderzones and Migration Dynamics in Byzantium (TIB Balkans)"**, it emerged from the idea of deepening historical-geographical research methodologically and broadening it thematically.
 
 Building on the long-running project **[Tabula Imperii Byzantini (TIB)](https://tib.oeaw.ac.at/)** — conducted at the *Austrian Academy of Sciences (Vienna)* since 1966 — the initiative aims to expand the spatial focus of the TIB beyond the Byzantine world to include other European regions of the Middle Ages.
@@ -14,7 +14,7 @@ The successfully completed cluster project **["Digitising Patterns of Power (DPP
 ### Prerequisites
 Make sure you have the following installed:
 
-- [Python 3.9+](https://www.python.org/downloads/)
+- [Python 3.10+](https://www.python.org/downloads/)
 - [Node.js 18+ and npm](https://nodejs.org/)
 - ImageMagick (for `libmagickwand-dev`)
 
@@ -30,14 +30,12 @@ git clone https://github.com/BernhardKoschicek/maps-of-power.git
 cd maps-of-power
 ```
 
-### Python environment setup
+### Python-Setup mit uv
 ```bash
-# (Optional) Create and activate a virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-# Install required Python packages
-pip install -r requirements.txt
+# uv installieren (siehe https://docs.astral.sh/uv/)
+# Python-Version für das Projekt setzen und Abhängigkeiten installieren
+uv python pin 3.10
+uv sync
 ```
 
 ### Frontend setup
@@ -47,11 +45,12 @@ npm install
 ```
 
 ### Run the project
-*(Adjust these commands to your setup if a framework or entry point differs.)*
 ```bash
+# Backend (Flask)
+uv run python runserver.py
+
+# Frontend (falls benötigt)
 npm run dev
-# or
-python app.py
 ```
 
 ---
@@ -73,7 +72,7 @@ maps-of-power/
 
 ## 🧠 Development Status
 
-> ⚠️ This project is currently a **work in progress (WIP)**.  
+> ⚠️ This project is currently a **work in progress (WIP)**.
 > Expect frequent changes, experimental features, and evolving structures.
 
 Contributions and feedback from the research and developer community are warmly welcome.
@@ -89,15 +88,22 @@ Contributions and feedback from the research and developer community are warmly 
 
 ## 📄 License
 
-This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
 See the [LICENSE](./LICENSE) file for details.
 
 ---
 
 ## 🧑‍💻 Authors & Credits
 
-Developed and maintained by the *Maps of Power* research group.  
-Hosted and supported by the **Austrian Academy of Sciences (ÖAW)**.  
+Developed and maintained by the *Maps of Power* research group.
+Hosted and supported by the **Austrian Academy of Sciences (ÖAW)**.
 For inquiries or collaboration, please contact the project team.
 
 ---
+
+
+### Tests & Coverage
+```bash
+# Unit-Tests mit Coverage ausführen
+uv run pytest --cov=mop --cov-report=term-missing
+```
