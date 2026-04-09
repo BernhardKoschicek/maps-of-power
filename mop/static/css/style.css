@@ -281,3 +281,24 @@ height: auto; /* Ensures the image scales down proportionally if larger than 200
 .figure img:hover {
     transform: scale(1.02);
 }
+
+.transition-icon {
+    transition: transform 0.3s ease;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.gallery-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.bg-light-subtle {
+    background-color: #f8f9fa;
+}

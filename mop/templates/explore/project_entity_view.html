@@ -11,15 +11,15 @@
   <link rel="stylesheet"
         href="{{ url_for('static', filename='node_modules/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.css', v=ASSETS_VERSION) }}">
-  <div class="container mt-3 mb-5">
+  <div class="container mt-4 mb-4">
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
+      <ol class="breadcrumb bg-transparent p-0 mb-0">
         <li class="breadcrumb-item">
-          <a href="{{ url_for('projects') }}" class="link-primary">{{ _('projects') }}</a>
+          <a href="{{ url_for('projects') }}" class="link-primary text-decoration-none">{{ _('projects') }}</a>
         </li>
         {% if path[0] %}
         <li class="breadcrumb-item">
-          <a href="{{ url_for('projects', title=path[0]) }}" class="link-primary">{{ path[0] }}</a>
+          <a href="{{ url_for('projects', title=path[0]) }}" class="link-primary text-decoration-none">{{ path[0] }}</a>
         </li>
         {% endif %}
         <li class="breadcrumb-item">
@@ -27,9 +27,9 @@
             url_for('project_explore_table',
             project=path[0],
             view=system_classes[entity.system_class | lower]) }}"
-            class="link-primary">{{ system_classes[entity.system_class | lower] }}</a>
+            class="link-primary text-decoration-none">{{ system_classes[entity.system_class | lower] }}</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">
+        <li class="breadcrumb-item active text-muted" aria-current="page">
           {{ entity.name }}
         </li>
       </ol>
@@ -37,246 +37,297 @@
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="col-10">
-        <h2 class="text-primary">{{ entity.name }}</h2>
+    <div class="row align-items-end mb-4">
+      <div class="col-md-8">
+        <h1 class="display-5 fw-bold text-primary mb-1">{{ entity.name }}</h1>
+        {% if entity.alias %}
+          <p class="lead text-muted mb-0">{{ entity.alias }}</p>
+        {% endif %}
       </div>
-      <div class="col text-end">
-        <div class="pt-2 btn-group text-end">
+      <div class="col-md-4 text-md-end mt-3 mt-md-0">
+        <div class="btn-group shadow-sm">
           <a href="{{ config['API_PATH'] }}/entity/{{ entity.id_ }}"
-             target="_blank" class="btn btn-outline-primary">
-            <i class="bi bi-filetype-json fs-3"></i>
+             target="_blank" class="btn btn-outline-primary" title="JSON">
+            <i class="bi bi-filetype-json fs-4"></i>
           </a>
           <a href="{{ config['API_PATH'] }}/entity/{{ entity.id_ }}?format=pretty-xml"
-             target="_blank" class="btn btn-outline-primary">
-            <i class="bi bi-filetype-xml fs-3"></i>
+             target="_blank" class="btn btn-outline-primary" title="XML">
+            <i class="bi bi-filetype-xml fs-4"></i>
           </a>
           <a href="{{ config['API_PATH'] }}/entity/{{ entity.id_ }}?export=csv"
-             target="_blank" class="btn btn-outline-primary">
-            <i class="bi bi-filetype-csv fs-3"></i>
+             target="_blank" class="btn btn-outline-primary" title="CSV">
+            <i class="bi bi-filetype-csv fs-4"></i>
           </a>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-6 row">
-        <div class="col-12">
-          <p>{{ entity.alias }}</p>
-          <div class="pt-3">
-            {% if entity.begin %}
-              <span class="fw-bold">Begin</span> {{ entity.begin }}
-              <br/>
-            {% endif %}
-            {% if entity.end %}
-              <span class="fw-bold">End</span> {{ entity.end }}
+
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <div class="card-body p-4">
+            <h3 class="card-title text-primary mb-4">
+              <i class="bi bi-info-circle me-2"></i>{{ _('properties') }}
+            </h3>
+
+            <div class="mb-4">
+              {% if entity.begin or entity.end %}
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-calendar3 text-primary me-2"></i>
+                  <span class="fw-bold me-2">{{ _('Period') }}:</span>
+                  <span>
+                    {% if entity.begin %}{{ entity.begin }}{% endif %}
+                    {% if entity.begin and entity.end %} – {% endif %}
+                    {% if entity.end %}{{ entity.end }}{% endif %}
+                  </span>
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <tbody>
+                  <tr>
+                    <th class="text-muted fw-semibold border-0 ps-0" style="width: 35%;">ID</th>
+                    <td class="border-0">{{ entity.id_ }}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-muted fw-semibold ps-0">System Class</th>
+                    <td>
+                      <span class="badge bg-accent2 text-primary rounded-pill px-3">{{ entity.system_class }}</span>
+                    </td>
+                  </tr>
+                  {% if type_hierarchy %}
+                    {% for key, value in type_hierarchy.items() %}
+                      <tr>
+                        <th class="text-muted fw-semibold ps-0">{{ key }}</th>
+                        <td>
+                          {% for type in value %}
+                            {{ type_popover(type) }}{% if not loop.last %}, {% endif %}
+                          {% endfor %}
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  {% endif %}
+                </tbody>
+              </table>
+            </div>
+
+            {% if entity.links %}
+              <div class="mt-4 pt-3 border-top">
+                <div class="d-flex flex-wrap gap-2">
+                  {% for system in entity.links %}
+                    <a href="{{ system.identifier }}"
+                       class="btn btn-sm btn-outline-secondary rounded-pill px-3"
+                       target="_blank">
+                      <i class="bi bi-link-45deg me-1"></i>{{ system.referenceSystem }}
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
             {% endif %}
           </div>
         </div>
-        <div class="col-12 pt-3">
-          <h3 class="text-primary">{{ _('properties') }}</h3>
-          <table class="table table-striped hover order-column w-100">
-            <tr>
-              <th class="table-active">ID</th>
-              <td>{{ entity.id_ }}</td>
-            </tr>
-            <tr>
-              <th class="table-active">System Class</th>
-              <td>
-                {{ entity.system_class }}
-              </td>
-            </tr>
-            {% if type_hierarchy %}
-              {% for key, value in type_hierarchy.items() %}
-                <tr>
-                  <th class="table-active">{{ key }}</th>
-                  <td>
-                    {% for type in value %}
-                      {{ type_popover(type) }}{% if loop.last %}{% else %},{% endif %}
-                    {% endfor %}
-                  </td>
-                </tr>
-              {% endfor %}
-            {% endif %}
-          </table>
-        </div>
-        <div>
-          {% if entity.links %}
-            {% for system in entity.links %}
-              <a href="{{ system.identifier }}"
-                 class="btn btn-accent2 px-2 py-1 pill"
-                 target="_blank">
-                {{ system.referenceSystem }}
-              </a>
-            {% endfor %}
-          {% endif %}
-        </div>
       </div>
-      <div class="col-6 pt-5">
-        <div id="map"></div>
+
+      <div class="col-lg-6">
+        <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+          <div id="map" style="height: 100%; min-height: 400px;"></div>
+        </div>
       </div>
     </div>
 
     <div class="row pt-5">
       {% if entity.description %}
-        <div class="col-md-12 pt-3">
-          <h3 class="text-primary">{{ _('Description') }}</h3>
-          <div id="description">
-            <p class="">
-              {{ entity.description
-              | replace('\n', '<br>')
-              | replace('Hist.:', '<span class="fst-italic">Hist.:</span>')
-              | replace('Mon.:', '<span class="fst-italic">Mon.:</span>')
-              | safe }}
-            </p>
+        <div class="col-12">
+          <div class="card shadow-sm border-0 rounded-4 mb-5">
+            <div class="card-body p-4">
+              <h3 class="card-title text-primary mb-4">
+                <i class="bi bi-justify-left me-2"></i>{{ _('Description') }}
+              </h3>
+              <div id="description" class="lh-lg">
+                {{ entity.description
+                | replace('\n', '<br>')
+                | replace('Hist.:', '<span class="fw-bold text-muted">Hist.:</span>')
+                | replace('Mon.:', '<span class="fw-bold text-muted">Mon.:</span>')
+                | safe }}
+              </div>
+            </div>
           </div>
         </div>
       {% endif %}
 
       {% if relations['references'] %}
-        <div class="col-md-12 pt-3">
-          <h3 class="text-primary">{{ _('literature') }}</h3>
-          {% for reference in relations['references'] %}
-            <a tabindex="0" class="text-decoration-none fst-italic link-primary" role="button" data-bs-toggle="popover"
-               data-bs-trigger="focus"
-               title="<a href='{{ url_for('entity_project_view', id_=reference.relation_to_id, project=path[0], view=path[1]) }}'
-                        class='text-decoration-none link-primary'>{{ reference.label }}</a>"
-               data-bs-content="<p class=''>{{ reference.description }}</p>
-                                  <a href='{{ url_for('entity_project_view', id_=reference.relation_to_id, project=path[0], view=path[1]) }}'
-                                  class='text-decoration-none btn btn-accent2'>{{ reference.label }}</a>">
-              {{ reference.label }}{% if reference.relation_description %} —
-                {{ reference.relation_description }}{% endif %}</a>
-            {% if loop.last %}{% else %}, {% endif %}
-          {% endfor %}
+        <div class="col-12">
+          <div class="card shadow-sm border-0 rounded-4 mb-5">
+            <div class="card-body p-4">
+              <h3 class="card-title text-primary mb-4">
+                <i class="bi bi-book me-2"></i>{{ _('literature') }}
+              </h3>
+              <div class="d-flex flex-wrap gap-3">
+                {% for reference in relations['references'] %}
+                  <div class="p-2 border rounded bg-light-subtle">
+                    <a tabindex="0" class="text-decoration-none fst-italic link-primary" role="button" data-bs-toggle="popover"
+                       data-bs-trigger="focus"
+                       title="<a href='{{ url_for('entity_project_view', id_=reference.relation_to_id, project=path[0], view=path[1]) }}'
+                                class='text-decoration-none link-primary'>{{ reference.label }}</a>"
+                       data-bs-content="<p class='small mb-2'>{{ reference.description }}</p>
+                                         <a href='{{ url_for('entity_project_view', id_=reference.relation_to_id, project=path[0], view=path[1]) }}'
+                                         class='btn btn-sm btn-accent2'>{{ _('view entity') }}</a>">
+                      {{ reference.label }}
+                    </a>
+                    {% if reference.relation_description %}
+                      <span class="text-muted small ms-1">— {{ reference.relation_description }}</span>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
         </div>
       {% endif %}
 
-      <div class="col-md-12 pt-5">
+      <div class="col-12">
         {% for key, value in relations.items() if key not in ['types', 'references'] %}
-          {% if loop.first %}<h3 class="text-primary">Relations</h3>{% endif %}
-          <h5 class="pt-3 text-primary">
-            {{ key | replace('_', ' ') | title }} ({{ value|length }})
-            <a class="btn btn-accent2 p-1" data-bs-toggle="collapse"
-               href="#collapse-{{ key }}" role="button" aria-expanded="false"
-               aria-controls="collapse-{{ key }}">
-              <i class="bi bi-caret-down-fill" onclick="myFunction(this)"></i>
-            </a>
-          </h5>
+          {% if loop.first %}
+            <h3 class="text-primary mb-4 mt-2">
+              <i class="bi bi-share me-2"></i>{{ _('Relations') }}
+            </h3>
+          {% endif %}
 
-          <div class="collapse" id="collapse-{{ key }}">
-            <div class="card card-body">
-              <table class="table table-striped hover order-column w-100"
-                     id="table-{{ key }}">
-                <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Class</th>
-                  {% if key in ['events','actors', 'places'] %}
-                    <th>Begin</th>
-                    <th>End</th>
-                  {% endif %}
-                  {% if key in  ['actors'] %}
-                    <th>Relation Type</th>
-                  {% endif %}
-                  <th>Description</th>
-                </tr>
-                </thead>
+          <div class="card shadow-sm border-0 rounded-4 mb-4">
+            <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center"
+                 role="button" data-bs-toggle="collapse" href="#collapse-{{ key }}" aria-expanded="false">
+              <h5 class="mb-0 text-dark fw-bold">
+                {{ key | replace('_', ' ') | title }}
+                <span class="badge bg-primary rounded-pill ms-2 fs-6">{{ value|length }}</span>
+              </h5>
+              <i class="bi bi-chevron-down text-primary transition-icon" id="icon-{{ key }}"></i>
+            </div>
 
-                {% for item in value %}
-                  <tr>
-                    <td><a
-                        href="{{ url_for('entity_project_view', id_=item.relation_to_id, project=path[0], view=path[1]) }}"
-                        class="text-decoration-none link-primary">
-                      {{ item.label }}
-                    </a>
-                    </td>
-                    <td>
-                      {{ item.system_class }}
-                    </td>
-                    {% if key in ['events','actors', 'places'] %}
-                      <td>
-                        {% if item.begin %}
-                          {{ item.begin }}
+            <div class="collapse" id="collapse-{{ key }}" onshow="toggleIcon('{{ key }}')" onhide="toggleIcon('{{ key }}')">
+              <div class="card-body p-4 pt-0">
+                <div class="table-responsive">
+                  <table class="table table-hover w-100" id="table-{{ key }}">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Class</th>
+                        {% if key in ['events','actors', 'places'] %}
+                          <th>Begin</th>
+                          <th>End</th>
                         {% endif %}
-                      </td>
-                      <td>
-                        {% if item.end %}
-                          {{ item.end }}
+                        {% if key in ['actors'] %}
+                          <th>Relation Type</th>
                         {% endif %}
-                      </td>
-                    {% endif %}
-                    {% if key in  ['actors'] %}
-                      <td>
-                        {% if item.type %}
-                          {{ item.type }}
-                        {% endif %}
-                      </td>
-                    {% endif %}
-                    <td>
-                      {{ item.description }}
-                    </td>
-                  </tr>
-                {% endfor %}
-              </table>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for item in value %}
+                        <tr>
+                          <td>
+                            <a href="{{ url_for('entity_project_view', id_=item.relation_to_id, project=path[0], view=path[1]) }}"
+                               class="text-decoration-none link-primary fw-bold">
+                              {{ item.label }}
+                            </a>
+                          </td>
+                          <td>
+                            <span class="small text-muted">{{ item.system_class }}</span>
+                          </td>
+                          {% if key in ['events','actors', 'places'] %}
+                            <td>{{ item.begin if item.begin }}</td>
+                            <td>{{ item.end if item.end }}</td>
+                          {% endif %}
+                          {% if key in ['actors'] %}
+                            <td>{{ item.type if item.type }}</td>
+                          {% endif %}
+                          <td class="small">{{ item.description }}</td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
+
           <script>
               $(document).ready(function () {
-                  var indexLastColumn = $('#table-{{ key }}').find('tr')[0].cells.length - 1;
-                  $('#table-{{ key }}').dataTable({
+                  var tableId = '#table-{{ key }}';
+                  var indexLastColumn = $(tableId).find('thead th').length - 1;
+                  $(tableId).dataTable({
                       "paging": true,
                       "autoWidth": false,
                       "ordering": true,
                       "info": true,
                       "searching": true,
                       "pageLength": 10,
+                      "dom": '<"d-flex justify-content-between align-items-center mb-3"f>t<"d-flex justify-content-between align-items-center mt-3"ip>',
+                      "language": {
+                          "search": "",
+                          "searchPlaceholder": "{{ _('Search...') }}"
+                      },
                       "columnDefs": [
-                          {"width": "20%", "targets": 0},
+                          {"width": "25%", "targets": 0},
                           {
                               targets: indexLastColumn,
                               render: DataTable.render.ellipsis(300, true)
                           }]
                   });
+                  // Style search input
+                  $('.dataTables_filter input').addClass('form-control form-control-sm rounded-pill px-3');
               });
           </script>
         {% endfor %}
       </div>
 
-
       {% if entity.depictions %}
-        <h3 class="text-primary">{{ _('files') }}</h3>
-        <div class="row pt-5">
-          {% for list in images %}
-            {% for img in list if img.public_shareable %}
-              <div class="col-lg-2 d-flex justify-content-center align-items-center">
-                <figure>
-                  <a href="{{ img.url }}" data-fancybox="gallery"
-                     data-caption="{{ img.title }}{% if img.description %} - {{ img.description }}{% endif %}">
-                    <img src="{{ img.url + '?image_size=thumbnail' }}"
-                         class="img-fluid mx-auto d-block" alt="{{ img.title }}">
-                  </a>
-                  <figcaption class="small text-center pt-1 text-break">
-                    {{ img.title }}
-                    {% if img.iiif_manifest %}
-                    <br />
-                    <a href="{{ url_for('iiif_viewer', manifest=img.iiif_manifest) }}"
-                    target="_blank">
-                      <img src="{{ url_for('static', filename='images/icons/iiif.png', v=ASSETS_VERSION) }}"
-                         alt="iiif_logo" style="width: 32px">
+        <div class="col-12 mt-5">
+          <h3 class="text-primary mb-4">
+            <i class="bi bi-images me-2"></i>{{ _('files') }}
+          </h3>
+          <div class="row g-4">
+            {% for list in images %}
+              {% for img in list if img.public_shareable %}
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                  <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden gallery-card">
+                    <a href="{{ img.url }}" data-fancybox="gallery"
+                       data-caption="{{ img.title }}{% if img.description %} - {{ img.description }}{% endif %}">
+                      <div class="ratio ratio-1x1">
+                        <img src="{{ img.url + '?image_size=thumbnail' }}"
+                             class="object-fit-cover w-100 h-100" alt="{{ img.title }}">
+                      </div>
                     </a>
-                    {% endif %}
-                  </figcaption>
-                </figure>
-              </div>
+                    <div class="card-body p-2 text-center">
+                      <p class="small mb-1 text-truncate" title="{{ img.title }}">{{ img.title }}</p>
+                      {% if img.iiif_manifest %}
+                        <a href="{{ url_for('iiif_viewer', manifest=img.iiif_manifest) }}"
+                           target="_blank" class="d-inline-block">
+                          <img src="{{ url_for('static', filename='images/icons/iiif.png', v=ASSETS_VERSION) }}"
+                               alt="iiif_logo" style="width: 24px">
+                        </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
             {% endfor %}
-          {% endfor %}
+          </div>
         </div>
       {% endif %}
     </div>
   </div>
+
   <script>
       Fancybox.bind("[data-fancybox]", {
           // Your custom options
       });
+
+      function toggleIcon(key) {
+          const icon = document.getElementById('icon-' + key);
+          icon.classList.toggle('rotate-180');
+      }
   </script>
 
   {#  <script>#}
@@ -302,8 +353,11 @@
   {#      });#}
   {#  </script>#}
   <script>
-      function myFunction(x) {
-          x.classList.toggle("bi-caret-up-fill");
+      function toggleIcon(key) {
+          const icon = document.getElementById('icon-' + key);
+          if (icon) {
+              icon.classList.toggle('rotate-180');
+          }
       }
   </script>
   <script>
