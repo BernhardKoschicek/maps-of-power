@@ -208,41 +208,43 @@
             <div class="collapse" id="collapse-{{ key }}" onshow="toggleIcon('{{ key }}')" onhide="toggleIcon('{{ key }}')">
               <div class="card-body p-4 pt-0">
                 <div class="table-responsive">
-                  <table class="table table-hover w-100" id="table-{{ key }}">
-                    <thead>
+                <table id="table-{{ key }}" class="table table-hover align-middle w-100 mb-0">
+                    <thead class="table-light">
                       <tr>
-                        <th>Name</th>
-                        <th>Class</th>
+                        <th class="border-0 ps-3">Name</th>
+                        <th class="border-0">Class</th>
                         {% if key in ['events','actors', 'places'] %}
-                          <th>Begin</th>
-                          <th>End</th>
+                          <th class="border-0">Begin</th>
+                          <th class="border-0">End</th>
                         {% endif %}
                         {% if key in ['actors'] %}
-                          <th>Relation Type</th>
+                          <th class="border-0">Relation Type</th>
                         {% endif %}
-                        <th>Description</th>
+                        <th class="border-0 pe-3">Description</th>
                       </tr>
                     </thead>
                     <tbody>
                       {% for item in value %}
                         <tr>
-                          <td>
+                          <td class="ps-3">
                             <a href="{{ url_for('entity_project_view', id_=item.relation_to_id, project=path[0], view=path[1]) }}"
                                class="text-decoration-none link-primary fw-bold">
                               {{ item.label }}
                             </a>
                           </td>
                           <td>
-                            <span class="small text-muted">{{ item.system_class }}</span>
+                            <span class="badge bg-accent2 text-primary rounded-pill px-3 fw-normal small">
+                              {{ item.system_class }}
+                            </span>
                           </td>
                           {% if key in ['events','actors', 'places'] %}
-                            <td>{{ item.begin if item.begin }}</td>
-                            <td>{{ item.end if item.end }}</td>
+                            <td class="small">{{ item.begin if item.begin }}</td>
+                            <td class="small">{{ item.end if item.end }}</td>
                           {% endif %}
                           {% if key in ['actors'] %}
-                            <td>{{ item.type if item.type }}</td>
+                            <td class="small">{{ item.type if item.type }}</td>
                           {% endif %}
-                          <td class="small">{{ item.description }}</td>
+                          <td class="small text-muted pe-3">{{ item.description }}</td>
                         </tr>
                       {% endfor %}
                     </tbody>
@@ -276,7 +278,9 @@
                           }]
                   });
                   // Style search input
-                  $('.dataTables_filter input').addClass('form-control form-control-sm rounded-pill px-3');
+                  $('#table-{{ key }}_wrapper .dataTables_filter input').addClass('form-control form-control-sm rounded-pill px-4 py-2 border-1 shadow-none');
+                  $('#table-{{ key }}_wrapper .dataTables_filter').addClass('w-100');
+                  $('#table-{{ key }}_wrapper .dataTables_filter label').addClass('w-100');
               });
           </script>
         {% endfor %}

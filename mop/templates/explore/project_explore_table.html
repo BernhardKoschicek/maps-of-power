@@ -3,47 +3,82 @@
   {% include 'navbar.html' %}
 {% endwith %}
 {% block content %}
-  <div class="container top7 text-center">
-    <h1 class="display-6">{{ project['title'] }}</h1>
-    <h3> {{ view_classes['display_name'] }}</h3>
+  <div class="container mt-4 mb-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent p-0 mb-0">
+        <li class="breadcrumb-item">
+          <a href="{{ url_for('projects') }}" class="link-primary text-decoration-none">{{ _('projects') }}</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="{{ url_for('projects', title=project.acronym) }}" class="link-primary text-decoration-none">{{ project.acronym }}</a>
+        </li>
+        <li class="breadcrumb-item active text-muted" aria-current="page">
+          {{ view_classes['display_name'] }}
+        </li>
+      </ol>
+    </nav>
   </div>
-  <section>
+
+  <div class="container text-center mb-5 mt-4">
+    <h1 class="display-5 fw-bold text-primary mb-2">{{ project['title'] }}</h1>
+    <h3 class="text-muted fw-normal">{{ view_classes['display_name'] }}</h3>
+    <hr class="w-25 mx-auto border-2 border-primary mt-4">
+  </div>
+
+  <section class="mb-5">
     <div class="container">
-      <div class="col-md-12 ">
-        {% if not data %}
-          <div class="text-center top10 display-6">
-            <p>"{{ view_classes['display_name'] }}" {{ _('is currently unavailable') }}</p>
+      {% if not data %}
+        <div class="card shadow-sm border-0 rounded-4 p-5 text-center">
+          <div class="card-body">
+            <i class="bi bi-exclamation-circle text-muted fs-1 mb-3 d-block"></i>
+            <h3 class="text-muted fw-light">
+              "{{ view_classes['display_name'] }}" {{ _('is currently unavailable') }}
+            </h3>
+            <p class="text-muted small mt-2">
+              {{ _('We are working on providing data for this section as soon as possible.') }}
+            </p>
           </div>
-        {% else %}
-          <table id="entity_table" class="row-border table table-striped dataTable"
-                 style="width:100%">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>{{ _('Class') }}</th>
-              <th>{{ _('Description') }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for entity in data %}
-              <tr>
-                <td>
-                  <a href="{{ url_for('entity_project_view', id_=entity.id_, project=project.acronym, view=view) }}"
-                     class="text-decoration-none link-primary">{{ entity.id_ }}</a>
-                </td>
-                <td>
-                  <a href="{{ url_for('entity_project_view', id_=entity.id_, project=project.acronym, view=view) }}"
-                     class="text-decoration-none fw-bold link-primary">{{ entity.name }}</a>
-                </td>
-                <td> {{ entity.system_class }}</td>
-                <td> {{ entity.description or '' | safe }}</td>
-              </tr>
-            {% endfor %}
-            </tbody>
-          </table>
+        </div>
+      {% else %}
+        <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+          <div class="card-body p-4">
+            <div class="table-responsive">
+              <table id="entity_table" class="table table-hover align-middle w-100 mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th class="border-0 ps-3">ID</th>
+                    <th class="border-0">Name</th>
+                    <th class="border-0">{{ _('Class') }}</th>
+                    <th class="border-0 pe-3">{{ _('Description') }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for entity in data %}
+                    <tr>
+                      <td class="ps-3">
+                        <a href="{{ url_for('entity_project_view', id_=entity.id_, project=project.acronym, view=view) }}"
+                           class="text-decoration-none link-primary fw-medium small">{{ entity.id_ }}</a>
+                      </td>
+                      <td>
+                        <a href="{{ url_for('entity_project_view', id_=entity.id_, project=project.acronym, view=view) }}"
+                           class="text-decoration-none fw-bold link-primary">{{ entity.name }}</a>
+                      </td>
+                      <td>
+                        <span class="badge bg-accent2 text-primary rounded-pill px-3 fw-normal">
+                          {{ entity.system_class }}
+                        </span>
+                      </td>
+                      <td class="small text-muted pe-3">
+                        {{ entity.description or '' | safe }}
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
           </div>
-        {% endif %}
+        </div>
+      {% endif %}
     </div>
   </section>
 
@@ -51,6 +86,11 @@
       $(document).ready(function () {
           $('#entity_table').DataTable({
               'order': [[1, 'asc']],
+              "dom": '<"d-flex justify-content-between align-items-center mb-4"f>t<"d-flex justify-content-between align-items-center mt-4"ip>',
+              "language": {
+                  "search": "",
+                  "searchPlaceholder": "{{ _('Search in') }} {{ view_classes['display_name'] }}..."
+              },
               'columnDefs': [
                   {
                       'targets': 3,
@@ -61,6 +101,11 @@
                       'render': DataTable.render.ellipsis(180, true)
                   }]
           });
+
+          // Style search input to match project style
+          $('.dataTables_filter input').addClass('form-control form-control-sm rounded-pill px-4 py-2 border-1 shadow-none');
+          $('.dataTables_filter').addClass('w-100');
+          $('.dataTables_filter label').addClass('w-100');
       });
   </script>
 {% endblock %}
