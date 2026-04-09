@@ -52,10 +52,10 @@ institutes = {
     'abf': {
         'name': 'Abteilung Byzanzforschung (ABF)',
         'url': 'https://www.oeaw.ac.at/byzanz',
-        'logo': 'byzantine_research.jpg',
+        'logo': 'imafo.png',
         'member': 'Österreichische Akademie der Wissenschaften (ÖAW) '
                   '<br> Institut für Mittelalterforschung (IMAFO)',
-        'address': 'Hollandstraße 11-13<br> 1020 Wien<br> Österreich'},
+        'address': ''},
     'acdh-ch': {
         'name': 'Austrian Centre for Digital Humanities and Cultural Heritage',
         'url': 'https://www.oeaw.ac.at/acdh/',

@@ -54,7 +54,7 @@ project_idcew = {
         _('idcew_description_2')
     ],
     'results': '',
-    'icon': '',
+    'icon': 'idcew_1.jpg',
     'images': images,
     'videos': [],
     'oaID': '135263',

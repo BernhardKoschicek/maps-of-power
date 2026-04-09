@@ -73,7 +73,7 @@ project_tarsr = {
         _('tracing_description_6'),
     ],
     'results': results,
-    'icon': '',
+    'icon': 'tarsr_1.jpg',
     'images': images,
     'videos': [],
     'oaID': '135005',

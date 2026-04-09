@@ -59,7 +59,7 @@ project_dgse = {
         _('dgse_description_3')
     ],
     'results': '',
-    'icon': '',
+    'icon': 'dgse_1.jpg',
     'images': images,
     'videos': [],
     'oaID': '135379',

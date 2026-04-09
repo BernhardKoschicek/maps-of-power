@@ -4,41 +4,67 @@
 {% endwith %}
 {% block content %}
   <div class="container mt-5">
-    {% for project in projects.values() %}
-      <a href="{{ url_for('projects', title=project['acronym']) }}"
-         class="link-primary">
-        <div class="row bg-accent2 rounded-4 p-3 m-3">
-          <div class="col-8">
-            <h3>
-              {{ project['title'] }}
-            </h3>
-            <h5>
-              {{ project.begin }} - {{ project.end }}
-            </h5>
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <h1 class="display-4 fw-bold text-dark">{{ _('Research Projects') }}</h1>
+        <p class="lead text-muted">{{ _('Discover our ongoing and completed research initiatives in Historical Geography and Digital Humanities.') }}</p>
+        <hr class="w-25 mx-auto border-2 border-primary">
+      </div>
+    </div>
 
-            <span class="fw-bolder">PI:</span>
-            <ul class="text-decoration-none list-unstyled">
-              {% for pi in project.pi %}
-                <li>{{ pi }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-          {#          <div class="col-2">#}
-          {#            <img src="{{ url_for('static', filename='images/projects/' + project['acronym'] + '/' + project['icon']) }}"#}
-          {#                 alt="project['acronym']">#}
-          {#          </div>#}
-          {% if project.employees %}
-            <div class="col text-end">
-              <span class="fw-bolder">{{ _('Employees') }}:</span>
-              <ul class="text-decoration-none list-unstyled">
-                {% for emp in project.employees %}
-                  <li>{{ emp }}</li>
-                {% endfor %}
-              </ul>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      {% for project in projects.values() %}
+        <div class="col">
+          <a href="{{ url_for('projects', title=project['acronym']) }}" class="project-card-link">
+            <div class="card h-100 project-card shadow-sm rounded-4 overflow-hidden">
+              {% if project.icon %}
+                <div class="project-icon-container">
+                  <img src="{{ url_for('static', filename='images/projects/' + (project['icon_path'] if project.get('icon_path') else project['acronym']) + '/' + project['icon']) }}"
+                       alt="{{ project['acronym'] }} icon">
+                </div>
+              {% else %}
+                <div class="project-icon-container bg-accent2">
+                  <i class="bi bi-diagram-3 text-primary fs-1 opacity-50"></i>
+                </div>
+              {% endif %}
+
+              <div class="card-body p-4 d-flex flex-column">
+                <div class="mb-2 text-uppercase fw-bold text-primary small">
+                  {{ project['acronym'] }}
+                </div>
+                <h4 class="card-title fw-bold mb-3">
+                  {{ project['title'] }}
+                </h4>
+                <div class="text-muted small mb-3">
+                  <i class="bi bi-calendar3 me-1"></i> {{ project.begin }} - {{ project.end }}
+                </div>
+
+                <div class="mt-auto pt-3 border-top">
+                  <div class="sidebar-section">
+                    <div class="sidebar-label">PI:</div>
+                    <div class="sidebar-value">
+                      {% for pi in project.pi %}
+                        {{ pi }}{% if not loop.last %}, {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+
+                  {% if project.employees %}
+                    <div class="sidebar-section mt-2">
+                      <div class="sidebar-label">{{ _('Employees') }}:</div>
+                      <div class="sidebar-value text-truncate">
+                        {% for emp in project.employees %}
+                          {{ emp }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
             </div>
-          {% endif %}
+          </a>
         </div>
-      </a>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 {% endblock %}

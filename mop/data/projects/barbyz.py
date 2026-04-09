@@ -68,7 +68,7 @@ project_barbyz = {
         _('barbyz_description_6'),
     ],
     'results': '',
-    'icon': '',
+    'icon': 'barbyz_1.jpg',
     'images': images,
     'videos': '',
     'oaID': '133694',

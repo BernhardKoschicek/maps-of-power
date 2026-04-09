@@ -54,7 +54,7 @@ project_rhr = {
         _('rhr_description_2')
     ],
     'results': '',
-    'icon': 'holdura_icon.jpg',
+    'icon': 'rhr_01.jpg',
     'images': images,
     'videos': [],
     'oaID': '',

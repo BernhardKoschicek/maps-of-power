@@ -236,3 +236,48 @@ height: auto; /* Ensures the image scales down proportionally if larger than 200
     max-width: 100%;
     object-fit: contain;
 }
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-card-link:hover {
+    color: inherit;
+}
+
+.project-icon-container {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.project-icon-container img {
+    max-height: 80px;
+    max-width: 80%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.figure img {
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.figure img:hover {
+    transform: scale(1.02);
+}

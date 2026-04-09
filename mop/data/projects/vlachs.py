@@ -100,7 +100,7 @@ project_vlachs = {
         _('vlachs_description_1'),
         _('vlachs_description_2')],
     'results': results,
-    'icon': 'vlachs_icon.jpg',
+    'icon': 'vlachs_1.png',
     'images': images,
     'videos': [],
     'oaID': '8247',
