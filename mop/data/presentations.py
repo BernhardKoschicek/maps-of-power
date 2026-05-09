@@ -4,6 +4,15 @@ from mop.util import get_table_dates_formatted
 
 presentations = [{
     'presenter': 'Mihailo Popović',
+    'title': 'Wissen Sie, was Historische Geographie ist?',
+    'conference': 'Lange Nacht der Forschung 2026',
+    'location': [_('Wien')],
+    'date': get_table_dates_formatted(2026, 4, 24),
+    'external_link': '',
+    'download': '',
+    'category': ['tib_balkan']
+},{
+    'presenter': 'Mihailo Popović',
     'title': 'Über die Sinnhaftigkeit der und die Nachhaltigkeit in den '
              'Digitalen Geisteswissenschaften: Erkenntnisse aus der '
              'Perspektive der Historischen Geographie, Byzantinistik und '
