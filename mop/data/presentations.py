@@ -10,7 +10,7 @@ presentations = [{
     'date': get_table_dates_formatted(2026, 4, 24),
     'external_link': '',
     'download': '',
-    'category': ['tib_balkan']
+    'category': ['dgse']
 },{
     'presenter': 'Mihailo Popović',
     'title': 'Über die Sinnhaftigkeit der und die Nachhaltigkeit in den '
