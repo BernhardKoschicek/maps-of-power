@@ -3,7 +3,7 @@ from flask_babel import lazy_gettext as _
 from mop.util import get_table_dates_formatted
 
 presentations = [{
-    'presenter': 'Mihailo Popović',
+    'presenter': 'Nikola Arnautović, Mihailo Popović',
     'title': 'Wissen Sie, was Historische Geographie ist?',
     'conference': 'Lange Nacht der Forschung 2026',
     'location': [_('Wien')],
