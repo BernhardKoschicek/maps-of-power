@@ -368,6 +368,161 @@
         }
     }
 
+    // Export graph view as high-resolution image with background and watermark customization
+    function exportGraphAsImage(id) {
+        if (!network) return;
+
+        const container = document.getElementById('network-viz');
+        const visCanvas = container ? container.querySelector('canvas') : null;
+        if (!visCanvas) {
+            console.error("Canvas element not found!");
+            return;
+        }
+
+        // Get option values from form
+        const formatOption = document.querySelector('input[name="exportFormat"]:checked');
+        const bgOption = document.querySelector('input[name="exportBg"]:checked');
+        const watermarkOption = document.getElementById('exportWatermark');
+
+        const format = formatOption ? formatOption.value : 'png';
+        const bgType = bgOption ? bgOption.value : 'transparent';
+        const includeWatermark = watermarkOption ? watermarkOption.checked : true;
+
+        // Create temporary canvas for high-quality composition
+        const exportCanvas = document.createElement('canvas');
+        exportCanvas.width = visCanvas.width;
+        exportCanvas.height = visCanvas.height;
+        const ctx = exportCanvas.getContext('2d');
+
+        // Draw background theme
+        if (bgType === 'white') {
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+        } else if (bgType === 'dark') {
+            ctx.fillStyle = '#0b0e14';
+            ctx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+        } else {
+            // transparent
+            if (format === 'jpeg') {
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+            }
+        }
+
+        // Draw the vis-network canvas content
+        ctx.drawImage(visCanvas, 0, 0);
+
+        // Watermark rendering
+        if (includeWatermark) {
+            const isDark = bgType === 'dark';
+            const primaryTextColor = isDark ? '#f8f9fa' : '#212529';
+            const secondaryTextColor = isDark ? '#a1a1aa' : '#6c757d';
+            const accentColor = '#7048e8'; // Violet theme accent
+            
+            ctx.save();
+            
+            // Auto scale watermark based on device pixel ratio / resolution
+            const dpr = window.devicePixelRatio || 1;
+            const scaleFactor = Math.max(1, dpr * 0.75);
+            
+            const padding = 20 * scaleFactor;
+            const cardWidth = 320 * scaleFactor;
+            const cardHeight = 70 * scaleFactor;
+            const cardX = padding;
+            const cardY = exportCanvas.height - cardHeight - padding;
+            const cornerRadius = 8 * scaleFactor;
+
+            // Draw card container shadow/border
+            ctx.fillStyle = isDark ? 'rgba(15, 23, 42, 0.92)' : 'rgba(255, 255, 255, 0.92)';
+            ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)';
+            ctx.lineWidth = 1 * scaleFactor;
+            
+            ctx.shadowColor = 'rgba(0,0,0,0.1)';
+            ctx.shadowBlur = 10 * scaleFactor;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 4 * scaleFactor;
+
+            ctx.beginPath();
+            if (typeof ctx.roundRect === 'function') {
+                ctx.roundRect(cardX, cardY, cardWidth, cardHeight, cornerRadius);
+            } else {
+                ctx.rect(cardX, cardY, cardWidth, cardHeight);
+            }
+            ctx.fill();
+            ctx.stroke();
+
+            // Disable shadow for text to prevent blur
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+
+            // Left accent bar
+            ctx.fillStyle = accentColor;
+            ctx.beginPath();
+            if (typeof ctx.roundRect === 'function') {
+                ctx.roundRect(cardX + 4 * scaleFactor, cardY + 8 * scaleFactor, 4 * scaleFactor, cardHeight - 16 * scaleFactor, 2 * scaleFactor);
+            } else {
+                ctx.rect(cardX + 4 * scaleFactor, cardY + 8 * scaleFactor, 4 * scaleFactor, cardHeight - 16 * scaleFactor);
+            }
+            ctx.fill();
+
+            // Brand Text: "MAPS OF POWER"
+            ctx.font = `bold ${Math.round(11 * scaleFactor)}px 'Mulish', sans-serif`;
+            ctx.fillStyle = accentColor;
+            ctx.fillText("MAPS OF POWER", cardX + 16 * scaleFactor, cardY + 22 * scaleFactor);
+
+            // Explore Node Title
+            const currentName = typeof entityName !== 'undefined' ? entityName : 'Network Visualization';
+            ctx.font = `bold ${Math.round(13 * scaleFactor)}px 'Mulish', sans-serif`;
+            ctx.fillStyle = primaryTextColor;
+            
+            let displayName = `Network: ${currentName}`;
+            const maxTextWidth = cardWidth - 32 * scaleFactor;
+            if (ctx.measureText(displayName).width > maxTextWidth) {
+                while (ctx.measureText(displayName + '...').width > maxTextWidth && displayName.length > 0) {
+                    displayName = displayName.slice(0, -1);
+                }
+                displayName += '...';
+            }
+            ctx.fillText(displayName, cardX + 16 * scaleFactor, cardY + 40 * scaleFactor);
+
+            // Subtitle Details
+            const dateStr = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+            ctx.font = `${Math.round(10 * scaleFactor)}px 'Mulish', sans-serif`;
+            ctx.fillStyle = secondaryTextColor;
+            ctx.fillText(`${dateStr} | Interactive Research Graph`, cardX + 16 * scaleFactor, cardY + 56 * scaleFactor);
+
+            ctx.restore();
+        }
+
+        // Output and trigger download
+        const mimeType = format === 'jpeg' ? 'image/jpeg' : 'image/png';
+        const quality = format === 'jpeg' ? 0.92 : undefined;
+        const dataUrl = exportCanvas.toDataURL(mimeType, quality);
+
+        const link = document.createElement('a');
+        const safeEntityName = (typeof entityName !== 'undefined' ? entityName : 'network_graph')
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '_')
+            .replace(/(^_+|_+$)/g, '');
+        
+        link.download = `maps_of_power_${safeEntityName}_network.${format}`;
+        link.href = dataUrl;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        // Hide Bootstrap modal gracefully by triggering click on the close button
+        const modalEl = document.getElementById('networkExportModal');
+        if (modalEl) {
+            const closeBtn = modalEl.querySelector('[data-bs-dismiss="modal"]');
+            if (closeBtn) {
+                closeBtn.click();
+            }
+        }
+    }
+
     // Set up control event listeners
     function setupControls(id) {
         // 1. Depth select
@@ -506,6 +661,54 @@
                         }, 100);
                     }
                 });
+            });
+        }
+
+        // 7. Format & Background Option Interactions (JPEG disables transparency option)
+        const formatPng = document.getElementById('formatPng');
+        const formatJpeg = document.getElementById('formatJpeg');
+        const bgTransparent = document.getElementById('bgTransparent');
+        const bgWhite = document.getElementById('bgWhite');
+
+        if (formatPng && formatJpeg && bgTransparent && bgWhite) {
+            formatJpeg.addEventListener('change', function() {
+                if (formatJpeg.checked) {
+                    bgTransparent.disabled = true;
+                    bgTransparent.nextElementSibling.style.opacity = '0.4';
+                    bgTransparent.nextElementSibling.style.pointerEvents = 'none';
+                    if (bgTransparent.checked) {
+                        bgWhite.checked = true;
+                    }
+                }
+            });
+            formatPng.addEventListener('change', function() {
+                if (formatPng.checked) {
+                    bgTransparent.disabled = false;
+                    bgTransparent.nextElementSibling.style.opacity = '1';
+                    bgTransparent.nextElementSibling.style.pointerEvents = 'auto';
+                }
+            });
+        }
+
+        // 8. Image Export Trigger Actions
+        const doExportBtn = document.getElementById('btn-do-export');
+        if (doExportBtn) {
+            doExportBtn.addEventListener('click', function() {
+                const originalText = doExportBtn.innerHTML;
+                doExportBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Generating...';
+                doExportBtn.disabled = true;
+
+                setTimeout(() => {
+                    try {
+                        exportGraphAsImage(id);
+                    } catch (err) {
+                        console.error("Export failed:", err);
+                        alert("Failed to export image: " + err.message);
+                    } finally {
+                        doExportBtn.innerHTML = originalText;
+                        doExportBtn.disabled = false;
+                    }
+                }, 150);
             });
         }
     }

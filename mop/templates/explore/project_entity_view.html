@@ -236,6 +236,102 @@
                     <button id="btn-fullscreen" class="btn btn-sm btn-outline-secondary rounded-pill d-flex align-items-center">
                       <i class="bi bi-fullscreen me-1"></i>Fullscreen
                     </button>
+
+                    <div class="vr bg-secondary opacity-25" style="height: 20px;"></div>
+
+                    <button id="btn-export-network" class="btn btn-sm btn-outline-primary rounded-pill d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#networkExportModal">
+                      <i class="bi bi-download me-1"></i>Export
+                    </button>
+                  </div>
+
+                  <!-- Dynamic Export Graph Modal -->
+                  <div class="modal fade" id="networkExportModal" tabindex="-1" aria-labelledby="networkExportModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content rounded-4 border-0 shadow-lg overflow-hidden" style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);">
+                        <div class="modal-header border-0 pb-0 pt-4 px-4">
+                          <h5 class="modal-title fw-bold text-dark d-flex align-items-center" id="networkExportModalLabel">
+                            <i class="bi bi-image text-primary me-2" style="font-size: 1.3rem;"></i>
+                            Export Graph as Image
+                          </h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-4">
+                          <p class="text-muted small mb-4">Configure the style, format, and enhancements for your network visualization image download.</p>
+                          
+                          <form id="network-export-form">
+                            <!-- Format Choice -->
+                            <div class="mb-4">
+                              <label class="form-label fw-bold text-secondary small text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">File Format</label>
+                              <div class="row g-2">
+                                <div class="col-6">
+                                  <input type="radio" class="btn-check" name="exportFormat" id="formatPng" value="png" checked>
+                                  <label class="btn btn-outline-secondary w-100 py-3 rounded-3 d-flex flex-column align-items-center gap-1" for="formatPng" style="border-width: 1.5px;">
+                                    <i class="bi bi-filetype-png fs-3 mb-1 text-primary"></i>
+                                    <span class="fw-semibold small">PNG Image</span>
+                                    <span class="text-muted" style="font-size: 0.7rem;">Lossless & Transparent</span>
+                                  </label>
+                                </div>
+                                <div class="col-6">
+                                  <input type="radio" class="btn-check" name="exportFormat" id="formatJpeg" value="jpeg">
+                                  <label class="btn btn-outline-secondary w-100 py-3 rounded-3 d-flex flex-column align-items-center gap-1" for="formatJpeg" style="border-width: 1.5px;">
+                                    <i class="bi bi-filetype-jpg fs-3 mb-1 text-primary"></i>
+                                    <span class="fw-semibold small">JPEG Image</span>
+                                    <span class="text-muted" style="font-size: 0.7rem;">High Compatibility</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Background Theme Choice -->
+                            <div class="mb-4">
+                              <label class="form-label fw-bold text-secondary small text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">Background Theme</label>
+                              <div class="row g-2">
+                                <div class="col-4">
+                                  <input type="radio" class="btn-check" name="exportBg" id="bgTransparent" value="transparent" checked>
+                                  <label class="btn btn-outline-secondary w-100 py-2 px-1 rounded-3 d-flex flex-column align-items-center" for="bgTransparent" style="border-width: 1.5px;">
+                                    <div class="rounded-circle border mb-2" style="width: 24px; height: 24px; background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%); background-size: 8px 8px; background-position: 0 0, 0 4px, 4px -4px, -4px 0px;"></div>
+                                    <span class="fw-semibold" style="font-size: 0.75rem;">Transparent</span>
+                                  </label>
+                                </div>
+                                <div class="col-4">
+                                  <input type="radio" class="btn-check" name="exportBg" id="bgWhite" value="white">
+                                  <label class="btn btn-outline-secondary w-100 py-2 px-1 rounded-3 d-flex flex-column align-items-center" for="bgWhite" style="border-width: 1.5px;">
+                                    <div class="rounded-circle border mb-2 bg-white" style="width: 24px; height: 24px;"></div>
+                                    <span class="fw-semibold" style="font-size: 0.75rem;">Solid Light</span>
+                                  </label>
+                                </div>
+                                <div class="col-4">
+                                  <input type="radio" class="btn-check" name="exportBg" id="bgDark" value="dark">
+                                  <label class="btn btn-outline-secondary w-100 py-2 px-1 rounded-3 d-flex flex-column align-items-center" for="bgDark" style="border-width: 1.5px;">
+                                    <div class="rounded-circle border mb-2" style="width: 24px; height: 24px; background-color: #0b0e14;"></div>
+                                    <span class="fw-semibold" style="font-size: 0.75rem;">Deep Dark</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Watermark Option -->
+                            <div>
+                              <label class="form-label fw-bold text-secondary small text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">Enhancements</label>
+                              <div class="form-check form-switch p-3 bg-light rounded-3 d-flex align-items-center justify-content-between border">
+                                <div class="me-3">
+                                  <label class="form-check-label fw-semibold text-dark small d-block" for="exportWatermark" style="cursor: pointer;">Include Academic Watermark</label>
+                                  <span class="text-muted" style="font-size: 0.65rem; display: block; margin-top: 2px;">Adds brand label, entity name, and timestamp to export</span>
+                                </div>
+                                <input class="form-check-input ms-auto" type="checkbox" role="switch" id="exportWatermark" checked style="cursor: pointer;">
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer border-0 pt-0 pb-4 px-4 d-flex gap-2">
+                          <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+                          <button type="button" id="btn-do-export" class="btn btn-primary rounded-pill px-4 flex-grow-1 d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-download"></i>
+                            <span>Generate & Download</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                 </div>

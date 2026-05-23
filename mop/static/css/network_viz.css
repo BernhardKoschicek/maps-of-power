@@ -269,3 +269,38 @@
     }
 }
 
+/* Premium Custom Export Modal Styles */
+#networkExportModal .btn-outline-secondary {
+    border-color: rgba(108, 117, 125, 0.25);
+    background-color: #ffffff;
+    color: #495057;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#networkExportModal .btn-outline-secondary:hover {
+    border-color: var(--bs-primary);
+    background-color: rgba(112, 72, 232, 0.03);
+    color: var(--bs-primary);
+}
+
+#networkExportModal .btn-check:checked + .btn-outline-secondary {
+    border-color: var(--bs-primary) !important;
+    background-color: rgba(112, 72, 232, 0.08) !important;
+    color: var(--bs-primary) !important;
+    box-shadow: 0 0 0 3px rgba(112, 72, 232, 0.15);
+}
+
+#networkExportModal .btn-check:checked + .btn-outline-secondary i {
+    color: var(--bs-primary) !important;
+}
+
+#networkExportModal .form-switch .form-check-input:checked {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+#networkExportModal .modal-content {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+
