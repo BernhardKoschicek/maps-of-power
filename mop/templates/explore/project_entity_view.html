@@ -77,9 +77,13 @@
                   <i class="bi bi-calendar3 text-primary me-2"></i>
                   <span class="fw-bold me-2">{{ _('Period') }}:</span>
                   <span>
-                    {% if entity.begin %}{{ entity.begin }}{% endif %}
-                    {% if entity.begin and entity.end %} – {% endif %}
-                    {% if entity.end %}{{ entity.end }}{% endif %}
+                    {% if entity.begin and entity.end and entity.begin == entity.end %}
+                      {{ entity.begin }}
+                    {% else %}
+                      {% if entity.begin %}{{ entity.begin }}{% endif %}
+                      {% if entity.begin and entity.end %} – {% endif %}
+                      {% if entity.end %}{{ entity.end }}{% endif %}
+                    {% endif %}
                   </span>
                 </div>
               {% endif %}
@@ -143,6 +147,11 @@
               <li class="nav-item" role="presentation">
                 <button class="nav-link py-2 px-3 d-flex align-items-center" id="network-tab" data-bs-toggle="tab" data-bs-target="#network-pane" type="button" role="tab" aria-controls="network-pane" aria-selected="false">
                   <i class="bi bi-diagram-3 me-2"></i>{{ _('Network') }}
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link py-2 px-3 d-flex align-items-center" id="timeline-tab" data-bs-toggle="tab" data-bs-target="#timeline-pane" type="button" role="tab" aria-controls="timeline-pane" aria-selected="false">
+                  <i class="bi bi-calendar-event me-2"></i>{{ _('Timeline') }}
                 </button>
               </li>
             </ul>
@@ -334,6 +343,88 @@
                     </div>
                   </div>
 
+                </div>
+              </div>
+              <div class="tab-pane fade h-100" id="timeline-pane" role="tabpanel" aria-labelledby="timeline-tab" tabindex="0">
+                <div class="p-4" style="height: 100%; min-height: 450px; max-height: 450px; overflow-y: auto;">
+                  {% if timeline_events %}
+                    <div class="timeline ps-2">
+                      {% for event in timeline_events %}
+                        <div class="timeline-item mb-4 position-relative ps-4" style="border-left: 2px solid rgba(0, 0, 0, 0.1);">
+                          <!-- Timeline Dot matching category -->
+                          <div class="timeline-dot position-absolute" style="left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%;
+                            {% if event.is_main %}
+                              background-color: #fab005; border: 2px solid #f59f00;
+                            {% elif event.category == 'places' %}
+                              background-color: #339af0; border: 2px solid #1c7ed6;
+                            {% elif event.category == 'actors' %}
+                              background-color: #ff6b6b; border: 2px solid #fa5252;
+                            {% elif event.category == 'events' %}
+                              background-color: #be4bdb; border: 2px solid #7048e8;
+                            {% else %}
+                              background-color: #adb5bd; border: 2px solid #868e96;
+                            {% endif %}">
+                          </div>
+                          
+                          <div class="d-flex flex-wrap align-items-center mb-1">
+                            <!-- Date Badge -->
+                            <span class="badge me-2" style="font-size: 10px; background-color: #495057;">
+                              {% if event.is_main %}{{ event.begin }}{% else %}{{ event.relation.begin }}{% endif %}
+                            </span>
+                            
+                            <!-- Category Badge -->
+                            <span class="badge text-uppercase" style="font-size: 9px;
+                              {% if event.is_main %}
+                                background-color: #fff9db; color: #f59f00; border: 1px solid #f59f00;
+                              {% elif event.category == 'places' %}
+                                background-color: #d0ebff; color: #1c7ed6; border: 1px solid #1c7ed6;
+                              {% elif event.category == 'actors' %}
+                                background-color: #ffe3e3; color: #fa5252; border: 1px solid #fa5252;
+                              {% elif event.category == 'events' %}
+                                background-color: #f3f0ff; color: #7048e8; border: 1px solid #7048e8;
+                              {% else %}
+                                background-color: #f1f3f5; color: #868e96; border: 1px solid #868e96;
+                              {% endif %}">
+                              {% if event.is_main %}{{ event.type }}{% else %}{{ event.relation.system_class }}{% endif %}
+                            </span>
+                          </div>
+                          
+                          <!-- Event Card -->
+                          <div class="card border-0 shadow-none bg-light-subtle rounded-3 p-3 mt-2">
+                            <h6 class="fw-bold mb-1 text-dark" style="font-size: 13px;">
+                              {% if event.is_main %}
+                                {{ event.label }}
+                              {% else %}
+                                <a href="{{ url_for('entity_project_view', id_=event.relation.relation_to_id, project=path[0], view=path[1]) }}" class="text-decoration-none link-primary fw-bold">
+                                  {{ event.relation.label }}
+                                </a>
+                              {% endif %}
+                            </h6>
+                            
+                            {% if not event.is_main and event.relation.type %}
+                              <p class="small text-secondary mb-1" style="font-size: 11px;">
+                                <i class="bi bi-arrow-right-short"></i> {{ event.relation.type }}
+                              </p>
+                            {% endif %}
+                            
+                            <p class="small text-muted mb-0" style="line-height: 1.4; font-size: 11px;">
+                              {% if event.is_main %}
+                                Lifecycle phase of {{ entity.name }}.
+                              {% else %}
+                                {{ event.relation.description }}
+                              {% endif %}
+                            </p>
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    <div class="h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
+                      <i class="bi bi-calendar-x text-muted fs-1 mb-3"></i>
+                      <h5 class="text-muted fw-normal">No Timeline Events</h5>
+                      <p class="text-muted small">We couldn't find any chronological events or relations with dates for this entity.</p>
+                    </div>
+                  {% endif %}
                 </div>
               </div>
             </div>

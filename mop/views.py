@@ -184,6 +184,42 @@ def entity_project_view(
                  })
                  related_places.extend(features)
 
+     # Gather and sort all timeline events
+     timeline_events = []
+     for rel_group, rel_list in relations.items():
+         if rel_group in ['references', 'sources', 'source_translations', 'others']:
+             continue
+         for rel in rel_list:
+             if rel.begin:
+                 sort_date = rel.raw_begin or rel.begin
+                 timeline_events.append({
+                     "is_main": False,
+                     "relation": rel,
+                     "sort_date": sort_date,
+                     "category": rel_group
+                 })
+
+     if entity.begin:
+         timeline_events.append({
+             "is_main": True,
+             "label": f"Start of {entity.name}",
+             "type": "Lifecycle Start",
+             "begin": entity.begin,
+             "sort_date": entity.begin_from or entity.begin,
+             "system_class": entity.system_class
+         })
+     if entity.end:
+         timeline_events.append({
+             "is_main": True,
+             "label": f"End of {entity.name}",
+             "type": "Lifecycle End",
+             "begin": entity.end,
+             "sort_date": entity.end_from or entity.end,
+             "system_class": entity.system_class
+         })
+
+     timeline_events.sort(key=lambda x: x['sort_date'] or '')
+
      return render_template(
          'explore/project_entity_view.html',
          entity=entity,
@@ -193,6 +229,7 @@ def entity_project_view(
          if entity.depictions else None,
          relations=relations,
          related_places=related_places,
+         timeline_events=timeline_events,
          path=(project, view),
          system_classes=system_classes)
 

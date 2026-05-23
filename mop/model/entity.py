@@ -169,6 +169,8 @@ class Relation:
     type: Optional[str]
     description: Optional[str]
     geometry: Optional[Any]
+    raw_begin: Optional[str] = None
+    raw_end: Optional[str] = None
 
 
 @dataclass
@@ -185,6 +187,8 @@ class Entity:
     begin: Optional[str] = None
     end: Optional[str] = None
     geometry: Optional[Any] = None
+    begin_from: Optional[str] = None
+    end_from: Optional[str] = None
 
     def __init__(self, data: Optional[Dict[str, Any]] = None, **kwargs: Any) -> None:
         if data is not None:
@@ -298,6 +302,8 @@ class Entity:
             for rel in rel_list:
                 rel_begin, rel_end = format_time_range(rel.when)
                 rel_type = ", ".join([rt.type for rt in rel.relationTypes if rt.type]) if rel.relationTypes else None
+                raw_begin_val = rel.when.start.earliest if (rel.when and rel.when.start) else None
+                raw_end_val = rel.when.end.latest if (rel.when and rel.when.end) else None
 
                 rel_obj = Relation(
                     relation_to_id=str(rel.id),
@@ -307,7 +313,9 @@ class Entity:
                     end=rel_end,
                     type=rel_type,
                     description=rel.description or "",
-                    geometry=get_geometry_data(rel.geometries)
+                    geometry=get_geometry_data(rel.geometries),
+                    raw_begin=raw_begin_val,
+                    raw_end=raw_end_val
                 )
 
                 sc = rel.systemClass.lower()
@@ -353,6 +361,9 @@ class Entity:
         if others:
             mapped_relations['others'] = others
 
+        begin_from = m.when.start.earliest if (m.when and m.when.start) else None
+        end_from = m.when.end.latest if (m.when and m.when.end) else None
+
         return cls(
             id_=str(m.id),
             name=m.title,
@@ -365,5 +376,7 @@ class Entity:
             links=links_list,
             begin=begin,
             end=end,
-            geometry=get_geometry_data(m.geometries)
+            geometry=get_geometry_data(m.geometries),
+            begin_from=begin_from,
+            end_from=end_from
         )

@@ -91,7 +91,12 @@ def test_model_util_split_date_string() -> None:
 
 
 def test_model_util_format_date() -> None:
-    assert format_date('01.01.2026', '31.12.2026') == 'between 01.01.2026 and 31.12.2026'
+    assert format_date('01.01.2026', '31.12.2026') == '2026'
+    assert format_date('1.1.2026', '31.12.2026') == '2026'
+    assert format_date('01.1.2026', '31.12.2026') == '2026'
+    assert format_date('1.01.2026', '31.12.2026') == '2026'
+    assert format_date('01.01.1219', '31.12.1220') == '1219 – 1220'
+    assert format_date('01.01.2026', '31.12.2027') == '2026 – 2027'
     assert format_date('01.01.2026', None) == '01.01.2026'
 
 
