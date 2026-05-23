@@ -247,21 +247,64 @@
     </div>
 
     <div class="row pt-5">
-      {% if entity.description %}
+      {% if entity.description or relations['source_translations'] %}
         <div class="col-12">
           <div class="card shadow-sm border-0 rounded-4 mb-5">
-            <div class="card-body p-4">
-              <h3 class="card-title text-primary mb-4">
-                <i class="bi bi-justify-left me-2"></i>{{ _('Description') }}
-              </h3>
-              <div id="description" class="lh-lg">
-                {{ entity.description
-                | replace('\n', '<br>')
-                | replace('Hist.:', '<span class="fw-bold text-muted">Hist.:</span>')
-                | replace('Mon.:', '<span class="fw-bold text-muted">Mon.:</span>')
-                | safe }}
+            {% if relations['source_translations'] %}
+              <div class="card-header bg-white border-0 p-4 pb-0">
+                <ul class="nav nav-tabs card-header-tabs border-0 network-tabs" id="description-tabs" role="tablist">
+                  {% if entity.description %}
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active py-2 px-3 d-flex align-items-center" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc-pane" type="button" role="tab" aria-controls="desc-pane" aria-selected="true">
+                        <i class="bi bi-justify-left me-2"></i>{{ _('Description') }}
+                      </button>
+                    </li>
+                  {% endif %}
+                  {% for r in relations['source_translations'] %}
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link {% if not entity.description and loop.first %}active{% endif %} py-2 px-3 d-flex align-items-center" id="trans-{{ r.relation_to_id }}-tab" data-bs-toggle="tab" data-bs-target="#trans-{{ r.relation_to_id }}-pane" type="button" role="tab" aria-controls="trans-{{ r.relation_to_id }}-pane" aria-selected="{% if not entity.description and loop.first %}true{% else %}false{% endif %}">
+                        <i class="bi bi-translate me-2"></i>{{ r.label }}
+                      </button>
+                    </li>
+                  {% endfor %}
+                </ul>
               </div>
-            </div>
+              <div class="card-body p-4">
+                <div class="tab-content" id="description-tab-content">
+                  {% if entity.description %}
+                    <div class="tab-pane fade show active lh-lg" id="desc-pane" role="tabpanel" aria-labelledby="desc-tab" tabindex="0">
+                      {{ entity.description
+                      | replace('\n', '<br>')
+                      | replace('Hist.:', '<span class="fw-bold text-muted">Hist.:</span>')
+                      | replace('Mon.:', '<span class="fw-bold text-muted">Mon.:</span>')
+                      | safe }}
+                    </div>
+                  {% endif %}
+                  {% for r in relations['source_translations'] %}
+                    <div class="tab-pane fade {% if not entity.description and loop.first %}show active{% endif %} lh-lg" id="trans-{{ r.relation_to_id }}-pane" role="tabpanel" aria-labelledby="trans-{{ r.relation_to_id }}-tab" tabindex="0">
+                      {{ r.description
+                      | replace('\n', '<br>')
+                      | replace('Hist.:', '<span class="fw-bold text-muted">Hist.:</span>')
+                      | replace('Mon.:', '<span class="fw-bold text-muted">Mon.:</span>')
+                      | safe }}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% else %}
+              <div class="card-body p-4">
+                <h3 class="card-title text-primary mb-4">
+                  <i class="bi bi-justify-left me-2"></i>{{ _('Description') }}
+                </h3>
+                <div id="description" class="lh-lg">
+                  {{ entity.description
+                  | replace('\n', '<br>')
+                  | replace('Hist.:', '<span class="fw-bold text-muted">Hist.:</span>')
+                  | replace('Mon.:', '<span class="fw-bold text-muted">Mon.:</span>')
+                  | safe }}
+                </div>
+              </div>
+            {% endif %}
           </div>
         </div>
       {% endif %}
