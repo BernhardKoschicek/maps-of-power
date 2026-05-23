@@ -62,6 +62,15 @@ def test_api_get_ego_network() -> None:
     assert 'results' in results
 
 
+def test_api_get_entity_presentation() -> None:
+    from mop.model.api_calls import get_entity_presentation
+    data = get_entity_presentation(124486)
+    assert isinstance(data, dict)
+    assert 'id' in data
+    assert 'systemClass' in data
+    assert 'relations' in data
+
+
 
 def test_entity_model() -> None:
     entity = Entity.get_entity_from_oa(124486)

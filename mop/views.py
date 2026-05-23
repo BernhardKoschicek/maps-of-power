@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import Literal, Optional
+from typing import Any, Literal, Optional
 
 import numpy
 from flask import abort, jsonify, render_template, request, session
@@ -16,12 +16,12 @@ from mop.data.literature import literatures
 from mop.data.presentations import presentations
 from mop.data.projects.projects import project_data
 from mop.display.image import image_gallery
-from mop.model.api_calls import get_ego_network, get_entities_linked_to_entity
+from mop.model.api_calls import get_ego_network
 from mop.model.entity import Entity
 from mop.model.explore import (get_oa_by_view_class, system_classes,
                                view_classes)
 from mop.util import (get_dict_entries_by_category, get_related_geoms,
-                      get_relation_entities, get_relations, get_types_sorted)
+                      get_types_sorted)
 
 
 @app.route('/')
@@ -117,28 +117,84 @@ def entity_project_view(
         id_: int,
         project: Optional[str] = None,
         view: Optional[str] = None) -> str:
-    if project is not None and project not in project_data:
-        abort(404)
-    if view is not None and view not in view_classes:
-        abort(404)
-    entity = Entity.get_entity_from_oa(id_)
-    linked_entities = get_entities_linked_to_entity(id_)
-    relations = get_relations(
-        get_relation_entities(linked_entities, entity.relations or []))
-    related_places = []
-    if 'places' in relations:
-        related_places = get_related_geoms(relations['places'])
-    return render_template(
-        'explore/project_entity_view.html',
-        entity=entity,
-        type_hierarchy=get_types_sorted(entity.types or []),
-        images=numpy.array_split(
-            entity.depictions, 4)  # type: ignore[arg-type]
-        if entity.depictions else None,
-        relations=relations,
-        related_places=related_places,
-        path=(project, view),
-        system_classes=system_classes)
+     if project is not None and project not in project_data:
+         abort(404)
+     if view is not None and view not in view_classes:
+         abort(404)
+     entity = Entity.get_entity_from_oa(id_)
+     relations = entity.relations or {}
+
+     def normalize_and_inject_geojson(geojson_obj: Any, properties: dict[str, Any]) -> list[dict[str, Any]]:
+         if not geojson_obj:
+             return []
+         if not isinstance(geojson_obj, dict):
+             return []
+         obj_type = geojson_obj.get('type')
+         features = []
+         if obj_type == 'FeatureCollection':
+             for f in geojson_obj.get('features', []):
+                 if isinstance(f, dict):
+                     f_copy = dict(f)
+                     f_copy['properties'] = dict(f_copy.get('properties') or {})
+                     for k, v in properties.items():
+                         f_copy['properties'][k] = v
+                     features.append(f_copy)
+         elif obj_type == 'Feature':
+             f_copy = dict(geojson_obj)
+             f_copy['properties'] = dict(f_copy.get('properties') or {})
+             for k, v in properties.items():
+                 f_copy['properties'][k] = v
+             features.append(f_copy)
+         elif obj_type in ['Point', 'MultiPoint', 'LineString', 'MultiLineString', 'Polygon', 'MultiPolygon', 'GeometryCollection']:
+             features.append({
+                 "type": "Feature",
+                 "geometry": geojson_obj,
+                 "properties": dict(properties)
+             })
+         return features
+
+     # Standardize main entity geometry
+     main_geometry = None
+     if entity.geometry:
+         features = normalize_and_inject_geojson(entity.geometry, {
+             "title": entity.name,
+             "description": entity.description or "",
+             "systemClass": "selected",
+             "id": entity.id_
+         })
+         if features:
+             main_geometry = {
+                 "type": "FeatureCollection",
+                 "features": features
+             }
+     entity.geometry = main_geometry
+
+     # Standardize related entity geometries
+     related_places = []
+     seen_ids = set()
+     for rel_group, rel_list in relations.items():
+         for rel in rel_list:
+             if rel.geometry and rel.relation_to_id not in seen_ids:
+                 seen_ids.add(rel.relation_to_id)
+                 features = normalize_and_inject_geojson(rel.geometry, {
+                     "title": rel.label,
+                     "description": rel.description or "",
+                     "systemClass": rel.system_class,
+                     "id": rel.relation_to_id
+                 })
+                 related_places.extend(features)
+
+     return render_template(
+         'explore/project_entity_view.html',
+         entity=entity,
+         type_hierarchy=get_types_sorted(entity.types or []),
+         images=numpy.array_split(
+             entity.depictions, 4)  # type: ignore[arg-type]
+         if entity.depictions else None,
+         relations=relations,
+         related_places=related_places,
+         path=(project, view),
+         system_classes=system_classes)
 
 
 

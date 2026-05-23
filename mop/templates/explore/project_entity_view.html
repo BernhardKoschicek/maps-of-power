@@ -47,7 +47,7 @@
       </div>
       <div class="col-md-4 text-md-end mt-3 mt-md-0">
         <div class="btn-group shadow-sm">
-          <a href="{{ config['API_PATH'] }}/entity/{{ entity.id_ }}"
+          <a href="{{ config['API_PATH'] }}/entity_presentation_view/{{ entity.id_ }}"
              target="_blank" class="btn btn-outline-primary" title="JSON">
             <i class="bi bi-filetype-json fs-4"></i>
           </a>
@@ -627,6 +627,7 @@
   <script src="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/leaflet-imageoverlay-rotated/Leaflet.ImageOverlay.Rotated.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/@mapbox/leaflet-pip/leaflet-pip.js', v=ASSETS_VERSION) }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="{{ url_for('static', filename='js/map.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/vis-network/standalone/umd/vis-network.min.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='js/network_viz.js', v=ASSETS_VERSION) }}"></script>
