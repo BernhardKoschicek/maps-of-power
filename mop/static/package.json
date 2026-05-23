@@ -12,17 +12,17 @@
         "datatables.net-responsive-bs5": "^2.5.0",
         "datatables.net-searchbuilder-bs5": "^1.6.0",
         "datatables.net-searchpanes-bs5": "^2.2.0",
-        "leaflet-imageoverlay-rotated": "^0.2.1",
-        "leaflet-draw": "^1.0.4",
-        "leaflet-groupedlayercontrol": "^0.6.1",
-        "leaflet.fullscreen": "^2.2.0",
-        "leaflet.markercluster": "^1.5.3",
-        "leaflet": "^1.9.4",
         "jquery": "^3.7.1",
         "jquery-ui-dist": "^1.13.2",
+        "leaflet": "^1.9.4",
+        "leaflet-draw": "^1.0.4",
+        "leaflet-groupedlayercontrol": "^0.6.1",
+        "leaflet-imageoverlay-rotated": "^0.2.1",
+        "leaflet.fullscreen": "^2.2.0",
+        "leaflet.markercluster": "^1.5.3",
         "mirador": "^3.3.0",
-        "muuri": "^0.9.5"
+        "muuri": "^0.9.5",
+        "vis-network": "^10.1.0"
     },
-    "devDependencies": {},
     "name": "mop"
 }

@@ -74,3 +74,13 @@ def api_call(url: str) -> dict[str, Any]:
         url,
         proxies=get_proxies(),
         timeout=30).json()['features'][0]
+
+
+def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
+    depth_ = max(1, min(10, depth))
+    url = f"{app.config['API_PATH']}/ego_network_visualisation/{id_}?depth={depth_}&exclude_system_classes=administrative_unit&exclude_system_classes=appellation&exclude_system_classes=type&exclude_system_classes=type_tools"
+    return requests.get(
+        url,
+        proxies=get_proxies(),
+        timeout=30).json()
+

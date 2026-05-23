@@ -2,11 +2,11 @@ from collections import defaultdict
 from typing import Optional
 
 import numpy
-from flask import render_template, session, request
+from flask import render_template, session, request, jsonify
 from werkzeug import Response
 from werkzeug.utils import redirect
 
-from mop.model.api_calls import get_entities_linked_to_entity
+from mop.model.api_calls import get_entities_linked_to_entity, get_ego_network
 from mop.model.entity import Entity
 from mop.model.explore import (
     view_classes, get_oa_by_view_class, system_classes)
@@ -147,3 +147,14 @@ def iiif_viewer() -> str:
 @app.route('/frontend')
 def frontend() -> Response:
     return redirect("https://atlas.maps-of-power.at/")
+
+
+@app.route('/api/network/<int:id_>')
+def network_api(id_: int) -> Response:
+    depth = request.args.get('depth', default=2, type=int)
+    try:
+        data = get_ego_network(id_, depth)
+        return jsonify(data)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
