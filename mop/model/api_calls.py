@@ -55,18 +55,31 @@ def get_entities_linked_to_entity(
         show: Optional[List[str]] = None) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/entities_linked_to_entity/"
     show_ = ''.join([f'&show={value}' for value in show] if show else '')
-    return requests.get(
+    response = requests.get(
         f"{url}{id_}?limit=0{show_}",
         proxies=get_proxies(),
-        timeout=30).json()['results']
+        timeout=30)
+    if response.status_code == 404:
+        return []
+    response.raise_for_status()
+    return response.json().get('results', [])
 
 
 def get_entity(id_: int) -> dict[str, Any]:
     url = f"{app.config['API_PATH']}/entity/"
-    return requests.get(
+    response = requests.get(
         f"{url}{id_}",
         proxies=get_proxies(),
-        timeout=30).json()['features'][0]
+        timeout=30)
+    if response.status_code == 404:
+        from werkzeug.exceptions import NotFound
+        raise NotFound(f"Entity with ID {id_} not found in the external API.")
+    response.raise_for_status()
+    data = response.json()
+    if not data.get('features'):
+        from werkzeug.exceptions import NotFound
+        raise NotFound(f"Entity with ID {id_} has no features.")
+    return data['features'][0]
 
 
 def api_call(url: str) -> dict[str, Any]:
@@ -79,8 +92,13 @@ def api_call(url: str) -> dict[str, Any]:
 def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
     depth_ = max(1, min(10, depth))
     url = f"{app.config['API_PATH']}/ego_network_visualisation/{id_}?depth={depth_}&exclude_system_classes=administrative_unit&exclude_system_classes=appellation&exclude_system_classes=type&exclude_system_classes=type_tools"
-    return requests.get(
+    response = requests.get(
         url,
         proxies=get_proxies(),
-        timeout=30).json()
+        timeout=30)
+    if response.status_code == 404:
+        from werkzeug.exceptions import NotFound
+        raise NotFound(f"Ego network not found for ID {id_}.")
+    response.raise_for_status()
+    return response.json()
 

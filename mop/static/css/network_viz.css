@@ -1,0 +1,271 @@
+/* Network Visualization CSS Stylesheet */
+
+.network-card-container {
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.network-tabs {
+    border-bottom: 1px solid #dee2e6 !important;
+    width: 100%;
+}
+
+.network-tabs .nav-link {
+    color: var(--bs-secondary);
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-bottom: -1px;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    padding: 8px 20px;
+}
+
+.network-tabs .nav-link:hover {
+    color: var(--bs-primary);
+    background-color: #f8f9fa;
+    border-color: #e9ecef #e9ecef transparent;
+}
+
+.network-tabs .nav-link.active {
+    color: var(--bs-primary) !important;
+    background-color: #ffffff !important;
+    border-color: #dee2e6 #dee2e6 #ffffff !important;
+    border-bottom: 2px solid var(--bs-primary) !important;
+}
+
+#network-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    background-color: #fcfdfe;
+    overflow: hidden;
+}
+
+#network-viz {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    outline: none;
+}
+
+/* Glassmorphism toolbar */
+.network-toolbar {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    padding: 8px 24px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 90%;
+}
+
+.network-toolbar:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Spinner overlay */
+.network-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: opacity 0.3s ease;
+}
+
+/* Legend panel */
+.network-legend {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    z-index: 4;
+    font-size: 0.8rem;
+    max-width: 200px;
+}
+
+.legend-title {
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 4px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.legend-item:hover[role="button"] {
+    opacity: 0.8;
+    transform: translateX(3px);
+}
+
+.legend-item.inactive {
+    opacity: 0.35 !important;
+    text-decoration: line-through;
+}
+
+.legend-item:last-child {
+    margin-bottom: 0;
+}
+
+.legend-color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 1.5px solid rgba(0, 0, 0, 0.15);
+}
+
+/* Fullscreen implementation */
+.network-container-fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 99999 !important;
+    background-color: #fcfdfe !important;
+}
+
+.network-container-fullscreen #network-viz {
+    height: 100vh !important;
+    min-height: 100vh !important;
+}
+
+/* Native Fullscreen styles */
+#network-container:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fcfdfe;
+}
+#network-container:fullscreen #network-viz {
+    height: 100vh;
+}
+#network-container:fullscreen .network-toolbar {
+    bottom: 30px;
+}
+
+/* Form inputs & buttons inside network viz */
+.network-toolbar select.form-select-sm {
+    border-color: rgba(0, 0, 0, 0.12);
+    font-weight: 700;
+    color: var(--bs-dark);
+    background-image: none !important;
+    padding-right: 0.5rem !important;
+    text-align: center;
+    width: 42px;
+    cursor: pointer;
+    background-color: #f1f3f5;
+}
+
+.network-toolbar .btn-sm {
+    padding: 0.35rem 0.8rem;
+    font-weight: 600;
+}
+
+.network-toolbar .form-check-input {
+    cursor: pointer;
+}
+
+.network-toolbar .form-check-label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Floating Detail Panel for Clicked Node */
+.network-detail-panel {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 16px;
+    width: 250px;
+    z-index: 15;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive adjustments for mobile and small column sizing */
+@media (max-width: 768px) {
+    .network-toolbar {
+        border-radius: 16px !important;
+        padding: 8px 12px !important;
+        bottom: 8px !important;
+        gap: 8px !important;
+        justify-content: center !important;
+        max-width: 95% !important;
+    }
+    
+    .network-toolbar .vr {
+        display: none !important; /* Hide vertical lines to make space */
+    }
+    
+    .network-legend {
+        max-width: 140px;
+        padding: 6px 10px;
+        top: 10px;
+        right: 10px;
+        font-size: 0.7rem;
+    }
+    
+    .network-detail-panel {
+        width: 200px;
+        padding: 10px;
+        top: 10px;
+        left: auto !important;
+        right: 10px !important;
+        font-size: 0.8rem;
+    }
+    
+    .network-detail-panel h6 {
+        font-size: 0.9rem !important;
+    }
+}
+
