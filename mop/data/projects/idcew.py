@@ -2,34 +2,42 @@ from flask_babel import lazy_gettext as _
 
 from mop.data.institutes import institutes
 from mop.util import get_dates_formatted
-
-
 images = [{
     'src': 'idcew_1.jpg',
-    'description':
-        _('The Church of the Holy Trinity in Sopoćani Monastery in the 1970s'),
-    'citation':
-        _('Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
+    'description': _(
+        'The Church of the Holy Trinity in '
+        'Sopoćani Monastery in the 1970s'),
+    'citation': _(
+        'Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
     'category': ['idcew']
 }, {
     'src': 'idcew_2.jpg',
-    'description':
-        _('The Apse of the Church of the Holy Trinity in Sopoćani Monastery in the 1970s'),
-    'citation': _('Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
+    'description': _(
+        'The Apse of the Church of the Holy Trinity in '
+        'Sopoćani Monastery in the 1970s'),
+    'citation': _(
+        'Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
     'category': ['idcew']
 }, {
     'src': 'idcew_3.jpg',
-    'description':
-        _('The Church of the Annunciation of the Holy Mother of God in Gradac Monastery in the 1970s'),
-    'citation': _('Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
+    'description': _(
+        'The Church of the Annunciation of the Holy '
+        'Mother of God in Gradac Monastery in the 1970s'),
+    'citation': _(
+        'Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
     'category': ['idcew']
 }, {
     'src': 'idcew_4.jpg',
-    'description': _('The Church of the Annunciation of the Holy Mother of God in Gradac Monastery in 2007'),
-    'citation': 'M.radosavljevic, 2007 <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" target="_blank">CC BY-SA 3.0</a>',
+    'description': _(
+        'The Church of the Annunciation of the Holy '
+        'Mother of God in Gradac Monastery in 2007'),
+    'citation': (
+        'M.radosavljevic, 2007 <a '
+        'href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" '
+        'target="_blank">CC BY-SA 3.0</a>'),
     'category': ['idcew']
-},
-]
+}]
+
 
 project_idcew = {
     'acronym': 'idcew',

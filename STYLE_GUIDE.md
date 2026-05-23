@@ -26,6 +26,7 @@ This guide establishes the styling rules, user interface specifications, and cor
 - **JavaScript**: Maximum line length of **120 characters**.
 - **CSS / SCSS**: Maximum line length of **120 characters**.
 - **HTML / Jinja Templates**: Maximum line length of **120 characters** to maintain template readability and prevent excessive wrapping.
+- **Bracket Placement**: Closing brackets, braces, and parentheses (e.g., `]})`) must **always reside on the same line as the last statement/value** inside lists, dictionaries, function arguments, or multi-line calls.
 
 ---
 

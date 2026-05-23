@@ -184,17 +184,24 @@ def handle_http_exception(
 
     code = e.code or 500
     title = e.name or _("An error occurred")
-    description = e.description or _("An unexpected error occurred. Please try again later.")
+    description = e.description or _(
+        "An unexpected error occurred. Please try again later.")
 
     if code == 404:
         title = _("Page Not Found")
-        description = _("The coordinates you entered seem to be out of bounds. The page you are looking for does not exist.")
+        description = _(
+            "The coordinates you entered seem to be out of bounds. "
+            "The page you are looking for does not exist.")
     elif code == 403:
         title = _("Access Denied")
-        description = _("You do not have permission to access this area. Restricted coordinates.")
+        description = _(
+            "You do not have permission to access this area. "
+            "Restricted coordinates.")
     elif code == 418:
         title = _("I'm a Teapot")
-        description = _("The server refuses the attempt to brew coffee with a teapot. Yes, this is a real error.")
+        description = _(
+            "The server refuses the attempt to brew coffee with a teapot. "
+            "Yes, this is a real error.")
 
     return render_template(
         'error.html',
@@ -222,7 +229,9 @@ def handle_generic_exception(
         'error.html',
         code=500,
         title=_("Internal Server Error"),
-        description=_("An unexpected server error occurred. Our cartographers are looking into it.")
+        description=_(
+            "An unexpected server error occurred. "
+            "Our cartographers are looking into it.")
     ), 500
 
 

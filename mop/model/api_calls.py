@@ -53,10 +53,13 @@ def get_type_tree() -> List[TypeTree]:
 def get_entities_linked_to_entity(
         id_: int,
         show: Optional[List[str]] = None) -> list[dict[str, Any]]:
-    url = f"{app.config['API_PATH']}/entities_linked_to_entity/"
-    show_ = ''.join([f'&show={value}' for value in show] if show else '')
+    url = f"{app.config['API_PATH']}/entities_linked_to_entity/{id_}"
+    params: dict[str, Any] = {'limit': 0}
+    if show:
+        params['show'] = show
     response = requests.get(
-        f"{url}{id_}?limit=0{show_}",
+        url,
+        params=params,
         proxies=get_proxies(),
         timeout=30)
     if response.status_code == 404:
@@ -91,9 +94,18 @@ def api_call(url: str) -> dict[str, Any]:
 
 def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
     depth_ = max(1, min(10, depth))
-    url = f"{app.config['API_PATH']}/ego_network_visualisation/{id_}?depth={depth_}&exclude_system_classes=administrative_unit&exclude_system_classes=appellation&exclude_system_classes=type&exclude_system_classes=type_tools"
+    url = f"{app.config['API_PATH']}/ego_network_visualisation/{id_}"
+    params = {
+        'depth': depth_,
+        'exclude_system_classes': [
+            'administrative_unit',
+            'appellation',
+            'type',
+            'type_tools']
+    }
     response = requests.get(
         url,
+        params=params,
         proxies=get_proxies(),
         timeout=30)
     if response.status_code == 404:
