@@ -148,8 +148,7 @@ def entity_project_view(
              features.append(f_copy)
          elif obj_type in [
              'Point', 'MultiPoint', 'LineString', 'MultiLineString',
-             'Polygon', 'MultiPolygon', 'GeometryCollection'
-         ]:  # pragma: no cover
+             'Polygon', 'MultiPolygon', 'GeometryCollection']:  # pragma: no cover
              features.append({
                  "type": "Feature",
                  "geometry": geojson_obj,

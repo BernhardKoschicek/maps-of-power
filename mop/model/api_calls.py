@@ -13,8 +13,7 @@ def get_proxies() -> dict[str, str] | None:
         return None
     return {  # pragma: no cover
         "http": proxy,
-        "https": proxy
-    }
+        "https": proxy}
 
 
 def get_view_class(parameter: str) -> list[dict[str, Any]]:

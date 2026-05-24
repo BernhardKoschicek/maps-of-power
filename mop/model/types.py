@@ -62,5 +62,4 @@ class Types:
             unit=m.unit,
             description=m.descriptions or "",
             identifier=str(m.id),
-            root=root_str
-        )
+            root=root_str)

@@ -129,8 +129,7 @@ def test_util_get_types_sorted() -> None:
         unit='kg',
         description='desc',
         identifier='123',
-        root='Root'
-    )
+        root='Root')
     res = get_types_sorted([t])
     assert res == {'Root': [t]}
 
@@ -152,8 +151,7 @@ def test_types_constructor_with_dict() -> None:
         'value': 'some-value',
         'unit': 'kg',
         'descriptions': 'desc',
-        'identifier': 'http://example.org/types/123'
-    }
+        'identifier': 'http://example.org/types/123'}
     t = Types(data=data)
     assert t.label == 'Test Label'
     assert t.hierarchy == 'Root > Sub'
@@ -181,15 +179,12 @@ def test_display_image_gallery() -> None:
             'src': 'test.jpg',
             'caption': 'Caption 1',
             'citation': 'Citation 1',
-            'description': 'Description 1'
-        },
+            'description': 'Description 1'},
         'img2': {
             'src': 'test2.jpg',
             'caption': 'Caption 2',
             'citation': 'Citation 2',
-            'description': ''
-        }
-    }
+            'description': ''}}
     with app.test_request_context():
         result = image_gallery(images)
     assert 'Description 1' in result

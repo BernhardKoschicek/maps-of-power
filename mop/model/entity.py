@@ -335,8 +335,7 @@ class Entity:
                     administrative_unit.append(rel_obj)
                 elif sc in [
                     'bibliography', 'edition', 'external_reference',
-                    'reference_system', 'file'
-                ]:  # pragma: no cover
+                    'reference_system', 'file']:  # pragma: no cover
                     if sc in ['bibliography', 'edition', 'external_reference']:
                         # Avoid duplicates from top-level references
                         pass
