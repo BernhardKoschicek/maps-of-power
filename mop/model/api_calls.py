@@ -16,10 +16,19 @@ def get_proxies() -> dict[str, str] | None:
         "https": proxy}
 
 
-def get_view_class(parameter: str) -> list[dict[str, Any]]:
-    url = f"{app.config['API_PATH']}/view_class/"
+def get_view_class(parameter: str, params: Optional[dict[str, Any]] = None) -> list[dict[str, Any]]:
+    url = f"{app.config['API_PATH']}/view_class/{parameter}"
+    if '?' in parameter:
+        # Legacy support: if the parameter is a full query string like 'actor?limit=1'
+        url = f"{app.config['API_PATH']}/view_class/{parameter}"
+        return requests.get(
+            url,
+            proxies=get_proxies(),
+            timeout=30).json()['results']
+            
     return requests.get(
-        f"{url}{parameter}",
+        url,
+        params=params,
         proxies=get_proxies(),
         timeout=30).json()['results']
 

@@ -268,6 +268,30 @@ def network_api(id_: int) -> Response | tuple[Response, int]:
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/api/places/<project_acronym>')
+def api_project_places(project_acronym: str) -> Response | tuple[Response, int]:
+    if project_acronym not in project_data:
+        return jsonify({'error': 'Project not found'}), 404
+    oa_id = project_data[project_acronym].get('oaID')
+    if not oa_id:
+        return jsonify({'places': []})
+    try:
+        places = get_oa_by_view_class('place', oa_id)
+        simplified = []
+        for p in places:
+            if p and p.geometry:
+                simplified.append({
+                    'id': p.id_,
+                    'name': p.name,
+                    'system_class': p.system_class,
+                    'geometry': p.geometry,
+                    'description': p.description or ''})
+        return jsonify({'places': simplified})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+
 @app.errorhandler(HTTPException)
 def handle_http_exception(
         e: HTTPException) -> (tuple[Response, int | None] |

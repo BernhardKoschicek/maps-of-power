@@ -204,7 +204,7 @@ class Entity:
             self.links = None
             self.begin = None
             self.end = None
-            self.geometry = None
+            self.geometry = get_geometry_data(data.get('geometry'))
         else:
             # Keyword initialization from factories
             self.id_ = str(kwargs.get('id_'))

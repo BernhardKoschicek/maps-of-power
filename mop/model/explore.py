@@ -57,10 +57,12 @@ def get_oa_by_view_class(
         project_id: str | list[str]) -> list[Optional[Entity]]:
     if view not in view_classes:
         return []
-    param =  f'{view}?limit=0&show=description'
-    if isinstance(project_id, list):
-        for id_ in project_id:
-            param += f'&type_id={id_}'
-    else:
-        param += f'&type_id={project_id}'
-    return [Entity(entry['features'][0]) for entry in get_view_class(param)]
+    
+    # Use modern dict-based params, specifying both description and geometry for the show parameter
+    params = {
+        'limit': 0,
+        'show': ['description', 'geometry'],
+        'type_id': project_id}
+    
+    results = get_view_class(view, params=params)
+    return [Entity(entry['features'][0]) for entry in results]

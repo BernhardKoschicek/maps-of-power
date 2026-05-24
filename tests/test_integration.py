@@ -189,3 +189,28 @@ def test_display_image_gallery() -> None:
         result = image_gallery(images)
     assert 'Description 1' in result
     assert 'img2' in result
+
+
+def test_api_project_places_route() -> None:
+    from mop import app
+    client = app.test_client()
+
+    # Test success case for project 'idcew' (has oaID: 135263)
+    response = client.get('/api/places/idcew')
+    assert response.status_code == 200
+    data = response.json
+    assert 'places' in data
+    assert isinstance(data['places'], list)
+
+    # Test no oaID case for 'rhr'
+    response = client.get('/api/places/rhr')
+    assert response.status_code == 200
+    data = response.json
+    assert data == {'places': []}
+
+    # Test project not found case
+    response = client.get('/api/places/nonexistent')
+    assert response.status_code == 404
+    data = response.json
+    assert 'error' in data
+
