@@ -54,7 +54,6 @@ project_idcew = {
         f'Branka Vranešević ({_("Belgrade")})'],
     'cooperation': [],
     'employees': [
-        f'Moisés Hernández Cordero ({_("Vienna")})',
         f'Vladimir Simić ({_("Belgrade")})'],
     'begin': get_dates_formatted(2024, 7, 1),
     'end': get_dates_formatted(2026, 6, 30),

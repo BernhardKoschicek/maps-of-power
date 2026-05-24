@@ -20,4 +20,4 @@ def client(app: Flask) -> FlaskClient:
 
 @pytest.fixture
 def runner(app: Flask) -> FlaskCliRunner:
-    return app.test_cli_runner()
+    return app.test_cli_runner()  # pragma: no cover

@@ -46,7 +46,7 @@ project_rhr = {
     'pi': ['Mihailo Popović (Vienna)', 'Lilyana Yordanova (Paris)'],
     'cooperation': [],
     'employees': [
-        'Veronika Polloczek (Wien)', 'Guillaume Bidaut (Paris)'],
+        'Veronika Polloczek (Wien)', 'Lucia Maria Orlandi (Paris)'],
     'begin': get_dates_formatted(2026, 1, 1),
     'end': get_dates_formatted(2027, 12, 31),
     'description': [

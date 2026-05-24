@@ -105,3 +105,10 @@ def test_network_api_route(client: FlaskClient) -> None:
     assert response.json is not None
     assert 'results' in response.json
 
+
+def test_locale_selector_from_session(client: FlaskClient) -> None:
+    with client.session_transaction() as sess:
+        sess['language'] = 'de'
+    response = client.get('/')
+    assert response.status_code == 200
+
