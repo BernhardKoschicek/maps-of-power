@@ -38,7 +38,7 @@ project_tib_balkan = {
     'cooperation': [],
     'employees': [],
     'begin': get_dates_formatted(2025, 1, 1),
-    'end': 'Ongoing',
+    'end': get_dates_formatted(2030, 12, 31),
     'description': [
         _('tib_balkan_description_1'),
         _('tib_balkan_description_2'),

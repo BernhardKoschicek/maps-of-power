@@ -25,7 +25,7 @@ def get_view_class(parameter: str, params: Optional[dict[str, Any]] = None) -> l
             url,
             proxies=get_proxies(),
             timeout=30).json()['results']
-            
+
     return requests.get(
         url,
         params=params,
@@ -89,16 +89,24 @@ def get_entity(id_: int) -> dict[str, Any]:
     return data['features'][0]
 
 
+EXCLUDE_SYSTEM_CLASSES = [
+    'administrative_unit',
+    'appellation',
+    'type',
+    'type_tools',
+    'external_reference',
+    'reference_system',
+    'source',
+    'source_translation',
+]
+
+
 def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
-    depth_ = max(1, min(10, depth))
+    depth_ = max(1, min(5, depth))
     url = f"{app.config['API_PATH']}/ego_network_visualisation/{id_}"
     params = {
         'depth': depth_,
-        'exclude_system_classes': [
-            'administrative_unit',
-            'appellation',
-            'type',
-            'type_tools']
+        'exclude_system_classes': EXCLUDE_SYSTEM_CLASSES
     }
     response = requests.get(
         url,
@@ -108,6 +116,25 @@ def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
     if response.status_code == 404:  # pragma: no cover
         from werkzeug.exceptions import NotFound
         raise NotFound(f"Ego network not found for ID {id_}.")
+    response.raise_for_status()
+    return response.json()
+
+
+def get_network_visualisation(
+        linked_to_ids: list[int],
+        exclude_system_classes: Optional[list[str]] = None) -> dict[str, Any]:
+    if exclude_system_classes is None:
+        exclude_system_classes = EXCLUDE_SYSTEM_CLASSES
+    url = f"{app.config['API_PATH']}/network_visualisation/"
+    params = {
+        'exclude_system_classes': exclude_system_classes,
+        'linked_to_ids': linked_to_ids
+    }
+    response = requests.get(
+        url,
+        params=params,
+        proxies=get_proxies(),
+        timeout=30)
     response.raise_for_status()
     return response.json()
 

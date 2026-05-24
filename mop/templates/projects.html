@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/MarkerCluster.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.css', v=ASSETS_VERSION) }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/projects_premium.css', v=ASSETS_VERSION) }}">
 
   <div class="container mt-5 mb-5">
     <!-- Premium Header and Dashboard Section -->
@@ -65,8 +66,23 @@
           </button>
         </li>
         <li class="nav-item" role="presentation">
+          <button class="nav-link" id="projects-tab-timeline-roadmap" data-bs-toggle="tab" data-bs-target="#timeline-roadmap-content" type="button" role="tab" aria-controls="timeline-roadmap-content" aria-selected="false">
+            <i class="bi bi-calendar-range me-2"></i>{{ _('Timeline Roadmap') }}
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="projects-tab-research-analytics" data-bs-toggle="tab" data-bs-target="#research-analytics-content" type="button" role="tab" aria-controls="research-analytics-content" aria-selected="false">
+            <i class="bi bi-bar-chart-steps me-2"></i>{{ _('Research Analytics') }}
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
           <button class="nav-link" id="exploration-tab" data-bs-toggle="tab" data-bs-target="#exploration-content" type="button" role="tab" aria-controls="exploration-content" aria-selected="false">
             <i class="bi bi-map me-2"></i>{{ _('Data Portal & Map') }}
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="network-tab" data-bs-toggle="tab" data-bs-target="#network-content" type="button" role="tab" aria-controls="network-content" aria-selected="false">
+            <i class="bi bi-share me-2"></i>{{ _('Network Visualisation') }}
           </button>
         </li>
       </ul>
@@ -98,10 +114,10 @@
                 <div class="col-6">
                   <select id="filter-funding" class="form-select modern-filter-select">
                     <option value="all">{{ _('All Funding') }}</option>
-                    <option value="FWF">FWF</option>
-                    <option value="DFG">DFG</option>
-                    <option value="OEAD">OEAD</option>
-                    <option value="ÖAW">ÖAW / OEAW</option>
+                    <option value="fwf">FWF</option>
+                    <option value="dfg">DFG</option>
+                    <option value="oead">OEAD</option>
+                    <option value="oeaw">ÖAW / OEAW</option>
                   </select>
                 </div>
               </div>
@@ -117,7 +133,7 @@
                  data-title="{{ project['title'] | lower }}"
                  data-pi="{% for pi in project.pi %}{{ pi | lower }} {% endfor %}"
                  data-employees="{% if project.employees %}{% for emp in project.employees %}{{ emp | lower }} {% endfor %}{% endif %}"
-                 data-funding="{% if project.funded_by %}{% for f in project.funded_by %}{{ f.name | lower if f.name is defined else f | lower }} {% endfor %}{% endif %}"
+                 data-funding="{% if project.funded_by %}{% for f in project.funded_by %}{{ f.name | lower if f.name is defined else f | lower }} {% if 'austrian science fund' in f.name | lower or 'fwf' in f.logo | lower %}fwf{% endif %} {% if 'deutsche forschungsgemeinschaft' in f.name | lower or 'dfg' in f.logo | lower %}dfg{% endif %} {% if 'education and research' in f.name | lower or 'oead' in f.logo | lower %}oead{% endif %} {% if 'academy of sciences' in f.name | lower or 'oeaw' in f.logo | lower %}oeaw{% endif %} {% endfor %}{% endif %}"
                  data-begin="{{ project.begin }}"
                  data-end="{{ project.end }}">
               
@@ -193,6 +209,120 @@
         </div>
       </div>
 
+      <!-- Tab: Timeline Roadmap -->
+      <div class="tab-pane fade" id="timeline-roadmap-content" role="tabpanel" aria-labelledby="projects-tab-timeline-roadmap">
+        <div class="timeline-roadmap-container premium-fade-in mb-5">
+          <div class="row align-items-center mb-4">
+            <div class="col-12 col-md-6">
+              <h4 class="fw-bold text-dark mb-1"><i class="bi bi-calendar-range text-primary me-2"></i>{{ _('Interactive Projects Roadmap') }}</h4>
+              <p class="text-muted small mb-0">{{ _('View project lifespans dynamically across a chronological 10-year timeline axis.') }}</p>
+            </div>
+            <div class="col-12 col-md-6 text-md-end mt-3 mt-md-0">
+              <span class="badge bg-success text-white rounded-pill px-3 py-2 small me-2"><i class="bi bi-circle-fill me-1 small"></i>{{ _('Active') }}</span>
+              <span class="badge bg-primary text-white rounded-pill px-3 py-2 small me-2"><i class="bi bi-circle-fill me-1 small"></i>{{ _('Upcoming') }}</span>
+              <span class="badge bg-secondary text-white rounded-pill px-3 py-2 small"><i class="bi bi-circle-fill me-1 small"></i>{{ _('Completed') }}</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Timeline Slider Selector -->
+          <div class="year-range-slider-wrapper">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <label for="timeline-year-slider" class="form-label mb-0 fw-bold text-primary" style="font-size: 0.95rem;">
+                {{ _('Filter Timeline by Active Year:') }}
+              </label>
+              <span class="badge bg-primary fs-6 px-3 py-1.5 rounded-pill" id="timeline-slider-year-val">2026</span>
+            </div>
+            <input type="range" class="form-range premium-range-slider" min="2020" max="2030" value="2026" id="timeline-year-slider">
+            <div class="timeline-slider-labels">
+              <span>2020</span>
+              <span>2022</span>
+              <span>2024</span>
+              <span>2026</span>
+              <span>2028</span>
+              <span>2030</span>
+            </div>
+          </div>
+
+          <!-- Roadmap Grid -->
+          <div class="roadmap-grid table-responsive p-1">
+            <div class="roadmap-year-cols"></div>
+            <div class="roadmap-rows" id="roadmap-rows-container"></div>
+          </div>
+
+          <!-- Hover Tooltip -->
+          <div class="roadmap-tooltip text-dark" id="roadmap-hover-tooltip"></div>
+        </div>
+      </div>
+
+      <!-- Tab: Research Analytics -->
+      <div class="tab-pane fade" id="research-analytics-content" role="tabpanel" aria-labelledby="projects-tab-research-analytics">
+        <div class="analytics-grid mb-5 premium-fade-in">
+          
+          <!-- Column 1: Charts Dashboard Grid -->
+          <div class="d-flex flex-column gap-4">
+            
+            <!-- Statistics Highlights -->
+            <div class="analytics-card">
+              <h5 class="fw-bold text-dark mb-3"><i class="bi bi-sliders text-primary me-2"></i>{{ _('Statistics Overview') }}</h5>
+              <div class="analytics-stats-row text-center">
+                <div class="analytics-mini-stat">
+                  <div class="analytics-mini-val" id="analytics-stat-total">0</div>
+                  <div class="analytics-mini-lbl">{{ _('Projects') }}</div>
+                </div>
+                <div class="analytics-mini-stat">
+                  <div class="analytics-mini-val text-success" id="analytics-stat-active">0</div>
+                  <div class="analytics-mini-lbl">{{ _('Active') }}</div>
+                </div>
+                <div class="analytics-mini-stat">
+                  <div class="analytics-mini-val text-secondary" id="analytics-stat-completed">0</div>
+                  <div class="analytics-mini-lbl">{{ _('Completed') }}</div>
+                </div>
+                <div class="analytics-mini-stat">
+                  <div class="analytics-mini-val text-primary" id="analytics-stat-researchers">0</div>
+                  <div class="analytics-mini-lbl">{{ _('Scholars') }}</div>
+                </div>
+              </div>
+              <p class="text-muted small mb-0" style="font-size:0.75rem;">
+                {{ _('Aggregated live metrics of collaborative initiatives mapping spatial data and medieval geographies.') }}
+              </p>
+            </div>
+
+            <!-- Funding Distribution (Donut Chart) -->
+            <div class="analytics-card">
+              <h5 class="fw-bold text-dark mb-1"><i class="bi bi-pie-chart text-primary me-2"></i>{{ _('Grants by Funding Body') }}</h5>
+              <p class="text-muted small mb-2">{{ _('Proportional project support distribution.') }}</p>
+              <div class="chart-container" id="funding-donut-chart-container"></div>
+              <div class="chart-legend" id="funding-chart-legend"></div>
+            </div>
+
+          </div>
+
+          <!-- Column 2: Institute distributions -->
+          <div class="d-flex flex-column gap-4">
+            
+            <!-- Host Institutes (Bar Chart) -->
+            <div class="analytics-card h-100">
+              <h5 class="fw-bold text-dark mb-1"><i class="bi bi-building text-primary me-2"></i>{{ _('Academic Host Institutes') }}</h5>
+              <p class="text-muted small mb-3">{{ _('Volume of active project hosting instances.') }}</p>
+              <div class="bar-chart" id="institute-bar-chart"></div>
+            </div>
+
+          </div>
+
+          <!-- Column 3: Collaborators Network Directory -->
+          <div class="analytics-card">
+            <h5 class="fw-bold text-dark mb-1"><i class="bi bi-people text-primary me-2"></i>{{ _('Collaborators Directory') }}</h5>
+            <p class="text-muted small mb-3">{{ _('Browse and search project scholars and team crossovers.') }}</p>
+            <div class="team-search-wrapper">
+              <i class="bi bi-search"></i>
+              <input type="text" id="collaborator-search-input" class="form-control team-search-input" placeholder="{{ _('Search by researcher or project acronym...') }}">
+            </div>
+            <div class="collaborator-list" id="collaborator-directory-list"></div>
+          </div>
+
+        </div>
+      </div>
+
       <!-- Tab 2: Data Exploration Map & Dashboard -->
       <div class="tab-pane fade" id="exploration-content" role="tabpanel" aria-labelledby="exploration-tab">
         <div class="row g-4">
@@ -250,43 +380,98 @@
             </div>
           </div>
 
-          <!-- Places Exploration Table -->
-          <div class="col-12">
-            <div class="premium-table-card fade-in-card">
-              <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-                <div>
-                  <h4 class="fw-bold text-dark mb-1"><i class="bi bi-table me-2 text-primary"></i>{{ _('Places Database Search') }}</h4>
-                  <p class="text-muted small mb-0">{{ _('Filter and explore precise coordinates, system classes, and description cards from the active projects.') }}</p>
-                </div>
-                <div>
-                  <button id="btn-export-csv" class="btn btn-outline-primary rounded-pill px-4 btn-sm fw-bold">
-                    <i class="bi bi-download me-1"></i> {{ _('Export CSV') }}
-                  </button>
+        </div>
+      </div>
+
+      <!-- Tab 3: Network Visualisation -->
+      <div class="tab-pane fade" id="network-content" role="tabpanel" aria-labelledby="network-tab">
+        <div class="row g-4">
+          <!-- Exploration Sidebar Form -->
+          <div class="col-12 col-lg-4">
+            <div class="map-card-wrapper h-100 d-flex flex-column">
+              <h4 class="fw-bold text-dark mb-3"><i class="bi bi-share me-2 text-primary"></i>{{ _('Network Explorer') }}</h4>
+              <p class="text-muted small mb-4">
+                {{ _('Visualise the entity networks, connections, and relations from each project in real-time. Nodes can be clicked and inspected.') }}
+              </p>
+
+              <!-- Network Filter Controls -->
+              <div class="mb-3">
+                <label class="form-label small fw-bold text-uppercase text-muted d-block">{{ _('Select Projects') }}</label>
+                <div class="bg-light p-3 rounded-3 border" style="max-height: 250px; overflow-y: auto;" id="network-projects-checklist">
+                  {% set first_project = namespace(found=false) %}
+                  {% for project in projects.values() %}
+                    {% if project.oaID %}
+                      <div class="form-check mb-2">
+                        <input class="form-check-input network-project-checkbox" type="checkbox" value="{{ project['acronym'] }}" id="chk-proj-{{ project['acronym'] }}" {% if not first_project.found %}{% set first_project.found = true %}checked{% endif %}>
+                        <label class="form-check-label small fw-semibold text-dark" for="chk-proj-{{ project['acronym'] }}">
+                          {{ project['title'] }} ({{ project['acronym'].upper() }})
+                        </label>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
                 </div>
               </div>
 
-              <div class="table-responsive">
-                <table id="places-exploration-table" class="table table-hover align-middle w-100 premium-table mb-0">
-                  <thead class="table-light">
-                    <tr>
-                      <th class="ps-3">ID</th>
-                      <th>{{ _('Name') }}</th>
-                      <th>{{ _('System Class') }}</th>
-                      <th>{{ _('Coordinates') }}</th>
-                      <th class="pe-3">{{ _('Description') }}</th>
-                    </tr>
-                  </thead>
-                  <tbody id="places-table-body">
-                    <!-- Loaded dynamically via javascript -->
-                  </tbody>
-                </table>
+              <div class="mb-3">
+                <label class="form-label small fw-bold text-uppercase text-muted d-block">{{ _('Network Statistics') }}</label>
+                <div class="stat-card bg-light border-light p-3 rounded-3 mb-2 text-dark">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                      <span class="d-block fw-bold fs-4 text-primary" id="network-node-count">0</span>
+                      <span class="text-muted small fw-medium">{{ _('Entities (Nodes)') }}</span>
+                    </div>
+                    <i class="bi bi-circle-fill text-secondary fs-4"></i>
+                  </div>
+                </div>
+                <div class="stat-card bg-light border-light p-3 rounded-3 text-dark">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                      <span class="d-block fw-bold fs-4 text-secondary" id="network-edge-count">0</span>
+                      <span class="text-muted small fw-medium">{{ _('Relations (Edges)') }}</span>
+                    </div>
+                    <i class="bi bi-connector text-secondary fs-4"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-auto bg-light rounded-3 p-3 text-muted small border">
+                <div class="fw-bold text-dark mb-1"><i class="bi bi-info-circle me-1 text-primary"></i> {{ _('Interactive Controls') }}</div>
+                {{ _('Zoom to scroll, drag to pan, and click on any entity node to inspect its name and class. Double-click a node to open its full details page.') }}
               </div>
             </div>
           </div>
 
+          <!-- vis.js Network Visualisation -->
+          <div class="col-12 col-lg-8">
+            <div class="map-card-wrapper position-relative" style="min-height: 520px; background-color: #f8f9fa;">
+              <div class="map-loading-overlay" id="network-loader" style="display: none;">
+                <div class="spinner-border text-primary mb-3" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <h5 class="text-muted fw-bold">{{ _('Generating Network Graph...') }}</h5>
+                <p class="text-muted small">{{ _('Fetching entities and computing relations from the database.') }}</p>
+              </div>
+              <div id="project-network-graph" style="height: 520px; width: 100%;"></div>
+            </div>
+          </div>
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- Glassmorphic Slide-up Project Comparison Drawer -->
+  <div class="comparison-drawer" id="project-compare-drawer">
+    <div class="comparison-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-grid-3x3-gap-fill text-primary fs-4"></i>
+        <h4 class="fw-bold text-dark mb-0">{{ _('Side-by-Side Project Compare') }}</h4>
+        <span class="badge bg-primary text-white rounded-pill px-2 py-1 small ms-2" id="compare-count-badge">0 / 3</span>
+      </div>
+      <button class="compare-close-btn" id="compare-drawer-close">&times;</button>
+    </div>
+    <div class="comparison-body">
+      <div class="compare-table-container" id="compare-table-container"></div>
     </div>
   </div>
 
@@ -294,6 +479,71 @@
   <script src="{{ url_for('static', filename='node_modules/leaflet/dist/leaflet.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/leaflet.markercluster.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.js', v=ASSETS_VERSION) }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/graphology/0.25.4/graphology.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js"></script>
+  <script src="{{ url_for('static', filename='js/projects_premium.js', v=ASSETS_VERSION) }}"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Dynamic projects data generation for premium JS features
+      const projectsJson = {
+        {% for acronym, proj in projects.items() %}
+          "{{ acronym }}": {
+            "acronym": "{{ proj.acronym }}",
+            "title": "{{ proj.title | replace('"', '\\"') }}",
+            "begin": "{{ proj.begin }}",
+            "end": "{{ proj.end }}",
+            "pi": [
+              {% for p in proj.pi %}
+                "{{ p | replace('"', '\\"') }}"{% if not loop.last %},{% endif %}
+              {% endfor %}
+            ],
+            "employees": [
+              {% if proj.employees %}
+                {% for emp in proj.employees %}
+                  "{{ emp | replace('"', '\\"') }}"{% if not loop.last %},{% endif %}
+                {% endfor %}
+              {% endif %}
+            ],
+            "funded_by": [
+              {% if proj.funded_by %}
+                {% for f in proj.funded_by %}
+                  {
+                    "name": "{{ (f.name if f.name is defined else f) | replace('"', '\\"') }}"
+                  }{% if not loop.last %},{% endif %}
+                {% endfor %}
+              {% endif %}
+            ],
+            "host_institutes": [
+              {% if proj.host_institutes %}
+                {% for h in proj.host_institutes %}
+                  {
+                    "name": "{{ h.name | replace('"', '\\"') }}"
+                  }{% if not loop.last %},{% endif %}
+                {% endfor %}
+              {% endif %}
+            ]
+          }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      };
+
+      if (typeof initPremiumProjectsPortal === "function") {
+        initPremiumProjectsPortal(projectsJson);
+      }
+
+      // Close button logic for compare drawer
+      const drawerClose = document.getElementById("compare-drawer-close");
+      if (drawerClose) {
+        drawerClose.addEventListener("click", () => {
+          document.querySelectorAll(".compare-check-btn input").forEach(chk => {
+            if (chk.checked) {
+              chk.click();
+            }
+          });
+        });
+      }
+    });
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -447,8 +697,9 @@
       const mapLoader = document.getElementById("map-loader");
       const visibleCountBadge = document.getElementById("map-visible-count");
 
-      // Initialize DataTable references
-      let dataTableInstance = null;
+      // vis-network instance
+      let networkInstance = null;
+      let networkInitialized = false;
 
       function initExplorationMap() {
         if (mapInitialized) return;
@@ -556,7 +807,6 @@
           }
 
           renderPlacesOnMap(allPlacesCache);
-          renderPlacesTable(allPlacesCache);
 
         } catch (error) {
           console.error("Failed to load places for map:", error);
@@ -618,77 +868,6 @@
         }
       }
 
-      function renderPlacesTable(places) {
-        const tableBody = document.getElementById("places-table-body");
-        if (!tableBody) return;
-
-        // Destroy previous DataTable instance if exists
-        if (dataTableInstance) {
-          dataTableInstance.destroy();
-        }
-
-        tableBody.innerHTML = "";
-
-        places.forEach(place => {
-          let coordsStr = "{{ _('N/A') }}";
-          if (place.geometry && place.geometry.coordinates) {
-            const c = place.geometry.coordinates;
-            coordsStr = `${c[1].toFixed(4)}, ${c[0].toFixed(4)}`;
-          }
-
-          const exploreUrl = `/projects/${place.project.toLowerCase()}/explore/place/${place.id}`;
-          const tr = document.createElement("tr");
-          tr.innerHTML = `
-            <td class="ps-3">
-              <a href="${exploreUrl}" class="text-decoration-none link-primary fw-medium small">${place.id}</a>
-            </td>
-            <td>
-              <a href="${exploreUrl}" class="text-decoration-none fw-bold link-primary">${place.name}</a>
-              <span class="badge bg-accent2 text-primary rounded-pill px-2 py-0.5 fw-normal small ms-1" style="font-size: 0.65rem;">
-                ${place.project}
-              </span>
-            </td>
-            <td>
-              <span class="badge bg-light text-dark rounded-pill px-3 py-1 fw-normal border">
-                ${place.system_class}
-              </span>
-            </td>
-            <td class="small text-muted font-monospace">
-              <i class="bi bi-geo-alt me-1"></i>${coordsStr}
-            </td>
-            <td class="small text-muted pe-3 text-truncate" style="max-width: 250px;">
-              ${place.description || ''}
-            </td>
-          `;
-          tableBody.appendChild(tr);
-        });
-
-        // Initialize DataTable
-        dataTableInstance = $('#places-exploration-table').DataTable({
-          'order': [[1, 'asc']],
-          "dom": '<"d-flex justify-content-between align-items-center mb-4"f>t<"d-flex justify-content-between align-items-center mt-4"ip>',
-          "language": {
-            "search": "",
-            "searchPlaceholder": "{{ _('Search places in database...') }}"
-          },
-          'columnDefs': [
-            {
-              'targets': 4,
-              'render': DataTable.render.ellipsis(200, true)
-            },
-            {
-              'targets': 1,
-              'render': DataTable.render.ellipsis(120, true)
-            }
-          ]
-        });
-
-        // Style the Search wrapper
-        $('.dataTables_filter input').addClass('form-control form-control-sm rounded-pill px-4 py-2 border-1 shadow-none');
-        $('.dataTables_filter').addClass('w-100');
-        $('.dataTables_filter label').addClass('w-100');
-      }
-
       // Add project filter change listener
       if (mapProjectSelect) {
         mapProjectSelect.addEventListener("change", function () {
@@ -696,42 +875,268 @@
         });
       }
 
-      // CSV Export handler
-      const btnExportCsv = document.getElementById("btn-export-csv");
-      if (btnExportCsv) {
-        btnExportCsv.addEventListener("click", function () {
-          if (allPlacesCache.length === 0) {
-            alert("No data available to export.");
-            return;
+      // ==========================================
+      // PART 4: INTERACTIVE VIS-NETWORK PORTAL
+      // ==========================================
+      const networkTabButton = document.getElementById("network-tab");
+      const networkLoader = document.getElementById("network-loader");
+      const networkNodeCountBadge = document.getElementById("network-node-count");
+      const networkEdgeCountBadge = document.getElementById("network-edge-count");
+      const projectNetworkCache = {}; // Local in-memory caching of project data
+
+      function initNetworkVisualisation() {
+        if (networkInitialized) return;
+        networkInitialized = true;
+        updateNetworkFromCheckboxes();
+      }
+
+      if (networkTabButton) {
+        networkTabButton.addEventListener("shown.bs.tab", function () {
+          initNetworkVisualisation();
+          if (networkInstance) {
+            setTimeout(() => {
+              networkInstance.refresh();
+            }, 100);
           }
+        });
+      }
 
-          let csvContent = "data:text/csv;charset=utf-8,";
-          csvContent += "ID,Name,Project,System Class,Latitude,Longitude,Description\n";
+      // Checkbox event listeners
+      document.querySelectorAll(".network-project-checkbox").forEach(chk => {
+        chk.addEventListener("change", updateNetworkFromCheckboxes);
+      });
 
-          allPlacesCache.forEach(place => {
-            const id = place.id;
-            const name = `"${place.name.replace(/"/g, '""')}"`;
-            const project = place.project;
-            const cls = place.system_class;
-            let lat = "";
-            let lng = "";
-            if (place.geometry && place.geometry.coordinates) {
-              lng = place.geometry.coordinates[0];
-              lat = place.geometry.coordinates[1];
+      async function updateNetworkFromCheckboxes() {
+        const checkedBoxes = document.querySelectorAll(".network-project-checkbox:checked");
+        const selectedProjects = Array.from(checkedBoxes).map(chk => chk.value);
+
+        if (selectedProjects.length === 0) {
+          renderNetworkGraph([], []);
+          return;
+        }
+
+        if (!networkLoader) return;
+        networkLoader.style.opacity = "1";
+        networkLoader.style.display = "flex";
+
+        try {
+          // Fetch any missing project data in parallel
+          const fetchPromises = selectedProjects.map(async proj => {
+            if (!projectNetworkCache[proj]) {
+              const url = `/api/network/project/${proj}`;
+              const response = await fetch(url);
+              const data = await response.json();
+              projectNetworkCache[proj] = data;
             }
-            const desc = `"${(place.description || '').replace(/"/g, '""').replace(/\n/g, ' ')}"`;
-
-            csvContent += `${id},${name},${project},${cls},${lat},${lng},${desc}\n`;
+            return proj;
           });
 
-          const encodedUri = encodeURI(csvContent);
-          const link = document.createElement("a");
-          link.setAttribute("href", encodedUri);
-          link.setAttribute("download", `maps_of_power_places_${mapProjectSelect.value}.csv`);
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
+          await Promise.all(fetchPromises);
+
+          // Combine results from all active projects
+          const combinedResults = [];
+          const seenIds = new Set();
+
+          selectedProjects.forEach(proj => {
+            const data = projectNetworkCache[proj];
+            if (data && data.results) {
+              data.results.forEach(item => {
+                if (!seenIds.has(item.id)) {
+                  seenIds.add(item.id);
+                  combinedResults.push(item);
+                }
+              });
+            }
+          });
+
+          renderNetworkGraph(combinedResults, selectedProjects);
+
+        } catch (error) {
+          console.error("Failed to load project networks:", error);
+        } finally {
+          networkLoader.style.opacity = "0";
+          setTimeout(() => {
+            networkLoader.style.display = "none";
+          }, 300);
+        }
+      }
+
+      function renderNetworkGraph(results, selectedProjects = []) {
+        const container = document.getElementById('project-network-graph');
+        if (!container) return;
+
+        if (networkInstance) {
+          networkInstance.kill();
+          networkInstance = null;
+        }
+
+        container.innerHTML = "";
+
+        if (results.length === 0) {
+          if (networkNodeCountBadge) networkNodeCountBadge.textContent = "0";
+          if (networkEdgeCountBadge) networkEdgeCountBadge.textContent = "0";
+          return;
+        }
+
+        const GraphConstructor = typeof graphology !== 'undefined' && graphology.Graph ? graphology.Graph : null;
+        const SigmaConstructor = typeof Sigma !== 'undefined' ? Sigma : (typeof sigma !== 'undefined' && sigma.Sigma ? sigma.Sigma : null);
+
+        if (!GraphConstructor || !SigmaConstructor) {
+          console.error("Graphology or Sigma constructor not found globally.");
+          return;
+        }
+
+        const graph = new GraphConstructor();
+        const nodeIds = new Set(results.map(item => item.id));
+
+        const COLOR_PALETTE = {
+          place: { color: '#1c7ed6' },
+          person: { color: '#0b7285' },
+          group: { color: '#fa5252' },
+          event: { color: '#ae3ec9' },
+          source: { color: '#f59f00' },
+          source_translation: { color: '#d6336c' },
+          artifact: { color: '#37b24d' },
+          bibliography: { color: '#495057' },
+          default: { color: '#ced4da' }
+        };
+
+        // 1. Gather all nodes and assign their projects
+        const nodeProjects = {}; // nodeId -> array of project acronyms
+        const nodeData = {}; // nodeId -> item data
+
+        selectedProjects.forEach(proj => {
+          const data = projectNetworkCache[proj];
+          if (data && data.results) {
+            data.results.forEach(item => {
+              if (!nodeProjects[item.id]) {
+                nodeProjects[item.id] = [];
+                nodeData[item.id] = item;
+              }
+              if (!nodeProjects[item.id].includes(proj)) {
+                nodeProjects[item.id].push(proj);
+              }
+            });
+          }
         });
+
+        // 2. Compute project center coordinates (spaced out in a circle)
+        const centers = {};
+        const projCount = selectedProjects.length;
+        selectedProjects.forEach((proj, idx) => {
+          if (projCount <= 1) {
+            centers[proj] = { x: 0, y: 0 };
+          } else {
+            const angle = (idx / projCount) * 2 * Math.PI;
+            const r = 260; // Spread them out beautifully
+            centers[proj] = {
+              x: r * Math.cos(angle),
+              y: r * Math.sin(angle)
+            };
+          }
+        });
+
+        // 3. Keep track of nodes placed in each project cluster for local spirals
+        const clusterNodeCount = {};
+        selectedProjects.forEach(proj => {
+          clusterNodeCount[proj] = 0;
+        });
+
+        // 4. Sort nodes by degree to place hubs closer to their cluster centers
+        const sortedNodeIds = Object.keys(nodeData).sort((a, b) => {
+          const degA = nodeData[a].relations ? nodeData[a].relations.length : 0;
+          const degB = nodeData[b].relations ? nodeData[b].relations.length : 0;
+          return degB - degA;
+        });
+
+        // 5. Add nodes to graph with Fermat's Spiral positioning around project centers
+        sortedNodeIds.forEach(nodeId => {
+          const item = nodeData[nodeId];
+          const projs = nodeProjects[nodeId] || [];
+          
+          let x = 0;
+          let y = 0;
+
+          if (projs.length === 1) {
+            // Node belongs to exactly one project cluster
+            const proj = projs[0];
+            const center = centers[proj] || { x: 0, y: 0 };
+            const idx = clusterNodeCount[proj]++;
+            
+            const angle = idx * 2.39996; // Golden Angle
+            const r = 10 * Math.sqrt(idx);
+            x = center.x + r * Math.cos(angle);
+            y = center.y + r * Math.sin(angle);
+          } else if (projs.length > 1) {
+            // Bridge node shared across multiple projects
+            let avgX = 0;
+            let avgY = 0;
+            projs.forEach(proj => {
+              if (centers[proj]) {
+                avgX += centers[proj].x;
+                avgY += centers[proj].y;
+              }
+            });
+            avgX /= projs.length;
+            avgY /= projs.length;
+
+            const jitterAngle = Math.random() * 2 * Math.PI;
+            const jitterR = 5 + Math.random() * 15;
+            x = avgX + jitterR * Math.cos(jitterAngle);
+            y = avgY + jitterR * Math.sin(jitterAngle);
+          }
+
+          const systemClass = item.systemClass || 'default';
+          const palette = COLOR_PALETTE[systemClass] || COLOR_PALETTE['default'];
+          const deg = item.relations ? item.relations.length : 0;
+          const size = Math.min(25, Math.max(5, 5 + deg * 0.4));
+
+          graph.addNode(item.id.toString(), {
+            label: item.label || `ID: ${item.id}`,
+            x: x,
+            y: y,
+            size: size,
+            color: palette.color
+          });
+        });
+
+        // 6. Fast O(E) Edge creation
+        let edgeCount = 0;
+        const edgeSet = new Set();
+        results.forEach(item => {
+          if (item.relations) {
+            item.relations.forEach(targetId => {
+              const s = item.id;
+              const t = targetId;
+              if (nodeIds.has(t)) {
+                const edgeKey = s < t ? `${s}-${t}` : `${t}-${s}`;
+                if (!edgeSet.has(edgeKey)) {
+                  edgeSet.add(edgeKey);
+                  graph.addEdge(s.toString(), t.toString(), {
+                    color: '#e9ecef',
+                    size: 1.2
+                  });
+                  edgeCount++;
+                }
+              }
+            });
+          }
+        });
+
+        if (networkNodeCountBadge) networkNodeCountBadge.textContent = graph.order.toLocaleString();
+        if (networkEdgeCountBadge) networkEdgeCountBadge.textContent = edgeCount.toLocaleString();
+
+        if (graph.order > 0) {
+          networkInstance = new SigmaConstructor(graph, container, {
+            allowOuterBounds: true,
+            renderLabels: true
+          });
+
+          networkInstance.on("doubleClickNode", function (event) {
+            const nodeId = event.node;
+            window.open(`/entity/${nodeId}`, '_blank');
+          });
+        }
       }
 
       setTimeout(async () => {

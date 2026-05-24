@@ -16,7 +16,7 @@ from mop.data.literature import literatures
 from mop.data.presentations import presentations
 from mop.data.projects.projects import project_data
 from mop.display.image import image_gallery
-from mop.model.api_calls import get_ego_network
+from mop.model.api_calls import get_ego_network, get_network_visualisation
 from mop.model.entity import Entity
 from mop.model.explore import (get_oa_by_view_class, system_classes,
                                view_classes)
@@ -289,6 +289,32 @@ def api_project_places(project_acronym: str) -> Response | tuple[Response, int]:
         return jsonify({'places': simplified})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/network/project/<project_acronym>')
+def api_project_network(project_acronym: str) -> Response | tuple[Response, int]:
+    if project_acronym == "all":
+        linked_to_ids = []
+        for proj in project_data.values():
+            oa_id = proj.get('oaID')
+            if oa_id:
+                linked_to_ids.extend([int(x) for x in oa_id if str(x).isdigit()])
+    else:
+        if project_acronym not in project_data:
+            return jsonify({'error': 'Project not found'}), 404
+        oa_id = project_data[project_acronym].get('oaID')
+        if not oa_id:
+            return jsonify({'results': []})
+        linked_to_ids = [int(x) for x in oa_id if str(x).isdigit()]
+
+    if not linked_to_ids:
+        return jsonify({'results': []})
+    try:
+        data = get_network_visualisation(linked_to_ids)
+        return jsonify(data)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 
 

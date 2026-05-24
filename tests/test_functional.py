@@ -112,3 +112,22 @@ def test_locale_selector_from_session(client: FlaskClient) -> None:
     response = client.get('/')
     assert response.status_code == 200
 
+
+def test_api_project_network_routes(client: FlaskClient) -> None:
+    # Test specific project network route
+    response = client.get('/api/network/project/holdura')
+    assert response.status_code == 200
+    assert response.json is not None
+    assert 'results' in response.json
+
+    # Test aggregate 'all' project network route
+    response_all = client.get('/api/network/project/all')
+    assert response_all.status_code == 200
+    assert response_all.json is not None
+    assert 'results' in response_all.json
+
+    # Test invalid project network route
+    response_invalid = client.get('/api/network/project/invalid_project')
+    assert response_invalid.status_code == 404
+
+

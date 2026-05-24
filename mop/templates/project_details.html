@@ -4,6 +4,13 @@
 {% endwith %}
 {% block title %}{{ project.title }}{% endblock %}
 {% block content %}
+  <!-- Leaflet & Plugins Styles (Loaded for detail map) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet/dist/leaflet.css', v=ASSETS_VERSION) }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/MarkerCluster.css', v=ASSETS_VERSION) }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css', v=ASSETS_VERSION) }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.css', v=ASSETS_VERSION) }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/projects_premium.css', v=ASSETS_VERSION) }}">
+
   {% set side_nav=[
 'description',
 'media' if project.images or project.videos,
@@ -13,146 +20,195 @@
 'presentations' if presentations,
 ] %}
 
-  <div class="container-fluid mt-3 mb-5">
-    <div class="row">
-      <div id="floating-navbar" class="col-md list-group">
-        {% for item in side_nav if item %}
-          <a
-            class="list-group-item list-group-item-action"
-            href="#{{ item }}">{{ _(item) }}</a>
-        {% endfor %}
+  <div class="container-fluid mt-4 mb-5">
+    <div class="row g-4">
+      
+      <!-- Left Column: Glassmorphic Scrollspy Nav Menu -->
+      <div class="col-12 col-md-3 col-xl-2">
+        <div id="floating-navbar" class="list-group details-scrollspy-menu">
+          {% for item in side_nav if item %}
+            <a class="list-group-item list-group-item-action" href="#{{ item }}">{{ _(item) }}</a>
+          {% endfor %}
+        </div>
       </div>
-      <div class="col-8 mx-auto position-relative" id="main-content">
+      
+      <!-- Center Column: Core Content -->
+      <div class="col-12 col-md-9 col-xl-8 mx-auto position-relative" id="main-content">
 
-        <div class="container mb-5">
+        <!-- Elevated Breadcrumbs Path -->
+        <div class="container mb-4">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb mb-0">
               <li class="breadcrumb-item">
-                <a href="{{ url_for('projects') }}"
-                   class="link-primary">{{ _('projects') }}</a>
+                <a href="{{ url_for('projects') }}" class="link-primary"><i class="bi bi-grid-3x3-gap-fill me-1"></i>{{ _('projects') }}</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                {{ project.acronym | replace('_', ' ') }}
+                {{ project.acronym | replace('_', ' ') | upper }}
               </li>
             </ol>
           </nav>
         </div>
-        <h1 id="description"
-            class="text-primary display-5 text-center mt-5">{{ project.title }}</h1>
-        <div class="row mt-5">
-          <div class="col-9">
-            <h4 style="display: none">{{ _('description') }}</h4>
-            {% for description in project.description %}
-              <p>{{ description }}</p>
-            {% endfor %}
+
+        <!-- Premium Ambient Glowing Hero Banner -->
+        <div class="project-details-hero premium-fade-in text-center text-md-start">
+          <div class="row align-items-center g-4">
+            <div class="col-12 col-md-3 text-center">
+              <div class="hero-icon-container">
+                {% if project.icon %}
+                  <img src="{{ url_for('static', filename='images/projects/' + project.acronym + '/' + project.icon) }}"
+                       alt="{{ project.acronym }} icon"
+                       style="max-height: 110px; max-width: 85%; object-fit: contain;">
+                {% else %}
+                  <i class="bi bi-diagram-3 text-primary fs-1"></i>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-12 col-md-9">
+              <div class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center gap-2 mb-3">
+                <span class="badge bg-secondary text-dark fw-bold px-3 py-1.5 rounded-pill text-uppercase" style="letter-spacing: 0.05em; font-size: 0.72rem;">
+                  {{ project.acronym }}
+                </span>
+                <span class="badge bg-light text-primary fw-bold px-3 py-1.5 rounded-pill border" id="details-status-pill">
+                  Active
+                </span>
+              </div>
+              <h1 class="display-6 fw-extrabold text-white mb-3" style="font-weight: 850; font-size: 1.85rem;" id="description">
+                {{ project.title }}
+              </h1>
+              <p class="lead text-white-50 mb-0 small fw-medium" style="font-size: 0.95rem;">
+                <i class="bi bi-calendar3 me-1"></i> {{ project.begin }} &mdash; {{ project.end }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Split Grid: Info Content & Sidebar -->
+        <div class="row mt-4">
+          
+          <!-- Column 1: Project Description and Details -->
+          <div class="col-12 col-lg-8 mb-4">
+            <div class="pe-0 pe-lg-3 text-dark leading-relaxed" style="font-size: 1.05rem; line-height: 1.75;">
+              <h4 style="display: none">{{ _('description') }}</h4>
+              {% for description in project.description %}
+                <p>{{ description }}</p>
+              {% endfor %}
+            </div>
           </div>
 
-          <div class="col-3 project-sidebar">
-            {% if project.funded_by %}
-              <div class="sidebar-section">
-                <div class="sidebar-label">{{ _('Funded by') }}:</div>
+          <!-- Column 2: Details Sidebar Card -->
+          <div class="col-12 col-lg-4 mb-4">
+            <div class="details-sidebar-card text-dark">
+              
+              {% if project.project_number %}
+                <div class="details-sidebar-section">
+                  <div class="details-sidebar-label">{{ _('Project Number') }}:</div>
+                  <div class="details-sidebar-value text-primary"><i class="bi bi-hash me-1"></i>{{ project.project_number }}</div>
+                </div>
+              {% endif %}
+
+              {% if project.begin %}
+                <div class="details-sidebar-section">
+                  <div class="details-sidebar-label">{{ _('Duration') }}:</div>
+                  <div class="details-sidebar-value"><i class="bi bi-calendar-event me-1"></i>{{ project.begin }} - {{ project.end }}</div>
+                </div>
+              {% endif %}
+
+              {% if project.funded_by %}
+                <div class="details-sidebar-section">
+                  <div class="details-sidebar-label">{{ _('Funded by') }}:</div>
+                  <div class="logo-grid">
+                    {% for fund in project.funded_by %}
+                      <a href="{{ fund.url }}" target="_blank" class="logo-item" title="{{ fund.name }}">
+                        <img
+                          src="{{ url_for('static', filename='images/institutes/'+fund.logo, v=ASSETS_VERSION) }}"
+                          alt="{{ fund.name }}"
+                          class="img-fluid">
+                      </a>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+
+              <div class="details-sidebar-section">
+                <div class="details-sidebar-label">{{ _('Hosted by') }}:</div>
                 <div class="logo-grid">
-                  {% for fund in project.funded_by %}
-                    <a href="{{ fund.url }}" target="_blank" class="logo-item" title="{{ fund.name }}">
+                  {% for host in project.host_institutes %}
+                    <a href="{{ host.url }}" target="_blank" class="logo-item" title="{{ host.name }}">
                       <img
-                        src="{{ url_for('static', filename='images/institutes/'+fund.logo, v=ASSETS_VERSION) }}"
-                        alt="{{ fund.name }}"
+                        src="{{ url_for('static', filename='images/institutes/'+host.logo, v=ASSETS_VERSION) }}"
+                        alt="{{ host.name }}"
                         class="img-fluid">
                     </a>
                   {% endfor %}
                 </div>
               </div>
-            {% endif %}
 
-            {% if project.project_number %}
-              <div class="sidebar-section">
-                <div class="sidebar-label">{{ _('Project Number') }}:</div>
-                <div class="sidebar-value">{{ project.project_number }}</div>
-              </div>
-            {% endif %}
-
-            {% if project.begin %}
-              <div class="sidebar-section">
-                <div class="sidebar-label">{{ _('Duration') }}:</div>
-                <div class="sidebar-value">{{ project.begin }} - {{ project.end }}</div>
-              </div>
-            {% endif %}
-
-            <div class="sidebar-section">
-              <div class="sidebar-label">{{ _('Hosted by') }}:</div>
-              <div class="logo-grid">
-                {% for host in project.host_institutes %}
-                  <a href="{{ host.url }}" target="_blank" class="logo-item" title="{{ host.name }}">
-                    <img
-                      src="{{ url_for('static', filename='images/institutes/'+host.logo, v=ASSETS_VERSION) }}"
-                      alt="{{ host.name }}"
-                      class="img-fluid">
-                  </a>
-                {% endfor %}
-              </div>
-            </div>
-
-            <div class="sidebar-section">
-              <div class="sidebar-label">PI:</div>
-              <ul class="list-unstyled sidebar-list">
-                {% for pi in project.pi %}
-                  <li>{{ pi }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-
-            {% if project.employees %}
-              <div class="sidebar-section">
-                <div class="sidebar-label">{{ _('Employees') }}:</div>
-                <ul class="list-unstyled sidebar-list">
-                  {% for emp in project.employees %}
-                    <li>{{ emp }}</li>
+              <div class="details-sidebar-section">
+                <div class="details-sidebar-label">PI (Project Investigator):</div>
+                <div class="d-flex flex-wrap gap-1 mt-1">
+                  {% for pi in project.pi %}
+                    <span class="badge-pi" style="font-size:0.75rem; margin:0 2px 2px 0;">{{ pi }}</span>
                   {% endfor %}
-                </ul>
+                </div>
               </div>
-            {% endif %}
 
-            {% if project.cooperation %}
-              <div class="sidebar-section">
-                <div class="sidebar-label">{{ _('Cooperation and External Employees') }}:</div>
-                <ul class="list-unstyled sidebar-list">
-                  {% for emp in project.cooperation %}
-                    <li>{{ emp }}</li>
-                  {% endfor %}
-                </ul>
-              </div>
-            {% endif %}
+              {% if project.employees %}
+                <div class="details-sidebar-section">
+                  <div class="details-sidebar-label">{{ _('Employees') }}:</div>
+                  <div class="d-flex flex-wrap gap-1 mt-1">
+                    {% for emp in project.employees %}
+                      <span class="badge-employee" style="font-size:0.75rem; margin:0 2px 2px 0;">{{ emp }}</span>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if project.cooperation %}
+                <div class="details-sidebar-section">
+                  <div class="details-sidebar-label">{{ _('Cooperation and External Employees') }}:</div>
+                  <div class="d-flex flex-wrap gap-1 mt-1">
+                    {% for emp in project.cooperation %}
+                      <span class="badge bg-light text-secondary border px-2 py-1.5 rounded-3 fw-semibold" style="font-size:0.72rem; margin:0 2px 2px 0;">{{ emp }}</span>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+              
+            </div>
           </div>
         </div>
+
         {% if project.website %}
-          <div class="row pt-5 images">
+          <div class="row pt-4 images">
             <div class="col text-center">
-              {{ _('further information') }}:
-              <a href="{{ project.website }}" target="_blank"
-                 class="link-primary">{{ project.website }}</a>
+              <span class="text-muted fw-bold">{{ _('further information') }}:</span>
+              <a href="{{ project.website }}" target="_blank" class="link-primary fw-bold ms-1 text-decoration-none">
+                {{ project.website }} <i class="bi bi-box-arrow-up-right small ms-0.5"></i>
+              </a>
             </div>
           </div>
         {% endif %}
 
+        <!-- Media Grid -->
         {% if project.images or project.videos %}
-          <h3 id="media" class="pt-5 text-center">
-            <a href="#media"
-               class="text-decoration-none link-primary">{{ _('media') }}</a>
+          <h3 id="media" class="pt-5 text-center mb-3">
+            <a href="#media" class="text-decoration-none link-primary fw-extrabold" style="font-weight:800;">
+              <i class="bi bi-images me-2"></i>{{ _('media') }}
+            </a>
           </h3>
           {% if project.images %}
-            <div class="row pt-5 images">
+            <div class="row pt-3 g-3 images justify-content-center">
               {% for img in project.images %}
-                <div class="col-lg-3">
-                  <figure class="figure">
-                    <a
-                      href="{{ url_for('static', filename='images/projects/' + project.acronym + '/' + img.src, v=ASSETS_VERSION) }}"
-                      data-caption="{{ img.description }}, {{ img.citation }}">
-                      <img
-                        src="{{ url_for('static', filename="thumbnails/" + img.src, v=ASSETS_VERSION) }}"
-                        alt="{{ img.src }}"
-                        class="img-fluid">
+                <div class="col-6 col-lg-3">
+                  <figure class="figure p-2 h-100 d-flex flex-column mb-0">
+                    <a href="{{ url_for('static', filename='images/projects/' + project.acronym + '/' + img.src, v=ASSETS_VERSION) }}"
+                       data-caption="{{ img.description }}, {{ img.citation }}"
+                       style="display:block; overflow:hidden; border-radius:6px;">
+                      <img src="{{ url_for('static', filename="thumbnails/" + img.src, v=ASSETS_VERSION) }}"
+                           alt="{{ img.src }}"
+                           class="img-fluid w-100" style="object-fit:cover; height:150px;">
                     </a>
-                    <figcaption class="small text-center">
+                    <figcaption class="small text-center text-muted mt-2 px-1 text-truncate" style="font-size:0.75rem;" title="{{ img['description'] }}">
                       {{ img["description"] }}
                     </figcaption>
                   </figure>
@@ -162,103 +218,126 @@
           {% endif %}
 
           {% if project.videos %}
-            <div class="row pt-5 justify-content-center">
+            <div class="row pt-4 justify-content-center g-3">
               {% for video in project.videos %}
-                <div
-                  class="col justify-content-center text-center align-content-center align-items-center">
-                  {{ video | safe }}
+                <div class="col-12 col-md-8 text-center">
+                  <div class="ratio ratio-16x9 rounded-4 overflow-hidden border shadow-sm">
+                    {{ video | safe }}
+                  </div>
                 </div>
               {% endfor %}
             </div>
           {% endif %}
         {% endif %}
 
+        <!-- OpenAtlas Explorer & Integrated Geographical Leaflet Map -->
         {% if project.oaID %}
-          <h3 id="explore" class="pt-5 text-center">
-            <a href="#explore"
-               class="text-decoration-none link-primary">{{ _('explore') }}</a>
+          <h3 id="explore" class="pt-5 text-center mb-3">
+            <a href="#explore" class="text-decoration-none link-primary fw-extrabold" style="font-weight:800;">
+              <i class="bi bi-map-fill me-2"></i>{{ _('explore') }}
+            </a>
           </h3>
-          <div class="row">
-
-            <div class="pt-5">
-              <div class="row justify-content-md-center">
-                {% for view, values in view_classes.items() %}
-                  <a
-                    href="{{ url_for('project_explore_table', view=view, project=project.acronym) }}"
-                    class="{{ view }}-background  rounded-3 col-md-8 col-xl-6 col-xxl-3 p-5 m-3 oa-access-tab-boxes">
-                    <div class="">
-                      <p class="fw-bold">{{ values['display_name'] }}</p>
-                      <p class="fst-italic">{{ values['description'] }}</p>
-                    </div>
-                  </a>
-                {% endfor %}
+          
+          <!-- Integrated Local Locations Map -->
+          <div class="map-card-wrapper mb-4 position-relative" style="min-height: 460px; overflow: hidden; border-radius: 20px;">
+            <div class="map-loading-overlay" id="details-map-loader" style="display:flex; flex-direction:column; justify-content:center; align-items:center; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.85); z-index:1000; transition: opacity 0.3s ease;">
+              <div class="spinner-border text-primary mb-3" role="status">
+                <span class="visually-hidden">Loading...</span>
               </div>
+              <h5 class="text-muted fw-bold mb-1">{{ _('Mapping Spatial Coordinates...') }}</h5>
+              <p class="text-muted small mb-0">{{ _('Downloading geographical locations from OpenAtlas.') }}</p>
             </div>
-            <p class="small">
-              {{ _('The access and use of our data is subject to the Creative Commons License CC BY 4.0 (<a
-            href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>).') }}
-            </p>
+            <div id="details-project-map" style="height: 460px; margin: 0; border: none; border-radius: 0;"></div>
           </div>
+
+          <!-- OpenAtlas Database access boxes styled elegantly -->
+          <div class="row g-3 justify-content-center mb-4">
+            {% for view, values in view_classes.items() %}
+              <div class="col-12 col-md-6 col-xl-3">
+                <a href="{{ url_for('project_explore_table', view=view, project=project.acronym) }}" class="oa-details-card h-100 text-decoration-none">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="title" style="font-size:0.95rem; font-weight:800;">{{ values['display_name'] }}</span>
+                    <i class="bi bi-arrow-right-circle text-primary fs-5"></i>
+                  </div>
+                  <p class="desc" style="font-size:0.75rem;">{{ values['description'] }}</p>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+          <p class="small text-muted text-center">
+            {{ _('The access and use of our data is subject to the Creative Commons License CC BY 4.0 (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">https://creativecommons.org/licenses/by/4.0/</a>).') }}
+          </p>
         {% endif %}
 
+        <!-- Results section -->
         {% if project.results %}
-          <h3 id="results" class="pt-5 text-center">
-            <a href="#results"
-               class="text-decoration-none link-primary">{{ _('results') }}</a>
+          <h3 id="results" class="pt-5 text-center mb-3">
+            <a href="#results" class="text-decoration-none link-primary fw-extrabold" style="font-weight:800;">
+              <i class="bi bi-journal-text me-2"></i>{{ _('results') }}
+            </a>
           </h3>
-          {% for text in project.results['text'] %}
-            <p>{{ text | safe }}</p>
-          {% endfor %}
+          <div class="text-dark py-2" style="font-size: 1rem; line-height: 1.7;">
+            {% for text in project.results['text'] %}
+              <p>{{ text | safe }}</p>
+            {% endfor %}
+          </div>
           {% if project.results['list'] %}
-            <ul>
+            <ul class="text-dark leading-relaxed" style="font-size: 0.95rem;">
               {% for list in project.results['list'] %}
-                <li>{{ list | safe }}</li>
+                <li class="mb-2">{{ list | safe }}</li>
               {% endfor %}
             </ul>
           {% endif %}
           {% if project.results['icons'] %}
-            <div
-              class="row align-content-center justify-content-center text-center pt-5">
+            <div class="row align-content-center justify-content-center text-center pt-4 g-3">
               {% for link in project.results['icons'] %}
-                <div class="col-3 ">
+                <div class="col-6 col-md-3">
                   {% if link.link %}
-                    <a href="{{ link.link }}"
-                       class="text-decoration-none link-primary"
-                       target="_blank">
+                    <a href="{{ link.link }}" class="text-decoration-none d-block p-3 rounded-4 bg-light border hover-translate" target="_blank" style="transition: transform 0.25s ease;">
                   {% endif %}
                   {% if link.file %}
-                    <a
-                      href="{{ url_for('static', filename='repository/' + link.file, v=ASSETS_VERSION) }}"
-                      class="text-decoration-none link-primary">
+                    <a href="{{ url_for('static', filename='repository/' + link.file, v=ASSETS_VERSION) }}" class="text-decoration-none d-block p-3 rounded-4 bg-light border hover-translate" style="transition: transform 0.25s ease;">
                   {% endif %}
-                  <i class="{{ link.icon }} display-4 text-accent2"></i>
-                  <p class="mt-1">{{ link.label }}</p>
-                  </a></a>
+                    <i class="{{ link.icon }} display-6 text-accent2 mb-2 d-block"></i>
+                    <span class="small fw-bold text-dark d-block" style="font-size:0.8rem;">{{ link.label }}</span>
+                  </a>
                 </div>
               {% endfor %}
             </div>
           {% endif %}
         {% endif %}
 
+        <!-- Publications -->
         {% if publications %}
-          <h4 id="publications" class="pt-5 text-center">
-            <a href="#publications"
-               class="text-decoration-none link-primary">{{ _('publications') }}</a>
+          <h4 id="publications" class="pt-5 text-center mb-3">
+            <a href="#publications" class="text-decoration-none link-primary fw-extrabold" style="font-weight:800;">
+              <i class="bi bi-book me-2"></i>{{ _('publications') }}
+            </a>
           </h4>
           {{ create_table(publications, 'publications', 3) }}
         {% endif %}
+
+        <!-- Presentations -->
         {% if presentations %}
-          <h4 id="presentations" class="pt-5 text-center">
-            <a href="#presentations"
-               class="text-decoration-none link-primary">{{ _('presentations') }}</a>
+          <h4 id="presentations" class="pt-5 text-center mb-3">
+            <a href="#presentations" class="text-decoration-none link-primary fw-extrabold" style="font-weight:800;">
+              <i class="bi bi-easel me-2"></i>{{ _('presentations') }}
+            </a>
           </h4>
           {{ create_table(presentations, 'presentations', 4) }}
         {% endif %}
+
       </div>
-      <div class="col-md">
-      </div>
+      
+      <!-- Right margin spacing -->
+      <div class="col-md d-none d-xl-block"></div>
     </div>
   </div>
+
+  <!-- Leaflet and Plugins Scripts -->
+  <script src="{{ url_for('static', filename='node_modules/leaflet/dist/leaflet.js', v=ASSETS_VERSION) }}"></script>
+  <script src="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/leaflet.markercluster.js', v=ASSETS_VERSION) }}"></script>
+  <script src="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.js', v=ASSETS_VERSION) }}"></script>
 
   <script>
     window.addEventListener('load', function () {
@@ -269,12 +348,132 @@
         overlayBackgroundColor: 'rgba(56,67,86, 0.8)'
       });
 
+      // ==========================================
+      // SECTION 1: LEAFLET PROJECT LOCAL MAP INNER
+      // ==========================================
+      const mapContainer = document.getElementById("details-project-map");
+      if (mapContainer) {
+        const projectAcronym = "{{ project.acronym }}";
+        const mapLoader = document.getElementById("details-map-loader");
+
+        const detailMap = L.map('details-project-map', {
+          fullscreenControl: true
+        }).setView([42.505, 19.5], 6);
+
+        // OpenStreetMap Tile Layer
+        const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(detailMap);
+
+        // Satellite Tile Layer
+        const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Tiles &copy; Esri &mdash; Source: Esri, USDA, USGS, AEX, and the GIS User Community'
+        });
+
+        // Add Layer control
+        const baseMaps = {
+          "Standard Map": osm,
+          "Satellite Imagery": satellite
+        };
+        L.control.layers(baseMaps).addTo(detailMap);
+
+        const markerCluster = L.markerClusterGroup({
+          showCoverageOnHover: false,
+          maxClusterRadius: 40
+        });
+        detailMap.addLayer(markerCluster);
+
+        // Fetch coordinate markers
+        fetch(`/api_project_places/${projectAcronym}`)
+          .then(res => res.json())
+          .then(data => {
+            if (data.places && data.places.length > 0) {
+              const bounds = L.latLngBounds();
+              let markerCount = 0;
+
+              data.places.forEach(place => {
+                if (place.geometry && place.geometry.coordinates) {
+                  const coords = place.geometry.coordinates;
+                  const latLng = [coords[1], coords[0]];
+
+                  if (!isNaN(latLng[0]) && !isNaN(latLng[1])) {
+                    const marker = L.marker(latLng);
+                    
+                    const exploreUrl = `/projects/${projectAcronym.toLowerCase()}/explore/place/${place.id}`;
+                    const popupHtml = `
+                      <div class="p-1 text-dark">
+                        <h6 class="fw-bold text-primary mb-1">${place.name}</h6>
+                        <span class="badge bg-secondary text-dark rounded-pill mb-2 px-2 py-0.5 small" style="font-size:0.65rem;">
+                          ${place.system_class}
+                        </span>
+                        <p class="text-muted small mb-2 text-truncate" style="max-width: 180px;">
+                          ${place.description || '{{ _("No description available.") }}'}
+                        </p>
+                        <a href="${exploreUrl}" class="btn btn-primary btn-xs text-white fw-bold d-block text-center rounded-pill py-1 small" style="font-size:0.75rem; text-decoration:none;">
+                          {{ _('View Details') }} <i class="bi bi-chevron-right ms-1"></i>
+                        </a>
+                      </div>
+                    `;
+                    marker.bindPopup(popupHtml);
+                    markerCluster.addLayer(marker);
+                    bounds.extend(latLng);
+                    markerCount++;
+                  }
+                }
+              });
+
+              if (markerCount > 0) {
+                detailMap.fitBounds(bounds, { padding: [40, 40] });
+              }
+            }
+          })
+          .catch(err => console.error("Error loading details map markers:", err))
+          .finally(() => {
+            if (mapLoader) {
+              mapLoader.style.opacity = "0";
+              setTimeout(() => {
+                mapLoader.style.display = "none";
+              }, 300);
+            }
+          });
+      }
+
+      // ==========================================
+      // SECTION 2: DYNAMIC HEADER STATUS PILL
+      // ==========================================
+      const today = new Date();
+      const parseDateStr = (str) => {
+        if (!str) return null;
+        const parts = str.split(".");
+        return new Date(parts[2], parts[1] - 1, parts[0]);
+      };
+      const beginDate = parseDateStr("{{ project.begin }}");
+      const endDate = parseDateStr("{{ project.end }}");
+      const statusPill = document.getElementById("details-status-pill");
+
+      if (statusPill && beginDate && endDate) {
+        if (today >= beginDate && today <= endDate) {
+          statusPill.textContent = "{{ _('Active') }}";
+          statusPill.className = "badge bg-success text-white fw-bold px-3 py-1.5 rounded-pill border-0";
+        } else if (today < beginDate) {
+          statusPill.textContent = "{{ _('Upcoming') }}";
+          statusPill.className = "badge bg-warning text-dark fw-bold px-3 py-1.5 rounded-pill border-0";
+        } else {
+          statusPill.textContent = "{{ _('Completed') }}";
+          statusPill.className = "badge bg-secondary text-white fw-bold px-3 py-1.5 rounded-pill border-0";
+        }
+      }
+
+      // ==========================================
+      // SECTION 3: SCROLL-SPY ACTIVE NAV TRACKER
+      // ==========================================
       const sections = document.querySelectorAll('h1[id], h3[id], h4[id]');
       const navLinks = document.querySelectorAll('#floating-navbar a');
 
       function updateActiveState() {
         let activeId = null;
-        const scrollPosition = window.scrollY + 180; // Increased offset for better detection
+        const scrollPosition = window.scrollY + 180; // offset for detection
 
         sections.forEach(section => {
           if (section.getBoundingClientRect().top + window.scrollY <= scrollPosition) {
