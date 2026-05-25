@@ -52,18 +52,7 @@
         <!-- Premium Ambient Glowing Hero Banner -->
         <div class="project-details-hero premium-fade-in text-center text-md-start">
           <div class="row align-items-center g-4">
-            <div class="col-12 col-md-3 text-center">
-              <div class="hero-icon-container">
-                {% if project.icon %}
-                  <img src="{{ url_for('static', filename='images/projects/' + project.acronym + '/' + project.icon) }}"
-                       alt="{{ project.acronym }} icon"
-                       style="max-height: 110px; max-width: 85%; object-fit: contain;">
-                {% else %}
-                  <i class="bi bi-diagram-3 text-primary fs-1"></i>
-                {% endif %}
-              </div>
-            </div>
-            <div class="col-12 col-md-9">
+            <div class="col-12">
               <div class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center gap-2 mb-3">
                 <span class="badge bg-secondary text-dark fw-bold px-3 py-1.5 rounded-pill text-uppercase" style="letter-spacing: 0.05em; font-size: 0.72rem;">
                   {{ project.acronym }}
@@ -385,7 +374,7 @@
         detailMap.addLayer(markerCluster);
 
         // Fetch coordinate markers
-        fetch(`/api_project_places/${projectAcronym}`)
+        fetch(`{{ url_for('api_project_places', project_acronym=project.acronym) }}`)
           .then(res => res.json())
           .then(data => {
             if (data.places && data.places.length > 0) {
