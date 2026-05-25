@@ -18,6 +18,7 @@ from mop.data.projects.projects import project_data
 from mop.display.image import image_gallery
 from mop.model.api_calls import get_ego_network, get_network_visualisation
 from mop.model.entity import Entity
+from mop.model.narrative import NarrativeGenerator
 from mop.model.explore import (get_oa_by_view_class, system_classes,
                                view_classes)
 from mop.util import (get_dict_entries_by_category,
@@ -223,6 +224,8 @@ def entity_project_view(
 
      timeline_events.sort(key=lambda x: x['sort_date'] or '')
 
+     narratives = NarrativeGenerator.generate(entity, project=project, view=view)
+
      return render_template(
          'explore/project_entity_view.html',
          entity=entity,
@@ -234,7 +237,8 @@ def entity_project_view(
          related_places=related_places,
          timeline_events=timeline_events,
          path=(project, view),
-         system_classes=system_classes)
+         system_classes=system_classes,
+         narratives=narratives)
 
 
 

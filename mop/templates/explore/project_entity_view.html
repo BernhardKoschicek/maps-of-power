@@ -117,7 +117,6 @@
                 </tbody>
               </table>
             </div>
-
             {% if entity.links %}
               <div class="mt-4 pt-3 border-top">
                 <div class="d-flex flex-wrap gap-2">
@@ -433,10 +432,10 @@
       </div>
     </div>
 
-    <div class="row pt-5">
+    <div class="row pt-4">
       {% if entity.description or relations['source_translations'] %}
         <div class="col-12">
-          <div class="card shadow-sm border-0 rounded-4 mb-5">
+          <div class="card shadow-sm border-0 rounded-4 mb-4">
             {% if relations['source_translations'] %}
               <div class="card-header bg-white border-0 p-4 pb-0">
                 <ul class="nav nav-tabs card-header-tabs border-0 network-tabs" id="description-tabs" role="tablist">
@@ -495,7 +494,71 @@
           </div>
         </div>
       {% endif %}
+    </div>
 
+    {% if narratives %}
+      <style>
+        .narrative-card {
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .narrative-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+          border-color: var(--bs-primary) !important;
+        }
+        .narrative-text-container {
+          max-height: 4.5em;
+          overflow: hidden;
+          position: relative;
+          transition: max-height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .narrative-text-container.collapsable:not(.expanded)::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1.5em;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+          pointer-events: none;
+          transition: opacity 0.2s ease;
+          opacity: 1;
+        }
+      </style>
+      <div class="row pt-2">
+        <div class="col-12">
+          <div class="card shadow-sm border-0 rounded-4 bg-light-subtle mb-4">
+            <div class="card-body p-4">
+              <h3 class="card-title text-primary mb-4 d-flex align-items-center">
+                <i class="bi bi-journal-richtext me-2 fs-3"></i>
+                <span>{{ _('Narrative Connections') }}</span>
+              </h3>
+              <div class="row g-3">
+                {% for narrative in narratives %}
+                  <div class="col-12">
+                    <div class="narrative-card p-3 bg-white rounded-3 border border-light-subtle d-flex align-items-start gap-3 shadow-sm">
+                      <div class="bg-primary-subtle text-primary rounded-circle p-2 d-flex align-items-center justify-content-center mt-1" style="width: 36px; height: 36px; flex-shrink: 0;">
+                        <i class="bi {{ narrative.icon }} fs-5"></i>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <div class="fs-5 lh-base text-dark narrative-text-container">
+                          {{ narrative.text | safe }}
+                        </div>
+                        <button class="btn btn-link btn-sm p-0 mt-1 text-primary fw-bold text-decoration-none btn-narrative-toggle d-none" style="font-size: 0.9rem;">
+                          <i class="bi bi-chevron-down me-1"></i>Show more
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="row pt-5">
       {% if relations['references'] %}
         <div class="col-12">
           <div class="card shadow-sm border-0 rounded-4 mb-5">
@@ -669,8 +732,37 @@
 
       function toggleIcon(key) {
           const icon = document.getElementById('icon-' + key);
-          icon.classList.toggle('rotate-180');
+          if (icon) {
+              icon.classList.toggle('rotate-180');
+          }
       }
+
+      // Narrative connections toggle logic
+      document.addEventListener("DOMContentLoaded", function() {
+          document.querySelectorAll('.narrative-text-container').forEach(container => {
+              if (container.scrollHeight > container.clientHeight + 5) {
+                  container.classList.add('collapsable');
+                  const toggleBtn = container.nextElementSibling;
+                  if (toggleBtn && toggleBtn.classList.contains('btn-narrative-toggle')) {
+                      toggleBtn.classList.remove('d-none');
+                      toggleBtn.addEventListener('click', () => {
+                          if (container.classList.contains('expanded')) {
+                              container.classList.remove('expanded');
+                              container.style.maxHeight = '4.5em';
+                              toggleBtn.innerHTML = '<i class="bi bi-chevron-down me-1"></i>Show more';
+                          } else {
+                              container.classList.add('expanded');
+                              container.style.maxHeight = container.scrollHeight + 'px';
+                              toggleBtn.innerHTML = '<i class="bi bi-chevron-up me-1"></i>Show less';
+                          }
+                      });
+                  }
+              } else {
+                  container.style.maxHeight = 'none';
+                  container.style.overflow = 'visible';
+              }
+          });
+      });
   </script>
 
   {#  <script>#}

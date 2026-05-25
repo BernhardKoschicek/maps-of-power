@@ -56,7 +56,7 @@ class PresentationReferenceModel(BaseModel):
     title: str
     type: Optional[str] = None
     typeId: Optional[int] = Field(None, alias="typeId")
-    citation: str
+    citation: Optional[str] = None
     pages: Optional[str] = None
 
     class Config:
@@ -169,6 +169,8 @@ class Relation:
     type: Optional[str]
     description: Optional[str]
     geometry: Optional[Any]
+    properties: List[str] = field(default_factory=list)
+    inverse: bool = False
     raw_begin: Optional[str] = None
     raw_end: Optional[str] = None
 
@@ -304,6 +306,8 @@ class Entity:
                 rel_type = ", ".join([rt.type for rt in rel.relationTypes if rt.type]) if rel.relationTypes else None
                 raw_begin_val = rel.when.start.earliest if (rel.when and rel.when.start) else None
                 raw_end_val = rel.when.end.latest if (rel.when and rel.when.end) else None
+                properties = [rt.property for rt in rel.relationTypes if rt.property] if rel.relationTypes else []
+                is_inverse = any(p.split("_", 1)[0].endswith("i") for p in properties)
 
                 rel_obj = Relation(
                     relation_to_id=str(rel.id),
@@ -314,6 +318,8 @@ class Entity:
                     type=rel_type,
                     description=rel.description or "",
                     geometry=get_geometry_data(rel.geometries),
+                    properties=properties,
+                    inverse=is_inverse,
                     raw_begin=raw_begin_val,
                     raw_end=raw_end_val
                 )
