@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/MarkerCluster.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.css', v=ASSETS_VERSION) }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/projects_premium.css', v=ASSETS_VERSION) }}">
 
   {% set side_nav=[
@@ -58,7 +59,7 @@
                   {{ project.acronym }}
                 </span>
                 <span class="badge bg-light text-primary fw-bold px-3 py-1.5 rounded-pill border" id="details-status-pill">
-                  Active
+                  {{ _('Active') }}
                 </span>
               </div>
               <h1 class="display-6 fw-extrabold text-white mb-3" style="font-weight: 850; font-size: 1.85rem;" id="description">
@@ -133,7 +134,7 @@
               </div>
 
               <div class="details-sidebar-section">
-                <div class="details-sidebar-label">PI (Project Investigator):</div>
+                <div class="details-sidebar-label">{{ _('PI (Project Investigator)') }}:</div>
                 <div class="d-flex flex-wrap gap-1 mt-1">
                   {% for pi in project.pi %}
                     <span class="badge-pi" style="font-size:0.75rem; margin:0 2px 2px 0;">{{ pi }}</span>
@@ -326,7 +327,9 @@
   <!-- Leaflet and Plugins Scripts -->
   <script src="{{ url_for('static', filename='node_modules/leaflet/dist/leaflet.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/leaflet.markercluster.js', v=ASSETS_VERSION) }}"></script>
+  <script src="{{ url_for('static', filename='node_modules/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.js', v=ASSETS_VERSION) }}"></script>
+  <script src="{{ url_for('static', filename='js/map_layers.js', v=ASSETS_VERSION) }}"></script>
 
   <script>
     window.addEventListener('load', function () {
@@ -349,23 +352,8 @@
           fullscreenControl: true
         }).setView([42.505, 19.5], 6);
 
-        // OpenStreetMap Tile Layer
-        const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(detailMap);
-
-        // Satellite Tile Layer
-        const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-          attribution: 'Tiles &copy; Esri &mdash; Source: Esri, USDA, USGS, AEX, and the GIS User Community'
-        });
-
-        // Add Layer control
-        const baseMaps = {
-          "Standard Map": osm,
-          "Satellite Imagery": satellite
-        };
-        L.control.layers(baseMaps).addTo(detailMap);
+        // Use global shared setupPremiumMapLayers helper to avoid duplication (DRY)
+        setupPremiumMapLayers(detailMap);
 
         const markerCluster = L.markerClusterGroup({
           showCoverageOnHover: false,

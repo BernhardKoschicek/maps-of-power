@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-14 14:06+0100\n"
+"POT-Creation-Date: 2026-05-25 22:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,25 +17,77 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: mop/util.py:39
+#: mop/util.py:36
 msgid "about"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:18
-#: mop/templates/project_details.html:34 mop/util.py:40
+#: mop/templates/explore/project_entity_view.html:59
+#: mop/templates/explore/project_explore_table.html:10
+#: mop/templates/project_details.html:43 mop/util.py:37
 msgid "projects"
 msgstr ""
 
-#: mop/util.py:41
+#: mop/util.py:38
 msgid "atlas"
 msgstr ""
 
-#: mop/templates/about.html:74 mop/templates/events.html:6 mop/util.py:43
+#: mop/util.py:39
+msgid "histgeo"
+msgstr ""
+
+#: mop/templates/_events_list.html:44 mop/util.py:40
 msgid "events"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:137 mop/util.py:44
+#: mop/templates/explore/project_entity_view.html:30
+#: mop/templates/explore/project_entity_view.html:615 mop/util.py:41
 msgid "literature"
+msgstr ""
+
+#: mop/views.py:336
+msgid "An error occurred"
+msgstr ""
+
+#: mop/views.py:338
+msgid "An unexpected error occurred. Please try again later."
+msgstr ""
+
+#: mop/views.py:341
+msgid "Page Not Found"
+msgstr ""
+
+#: mop/views.py:343
+msgid ""
+"The coordinates you entered seem to be out of bounds. The page you are "
+"looking for does not exist."
+msgstr ""
+
+#: mop/views.py:346
+msgid "Access Denied"
+msgstr ""
+
+#: mop/views.py:348
+msgid "You do not have permission to access this area. Restricted coordinates."
+msgstr ""
+
+#: mop/views.py:351
+msgid "I'm a Teapot"
+msgstr ""
+
+#: mop/views.py:353
+msgid ""
+"The server refuses the attempt to brew coffee with a teapot. Yes, this is"
+" a real error."
+msgstr ""
+
+#: mop/views.py:376 mop/views.py:383
+msgid "Internal Server Error"
+msgstr ""
+
+#: mop/views.py:385
+msgid ""
+"An unexpected server error occurred. Our cartographers are looking into "
+"it."
 msgstr ""
 
 #: mop/data/events.py:8 mop/data/events.py:12
@@ -185,7 +237,7 @@ msgid "December"
 msgstr ""
 
 #: mop/data/histgeo.py:93 mop/data/histgeo.py:130 mop/data/histgeo.py:167
-#: mop/data/literature.py:91
+#: mop/data/literature.py:104
 msgid "eds."
 msgstr ""
 
@@ -269,11 +321,11 @@ msgstr ""
 msgid "lecture_2_2"
 msgstr ""
 
-#: mop/data/histgeo.py:216
+#: mop/data/histgeo.py:216 mop/templates/histgeo.html:129
 msgid "author"
 msgstr ""
 
-#: mop/data/histgeo.py:217
+#: mop/data/histgeo.py:217 mop/templates/histgeo.html:133
 msgid "pages"
 msgstr ""
 
@@ -281,11 +333,12 @@ msgstr ""
 msgid "ISBN"
 msgstr ""
 
-#: mop/data/histgeo.py:219
+#: mop/data/histgeo.py:219 mop/templates/histgeo.html:141
 msgid "citation"
 msgstr ""
 
-#: mop/data/histgeo.py:220
+#: mop/data/histgeo.py:220 mop/templates/histgeo.html:146
+#: mop/templates/histgeo.html:149
 msgid "order"
 msgstr ""
 
@@ -325,134 +378,263 @@ msgstr ""
 msgid "image_landscape_caption"
 msgstr ""
 
-#: mop/data/literature.py:12
+#: mop/data/institutes.py:5
+msgid ""
+"Institute for Byzantine Studies of the Serbian Academy of Sciences and "
+"Arts"
+msgstr ""
+
+#: mop/data/institutes.py:13
+msgid "Science Fund of the Republic of Serbia"
+msgstr ""
+
+#: mop/data/institutes.py:19
+msgid "Zukunftsfonds"
+msgstr ""
+
+#: mop/data/institutes.py:25
+msgid "Deutsche Forschungsgemeinschaft"
+msgstr ""
+
+#: mop/data/institutes.py:31
+msgid "Metropolis von Austria"
+msgstr ""
+
+#: mop/data/institutes.py:34
+msgid "S. Em. Metropolit Arsenios von Austria"
+msgstr ""
+
+#: mop/data/institutes.py:35
+msgid "Fleischmarkt 13<br>1010 Wien<br>Österreich"
+msgstr ""
+
+#: mop/data/institutes.py:37 mop/templates/imprint.html:10
+#: mop/templates/layout.html:101
+msgid "Austrian Academy of Sciences"
+msgstr ""
+
+#: mop/data/institutes.py:43
+msgid "Austrian Archaeological Institute"
+msgstr ""
+
+#: mop/data/institutes.py:49 mop/templates/layout.html:102
+msgid "Institute for Medieval Research"
+msgstr ""
+
+#: mop/data/institutes.py:55
+msgid "Abteilung Byzanzforschung (ABF)"
+msgstr ""
+
+#: mop/data/institutes.py:58
+msgid ""
+"Österreichische Akademie der Wissenschaften (ÖAW) <br> Institut für "
+"Mittelalterforschung (IMAFO)"
+msgstr ""
+
+#: mop/data/institutes.py:62
+msgid "Austrian Centre for Digital Humanities and Cultural Heritage"
+msgstr ""
+
+#: mop/data/institutes.py:68
+msgid "University of Vienna"
+msgstr ""
+
+#: mop/data/institutes.py:74
+msgid "Austrian Science Fund"
+msgstr ""
+
+#: mop/data/institutes.py:80
+msgid "Jubiläumsfonds der Oesterreichischen Nationalbank"
+msgstr ""
+
+#: mop/data/institutes.py:87
+msgid "Austrian Agency for International Cooperation in Education and Research"
+msgstr ""
+
+#: mop/data/institutes.py:94
+msgid "Wien Kultur (MA 7)"
+msgstr ""
+
+#: mop/data/institutes.py:100
+msgid "Austrian Institute of Technology"
+msgstr ""
+
+#: mop/data/institutes.py:106
+msgid "Belgrade City Museum"
+msgstr ""
+
+#: mop/data/institutes.py:112
+msgid "University of Belgrade"
+msgstr ""
+
+#: mop/data/institutes.py:118
+msgid "National Library of Serbia"
+msgstr ""
+
+#: mop/data/institutes.py:124
+msgid "Biblioteka Matice Srpske"
+msgstr ""
+
+#: mop/data/institutes.py:130
+msgid "Tabula Imperii Byzantini"
+msgstr ""
+
+#: mop/data/institutes.py:136
+msgid "Union Académique Internationale"
+msgstr ""
+
+#: mop/data/institutes.py:142
+msgid "Land Niederösterreich, Abteilung Wissenschaft und Forschung"
+msgstr ""
+
+#: mop/data/institutes.py:149
+msgid "Katholische Hochschule ITI"
+msgstr ""
+
+#: mop/data/institutes.py:155
+msgid "Orient & Méditerranée"
+msgstr ""
+
+#: mop/data/institutes.py:161
+msgid "Ss. Cyril and Methodius University"
+msgstr ""
+
+#: mop/data/literature.py:9
+msgid "Belgrad"
+msgstr ""
+
+#: mop/data/literature.py:24
 msgid "Berlin"
 msgstr ""
 
-#: mop/data/literature.py:26 mop/data/literature.py:106
+#: mop/data/literature.py:39 mop/data/literature.py:119
 msgid "Novi Sad"
 msgstr ""
 
-#: mop/data/literature.py:42
+#: mop/data/literature.py:55
 msgid "Bucharest"
 msgstr ""
 
-#: mop/data/literature.py:42
+#: mop/data/literature.py:55
 msgid "Brăila"
 msgstr ""
 
-#: mop/data/literature.py:55 mop/data/literature.py:82
-#: mop/data/presentations.py:54 mop/data/presentations.py:75
-#: mop/data/presentations.py:84 mop/data/presentations.py:151
-#: mop/data/projects/idcew.py:45 mop/data/projects/idcew.py:49
+#: mop/data/literature.py:68 mop/data/literature.py:95
+#: mop/data/presentations.py:63 mop/data/presentations.py:84
+#: mop/data/presentations.py:93 mop/data/presentations.py:160
+#: mop/data/projects/idcew.py:54 mop/data/projects/idcew.py:57
 msgid "Belgrade"
 msgstr ""
 
-#: mop/data/literature.py:68
+#: mop/data/literature.py:81
 msgid "Darmstadt"
 msgstr ""
 
-#: mop/data/literature.py:95 mop/data/literature.py:117
-#: mop/data/presentations.py:166
+#: mop/data/literature.py:108 mop/data/literature.py:130
+#: mop/data/presentations.py:175
 msgid "Leipzig"
 msgstr ""
 
-#: mop/data/literature.py:131
+#: mop/data/literature.py:144
 msgid "Göttingen"
 msgstr ""
 
-#: mop/data/literature.py:138
+#: mop/data/literature.py:151
 msgid "etc."
 msgstr ""
 
-#: mop/data/literature.py:143
+#: mop/data/literature.py:156
 msgid "Krems"
 msgstr ""
 
-#: mop/data/literature.py:167
+#: mop/data/literature.py:180
 msgid "cambridge, MA"
 msgstr ""
 
-#: mop/data/literature.py:167 mop/data/literature.py:176
-#: mop/data/literature.py:235
+#: mop/data/literature.py:180 mop/data/literature.py:189
+#: mop/data/literature.py:248
 msgid "london"
 msgstr ""
 
-#: mop/data/literature.py:176
+#: mop/data/literature.py:189
 msgid "new york"
 msgstr ""
 
-#: mop/data/literature.py:185
+#: mop/data/literature.py:198
 msgid "stroud"
 msgstr ""
 
-#: mop/data/literature.py:197
+#: mop/data/literature.py:210
 msgid "mainz"
 msgstr ""
 
-#: mop/data/literature.py:197
+#: mop/data/literature.py:210
 msgid "ruhpolding"
 msgstr ""
 
-#: mop/data/literature.py:212
+#: mop/data/literature.py:225
 msgid "vienna"
 msgstr ""
 
-#: mop/data/literature.py:212
+#: mop/data/literature.py:225
 msgid "novi sad"
 msgstr ""
 
-#: mop/data/literature.py:225 mop/data/literature.py:257
+#: mop/data/literature.py:238 mop/data/literature.py:270
 msgid "venice"
 msgstr ""
 
-#: mop/data/literature.py:245
+#: mop/data/literature.py:258
 msgid "exter"
 msgstr ""
 
-#: mop/data/presentations.py:12
-msgid "Heidelberg"
+#: mop/data/presentations.py:9
+msgid "Wien"
 msgstr ""
 
 #: mop/data/presentations.py:21
+msgid "Heidelberg"
+msgstr ""
+
+#: mop/data/presentations.py:30
 msgid "Ebreichsdorf"
 msgstr ""
 
-#: mop/data/presentations.py:32 mop/data/presentations.py:96
-#: mop/data/presentations.py:107 mop/data/presentations.py:117
-#: mop/data/presentations.py:128 mop/data/presentations.py:140
-#: mop/data/presentations.py:215 mop/data/presentations.py:238
-#: mop/data/presentations.py:250 mop/data/presentations.py:261
-#: mop/data/presentations.py:272 mop/data/presentations.py:283
-#: mop/data/presentations.py:293
+#: mop/data/presentations.py:41 mop/data/presentations.py:105
+#: mop/data/presentations.py:116 mop/data/presentations.py:126
+#: mop/data/presentations.py:137 mop/data/presentations.py:149
+#: mop/data/presentations.py:224 mop/data/presentations.py:247
+#: mop/data/presentations.py:259 mop/data/presentations.py:270
+#: mop/data/presentations.py:281 mop/data/presentations.py:292
+#: mop/data/presentations.py:302
 msgid "Leeds"
 msgstr ""
 
-#: mop/data/presentations.py:42 mop/data/presentations.py:191
-#: mop/data/presentations.py:304 mop/data/presentations.py:316
-#: mop/data/projects/idcew.py:44 mop/data/projects/idcew.py:48
-#: mop/data/projects/tarsr.py:45 mop/data/projects/tarsr.py:54
-#: mop/templates/imprint.html:14 mop/templates/layout.html:89
+#: mop/data/presentations.py:51 mop/data/presentations.py:200
+#: mop/data/presentations.py:313 mop/data/presentations.py:325
+#: mop/data/projects/idcew.py:53 mop/data/projects/tarsr.py:55
+#: mop/data/projects/tarsr.py:64 mop/templates/imprint.html:14
+#: mop/templates/layout.html:105
 msgid "Vienna"
 msgstr ""
 
-#: mop/data/presentations.py:53
+#: mop/data/presentations.py:62
 msgid "The Society of the Friends of Holy Mount Athos"
 msgstr ""
 
-#: mop/data/presentations.py:66
+#: mop/data/presentations.py:75
 msgid "Oxford"
 msgstr ""
 
-#: mop/data/presentations.py:177
+#: mop/data/presentations.py:186
 msgid "Los Angeles"
 msgstr ""
 
-#: mop/data/presentations.py:204
+#: mop/data/presentations.py:213
 msgid "Thessaloniki"
 msgstr ""
 
-#: mop/data/presentations.py:227
+#: mop/data/presentations.py:236
 msgid "Florenz"
 msgstr ""
 
@@ -493,7 +675,7 @@ msgid "barbyz_description_6"
 msgstr ""
 
 #: mop/data/projects/borderzones.py:10 mop/data/projects/holdura.py:13
-#: mop/data/projects/vlachs.py:10
+#: mop/data/projects/tarsr.py:10 mop/data/projects/vlachs.py:10
 msgid "Final project report"
 msgstr ""
 
@@ -551,37 +733,37 @@ msgstr ""
 msgid "borderzones_description_4"
 msgstr ""
 
-#: mop/data/projects/dgse.py:10
+#: mop/data/projects/dgse.py:8
 msgid "The Parish Church of Saint Andrew in Ebreichsdorf from the South-East"
 msgstr ""
 
-#: mop/data/projects/dgse.py:15
+#: mop/data/projects/dgse.py:14
 msgid "The Luckate Stein"
 msgstr ""
 
-#: mop/data/projects/dgse.py:22
+#: mop/data/projects/dgse.py:20
 msgid "View of the Area around the Castle of Ebreichsdorf from the East"
 msgstr ""
 
-#: mop/data/projects/dgse.py:28
+#: mop/data/projects/dgse.py:26
 msgid "The Castle of Pottendorf"
 msgstr ""
 
-#: mop/data/projects/dgse.py:36
+#: mop/data/projects/dgse.py:37
 msgid ""
 "Digital Humanities using the Example of the Castle of Ebreichsdorf in the"
 " Lower Austrian Industrial District"
 msgstr ""
 
-#: mop/data/projects/dgse.py:57
+#: mop/data/projects/dgse.py:58
 msgid "dgse_description_1"
 msgstr ""
 
-#: mop/data/projects/dgse.py:58
+#: mop/data/projects/dgse.py:59
 msgid "dgse_description_2"
 msgstr ""
 
-#: mop/data/projects/dgse.py:59
+#: mop/data/projects/dgse.py:60
 msgid "dgse_description_3"
 msgstr ""
 
@@ -655,12 +837,12 @@ msgstr ""
 msgid "holdura_description_7"
 msgstr ""
 
-#: mop/data/projects/idcew.py:10
+#: mop/data/projects/idcew.py:8
 msgid "The Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
 msgstr ""
 
-#: mop/data/projects/idcew.py:11 mop/data/projects/idcew.py:17
-#: mop/data/projects/idcew.py:23
+#: mop/data/projects/idcew.py:11 mop/data/projects/idcew.py:19
+#: mop/data/projects/idcew.py:27
 msgid "Photograph Collection \"Dipl. Kfm. Wolfgang Milan (1924-2015)\""
 msgstr ""
 
@@ -670,29 +852,29 @@ msgid ""
 "1970s"
 msgstr ""
 
-#: mop/data/projects/idcew.py:22
+#: mop/data/projects/idcew.py:24
 msgid ""
 "The Church of the Annunciation of the Holy Mother of God in Gradac "
 "Monastery in the 1970s"
 msgstr ""
 
-#: mop/data/projects/idcew.py:27
+#: mop/data/projects/idcew.py:32
 msgid ""
 "The Church of the Annunciation of the Holy Mother of God in Gradac "
 "Monastery in 2007"
 msgstr ""
 
-#: mop/data/projects/idcew.py:36
+#: mop/data/projects/idcew.py:45
 msgid ""
 "Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor "
 "connecting East and West in the 13th/14th Centuries (IDCEW)"
 msgstr ""
 
-#: mop/data/projects/idcew.py:53
+#: mop/data/projects/idcew.py:61
 msgid "idcew_description_1"
 msgstr ""
 
-#: mop/data/projects/idcew.py:54
+#: mop/data/projects/idcew.py:62
 msgid "idcew_description_2"
 msgstr ""
 
@@ -728,70 +910,70 @@ msgstr ""
 msgid "rhr_description_2"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:10
+#: mop/data/projects/tarsr.py:20
 msgid ""
 "The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in "
 "the Valley of the River Vardar"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:17
+#: mop/data/projects/tarsr.py:27
 msgid ""
 "Inscription in Honour of the German Emperor Wilhelm II at the Entrance to"
 " the Road Tunnel"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:24
+#: mop/data/projects/tarsr.py:34
 msgid "German Military Cemetery from the First World War near Bitola"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:29
+#: mop/data/projects/tarsr.py:39
 msgid "War Relics from the First World War in Mariovo"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:38
+#: mop/data/projects/tarsr.py:48
 msgid ""
 "Tracing Archaeological Remains and Scholarly Research of the Central "
 "Powers in the Region of Prilep-Bitola during WW I (1915-1918)"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:46 mop/data/projects/tarsr.py:49
-#: mop/data/projects/tarsr.py:52
+#: mop/data/projects/tarsr.py:56 mop/data/projects/tarsr.py:59
+#: mop/data/projects/tarsr.py:62
 msgid "Skopje"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:50
+#: mop/data/projects/tarsr.py:60
 msgid "Prilep"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:51
+#: mop/data/projects/tarsr.py:61
 msgid "Bitola"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:53
+#: mop/data/projects/tarsr.py:63
 msgid "Paris"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:58
+#: mop/data/projects/tarsr.py:68
 msgid "tracing_description_1"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:59
+#: mop/data/projects/tarsr.py:69
 msgid "tracing_description_2"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:60
+#: mop/data/projects/tarsr.py:70
 msgid "tracing_description_3"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:61
+#: mop/data/projects/tarsr.py:71
 msgid "tracing_description_4"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:62
+#: mop/data/projects/tarsr.py:72
 msgid "tracing_description_5"
 msgstr ""
 
-#: mop/data/projects/tarsr.py:63
+#: mop/data/projects/tarsr.py:73
 msgid "tracing_description_6"
 msgstr ""
 
@@ -910,139 +1092,151 @@ msgstr ""
 msgid "Physical objects"
 msgstr ""
 
-#: mop/templates/about.html:17
+#: mop/templates/about.html:16
 msgid "about_text_1"
 msgstr ""
 
-#: mop/templates/about.html:20
+#: mop/templates/about.html:19
 msgid "about_text_2"
 msgstr ""
 
-#: mop/templates/about.html:26
+#: mop/templates/about.html:25
 msgid "about_text_3"
 msgstr ""
 
-#: mop/templates/about.html:29
+#: mop/templates/about.html:28
 msgid "about_text_4"
 msgstr ""
 
-#: mop/templates/about.html:35
+#: mop/templates/about.html:34
 msgid "historical ecology"
 msgstr ""
 
-#: mop/templates/about.html:37
+#: mop/templates/about.html:36
 msgid "about_point_1"
 msgstr ""
 
-#: mop/templates/about.html:40
+#: mop/templates/about.html:39
 msgid "about_text_5"
 msgstr ""
 
-#: mop/templates/about.html:44
+#: mop/templates/about.html:43
 msgid "sacred topography"
 msgstr ""
 
-#: mop/templates/about.html:46
+#: mop/templates/about.html:45
 msgid "about_point_2"
 msgstr ""
 
-#: mop/templates/about.html:49
+#: mop/templates/about.html:48
 msgid "about_text_6"
 msgstr ""
 
-#: mop/templates/about.html:53
+#: mop/templates/about.html:52
 msgid "cultural heritage"
 msgstr ""
 
-#: mop/templates/about.html:55
+#: mop/templates/about.html:54
 msgid "about_point_3"
 msgstr ""
 
-#: mop/templates/about.html:58
+#: mop/templates/about.html:57
 msgid "about_text_8"
 msgstr ""
 
-#: mop/templates/about.html:65
+#: mop/templates/about.html:64
 msgid "about_text_7"
 msgstr ""
 
-#: mop/templates/about.html:68
+#: mop/templates/about.html:67
 msgid "about_text_7a"
 msgstr ""
 
-#: mop/templates/about.html:97
+#: mop/templates/about.html:77
 msgid "vienna_manifesto"
 msgstr ""
 
-#: mop/templates/histgeo.html:12
-msgid "histgeo_intro_1"
-msgstr ""
-
-#: mop/templates/histgeo.html:15
-msgid "histgeo_intro_2"
-msgstr ""
-
-#: mop/templates/histgeo.html:17
-msgid "Digital HistGeo Lecture Series"
+#: mop/templates/error.html:49
+msgid "go back to the start page"
 msgstr ""
 
 #: mop/templates/histgeo.html:19
-msgid "histgeo_lecture_1"
+msgid "histgeo_intro_1"
 msgstr ""
 
 #: mop/templates/histgeo.html:22
+msgid "histgeo_intro_2"
+msgstr ""
+
+#: mop/templates/histgeo.html:27
+msgid "Digital HistGeo Lecture Series"
+msgstr ""
+
+#: mop/templates/histgeo.html:31
+msgid "histgeo_lecture_1"
+msgstr ""
+
+#: mop/templates/histgeo.html:34
 msgid "histgeo_lecture_2"
 msgstr ""
 
-#: mop/templates/histgeo.html:25
+#: mop/templates/histgeo.html:37
 msgid "histgeo_lecture_3"
 msgstr ""
 
-#: mop/templates/histgeo.html:32 mop/templates/histgeo.html:61
+#: mop/templates/histgeo.html:46 mop/templates/histgeo.html:96
 msgid "no"
 msgstr ""
 
-#: mop/templates/histgeo.html:45
+#: mop/templates/histgeo.html:64
+msgid "HistGeo Newsletter"
+msgstr ""
+
+#: mop/templates/histgeo.html:68
 msgid "histgeo_newsletter_1"
 msgstr ""
 
-#: mop/templates/histgeo.html:48
+#: mop/templates/histgeo.html:71
 msgid "histgeo_newsletter_2"
 msgstr ""
 
-#: mop/templates/histgeo.html:51
+#: mop/templates/histgeo.html:74
 msgid "histgeo_newsletter_3"
 msgstr ""
 
-#: mop/templates/histgeo.html:75
+#: mop/templates/histgeo.html:109
 msgid "volumes"
 msgstr ""
 
-#: mop/templates/histgeo.html:130
+#: mop/templates/histgeo.html:176
 msgid "Citation Rules and Fonts"
 msgstr ""
 
-#: mop/templates/histgeo.html:132
+#: mop/templates/histgeo.html:178
 msgid "histgeo_rules"
 msgstr ""
 
-#: mop/templates/histgeo.html:136 mop/templates/histgeo.html:144
+#: mop/templates/histgeo.html:183
 msgid "Citation Rules"
 msgstr ""
 
-#: mop/templates/histgeo.html:138
+#: mop/templates/histgeo.html:185
 msgid "histgeo_citation_1"
 msgstr ""
 
-#: mop/templates/histgeo.html:148
+#: mop/templates/histgeo.html:191
+msgid "Download PDF"
+msgstr ""
+
+#: mop/templates/histgeo.html:195
 msgid "Fonts"
 msgstr ""
 
-#: mop/templates/histgeo.html:150
+#: mop/templates/histgeo.html:197
 msgid "histgeo_fonts_1"
 msgstr ""
 
-#: mop/templates/imprint.html:7 mop/templates/layout.html:114
+#: mop/templates/imprint.html:7 mop/templates/layout.html:130
 msgid "imprint"
 msgstr ""
 
@@ -1056,17 +1250,13 @@ msgstr ""
 msgid "Media owner"
 msgstr ""
 
-#: mop/templates/imprint.html:10 mop/templates/layout.html:85
-msgid "Austrian Academy of Sciences"
-msgstr ""
-
 #: mop/templates/imprint.html:12
 msgid ""
 "Corporate body under public law (Federal Law Gazette (BGBl) 569/1921 as "
 "amended by Federal Law Gazette (BGBl) I 31/2018)"
 msgstr ""
 
-#: mop/templates/imprint.html:14 mop/templates/layout.html:89
+#: mop/templates/imprint.html:14 mop/templates/layout.html:105
 msgid "Austria"
 msgstr ""
 
@@ -1168,23 +1358,19 @@ msgstr ""
 msgid "Further information on data protection on websites of the OeAW."
 msgstr ""
 
-#: mop/templates/layout.html:83
+#: mop/templates/layout.html:99
 msgid "contact"
 msgstr ""
 
-#: mop/templates/layout.html:86
-msgid "Institute for Medieval Research"
-msgstr ""
-
-#: mop/templates/layout.html:87
+#: mop/templates/layout.html:103
 msgid "Division of Byzantine Research"
 msgstr ""
 
-#: mop/templates/layout.html:89
+#: mop/templates/layout.html:105
 msgid "Europe"
 msgstr ""
 
-#: mop/templates/layout.html:105
+#: mop/templates/layout.html:121
 msgid "navigation"
 msgstr ""
 
@@ -1220,84 +1406,595 @@ msgstr ""
 msgid "Further Reading"
 msgstr ""
 
-#: mop/templates/project_details.html:46
+#: mop/templates/macros.html:30
+msgid "Open external link"
+msgstr ""
+
+#: mop/templates/macros.html:36
+msgid "Download file"
+msgstr ""
+
+#: mop/templates/macros.html:64
+msgid "Search"
+msgstr ""
+
+#: mop/templates/navbar.html:61
+msgid "Other"
+msgstr ""
+
+#: mop/templates/project_details.html:61 mop/templates/project_details.html:446
+#: mop/templates/projects.html:110 mop/templates/projects.html:143
+#: mop/templates/projects.html:221 mop/templates/projects.html:274
+#: mop/templates/projects.html:598
+msgid "Active"
+msgstr ""
+
+#: mop/templates/project_details.html:80
 msgid "description"
 msgstr ""
 
-#: mop/templates/project_details.html:54
-msgid "Funded by"
-msgstr ""
-
-#: mop/templates/project_details.html:69
+#: mop/templates/project_details.html:93
 msgid "Project Number"
 msgstr ""
 
-#: mop/templates/project_details.html:76
+#: mop/templates/project_details.html:100
 msgid "Duration"
 msgstr ""
 
-#: mop/templates/project_details.html:81
+#: mop/templates/project_details.html:107
+msgid "Funded by"
+msgstr ""
+
+#: mop/templates/project_details.html:122
 msgid "Hosted by"
 msgstr ""
 
-#: mop/templates/project_details.html:104 mop/templates/projects.html:32
+#: mop/templates/project_details.html:136
+msgid "PI (Project Investigator)"
+msgstr ""
+
+#: mop/templates/project_details.html:146 mop/templates/projects.html:191
 msgid "Employees"
 msgstr ""
 
-#: mop/templates/project_details.html:115
+#: mop/templates/project_details.html:157
 msgid "Cooperation and External Employees"
 msgstr ""
 
-#: mop/templates/project_details.html:128
+#: mop/templates/project_details.html:173
 msgid "further information"
 msgstr ""
 
-#: mop/templates/project_details.html:138
+#: mop/templates/project_details.html:185
 msgid "media"
 msgstr ""
 
-#: mop/templates/project_details.html:177
+#: mop/templates/project_details.html:226
 msgid "explore"
 msgstr ""
 
-#: mop/templates/project_details.html:196
-msgid ""
-"The access and use of our data is subject to the Creative Commons License"
-" CC BY 4.0 (<a\n"
-"            "
-"href=\"https://creativecommons.org/licenses/by/4.0/\">https://creativecommons.org/licenses/by/4.0/</a>)."
+#: mop/templates/project_details.html:236
+msgid "Mapping Spatial Coordinates..."
 msgstr ""
 
-#: mop/templates/project_details.html:205
+#: mop/templates/project_details.html:237
+msgid "Downloading geographical locations from OpenAtlas."
+msgstr ""
+
+#: mop/templates/project_details.html:257
+msgid ""
+"The access and use of our data is subject to the Creative Commons License"
+" CC BY 4.0 (<a href=\"https://creativecommons.org/licenses/by/4.0/\" "
+"target=\"_blank\">https://creativecommons.org/licenses/by/4.0/</a>)."
+msgstr ""
+
+#: mop/templates/project_details.html:265
 msgid "results"
 msgstr ""
 
-#: mop/templates/project_details.html:244
+#: mop/templates/project_details.html:303
 msgid "publications"
 msgstr ""
 
-#: mop/templates/project_details.html:251
+#: mop/templates/project_details.html:313
 msgid "presentations"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:76
+#: mop/templates/project_details.html:400 mop/templates/projects.html:846
+msgid "No description available."
+msgstr ""
+
+#: mop/templates/project_details.html:403 mop/templates/projects.html:849
+msgid "View Details"
+msgstr ""
+
+#: mop/templates/project_details.html:449 mop/templates/projects.html:222
+msgid "Upcoming"
+msgstr ""
+
+#: mop/templates/project_details.html:452 mop/templates/projects.html:111
+#: mop/templates/projects.html:223 mop/templates/projects.html:278
+#: mop/templates/projects.html:603
+msgid "Completed"
+msgstr ""
+
+#: mop/templates/projects.html:20
+msgid "Research Portal"
+msgstr ""
+
+#: mop/templates/projects.html:23
+msgid "Research Projects"
+msgstr ""
+
+#: mop/templates/projects.html:26
+msgid ""
+"Discover our ongoing and completed research initiatives in Historical "
+"Geography and Digital Humanities. Explore spatial networks, mapped "
+"entities, and ancient records across centuries."
+msgstr ""
+
+#: mop/templates/projects.html:34 mop/templates/projects.html:270
+msgid "Projects"
+msgstr ""
+
+#: mop/templates/projects.html:40
+msgid "Mapped Places"
+msgstr ""
+
+#: mop/templates/projects.html:46
+msgid "Researchers"
+msgstr ""
+
+#: mop/templates/projects.html:52
+msgid "Funding Bodies"
+msgstr ""
+
+#: mop/templates/projects.html:65
+msgid "Overview"
+msgstr ""
+
+#: mop/templates/projects.html:70
+msgid "Timeline Roadmap"
+msgstr ""
+
+#: mop/templates/projects.html:75
+msgid "Research Analytics"
+msgstr ""
+
+#: mop/templates/projects.html:80
+msgid "Data Portal & Map"
+msgstr ""
+
+#: mop/templates/projects.html:85
+msgid "Network Visualisation"
+msgstr ""
+
+#: mop/templates/projects.html:102
+msgid "Search by project name, acronym, PI or employees..."
+msgstr ""
+
+#: mop/templates/projects.html:109
+msgid "All Statuses"
+msgstr ""
+
+#: mop/templates/projects.html:116
+msgid "All Funding"
+msgstr ""
+
+#: mop/templates/projects.html:178
+msgid "Project Investigator"
+msgstr ""
+
+#: mop/templates/projects.html:203
+msgid "Explore Project"
+msgstr ""
+
+#: mop/templates/projects.html:217
+msgid "Interactive Projects Roadmap"
+msgstr ""
+
+#: mop/templates/projects.html:218
+msgid ""
+"View project lifespans dynamically across a chronological 10-year "
+"timeline axis."
+msgstr ""
+
+#: mop/templates/projects.html:231
+msgid "Filter Timeline by Active Year:"
+msgstr ""
+
+#: mop/templates/projects.html:266
+msgid "Statistics Overview"
+msgstr ""
+
+#: mop/templates/projects.html:282
+msgid "Scholars"
+msgstr ""
+
+#: mop/templates/projects.html:286
+msgid ""
+"Aggregated live metrics of collaborative initiatives mapping spatial data"
+" and medieval geographies."
+msgstr ""
+
+#: mop/templates/projects.html:292
+msgid "Grants by Funding Body"
+msgstr ""
+
+#: mop/templates/projects.html:293
+msgid "Proportional project support distribution."
+msgstr ""
+
+#: mop/templates/projects.html:305
+msgid "Academic Host Institutes"
+msgstr ""
+
+#: mop/templates/projects.html:306
+msgid "Volume of active project hosting instances."
+msgstr ""
+
+#: mop/templates/projects.html:315
+msgid "Collaborators Directory"
+msgstr ""
+
+#: mop/templates/projects.html:316
+msgid "Browse and search project scholars and team crossovers."
+msgstr ""
+
+#: mop/templates/projects.html:319
+msgid "Search by researcher or project acronym..."
+msgstr ""
+
+#: mop/templates/projects.html:333
+msgid "Explore Datasets"
+msgstr ""
+
+#: mop/templates/projects.html:335
+msgid ""
+"Filter OpenAtlas spatial locations across all active initiatives in real-"
+"time. Select a project to render its mapped nodes on the interactive map."
+msgstr ""
+
+#: mop/templates/projects.html:340
+msgid "Select Project Source"
+msgstr ""
+
+#: mop/templates/projects.html:342
+msgid "Select a project..."
+msgstr ""
+
+#: mop/templates/projects.html:343
+msgid "All Active Projects"
+msgstr ""
+
+#: mop/templates/projects.html:353
+msgid "Dataset Coverage"
+msgstr ""
+
+#: mop/templates/projects.html:357
+msgid "Places Loaded"
+msgstr ""
+
+#: mop/templates/projects.html:364
+msgid "Network Endpoint"
+msgstr ""
+
+#: mop/templates/projects.html:365
+msgid ""
+"Using the dynamic Maps of Power api endpoint to map clustered geo-"
+"entities. Geometries can be clicked to inspect detail records."
+msgstr ""
+
+#: mop/templates/projects.html:377
+msgid "Fetching Map Data..."
+msgstr ""
+
+#: mop/templates/projects.html:378
+msgid "Downloading geographical features from the OpenAtlas database."
+msgstr ""
+
+#: mop/templates/projects.html:393
+msgid "Network Explorer"
+msgstr ""
+
+#: mop/templates/projects.html:395
+msgid ""
+"Visualise the entity networks, connections, and relations from each "
+"project in real-time. Nodes can be clicked and inspected."
+msgstr ""
+
+#: mop/templates/projects.html:400
+msgid "Select Projects"
+msgstr ""
+
+#: mop/templates/projects.html:417
+msgid "Network Statistics"
+msgstr ""
+
+#: mop/templates/projects.html:422
+msgid "Entities (Nodes)"
+msgstr ""
+
+#: mop/templates/projects.html:431
+msgid "Relations (Edges)"
+msgstr ""
+
+#: mop/templates/projects.html:439
+msgid "Interactive Controls"
+msgstr ""
+
+#: mop/templates/projects.html:440
+msgid ""
+"Zoom to scroll, drag to pan, and click on any entity node to inspect its "
+"name and class. Double-click a node to open its full details page."
+msgstr ""
+
+#: mop/templates/projects.html:452
+msgid "Generating Network Graph..."
+msgstr ""
+
+#: mop/templates/projects.html:453
+msgid "Fetching entities and computing relations from the database."
+msgstr ""
+
+#: mop/templates/projects.html:469
+msgid "Side-by-Side Project Compare"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:22
+#: mop/templates/explore/project_entity_view.html:111
 msgid "properties"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:122
-#: mop/templates/explore/project_explore_table.html:25
+#: mop/templates/explore/project_entity_view.html:24
+#: mop/templates/explore/project_entity_view.html:489
+#: mop/templates/explore/project_entity_view.html:498
+#: mop/templates/explore/project_entity_view.html:675
+#: mop/templates/explore/project_explore_table.html:52
 msgid "Description"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:246
+#: mop/templates/explore/project_entity_view.html:27
+#: mop/templates/explore/project_entity_view.html:582
+msgid "Narrative Connections"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:33
+#: mop/templates/explore/project_entity_view.html:223
+#: mop/templates/explore/project_entity_view.html:646
+msgid "Relations"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:36
+#: mop/templates/explore/project_entity_view.html:744
 msgid "files"
 msgstr ""
 
-#: mop/templates/explore/project_explore_table.html:15
+#: mop/templates/explore/project_entity_view.html:118
+msgid "Period"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:183
+msgid "Map"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:188
+msgid "Network"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:193
+msgid "Timeline"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:218
+msgid "Node Details"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:220
+#: mop/templates/explore/project_entity_view.html:238
+msgid "Place"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:222
+msgid "ID"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:225
+msgid "View Entity"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:231
+msgid "Legend (Click to toggle)"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:234
+msgid "Selected Entity"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:242
+msgid "Person"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:246
+msgid "Group"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:250
+msgid "Event / Activity"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:254
+msgid "Artifact"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:258
+msgid "Literature / Source"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:265
+msgid "Depth"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:277
+msgid "Labels"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:283
+msgid "Spacing"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:285
+msgid "Compact"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:286
+msgid "Normal"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:287
+msgid "Wide"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:288
+msgid "Extra Wide"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:295
+msgid "Fullscreen"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:301
+msgid "Export"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:312
+msgid "Export Graph as Image"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:317
+msgid ""
+"Configure the style, format, and enhancements for your network "
+"visualization image download."
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:322
+msgid "File Format"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:328
+msgid "PNG Image"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:329
+msgid "Lossless & Transparent"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:336
+msgid "JPEG Image"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:337
+msgid "High Compatibility"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:345
+msgid "Background Theme"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:351
+msgid "Transparent"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:358
+msgid "Solid Light"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:365
+msgid "Deep Dark"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:373
+msgid "Enhancements"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:376
+msgid "Include Academic Watermark"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:377
+msgid "Adds brand label, entity name, and timestamp to export"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:385
+msgid "Cancel"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:388
+msgid "Generate & Download"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:461
+msgid "Lifecycle phase of"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:473
+msgid "No Timeline Events"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:474
+msgid ""
+"We couldn't find any chronological events or relations with dates for "
+"this entity."
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:598
+#: mop/templates/explore/project_entity_view.html:805
+msgid "Show more"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:628
+msgid "view entity"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:666
+#: mop/templates/explore/project_explore_table.html:50
+msgid "Name"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:667
+#: mop/templates/explore/project_explore_table.html:51
+msgid "Class"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:669
+msgid "Begin"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:670
+msgid "End"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:673
+msgid "Relation Type"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:723
+msgid "Search..."
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:809
+msgid "Show less"
+msgstr ""
+
+#: mop/templates/explore/project_explore_table.html:35
 msgid "is currently unavailable"
 msgstr ""
 
-#: mop/templates/explore/project_explore_table.html:24
-msgid "Class"
+#: mop/templates/explore/project_explore_table.html:38
+msgid "We are working on providing data for this section as soon as possible."
+msgstr ""
+
+#: mop/templates/explore/project_explore_table.html:92
+msgid "Search in"
 msgstr ""
 

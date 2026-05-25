@@ -32,18 +32,52 @@
       </div>
       <div
           class="translation list-group list-group-flush align-end d-lg-block col-2">
-        {% for language in AVAILABLE_LANGUAGES.items() %}
-          <div class="list-group-item bg-transparent text-center">
-            {% if CURRENT_LANGUAGE == language[0] %}
-              <span class="fw-bold text-secondary">{{ language[1] }}</span>
+        <div class="list-group-item bg-transparent text-center">
+          {% if CURRENT_LANGUAGE == 'de' %}
+            <span class="fw-bold text-secondary">Deutsch</span>
+          {% else %}
+            <a href="{{ url_for('set_language', language='de') }}"
+               class="text-decoration-none fw-normal text-secondary">
+              Deutsch
+            </a>
+          {% endif %}
+        </div>
+        <div class="list-group-item bg-transparent text-center">
+          {% if CURRENT_LANGUAGE == 'en' %}
+            <span class="fw-bold text-secondary">English</span>
+          {% else %}
+            <a href="{{ url_for('set_language', language='en') }}"
+               class="text-decoration-none fw-normal text-secondary">
+              English
+            </a>
+          {% endif %}
+        </div>
+        <div class="list-group-item bg-transparent text-center dropdown">
+          <a class="dropdown-toggle text-decoration-none {% if CURRENT_LANGUAGE not in ['de', 'en'] %}fw-bold text-secondary{% else %}fw-normal text-secondary{% endif %}"
+             href="#" role="button" id="otherLanguagesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            {% if CURRENT_LANGUAGE not in ['de', 'en'] %}
+              {{ AVAILABLE_LANGUAGES[CURRENT_LANGUAGE] }}
             {% else %}
-              <a href="{{ url_for('set_language', language=language[0]) }}"
-                 class="text-decoration-none fw-normal text-secondary">
-                {{ language[1] }}
-              </a>
+              {{ _('Other') }}
             {% endif %}
-          </div>
-        {% endfor %}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="otherLanguagesDropdown"
+              style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(8px); border-radius: 12px; border: 1px solid rgba(0,0,0,0.15);">
+            {% for lang_code, lang_name in AVAILABLE_LANGUAGES.items() %}
+              {% if lang_code not in ['de', 'en'] %}
+                <li>
+                  {% if CURRENT_LANGUAGE == lang_code %}
+                    <span class="dropdown-item active fw-bold bg-primary text-white">{{ lang_name }}</span>
+                  {% else %}
+                    <a class="dropdown-item text-secondary fw-normal" href="{{ url_for('set_language', language=lang_code) }}">
+                      {{ lang_name }}
+                    </a>
+                  {% endif %}
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
   </nav>

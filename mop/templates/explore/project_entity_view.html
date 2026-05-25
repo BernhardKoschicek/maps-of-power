@@ -12,33 +12,73 @@
   <link rel="stylesheet"
         href="{{ url_for('static', filename='node_modules/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.css', v=ASSETS_VERSION) }}">
-  <div class="container mt-4 mb-4">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb bg-transparent p-0 mb-0">
-        <li class="breadcrumb-item">
-          <a href="{{ url_for('projects') }}" class="link-primary text-decoration-none">{{ _('projects') }}</a>
-        </li>
-        {% if path[0] %}
-        <li class="breadcrumb-item">
-          <a href="{{ url_for('projects', title=path[0]) }}" class="link-primary text-decoration-none">{{ path[0] }}</a>
-        </li>
-        {% endif %}
-        <li class="breadcrumb-item">
-          <a href="{{
-            url_for('project_explore_table',
-            project=path[0],
-            view=system_classes[entity.system_class | lower]) }}"
-            class="link-primary text-decoration-none">{{ system_classes[entity.system_class | lower] }}</a>
-        </li>
-        <li class="breadcrumb-item active text-muted" aria-current="page">
-          {{ entity.name }}
-        </li>
-      </ol>
-    </nav>
-  </div>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/projects_premium.css', v=ASSETS_VERSION) }}">
 
-  <div class="container">
-    <div class="row align-items-end mb-4">
+  {% set ns = namespace(has_relations=false) %}
+  {% for key, value in relations.items() if key not in ['types', 'references'] %}
+    {% set ns.has_relations = true %}
+  {% endfor %}
+
+  {% set side_nav = [('properties', _('properties'))] %}
+  {% if entity.description or relations['source_translations'] %}
+    {% set side_nav = side_nav + [('description', _('Description'))] %}
+  {% endif %}
+  {% if narratives %}
+    {% set side_nav = side_nav + [('narrative', _('Narrative Connections'))] %}
+  {% endif %}
+  {% if relations['references'] %}
+    {% set side_nav = side_nav + [('literature', _('literature'))] %}
+  {% endif %}
+  {% if ns.has_relations %}
+    {% set side_nav = side_nav + [('relations', _('Relations'))] %}
+  {% endif %}
+  {% if entity.depictions %}
+    {% set side_nav = side_nav + [('files', _('files'))] %}
+  {% endif %}
+
+  <div class="container-fluid mt-4 mb-5">
+    <div class="row g-4">
+      
+      <!-- Left Column: Glassmorphic Scrollspy Nav Menu -->
+      <div class="col-12 col-md-3 col-xl-2">
+        <div id="floating-navbar" class="list-group details-scrollspy-menu">
+          {% for id, label in side_nav %}
+            <a class="list-group-item list-group-item-action" href="#{{ id }}">{{ label }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <!-- Center Column: Core Content -->
+      <div class="col-12 col-md-9 col-xl-10 position-relative" id="main-content">
+        
+        <!-- Elevated Breadcrumbs Path -->
+        <div class="mb-4">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent p-0 mb-0">
+              <li class="breadcrumb-item">
+                <a href="{{ url_for('projects') }}" class="link-primary text-decoration-none">{{ _('projects') }}</a>
+              </li>
+              {% if path[0] %}
+              <li class="breadcrumb-item">
+                <a href="{{ url_for('projects', title=path[0]) }}" class="link-primary text-decoration-none">{{ path[0] }}</a>
+              </li>
+              {% endif %}
+              <li class="breadcrumb-item">
+                <a href="{{
+                  url_for('project_explore_table',
+                  project=path[0],
+                  view=system_classes[entity.system_class | lower]) }}"
+                  class="link-primary text-decoration-none">{{ system_classes[entity.system_class | lower] }}</a>
+              </li>
+              <li class="breadcrumb-item active text-muted" aria-current="page">
+                {{ entity.name }}
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="w-100">
+          <div class="row align-items-end mb-4">
       <div class="col-md-8">
         <h1 class="display-5 fw-bold text-primary mb-1">{{ entity.name }}</h1>
         {% if entity.alias %}
@@ -67,7 +107,7 @@
       <div class="col-lg-6">
         <div class="card h-100 shadow-sm border-0 rounded-4">
           <div class="card-body p-4">
-            <h3 class="card-title text-primary mb-4">
+            <h3 class="card-title text-primary mb-4" id="properties">
               <i class="bi bi-info-circle me-2"></i>{{ _('properties') }}
             </h3>
 
@@ -175,54 +215,54 @@
                   <!-- Floating Detail Panel for Clicked Node -->
                   <div id="network-node-detail" class="network-detail-panel d-none">
                     <button id="btn-close-detail" type="button" class="btn-close float-end btn-sm" aria-label="Close" style="font-size: 0.7rem;"></button>
-                    <h6 id="detail-node-title" class="fw-bold mb-1 text-dark text-truncate" style="max-width: 90%;">Node Details</h6>
+                    <h6 id="detail-node-title" class="fw-bold mb-1 text-dark text-truncate" style="max-width: 90%;">{{ _('Node Details') }}</h6>
                     <div id="detail-node-class" class="mb-2">
-                      <span class="badge bg-secondary text-capitalize">Place</span>
+                      <span class="badge bg-secondary text-capitalize">{{ _('Place') }}</span>
                     </div>
-                    <div class="small text-muted mb-1">ID: <span id="detail-node-id">-</span></div>
-                    <div class="small text-muted mb-2">Relations: <span id="detail-node-relations">-</span></div>
+                    <div class="small text-muted mb-1">{{ _('ID') }}: <span id="detail-node-id">-</span></div>
+                    <div class="small text-muted mb-2">{{ _('Relations') }}: <span id="detail-node-relations">-</span></div>
                     <a id="detail-node-link" href="#" class="btn btn-sm btn-primary rounded-pill w-100 mt-2 d-flex align-items-center justify-content-center">
-                      <i class="bi bi-eye me-1"></i>View Entity
+                      <i class="bi bi-eye me-1"></i>{{ _('View Entity') }}
                     </a>
                   </div>
 
                   <!-- Color Legend -->
                   <div class="network-legend">
-                    <div class="legend-title" style="font-size: 0.65rem; letter-spacing: 0.02em;">Legend (Click to toggle)</div>
+                    <div class="legend-title" style="font-size: 0.65rem; letter-spacing: 0.02em;">{{ _('Legend (Click to toggle)') }}</div>
                     <div class="legend-item" style="cursor: default; hover: none;">
                       <span class="legend-color-dot" style="background: #f59f00; border-color: #f59f00;"></span>
-                      <span>Selected Entity</span>
+                      <span>{{ _('Selected Entity') }}</span>
                     </div>
                     <div class="legend-item" role="button" data-category="place">
                       <span class="legend-color-dot" style="background: #1c7ed6; border-color: #1c7ed6;"></span>
-                      <span>Place</span>
+                      <span>{{ _('Place') }}</span>
                     </div>
                     <div class="legend-item" role="button" data-category="person">
                       <span class="legend-color-dot" style="background: #0b7285; border-color: #0b7285;"></span>
-                      <span>Person</span>
+                      <span>{{ _('Person') }}</span>
                     </div>
                     <div class="legend-item" role="button" data-category="group">
                       <span class="legend-color-dot" style="background: #fa5252; border-color: #fa5252;"></span>
-                      <span>Group</span>
+                      <span>{{ _('Group') }}</span>
                     </div>
                     <div class="legend-item" role="button" data-category="event">
                       <span class="legend-color-dot" style="background: #ae3ec9; border-color: #ae3ec9;"></span>
-                      <span>Event / Activity</span>
+                      <span>{{ _('Event / Activity') }}</span>
                     </div>
                     <div class="legend-item" role="button" data-category="artifact">
                       <span class="legend-color-dot" style="background: #37b24d; border-color: #37b24d;"></span>
-                      <span>Artifact</span>
+                      <span>{{ _('Artifact') }}</span>
                     </div>
                     <div class="legend-item" role="button" data-category="bibliography">
                       <span class="legend-color-dot" style="background: #495057; border-color: #495057;"></span>
-                      <span>Literature / Source</span>
+                      <span>{{ _('Literature / Source') }}</span>
                     </div>
                   </div>
 
                   <!-- Floating Controls Toolbar -->
                   <div class="network-toolbar">
                     <div class="d-flex align-items-center">
-                      <label for="network-depth" class="form-label mb-0 me-2 fw-bold text-secondary" style="font-size: 0.8rem; white-space: nowrap;">Depth:</label>
+                      <label for="network-depth" class="form-label mb-0 me-2 fw-bold text-secondary" style="font-size: 0.8rem; white-space: nowrap;">{{ _('Depth') }}:</label>
                       <select id="network-depth" class="form-select form-select-sm rounded-pill py-1 px-2" style="font-size: 0.8rem;">
                         <option value="1">1</option>
                         <option value="2" selected>2</option>
@@ -234,31 +274,31 @@
 
                     <div class="form-check form-switch mb-0 d-flex align-items-center">
                       <input class="form-check-input me-2" type="checkbox" role="switch" id="toggle-labels" checked>
-                      <label class="form-check-label fw-bold text-secondary" for="toggle-labels" style="font-size: 0.8rem; white-space: nowrap;">Labels</label>
+                      <label class="form-check-label fw-bold text-secondary" for="toggle-labels" style="font-size: 0.8rem; white-space: nowrap;">{{ _('Labels') }}</label>
                     </div>
 
                     <div class="vr bg-secondary opacity-25" style="height: 20px;"></div>
 
                     <div class="d-flex align-items-center">
-                      <label for="network-spacing" class="form-label mb-0 me-2 fw-bold text-secondary" style="font-size: 0.8rem; white-space: nowrap;">Spacing:</label>
+                      <label for="network-spacing" class="form-label mb-0 me-2 fw-bold text-secondary" style="font-size: 0.8rem; white-space: nowrap;">{{ _('Spacing') }}:</label>
                       <select id="network-spacing" class="form-select form-select-sm rounded-pill py-1 px-2" style="font-size: 0.8rem;">
-                        <option value="0.6">Compact</option>
-                        <option value="1.0" selected>Normal</option>
-                        <option value="1.6">Wide</option>
-                        <option value="2.4">Extra Wide</option>
+                        <option value="0.6">{{ _('Compact') }}</option>
+                        <option value="1.0" selected>{{ _('Normal') }}</option>
+                        <option value="1.6">{{ _('Wide') }}</option>
+                        <option value="2.4">{{ _('Extra Wide') }}</option>
                       </select>
                     </div>
 
                     <div class="vr bg-secondary opacity-25" style="height: 20px;"></div>
 
                     <button id="btn-fullscreen" class="btn btn-sm btn-outline-secondary rounded-pill d-flex align-items-center">
-                      <i class="bi bi-fullscreen me-1"></i>Fullscreen
+                      <i class="bi bi-fullscreen me-1"></i>{{ _('Fullscreen') }}
                     </button>
 
                     <div class="vr bg-secondary opacity-25" style="height: 20px;"></div>
 
                     <button id="btn-export-network" class="btn btn-sm btn-outline-primary rounded-pill d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#networkExportModal">
-                      <i class="bi bi-download me-1"></i>Export
+                      <i class="bi bi-download me-1"></i>{{ _('Export') }}
                     </button>
                   </div>
 
@@ -269,32 +309,32 @@
                         <div class="modal-header border-0 pb-0 pt-4 px-4">
                           <h5 class="modal-title fw-bold text-dark d-flex align-items-center" id="networkExportModalLabel">
                             <i class="bi bi-image text-primary me-2" style="font-size: 1.3rem;"></i>
-                            Export Graph as Image
+                            {{ _('Export Graph as Image') }}
                           </h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body p-4">
-                          <p class="text-muted small mb-4">Configure the style, format, and enhancements for your network visualization image download.</p>
+                          <p class="text-muted small mb-4">{{ _('Configure the style, format, and enhancements for your network visualization image download.') }}</p>
 
                           <form id="network-export-form">
                             <!-- Format Choice -->
                             <div class="mb-4">
-                              <label class="form-label fw-bold text-secondary small text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">File Format</label>
+                              <label class="form-label fw-bold text-secondary small text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">{{ _('File Format') }}</label>
                               <div class="row g-2">
                                 <div class="col-6">
                                   <input type="radio" class="btn-check" name="exportFormat" id="formatPng" value="png" checked>
                                   <label class="btn btn-outline-secondary w-100 py-3 rounded-3 d-flex flex-column align-items-center gap-1" for="formatPng" style="border-width: 1.5px;">
                                     <i class="bi bi-filetype-png fs-3 mb-1 text-primary"></i>
-                                    <span class="fw-semibold small">PNG Image</span>
-                                    <span class="text-muted" style="font-size: 0.7rem;">Lossless & Transparent</span>
+                                    <span class="fw-semibold small">{{ _('PNG Image') }}</span>
+                                    <span class="text-muted" style="font-size: 0.7rem;">{{ _('Lossless & Transparent') }}</span>
                                   </label>
                                 </div>
                                 <div class="col-6">
                                   <input type="radio" class="btn-check" name="exportFormat" id="formatJpeg" value="jpeg">
                                   <label class="btn btn-outline-secondary w-100 py-3 rounded-3 d-flex flex-column align-items-center gap-1" for="formatJpeg" style="border-width: 1.5px;">
                                     <i class="bi bi-filetype-jpg fs-3 mb-1 text-primary"></i>
-                                    <span class="fw-semibold small">JPEG Image</span>
-                                    <span class="text-muted" style="font-size: 0.7rem;">High Compatibility</span>
+                                    <span class="fw-semibold small">{{ _('JPEG Image') }}</span>
+                                    <span class="text-muted" style="font-size: 0.7rem;">{{ _('High Compatibility') }}</span>
                                   </label>
                                 </div>
                               </div>
@@ -302,27 +342,27 @@
 
                             <!-- Background Theme Choice -->
                             <div class="mb-4">
-                              <label class="form-label fw-bold text-secondary small text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">Background Theme</label>
+                              <label class="form-label fw-bold text-secondary small text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">{{ _('Background Theme') }}</label>
                               <div class="row g-2">
                                 <div class="col-4">
                                   <input type="radio" class="btn-check" name="exportBg" id="bgTransparent" value="transparent" checked>
                                   <label class="btn btn-outline-secondary w-100 py-2 px-1 rounded-3 d-flex flex-column align-items-center" for="bgTransparent" style="border-width: 1.5px;">
                                     <div class="rounded-circle border mb-2" style="width: 24px; height: 24px; background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%); background-size: 8px 8px; background-position: 0 0, 0 4px, 4px -4px, -4px 0px;"></div>
-                                    <span class="fw-semibold" style="font-size: 0.75rem;">Transparent</span>
+                                    <span class="fw-semibold" style="font-size: 0.75rem;">{{ _('Transparent') }}</span>
                                   </label>
                                 </div>
                                 <div class="col-4">
                                   <input type="radio" class="btn-check" name="exportBg" id="bgWhite" value="white">
                                   <label class="btn btn-outline-secondary w-100 py-2 px-1 rounded-3 d-flex flex-column align-items-center" for="bgWhite" style="border-width: 1.5px;">
                                     <div class="rounded-circle border mb-2 bg-white" style="width: 24px; height: 24px;"></div>
-                                    <span class="fw-semibold" style="font-size: 0.75rem;">Solid Light</span>
+                                    <span class="fw-semibold" style="font-size: 0.75rem;">{{ _('Solid Light') }}</span>
                                   </label>
                                 </div>
                                 <div class="col-4">
                                   <input type="radio" class="btn-check" name="exportBg" id="bgDark" value="dark">
                                   <label class="btn btn-outline-secondary w-100 py-2 px-1 rounded-3 d-flex flex-column align-items-center" for="bgDark" style="border-width: 1.5px;">
                                     <div class="rounded-circle border mb-2" style="width: 24px; height: 24px; background-color: #0b0e14;"></div>
-                                    <span class="fw-semibold" style="font-size: 0.75rem;">Deep Dark</span>
+                                    <span class="fw-semibold" style="font-size: 0.75rem;">{{ _('Deep Dark') }}</span>
                                   </label>
                                 </div>
                               </div>
@@ -330,11 +370,11 @@
 
                             <!-- Watermark Option -->
                             <div>
-                              <label class="form-label fw-bold text-secondary small text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">Enhancements</label>
+                              <label class="form-label fw-bold text-secondary small text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">{{ _('Enhancements') }}</label>
                               <div class="form-check form-switch p-3 bg-light rounded-3 d-flex align-items-center justify-content-between border">
                                 <div class="me-3">
-                                  <label class="form-check-label fw-semibold text-dark small d-block" for="exportWatermark" style="cursor: pointer;">Include Academic Watermark</label>
-                                  <span class="text-muted" style="font-size: 0.65rem; display: block; margin-top: 2px;">Adds brand label, entity name, and timestamp to export</span>
+                                  <label class="form-check-label fw-semibold text-dark small d-block" for="exportWatermark" style="cursor: pointer;">{{ _('Include Academic Watermark') }}</label>
+                                  <span class="text-muted" style="font-size: 0.65rem; display: block; margin-top: 2px;">{{ _('Adds brand label, entity name, and timestamp to export') }}</span>
                                 </div>
                                 <input class="form-check-input ms-auto" type="checkbox" role="switch" id="exportWatermark" checked style="cursor: pointer;">
                               </div>
@@ -342,10 +382,10 @@
                           </form>
                         </div>
                         <div class="modal-footer border-0 pt-0 pb-4 px-4 d-flex gap-2">
-                          <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">{{ _('Cancel') }}</button>
                           <button type="button" id="btn-do-export" class="btn btn-primary rounded-pill px-4 flex-grow-1 d-flex align-items-center justify-content-center gap-2">
                             <i class="bi bi-download"></i>
-                            <span>Generate & Download</span>
+                            <span>{{ _('Generate & Download') }}</span>
                           </button>
                         </div>
                       </div>
@@ -418,7 +458,7 @@
 
                             <p class="small text-muted mb-0" style="line-height: 1.4; font-size: 11px;">
                               {% if event.is_main %}
-                                Lifecycle phase of {{ entity.name }}.
+                                {{ _('Lifecycle phase of') }} {{ entity.name }}.
                               {% else %}
                                 {{ event.relation.description }}
                               {% endif %}
@@ -430,8 +470,8 @@
                   {% else %}
                     <div class="h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
                       <i class="bi bi-calendar-x text-muted fs-1 mb-3"></i>
-                      <h5 class="text-muted fw-normal">No Timeline Events</h5>
-                      <p class="text-muted small">We couldn't find any chronological events or relations with dates for this entity.</p>
+                      <h5 class="text-muted fw-normal">{{ _('No Timeline Events') }}</h5>
+                      <p class="text-muted small">{{ _("We couldn't find any chronological events or relations with dates for this entity.") }}</p>
                     </div>
                   {% endif %}
                 </div>
@@ -445,6 +485,9 @@
     <div class="row pt-4">
       {% if entity.description or relations['source_translations'] %}
         <div class="col-12">
+          <h3 id="description" class="text-primary mb-4 mt-2">
+            <i class="bi bi-justify-left me-2"></i>{{ _('Description') }}
+          </h3>
           <div class="card shadow-sm border-0 rounded-4 mb-4">
             {% if relations['source_translations'] %}
               <div class="card-header bg-white border-0 p-4 pb-0">
@@ -489,10 +532,7 @@
               </div>
             {% else %}
               <div class="card-body p-4">
-                <h3 class="card-title text-primary mb-4">
-                  <i class="bi bi-justify-left me-2"></i>{{ _('Description') }}
-                </h3>
-                <div id="description" class="lh-lg">
+                <div id="description-text" class="lh-lg">
                   {{ entity.description
                   | replace('\n', '<br>')
                   | replace('Hist.:', '<span class="fw-bold text-muted">Hist.:</span>')
@@ -537,12 +577,12 @@
       </style>
       <div class="row pt-2">
         <div class="col-12">
+          <h3 id="narrative" class="text-primary mb-4 mt-2 d-flex align-items-center">
+            <i class="bi bi-journal-richtext me-2 fs-3"></i>
+            <span>{{ _('Narrative Connections') }}</span>
+          </h3>
           <div class="card shadow-sm border-0 rounded-4 bg-light-subtle mb-4">
             <div class="card-body p-4">
-              <h3 class="card-title text-primary mb-4 d-flex align-items-center">
-                <i class="bi bi-journal-richtext me-2 fs-3"></i>
-                <span>{{ _('Narrative Connections') }}</span>
-              </h3>
               <div class="row g-3">
                 {% for narrative in narratives %}
                   <div class="col-12">
@@ -555,7 +595,7 @@
                           {{ narrative.text | safe }}
                         </div>
                         <button class="btn btn-link btn-sm p-0 mt-1 text-primary fw-bold text-decoration-none btn-narrative-toggle d-none" style="font-size: 0.9rem;">
-                          <i class="bi bi-chevron-down me-1"></i>Show more
+                          <i class="bi bi-chevron-down me-1"></i>{{ _('Show more') }}
                         </button>
                       </div>
                     </div>
@@ -571,11 +611,11 @@
     <div class="row pt-5">
       {% if relations['references'] %}
         <div class="col-12">
+          <h3 id="literature" class="text-primary mb-4 mt-2">
+            <i class="bi bi-book me-2"></i>{{ _('literature') }}
+          </h3>
           <div class="card shadow-sm border-0 rounded-4 mb-5">
             <div class="card-body p-4">
-              <h3 class="card-title text-primary mb-4">
-                <i class="bi bi-book me-2"></i>{{ _('literature') }}
-              </h3>
               <div class="d-flex flex-wrap gap-3">
                 {% for reference in relations['references'] %}
                   <div class="p-2 border rounded bg-light-subtle">
@@ -602,7 +642,7 @@
       <div class="col-12">
         {% for key, value in relations.items() if key not in ['types', 'references'] %}
           {% if loop.first %}
-            <h3 class="text-primary mb-4 mt-2">
+            <h3 id="relations" class="text-primary mb-4 mt-2">
               <i class="bi bi-share me-2"></i>{{ _('Relations') }}
             </h3>
           {% endif %}
@@ -623,16 +663,16 @@
                 <table id="table-{{ key }}" class="table table-hover align-middle w-100 mb-0">
                     <thead class="table-light">
                       <tr>
-                        <th class="border-0 ps-3">Name</th>
-                        <th class="border-0">Class</th>
+                        <th class="border-0 ps-3">{{ _('Name') }}</th>
+                        <th class="border-0">{{ _('Class') }}</th>
                         {% if key in ['events','actors', 'places'] %}
-                          <th class="border-0">Begin</th>
-                          <th class="border-0">End</th>
+                          <th class="border-0">{{ _('Begin') }}</th>
+                          <th class="border-0">{{ _('End') }}</th>
                         {% endif %}
                         {% if key in ['actors'] %}
-                          <th class="border-0">Relation Type</th>
+                          <th class="border-0">{{ _('Relation Type') }}</th>
                         {% endif %}
-                        <th class="border-0 pe-3">Description</th>
+                        <th class="border-0 pe-3">{{ _('Description') }}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -700,7 +740,7 @@
 
       {% if entity.depictions %}
         <div class="col-12 mt-5">
-          <h3 class="text-primary mb-4">
+          <h3 id="files" class="text-primary mb-4">
             <i class="bi bi-images me-2"></i>{{ _('files') }}
           </h3>
           <div class="row g-4">
@@ -734,6 +774,9 @@
       {% endif %}
     </div>
   </div>
+      </div>
+    </div>
+  </div>
 
   <script>
       Fancybox.bind("[data-fancybox]", {
@@ -759,11 +802,11 @@
                           if (container.classList.contains('expanded')) {
                               container.classList.remove('expanded');
                               container.style.maxHeight = '4.5em';
-                              toggleBtn.innerHTML = '<i class="bi bi-chevron-down me-1"></i>Show more';
-                          } else {
-                              container.classList.add('expanded');
-                              container.style.maxHeight = container.scrollHeight + 'px';
-                              toggleBtn.innerHTML = '<i class="bi bi-chevron-up me-1"></i>Show less';
+                               toggleBtn.innerHTML = '<i class="bi bi-chevron-down me-1"></i>' + '{{ _("Show more") }}';
+                           } else {
+                               container.classList.add('expanded');
+                               container.style.maxHeight = container.scrollHeight + 'px';
+                               toggleBtn.innerHTML = '<i class="bi bi-chevron-up me-1"></i>' + '{{ _("Show less") }}';
                           }
                       });
                   }
@@ -821,11 +864,48 @@
   <script src="{{ url_for('static', filename='node_modules/leaflet-imageoverlay-rotated/Leaflet.ImageOverlay.Rotated.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/@mapbox/leaflet-pip/leaflet-pip.js', v=ASSETS_VERSION) }}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="{{ url_for('static', filename='js/map_layers.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='js/map.js', v=ASSETS_VERSION) }}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/graphology/0.25.4/graphology.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js"></script>
   <script src="{{ url_for('static', filename='js/network_viz.js', v=ASSETS_VERSION) }}"></script>
 
+  <script>
+    window.addEventListener('load', function () {
+      // ==========================================
+      // SCROLL-SPY ACTIVE NAV TRACKER
+      // ==========================================
+      const sections = document.querySelectorAll('h1[id], h3[id], h4[id]');
+      const navLinks = document.querySelectorAll('#floating-navbar a');
+
+      function updateActiveState() {
+        let activeId = null;
+        const scrollPosition = window.scrollY + 180; // offset for detection
+
+        sections.forEach(section => {
+          if (section.getBoundingClientRect().top + window.scrollY <= scrollPosition) {
+            activeId = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (activeId && link.getAttribute('href') === `#${activeId}`) {
+            link.classList.add('active');
+          }
+        });
+
+        // Default to first item if at top
+        if (window.scrollY < 100 && navLinks.length > 0) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          navLinks[0].classList.add('active');
+        }
+      }
+
+      window.addEventListener('scroll', updateActiveState);
+      updateActiveState(); // Initial call
+    });
+  </script>
 {% endblock %}
 
 

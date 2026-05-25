@@ -7,38 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-14 14:06+0100\n"
+"POT-Creation-Date: 2026-05-25 22:42+0200\n"
 "PO-Revision-Date: 2026-03-01 00:49+0100\n"
 "Last-Translator: \n"
-"Language-Team: en <LL@li.org>\n"
 "Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.17.0\n"
-"X-Generator: Poedit 3.6\n"
 
-#: mop/util.py:39
+#: mop/util.py:36
 msgid "about"
 msgstr "about"
 
-#: mop/templates/explore/project_entity_view.html:18
-#: mop/templates/project_details.html:34 mop/util.py:40
+#: mop/templates/explore/project_entity_view.html:59
+#: mop/templates/explore/project_explore_table.html:10
+#: mop/templates/project_details.html:43 mop/util.py:37
 msgid "projects"
 msgstr "projects"
 
-#: mop/util.py:41
+#: mop/util.py:38
 msgid "atlas"
 msgstr "Atlas"
 
-#: mop/templates/about.html:74 mop/templates/events.html:6 mop/util.py:43
+#: mop/util.py:39
+msgid "histgeo"
+msgstr ""
+"HistGeoour Series is published by the publishing house <a "
+"href=\"https://akademskaknjiga.com/?lang=en\" target=\"_blank\" class"
+"=\"fw-bolder link-primary\">“Akademska knjiga” in Novi Sad, Serbia</a>, "
+"which was founded in July 2006 with the aim of publishing important "
+"scholarship in the Social Sciences and the Humanities by national and "
+"international authors."
+
+#: mop/templates/_events_list.html:44 mop/util.py:40
 msgid "events"
 msgstr "events"
 
-#: mop/templates/explore/project_entity_view.html:137 mop/util.py:44
+#: mop/templates/explore/project_entity_view.html:30
+#: mop/templates/explore/project_entity_view.html:615 mop/util.py:41
 msgid "literature"
 msgstr "literature"
+
+#: mop/views.py:336
+msgid "An error occurred"
+msgstr ""
+
+#: mop/views.py:338
+msgid "An unexpected error occurred. Please try again later."
+msgstr ""
+
+#: mop/views.py:341
+msgid "Page Not Found"
+msgstr ""
+
+#: mop/views.py:343
+msgid ""
+"The coordinates you entered seem to be out of bounds. The page you are "
+"looking for does not exist."
+msgstr ""
+
+#: mop/views.py:346
+msgid "Access Denied"
+msgstr ""
+
+#: mop/views.py:348
+msgid "You do not have permission to access this area. Restricted coordinates."
+msgstr ""
+
+#: mop/views.py:351
+msgid "I'm a Teapot"
+msgstr ""
+
+#: mop/views.py:353
+msgid ""
+"The server refuses the attempt to brew coffee with a teapot. Yes, this is"
+" a real error."
+msgstr ""
+
+#: mop/views.py:376 mop/views.py:383
+msgid "Internal Server Error"
+msgstr ""
+
+#: mop/views.py:385
+msgid ""
+"An unexpected server error occurred. Our cartographers are looking into "
+"it."
+msgstr ""
 
 #: mop/data/events.py:8 mop/data/events.py:12
 msgid "presentation"
@@ -67,11 +124,12 @@ msgstr "Summer School in Brno"
 #: mop/data/events.py:39
 msgid "brno_summer_school_260625"
 msgstr ""
-"Žarko Vujošević and Mihailo Popović gave a joint lecture on Serbian diplomatics "
-"entitled “Documentary Spaces - Spaces of Power” at the Scriptorium Brunense "
-"summer school in Brno, Czech Republic, on 26 June 2025. <a href=\"https://"
-"archivnictvi.phil.muni.cz/en/news-and-events/events/scriptorium-brunense-1\" "
-"target=\"_blank\">More information</a>"
+"Žarko Vujošević and Mihailo Popović gave a joint lecture on Serbian "
+"diplomatics entitled “Documentary Spaces - Spaces of Power” at the "
+"Scriptorium Brunense summer school in Brno, Czech Republic, on 26 June "
+"2025. <a href=\"https://archivnictvi.phil.muni.cz/en/news-and-"
+"events/events/scriptorium-brunense-1\" target=\"_blank\">More "
+"information</a>"
 
 #: mop/data/events.py:49
 msgid "Discourse on DH and AI"
@@ -81,12 +139,13 @@ msgstr "Discourse on DH and AI"
 msgid "heidelberg_200625"
 msgstr ""
 "On 20 June 2025 Mihailo Popović gave a lecture on DH and AI entitled <a "
-"href=\"https://www.uni-heidelberg.de/de/veranstaltungen/ueber-die-sinnhaftigkeit-"
-"der-und-die-nachhaltigkeit-in-den-digitalen-geisteswissenschaften-2025-06-20\" "
-"target=\"_blank\">“Über die Sinnhaftigkeit der und die Nachhaltigkeit in den "
-"Digitalen Geisteswissenschaften: Erkenntnisse aus der Perspektive der "
-"Historischen Geographie, Byzantinistik und Südosteuropaforschung” at the "
-"University of Heidelberg</a>."
+"href=\"https://www.uni-heidelberg.de/de/veranstaltungen/ueber-die-"
+"sinnhaftigkeit-der-und-die-nachhaltigkeit-in-den-digitalen-"
+"geisteswissenschaften-2025-06-20\" target=\"_blank\">“Über die "
+"Sinnhaftigkeit der und die Nachhaltigkeit in den Digitalen "
+"Geisteswissenschaften: Erkenntnisse aus der Perspektive der Historischen "
+"Geographie, Byzantinistik und Südosteuropaforschung” at the University of"
+" Heidelberg</a>."
 
 #: mop/data/events.py:60
 msgid "Report in the Newspaper Die Presse"
@@ -95,11 +154,12 @@ msgstr "Report in the Newspaper Die Presse"
 #: mop/data/events.py:61
 msgid "presse_03052025"
 msgstr ""
-"In its print edition of 3 May 2025 the daily newspaper Die Presse reports on the "
-"scientific work of Mihailo Popović under the title ‘Unterwegs mit Notizbuch, "
-"Kompass und Melone (On the Road with Notebook, Compass and Melon’). Further "
-"information can be found via: <a href=\"https://www.diepresse.com/19640086/auf-"
-"feldforschung-mit-notizbuch-kompass-und-melone\" target=\"_blank\">Die Presse</a>"
+"In its print edition of 3 May 2025 the daily newspaper Die Presse reports"
+" on the scientific work of Mihailo Popović under the title ‘Unterwegs mit"
+" Notizbuch, Kompass und Melone (On the Road with Notebook, Compass and "
+"Melon’). Further information can be found via: <a "
+"href=\"https://www.diepresse.com/19640086/auf-feldforschung-mit-"
+"notizbuch-kompass-und-melone\" target=\"_blank\">Die Presse</a>"
 
 #: mop/data/events.py:71
 msgid "Lecture at the Haus Wittgenstein"
@@ -108,13 +168,13 @@ msgstr "Lecture at the Haus Wittgenstein"
 #: mop/data/events.py:72
 msgid "wittgenstein_13022025"
 msgstr ""
-"On 13 February 2025 Mihailo Popović gave a lecture entitled “Berge und Wildnis "
-"auf der südlichen Balkanhalbinsel im Spiegel der Lebensbeschreibungen der "
-"Heiligen Ivan Rilski, Prohor Pčinjski, Gavrilo Lesnovski und Joakim Osogovski "
-"(Mountains and Wilderness in the Southern Balkan Peninsula as reflected in the "
-"Biographies of the Saints Ivan Rilski, Prohor Pčinjski, Gavrilo Lesnovski and "
-"Joakim Osogovski)” as part of the Lectorium Bulgaricum at the Haus Wittgenstein "
-"in Vienna."
+"On 13 February 2025 Mihailo Popović gave a lecture entitled “Berge und "
+"Wildnis auf der südlichen Balkanhalbinsel im Spiegel der "
+"Lebensbeschreibungen der Heiligen Ivan Rilski, Prohor Pčinjski, Gavrilo "
+"Lesnovski und Joakim Osogovski (Mountains and Wilderness in the Southern "
+"Balkan Peninsula as reflected in the Biographies of the Saints Ivan "
+"Rilski, Prohor Pčinjski, Gavrilo Lesnovski and Joakim Osogovski)” as part"
+" of the Lectorium Bulgaricum at the Haus Wittgenstein in Vienna."
 
 #: mop/data/events.py:82
 msgid "Workshop in Oxford"
@@ -123,12 +183,13 @@ msgstr "Workshop in Oxford"
 #: mop/data/events.py:83
 msgid "workshop_oxford_300524"
 msgstr ""
-"At the end of May 2024 Mihailo Popović took part in a workshop <a href=\"https://"
-"www.ames.ox.ac.uk/event/workshop-mountains-and-historian\" "
-"target=\"_blank\">\"Mountains and the Historian\"</a> at the University of "
-"Oxford, where he gave the paper \"Terrifying Aspects of Mountains and their "
-"Wilderness in the Medieval Balkans and How to Overcome Them\", which can be "
-"assigned to the \"Sacred Topography\" section of the Maps of Power Initiative."
+"At the end of May 2024 Mihailo Popović took part in a workshop <a "
+"href=\"https://www.ames.ox.ac.uk/event/workshop-mountains-and-historian\""
+" target=\"_blank\">\"Mountains and the Historian\"</a> at the University "
+"of Oxford, where he gave the paper \"Terrifying Aspects of Mountains and "
+"their Wilderness in the Medieval Balkans and How to Overcome Them\", "
+"which can be assigned to the \"Sacred Topography\" section of the Maps of"
+" Power Initiative."
 
 #: mop/data/events.py:93
 msgid "The Long Night of Research in Vienna"
@@ -137,12 +198,12 @@ msgstr "The Long Night of Research in Vienna"
 #: mop/data/events.py:94
 msgid "lange_nacht_der_forschung_240524"
 msgstr ""
-"On Friday, 24 May 2024, Mihailo Popović took part in the Long Night of Research "
-"at the Austrian Academy of Sciences. There he presented the project <a href=\"\" "
-"target=\"_blank\">\"Tracing Archaeological Remains and Scholarly Research of the "
-"Central Powers in the Region of Prilep-Bitola during WW I (1915-1918)\"</a> as a "
-"poster, which contributes to the \"Cultural Heritage\" section of the Maps of "
-"Power Initiative."
+"On Friday, 24 May 2024, Mihailo Popović took part in the Long Night of "
+"Research at the Austrian Academy of Sciences. There he presented the "
+"project <a href=\"\" target=\"_blank\">\"Tracing Archaeological Remains "
+"and Scholarly Research of the Central Powers in the Region of Prilep-"
+"Bitola during WW I (1915-1918)\"</a> as a poster, which contributes to "
+"the \"Cultural Heritage\" section of the Maps of Power Initiative."
 
 #: mop/data/events.py:104
 msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
@@ -151,18 +212,19 @@ msgstr "Presentation of an Edited Volume in Honor of Johannes Koder"
 #: mop/data/events.py:105
 msgid "koder_festschrift_230424"
 msgstr ""
-"On the occasion of the 80th birthday of Johannes Koder, friends, companions, "
-"students and colleagues presented an edited volume entitled “Der den Kordax "
-"tanzt: Hommage an Johannes Koder und seine Forschungen über Byzanz und den "
-"Balkan” to him on 23 April 2024 in Vienna, whose contributions relate to the "
-"research interests of the jubilarian. Therefore, this volume contains "
-"archaeological, toponomastic, historical, philological, historical-geographical "
-"and art-historical topics. For further information on the volume: <a "
-"href=\"https://eudora-verlag.de/de/product/der-den-kodax-tanzt-hommage-an-"
-"johannes-koder_von_mihailo-st-popovic-vratislav-zervan-ralf-c-mueller/\" "
-"target=\"_blank\">https://eudora-verlag.de/de/product/der-den-kodax-tanzt-"
-"hommage-an-johannes-koder_von_mihailo-st-popovic-vratislav-zervan-ralf-c-mueller/"
-"</a>"
+"On the occasion of the 80th birthday of Johannes Koder, friends, "
+"companions, students and colleagues presented an edited volume entitled "
+"“Der den Kordax tanzt: Hommage an Johannes Koder und seine Forschungen "
+"über Byzanz und den Balkan” to him on 23 April 2024 in Vienna, whose "
+"contributions relate to the research interests of the jubilarian. "
+"Therefore, this volume contains archaeological, toponomastic, historical,"
+" philological, historical-geographical and art-historical topics. For "
+"further information on the volume: <a href=\"https://eudora-"
+"verlag.de/de/product/der-den-kodax-tanzt-hommage-an-johannes-"
+"koder_von_mihailo-st-popovic-vratislav-zervan-ralf-c-mueller/\" "
+"target=\"_blank\">https://eudora-verlag.de/de/product/der-den-kodax-"
+"tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-vratislav-zervan-"
+"ralf-c-mueller/</a>"
 
 #: mop/data/events.py:115
 msgid "Two Presentations on the Usefulness of OpenAtlas"
@@ -171,14 +233,15 @@ msgstr "Two Presentations on the Usefulness of OpenAtlas"
 #: mop/data/events.py:116
 msgid "belgrade_190923"
 msgstr ""
-"On 19 September 2023 Bernhard Koschiček-Krombholz and Mihailo St. Popović each "
-"gave a lecture at the Serbian Academy of Sciences and Arts in Belgrade. While "
-"Bernhard Koschiček-Krombholz spoke about \"OpenAtlas: A Database System for the "
-"Humanities and Beyond\", Mihailo St. Popović's lecture was \"On the Usefulness "
-"of OpenAtlas in Historical Geography\". Afterwards, they had an intensive "
-"exchange with the team of the project \"From Barbarians to Christians and "
-"Rhomaioi. The Process of Byzantinization in the Central Balkans (Late 10th – "
-"Mid-13th Century)\" on aspects of Digital Humanities."
+"On 19 September 2023 Bernhard Koschiček-Krombholz and Mihailo St. Popović"
+" each gave a lecture at the Serbian Academy of Sciences and Arts in "
+"Belgrade. While Bernhard Koschiček-Krombholz spoke about \"OpenAtlas: A "
+"Database System for the Humanities and Beyond\", Mihailo St. Popović's "
+"lecture was \"On the Usefulness of OpenAtlas in Historical Geography\". "
+"Afterwards, they had an intensive exchange with the team of the project "
+"\"From Barbarians to Christians and Rhomaioi. The Process of "
+"Byzantinization in the Central Balkans (Late 10th – Mid-13th Century)\" "
+"on aspects of Digital Humanities."
 
 #: mop/data/events.py:126
 msgid "Workshop on Medieval Athos in Oxford"
@@ -189,9 +252,9 @@ msgid "athos_oxford_290923"
 msgstr ""
 "On 29 September 2023 Mihailo St. Popović gave a paper entitled \"Serbian "
 "Noblewomen and the Clergy in the Middle Ages: A Comparison between Mara "
-"Branković and Jelena Anžujska regarding Athonite Monks and Franciscan Friars\" "
-"at the workshop \"A Special Relationship? Gender on Medieval Mount Athos\" in "
-"Oxford, UK."
+"Branković and Jelena Anžujska regarding Athonite Monks and Franciscan "
+"Friars\" at the workshop \"A Special Relationship? Gender on Medieval "
+"Mount Athos\" in Oxford, UK."
 
 #: mop/data/events.py:137
 msgid "Paper on the Crown of the Saint King Stefan Dečanski"
@@ -200,13 +263,14 @@ msgstr "Paper on the Crown of the Saint King Stefan Dečanski"
 #: mop/data/events.py:138
 msgid "tripps_070923"
 msgstr ""
-"Professor Dr. Johannes Tripps (Leipzig University of Applied Sciences) gave a "
-"much publicised art historical paper on the crown of the Saint King Stefan "
-"Dečanski within the framework of the project “Beyond East and West: "
-"Geocommunicating the Sacred Landscapes of \"Duklja\" and \"Raška\" through Space "
-"and Time (11th-14th Cent.)” at the University of Belgrade. See a record of the "
-"paper via: <a href=\"https://www.youtube.com/@MapsOfPower\" target=\"_blank\" "
-"class=\"link-primary\">https://www.youtube.com/@MapsOfPower</a>"
+"Professor Dr. Johannes Tripps (Leipzig University of Applied Sciences) "
+"gave a much publicised art historical paper on the crown of the Saint "
+"King Stefan Dečanski within the framework of the project “Beyond East and"
+" West: Geocommunicating the Sacred Landscapes of \"Duklja\" and \"Raška\""
+" through Space and Time (11th-14th Cent.)” at the University of Belgrade."
+" See a record of the paper via: <a "
+"href=\"https://www.youtube.com/@MapsOfPower\" target=\"_blank\" class"
+"=\"link-primary\">https://www.youtube.com/@MapsOfPower</a>"
 
 #: mop/data/events.py:148
 msgid "TIB Balkans at the IMC Leeds 2023"
@@ -215,12 +279,12 @@ msgstr "TIB Balkans at the IMC Leeds 2023"
 #: mop/data/events.py:149
 msgid "imc_leeds_23"
 msgstr ""
-"Scholars of the TIB Balkans presented their newest scholarly results together "
-"with colleagues of the Natural History Museum Vienna, the Ludwig Boltzmann "
-"Gesellschaft, the Leipzig University of Applied Sciences (HTWK Leipzig), the "
-"University Belgrade and the ACDH-CH of the Austrian Academy of Sciences in three "
-"sessions entitled “Entanglements across Medieval Space, Objects, and Data” on 6 "
-"July 2023 at the IMC Leeds."
+"Scholars of the TIB Balkans presented their newest scholarly results "
+"together with colleagues of the Natural History Museum Vienna, the Ludwig"
+" Boltzmann Gesellschaft, the Leipzig University of Applied Sciences (HTWK"
+" Leipzig), the University Belgrade and the ACDH-CH of the Austrian "
+"Academy of Sciences in three sessions entitled “Entanglements across "
+"Medieval Space, Objects, and Data” on 6 July 2023 at the IMC Leeds."
 
 #: mop/data/events.py:159
 msgid "presentation on MECERN conference"
@@ -230,9 +294,9 @@ msgstr "presentation on MECERN conference"
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan and Mihailo Popović took part in the MECERN conference "
-"“Continuity and Change in Medieval Central Europe” in Bratislava in April 2023 "
-"and presented a joint paper entitled “The Hagiogeography of Saint Archangel "
-"Michael in the Balkans and Central Europe in Medieval Times”."
+"“Continuity and Change in Medieval Central Europe” in Bratislava in April"
+" 2023 and presented a joint paper entitled “The Hagiogeography of Saint "
+"Archangel Michael in the Balkans and Central Europe in Medieval Times”."
 
 #: mop/data/events.py:170
 msgid "presentation at the Serbian Academy of Sciences and Arts"
@@ -241,11 +305,12 @@ msgstr "presentation at the Serbian Academy of Sciences and Arts"
 #: mop/data/events.py:171
 msgid "serbian_academy_220223"
 msgstr ""
-"Mihailo Popović was invited by the Institute for Byzantine Studies of the "
-"Serbian Academy of Sciences and Arts to give a paper entitled “Пројекат Tabula "
-"Imperii Byzantini: о будућности (?) проучавања историјске географије Византије” "
-"[“The Project Tabula Imperii Byzantini: on the Future (?) of the Research in the "
-"Field of the Historical Geography of Byzantium”] on 22 February 2023 in Belgrade."
+"Mihailo Popović was invited by the Institute for Byzantine Studies of the"
+" Serbian Academy of Sciences and Arts to give a paper entitled “Пројекат "
+"Tabula Imperii Byzantini: о будућности (?) проучавања историјске "
+"географије Византије” [“The Project Tabula Imperii Byzantini: on the "
+"Future (?) of the Research in the Field of the Historical Geography of "
+"Byzantium”] on 22 February 2023 in Belgrade."
 
 #: mop/data/histgeo.py:7 mop/data/histgeo.py:24 mop/data/histgeo.py:41
 msgid "march"
@@ -270,44 +335,46 @@ msgid "December"
 msgstr "December"
 
 #: mop/data/histgeo.py:93 mop/data/histgeo.py:130 mop/data/histgeo.py:167
-#: mop/data/literature.py:91
+#: mop/data/literature.py:104
 msgid "eds."
 msgstr "eds."
 
 #: mop/data/histgeo.py:95
 msgid "histgeo_vol1_1"
 msgstr ""
-"on the occasion of the 75th birthday of Professor Dr. Johannes Koder the project "
-"leaders of the Long-Term Project Tabula Imperii Byzantini (TIB) at the Austrian "
-"Academy of Sciences, Prof. Dr. Andreas Külzer and Doz. Dr. Mihailo Popović (both "
-"Institute for Medieval Research, Division of Byzantine Research), have invited "
-"21 renowned scholars from the academic fields of Historical Geography, "
-"Archaeology, Geography and Cartography to write contributions. The result is an "
-"edited volume (Festschrift) entitled “Space, Landscapes and Settlements in "
-"Byzantium. Studies in Historical Geography of the Eastern Mediterranean”."
+"on the occasion of the 75th birthday of Professor Dr. Johannes Koder the "
+"project leaders of the Long-Term Project Tabula Imperii Byzantini (TIB) "
+"at the Austrian Academy of Sciences, Prof. Dr. Andreas Külzer and Doz. "
+"Dr. Mihailo Popović (both Institute for Medieval Research, Division of "
+"Byzantine Research), have invited 21 renowned scholars from the academic "
+"fields of Historical Geography, Archaeology, Geography and Cartography to"
+" write contributions. The result is an edited volume (Festschrift) "
+"entitled “Space, Landscapes and Settlements in Byzantium. Studies in "
+"Historical Geography of the Eastern Mediterranean”."
 
 #: mop/data/histgeo.py:95
 msgid "histgeo_vol1_2"
 msgstr ""
-"Johannes Koder, full member (w. M.) of the Austrian Academy of Sciences, has "
-"decisively shaped the scholarly work of the Tabula Imperii Byzantini since the "
-"year 1966 as a researcher of the first hour and directed it in the succession of "
-"Prof. Dr. Herbert Hunger from 1995 until 2015. He is the editor of the series "
-"Tabula Imperii Byzantini at the Austrian Academy of Sciences. His scholarly "
-"oeuvre includes groundbreaking publications on the Historical Geography of the "
-"Eastern Mediterranean and Byzantium."
+"Johannes Koder, full member (w. M.) of the Austrian Academy of Sciences, "
+"has decisively shaped the scholarly work of the Tabula Imperii Byzantini "
+"since the year 1966 as a researcher of the first hour and directed it in "
+"the succession of Prof. Dr. Herbert Hunger from 1995 until 2015. He is "
+"the editor of the series Tabula Imperii Byzantini at the Austrian Academy"
+" of Sciences. His scholarly oeuvre includes groundbreaking publications "
+"on the Historical Geography of the Eastern Mediterranean and Byzantium."
 
 #: mop/data/histgeo.py:95
 msgid "histgeo_vol1_3"
 msgstr ""
-"the edited volume (Festschrift) has been published as volume 1 of the series "
-"“Studies in Historical Geography and Cultural Heritage”. This series was founded "
-"by Mihailo Popović as project leader of the Digital Cluster Project “Digitising "
-"Patterns of Power (DPP): Peripheral Mountains in the Medieval World” at the "
-"Institute for Medieval Research of the Austrian Academy of Sciences in the "
-"spring of 2016 and is edited by Andreas Külzer and Mihailo Popović in order to "
-"innovate the historical-geographical research in Byzantine Studies. The series "
-"is printed by the publishing house Akademska Knjiga in Novi Sad. "
+"the edited volume (Festschrift) has been published as volume 1 of the "
+"series “Studies in Historical Geography and Cultural Heritage”. This "
+"series was founded by Mihailo Popović as project leader of the Digital "
+"Cluster Project “Digitising Patterns of Power (DPP): Peripheral Mountains"
+" in the Medieval World” at the Institute for Medieval Research of the "
+"Austrian Academy of Sciences in the spring of 2016 and is edited by "
+"Andreas Külzer and Mihailo Popović in order to innovate the historical-"
+"geographical research in Byzantine Studies. The series is printed by the "
+"publishing house Akademska Knjiga in Novi Sad. "
 
 #: mop/data/histgeo.py:111
 msgid "ed."
@@ -316,93 +383,98 @@ msgstr "ed."
 #: mop/data/histgeo.py:112
 msgid "histgeo_vol2_1"
 msgstr ""
-"on 9 December 2014, Prof. Dr. Dr. h.c. mult. Herbert Hunger (1914–2000), the "
-"founder of the Institute of Byzantine Studies (today: and Modern Greek Studies) "
-"of the University of Vienna and long-standing president of the Austrian Academy "
-"of Sciences would have celebrated his hundredth birthday. On this occasion, "
-"distinguished scholars from different parts of Europe and the United States of "
-"America met in Vienna to honor the famous researcher and to discuss the "
-"afterlife of his academic work in the fields of international Byzantine Studies. "
-"Prof. Dr. Andreas Külzer collected several significant contributions of the "
-"conference in this volume, which could serve as a source of scientific "
-"inspiration especially for scholars working in the various parts of history, "
+"on 9 December 2014, Prof. Dr. Dr. h.c. mult. Herbert Hunger (1914–2000), "
+"the founder of the Institute of Byzantine Studies (today: and Modern "
+"Greek Studies) of the University of Vienna and long-standing president of"
+" the Austrian Academy of Sciences would have celebrated his hundredth "
+"birthday. On this occasion, distinguished scholars from different parts "
+"of Europe and the United States of America met in Vienna to honor the "
+"famous researcher and to discuss the afterlife of his academic work in "
+"the fields of international Byzantine Studies. Prof. Dr. Andreas Külzer "
+"collected several significant contributions of the conference in this "
+"volume, which could serve as a source of scientific inspiration "
+"especially for scholars working in the various parts of history, "
 "historical geography and fundamental research."
 
 #: mop/data/histgeo.py:131
 msgid "histgeo_vol3_1"
 msgstr ""
-"The Long-Term Project “Tabula Imperii Byzantini (TIB)” (Institute for Medieval "
-"Research, Division of Byzantine Research) of the Austrian Academy of Sciences "
-"was founded in 1966. It is a very active and innovative scholarly endeavour and "
-"at the same time a keeper of TIB data sets (slides, photographs etc.), which are "
-"of remarkable importance for the Cultural Heritage of the Mediterranean World. "
-"Therefore, the entire TIB team (the active and the emeriti scholars) has "
-"prepared an edited volume in German entitled “Raum und Geschichte: der "
-"historische Atlas ‘Tabula Imperii Byzantini (TIB)’ an der Österreichischen "
-"Akademie der Wissenschaften”. It is funded by the Jubiläumsfonds der "
-"Österreichischen Nationalbank Nr. 17771 via the scholarly project <a "
-"href=\"https://tib.oeaw.ac.at/balkan/subprojects/digtib\" target=\"_blank\">“Die "
-"digitale Tabula Imperii Byzantini (Dig-TIB) als Beitrag zum Weltkulturerbe”</a> "
-"and has been published by the editors Andreas Külzer, Veronika Polloczek and "
-"Mihailo St. Popović as volume 3 of the series “Studies in Historical Geography "
-"and Cultural Heritage” at the publishing house Akademska Knjiga (Novi Sad, "
-"Serbia). The aim of this publication is to introduce, especially to an Austrian "
-"audience, the history, scholarly results, future ideas and plans and "
-"contribution to national as well as international academia of the TIB, since the "
-"TIB is an integral part of Austrian scholarship funded by the Austrian society. "
-"Although Historical Geography is a very specialised branch of Byzantine Studies, "
-"we do believe that the existence of such a project in Austria and its "
-"documentation will meet public interest and awareness."
+"The Long-Term Project “Tabula Imperii Byzantini (TIB)” (Institute for "
+"Medieval Research, Division of Byzantine Research) of the Austrian "
+"Academy of Sciences was founded in 1966. It is a very active and "
+"innovative scholarly endeavour and at the same time a keeper of TIB data "
+"sets (slides, photographs etc.), which are of remarkable importance for "
+"the Cultural Heritage of the Mediterranean World. Therefore, the entire "
+"TIB team (the active and the emeriti scholars) has prepared an edited "
+"volume in German entitled “Raum und Geschichte: der historische Atlas "
+"‘Tabula Imperii Byzantini (TIB)’ an der Österreichischen Akademie der "
+"Wissenschaften”. It is funded by the Jubiläumsfonds der Österreichischen "
+"Nationalbank Nr. 17771 via the scholarly project <a "
+"href=\"https://tib.oeaw.ac.at/balkan/subprojects/digtib\" "
+"target=\"_blank\">“Die digitale Tabula Imperii Byzantini (Dig-TIB) als "
+"Beitrag zum Weltkulturerbe”</a> and has been published by the editors "
+"Andreas Külzer, Veronika Polloczek and Mihailo St. Popović as volume 3 of"
+" the series “Studies in Historical Geography and Cultural Heritage” at "
+"the publishing house Akademska Knjiga (Novi Sad, Serbia). The aim of this"
+" publication is to introduce, especially to an Austrian audience, the "
+"history, scholarly results, future ideas and plans and contribution to "
+"national as well as international academia of the TIB, since the TIB is "
+"an integral part of Austrian scholarship funded by the Austrian society. "
+"Although Historical Geography is a very specialised branch of Byzantine "
+"Studies, we do believe that the existence of such a project in Austria "
+"and its documentation will meet public interest and awareness."
 
 #: mop/data/histgeo.py:150
 msgid "histgeo_vol4_1"
 msgstr ""
-"the landscape of the Southeast Peloponnese (Laconia, Greece), a very important "
-"region of the Empire in the context of the late Byzantine period, was comprised "
-"of important bishopric centers, such as Mistra and Monemvasia, as well as "
-"numerous villages, powerful monastic foundations, and smaller hermitages "
-"frequently built in caves and isolated settings. Grounded both on systematic "
-"fieldwork and detailed surveys of the monuments, this book is the first "
-"comprehensive study of the eremitical and monastic landscapes of the region. It "
-"investigates the interactions of isolated hermits and established communities, "
-"the relationships of large monasteries to smaller foundations, and the "
-"interweaving of monastic and rural economies. It aims at identifying the monks "
-"themselves, their preoccupations and aspirations, which are reflected not only "
-"by the choice of the patron saints of the holy places they founded or the "
-"content of the painted decoration but also by the choice of location or a deep "
-"relationship with natural elements of the landscape."
+"the landscape of the Southeast Peloponnese (Laconia, Greece), a very "
+"important region of the Empire in the context of the late Byzantine "
+"period, was comprised of important bishopric centers, such as Mistra and "
+"Monemvasia, as well as numerous villages, powerful monastic foundations, "
+"and smaller hermitages frequently built in caves and isolated settings. "
+"Grounded both on systematic fieldwork and detailed surveys of the "
+"monuments, this book is the first comprehensive study of the eremitical "
+"and monastic landscapes of the region. It investigates the interactions "
+"of isolated hermits and established communities, the relationships of "
+"large monasteries to smaller foundations, and the interweaving of "
+"monastic and rural economies. It aims at identifying the monks "
+"themselves, their preoccupations and aspirations, which are reflected not"
+" only by the choice of the patron saints of the holy places they founded "
+"or the content of the painted decoration but also by the choice of "
+"location or a deep relationship with natural elements of the landscape."
 
 #: mop/data/histgeo.py:179
 msgid "sgomez_short_bio"
 msgstr ""
-"BA in History, Autónoma University of Madrid, MA in Archaeology, Università Ca’ "
-"Foscari of Venice, MA in Egyptian Archaeology, University College of London"
+"BA in History, Autónoma University of Madrid, MA in Archaeology, "
+"Università Ca’ Foscari of Venice, MA in Egyptian Archaeology, University "
+"College of London"
 
 #: mop/data/histgeo.py:180
 msgid "sgomez_bio_1"
 msgstr ""
 "Silvia Gómez Senovilla, is currently finishing her PhD Research at the "
-"University of Vienna within the frame of the ERC Advanced Grant “The Hyksos "
-"Enigma” (Grant agreement Nº 668640), under the supervision of Prof. Manfred "
-"Bietak."
+"University of Vienna within the frame of the ERC Advanced Grant “The "
+"Hyksos Enigma” (Grant agreement Nº 668640), under the supervision of "
+"Prof. Manfred Bietak."
 
 #: mop/data/histgeo.py:180
 msgid "sgomez_bio_2"
 msgstr ""
-"in her PhD, she examines the structure and disposition of settlements and "
-"domestic areas during the Early and Middle Bronze Ages in ancient Syro-"
-"Mesopotamia and Egypt, with a special emphasis in the eastern Nile Delta at the "
-"city of Avaris-Tell el-Dab’a. By including anthropological and sociological "
-"theories about the use of space, and the inclusion of spatial and statistical "
-"tools, she explores the transformations of the space during this part of the "
-"Bronze Age, and its social implications."
+"in her PhD, she examines the structure and disposition of settlements and"
+" domestic areas during the Early and Middle Bronze Ages in ancient Syro-"
+"Mesopotamia and Egypt, with a special emphasis in the eastern Nile Delta "
+"at the city of Avaris-Tell el-Dab’a. By including anthropological and "
+"sociological theories about the use of space, and the inclusion of "
+"spatial and statistical tools, she explores the transformations of the "
+"space during this part of the Bronze Age, and its social implications."
 
 #: mop/data/histgeo.py:184 mop/data/histgeo.py:185
 msgid "gbidaut_short_bio"
 msgstr ""
-"BA in History, Université Paris 1 Panthéon-Sorbonne, MA in History, École des "
-"hautes études en sciences sociales of Paris, Graduate diploma in History and "
-"Greek Studies, École normale supérieure of Paris"
+"BA in History, Université Paris 1 Panthéon-Sorbonne, MA in History, École"
+" des hautes études en sciences sociales of Paris, Graduate diploma in "
+"History and Greek Studies, École normale supérieure of Paris"
 
 #: mop/data/histgeo.py:191
 msgid "lecture_1_title"
@@ -419,36 +491,39 @@ msgstr "englisch"
 #: mop/data/histgeo.py:200
 msgid "lecture_1_1"
 msgstr ""
-"archaeology and history deal naturally with the time-space challenge. Despite "
-"numerous advances in the field of spatial analysis and landscape studies derived "
-"from the quantitative revolution that took place in the 70’s of the past "
-"century, a real “spatial turn” in archaeology is sometimes still overlooked. As "
-"pointed out by Edward Soja in one of his most influential works: “[the spatial "
-"turn] cannot be accomplished simply by appending spatial highlights to inherited "
-"critical perspectives and sitting back to watch them glow with logical "
-"conviction”. A problem that stands in the way of the production of -true- "
-"spatial narratives in archaeology is related to three main issues: first, the "
-"treatment of time and temporal scales in archaeology; second, a sometimes-"
-"unconscious oblivion to the fact that social space is not equal to natural "
-"-Euclidean- space, and third that scale is, when dealing with the time-space "
-"conundrum, a fundamental piece in the machinery of unfolding events. The "
-"implicit assumption that the data we work with, collected by us or by other "
-"colleagues, as well as the methodology we use, do not present biases and are not "
-"subjected to a (conscious or unconscious) pre-selection, hindrances as well some "
-"attempts for a true analysis of space and its constituents."
+"archaeology and history deal naturally with the time-space challenge. "
+"Despite numerous advances in the field of spatial analysis and landscape "
+"studies derived from the quantitative revolution that took place in the "
+"70’s of the past century, a real “spatial turn” in archaeology is "
+"sometimes still overlooked. As pointed out by Edward Soja in one of his "
+"most influential works: “[the spatial turn] cannot be accomplished simply"
+" by appending spatial highlights to inherited critical perspectives and "
+"sitting back to watch them glow with logical conviction”. A problem that "
+"stands in the way of the production of -true- spatial narratives in "
+"archaeology is related to three main issues: first, the treatment of time"
+" and temporal scales in archaeology; second, a sometimes-unconscious "
+"oblivion to the fact that social space is not equal to natural "
+"-Euclidean- space, and third that scale is, when dealing with the time-"
+"space conundrum, a fundamental piece in the machinery of unfolding "
+"events. The implicit assumption that the data we work with, collected by "
+"us or by other colleagues, as well as the methodology we use, do not "
+"present biases and are not subjected to a (conscious or unconscious) pre-"
+"selection, hindrances as well some attempts for a true analysis of space "
+"and its constituents."
 
 #: mop/data/histgeo.py:200
 msgid "lecture_1_2"
 msgstr ""
-"in this lecture, I will present the current state of my PhD research, where I "
-"deal with the structuration of space in ancient Egypt and Syro-Mesopotamia "
-"during the second millennium BC. The talk will be framed around the main "
-"challenges that may arise when dealing with ancient temporalities, and their "
-"assumed reflection in space, and holds scale as its main component. I will try "
-"as well to highlight and bring into discussion the barriers that a spurious use "
-"of current spatial analysis software such as GIS packages can foster, while "
-"trying to open the debate as to what possibilities can help us to overcome the "
-"sometimes-ubiquitous reliance on purely visual models."
+"in this lecture, I will present the current state of my PhD research, "
+"where I deal with the structuration of space in ancient Egypt and Syro-"
+"Mesopotamia during the second millennium BC. The talk will be framed "
+"around the main challenges that may arise when dealing with ancient "
+"temporalities, and their assumed reflection in space, and holds scale as "
+"its main component. I will try as well to highlight and bring into "
+"discussion the barriers that a spurious use of current spatial analysis "
+"software such as GIS packages can foster, while trying to open the debate"
+" as to what possibilities can help us to overcome the sometimes-"
+"ubiquitous reliance on purely visual models."
 
 #: mop/data/histgeo.py:203
 msgid "lecture_2_title"
@@ -457,52 +532,56 @@ msgstr "Mapping Mobility, Constructing Community "
 #: mop/data/histgeo.py:204
 msgid "lecture_2_subtitle"
 msgstr ""
-"Considerations on the Definition, Representation and Spatiality of Pastoral "
-"Communities in the Byzantine and Early Ottoman Balkans "
+"Considerations on the Definition, Representation and Spatiality of "
+"Pastoral Communities in the Byzantine and Early Ottoman Balkans "
 
 #: mop/data/histgeo.py:212
 msgid "lecture_2_1"
 msgstr ""
-"The premodern Balkans were characterized by a high level of diversity, wherein "
-"multiple polities and political models, linguistic communities and modes of "
-"social organization interacted, superposed and hybridized. This diversity "
-"carries on to the present, where it has been reshaped and reimagined by the gaze "
-"of Western orientalism (or Balkanism, as Maria Todorova coined it), competing "
-"imperialisms and the generalization of the nation-state paradigm. As such, "
-"scholarly apprehension of the premodern societies of the Balkans must be "
-"especially cognizant of the stratification and entanglement of past and present "
-"categories of collective identity and space."
+"The premodern Balkans were characterized by a high level of diversity, "
+"wherein multiple polities and political models, linguistic communities "
+"and modes of social organization interacted, superposed and hybridized. "
+"This diversity carries on to the present, where it has been reshaped and "
+"reimagined by the gaze of Western orientalism (or Balkanism, as Maria "
+"Todorova coined it), competing imperialisms and the generalization of the"
+" nation-state paradigm. As such, scholarly apprehension of the premodern "
+"societies of the Balkans must be especially cognizant of the "
+"stratification and entanglement of past and present categories of "
+"collective identity and space."
 
 #: mop/data/histgeo.py:212
 msgid "lecture_2_2"
 msgstr ""
-"In this lecture, I will present the current state of my PhD research, which "
-"deals with the social organization, economic structures and political networks "
-"of pastoral communities in the Southern Balkans (Macedonia, Epirus and Thessaly) "
-"from the Middle Byzantine to the Early Ottoman period (10th-15th century). This "
-"paper will focus on the first results and the methodological questions they "
-"raise for the history and historical geography of the Balkans. The first set of "
-"challenges concerns the elaboration of relevant analytical categories. Premodern "
-"pastoral communities were mostly oral societies, geographically and symbolically "
-"peripheral to the monastic, urban and political centers where the literate "
-"elites produced the bulk of surviving sources. How then to define and identify "
-"them without reusing at face-value the categories produced by outsiders? "
-"Furthermore, these categories – some with a continuous record of use to the "
-"present – have historically oscillated between serving as economic and/or ethnic "
-"labels. Hence, I will explore ways to avoid a nominal essentialism projecting "
-"contemporary ethnonational meanings onto the past without dissolving the "
-"coherence of these collectives. The second set of challenges revolves around "
-"reconstructing and mapping the spatialities of groups whose mobility was an "
-"essential characteristic. Considering the importance of their geographical "
-"context, I will present the issues raised by the paucity and uneven distribution "
-"of place-specific sources, and discuss to what extent GIS tools can help or "
-"hinder our understanding of their spatial practices and representations."
+"In this lecture, I will present the current state of my PhD research, "
+"which deals with the social organization, economic structures and "
+"political networks of pastoral communities in the Southern Balkans "
+"(Macedonia, Epirus and Thessaly) from the Middle Byzantine to the Early "
+"Ottoman period (10th-15th century). This paper will focus on the first "
+"results and the methodological questions they raise for the history and "
+"historical geography of the Balkans. The first set of challenges concerns"
+" the elaboration of relevant analytical categories. Premodern pastoral "
+"communities were mostly oral societies, geographically and symbolically "
+"peripheral to the monastic, urban and political centers where the "
+"literate elites produced the bulk of surviving sources. How then to "
+"define and identify them without reusing at face-value the categories "
+"produced by outsiders? Furthermore, these categories – some with a "
+"continuous record of use to the present – have historically oscillated "
+"between serving as economic and/or ethnic labels. Hence, I will explore "
+"ways to avoid a nominal essentialism projecting contemporary "
+"ethnonational meanings onto the past without dissolving the coherence of "
+"these collectives. The second set of challenges revolves around "
+"reconstructing and mapping the spatialities of groups whose mobility was "
+"an essential characteristic. Considering the importance of their "
+"geographical context, I will present the issues raised by the paucity and"
+" uneven distribution of place-specific sources, and discuss to what "
+"extent GIS tools can help or hinder our understanding of their spatial "
+"practices and representations."
 
-#: mop/data/histgeo.py:216
+#: mop/data/histgeo.py:216 mop/templates/histgeo.html:129
 msgid "author"
 msgstr "author"
 
-#: mop/data/histgeo.py:217
+#: mop/data/histgeo.py:217 mop/templates/histgeo.html:133
 msgid "pages"
 msgstr "pages"
 
@@ -510,11 +589,12 @@ msgstr "pages"
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:219
+#: mop/data/histgeo.py:219 mop/templates/histgeo.html:141
 msgid "citation"
 msgstr "citation"
 
-#: mop/data/histgeo.py:220
+#: mop/data/histgeo.py:220 mop/templates/histgeo.html:146
+#: mop/templates/histgeo.html:149
 msgid "order"
 msgstr "order"
 
@@ -554,133 +634,266 @@ msgstr "the natural features of landscapes"
 msgid "image_landscape_caption"
 msgstr "the Bay of Kotor, Montenegro (2021)"
 
-#: mop/data/literature.py:12
+#: mop/data/institutes.py:5
+#, fuzzy
+msgid ""
+"Institute for Byzantine Studies of the Serbian Academy of Sciences and "
+"Arts"
+msgstr "presentation at the Serbian Academy of Sciences and Arts"
+
+#: mop/data/institutes.py:13
+msgid "Science Fund of the Republic of Serbia"
+msgstr "Science Fund of the Republic of Serbia"
+
+#: mop/data/institutes.py:19
+msgid "Zukunftsfonds"
+msgstr "Zukunftsfonds"
+
+#: mop/data/institutes.py:25
+msgid "Deutsche Forschungsgemeinschaft"
+msgstr "Deutsche Forschungsgemeinschaft"
+
+#: mop/data/institutes.py:31
+msgid "Metropolis von Austria"
+msgstr "Metropolis von Austria"
+
+#: mop/data/institutes.py:34
+msgid "S. Em. Metropolit Arsenios von Austria"
+msgstr "S. Em. Metropolit Arsenios von Austria"
+
+#: mop/data/institutes.py:35
+msgid "Fleischmarkt 13<br>1010 Wien<br>Österreich"
+msgstr "Fleischmarkt 13<br>1010 Vienna<br>Austria"
+
+#: mop/data/institutes.py:37 mop/templates/imprint.html:10
+#: mop/templates/layout.html:101
+msgid "Austrian Academy of Sciences"
+msgstr "Austrian Academy of Sciences"
+
+#: mop/data/institutes.py:43
+msgid "Austrian Archaeological Institute"
+msgstr "Austrian Archaeological Institute"
+
+#: mop/data/institutes.py:49 mop/templates/layout.html:102
+msgid "Institute for Medieval Research"
+msgstr "Institute for Medieval Research"
+
+#: mop/data/institutes.py:55
+msgid "Abteilung Byzanzforschung (ABF)"
+msgstr "Division of Byzantine Research (ABF)"
+
+#: mop/data/institutes.py:58
+msgid ""
+"Österreichische Akademie der Wissenschaften (ÖAW) <br> Institut für "
+"Mittelalterforschung (IMAFO)"
+msgstr ""
+
+#: mop/data/institutes.py:62
+msgid "Austrian Centre for Digital Humanities and Cultural Heritage"
+msgstr "Austrian Centre for Digital Humanities and Cultural Heritage"
+
+#: mop/data/institutes.py:68
+msgid "University of Vienna"
+msgstr "University of Vienna"
+
+#: mop/data/institutes.py:74
+msgid "Austrian Science Fund"
+msgstr "Austrian Science Fund"
+
+#: mop/data/institutes.py:80
+msgid "Jubiläumsfonds der Oesterreichischen Nationalbank"
+msgstr "Jubilee Fund of the Oesterreichische Nationalbank"
+
+#: mop/data/institutes.py:87
+msgid "Austrian Agency for International Cooperation in Education and Research"
+msgstr "Austrian Agency for International Cooperation in Education and Research"
+
+#: mop/data/institutes.py:94
+msgid "Wien Kultur (MA 7)"
+msgstr "Wien Kultur (MA 7)"
+
+#: mop/data/institutes.py:100
+msgid "Austrian Institute of Technology"
+msgstr "Austrian Institute of Technology"
+
+#: mop/data/institutes.py:106
+msgid "Belgrade City Museum"
+msgstr "Belgrade City Museum"
+
+#: mop/data/institutes.py:112
+msgid "University of Belgrade"
+msgstr "University of Belgrade"
+
+#: mop/data/institutes.py:118
+msgid "National Library of Serbia"
+msgstr "National Library of Serbia"
+
+#: mop/data/institutes.py:124
+msgid "Biblioteka Matice Srpske"
+msgstr "Biblioteka Matice Srpske"
+
+#: mop/data/institutes.py:130
+msgid "Tabula Imperii Byzantini"
+msgstr "Tabula Imperii Byzantini"
+
+#: mop/data/institutes.py:136
+msgid "Union Académique Internationale"
+msgstr "Union Académique Internationale"
+
+#: mop/data/institutes.py:142
+msgid "Land Niederösterreich, Abteilung Wissenschaft und Forschung"
+msgstr "State of Lower Austria, Department of Science and Research"
+
+#: mop/data/institutes.py:149
+msgid "Katholische Hochschule ITI"
+msgstr "Catholic University ITI"
+
+#: mop/data/institutes.py:155
+msgid "Orient & Méditerranée"
+msgstr "Orient & Méditerranée"
+
+#: mop/data/institutes.py:161
+msgid "Ss. Cyril and Methodius University"
+msgstr "Ss. Cyril and Methodius University"
+
+#: mop/data/literature.py:9
+#, fuzzy
+msgid "Belgrad"
+msgstr "Belgrade"
+
+#: mop/data/literature.py:24
 msgid "Berlin"
 msgstr "Berlin"
 
-#: mop/data/literature.py:26 mop/data/literature.py:106
+#: mop/data/literature.py:39 mop/data/literature.py:119
 msgid "Novi Sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:42
+#: mop/data/literature.py:55
 msgid "Bucharest"
 msgstr "Bucharest"
 
-#: mop/data/literature.py:42
+#: mop/data/literature.py:55
 msgid "Brăila"
 msgstr "Brăila"
 
-#: mop/data/literature.py:55 mop/data/literature.py:82 mop/data/presentations.py:54
-#: mop/data/presentations.py:75 mop/data/presentations.py:84
-#: mop/data/presentations.py:151 mop/data/projects/idcew.py:45
-#: mop/data/projects/idcew.py:49
+#: mop/data/literature.py:68 mop/data/literature.py:95
+#: mop/data/presentations.py:63 mop/data/presentations.py:84
+#: mop/data/presentations.py:93 mop/data/presentations.py:160
+#: mop/data/projects/idcew.py:54 mop/data/projects/idcew.py:57
 msgid "Belgrade"
 msgstr "Belgrade"
 
-#: mop/data/literature.py:68
+#: mop/data/literature.py:81
 msgid "Darmstadt"
 msgstr "Darmstadt"
 
-#: mop/data/literature.py:95 mop/data/literature.py:117
-#: mop/data/presentations.py:166
+#: mop/data/literature.py:108 mop/data/literature.py:130
+#: mop/data/presentations.py:175
 msgid "Leipzig"
 msgstr "Leipzig"
 
-#: mop/data/literature.py:131
+#: mop/data/literature.py:144
 msgid "Göttingen"
 msgstr "Göttingen"
 
-#: mop/data/literature.py:138
+#: mop/data/literature.py:151
 msgid "etc."
 msgstr "etc."
 
-#: mop/data/literature.py:143
+#: mop/data/literature.py:156
 msgid "Krems"
 msgstr "Krems"
 
-#: mop/data/literature.py:167
+#: mop/data/literature.py:180
 msgid "cambridge, MA"
 msgstr "Cambridge, MA"
 
-#: mop/data/literature.py:167 mop/data/literature.py:176 mop/data/literature.py:235
+#: mop/data/literature.py:180 mop/data/literature.py:189
+#: mop/data/literature.py:248
 msgid "london"
 msgstr "London"
 
-#: mop/data/literature.py:176
+#: mop/data/literature.py:189
 msgid "new york"
 msgstr "New York"
 
-#: mop/data/literature.py:185
+#: mop/data/literature.py:198
 msgid "stroud"
 msgstr "Stroud"
 
-#: mop/data/literature.py:197
+#: mop/data/literature.py:210
 msgid "mainz"
 msgstr "Mainz"
 
-#: mop/data/literature.py:197
+#: mop/data/literature.py:210
 msgid "ruhpolding"
 msgstr "Ruhpolding"
 
-#: mop/data/literature.py:212
+#: mop/data/literature.py:225
 msgid "vienna"
 msgstr "Vienna"
 
-#: mop/data/literature.py:212
+#: mop/data/literature.py:225
 msgid "novi sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:225 mop/data/literature.py:257
+#: mop/data/literature.py:238 mop/data/literature.py:270
 msgid "venice"
 msgstr "Venice"
 
-#: mop/data/literature.py:245
+#: mop/data/literature.py:258
 msgid "exter"
 msgstr "Exeter"
 
-#: mop/data/presentations.py:12
+#: mop/data/presentations.py:9
+#, fuzzy
+msgid "Wien"
+msgstr "Vienna"
+
+#: mop/data/presentations.py:21
 msgid "Heidelberg"
 msgstr "Heidelberg"
 
-#: mop/data/presentations.py:21
+#: mop/data/presentations.py:30
 msgid "Ebreichsdorf"
 msgstr "Ebreichsdorf"
 
-#: mop/data/presentations.py:32 mop/data/presentations.py:96
-#: mop/data/presentations.py:107 mop/data/presentations.py:117
-#: mop/data/presentations.py:128 mop/data/presentations.py:140
-#: mop/data/presentations.py:215 mop/data/presentations.py:238
-#: mop/data/presentations.py:250 mop/data/presentations.py:261
-#: mop/data/presentations.py:272 mop/data/presentations.py:283
-#: mop/data/presentations.py:293
+#: mop/data/presentations.py:41 mop/data/presentations.py:105
+#: mop/data/presentations.py:116 mop/data/presentations.py:126
+#: mop/data/presentations.py:137 mop/data/presentations.py:149
+#: mop/data/presentations.py:224 mop/data/presentations.py:247
+#: mop/data/presentations.py:259 mop/data/presentations.py:270
+#: mop/data/presentations.py:281 mop/data/presentations.py:292
+#: mop/data/presentations.py:302
 msgid "Leeds"
 msgstr "Leeds"
 
-#: mop/data/presentations.py:42 mop/data/presentations.py:191
-#: mop/data/presentations.py:304 mop/data/presentations.py:316
-#: mop/data/projects/idcew.py:44 mop/data/projects/idcew.py:48
-#: mop/data/projects/tarsr.py:45 mop/data/projects/tarsr.py:54
-#: mop/templates/imprint.html:14 mop/templates/layout.html:89
+#: mop/data/presentations.py:51 mop/data/presentations.py:200
+#: mop/data/presentations.py:313 mop/data/presentations.py:325
+#: mop/data/projects/idcew.py:53 mop/data/projects/tarsr.py:55
+#: mop/data/projects/tarsr.py:64 mop/templates/imprint.html:14
+#: mop/templates/layout.html:105
 msgid "Vienna"
 msgstr "Vienna"
 
-#: mop/data/presentations.py:53
+#: mop/data/presentations.py:62
 msgid "The Society of the Friends of Holy Mount Athos"
 msgstr "The Society of the Friends of Holy Mount Athos"
 
-#: mop/data/presentations.py:66
+#: mop/data/presentations.py:75
 msgid "Oxford"
 msgstr "Oxford"
 
-#: mop/data/presentations.py:177
+#: mop/data/presentations.py:186
 msgid "Los Angeles"
 msgstr "Los Angeles"
 
-#: mop/data/presentations.py:204
+#: mop/data/presentations.py:213
 msgid "Thessaloniki"
 msgstr "Thessaloniki"
 
-#: mop/data/presentations.py:227
+#: mop/data/presentations.py:236
 msgid "Florenz"
 msgstr "Florenz"
 
@@ -692,98 +905,102 @@ msgstr "Surveying in North Macedonia"
 
 #: mop/data/projects/barbyz.py:36
 msgid ""
-"From Barbarians to Christians and Rhomaioi. The Process of Byzantinization in "
-"the Central Balkans (late 10th – mid-13th century)"
+"From Barbarians to Christians and Rhomaioi. The Process of "
+"Byzantinization in the Central Balkans (late 10th – mid-13th century)"
 msgstr ""
-"From Barbarians to Christians and Rhomaioi. The Process of Byzantinization in "
-"the Central Balkans (late 10th – mid-13th century)"
+"From Barbarians to Christians and Rhomaioi. The Process of "
+"Byzantinization in the Central Balkans (late 10th – mid-13th century)"
 
 #: mop/data/projects/barbyz.py:63
 msgid "barbyz_description_1"
 msgstr ""
-"The main objective of the project is to explain the key factors that influenced "
-"the course and characteristics of the Byzantinization process, which is defined "
-"as an integration of the local Balkan communities into the value system of the "
-"dominant culture. This process depended on both the Empire’s “soft power” and on "
-"the formal inclusion of the given area into its borders. The research is "
-"conducted in three main directions:"
+"The main objective of the project is to explain the key factors that "
+"influenced the course and characteristics of the Byzantinization process,"
+" which is defined as an integration of the local Balkan communities into "
+"the value system of the dominant culture. This process depended on both "
+"the Empire’s “soft power” and on the formal inclusion of the given area "
+"into its borders. The research is conducted in three main directions:"
 
 #: mop/data/projects/barbyz.py:64
 msgid "barbyz_description_2"
 msgstr ""
 "<ol>\n"
-"<li>Models of Byzantine government in the central Balkans (late 10th – mid-13th "
-"century)</li>\n"
-"<li>The Archbishopric of Ohrid (from its founding in the beginning of the 11th "
-"to the mid-13th century)</li>\n"
+"<li>Models of Byzantine government in the central Balkans (late 10th – "
+"mid-13th century)</li>\n"
+"<li>The Archbishopric of Ohrid (from its founding in the beginning of the"
+" 11th to the mid-13th century)</li>\n"
 "<li>Political, ideological and social aspects of Byzantinization</li>\n"
 "</ol>"
 
 #: mop/data/projects/barbyz.py:65
 msgid "barbyz_description_3"
 msgstr ""
-"The Byzantinization process did not unfold identically in all parts of the "
-"central Balkans, which is why the research is organized into four geographical "
-"and historical zones: the northeastern Balkans (parts of the old Bulgarian state "
-"between the Danube and the mount Balkan), the central Balkans (a part of "
-"Macedonia and neighboring regions under the jurisdiction of the Archbishopric of "
-"Ohrid), the Danube-Morava region (Srem-Belgrade-Braničevo-Niš), and the "
-"northwestern parts of the central Balkans (Serbian and Croatian zone). "
+"The Byzantinization process did not unfold identically in all parts of "
+"the central Balkans, which is why the research is organized into four "
+"geographical and historical zones: the northeastern Balkans (parts of the"
+" old Bulgarian state between the Danube and the mount Balkan), the "
+"central Balkans (a part of Macedonia and neighboring regions under the "
+"jurisdiction of the Archbishopric of Ohrid), the Danube-Morava region "
+"(Srem-Belgrade-Braničevo-Niš), and the northwestern parts of the central "
+"Balkans (Serbian and Croatian zone). "
 
 #: mop/data/projects/barbyz.py:66
 msgid "barbyz_description_4"
 msgstr ""
-"Within the time frame of the project there are several chronological phases in "
-"which the Byzantinization can be outlined more clearly. The criterion for "
-"distinguishing different phases depended on whether the area under consideration "
-"was part of the Empire, or just under its cultural and political influence:"
+"Within the time frame of the project there are several chronological "
+"phases in which the Byzantinization can be outlined more clearly. The "
+"criterion for distinguishing different phases depended on whether the "
+"area under consideration was part of the Empire, or just under its "
+"cultural and political influence:"
 
 #: mop/data/projects/barbyz.py:67
 msgid "barbyz_description_5"
 msgstr ""
 "<ol>\n"
-"<li>The period of the so-called first Byzantine “Reconquista” or the reign of "
-"John I Tzimiskes (969–976), when the Empire penetrated the Balkan interior.</"
-"li>\n"
-"<li>The reign of Basil II (976–1025) or the second Reconquista which resulted in "
-"the establishment of a more comprehensive Byzantine control of the Balkan "
-"interior.</li>\n"
-"<li>The death of Basil II in 1025 until the Latin conquest of Constantinople in "
-"1204, when the Archbishopric of Ohrid became an increasingly significant "
-"instrument in the implementation of Byzantinization.</li>\n"
-"<li>From 1204 until the restoration of the Byzantine Empire in 1261, when "
-"Byzantium started to withdraw from the Balkans both politically and militarily.</"
-"li>\n"
+"<li>The period of the so-called first Byzantine “Reconquista” or the "
+"reign of John I Tzimiskes (969–976), when the Empire penetrated the "
+"Balkan interior.</li>\n"
+"<li>The reign of Basil II (976–1025) or the second Reconquista which "
+"resulted in the establishment of a more comprehensive Byzantine control "
+"of the Balkan interior.</li>\n"
+"<li>The death of Basil II in 1025 until the Latin conquest of "
+"Constantinople in 1204, when the Archbishopric of Ohrid became an "
+"increasingly significant instrument in the implementation of "
+"Byzantinization.</li>\n"
+"<li>From 1204 until the restoration of the Byzantine Empire in 1261, when"
+" Byzantium started to withdraw from the Balkans both politically and "
+"militarily.</li>\n"
 "</ol>"
 
 #: mop/data/projects/barbyz.py:68
 msgid "barbyz_description_6"
 msgstr ""
-"The project team is composed of well-established researchers in different "
-"fields: Byzantine and medieval Serbian history, art history, legal history, "
-"history of architecture and classics. The interdisciplinary research employs "
-"both traditional and current methods of critical examination and analysis of "
-"written and documentary sources, as well as the methods of historical analogy "
-"and historical regression. The expected results of the project are threefold: "
-"(a) to identify the indicators of cultural and economic progress, using the "
-"example of local communities in the medieval central Balkans; (b) to determine "
-"the factors that supported and ensured it; and (c) to identify the historical "
-"consequences of its comprehensive or partial integration. Successful completion "
-"of the project will be useful for further research in the field of Byzantine "
-"studies as well as the history of the medieval Balkans."
+"The project team is composed of well-established researchers in different"
+" fields: Byzantine and medieval Serbian history, art history, legal "
+"history, history of architecture and classics. The interdisciplinary "
+"research employs both traditional and current methods of critical "
+"examination and analysis of written and documentary sources, as well as "
+"the methods of historical analogy and historical regression. The expected"
+" results of the project are threefold: (a) to identify the indicators of "
+"cultural and economic progress, using the example of local communities in"
+" the medieval central Balkans; (b) to determine the factors that "
+"supported and ensured it; and (c) to identify the historical consequences"
+" of its comprehensive or partial integration. Successful completion of "
+"the project will be useful for further research in the field of Byzantine"
+" studies as well as the history of the medieval Balkans."
 
 #: mop/data/projects/borderzones.py:10 mop/data/projects/holdura.py:13
-#: mop/data/projects/vlachs.py:10
+#: mop/data/projects/tarsr.py:10 mop/data/projects/vlachs.py:10
 msgid "Final project report"
 msgstr "Final project report"
 
 #: mop/data/projects/borderzones.py:20
 msgid ""
-"Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from "
-"Different Authors"
+"Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from"
+" Different Authors"
 msgstr ""
-"Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from "
-"Different Authors"
+"Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from"
+" Different Authors"
 
 #: mop/data/projects/borderzones.py:27
 msgid "Fortifications in the Northern Macedonian Region in the 13/14th century"
@@ -795,9 +1012,11 @@ msgstr "Road Model based on a k. u k. Marching Map"
 
 #: mop/data/projects/borderzones.py:39
 msgid ""
-"Markovi Kuli Castle near Prilep from the south, Republic of Northern Macedonia"
+"Markovi Kuli Castle near Prilep from the south, Republic of Northern "
+"Macedonia"
 msgstr ""
-"Markovi Kuli Castle near Prilep from the south, Republic of Northern Macedonia"
+"Markovi Kuli Castle near Prilep from the south, Republic of Northern "
+"Macedonia"
 
 #: mop/data/projects/borderzones.py:47
 msgid "The Kale elevation in Skopje, Republic of Northern Macedonia"
@@ -813,143 +1032,152 @@ msgstr "Ohrid and Samuilova tvrdina Castle, Republic of Northern Macedonia"
 
 #: mop/data/projects/borderzones.py:70
 msgid ""
-"Byzantino-Serbian Border Zones in Transition: Migration and Elite Change in pre-"
-"Ottoman Macedonia (1282–1355)"
+"Byzantino-Serbian Border Zones in Transition: Migration and Elite Change "
+"in pre-Ottoman Macedonia (1282–1355)"
 msgstr ""
-"Byzantino-Serbian Border Zones in Transition: Migration and Elite Change in pre-"
-"Ottoman Macedonia (1282–1355)"
+"Byzantino-Serbian Border Zones in Transition: Migration and Elite Change "
+"in pre-Ottoman Macedonia (1282–1355)"
 
 #: mop/data/projects/borderzones.py:81
 msgid "borderzones_description_1"
 msgstr ""
-"The European continent as a whole and the European Union in particular are "
-"facing a period of increasing dynamics of internal migration as well as external "
-"immigration at the moment. Migration in all of its various aspects has always "
-"been a part of the history of the European continent. In medieval societies the "
-"question of migration is closely connected with the definition as well as the "
-"representation of medieval borders. Maps in historical atlases are designed to "
-"provide clear-cut lines of political formations and empires, which does not "
-"reflect the reality of civilizations neither in Antiquity, nor in the Middle "
-"Ages, nor in Early Modern Times. The dynamics of borders simultaneously shapes "
-"the dynamics of settlement patterns as well as of transportation networks."
+"The European continent as a whole and the European Union in particular "
+"are facing a period of increasing dynamics of internal migration as well "
+"as external immigration at the moment. Migration in all of its various "
+"aspects has always been a part of the history of the European continent. "
+"In medieval societies the question of migration is closely connected with"
+" the definition as well as the representation of medieval borders. Maps "
+"in historical atlases are designed to provide clear-cut lines of "
+"political formations and empires, which does not reflect the reality of "
+"civilizations neither in Antiquity, nor in the Middle Ages, nor in Early "
+"Modern Times. The dynamics of borders simultaneously shapes the dynamics "
+"of settlement patterns as well as of transportation networks."
 
 #: mop/data/projects/borderzones.py:82
 msgid "borderzones_description_2"
 msgstr ""
-"The respective stand-alone project focuses on the borders of the Byzantine "
-"(Eastern Roman) Empire in medieval South-East Europe, namely in pre-Ottoman "
-"(i.e. Byzantine) Macedonia. Far-reaching political changes occurred in the "
-"Southern Balkan Peninsula from the end of the 13th until the middle of the 14th "
-"century, when the Serbian medieval kingdom expanded to the South under the king "
-"Stefan Uroš II Milutin at the expense of the Byzantine Empire, which lasted "
-"until the death of tsar Stefan Uroš IV Dušan (1355). This again had a severe "
-"impact on the border zones and cross-border societies between both realms in pre-"
-"Ottoman (i.e. Byzantine) Macedonia in the same period, especially in five "
-"selected target areas (the Strumica Valley, Lesnovo, Skopje, Ohrid, Prilep)."
+"The respective stand-alone project focuses on the borders of the "
+"Byzantine (Eastern Roman) Empire in medieval South-East Europe, namely in"
+" pre-Ottoman (i.e. Byzantine) Macedonia. Far-reaching political changes "
+"occurred in the Southern Balkan Peninsula from the end of the 13th until "
+"the middle of the 14th century, when the Serbian medieval kingdom "
+"expanded to the South under the king Stefan Uroš II Milutin at the "
+"expense of the Byzantine Empire, which lasted until the death of tsar "
+"Stefan Uroš IV Dušan (1355). This again had a severe impact on the border"
+" zones and cross-border societies between both realms in pre-Ottoman "
+"(i.e. Byzantine) Macedonia in the same period, especially in five "
+"selected target areas (the Strumica Valley, Lesnovo, Skopje, Ohrid, "
+"Prilep)."
 
 #: mop/data/projects/borderzones.py:83
 msgid "borderzones_description_3"
 msgstr ""
-"Although substantial publications exist on the population of as well as on the "
-"migration in Byzantine Macedonia, there is still an urgent need for this kind of "
-"research based on written sources and toponyms. Two interrelated research "
-"questions will be addressed in two distinct work packages: \"Rivalling Political "
-"Concepts – Byzantium and the Medieval Serbian Oecumene” and \"Cross-Border "
-"Societies and Elite Change in Byzantine Macedonia”."
+"Although substantial publications exist on the population of as well as "
+"on the migration in Byzantine Macedonia, there is still an urgent need "
+"for this kind of research based on written sources and toponyms. Two "
+"interrelated research questions will be addressed in two distinct work "
+"packages: \"Rivalling Political Concepts – Byzantium and the Medieval "
+"Serbian Oecumene” and \"Cross-Border Societies and Elite Change in "
+"Byzantine Macedonia”."
 
 #: mop/data/projects/borderzones.py:84
 msgid "borderzones_description_4"
 msgstr ""
-"The initial point form the medieval written sources, i.e. Serbian and Byzantine "
-"charters as main corpus, as well as other selected written sources from the "
-"medieval Serbian kingdom. The sources will be analysed from the viewpoint of the "
-"aforesaid research questions and strongly based on the methods deriving from "
-"Historical Geography. Special attention will be given to the analysis of "
-"formulations with regard to the Serbian expansion in the area of research, the "
-"acquisition of new territories and their administrative incorporation on the "
-"macro-level and to the localisation of conquered settlements with related "
-"settlement typologies as well as on the change of local elites on a micro-level. "
-"Moreover, tools from Digital Humanities in mapping and visualisation will be "
-"applied in order to communicate the achieved results to the interested public."
+"The initial point form the medieval written sources, i.e. Serbian and "
+"Byzantine charters as main corpus, as well as other selected written "
+"sources from the medieval Serbian kingdom. The sources will be analysed "
+"from the viewpoint of the aforesaid research questions and strongly based"
+" on the methods deriving from Historical Geography. Special attention "
+"will be given to the analysis of formulations with regard to the Serbian "
+"expansion in the area of research, the acquisition of new territories and"
+" their administrative incorporation on the macro-level and to the "
+"localisation of conquered settlements with related settlement typologies "
+"as well as on the change of local elites on a micro-level. Moreover, "
+"tools from Digital Humanities in mapping and visualisation will be "
+"applied in order to communicate the achieved results to the interested "
+"public."
 
-#: mop/data/projects/dgse.py:10
+#: mop/data/projects/dgse.py:8
 msgid "The Parish Church of Saint Andrew in Ebreichsdorf from the South-East"
 msgstr "The Parish Church of Saint Andrew in Ebreichsdorf from the South-East"
 
-#: mop/data/projects/dgse.py:15
+#: mop/data/projects/dgse.py:14
 msgid "The Luckate Stein"
 msgstr "The Luckate Stein"
 
-#: mop/data/projects/dgse.py:22
+#: mop/data/projects/dgse.py:20
 msgid "View of the Area around the Castle of Ebreichsdorf from the East"
 msgstr "View of the Area around the Castle of Ebreichsdorf from the East"
 
-#: mop/data/projects/dgse.py:28
+#: mop/data/projects/dgse.py:26
 msgid "The Castle of Pottendorf"
 msgstr "The Castle of Pottendorf"
 
-#: mop/data/projects/dgse.py:36
+#: mop/data/projects/dgse.py:37
 msgid ""
-"Digital Humanities using the Example of the Castle of Ebreichsdorf in the Lower "
-"Austrian Industrial District"
+"Digital Humanities using the Example of the Castle of Ebreichsdorf in the"
+" Lower Austrian Industrial District"
 msgstr ""
-"Digital Humanities using the Example of the Castle of Ebreichsdorf in the Lower "
-"Austrian Industrial District"
-
-#: mop/data/projects/dgse.py:57
-msgid "dgse_description_1"
-msgstr ""
-"One of the great scientific and popular science challenges of our time is how "
-"historical and cultural-historical content can be brought to the local, broad "
-"public in times of increased digitalisation due to the pandemic. How can "
-"corresponding sustainable familiarisation and learning effects be achieved in "
-"their context when it comes to local historical heritage? This question relates "
-"to a very important aspect of science, namely the field of “Digital Humanities”, "
-"which is undoubtedly also of great importance for Lower Austria and will "
-"continue to be so in the near and distant future."
+"Digital Humanities using the Example of the Castle of Ebreichsdorf in the"
+" Lower Austrian Industrial District"
 
 #: mop/data/projects/dgse.py:58
-msgid "dgse_description_2"
+msgid "dgse_description_1"
 msgstr ""
-"Our object of study is the (moated) castle of Ebreichsdorf, which is located "
-"around 60 kilometres to the South-East of the capital of St. Pölten in the "
-"industrial district of Lower Austria and has been privately owned by the Drasche-"
-"Wartinberg family since 1909. It is located in a region that is of outstanding "
-"historical importance for both Austria and Europe, as it is situated at the "
-"crossroads between North and South and East and West, thus connecting the Polish "
-"and Bohemian countries with Northern Italy and South-East Europe with Central "
-"Europe."
+"One of the great scientific and popular science challenges of our time is"
+" how historical and cultural-historical content can be brought to the "
+"local, broad public in times of increased digitalisation due to the "
+"pandemic. How can corresponding sustainable familiarisation and learning "
+"effects be achieved in their context when it comes to local historical "
+"heritage? This question relates to a very important aspect of science, "
+"namely the field of “Digital Humanities”, which is undoubtedly also of "
+"great importance for Lower Austria and will continue to be so in the near"
+" and distant future."
 
 #: mop/data/projects/dgse.py:59
+msgid "dgse_description_2"
+msgstr ""
+"Our object of study is the (moated) castle of Ebreichsdorf, which is "
+"located around 60 kilometres to the South-East of the capital of St. "
+"Pölten in the industrial district of Lower Austria and has been privately"
+" owned by the Drasche-Wartinberg family since 1909. It is located in a "
+"region that is of outstanding historical importance for both Austria and "
+"Europe, as it is situated at the crossroads between North and South and "
+"East and West, thus connecting the Polish and Bohemian countries with "
+"Northern Italy and South-East Europe with Central Europe."
+
+#: mop/data/projects/dgse.py:60
 msgid "dgse_description_3"
 msgstr ""
-"The aims of our project are reflected in the following two research questions, "
-"which build on each other and simultaneously form two work packages:\n"
+"The aims of our project are reflected in the following two research "
+"questions, which build on each other and simultaneously form two work "
+"packages:\n"
 "<ul>\n"
-"<li>a) What role did the Castle of Ebreichsdorf (now the palace) play in the "
-"history of the region from the 10th to the 16th century and what did the "
-"landscape surrounding it look like at that time?</li>\n"
-"<li>b) Was the Castle of Ebreichsdorf a link between the Latin West and the "
-"Byzantine East?</li>\n"
+"<li>a) What role did the Castle of Ebreichsdorf (now the palace) play in "
+"the history of the region from the 10th to the 16th century and what did "
+"the landscape surrounding it look like at that time?</li>\n"
+"<li>b) Was the Castle of Ebreichsdorf a link between the Latin West and "
+"the Byzantine East?</li>\n"
 "<ul>"
 
 #: mop/data/projects/holdura.py:8
 msgid "holdura_result_text_1"
 msgstr ""
-"The Team Department of Geography and Regional Research (University of Vienna) "
-"has created a customised homepage for our project’s Geocommunication: <a "
-"href=\"https://map.geo.univie.ac.at/bew/\" target=\"_blank\" class=\"link-"
+"The Team Department of Geography and Regional Research (University of "
+"Vienna) has created a customised homepage for our project’s "
+"Geocommunication: <a href=\"https://map.geo.univie.ac.at/bew/\" "
+"target=\"_blank\" class=\"link-"
 "primary\">https://map.geo.univie.ac.at/bew/</a>"
 
 #: mop/data/projects/holdura.py:9
 msgid "holdura_result_text_2"
 msgstr ""
-"A short film on our project made by our colleague Lukas Neugebauer was awarded "
-"and shown at the 2024 RAM Film Festival in Rovereto, Italy (2 October to 6 "
-"October 2024), the 5th APOX Film Festival on the Island of Lošinj, Croatia (3 "
-"October to 10 October 2024) and the 25th International Film Festival of "
-"Archaeological Film at the National Museum in Belgrade, Serbia (20 May to 25 May "
-"2025)."
+"A short film on our project made by our colleague Lukas Neugebauer was "
+"awarded and shown at the 2024 RAM Film Festival in Rovereto, Italy (2 "
+"October to 6 October 2024), the 5th APOX Film Festival on the Island of "
+"Lošinj, Croatia (3 October to 10 October 2024) and the 25th International"
+" Film Festival of Archaeological Film at the National Museum in Belgrade,"
+" Serbia (20 May to 25 May 2025)."
 
 #: mop/data/projects/holdura.py:18
 msgid "relief map of Montenegro"
@@ -957,192 +1185,199 @@ msgstr "Relief map of Montenegro"
 
 #: mop/data/projects/holdura.py:27
 msgid ""
-"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
-"Basilica B and cruciform church, Republic of Montenegro"
+"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, "
+"B: Basilica B and cruciform church, Republic of Montenegro"
 msgstr ""
-"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
-"Basilica B and cruciform church, Republic of Montenegro"
+"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, "
+"B: Basilica B and cruciform church, Republic of Montenegro"
 
 #: mop/data/projects/holdura.py:34
 msgid ""
-"Bird's eye view of the Doclea archaeological excavation, the western part of the "
-"city in the foreground, Republic of Montenegro"
+"Bird's eye view of the Doclea archaeological excavation, the western part"
+" of the city in the foreground, Republic of Montenegro"
 msgstr ""
-"Bird's eye view of the Doclea archaeological excavation, the western part of the "
-"city in the foreground, Republic of Montenegro"
+"Bird's eye view of the Doclea archaeological excavation, the western part"
+" of the city in the foreground, Republic of Montenegro"
 
 #: mop/data/projects/holdura.py:41
 msgid ""
-"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on Lake "
-"Skadar, Republic of Montenegro"
+"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on "
+"Lake Skadar, Republic of Montenegro"
 msgstr ""
-"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on Lake "
-"Skadar, Republic of Montenegro"
+"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on "
+"Lake Skadar, Republic of Montenegro"
 
 #: mop/data/projects/holdura.py:48
 msgid ""
-"The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
-"the town of Bar, Republic of Montenegro."
+"The former Latin (Catholic) monastery of Ratac from the 12th/13th century"
+" near the town of Bar, Republic of Montenegro."
 msgstr ""
-"The former Latin (Catholic) monastery of Ratac from the 12th/13th century near "
-"the town of Bar, Republic of Montenegro."
+"The former Latin (Catholic) monastery of Ratac from the 12th/13th century"
+" near the town of Bar, Republic of Montenegro."
 
 #: mop/data/projects/holdura.py:58
 msgid ""
-"Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
-"\"Raška\" through Space and Time (11th-14th Cent.)"
+"Beyond East and West: Geocommunicating the Sacred Landscapes of "
+"\"Duklja\" and \"Raška\" through Space and Time (11th-14th Cent.)"
 msgstr ""
-"Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
-"\"Raška\" through Space and Time (11th-14th Cent.)"
+"Beyond East and West: Geocommunicating the Sacred Landscapes of "
+"\"Duklja\" and \"Raška\" through Space and Time (11th-14th Cent.)"
 
 #: mop/data/projects/holdura.py:74
 msgid "holdura_description_1"
 msgstr ""
-"In the current discourse on the integration of the Western Balkans into the "
-"European Union the ongoing and envisaged negotiations with the Republics of "
-"Montenegro, Serbia and Albania seem to be of remarkable importance in the "
-"contemporary media coverage. They comprise a region, which – in a long ago past "
-"– played, under the name of Illyricum (Illyrikon), a vital role in the strategic "
-"and administrative considerations of the Byzantine Empire."
+"In the current discourse on the integration of the Western Balkans into "
+"the European Union the ongoing and envisaged negotiations with the "
+"Republics of Montenegro, Serbia and Albania seem to be of remarkable "
+"importance in the contemporary media coverage. They comprise a region, "
+"which – in a long ago past – played, under the name of Illyricum "
+"(Illyrikon), a vital role in the strategic and administrative "
+"considerations of the Byzantine Empire."
 
 #: mop/data/projects/holdura.py:75
 msgid "holdura_description_2"
 msgstr ""
-"The project builds upon a scholarly cooperation among the academic fields of "
-"Byzantine Studies, Medieval History, Historical Geography, Art History, "
-"Geography and Geocommunication (GIScience and Cartography) and focuses on two "
-"historic regions of “Duklja” and “Raška” being part of the Illyricum. The "
-"research hypothesis is that both historic regions constituted a “Sacred "
-"Landscape”, which we intend to decipher and to communicate to academia as well "
-"as to the interested public with the joint means of Historical Geography, Art "
-"History and Geocommunication."
+"The project builds upon a scholarly cooperation among the academic fields"
+" of Byzantine Studies, Medieval History, Historical Geography, Art "
+"History, Geography and Geocommunication (GIScience and Cartography) and "
+"focuses on two historic regions of “Duklja” and “Raška” being part of the"
+" Illyricum. The research hypothesis is that both historic regions "
+"constituted a “Sacred Landscape”, which we intend to decipher and to "
+"communicate to academia as well as to the interested public with the "
+"joint means of Historical Geography, Art History and Geocommunication."
 
 #: mop/data/projects/holdura.py:76
 msgid "holdura_description_3"
 msgstr ""
-"Therefore, the project aims at approaching and researching systematically the "
-"following three major questions:"
+"Therefore, the project aims at approaching and researching systematically"
+" the following three major questions:"
 
 #: mop/data/projects/holdura.py:77
 msgid "holdura_description_4"
 msgstr ""
 "(1) In which way did the local rulers and the Churches of Rome and "
-"Constantinople interact in the regions of “Duklja” and “Raška” from the 11th to "
-"the 14th centuries and how is this very interaction mirrored in the distribution "
-"pattern of monuments (i.e. the churches and monasteries) in this “Sacred "
-"Landscape”?"
+"Constantinople interact in the regions of “Duklja” and “Raška” from the "
+"11th to the 14th centuries and how is this very interaction mirrored in "
+"the distribution pattern of monuments (i.e. the churches and monasteries)"
+" in this “Sacred Landscape”?"
 
 #: mop/data/projects/holdura.py:78
 msgid "holdura_description_5"
 msgstr ""
-"(2) Did the volatile religious affiliation of the local rulers have an impact on "
-"the “Sacred Landscape” and where were Latin or Byzantine places of worship "
-"transformed or superimposed in the course of time?"
+"(2) Did the volatile religious affiliation of the local rulers have an "
+"impact on the “Sacred Landscape” and where were Latin or Byzantine places"
+" of worship transformed or superimposed in the course of time?"
 
 #: mop/data/projects/holdura.py:79
 msgid "holdura_description_6"
 msgstr ""
 "(3) Can the religious and cultural influence of the Latin and Byzantine "
-"(Orthodox) faith be traced through small Latin (i.e. “Western”) as well as "
-"Byzantine and Slavic (i.e. “Eastern”) objects of art, not only in the coastal "
-"area, but also in its hinterland and in Italy? Both historic regions could prove "
-"to be constituting a zone “Beyond East and West”, subject to remarkable "
-"processes of transformation from the 11th to the 14th centuries, and have the "
-"huge potential to offer data suitable for visualisations as well as "
-"formalisation by GIScience. The integration and presentation of the research "
-"data (i.e. on the written sources, monuments and objects of art) of the project "
-"will be achieved through an already existing database and an online <a "
+"(Orthodox) faith be traced through small Latin (i.e. “Western”) as well "
+"as Byzantine and Slavic (i.e. “Eastern”) objects of art, not only in the "
+"coastal area, but also in its hinterland and in Italy? Both historic "
+"regions could prove to be constituting a zone “Beyond East and West”, "
+"subject to remarkable processes of transformation from the 11th to the "
+"14th centuries, and have the huge potential to offer data suitable for "
+"visualisations as well as formalisation by GIScience. The integration and"
+" presentation of the research data (i.e. on the written sources, "
+"monuments and objects of art) of the project will be achieved through an "
+"already existing database and an online <a "
 "hrf=\"hhttps://map.geo.univie.ac.at/bew/\" class=\"link-primary\">map "
 "application</a>."
 
 #: mop/data/projects/holdura.py:80
 msgid "holdura_description_7"
 msgstr ""
-"The project is exclusively feasible through a multidisciplinary approach and "
-"cooperation between three project partners from Austria (Austrian Academy of "
-"Sciences, here Priv.-Doz. Mag. Dr. Mihailo Popović; University of Vienna, here "
-"Professor Dr. Karel Kriz) and Germany (Hochschule für Technik, Wirtschaft und "
-"Kultur Leipzig, here Professor Dr. Johannes Tripps).Moreover, it is closely "
-"connected to the ongoing scholarly work of Mihailo Popović on <a href=\"https://"
-"tib.oeaw.ac.at/current_status/TIB_17\" class=\"link-primary\">TIB volume 17 “Nea "
-"Epeiros and Praevalis”</a> and on the TIB Subproject <a href=\"https://"
-"tib.oeaw.ac.at/subprojects/montenegro\" class=\"link-primary\">“Cultural "
-"Heritage in Times of World War I: The Case of the Austro-Hungarian Relief Map of "
-"Montenegro (1916-1918)”</a>."
+"The project is exclusively feasible through a multidisciplinary approach "
+"and cooperation between three project partners from Austria (Austrian "
+"Academy of Sciences, here Priv.-Doz. Mag. Dr. Mihailo Popović; University"
+" of Vienna, here Professor Dr. Karel Kriz) and Germany (Hochschule für "
+"Technik, Wirtschaft und Kultur Leipzig, here Professor Dr. Johannes "
+"Tripps).Moreover, it is closely connected to the ongoing scholarly work "
+"of Mihailo Popović on <a "
+"href=\"https://tib.oeaw.ac.at/current_status/TIB_17\" class=\"link-"
+"primary\">TIB volume 17 “Nea Epeiros and Praevalis”</a> and on the TIB "
+"Subproject <a href=\"https://tib.oeaw.ac.at/subprojects/montenegro\" "
+"class=\"link-primary\">“Cultural Heritage in Times of World War I: The "
+"Case of the Austro-Hungarian Relief Map of Montenegro (1916-1918)”</a>."
 
-#: mop/data/projects/idcew.py:10
+#: mop/data/projects/idcew.py:8
 msgid "The Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
 msgstr "The Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
 
-#: mop/data/projects/idcew.py:11 mop/data/projects/idcew.py:17
-#: mop/data/projects/idcew.py:23
+#: mop/data/projects/idcew.py:11 mop/data/projects/idcew.py:19
+#: mop/data/projects/idcew.py:27
 msgid "Photograph Collection \"Dipl. Kfm. Wolfgang Milan (1924-2015)\""
 msgstr "Photograph Collection Dipl. Kfm. Wolfgang Milan (1924-2015)"
 
 #: mop/data/projects/idcew.py:16
 msgid ""
-"The Apse of the Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
+"The Apse of the Church of the Holy Trinity in Sopoćani Monastery in the "
+"1970s"
 msgstr ""
-"The Apse of the Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
+"The Apse of the Church of the Holy Trinity in Sopoćani Monastery in the "
+"1970s"
 
-#: mop/data/projects/idcew.py:22
+#: mop/data/projects/idcew.py:24
 msgid ""
-"The Church of the Annunciation of the Holy Mother of God in Gradac Monastery in "
-"the 1970s"
+"The Church of the Annunciation of the Holy Mother of God in Gradac "
+"Monastery in the 1970s"
 msgstr ""
-"The Church of the Annunciation of the Holy Mother of God in Gradac Monastery in "
-"the 1970s"
+"The Church of the Annunciation of the Holy Mother of God in Gradac "
+"Monastery in the 1970s"
 
-#: mop/data/projects/idcew.py:27
+#: mop/data/projects/idcew.py:32
 msgid ""
-"The Church of the Annunciation of the Holy Mother of God in Gradac Monastery in "
-"2007"
+"The Church of the Annunciation of the Holy Mother of God in Gradac "
+"Monastery in 2007"
 msgstr ""
-"The Church of the Annunciation of the Holy Mother of God in Gradac Monastery in "
-"2007"
+"The Church of the Annunciation of the Holy Mother of God in Gradac "
+"Monastery in 2007"
 
-#: mop/data/projects/idcew.py:36
+#: mop/data/projects/idcew.py:45
 msgid ""
-"Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor connecting "
-"East and West in the 13th/14th Centuries (IDCEW)"
+"Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor "
+"connecting East and West in the 13th/14th Centuries (IDCEW)"
 msgstr ""
-"Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor connecting "
-"East and West in the 13th/14th Centuries (IDCEW)"
+"Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor "
+"connecting East and West in the 13th/14th Centuries (IDCEW)"
 
-#: mop/data/projects/idcew.py:53
+#: mop/data/projects/idcew.py:61
 msgid "idcew_description_1"
 msgstr ""
-"The project aims to address the life and deeds of the medieval Serbian Queen "
-"Helen, who lived in the 13th/14th centuries and was married to the Serbian King "
-"Uroš I. It will be conducted in cooperation with the Austrian Archaeological "
-"Institute (ÖAI) of the Austrian Academy of Sciences with regard to the surveys "
-"and drone documentation in the area of research. Helen’s life has to be "
-"understood as a person, who was building bridges between the Orthodox East and "
-"the Latin West due to her French descent and her strong relationship with the "
-"noble family of Anjou. Many questions regarding Helen’s life, realm and "
-"endowments need further in-depth research."
+"The project aims to address the life and deeds of the medieval Serbian "
+"Queen Helen, who lived in the 13th/14th centuries and was married to the "
+"Serbian King Uroš I. It will be conducted in cooperation with the "
+"Austrian Archaeological Institute (ÖAI) of the Austrian Academy of "
+"Sciences with regard to the surveys and drone documentation in the area "
+"of research. Helen’s life has to be understood as a person, who was "
+"building bridges between the Orthodox East and the Latin West due to her "
+"French descent and her strong relationship with the noble family of "
+"Anjou. Many questions regarding Helen’s life, realm and endowments need "
+"further in-depth research."
 
-#: mop/data/projects/idcew.py:54
+#: mop/data/projects/idcew.py:62
 msgid "idcew_description_2"
 msgstr ""
 "These questions include:\n"
 "<ul>\n"
-"<li>A re-evaluation of Helen’s documents (i.e. charters and letters) in order to "
-"define her realm in Zeta, Trebinje, Plav and the upper flow of the river Ibar "
-"more precisely (also with the means of Cartography, Toponymy and GIS)</li>\n"
-"<li>In this context a new edition of the charters to the Monastery Sveti Nikola "
-"na Vranjini, which have not been adequately edited until now and which will "
-"contribute to our research questions</li>\n"
-"<li>A reconstruction of the “Sacred Landscape” (contact zone) of Helen’s realm "
-"by analysing the architecture of respective monuments (churches and monasteries) "
-"of the 13th and 14th centuries, especially Sopoćani and Gradac, in the Raški and "
-"Moravički okruzi (Serbia) with regard to Eastern (Orthodox) and Western (Latin, "
-"Catholic) influences</li>\n"
-"<li>The donations of icons and other small objects of art by Helen to churches "
-"and monasteries in her realm as well as in Italy (cf. the icon of the Saints "
-"Peter and Paul in the Vatican), their analysis with regard to Eastern (Orthodox) "
-"and Western (Latin, Catholic) influences and Helen’s afterlife in Serbian art of "
-"the 18th and 19th centuries</li>\n"
+"<li>A re-evaluation of Helen’s documents (i.e. charters and letters) in "
+"order to define her realm in Zeta, Trebinje, Plav and the upper flow of "
+"the river Ibar more precisely (also with the means of Cartography, "
+"Toponymy and GIS)</li>\n"
+"<li>In this context a new edition of the charters to the Monastery Sveti "
+"Nikola na Vranjini, which have not been adequately edited until now and "
+"which will contribute to our research questions</li>\n"
+"<li>A reconstruction of the “Sacred Landscape” (contact zone) of Helen’s "
+"realm by analysing the architecture of respective monuments (churches and"
+" monasteries) of the 13th and 14th centuries, especially Sopoćani and "
+"Gradac, in the Raški and Moravički okruzi (Serbia) with regard to Eastern"
+" (Orthodox) and Western (Latin, Catholic) influences</li>\n"
+"<li>The donations of icons and other small objects of art by Helen to "
+"churches and monasteries in her realm as well as in Italy (cf. the icon "
+"of the Saints Peter and Paul in the Vatican), their analysis with regard "
+"to Eastern (Orthodox) and Western (Latin, Catholic) influences and "
+"Helen’s afterlife in Serbian art of the 18th and 19th centuries</li>\n"
 "</ul>"
 
 #: mop/data/projects/rhr.py:8
@@ -1155,11 +1390,11 @@ msgstr "The Crusaders conquer Constantinople (Eugène Delacroix, 1840)"
 
 #: mop/data/projects/rhr.py:24
 msgid ""
-"Reception of the Serbian King Petar I in Skopje in 1912, depicted in a French "
-"illustration"
+"Reception of the Serbian King Petar I in Skopje in 1912, depicted in a "
+"French illustration"
 msgstr ""
-"Reception of the Serbian King Petar I in Skopje in 1912, depicted in a French "
-"illustration"
+"Reception of the Serbian King Petar I in Skopje in 1912, depicted in a "
+"French illustration"
 
 #: mop/data/projects/rhr.py:30
 msgid "The Greek and Serbian pavilions at the World Exhibition in Paris in 1900"
@@ -1167,151 +1402,158 @@ msgstr "The Greek and Serbian pavilions at the World Exhibition in Paris in 1900
 
 #: mop/data/projects/rhr.py:40
 msgid ""
-"The Reception History of Rumelia in Austria and France (Late 17th- Early 20th "
-"Centuries) (RHR)"
+"The Reception History of Rumelia in Austria and France (Late 17th- Early "
+"20th Centuries) (RHR)"
 msgstr ""
-"The Reception History of Rumelia in Austria and France (Late 17th- Early 20th "
-"Centuries) (RHR)"
+"The Reception History of Rumelia in Austria and France (Late 17th- Early "
+"20th Centuries) (RHR)"
 
 #: mop/data/projects/rhr.py:53
 msgid "rhr_description_1"
 msgstr ""
-"The project has the aim to elaborate on three research questions regarding the "
-"presence and reception of Rumelia in Austria and France (Late 17th- Early 20th "
-"Centuries) by addressing its visual impact across the centuries. The Ottoman "
-"conquest of South-Eastern Europe during the 14th and 15th centuries led to a "
-"caesura in the history of the Balkan Peninsula and turned this region into a "
-"terra incognita from a Central and Western European point of view, which would "
-"only return to the pan-European perspective in Early Modern times."
+"The project has the aim to elaborate on three research questions "
+"regarding the presence and reception of Rumelia in Austria and France "
+"(Late 17th- Early 20th Centuries) by addressing its visual impact across "
+"the centuries. The Ottoman conquest of South-Eastern Europe during the "
+"14th and 15th centuries led to a caesura in the history of the Balkan "
+"Peninsula and turned this region into a terra incognita from a Central "
+"and Western European point of view, which would only return to the pan-"
+"European perspective in Early Modern times."
 
 #: mop/data/projects/rhr.py:54
 msgid "rhr_description_2"
 msgstr ""
 "Our three research questions include:<br />\n"
-"a) Our first research question is addressing the “sacred space” of Rumelia "
-"coming to the Habsburg capital of Vienna in the second half of the 17th century. "
-"This “sacred space” is embodied by Orthodox icons, which were pouring to Vienna "
-"in the wake of the Habsburg-Ottoman struggle in South-Eastern Europe.\n"
+"a) Our first research question is addressing the “sacred space” of "
+"Rumelia coming to the Habsburg capital of Vienna in the second half of "
+"the 17th century. This “sacred space” is embodied by Orthodox icons, "
+"which were pouring to Vienna in the wake of the Habsburg-Ottoman struggle"
+" in South-Eastern Europe.\n"
 "<br />\n"
-"b) Our second research question is concerned with the cartographic acquisition "
-"of data by French cartographers in Rumelia by order of King Louis XIV, which "
-"resulted in three crucial Recueils. Two of them still need in-depth research "
-"with regard to their thematic map content.\n"
+"b) Our second research question is concerned with the cartographic "
+"acquisition of data by French cartographers in Rumelia by order of King "
+"Louis XIV, which resulted in three crucial Recueils. Two of them still "
+"need in-depth research with regard to their thematic map content.\n"
 "<br />\n"
-"c) Our third research question shall explore the popular imaginary of Rumelia’s "
-"heirs as advertised in Austria and France through large scale events like world "
-"fairs and exhibitions, as well as mass visual culture (postcards, collectible "
-"prints, engravings, caricature). In the 19th and early 20th centuries both "
-"countries pioneered in Slavic and Byzantine Studies, sending scholars to and "
-"educating scholars from the Balkan Peninsula, whose works were instrumental in "
-"the emergence of strong, and often clashing, national narratives and identities "
-"in the Balkans."
+"c) Our third research question shall explore the popular imaginary of "
+"Rumelia’s heirs as advertised in Austria and France through large scale "
+"events like world fairs and exhibitions, as well as mass visual culture "
+"(postcards, collectible prints, engravings, caricature). In the 19th and "
+"early 20th centuries both countries pioneered in Slavic and Byzantine "
+"Studies, sending scholars to and educating scholars from the Balkan "
+"Peninsula, whose works were instrumental in the emergence of strong, and "
+"often clashing, national narratives and identities in the Balkans."
 
-#: mop/data/projects/tarsr.py:10
+#: mop/data/projects/tarsr.py:20
 msgid ""
-"The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in the "
-"Valley of the River Vardar"
+"The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in "
+"the Valley of the River Vardar"
 msgstr ""
-"The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in the "
-"Valley of the River Vardar"
+"The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in "
+"the Valley of the River Vardar"
 
-#: mop/data/projects/tarsr.py:17
+#: mop/data/projects/tarsr.py:27
 msgid ""
-"Inscription in Honour of the German Emperor Wilhelm II at the Entrance to the "
-"Road Tunnel"
+"Inscription in Honour of the German Emperor Wilhelm II at the Entrance to"
+" the Road Tunnel"
 msgstr ""
-"Inscription in Honour of the German Emperor Wilhelm II at the Entrance to the "
-"Road Tunnel"
+"Inscription in Honour of the German Emperor Wilhelm II at the Entrance to"
+" the Road Tunnel"
 
-#: mop/data/projects/tarsr.py:24
+#: mop/data/projects/tarsr.py:34
 msgid "German Military Cemetery from the First World War near Bitola"
 msgstr "German Military Cemetery from the First World War near Bitola"
 
-#: mop/data/projects/tarsr.py:29
+#: mop/data/projects/tarsr.py:39
 msgid "War Relics from the First World War in Mariovo"
 msgstr "War Relics from the First World War in Mariovo"
 
-#: mop/data/projects/tarsr.py:38
+#: mop/data/projects/tarsr.py:48
 msgid ""
-"Tracing Archaeological Remains and Scholarly Research of the Central Powers in "
-"the Region of Prilep-Bitola during WW I (1915-1918)"
+"Tracing Archaeological Remains and Scholarly Research of the Central "
+"Powers in the Region of Prilep-Bitola during WW I (1915-1918)"
 msgstr ""
-"Tracing Archaeological Remains and Scholarly Research of the Central Powers in "
-"the Region of Prilep-Bitola during WW I (1915-1918)"
+"Tracing Archaeological Remains and Scholarly Research of the Central "
+"Powers in the Region of Prilep-Bitola during WW I (1915-1918)"
 
-#: mop/data/projects/tarsr.py:46 mop/data/projects/tarsr.py:49
-#: mop/data/projects/tarsr.py:52
+#: mop/data/projects/tarsr.py:56 mop/data/projects/tarsr.py:59
+#: mop/data/projects/tarsr.py:62
 msgid "Skopje"
 msgstr "Skopje"
 
-#: mop/data/projects/tarsr.py:50
+#: mop/data/projects/tarsr.py:60
 msgid "Prilep"
 msgstr "Prilep"
 
-#: mop/data/projects/tarsr.py:51
+#: mop/data/projects/tarsr.py:61
 msgid "Bitola"
 msgstr "Bitola"
 
-#: mop/data/projects/tarsr.py:53
+#: mop/data/projects/tarsr.py:63
 msgid "Paris"
 msgstr "Paris"
 
-#: mop/data/projects/tarsr.py:58
+#: mop/data/projects/tarsr.py:68
 msgid "tracing_description_1"
 msgstr ""
-"Our project aims to shed light on the Southern Balkan Peninsula during the First "
-"World War (1914-1918) and in particular on the regions of Prilep-Bitola and "
-"Mariovo behind the so-called <span class=\"fst-italic\">Salonica Front</span> or "
-"<span class=\"fst-italic\">Macedonian Front</span> in today’s Republic of N. "
-"Macedonia."
+"Our project aims to shed light on the Southern Balkan Peninsula during "
+"the First World War (1914-1918) and in particular on the regions of "
+"Prilep-Bitola and Mariovo behind the so-called <span class=\"fst-"
+"italic\">Salonica Front</span> or <span class=\"fst-italic\">Macedonian "
+"Front</span> in today’s Republic of N. Macedonia."
 
-#: mop/data/projects/tarsr.py:59
+#: mop/data/projects/tarsr.py:69
 msgid "tracing_description_2"
 msgstr ""
-"Closely connected to wars and armed conflicts is their devastating impact on the "
-"World’s Cultural Heritage. In our project we would like to follow up on the "
-"question of Cultural Heritage and research on it during the First World War."
+"Closely connected to wars and armed conflicts is their devastating impact"
+" on the World’s Cultural Heritage. In our project we would like to follow"
+" up on the question of Cultural Heritage and research on it during the "
+"First World War."
 
-#: mop/data/projects/tarsr.py:60
+#: mop/data/projects/tarsr.py:70
 msgid "tracing_description_3"
 msgstr ""
-"Various historical and ecclesiastical monuments were severely afflicted by the "
-"destruction along the <span class=\"fst-italic\">Salonica Front</span>. Examples "
-"are the church of Saint Christopher in the village of Krstoar and the Church of "
-"St. Nicholas in the village of Gradešnica. Thorough scholarly research is still "
-"needed to evaluate the relevant sources, especially the pictorial ones, on the "
-"particular monuments in the region from Byzantine and Post-Byzantine times in "
-"order to receive a comprehensive picture of the respective Cultural Heritage."
+"Various historical and ecclesiastical monuments were severely afflicted "
+"by the destruction along the <span class=\"fst-italic\">Salonica "
+"Front</span>. Examples are the church of Saint Christopher in the village"
+" of Krstoar and the Church of St. Nicholas in the village of Gradešnica. "
+"Thorough scholarly research is still needed to evaluate the relevant "
+"sources, especially the pictorial ones, on the particular monuments in "
+"the region from Byzantine and Post-Byzantine times in order to receive a "
+"comprehensive picture of the respective Cultural Heritage."
 
-#: mop/data/projects/tarsr.py:61
+#: mop/data/projects/tarsr.py:71
 msgid "tracing_description_4"
 msgstr "Three research questions will be pursued:"
 
-#: mop/data/projects/tarsr.py:62
+#: mop/data/projects/tarsr.py:72
 msgid "tracing_description_5"
 msgstr ""
 "<ul>\n"
 "<li>Where was the Cultural Heritage behind the <span class=\"fst-"
-"italic\">Salonica Front</span> in the regions of Prilep-Bitola and Mariovo "
-"affected by the fighting and how did the Central Powers document the damage?</"
-"li>\n"
-"<li>Where did archaeological excavations by the Central Powers take place in the "
-"regions of Prilep-Bitola and Mariovo and who were the scholars involved?</li>\n"
-"<li>What kind of military infrastructure of the Central Powers can still be "
-"traced <span class=\"fst-italic\">in situ</span> in the regions of Prilep-Bitola "
-"and Mariovo (i.e. trenches, bunkers, roads, bridges, tunnels, railways, "
-"ropeways, cemeteries)?</li>\n"
+"italic\">Salonica Front</span> in the regions of Prilep-Bitola and "
+"Mariovo affected by the fighting and how did the Central Powers document "
+"the damage?</li>\n"
+"<li>Where did archaeological excavations by the Central Powers take place"
+" in the regions of Prilep-Bitola and Mariovo and who were the scholars "
+"involved?</li>\n"
+"<li>What kind of military infrastructure of the Central Powers can still "
+"be traced <span class=\"fst-italic\">in situ</span> in the regions of "
+"Prilep-Bitola and Mariovo (i.e. trenches, bunkers, roads, bridges, "
+"tunnels, railways, ropeways, cemeteries)?</li>\n"
 "</ul>"
 
-#: mop/data/projects/tarsr.py:63
+#: mop/data/projects/tarsr.py:73
 msgid "tracing_description_6"
 msgstr ""
-"The project and its novel approaches and methods in Historical Geography have "
-"been introduced by Mihailo Popović to the interested public in the digital "
-"version of the Austrian daily newspaper “Der Standard”. The online article can "
-"be accessed via: <a href=\"https://www.derstandard.at/story/3000000234089/im-"
-"fadenkreuz-der-kriegsfotografie\" target=\"_blank\">https://www.derstandard.at/"
-"story/3000000234089/im-fadenkreuz-der-kriegsfotografie</a>"
+"The project and its novel approaches and methods in Historical Geography "
+"have been introduced by Mihailo Popović to the interested public in the "
+"digital version of the Austrian daily newspaper “Der Standard”. The "
+"online article can be accessed via: <a "
+"href=\"https://www.derstandard.at/story/3000000234089/im-fadenkreuz-der-"
+"kriegsfotografie\" "
+"target=\"_blank\">https://www.derstandard.at/story/3000000234089/im-"
+"fadenkreuz-der-kriegsfotografie</a>"
 
 #: mop/data/projects/tib_balkan.py:8 mop/data/projects/tib_balkan.py:13
 msgid "The Monastery of Saint Naum on Lake Ohrid"
@@ -1328,42 +1570,45 @@ msgstr "Reverse Engineering of the Tabula Imperii Byzantini Balkans"
 #: mop/data/projects/tib_balkan.py:43
 msgid "tib_balkan_description_1"
 msgstr ""
-"In 1966 Professor Dr Herbert Hunger (1914-2000) announced the founding of the "
-"project Tabula Imperii Byzantini (hereafter: TIB) of the Austrian Academy of "
-"Sciences at the 13th International Congress of Byzantine Studies in Oxford, "
-"England. Since then, the TIB has been systematically researching the historical "
-"geography of the Byzantine Empire from the beginning of the 4th century to the "
-"middle of the 15th century. The aim of the project TIB is to publish a "
-"historical atlas of the Byzantine provinces and regions from Late Antiquity to "
-"the Early Modern period. Since the 1960s research has focussed on the Balkan "
-"Peninsula and Asia Minor."
+"In 1966 Professor Dr Herbert Hunger (1914-2000) announced the founding of"
+" the project Tabula Imperii Byzantini (hereafter: TIB) of the Austrian "
+"Academy of Sciences at the 13th International Congress of Byzantine "
+"Studies in Oxford, England. Since then, the TIB has been systematically "
+"researching the historical geography of the Byzantine Empire from the "
+"beginning of the 4th century to the middle of the 15th century. The aim "
+"of the project TIB is to publish a historical atlas of the Byzantine "
+"provinces and regions from Late Antiquity to the Early Modern period. "
+"Since the 1960s research has focussed on the Balkan Peninsula and Asia "
+"Minor."
 
 #: mop/data/projects/tib_balkan.py:44
 msgid "tib_balkan_description_2"
 msgstr ""
-"Since 1976 TIB volumes on the Byzantine provinces and regions in the Balkans "
-"have been published at regular intervals. In 1976 the volume on “Hellas und "
-"Thessalien” (TIB 1) was published, in 1981 on “Nikopolis und Kephallēnia” (TIB "
-"3), in 1991 on “Thrakien (Thrakē, Rodopē und Haimimontos)” (TIB 6), in 1998 on "
-"“Aigaion Pelagos (Die nördliche Ägäis)” (TIB 10), in 2008 on “Ostthrakien "
-"(Eurōpē)” (TIB 12) and in 2022 on “Makedonien, südlicher Teil” (TIB 11). The aim "
-"of the TIB Balkans was and is to reach the Danube border as the Northern border "
-"of the Byzantine Empire through the scholarly research of the relevant regions."
+"Since 1976 TIB volumes on the Byzantine provinces and regions in the "
+"Balkans have been published at regular intervals. In 1976 the volume on "
+"“Hellas und Thessalien” (TIB 1) was published, in 1981 on “Nikopolis und "
+"Kephallēnia” (TIB 3), in 1991 on “Thrakien (Thrakē, Rodopē und "
+"Haimimontos)” (TIB 6), in 1998 on “Aigaion Pelagos (Die nördliche Ägäis)”"
+" (TIB 10), in 2008 on “Ostthrakien (Eurōpē)” (TIB 12) and in 2022 on "
+"“Makedonien, südlicher Teil” (TIB 11). The aim of the TIB Balkans was and"
+" is to reach the Danube border as the Northern border of the Byzantine "
+"Empire through the scholarly research of the relevant regions."
 
 #: mop/data/projects/tib_balkan.py:45
 msgid "tib_balkan_description_3"
 msgstr ""
-"In the project “Reverse Engineering of the Tabula Imperii Byzantini Balkans” we "
-"are now striving to systematically process the TIB volumes listed above, which "
-"have been published in print and are largely analogue (i.e. without digital "
-"components), using the reverse engineering method. Therefore, we scan the "
-"published volumes using OCR (because only TIB 11 and TIB 12 are available in pdf "
-"format), enter the corresponding lemmata (headwords) into the Maps of Power "
-"OpenAtlas database and supplement these data sets with scans of black-and-white "
-"photographs and slides on the Balkan Peninsula from the TIB archive, which were "
-"taken between the 1960s and 2008. These we view and some of which we first have "
-"to scan. In this way we are processing analogue, archived data, preserving it "
-"for the future and making it accessible to researchers and the public (see "
+"In the project “Reverse Engineering of the Tabula Imperii Byzantini "
+"Balkans” we are now striving to systematically process the TIB volumes "
+"listed above, which have been published in print and are largely analogue"
+" (i.e. without digital components), using the reverse engineering method."
+" Therefore, we scan the published volumes using OCR (because only TIB 11 "
+"and TIB 12 are available in pdf format), enter the corresponding lemmata "
+"(headwords) into the Maps of Power OpenAtlas database and supplement "
+"these data sets with scans of black-and-white photographs and slides on "
+"the Balkan Peninsula from the TIB archive, which were taken between the "
+"1960s and 2008. These we view and some of which we first have to scan. In"
+" this way we are processing analogue, archived data, preserving it for "
+"the future and making it accessible to researchers and the public (see "
 "Explore below)."
 
 #: mop/data/projects/vlachs.py:19 mop/data/projects/vlachs.py:25
@@ -1385,62 +1630,65 @@ msgstr "The Summer Pastures in the Historical Region of Macedonia (14th Cent.)"
 
 #: mop/data/projects/vlachs.py:64
 msgid ""
-"The Distribution of Vlach Temporary Settlements (Katuni) in the Historical "
-"Region of Macedonia (14th Cent.)"
+"The Distribution of Vlach Temporary Settlements (Katuni) in the "
+"Historical Region of Macedonia (14th Cent.)"
 msgstr ""
-"The Distribution of Vlach Temporary Settlements (Katuni) in the Historical "
-"Region of Macedonia (14th Cent.)"
+"The Distribution of Vlach Temporary Settlements (Katuni) in the "
+"Historical Region of Macedonia (14th Cent.)"
 
 #: mop/data/projects/vlachs.py:72
 msgid ""
-"The Source-Based Presence of Vlachs in the Historical Region of Macedonia (14th "
-"Cent.)"
+"The Source-Based Presence of Vlachs in the Historical Region of Macedonia"
+" (14th Cent.)"
 msgstr ""
-"The Source-Based Presence of Vlachs in the Historical Region of Macedonia (14th "
-"Cent.)"
+"The Source-Based Presence of Vlachs in the Historical Region of Macedonia"
+" (14th Cent.)"
 
 #: mop/data/projects/vlachs.py:82
 msgid ""
-"The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the "
-"Historical Region of Macedonia (11th-16th Cent.)"
+"The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the"
+" Historical Region of Macedonia (11th-16th Cent.)"
 msgstr ""
-"The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the "
-"Historical Region of Macedonia (11th-16th Cent.)"
+"The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the"
+" Historical Region of Macedonia (11th-16th Cent.)"
 
 #: mop/data/projects/vlachs.py:100
 msgid "vlachs_description_1"
 msgstr ""
-"The project entitled “The Ethnonym of the Vlachs in the Written Sources and the "
-"Toponymy in the Historical Region of Macedonia” focuses on the interplay between "
-"the resident population and the nomads (i.e. the Vlachs) in the historical "
-"region of Macedonia from the 11th to the 16th centuries. This project, which was "
-"successfully submitted by the project leaders Doz. Mag. Dr. Mihailo Popović and "
-"Prof. Dr. Toni Filiposki (Ss. Cyril and Methodius University of Skopje, North "
-"Macedonia), is funded by the Centre for International Cooperation & Mobility "
-"(ICM) of the Austrian Agency for International Cooperation in Education and "
-"Research (OeAD-GmbH) for two years (2016-18) and forms an additional, new case "
-"study within the “Maps of Power” initiative."
+"The project entitled “The Ethnonym of the Vlachs in the Written Sources "
+"and the Toponymy in the Historical Region of Macedonia” focuses on the "
+"interplay between the resident population and the nomads (i.e. the "
+"Vlachs) in the historical region of Macedonia from the 11th to the 16th "
+"centuries. This project, which was successfully submitted by the project "
+"leaders Doz. Mag. Dr. Mihailo Popović and Prof. Dr. Toni Filiposki (Ss. "
+"Cyril and Methodius University of Skopje, North Macedonia), is funded by "
+"the Centre for International Cooperation & Mobility (ICM) of the Austrian"
+" Agency for International Cooperation in Education and Research (OeAD-"
+"GmbH) for two years (2016-18) and forms an additional, new case study "
+"within the “Maps of Power” initiative."
 
 #: mop/data/projects/vlachs.py:101
 msgid "vlachs_description_2"
 msgstr ""
 "The historical region of Macedonia at the crossroads of Orthodoxy, Roman "
-"Catholicism and Islam and the question of the origin of the Vlachs, who identify "
-"themselves as a separate ethnic group until modern times, as well as the "
-"ethnonym “Vlachs” and its derivatives in the form of toponyms and personal names "
-"are at the core of the joint research. That is why the project explores the "
-"medieval Byzantine and Slavic sources related to the Vlachs in the historical "
-"region of Macedonia. Moreover, historical and archaeological research will be "
-"combined with Digital Humanities. The Austrian side will build upon the manifold "
-"data provided by the volume Tabula Imperii Byzantini (TIB) 16 written by M. "
-"Popović with the aim to create a historical atlas of the historical region of "
-"Macedonia. In addition to identifying and evaluating Byzantine and Slavic "
-"sources (especially charters and historiography) and collecting additional "
-"secondary literature there will be journeys to the respective country of the "
-"cooperation partner with the aim to bring together the project partners, to "
-"strengthen their ties, to enable a thorough discussion of the relevant medieval "
-"sources on the Vlachs for reaching a common level of interpretation and for "
-"preparing to include the elaborated data into the “Maps of Power”-database."
+"Catholicism and Islam and the question of the origin of the Vlachs, who "
+"identify themselves as a separate ethnic group until modern times, as "
+"well as the ethnonym “Vlachs” and its derivatives in the form of toponyms"
+" and personal names are at the core of the joint research. That is why "
+"the project explores the medieval Byzantine and Slavic sources related to"
+" the Vlachs in the historical region of Macedonia. Moreover, historical "
+"and archaeological research will be combined with Digital Humanities. The"
+" Austrian side will build upon the manifold data provided by the volume "
+"Tabula Imperii Byzantini (TIB) 16 written by M. Popović with the aim to "
+"create a historical atlas of the historical region of Macedonia. In "
+"addition to identifying and evaluating Byzantine and Slavic sources "
+"(especially charters and historiography) and collecting additional "
+"secondary literature there will be journeys to the respective country of "
+"the cooperation partner with the aim to bring together the project "
+"partners, to strengthen their ties, to enable a thorough discussion of "
+"the relevant medieval sources on the Vlachs for reaching a common level "
+"of interpretation and for preparing to include the elaborated data into "
+"the “Maps of Power”-database."
 
 #: mop/model/explore.py:10
 msgid "Actors"
@@ -1490,265 +1738,289 @@ msgstr "Artefacts"
 msgid "Physical objects"
 msgstr "Physical objects"
 
-#: mop/templates/about.html:17
+#: mop/templates/about.html:16
 msgid "about_text_1"
 msgstr ""
 "the research initiative “Maps of Power\" serves the methodological and "
-"interdisciplinary networking of scholars from the field of Historical Geography. "
-"The initiative, which has been running since 2019 under the title “Maps of "
-"Power: Historical Atlas of Places, Borderzones and Migration Dynamics in "
-"Byzantium (TIB Balkans)”, grew out of the idea of deepening historical-"
-"geographical research methodologically and placing it on a broader level in "
-"terms of content. Based on the scholarly project <a href=\"https://"
-"tib.oeaw.ac.at\" class=\"link-primary\" target=\"_blank\">“Tabula Imperii "
-"Byzantini (TIB)”</a>, which has been successfully conducted at the Austrian "
-"Academy of Sciences (Vienna) since 1966, the initiative intends to expand the "
-"spatial focus of the TIB on the Byzantine area in order to include other "
-"European areas in the Middle Ages as well. The successfully completed cluster "
-"project <a href=\"https://dpp.oeaw.ac.at/\" class=\"link-primary\" "
-"target=\"_blank\">“Digitising Patterns of Power (DPP): Peripherical Mountains in "
-"the Medieval World”</a> can be seen as a pilot project in this respect."
+"interdisciplinary networking of scholars from the field of Historical "
+"Geography. The initiative, which has been running since 2019 under the "
+"title “Maps of Power: Historical Atlas of Places, Borderzones and "
+"Migration Dynamics in Byzantium (TIB Balkans)”, grew out of the idea of "
+"deepening historical-geographical research methodologically and placing "
+"it on a broader level in terms of content. Based on the scholarly project"
+" <a href=\"https://tib.oeaw.ac.at\" class=\"link-primary\" "
+"target=\"_blank\">“Tabula Imperii Byzantini (TIB)”</a>, which has been "
+"successfully conducted at the Austrian Academy of Sciences (Vienna) since"
+" 1966, the initiative intends to expand the spatial focus of the TIB on "
+"the Byzantine area in order to include other European areas in the Middle"
+" Ages as well. The successfully completed cluster project <a "
+"href=\"https://dpp.oeaw.ac.at/\" class=\"link-primary\" "
+"target=\"_blank\">“Digitising Patterns of Power (DPP): Peripherical "
+"Mountains in the Medieval World”</a> can be seen as a pilot project in "
+"this respect."
 
-#: mop/templates/about.html:20
+#: mop/templates/about.html:19
 msgid "about_text_2"
 msgstr ""
-"in order to do justice to this new idea of spatial expansion, the previous title "
-"of the research initiative has been renamed “Maps of Power – Karten der Macht”, "
-"which will allow for larger thematic depth and a longer temporal breadth. The "
-"research perspectives of the TIB until now as a representative of the research "
-"branch Historical Geography of the Byzantine Empire essentially dealt with four "
-"categories of historical sources:"
+"in order to do justice to this new idea of spatial expansion, the "
+"previous title of the research initiative has been renamed “Maps of Power"
+" – Karten der Macht”, which will allow for larger thematic depth and a "
+"longer temporal breadth. The research perspectives of the TIB until now "
+"as a representative of the research branch Historical Geography of the "
+"Byzantine Empire essentially dealt with four categories of historical "
+"sources:"
 
-#: mop/templates/about.html:26
+#: mop/templates/about.html:25
 msgid "about_text_3"
 msgstr ""
-"the paradigm shifts in content and technical-digital innovations in science with "
-"the corresponding methodological expansions in the second half of the 20th "
-"century and in the 21st century require a methodological rethink. For the "
-"initiative, this means increased cooperation of Historical Geography with "
-"Byzantine Studies in the broader sense, as well as with Medieval Studies and the "
-"Digital Humanities."
+"the paradigm shifts in content and technical-digital innovations in "
+"science with the corresponding methodological expansions in the second "
+"half of the 20th century and in the 21st century require a methodological"
+" rethink. For the initiative, this means increased cooperation of "
+"Historical Geography with Byzantine Studies in the broader sense, as well"
+" as with Medieval Studies and the Digital Humanities."
 
-#: mop/templates/about.html:29
+#: mop/templates/about.html:28
 msgid "about_text_4"
 msgstr ""
-"therefore, the research initiative “Maps of Power” takes up three research areas "
-"that have the potential to act as a link between Byzantine and more Western "
-"European oriented Historical Geography and thereby lead to new research results "
-"that are significant for society:"
+"therefore, the research initiative “Maps of Power” takes up three "
+"research areas that have the potential to act as a link between Byzantine"
+" and more Western European oriented Historical Geography and thereby lead"
+" to new research results that are significant for society:"
 
-#: mop/templates/about.html:35
+#: mop/templates/about.html:34
 msgid "historical ecology"
 msgstr "Historical Ecology"
 
-#: mop/templates/about.html:37
+#: mop/templates/about.html:36
 msgid "about_point_1"
 msgstr ""
-"... deals with the historical development of ecosystems and landscapes under the "
-"influence of natural and anthropogenic factors."
+"... deals with the historical development of ecosystems and landscapes "
+"under the influence of natural and anthropogenic factors."
 
-#: mop/templates/about.html:40
+#: mop/templates/about.html:39
 msgid "about_text_5"
 msgstr ""
-"the aim of Historical Ecology is to focus more on the relationship between "
-"nature and humans, or humans and nature, and the transformation of landscape "
-"through human intervention. In this context, the term “power” is to be "
-"understood as “power” or “control” over someone or something. For thousands of "
-"years, human civilisation has influenced vegetation in Europe (by clearing and "
-"planting fields, introducing cultivated plants, etc.). At the same time, nature "
-"significantly determined the geography of settlements, for example through "
-"watercourses, until the era of excessive regulations. Thus, the term “power” is "
-"applicable in both directions (nature and man)."
+"the aim of Historical Ecology is to focus more on the relationship "
+"between nature and humans, or humans and nature, and the transformation "
+"of landscape through human intervention. In this context, the term "
+"“power” is to be understood as “power” or “control” over someone or "
+"something. For thousands of years, human civilisation has influenced "
+"vegetation in Europe (by clearing and planting fields, introducing "
+"cultivated plants, etc.). At the same time, nature significantly "
+"determined the geography of settlements, for example through "
+"watercourses, until the era of excessive regulations. Thus, the term "
+"“power” is applicable in both directions (nature and man)."
 
-#: mop/templates/about.html:44
+#: mop/templates/about.html:43
 msgid "sacred topography"
 msgstr "Faithscape"
 
-#: mop/templates/about.html:46
+#: mop/templates/about.html:45
 msgid "about_point_2"
 msgstr ""
-"… reflects the presence of the divine/sacred/transcendent in a given area and "
-"manifests itself through religious buildings (e.g. churches and monasteries) and "
-"religious symbols and actions (e.g. pilgrimage)."
+"… reflects the presence of the divine/sacred/transcendent in a given area"
+" and manifests itself through religious buildings (e.g. churches and "
+"monasteries) and religious symbols and actions (e.g. pilgrimage)."
 
-#: mop/templates/about.html:49
+#: mop/templates/about.html:48
 msgid "about_text_6"
 msgstr ""
-"the object of study of the Faithscape in Byzantium are to a large extent urban "
-"and rural churches, on the basis of whose distribution one can explore sacred "
-"space, ritual and religious identities. In addition, it will be investigated "
-"whether certain landscape features favoured the formation of certain types of "
-"cults and the formation of places of worship. The perception of space by people "
-"in the Middle Ages plays an important role in this very respect. GIS software, "
-"digital cartography and database systems are increasingly used in both research "
-"areas."
+"the object of study of the Faithscape in Byzantium are to a large extent "
+"urban and rural churches, on the basis of whose distribution one can "
+"explore sacred space, ritual and religious identities. In addition, it "
+"will be investigated whether certain landscape features favoured the "
+"formation of certain types of cults and the formation of places of "
+"worship. The perception of space by people in the Middle Ages plays an "
+"important role in this very respect. GIS software, digital cartography "
+"and database systems are increasingly used in both research areas."
 
-#: mop/templates/about.html:53
+#: mop/templates/about.html:52
 msgid "cultural heritage"
 msgstr "Cultural Heritage"
 
-#: mop/templates/about.html:55
+#: mop/templates/about.html:54
 msgid "about_point_3"
 msgstr ""
 "... as an essential pillar of research in Historical Geography, Cultural "
 "Heritage is becoming increasingly important worldwide."
 
-#: mop/templates/about.html:58
+#: mop/templates/about.html:57
 msgid "about_text_8"
 msgstr ""
-"It is the tangible and intangible heritage of a group or society that has come "
-"down from past to present generations and should be preserved for future "
-"generations. In our initiative, we refer to monuments as material, tangible "
-"heritage. Locating, describing, documenting, researching and presenting them "
-"with tools deriving from Digital Humanities is one of our central tasks, "
-"especially in times of wars, natural disasters and large-scale infrastructural "
-"projects. The field of Cultural Heritage also offers very good opportunities for "
-"comparison between East and West, which we would like to do more justice to in "
-"the future."
+"It is the tangible and intangible heritage of a group or society that has"
+" come down from past to present generations and should be preserved for "
+"future generations. In our initiative, we refer to monuments as material,"
+" tangible heritage. Locating, describing, documenting, researching and "
+"presenting them with tools deriving from Digital Humanities is one of our"
+" central tasks, especially in times of wars, natural disasters and large-"
+"scale infrastructural projects. The field of Cultural Heritage also "
+"offers very good opportunities for comparison between East and West, "
+"which we would like to do more justice to in the future."
 
-#: mop/templates/about.html:65
+#: mop/templates/about.html:64
 msgid "about_text_7"
 msgstr ""
-"“Maps of Power” takes up these ideas and sees itself as a scholarly platform "
-"that would like to implement its own projects as well as network in an "
-"interdisciplinary fashion through joint projects. Research results of the "
-"initiative are continuously entered into a separate OpenAtlas database (https://"
-"openatlas.eu/) and made freely available in a specially programmed portal that "
-"makes data searchable, contains digital maps (layers) and includes comprehensive "
-"photo material."
+"“Maps of Power” takes up these ideas and sees itself as a scholarly "
+"platform that would like to implement its own projects as well as network"
+" in an interdisciplinary fashion through joint projects. Research results"
+" of the initiative are continuously entered into a separate OpenAtlas "
+"database (https://openatlas.eu/) and made freely available in a specially"
+" programmed portal that makes data searchable, contains digital maps "
+"(layers) and includes comprehensive photo material."
 
-#: mop/templates/about.html:68
+#: mop/templates/about.html:67
 msgid "about_text_7a"
 msgstr ""
-"Data from our ongoing and completed projects can be queried and visualised via "
-"the <a href=\"/frontend\" target=\"_blank\" class=\"link-primary\">„Maps of "
-"Power“</a> frontend."
+"Data from our ongoing and completed projects can be queried and "
+"visualised via the <a href=\"/frontend\" target=\"_blank\" class=\"link-"
+"primary\">„Maps of Power“</a> frontend."
 
-#: mop/templates/about.html:97
+#: mop/templates/about.html:77
 msgid "vienna_manifesto"
 msgstr ""
-"Our initiative fully supports the <a href=\"https://dighum.ec.tuwien.ac.at/"
-"dighum-manifesto/\" target=\"_blank\" class=\"link-primary\">\"Vienna Manifesto "
-"on Digital Humanism\"</a>."
+"Our initiative fully supports the <a "
+"href=\"https://dighum.ec.tuwien.ac.at/dighum-manifesto/\" "
+"target=\"_blank\" class=\"link-primary\">\"Vienna Manifesto on Digital "
+"Humanism\"</a>."
 
-#: mop/templates/histgeo.html:12
+#: mop/templates/error.html:49
+msgid "go back to the start page"
+msgstr ""
+
+#: mop/templates/histgeo.html:19
 msgid "histgeo_intro_1"
 msgstr ""
-"new thoughts and ideas are transforming Historical Geography, as are for example "
-"Digital Humanities and a wide range of new methodologies (like GIS – Geographic "
-"Information System and HGIS – Historical Geographic Information System). "
-"Therefore, new methods and theories are increasingly and at a fast pace being "
-"applied to the Historical Geography of Byzantium and adjacent areas (i.e. South-"
-"East Europe and Eastern Europe)."
+"new thoughts and ideas are transforming Historical Geography, as are for "
+"example Digital Humanities and a wide range of new methodologies (like "
+"GIS – Geographic Information System and HGIS – Historical Geographic "
+"Information System). Therefore, new methods and theories are increasingly"
+" and at a fast pace being applied to the Historical Geography of "
+"Byzantium and adjacent areas (i.e. South-East Europe and Eastern Europe)."
 
-#: mop/templates/histgeo.html:15
+#: mop/templates/histgeo.html:22
 msgid "histgeo_intro_2"
 msgstr ""
-"this international publication series aims to present original research in the "
-"fields of Historical Geography, Byzantine Studies, Medieval Studies, Balkan "
-"Studies, Archaeology, Geography, Cartography, GIS / HGIS and Cultural Heritage. "
-"We invite manuscripts – monographs as well as conference proceedings – from a "
-"broad range of all these scholarly fields, with a focus on the regions of the "
-"former Byzantine Empire, especially South-East Europe and Eastern Europe, and we "
-"particularly welcome interdisciplinary approaches."
+"this international publication series aims to present original research "
+"in the fields of Historical Geography, Byzantine Studies, Medieval "
+"Studies, Balkan Studies, Archaeology, Geography, Cartography, GIS / HGIS "
+"and Cultural Heritage. We invite manuscripts – monographs as well as "
+"conference proceedings – from a broad range of all these scholarly "
+"fields, with a focus on the regions of the former Byzantine Empire, "
+"especially South-East Europe and Eastern Europe, and we particularly "
+"welcome interdisciplinary approaches."
 
-#: mop/templates/histgeo.html:17
+#: mop/templates/histgeo.html:27
 msgid "Digital HistGeo Lecture Series"
 msgstr "digital HistGeo Lecture Series"
 
-#: mop/templates/histgeo.html:19
+#: mop/templates/histgeo.html:31
 msgid "histgeo_lecture_1"
 msgstr ""
-"in order to communicate scholarly results of the “Tabula Imperii Byzantini (TIB) "
-"Balkans” of the Austrian Academy of Sciences and its related sub-projects to "
-"national and international scholars, students as well as the interested public "
-"in Vienna, Austria and the world, Mihailo Popović, Veronika Polloczek, Bernhard "
-"Koschiček-Krombholz and Vratislav Zervan have initiated together the “HistGeo "
-"Lecture Series” in Vienna in January 2019 (in succession of the “DPP Lecture "
-"Series” founded in January 2017)."
+"in order to communicate scholarly results of the “Tabula Imperii "
+"Byzantini (TIB) Balkans” of the Austrian Academy of Sciences and its "
+"related sub-projects to national and international scholars, students as "
+"well as the interested public in Vienna, Austria and the world, Mihailo "
+"Popović, Veronika Polloczek, Bernhard Koschiček-Krombholz and Vratislav "
+"Zervan have initiated together the “HistGeo Lecture Series” in Vienna in "
+"January 2019 (in succession of the “DPP Lecture Series” founded in "
+"January 2017)."
 
-#: mop/templates/histgeo.html:22
+#: mop/templates/histgeo.html:34
 msgid "histgeo_lecture_2"
 msgstr ""
-"initially, we had started with lectures in presence in Vienna, which were "
-"unfortunately interrupted by the COVID pandemic. Therefore, we have decided to "
-"stage them online starting with January 2023. They are now called the \"Digital "
-"HistGeo Lecture Series\" and we try to stage them quarterly each year (roughly "
-"in March, June, September and December). "
+"initially, we had started with lectures in presence in Vienna, which were"
+" unfortunately interrupted by the COVID pandemic. Therefore, we have "
+"decided to stage them online starting with January 2023. They are now "
+"called the \"Digital HistGeo Lecture Series\" and we try to stage them "
+"quarterly each year (roughly in March, June, September and December). "
 
-#: mop/templates/histgeo.html:25
+#: mop/templates/histgeo.html:37
 msgid "histgeo_lecture_3"
 msgstr ""
-"our aim is to present papers containing our own research, but also to attract "
-"and invite speakers, the papers of which have the potential to foster "
-"discussions on new methods and digital tools in the fields of Medieval History, "
-"Byzantine Studies, Balkan Studies, Historical Geography, Cartography, Digital "
-"Humanities, GIScience and Software Engineering."
+"our aim is to present papers containing our own research, but also to "
+"attract and invite speakers, the papers of which have the potential to "
+"foster discussions on new methods and digital tools in the fields of "
+"Medieval History, Byzantine Studies, Balkan Studies, Historical "
+"Geography, Cartography, Digital Humanities, GIScience and Software "
+"Engineering."
 
-#: mop/templates/histgeo.html:32 mop/templates/histgeo.html:61
+#: mop/templates/histgeo.html:46 mop/templates/histgeo.html:96
 msgid "no"
 msgstr "no"
 
-#: mop/templates/histgeo.html:45
+#: mop/templates/histgeo.html:64
+msgid "HistGeo Newsletter"
+msgstr ""
+"HistGeo NewsletterPlease feel free to browse our archive of Newsletters. "
+"If you have any questions or remarks, please do contact us via "
+"mapsofpower@oeaw.ac.at"
+
+#: mop/templates/histgeo.html:68
 msgid "histgeo_newsletter_1"
 msgstr ""
-"our HistGeo Newsletter informs you twice a year – in the months of June and "
-"December – on scholarly activities, cooperations, progress, results and new "
-"publications, which have been achieved as cornerstones of the initiative Maps of "
-"Power. Formerly, we published the Newsletter four times a year, but we have "
-"shifted it to two editions per year since 2022."
+"our HistGeo Newsletter informs you twice a year – in the months of June "
+"and December – on scholarly activities, cooperations, progress, results "
+"and new publications, which have been achieved as cornerstones of the "
+"initiative Maps of Power. Formerly, we published the Newsletter four "
+"times a year, but we have shifted it to two editions per year since 2022."
 
-#: mop/templates/histgeo.html:48
+#: mop/templates/histgeo.html:71
 msgid "histgeo_newsletter_2"
 msgstr ""
-"in the Newsletter’s reports we focus on the fields of Historical Geography, "
-"Historical Atlases, Mapping, Digital Mapping and Digital Humanities in general. "
-"It aims at highlighting the scholarly activities of scholars involved in the "
-"initiative Maps of Power and the TIB Balkans as well as colleagues from other "
-"fields of study."
+"in the Newsletter’s reports we focus on the fields of Historical "
+"Geography, Historical Atlases, Mapping, Digital Mapping and Digital "
+"Humanities in general. It aims at highlighting the scholarly activities "
+"of scholars involved in the initiative Maps of Power and the TIB Balkans "
+"as well as colleagues from other fields of study."
 
-#: mop/templates/histgeo.html:51
+#: mop/templates/histgeo.html:74
 msgid "histgeo_newsletter_3"
 msgstr ""
-"Please feel free to browse our archive of Newsletters. If you have any questions "
-"or remarks, please do contact us via mapsofpower@oeaw.ac.at"
+"Please feel free to browse our archive of Newsletters. If you have any "
+"questions or remarks, please do contact us via mapsofpower@oeaw.ac.at"
 
-#: mop/templates/histgeo.html:75
+#: mop/templates/histgeo.html:109
 msgid "volumes"
 msgstr "volumes"
 
-#: mop/templates/histgeo.html:130
+#: mop/templates/histgeo.html:176
 msgid "Citation Rules and Fonts"
 msgstr "citation Rules and Fonts"
 
-#: mop/templates/histgeo.html:132
+#: mop/templates/histgeo.html:178
 msgid "histgeo_rules"
 msgstr ""
-"our Series is published by the publishing house <a href=\"https://"
-"akademskaknjiga.com/?lang=en\" target=\"_blank\" class=\"fw-bolder link-"
-"primary\">“Akademska knjiga” in Novi Sad, Serbia</a>, which was founded in July "
-"2006 with the aim of publishing important scholarship in the Social Sciences and "
-"the Humanities by national and international authors."
+"our Series is published by the publishing house <a "
+"href=\"https://akademskaknjiga.com/?lang=en\" target=\"_blank\" class"
+"=\"fw-bolder link-primary\">“Akademska knjiga” in Novi Sad, Serbia</a>, "
+"which was founded in July 2006 with the aim of publishing important "
+"scholarship in the Social Sciences and the Humanities by national and "
+"international authors."
 
-#: mop/templates/histgeo.html:136 mop/templates/histgeo.html:144
+#: mop/templates/histgeo.html:183
 msgid "Citation Rules"
 msgstr "citation Rules"
 
-#: mop/templates/histgeo.html:138
+#: mop/templates/histgeo.html:185
 msgid "histgeo_citation_1"
 msgstr ""
 "when preparing a manuscript for our Series, please use the following "
 "Instructions:"
 
-#: mop/templates/histgeo.html:148
+#: mop/templates/histgeo.html:191
+msgid "Download PDF"
+msgstr ""
+
+#: mop/templates/histgeo.html:195
 msgid "Fonts"
 msgstr "fonts"
 
-#: mop/templates/histgeo.html:150
+#: mop/templates/histgeo.html:197
 msgid "histgeo_fonts_1"
 msgstr "please use these Font Types for Old Church Slavonic:"
 
-#: mop/templates/imprint.html:7 mop/templates/layout.html:114
+#: mop/templates/imprint.html:7 mop/templates/layout.html:130
 msgid "imprint"
 msgstr "imprint"
 
@@ -1764,19 +2036,15 @@ msgstr ""
 msgid "Media owner"
 msgstr "Media owner"
 
-#: mop/templates/imprint.html:10 mop/templates/layout.html:85
-msgid "Austrian Academy of Sciences"
-msgstr "Austrian Academy of Sciences"
-
 #: mop/templates/imprint.html:12
 msgid ""
-"Corporate body under public law (Federal Law Gazette (BGBl) 569/1921 as amended "
-"by Federal Law Gazette (BGBl) I 31/2018)"
+"Corporate body under public law (Federal Law Gazette (BGBl) 569/1921 as "
+"amended by Federal Law Gazette (BGBl) I 31/2018)"
 msgstr ""
-"Corporate body under public law (Federal Law Gazette (BGBl) 569/1921 as amended "
-"by Federal Law Gazette (BGBl) I 31/2018)"
+"Corporate body under public law (Federal Law Gazette (BGBl) 569/1921 as "
+"amended by Federal Law Gazette (BGBl) I 31/2018)"
 
-#: mop/templates/imprint.html:14 mop/templates/layout.html:89
+#: mop/templates/imprint.html:14 mop/templates/layout.html:105
 msgid "Austria"
 msgstr "Austria"
 
@@ -1790,19 +2058,21 @@ msgstr "Object of the company"
 
 #: mop/templates/imprint.html:25
 msgid ""
-"The Österreichische Akademie der Wissenschaften (Austrian Academy of Sciences) "
-"has the statutory mission to promote science in every way. As a learned society "
-"the OeAW cultivates the discourse and cooperation of science with the public, "
-"politics and business. As the largest institution of non-university basic "
-"research in the country, the OeAW conducts application-open basic research at "
-"the highest international level at its 28 institutes."
+"The Österreichische Akademie der Wissenschaften (Austrian Academy of "
+"Sciences) has the statutory mission to promote science in every way. As a"
+" learned society the OeAW cultivates the discourse and cooperation of "
+"science with the public, politics and business. As the largest "
+"institution of non-university basic research in the country, the OeAW "
+"conducts application-open basic research at the highest international "
+"level at its 28 institutes."
 msgstr ""
-"The Österreichische Akademie der Wissenschaften (Austrian Academy of Sciences) "
-"has the statutory mission to promote science in every way. As a learned society "
-"the OeAW cultivates the discourse and cooperation of science with the public, "
-"politics and business. As the largest institution of non-university basic "
-"research in the country, the OeAW conducts application-open basic research at "
-"the highest international level at its 28 institutes."
+"The Österreichische Akademie der Wissenschaften (Austrian Academy of "
+"Sciences) has the statutory mission to promote science in every way. As a"
+" learned society the OeAW cultivates the discourse and cooperation of "
+"science with the public, politics and business. As the largest "
+"institution of non-university basic research in the country, the OeAW "
+"conducts application-open basic research at the highest international "
+"level at its 28 institutes."
 
 #: mop/templates/imprint.html:26
 msgid "Executive body"
@@ -1830,11 +2100,13 @@ msgstr "Basic line"
 
 #: mop/templates/imprint.html:40
 msgid ""
-"This website serves to inform the public on the scientific activities of the "
-"Long-Term Project Tabula Imperii Byzantini of the Austrian Academy of Sciences."
+"This website serves to inform the public on the scientific activities of "
+"the Long-Term Project Tabula Imperii Byzantini of the Austrian Academy of"
+" Sciences."
 msgstr ""
-"This website serves to inform the public on the scientific activities of the "
-"Long-Term Project Tabula Imperii Byzantini of the Austrian Academy of Sciences."
+"This website serves to inform the public on the scientific activities of "
+"the Long-Term Project Tabula Imperii Byzantini of the Austrian Academy of"
+" Sciences."
 
 #: mop/templates/imprint.html:41
 msgid "Disclaimer"
@@ -1843,16 +2115,16 @@ msgstr "Disclaimer"
 #: mop/templates/imprint.html:43
 msgid ""
 "The Austrian Academy of Sciences gives no warranty as to the topicality, "
-"correctness, completeness or quality of the information provided. In the case of "
-"links to websites of other media owners, for which the OeAW is not directly or "
-"indirectly responsible, the OeAW assumes no liability for their contents and "
-"excludes any liability therefor."
+"correctness, completeness or quality of the information provided. In the "
+"case of links to websites of other media owners, for which the OeAW is "
+"not directly or indirectly responsible, the OeAW assumes no liability for"
+" their contents and excludes any liability therefor."
 msgstr ""
 "The Austrian Academy of Sciences gives no warranty as to the topicality, "
-"correctness, completeness or quality of the information provided. In the case of "
-"links to websites of other media owners, for which the OeAW is not directly or "
-"indirectly responsible, the OeAW assumes no liability for their contents and "
-"excludes any liability therefor."
+"correctness, completeness or quality of the information provided. In the "
+"case of links to websites of other media owners, for which the OeAW is "
+"not directly or indirectly responsible, the OeAW assumes no liability for"
+" their contents and excludes any liability therefor."
 
 #: mop/templates/imprint.html:45
 msgid "Copyright notice"
@@ -1860,27 +2132,29 @@ msgstr "Copyright notice"
 
 #: mop/templates/imprint.html:47 mop/templates/imprint.html:50
 msgid ""
-"The contents and works created by the Austrian Academy of Sciences on these "
-"pages are subject to Austrian copyright law. The duplication, editing, "
-"distribution and any kind of utilization outside the scope of copyright law "
-"require the written consent of the respective author or creator. Downloads and "
-"copies of these pages are only permitted for private, non-commercial use. "
-"Insofar as the content on this site was not created by the operator, the "
-"copyrights of third parties are respected. In particular, third-party content is "
-"identified as such. In the event that you should nevertheless become aware of a "
-"copyright infringement, we ask that you inform us accordingly. If we become "
-"aware of any infringements, we will remove such contents immediately."
+"The contents and works created by the Austrian Academy of Sciences on "
+"these pages are subject to Austrian copyright law. The duplication, "
+"editing, distribution and any kind of utilization outside the scope of "
+"copyright law require the written consent of the respective author or "
+"creator. Downloads and copies of these pages are only permitted for "
+"private, non-commercial use. Insofar as the content on this site was not "
+"created by the operator, the copyrights of third parties are respected. "
+"In particular, third-party content is identified as such. In the event "
+"that you should nevertheless become aware of a copyright infringement, we"
+" ask that you inform us accordingly. If we become aware of any "
+"infringements, we will remove such contents immediately."
 msgstr ""
-"The contents and works created by the Austrian Academy of Sciences on these "
-"pages are subject to Austrian copyright law. The duplication, editing, "
-"distribution and any kind of utilization outside the scope of copyright law "
-"require the written consent of the respective author or creator. Downloads and "
-"copies of these pages are only permitted for private, non-commercial use. "
-"Insofar as the content on this site was not created by the operator, the "
-"copyrights of third parties are respected. In particular, third-party content is "
-"identified as such. In the event that you should nevertheless become aware of a "
-"copyright infringement, we ask that you inform us accordingly. If we become "
-"aware of any infringements, we will remove such contents immediately."
+"The contents and works created by the Austrian Academy of Sciences on "
+"these pages are subject to Austrian copyright law. The duplication, "
+"editing, distribution and any kind of utilization outside the scope of "
+"copyright law require the written consent of the respective author or "
+"creator. Downloads and copies of these pages are only permitted for "
+"private, non-commercial use. Insofar as the content on this site was not "
+"created by the operator, the copyrights of third parties are respected. "
+"In particular, third-party content is identified as such. In the event "
+"that you should nevertheless become aware of a copyright infringement, we"
+" ask that you inform us accordingly. If we become aware of any "
+"infringements, we will remove such contents immediately."
 
 #: mop/templates/imprint.html:49
 msgid "Data privacy notice"
@@ -1888,35 +2162,33 @@ msgstr "Data privacy notice"
 
 #: mop/templates/imprint.html:51
 msgid ""
-"The contact data published within the scope of the imprint obligation may not be "
-"used by third parties for the transmission of advertising and information "
-"material not expressly requested. Any such use is hereby expressly contradicted."
+"The contact data published within the scope of the imprint obligation may"
+" not be used by third parties for the transmission of advertising and "
+"information material not expressly requested. Any such use is hereby "
+"expressly contradicted."
 msgstr ""
-"The contact data published within the scope of the imprint obligation may not be "
-"used by third parties for the transmission of advertising and information "
-"material not expressly requested. Any such use is hereby expressly contradicted."
+"The contact data published within the scope of the imprint obligation may"
+" not be used by third parties for the transmission of advertising and "
+"information material not expressly requested. Any such use is hereby "
+"expressly contradicted."
 
 #: mop/templates/imprint.html:53
 msgid "Further information on data protection on websites of the OeAW."
 msgstr "Further information on data protection on websites of the OeAW."
 
-#: mop/templates/layout.html:83
+#: mop/templates/layout.html:99
 msgid "contact"
 msgstr "contact"
 
-#: mop/templates/layout.html:86
-msgid "Institute for Medieval Research"
-msgstr "Institute for Medieval Research"
-
-#: mop/templates/layout.html:87
+#: mop/templates/layout.html:103
 msgid "Division of Byzantine Research"
 msgstr "Division of Byzantine Research"
 
-#: mop/templates/layout.html:89
+#: mop/templates/layout.html:105
 msgid "Europe"
 msgstr "Europe"
 
-#: mop/templates/layout.html:105
+#: mop/templates/layout.html:121
 msgid "navigation"
 msgstr "navigation"
 
@@ -1952,89 +2224,617 @@ msgstr "Beyond East and West"
 msgid "Further Reading"
 msgstr "Further Reading"
 
-#: mop/templates/project_details.html:46
+#: mop/templates/macros.html:30
+msgid "Open external link"
+msgstr ""
+
+#: mop/templates/macros.html:36
+msgid "Download file"
+msgstr ""
+
+#: mop/templates/macros.html:64
+#, fuzzy
+msgid "Search"
+msgstr "March"
+
+#: mop/templates/navbar.html:61
+msgid "Other"
+msgstr "Other"
+
+#: mop/templates/project_details.html:61 mop/templates/project_details.html:446
+#: mop/templates/projects.html:110 mop/templates/projects.html:143
+#: mop/templates/projects.html:221 mop/templates/projects.html:274
+#: mop/templates/projects.html:598
+msgid "Active"
+msgstr "Active"
+
+#: mop/templates/project_details.html:80
 msgid "description"
 msgstr "Description"
 
-#: mop/templates/project_details.html:54
-msgid "Funded by"
-msgstr "Funded by"
-
-#: mop/templates/project_details.html:69
+#: mop/templates/project_details.html:93
 msgid "Project Number"
 msgstr "Project Number"
 
-#: mop/templates/project_details.html:76
+#: mop/templates/project_details.html:100
 msgid "Duration"
 msgstr "Duration"
 
-#: mop/templates/project_details.html:81
+#: mop/templates/project_details.html:107
+msgid "Funded by"
+msgstr "Funded by"
+
+#: mop/templates/project_details.html:122
 msgid "Hosted by"
 msgstr "Hosted by"
 
-#: mop/templates/project_details.html:104 mop/templates/projects.html:32
+#: mop/templates/project_details.html:136
+msgid "PI (Project Investigator)"
+msgstr "PI (Project Investigator)"
+
+#: mop/templates/project_details.html:146 mop/templates/projects.html:191
 msgid "Employees"
 msgstr "Employees"
 
-#: mop/templates/project_details.html:115
+#: mop/templates/project_details.html:157
 msgid "Cooperation and External Employees"
 msgstr "Cooperation and External Employees"
 
-#: mop/templates/project_details.html:128
+#: mop/templates/project_details.html:173
 msgid "further information"
 msgstr "Further information"
 
-#: mop/templates/project_details.html:138
+#: mop/templates/project_details.html:185
 msgid "media"
 msgstr "Media"
 
-#: mop/templates/project_details.html:177
+#: mop/templates/project_details.html:226
 msgid "explore"
 msgstr "Explore"
 
-#: mop/templates/project_details.html:196
-msgid ""
-"The access and use of our data is subject to the Creative Commons License CC BY "
-"4.0 (<a\n"
-"            href=\"https://creativecommons.org/licenses/by/4.0/\">https://"
-"creativecommons.org/licenses/by/4.0/</a>)."
+#: mop/templates/project_details.html:236
+msgid "Mapping Spatial Coordinates..."
 msgstr ""
-"The access and use of our data is subject to the Creative Commons License CC BY "
-"4.0 International (<a href=\"https://creativecommons.org/licenses/by/4.0/"
-"deed.en\">https://creativecommons.org/licenses/by/4.0/deed.en</a>)."
 
-#: mop/templates/project_details.html:205
+#: mop/templates/project_details.html:237
+msgid "Downloading geographical locations from OpenAtlas."
+msgstr ""
+
+#: mop/templates/project_details.html:257
+#, fuzzy
+msgid ""
+"The access and use of our data is subject to the Creative Commons License"
+" CC BY 4.0 (<a href=\"https://creativecommons.org/licenses/by/4.0/\" "
+"target=\"_blank\">https://creativecommons.org/licenses/by/4.0/</a>)."
+msgstr ""
+"The access and use of our data is subject to the Creative Commons License"
+" CC BY 4.0 International (<a "
+"href=\"https://creativecommons.org/licenses/by/4.0/deed.en\">https://creativecommons.org/licenses/by/4.0/deed.en</a>)."
+
+#: mop/templates/project_details.html:265
 msgid "results"
 msgstr "Results"
 
-#: mop/templates/project_details.html:244
+#: mop/templates/project_details.html:303
 msgid "publications"
 msgstr "Publications"
 
-#: mop/templates/project_details.html:251
+#: mop/templates/project_details.html:313
 msgid "presentations"
 msgstr "Presentations"
 
-#: mop/templates/explore/project_entity_view.html:76
+#: mop/templates/project_details.html:400 mop/templates/projects.html:846
+#, fuzzy
+msgid "No description available."
+msgstr "Description"
+
+#: mop/templates/project_details.html:403 mop/templates/projects.html:849
+msgid "View Details"
+msgstr ""
+
+#: mop/templates/project_details.html:449 mop/templates/projects.html:222
+#, fuzzy
+msgid "Upcoming"
+msgstr "Ruhpolding"
+
+#: mop/templates/project_details.html:452 mop/templates/projects.html:111
+#: mop/templates/projects.html:223 mop/templates/projects.html:278
+#: mop/templates/projects.html:603
+msgid "Completed"
+msgstr ""
+
+#: mop/templates/projects.html:20
+msgid "Research Portal"
+msgstr ""
+
+#: mop/templates/projects.html:23
+#, fuzzy
+msgid "Research Projects"
+msgstr "projects"
+
+#: mop/templates/projects.html:26
+msgid ""
+"Discover our ongoing and completed research initiatives in Historical "
+"Geography and Digital Humanities. Explore spatial networks, mapped "
+"entities, and ancient records across centuries."
+msgstr ""
+
+#: mop/templates/projects.html:34 mop/templates/projects.html:270
+#, fuzzy
+msgid "Projects"
+msgstr "projects"
+
+#: mop/templates/projects.html:40
+#, fuzzy
+msgid "Mapped Places"
+msgstr "Places"
+
+#: mop/templates/projects.html:46
+#, fuzzy
+msgid "Researchers"
+msgstr "Research literature"
+
+#: mop/templates/projects.html:52
+msgid "Funding Bodies"
+msgstr ""
+
+#: mop/templates/projects.html:65
+msgid "Overview"
+msgstr ""
+
+#: mop/templates/projects.html:70
+msgid "Timeline Roadmap"
+msgstr ""
+
+#: mop/templates/projects.html:75
+msgid "Research Analytics"
+msgstr ""
+
+#: mop/templates/projects.html:80
+msgid "Data Portal & Map"
+msgstr ""
+
+#: mop/templates/projects.html:85
+msgid "Network Visualisation"
+msgstr ""
+
+#: mop/templates/projects.html:102
+msgid "Search by project name, acronym, PI or employees..."
+msgstr ""
+
+#: mop/templates/projects.html:109
+msgid "All Statuses"
+msgstr ""
+
+#: mop/templates/projects.html:116
+msgid "All Funding"
+msgstr ""
+
+#: mop/templates/projects.html:178
+#, fuzzy
+msgid "Project Investigator"
+msgstr "Project Number"
+
+#: mop/templates/projects.html:203
+#, fuzzy
+msgid "Explore Project"
+msgstr "Explore"
+
+#: mop/templates/projects.html:217
+msgid "Interactive Projects Roadmap"
+msgstr ""
+
+#: mop/templates/projects.html:218
+msgid ""
+"View project lifespans dynamically across a chronological 10-year "
+"timeline axis."
+msgstr ""
+
+#: mop/templates/projects.html:231
+msgid "Filter Timeline by Active Year:"
+msgstr ""
+
+#: mop/templates/projects.html:266
+msgid "Statistics Overview"
+msgstr ""
+
+#: mop/templates/projects.html:282
+#, fuzzy
+msgid "Scholars"
+msgstr "Class"
+
+#: mop/templates/projects.html:286
+msgid ""
+"Aggregated live metrics of collaborative initiatives mapping spatial data"
+" and medieval geographies."
+msgstr ""
+
+#: mop/templates/projects.html:292
+msgid "Grants by Funding Body"
+msgstr ""
+
+#: mop/templates/projects.html:293
+msgid "Proportional project support distribution."
+msgstr ""
+
+#: mop/templates/projects.html:305
+msgid "Academic Host Institutes"
+msgstr ""
+
+#: mop/templates/projects.html:306
+msgid "Volume of active project hosting instances."
+msgstr ""
+
+#: mop/templates/projects.html:315
+msgid "Collaborators Directory"
+msgstr ""
+
+#: mop/templates/projects.html:316
+msgid "Browse and search project scholars and team crossovers."
+msgstr ""
+
+#: mop/templates/projects.html:319
+msgid "Search by researcher or project acronym..."
+msgstr ""
+
+#: mop/templates/projects.html:333
+#, fuzzy
+msgid "Explore Datasets"
+msgstr "Explore"
+
+#: mop/templates/projects.html:335
+msgid ""
+"Filter OpenAtlas spatial locations across all active initiatives in real-"
+"time. Select a project to render its mapped nodes on the interactive map."
+msgstr ""
+
+#: mop/templates/projects.html:340
+msgid "Select Project Source"
+msgstr ""
+
+#: mop/templates/projects.html:342
+msgid "Select a project..."
+msgstr ""
+
+#: mop/templates/projects.html:343
+msgid "All Active Projects"
+msgstr ""
+
+#: mop/templates/projects.html:353
+msgid "Dataset Coverage"
+msgstr ""
+
+#: mop/templates/projects.html:357
+#, fuzzy
+msgid "Places Loaded"
+msgstr "Places"
+
+#: mop/templates/projects.html:364
+msgid "Network Endpoint"
+msgstr ""
+
+#: mop/templates/projects.html:365
+msgid ""
+"Using the dynamic Maps of Power api endpoint to map clustered geo-"
+"entities. Geometries can be clicked to inspect detail records."
+msgstr ""
+
+#: mop/templates/projects.html:377
+msgid "Fetching Map Data..."
+msgstr ""
+
+#: mop/templates/projects.html:378
+msgid "Downloading geographical features from the OpenAtlas database."
+msgstr ""
+
+#: mop/templates/projects.html:393
+#, fuzzy
+msgid "Network Explorer"
+msgstr "Explore"
+
+#: mop/templates/projects.html:395
+msgid ""
+"Visualise the entity networks, connections, and relations from each "
+"project in real-time. Nodes can be clicked and inspected."
+msgstr ""
+
+#: mop/templates/projects.html:400
+#, fuzzy
+msgid "Select Projects"
+msgstr "projects"
+
+#: mop/templates/projects.html:417
+msgid "Network Statistics"
+msgstr ""
+
+#: mop/templates/projects.html:422
+msgid "Entities (Nodes)"
+msgstr ""
+
+#: mop/templates/projects.html:431
+msgid "Relations (Edges)"
+msgstr ""
+
+#: mop/templates/projects.html:439
+msgid "Interactive Controls"
+msgstr ""
+
+#: mop/templates/projects.html:440
+msgid ""
+"Zoom to scroll, drag to pan, and click on any entity node to inspect its "
+"name and class. Double-click a node to open its full details page."
+msgstr ""
+
+#: mop/templates/projects.html:452
+msgid "Generating Network Graph..."
+msgstr ""
+
+#: mop/templates/projects.html:453
+msgid "Fetching entities and computing relations from the database."
+msgstr ""
+
+#: mop/templates/projects.html:469
+msgid "Side-by-Side Project Compare"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:22
+#: mop/templates/explore/project_entity_view.html:111
 msgid "properties"
 msgstr "Properties"
 
-#: mop/templates/explore/project_entity_view.html:122
-#: mop/templates/explore/project_explore_table.html:25
+#: mop/templates/explore/project_entity_view.html:24
+#: mop/templates/explore/project_entity_view.html:489
+#: mop/templates/explore/project_entity_view.html:498
+#: mop/templates/explore/project_entity_view.html:675
+#: mop/templates/explore/project_explore_table.html:52
 msgid "Description"
 msgstr "Description"
 
-#: mop/templates/explore/project_entity_view.html:246
+#: mop/templates/explore/project_entity_view.html:27
+#: mop/templates/explore/project_entity_view.html:582
+msgid "Narrative Connections"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:33
+#: mop/templates/explore/project_entity_view.html:223
+#: mop/templates/explore/project_entity_view.html:646
+msgid "Relations"
+msgstr "Relations"
+
+#: mop/templates/explore/project_entity_view.html:36
+#: mop/templates/explore/project_entity_view.html:744
 msgid "files"
 msgstr "Files"
 
-#: mop/templates/explore/project_explore_table.html:15
+#: mop/templates/explore/project_entity_view.html:118
+msgid "Period"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:183
+msgid "Map"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:188
+#, fuzzy
+msgid "Network"
+msgstr "New York"
+
+#: mop/templates/explore/project_entity_view.html:193
+#, fuzzy
+msgid "Timeline"
+msgstr "time"
+
+#: mop/templates/explore/project_entity_view.html:218
+msgid "Node Details"
+msgstr "Node Details"
+
+#: mop/templates/explore/project_entity_view.html:220
+#: mop/templates/explore/project_entity_view.html:238
+msgid "Place"
+msgstr "Place"
+
+#: mop/templates/explore/project_entity_view.html:222
+msgid "ID"
+msgstr "ID"
+
+#: mop/templates/explore/project_entity_view.html:225
+msgid "View Entity"
+msgstr "View Entity"
+
+#: mop/templates/explore/project_entity_view.html:231
+msgid "Legend (Click to toggle)"
+msgstr "Legend (Click to toggle)"
+
+#: mop/templates/explore/project_entity_view.html:234
+msgid "Selected Entity"
+msgstr "Selected Entity"
+
+#: mop/templates/explore/project_entity_view.html:242
+msgid "Person"
+msgstr "Person"
+
+#: mop/templates/explore/project_entity_view.html:246
+msgid "Group"
+msgstr "Group"
+
+#: mop/templates/explore/project_entity_view.html:250
+msgid "Event / Activity"
+msgstr "Event / Activity"
+
+#: mop/templates/explore/project_entity_view.html:254
+msgid "Artifact"
+msgstr "Artifact"
+
+#: mop/templates/explore/project_entity_view.html:258
+msgid "Literature / Source"
+msgstr "Literature / Source"
+
+#: mop/templates/explore/project_entity_view.html:265
+msgid "Depth"
+msgstr "Depth"
+
+#: mop/templates/explore/project_entity_view.html:277
+msgid "Labels"
+msgstr "Labels"
+
+#: mop/templates/explore/project_entity_view.html:283
+msgid "Spacing"
+msgstr "Spacing"
+
+#: mop/templates/explore/project_entity_view.html:285
+msgid "Compact"
+msgstr "Compact"
+
+#: mop/templates/explore/project_entity_view.html:286
+msgid "Normal"
+msgstr "Normal"
+
+#: mop/templates/explore/project_entity_view.html:287
+msgid "Wide"
+msgstr "Wide"
+
+#: mop/templates/explore/project_entity_view.html:288
+msgid "Extra Wide"
+msgstr "Extra Wide"
+
+#: mop/templates/explore/project_entity_view.html:295
+msgid "Fullscreen"
+msgstr "Fullscreen"
+
+#: mop/templates/explore/project_entity_view.html:301
+msgid "Export"
+msgstr "Export"
+
+#: mop/templates/explore/project_entity_view.html:312
+msgid "Export Graph as Image"
+msgstr "Export Graph as Image"
+
+#: mop/templates/explore/project_entity_view.html:317
+msgid ""
+"Configure the style, format, and enhancements for your network "
+"visualization image download."
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:322
+msgid "File Format"
+msgstr "File Format"
+
+#: mop/templates/explore/project_entity_view.html:328
+msgid "PNG Image"
+msgstr "PNG Image"
+
+#: mop/templates/explore/project_entity_view.html:329
+msgid "Lossless & Transparent"
+msgstr "Lossless & Transparent"
+
+#: mop/templates/explore/project_entity_view.html:336
+msgid "JPEG Image"
+msgstr "JPEG Image"
+
+#: mop/templates/explore/project_entity_view.html:337
+msgid "High Compatibility"
+msgstr "High Compatibility"
+
+#: mop/templates/explore/project_entity_view.html:345
+msgid "Background Theme"
+msgstr "Background Theme"
+
+#: mop/templates/explore/project_entity_view.html:351
+msgid "Transparent"
+msgstr "Transparent"
+
+#: mop/templates/explore/project_entity_view.html:358
+msgid "Solid Light"
+msgstr "Solid Light"
+
+#: mop/templates/explore/project_entity_view.html:365
+msgid "Deep Dark"
+msgstr "Deep Dark"
+
+#: mop/templates/explore/project_entity_view.html:373
+msgid "Enhancements"
+msgstr "Enhancements"
+
+#: mop/templates/explore/project_entity_view.html:376
+msgid "Include Academic Watermark"
+msgstr "Include Academic Watermark"
+
+#: mop/templates/explore/project_entity_view.html:377
+msgid "Adds brand label, entity name, and timestamp to export"
+msgstr "Adds brand label, entity name, and timestamp to export"
+
+#: mop/templates/explore/project_entity_view.html:385
+msgid "Cancel"
+msgstr "Cancel"
+
+#: mop/templates/explore/project_entity_view.html:388
+msgid "Generate & Download"
+msgstr "Generate & Download"
+
+#: mop/templates/explore/project_entity_view.html:461
+msgid "Lifecycle phase of"
+msgstr "Lifecycle phase of"
+
+#: mop/templates/explore/project_entity_view.html:473
+msgid "No Timeline Events"
+msgstr "No Timeline Events"
+
+#: mop/templates/explore/project_entity_view.html:474
+msgid ""
+"We couldn't find any chronological events or relations with dates for "
+"this entity."
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:598
+#: mop/templates/explore/project_entity_view.html:805
+msgid "Show more"
+msgstr "Show more"
+
+#: mop/templates/explore/project_entity_view.html:628
+msgid "view entity"
+msgstr "view entity"
+
+#: mop/templates/explore/project_entity_view.html:666
+#: mop/templates/explore/project_explore_table.html:50
+msgid "Name"
+msgstr "Name"
+
+#: mop/templates/explore/project_entity_view.html:667
+#: mop/templates/explore/project_explore_table.html:51
+msgid "Class"
+msgstr "Class"
+
+#: mop/templates/explore/project_entity_view.html:669
+msgid "Begin"
+msgstr "Begin"
+
+#: mop/templates/explore/project_entity_view.html:670
+msgid "End"
+msgstr "End"
+
+#: mop/templates/explore/project_entity_view.html:673
+msgid "Relation Type"
+msgstr "Relation Type"
+
+#: mop/templates/explore/project_entity_view.html:723
+msgid "Search..."
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:809
+msgid "Show less"
+msgstr "Show less"
+
+#: mop/templates/explore/project_explore_table.html:35
 msgid "is currently unavailable"
 msgstr "is currently unavailable"
 
-#: mop/templates/explore/project_explore_table.html:24
-msgid "Class"
-msgstr "Class"
+#: mop/templates/explore/project_explore_table.html:38
+msgid "We are working on providing data for this section as soon as possible."
+msgstr "We are working on providing data for this section as soon as possible."
+
+#: mop/templates/explore/project_explore_table.html:92
+msgid "Search in"
+msgstr "Search in"
 
 #~ msgid "newsletter_header"
 #~ msgstr "Newsletter registration"
@@ -2059,15 +2859,22 @@ msgstr "Class"
 
 #~ msgid "map_application_text"
 #~ msgstr ""
-#~ "The Frontend “Maps of Power: Historical Atlas of Places, Borderzones and "
-#~ "Migration Dynamics in Byzantium (TIB Balkans)” cannot be accessed at the "
-#~ "moment due to technical reasons, because a version 2.0 is under construction "
-#~ "at the moment. The new version will bear the name “Maps of Power” and be "
-#~ "online in autumn 2023. For further Information: <a href=\"maps-of-"
-#~ "power.oeaw.ac.at\" target=\"_blank\">maps-of-power.oeaw.ac.at</a>"
+#~ "The Frontend “Maps of Power: Historical"
+#~ " Atlas of Places, Borderzones and "
+#~ "Migration Dynamics in Byzantium (TIB "
+#~ "Balkans)” cannot be accessed at the "
+#~ "moment due to technical reasons, because"
+#~ " a version 2.0 is under construction"
+#~ " at the moment. The new version "
+#~ "will bear the name “Maps of Power”"
+#~ " and be online in autumn 2023. "
+#~ "For further Information: <a href=\"maps-"
+#~ "of-power.oeaw.ac.at\" target=\"_blank\">maps-of-"
+#~ "power.oeaw.ac.at</a>"
 
 #~ msgid "The (Moated) Castle of Ebreichsdorf"
 #~ msgstr "The (Moated) Castle of Ebreichsdorf"
 
 #~ msgid "Ebreichsdorf in the Survey conducted under Emperor Joseph II"
 #~ msgstr "Ebreichsdorf in the Survey conducted under Emperor Joseph II"
+

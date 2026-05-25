@@ -211,55 +211,8 @@ if (mapLayers.length > 0) {
     });
 }
 
-// --- Layer Controls (HTTPS basemaps) ---
-
-const OpenStreetMap_HOT = L.tileLayer(
-    "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
-    {
-        maxZoom: 25,
-        maxNativeZoom: 20,
-        attribution: '&copy; OpenStreetMap contributors, Humanitarian style'
-    }
-);
-
-const OpenStreetMap = L.tileLayer(
-    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-    {
-        maxZoom: 25,
-        maxNativeZoom: 19,
-        attribution: '&copy; OpenStreetMap contributors'
-    }
-);
-
-// Secure Satellite Layer
-const Esri_WorldImagery = L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-    {
-        maxZoom: 25,
-        maxNativeZoom: 19,
-        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP'
-    }
-);
-
-// Modern and secure HTTPS Topographic Layer
-const OpenTopoMap = L.tileLayer(
-    "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
-    {
-        maxZoom: 17,
-        attribution: 'Map data &copy; OpenStreetMap contributors, SRTM | Style &copy; OpenTopoMap'
-    }
-);
-
-const baseMaps = {
-    "Landscape": OpenStreetMap_HOT,
-    "Streetmap": OpenStreetMap,
-    "Satellite": Esri_WorldImagery,
-    "Topography": OpenTopoMap
-};
-
-// Add default basemap
-baseMaps.Landscape.addTo(map);
-L.control.groupedLayers(baseMaps).addTo(map);
+// Add default basemap, grouped overlays control, and 3-column TIB formatting
+setupPremiumMapLayers(map);
 
 // --- Glassmorphic Legend Control ---
 

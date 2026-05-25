@@ -636,6 +636,8 @@
   border-radius: 16px !important;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  text-align: left !important;
+  margin-top: 0 !important;
 }
 #floating-navbar.details-scrollspy-menu .list-group-item {
   border: none !important;
