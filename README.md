@@ -15,14 +15,11 @@
     <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License" />
   </a>
   <img src="https://img.shields.io/badge/python-3.10%20%7C%203.13-blue.svg?style=flat-square" alt="Python Versions" />
-  <a href="https://github.com/google-deepmind">
-    <img src="https://img.shields.io/badge/engineered%20by-AI%20Agent-8A2BE2?style=flat-square" alt="Agentic Engineering" />
-  </a>
 </p>
 
 ---
 
-The research initiative **Maps of Power** serves the methodological and interdisciplinary networking of scholars in the field of *Historical Geography*. 
+The research initiative **Maps of Power** serves the methodological and interdisciplinary networking of scholars in the field of *Historical Geography*.
 
 Founded in 2019 under the title **"Maps of Power: Historical Atlas of Places, Borderzones and Migration Dynamics in Byzantium (TIB Balkans)"**, it emerged from the idea of deepening historical-geographical research methodologically and broadening it thematically.
 
@@ -128,15 +125,6 @@ maps-of-power/
 ├── uv.lock             # Deterministic dependency lockfile
 └── README.md           # This document
 ```
-
----
-
-## 🤖 Agentic Engineering
-
-> 🧠 **AI-Engineered Repository**
-> This repository is developed, secured, and maintained using **Agentic AI Engineering**. All automated CI/CD security checks, code vulnerability resolutions (e.g. XSS mitigation in `image_gallery`), testing integrations, and coverage report workflows have been designed and implemented autonomously by agentic coding assistants.
-
----
 
 ## 📄 License
 

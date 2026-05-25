@@ -26,7 +26,6 @@ from mop.util import (get_dict_entries_by_category,
 
 
 @app.route('/')
-@cache.cached()
 def about() -> str:
     return render_template(
         'about.html',
@@ -35,14 +34,12 @@ def about() -> str:
 
 
 @app.route('/events')
-@cache.cached()
 def events() -> str:
     return render_template('events.html', events=event_list)
 
 
 @app.route('/histgeo')
 @app.route('/histgeo/<int:id_>')
-@cache.memoize()
 def histgeo(id_: Optional[int] = None) -> str:
     if id_:
         if id_ not in lectures:
@@ -69,7 +66,6 @@ def set_language(language: Optional[str] = None) -> Response:
 
 
 @app.route('/literature')
-@cache.cached()
 def literature() -> str:
     literature_ = defaultdict(list)
     for lit in literatures:
@@ -80,7 +76,6 @@ def literature() -> str:
 
 @app.route('/projects')
 @app.route('/projects/<title>')
-@cache.memoize()
 def projects(title: Optional[str] = None) -> str:
     if title:
         if title not in project_data:
