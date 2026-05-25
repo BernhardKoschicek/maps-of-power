@@ -10,6 +10,8 @@ def app() -> Generator[Flask, None, None]:
     flask_app.config.update({
         'TESTING': True,
     })
+    from mop import cache
+    cache.init_app(flask_app, config={'CACHE_TYPE': 'NullCache'})
     yield flask_app
 
 

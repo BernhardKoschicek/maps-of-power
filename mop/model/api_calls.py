@@ -2,7 +2,7 @@ from typing import Any, List, Optional
 
 import requests
 
-from mop import app
+from mop import app, cache
 from mop.model.typetree import TypeTree
 
 # Proxies are initialized here, but we should ensure app.config is ready.
@@ -16,6 +16,7 @@ def get_proxies() -> dict[str, str] | None:
         "https": proxy}
 
 
+@cache.memoize()
 def get_view_class(parameter: str, params: Optional[dict[str, Any]] = None) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/view_class/{parameter}"
     if '?' in parameter:
@@ -33,6 +34,7 @@ def get_view_class(parameter: str, params: Optional[dict[str, Any]] = None) -> l
         timeout=30).json()['results']
 
 
+@cache.memoize()
 def system_class_results(parameter: str) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/system_class/"
     return requests.get(
@@ -41,6 +43,7 @@ def system_class_results(parameter: str) -> list[dict[str, Any]]:
         timeout=30).json()['results']
 
 
+@cache.memoize()
 def get_typed_entities_all_results(id_: int) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/type_entities_all/"
     return requests.get(
@@ -49,6 +52,7 @@ def get_typed_entities_all_results(id_: int) -> list[dict[str, Any]]:
         timeout=30).json()['results']
 
 
+@cache.cached(key_prefix='type_tree')
 def get_type_tree() -> List[TypeTree]:
     url = f"{app.config['API_PATH']}/type_tree/"
     type_tree = requests.get(
@@ -58,6 +62,7 @@ def get_type_tree() -> List[TypeTree]:
     return [TypeTree(types) for types in type_tree.values()]
 
 
+@cache.memoize()
 def get_entity_presentation(id_: int) -> dict[str, Any]:
     url = f"{app.config['API_PATH']}/entity_presentation_view/{id_}"
     response = requests.get(
@@ -71,6 +76,7 @@ def get_entity_presentation(id_: int) -> dict[str, Any]:
     return response.json()
 
 
+@cache.memoize()
 def get_entity(id_: int) -> dict[str, Any]:
     # Deprecated raw entity loader
     url = f"{app.config['API_PATH']}/entity/"
@@ -101,6 +107,7 @@ EXCLUDE_SYSTEM_CLASSES = [
 ]
 
 
+@cache.memoize()
 def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
     depth_ = max(1, min(5, depth))
     url = f"{app.config['API_PATH']}/ego_network_visualisation/{id_}"
@@ -120,6 +127,7 @@ def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
     return response.json()
 
 
+@cache.memoize()
 def get_network_visualisation(
         linked_to_ids: list[int],
         exclude_system_classes: Optional[list[str]] = None) -> dict[str, Any]:

@@ -5,6 +5,7 @@ from typing import Any
 
 from flask import Flask, Response, session, request
 from flask_babel import Babel
+from flask_caching import Cache
 
 
 app = Flask(__name__, instance_relative_config=True)
@@ -21,6 +22,7 @@ def get_locale() -> str:
 
 
 babel = Babel(app, locale_selector=get_locale)
+cache = Cache(app)
 
 # pylint: disable=wrong-import-position, import-outside-toplevel
 from mop import  data, display, util, views
