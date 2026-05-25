@@ -1,0 +1,59 @@
+name: CI & Security Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+permissions:
+  contents: write
+
+jobs:
+  ci-security:
+    name: Run Tests, Coverage & Security Scans
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+
+      - name: Run Bandit (Code SAST Scan)
+        run: uvx bandit -r . -ll -x .venv,tests
+
+      - name: Generate Requirements with Hashes
+        run: uv export --all-groups --output-file requirements.txt
+
+      - name: Run pip-audit (Dependency Scan on CVEs)
+        run: uvx pip-audit -r requirements.txt --disable-pip
+
+      - name: Clean up temporary files
+        if: always()
+        run: rm -f requirements.txt
+
+      - name: Run Tests with Coverage
+        run: uv run pytest --cov=. --cov-report=xml --cov-report=term-missing
+
+      - name: Generate Coverage Badge
+        run: |
+          mkdir -p .github/badges
+          uvx --with defusedxml genbadge coverage -i coverage.xml -o .github/badges/coverage.svg
+
+      - name: Commit & Push Coverage Badge
+        if: github.event_name == 'push'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .github/badges/coverage.svg
+          git commit -m "chore: update coverage badge [skip ci]" || exit 0
+          git push

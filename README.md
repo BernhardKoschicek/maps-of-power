@@ -1,5 +1,7 @@
 # 🗺️ Maps of Power
 
+![Coverage](.github/badges/coverage.svg)
+
 The research initiative **Maps of Power** serves the methodological and interdisciplinary networking of scholars in the field of *Historical Geography*.
 Founded in 2019 under the title **"Maps of Power: Historical Atlas of Places, Borderzones and Migration Dynamics in Byzantium (TIB Balkans)"**, it emerged from the idea of deepening historical-geographical research methodologically and broadening it thematically.
 

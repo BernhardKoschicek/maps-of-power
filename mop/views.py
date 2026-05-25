@@ -100,8 +100,8 @@ def project_explore_table(project: str, view: str) -> str:
     data = []
     try:
         data = get_oa_by_view_class(view, project_data[project]['oaID'])
-    except Exception:  # pragma: no cover
-        pass
+    except Exception as e:  # pragma: no cover
+        app.logger.error(f"Error fetching open access data: {e}")
     return render_template(
         'explore/project_explore_table.html',
         data=data,
