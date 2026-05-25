@@ -7,8 +7,8 @@
 (function () {
     let network = null;
     let graph = null;
-    let physicsEnabled = true;
-    let labelsEnabled = false;
+    let spacingFactor = 1.0;
+    let labelsEnabled = true;
     let currentDepth = 2;
     let rawNodesData = [];
     let currentCenterId = null;
@@ -35,14 +35,14 @@
     function getPaletteCategory(systemClass) {
         if (!systemClass) return 'default';
         const sc = systemClass.toLowerCase();
-        if (sc.includes('place')) return 'place';
+        if (sc.includes('place') || sc.includes('feature') || sc.includes('stratigraphic_unit')) return 'place';
         if (sc.includes('person')) return 'person';
         if (sc.includes('group')) return 'group';
-        if (sc.includes('event')) return 'event';
+        if (sc.includes('event') || sc.includes('activity') || sc.includes('acquisition') || sc.includes('move') || sc.includes('production') || sc.includes('creation')) return 'event';
         if (sc.includes('source_translation')) return 'source_translation';
         if (sc.includes('source')) return 'source';
-        if (sc.includes('artifact')) return 'artifact';
-        if (sc.includes('bibliography')) return 'bibliography';
+        if (sc.includes('artifact') || sc.includes('human_remains')) return 'artifact';
+        if (sc.includes('bibliography') || sc.includes('edition') || sc.includes('external_reference')) return 'bibliography';
         return 'default';
     }
 
@@ -60,62 +60,129 @@
         return data;
     }
 
-    function applySpringLayout(graph, iterations = 80) {
-        const width = 800;
-        const height = 500;
-        const k = Math.sqrt((width * height) / (graph.order || 1));
+    function applySpringLayout(graph, iterations) {
+        const nodes = graph.nodes();
+        const numNodes = nodes.length;
+        if (numNodes === 0) return;
 
-        // Initialize circularly
-        const radius = 180;
-        let idx = 0;
-        graph.forEachNode(node => {
-          const angle = (idx / graph.order) * 2 * Math.PI;
-          graph.setNodeAttribute(node, 'x', radius * Math.cos(angle));
-          graph.setNodeAttribute(node, 'y', radius * Math.sin(angle));
-          idx++;
+        // Scale iterations: enough to converge, but capped to stay responsive
+        if (!iterations) {
+            iterations = numNodes > 200 ? 80 : (numNodes > 80 ? 120 : 200);
+        }
+
+        // Pre-build adjacency for O(1) neighbor lookup
+        const adjacency = {};
+        nodes.forEach(n => { adjacency[n] = []; });
+        graph.forEachEdge((edge, attrs, source, target) => {
+            adjacency[source].push(target);
+            adjacency[target].push(source);
         });
 
-        // Repulsive and attractive force iterations
+        // Optimal spacing constant (Fruchterman-Reingold)
+        const area = 800 * 600;
+        const k = Math.sqrt(area / numNodes) * 1.2;
+        const kSq = k * k;
+
+        // spacingFactor boosts repulsion relative to attraction
+        // so the camera auto-fit doesn't neutralize the effect
+        const repulsionMultiplier = spacingFactor * spacingFactor;
+
+        // Gravity pulls everything toward center to prevent drift
+        const gravity = 0.05;
+
+        // Initialize positions: jittered circle to break symmetry
+        const positions = {};
+        const radius = k * Math.sqrt(numNodes) * 0.3;
+        for (let i = 0; i < numNodes; i++) {
+            const angle = (i / numNodes) * 2 * Math.PI;
+            const jitter = 0.8 + Math.random() * 0.4;
+            positions[nodes[i]] = {
+                x: radius * Math.cos(angle) * jitter,
+                y: radius * Math.sin(angle) * jitter
+            };
+        }
+
+        // Temperature schedule: start high, cool exponentially
+        const tempStart = radius * 0.5;
+        const tempMin = 0.5;
+
         for (let iter = 0; iter < iterations; iter++) {
-          const disp = {};
-          graph.forEachNode(node => {
-            disp[node] = { x: 0, y: 0 };
-          });
+            // Exponential cooling
+            const progress = iter / iterations;
+            const temp = Math.max(tempMin, tempStart * Math.pow(0.01, progress));
 
-          graph.forEachNode(v => {
-            graph.forEachNode(u => {
-              if (u !== v) {
-                const dx = graph.getNodeAttribute(v, 'x') - graph.getNodeAttribute(u, 'x');
-                const dy = graph.getNodeAttribute(v, 'y') - graph.getNodeAttribute(u, 'y');
-                const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-                const force = (k * k) / dist;
-                disp[v].x += (dx / dist) * force;
-                disp[v].y += (dy / dist) * force;
-              }
+            const disp = {};
+            for (let i = 0; i < numNodes; i++) {
+                disp[nodes[i]] = { x: 0, y: 0 };
+            }
+
+            // 1. Repulsive forces between all node pairs (symmetric)
+            for (let i = 0; i < numNodes; i++) {
+                const v = nodes[i];
+                const posV = positions[v];
+                for (let j = i + 1; j < numNodes; j++) {
+                    const u = nodes[j];
+                    const posU = positions[u];
+                    const dx = posV.x - posU.x;
+                    const dy = posV.y - posU.y;
+                    const distSq = dx * dx + dy * dy;
+                    const dist = Math.sqrt(distSq) || 0.01;
+
+                    // Repulsive force boosted by repulsionMultiplier
+                    const force = (kSq * repulsionMultiplier) / dist;
+                    const fx = (dx / dist) * force;
+                    const fy = (dy / dist) * force;
+
+                    disp[v].x += fx;
+                    disp[v].y += fy;
+                    disp[u].x -= fx;
+                    disp[u].y -= fy;
+                }
+            }
+
+            // 2. Attractive forces along edges (unchanged by spacing)
+            graph.forEachEdge((edge, attributes, source, target) => {
+                const posS = positions[source];
+                const posT = positions[target];
+                const dx = posT.x - posS.x;
+                const dy = posT.y - posS.y;
+                const dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
+
+                // Attractive force: dist^2 / k (unscaled)
+                const force = (dist * dist) / k;
+                const fx = (dx / dist) * force;
+                const fy = (dy / dist) * force;
+
+                disp[source].x += fx;
+                disp[source].y += fy;
+                disp[target].x -= fx;
+                disp[target].y -= fy;
             });
-          });
 
-          graph.forEachEdge((edge, attributes, source, target) => {
-            const dx = graph.getNodeAttribute(target, 'x') - graph.getNodeAttribute(source, 'x');
-            const dy = graph.getNodeAttribute(target, 'y') - graph.getNodeAttribute(source, 'y');
-            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-            const force = (dist * dist) / k;
-            disp[target].x -= (dx / dist) * force;
-            disp[target].y -= (dy / dist) * force;
-            disp[source].x += (dx / dist) * force;
-            disp[source].y += (dy / dist) * force;
-          });
+            // 3. Gravity toward center
+            for (let i = 0; i < numNodes; i++) {
+                const node = nodes[i];
+                const pos = positions[node];
+                const distToCenter = Math.sqrt(pos.x * pos.x + pos.y * pos.y) || 0.01;
+                disp[node].x -= gravity * pos.x;
+                disp[node].y -= gravity * pos.y;
+            }
 
-          const t = Math.max(1, 40 - iter);
-          graph.forEachNode(node => {
-            const d = disp[node];
-            const dist = Math.sqrt(d.x * d.x + d.y * d.y) || 1;
-            const limit = Math.min(dist, t);
-            const nx = graph.getNodeAttribute(node, 'x') + (d.x / dist) * limit;
-            const ny = graph.getNodeAttribute(node, 'y') + (d.y / dist) * limit;
-            graph.setNodeAttribute(node, 'x', nx);
-            graph.setNodeAttribute(node, 'y', ny);
-          });
+            // 4. Apply displacements clamped by temperature
+            for (let i = 0; i < numNodes; i++) {
+                const node = nodes[i];
+                const d = disp[node];
+                const dist = Math.sqrt(d.x * d.x + d.y * d.y) || 0.01;
+                const capped = Math.min(dist, temp);
+                positions[node].x += (d.x / dist) * capped;
+                positions[node].y += (d.y / dist) * capped;
+            }
+        }
+
+        // Write final positions back to graphology
+        for (let i = 0; i < numNodes; i++) {
+            graph.setNodeAttribute(nodes[i], 'x', positions[nodes[i]].x);
+            graph.setNodeAttribute(nodes[i], 'y', positions[nodes[i]].y);
         }
     }
 
@@ -152,8 +219,8 @@
         // 2. Add nodes to graph
         filteredNodes.forEach(item => {
             const isCenter = String(item.id) === String(currentCenterId);
-            const systemClass = item.systemClass || 'default';
-            const palette = isCenter ? COLOR_PALETTE['center'] : (COLOR_PALETTE[systemClass] || COLOR_PALETTE['default']);
+            const category = getPaletteCategory(item.systemClass);
+            const palette = isCenter ? COLOR_PALETTE['center'] : (COLOR_PALETTE[category] || COLOR_PALETTE['default']);
             const deg = item.relations ? item.relations.length : 0;
             const size = isCenter ? 15 : Math.min(22, Math.max(7, 7 + deg * 0.4));
 
@@ -188,22 +255,56 @@
         });
 
         if (graph.order > 0) {
-            if (physicsEnabled) {
-                applySpringLayout(graph);
-            } else {
-                // simple circular layout if physics disabled
-                let idx = 0;
-                graph.forEachNode(node => {
-                    const angle = (idx / graph.order) * 2 * Math.PI;
-                    graph.setNodeAttribute(node, 'x', 150 * Math.cos(angle));
-                    graph.setNodeAttribute(node, 'y', 150 * Math.sin(angle));
-                    idx++;
-                });
-            }
+            applySpringLayout(graph);
 
             network = new SigmaConstructor(graph, container, {
                 allowOuterBounds: true,
                 renderLabels: true
+            });
+
+            // Node Dragging Interaction
+            let draggedNode = null;
+            let isDragging = false;
+
+            network.on("downNode", (e) => {
+                isDragging = true;
+                draggedNode = e.node;
+                graph.setNodeAttribute(draggedNode, "highlighted", true);
+                network.getCamera().disable(); // Prevent panning camera while dragging
+            });
+
+            network.getMouseCaptor().on("mousemovebody", (e) => {
+                if (!isDragging || !draggedNode) return;
+
+                // Convert mouse position to graph coordinates
+                const pos = network.viewportToGraph(e);
+
+                // Update node position in graphology
+                graph.setNodeAttribute(draggedNode, "x", pos.x);
+                graph.setNodeAttribute(draggedNode, "y", pos.y);
+
+                // Prevent camera movement
+                if (e.preventSigmaDefault) {
+                    e.preventSigmaDefault();
+                } else if (e.originalEvent && e.originalEvent.preventDefault) {
+                    e.originalEvent.preventDefault();
+                }
+            });
+
+            const endDrag = () => {
+                if (draggedNode) {
+                    graph.removeNodeAttribute(draggedNode, "highlighted");
+                    draggedNode = null;
+                    isDragging = false;
+                    network.getCamera().enable(); // Re-enable camera panning
+                }
+            };
+
+            network.getMouseCaptor().on("mouseup", endDrag);
+            network.getMouseCaptor().on("mousedown", () => {
+                if (!isDragging) {
+                    endDrag();
+                }
             });
 
             // Handle node click to show floating detail panel
@@ -222,7 +323,8 @@
                     if (titleElem) titleElem.innerText = nodeData.label;
                     if (classElem) {
                         const isCenter = String(clickedNodeId) === String(currentCenterId);
-                        const palette = isCenter ? COLOR_PALETTE['center'] : (COLOR_PALETTE[nodeData.systemClass] || COLOR_PALETTE['default']);
+                        const category = getPaletteCategory(nodeData.systemClass);
+                        const palette = isCenter ? COLOR_PALETTE['center'] : (COLOR_PALETTE[category] || COLOR_PALETTE['default']);
                         classElem.innerHTML = `
                             <span class="badge text-capitalize" style="background: #fff; color: ${palette.color}; border: 1px solid ${palette.color}; padding: 4px 10px;">
                                 ${nodeData.systemClass.replace('_', ' ')}
@@ -398,19 +500,11 @@
             });
         }
 
-        const stopPhysicsBtn = document.getElementById('btn-stop-layout');
-        if (stopPhysicsBtn) {
-            stopPhysicsBtn.addEventListener('click', function () {
-                physicsEnabled = !physicsEnabled;
+        const spacingSelect = document.getElementById('network-spacing');
+        if (spacingSelect) {
+            spacingSelect.addEventListener('change', function (e) {
+                spacingFactor = parseFloat(e.target.value);
                 renderNetworkGraph();
-                
-                if (physicsEnabled) {
-                    stopPhysicsBtn.innerHTML = '<i class="bi bi-pause-fill me-1"></i>Stop Physics';
-                    stopPhysicsBtn.className = 'btn btn-sm btn-outline-warning rounded-pill d-flex align-items-center';
-                } else {
-                    stopPhysicsBtn.innerHTML = '<i class="bi bi-play-fill me-1"></i>Start Physics';
-                    stopPhysicsBtn.className = 'btn btn-sm btn-outline-success rounded-pill d-flex align-items-center';
-                }
             });
         }
 
