@@ -1,0 +1,2860 @@
+# Greek translations for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-05-25 22:42+0200\n"
+"PO-Revision-Date: 2026-05-25 22:38+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: el <LL@li.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: mop/util.py:36
+msgid "about"
+msgstr "Σχετικά"
+
+#: mop/templates/explore/project_entity_view.html:59
+#: mop/templates/explore/project_explore_table.html:10
+#: mop/templates/project_details.html:43 mop/util.py:37
+msgid "projects"
+msgstr "Έργα"
+
+#: mop/util.py:38
+msgid "atlas"
+msgstr "Άτλας"
+
+#: mop/util.py:39
+msgid "histgeo"
+msgstr "HistGeo"
+
+#: mop/templates/_events_list.html:44 mop/util.py:40
+msgid "events"
+msgstr "Εκδηλώσεις"
+
+#: mop/templates/explore/project_entity_view.html:30
+#: mop/templates/explore/project_entity_view.html:615 mop/util.py:41
+msgid "literature"
+msgstr "Βιβλιογραφία"
+
+#: mop/views.py:336
+msgid "An error occurred"
+msgstr "Παρουσιάστηκε σφάλμα"
+
+#: mop/views.py:338
+msgid "An unexpected error occurred. Please try again later."
+msgstr "Παρουσιάστηκε ένα απρόσμενο σφάλμα. Παρακαλώ δοκιμάστε ξανά αργότερα."
+
+#: mop/views.py:341
+msgid "Page Not Found"
+msgstr "Η σελίδα δεν βρέθηκε"
+
+#: mop/views.py:343
+msgid ""
+"The coordinates you entered seem to be out of bounds. The page you are "
+"looking for does not exist."
+msgstr ""
+"Οι συντεταγμένες που εισαγάγατε φαίνεται να είναι εκτός ορίων. Η σελίδα που "
+"αναζητάτε δεν υπάρχει."
+
+#: mop/views.py:346
+msgid "Access Denied"
+msgstr "Δεν επιτρέπεται η πρόσβαση"
+
+#: mop/views.py:348
+msgid ""
+"You do not have permission to access this area. Restricted coordinates."
+msgstr ""
+"Δεν έχετε δικαίωμα πρόσβασης σε αυτήν την περιοχή. Περιορισμένες "
+"συντεταγμένες."
+
+#: mop/views.py:351
+msgid "I'm a Teapot"
+msgstr "Είμαι μια τσαγιέρα"
+
+#: mop/views.py:353
+msgid ""
+"The server refuses the attempt to brew coffee with a teapot. Yes, this is a "
+"real error."
+msgstr ""
+"Ο διακομιστής απορρίπτει την προσπάθεια παρασκευής καφέ με μια τσαγιέρα. "
+"Ναι, αυτό είναι ένα πραγματικό σφάλμα."
+
+#: mop/views.py:376 mop/views.py:383
+msgid "Internal Server Error"
+msgstr "Εσωτερικό σφάλμα διακομιστή"
+
+#: mop/views.py:385
+msgid ""
+"An unexpected server error occurred. Our cartographers are looking into it."
+msgstr ""
+"Παρουσιάστηκε ένα απρόσμενο σφάλμα διακομιστή. Οι χαρτογράφοι μας το "
+"εξετάζουν."
+
+#: mop/data/events.py:8 mop/data/events.py:12
+msgid "presentation"
+msgstr "παρουσίαση"
+
+#: mop/data/events.py:16
+msgid "award"
+msgstr "βραβείο"
+
+#: mop/data/events.py:20
+msgid "science_fair"
+msgstr "έκθεση επιστημών"
+
+#: mop/data/events.py:24
+msgid "book_release"
+msgstr "παρουσίαση βιβλίου"
+
+#: mop/data/events.py:28
+msgid "blogpost"
+msgstr "άρθρο ιστολογίου"
+
+#: mop/data/events.py:38
+msgid "Summer School in Brno"
+msgstr "Θερινό Σχολείο στο Μπρνο"
+
+#: mop/data/events.py:39
+msgid "brno_summer_school_260625"
+msgstr ""
+"Οι Žarko Vujošević και Mihailo Popović έδωσαν κοινή διάλεξη για τη σερβική "
+"διπλωματική με τίτλο “Documentary Spaces - Spaces of Power” στο θερινό "
+"σχολείο Scriptorium Brunense στο Μπρνο της Τσεχίας, στις 26 Ιουνίου 2025. <a"
+" href=\"https://archivnictvi.phil.muni.cz/en/news-and-"
+"events/events/scriptorium-brunense-1\" target=\"_blank\">Περισσότερες "
+"πληροφορίες</a>"
+
+#: mop/data/events.py:49
+msgid "Discourse on DH and AI"
+msgstr ""
+"Διάλογος για τις Ψηφιακές Ανθρωπιστικές Επιστήμες και την Τεχνητή Νοημοσύνη"
+
+#: mop/data/events.py:50
+msgid "heidelberg_200625"
+msgstr ""
+"Στις 20 Ιουνίου 2025 ο Mihailo Popović έδωσε διάλεξη για τις Ψηφιακές "
+"Ανθρωπιστικές Επιστήμες και την ΤΝ με τίτλο <a href=\"https://www.uni-"
+"heidelberg.de/de/veranstaltungen/ueber-die-sinnhaftigkeit-der-und-die-"
+"nachhaltigkeit-in-den-digitalen-geisteswissenschaften-2025-06-20\" "
+"target=\"_blank\">“Über die Sinnhaftigkeit der und die Nachhaltigkeit in den"
+" Digitalen Geisteswissenschaften: Erkenntnisse aus der Perspektive der "
+"Historischen Geographie, Byzantinistik und Südosteuropaforschung” στο "
+"Πανεπιστήμιο της Χαϊδελβέργης</a>."
+
+#: mop/data/events.py:60
+msgid "Report in the Newspaper Die Presse"
+msgstr "Αναφορά στην εφημερίδα Die Presse"
+
+#: mop/data/events.py:61
+msgid "presse_03052025"
+msgstr ""
+"Στην έντυπη έκδοση της 3ης Μαΐου 2025, η καθημερινή εφημερίδα Die Presse "
+"αναφέρεται στο επιστημονικό έργο του Mihailo Popović υπό τον τίτλο "
+"‘Unterwegs mit Notizbuch, Kompass und Melone (Καθ' οδόν με σημειωματάριο, "
+"πυξίδα και πεπόνι)’. Περισσότερες πληροφορίες: <a "
+"href=\"https://www.diepresse.com/19640086/auf-feldforschung-mit-notizbuch-"
+"kompass-und-melone\" target=\"_blank\">Die Presse</a>"
+
+#: mop/data/events.py:71
+msgid "Lecture at the Haus Wittgenstein"
+msgstr "Διάλεξη στο Haus Wittgenstein"
+
+#: mop/data/events.py:72
+msgid "wittgenstein_13022025"
+msgstr ""
+"Στις 13 Φεβρουαρίου 2025 ο Mihailo Popović έδωσε διάλεξη με τίτλο “Berge und"
+" Wildnis auf der südlichen Balkanhalbinsel im Spiegel der "
+"Lebensbeschreibungen der Heiligen Ivan Rilski, Prohor Pčinjski, Gavrilo "
+"Lesnovski und Joakim Osogovski” ως μέρος του Lectorium Bulgaricum στο Haus "
+"Wittgenstein στη Βιέννη."
+
+#: mop/data/events.py:82
+msgid "Workshop in Oxford"
+msgstr "Σεμινάριο στην Οξφόρδη"
+
+#: mop/data/events.py:83
+msgid "workshop_oxford_300524"
+msgstr ""
+"Στα τέλη Μαΐου 2024 ο Mihailo Popović συμμετείχε σε σεμινάριο με θέμα <a "
+"href=\"https://www.ames.ox.ac.uk/event/workshop-mountains-and-historian\" "
+"target=\"_blank\">\"Mountains and the Historian\"</a> στο Πανεπιστήμιο της "
+"Οξφόρδης, όπου παρουσίασε την εργασία \"Terrifying Aspects of Mountains and "
+"their Wilderness in the Medieval Balkans and How to Overcome Them\", η οποία"
+" εντάσσεται στην ενότητα \"Ιερή Τοπογραφία\" της Πρωτοβουλίας Maps of Power."
+
+#: mop/data/events.py:93
+msgid "The Long Night of Research in Vienna"
+msgstr "Η Μακρά Νύχτα της Έρευνας στη Βιέννη"
+
+#: mop/data/events.py:94
+msgid "lange_nacht_der_forschung_240524"
+msgstr ""
+"Την Παρασκευή, 24 Μαΐου 2024, ο Mihailo Popović συμμετείχε στη Μακρά Νύχτα "
+"της Έρευνας στην Αυστριακή Ακαδημία Επιστημών. Εκεί παρουσίασε σε μορφή "
+"αφίσας το έργο <a href=\"\" target=\"_blank\">\"Tracing Archaeological "
+"Remains and Scholarly Research of the Central Powers in the Region of "
+"Prilep-Bitola during WW I (1915-1918)\"</a>, το οποίο συμβάλλει στην ενότητα"
+" \"Πολιτιστική Κληρονομιά\" της Πρωτοβουλίας Maps of Power."
+
+#: mop/data/events.py:104
+msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
+msgstr "Παρουσίαση Συλλογικού Τόμου προς Τιμήν του Johannes Koder"
+
+#: mop/data/events.py:105
+msgid "koder_festschrift_230424"
+msgstr ""
+"Με την ευκαιρία των 80ών γενεθλίων του Johannes Koder, φίλοι, συνοδοιπόροι, "
+"μαθητές και συνάδελφοι του παρουσίασαν έναν τιμητικό τόμο με τίτλο “Der den "
+"Kordax tanzt: Hommage an Johannes Koder und seine Forschungen über Byzanz "
+"und den Balkan” στις 23 Απριλίου 2024 στη Βιέννη, οι συμβολές του οποίου "
+"σχετίζονται με τα ερευνητικά ενδιαφέροντα του τιμώμενου. Ως εκ τούτου, ο "
+"τόμος αυτός περιέχει αρχαιολογικά, τοπωνυμικά, ιστορικά, φιλολογικά, "
+"ιστορικο-γεωγραφικά και ιστορικά θέματα τέχνης. Για περισσότερες πληροφορίες"
+" σχετικά με τον τόμο: <a href=\"https://eudora-verlag.de/de/product/der-den-"
+"kodax-tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-vratislav-"
+"zervan-ralf-c-mueller/\" target=\"_blank\">https://eudora-"
+"verlag.de/de/product/der-den-kodax-tanzt-hommage-an-johannes-"
+"koder_von_mihailo-st-popovic-vratislav-zervan-ralf-c-mueller/</a>"
+
+#: mop/data/events.py:115
+msgid "Two Presentations on the Usefulness of OpenAtlas"
+msgstr "Δύο Παρουσιάσεις για τη Χρησιμότητα του OpenAtlas"
+
+#: mop/data/events.py:116
+msgid "belgrade_190923"
+msgstr ""
+"Στις 19 Σεπτεμβρίου 2023 οι Bernhard Koschiček-Krombholz και Mihailo St. "
+"Popović έδωσαν ο καθένας από μια διάλεξη στη Σερβική Ακαδημία Επιστημών και "
+"Τεχνών στο Βελιγράδι. Ενώ ο Bernhard Koschiček-Krombholz μίλησε για το "
+"\"OpenAtlas: A Database System for the Humanities and Beyond\", η διάλεξη "
+"του Mihailo St. Popović ήταν \"On the Usefulness of OpenAtlas in Historical "
+"Geography\". Στη συνέχεια, είχαν μια εντατική ανταλλαγή απόψεων με την ομάδα"
+" του έργου \"From Barbarians to Christians and Rhomaioi. The Process of "
+"Byzantinization in the Central Balkans (Late 10th – Mid-13th Century)\" για "
+"πτυχές των Ψηφιακών Ανθρωπιστικών Επιστημών."
+
+#: mop/data/events.py:126
+msgid "Workshop on Medieval Athos in Oxford"
+msgstr "Σεμινάριο για τον Μεσαιωνικό Άθω στην Οξφόρδη"
+
+#: mop/data/events.py:127
+msgid "athos_oxford_290923"
+msgstr ""
+"Στις 29 Σεπτεμβρίου 2023 ο Mihailo St. Popović παρουσίασε εργασία με τίτλο "
+"\"Serbian Noblewomen and the Clergy in the Middle Ages: A Comparison between"
+" Mara Branković and Jelena Anžujska regarding Athonite Monks and Franciscan "
+"Friars\" στο σεμινάριο \"A Special Relationship? Gender on Medieval Mount "
+"Athos\" στο Όξφορντ του Ηνωμένου Βασιλείου."
+
+#: mop/data/events.py:137
+msgid "Paper on the Crown of the Saint King Stefan Dečanski"
+msgstr "Εργασία για το Στέμμα του Αγίου Βασιλιά Στεφάνου Ντετσάνσκι"
+
+#: mop/data/events.py:138
+msgid "tripps_070923"
+msgstr ""
+"Ο καθηγητής Dr. Johannes Tripps (Πανεπιστήμιο Εφαρμοσμένων Επιστημών της "
+"Λειψίας) έδωσε μια ιδιαίτερα προβεβλημένη ομιλία ιστορίας της τέχνης για το "
+"στέμμα του Αγίου Βασιλιά Στεφάνου Ντετσάνσκι στο πλαίσιο του έργου “Beyond "
+"East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" and "
+"\"Raška\" through Space and Time (11th-14th Cent.)” στο Πανεπιστήμιο του "
+"Βελιγραδίου. Δείτε την παρουσίαση στο: <a "
+"href=\"https://www.youtube.com/@MapsOfPower\" target=\"_blank\" "
+"class=\"link-primary\">https://www.youtube.com/@MapsOfPower</a>"
+
+#: mop/data/events.py:148
+msgid "TIB Balkans at the IMC Leeds 2023"
+msgstr "Το TIB Balkans στο IMC Leeds 2023"
+
+#: mop/data/events.py:149
+msgid "imc_leeds_23"
+msgstr ""
+"Ερευνητές του TIB Balkans παρουσίασαν τα νεότερα επιστημονικά τους "
+"αποτελέσματα μαζί με συναδέλφους από το Μουσείο Φυσικής Ιστορίας της "
+"Βιέννης, την Εταιρεία Ludwig Boltzmann, το Πανεπιστήμιο Εφαρμοσμένων "
+"Επιστημών της Λειψίας (HTWK Leipzig), το Πανεπιστήμιο του Βελιγραδίου και το"
+" ACDH-CH της Αυστριακής Ακαδημίας Επιστημών σε τρεις συνεδρίες με τίτλο "
+"“Entanglements across Medieval Space, Objects, and Data” στις 6 Ιουλίου 2023"
+" στο IMC Leeds."
+
+#: mop/data/events.py:159
+msgid "presentation on MECERN conference"
+msgstr "παρουσίαση στο συνέδριο MECERN"
+
+#: mop/data/events.py:160
+msgid "mecern_2023"
+msgstr ""
+"Οι Vratislav Zervan και Mihailo Popović συμμετείχαν στο συνέδριο MECERN "
+"“Continuity and Change in Medieval Central Europe” στη Μπρατισλάβα τον "
+"Απρίλιο του 2023 και παρουσίασαν κοινή εργασία με τίτλο “The Hagiogeography "
+"of Saint Archangel Michael in the Balkans and Central Europe in Medieval "
+"Times”."
+
+#: mop/data/events.py:170
+msgid "presentation at the Serbian Academy of Sciences and Arts"
+msgstr "παρουσίαση στη Σερβική Ακαδημία Επιστημών και Τεχνών"
+
+#: mop/data/events.py:171
+msgid "serbian_academy_220223"
+msgstr ""
+"Ο Mihailo Popović προσκλήθηκε από το Ινστιτούτο Βυζαντινών Σπουδών της "
+"Σερβικής Ακαδημίας Επιστημών και Τεχνών για να παρουσιάσει εργασία με τίτλο "
+"“Пројекат Tabula Imperii Byzantini: о будућности (?) проучавања историјске "
+"географије Византије” [“Το Έργο Tabula Imperii Byzantini: για το Μέλλον (?) "
+"της Έρευνας στο Πεδίο της Ιστορικής Γεωγραφίας του Βυζαντίου”] στις 22 "
+"Φεβρουαρίου 2023 στο Βελιγράδι."
+
+#: mop/data/histgeo.py:7 mop/data/histgeo.py:24 mop/data/histgeo.py:41
+msgid "march"
+msgstr "Μάρτιος"
+
+#: mop/data/histgeo.py:11 mop/data/histgeo.py:28 mop/data/histgeo.py:45
+#: mop/data/histgeo.py:58 mop/data/histgeo.py:67 mop/data/histgeo.py:81
+msgid "june"
+msgstr "Ιούνιος"
+
+#: mop/data/histgeo.py:15 mop/data/histgeo.py:32 mop/data/histgeo.py:49
+msgid "september"
+msgstr "Σεπτέμβριος"
+
+#: mop/data/histgeo.py:19 mop/data/histgeo.py:36 mop/data/histgeo.py:53
+#: mop/data/histgeo.py:62 mop/data/histgeo.py:71
+msgid "december"
+msgstr "Δεκέμβριος"
+
+#: mop/data/histgeo.py:76
+msgid "December"
+msgstr "Δεκέμβριος"
+
+#: mop/data/histgeo.py:93 mop/data/histgeo.py:130 mop/data/histgeo.py:167
+#: mop/data/literature.py:104
+msgid "eds."
+msgstr "εκδ."
+
+#: mop/data/histgeo.py:95
+msgid "histgeo_vol1_1"
+msgstr ""
+"με την ευκαιρία των 75ών γενεθλίων του καθηγητή Dr. Johannes Koder, οι "
+"επικεφαλής του Μακροχρόνιου Έργου Tabula Imperii Byzantini (TIB) στην "
+"Αυστριακή Ακαδημία Επιστημών, Prof. Dr. Andreas Külzer και Doz. Dr. Mihailo "
+"Popović (και οι δύο από το Ινστιτούτο Μεσαιωνικών Ερευνών, Τμήμα Βυζαντινών "
+"Ερευνών), κάλεσαν 21 καταξιωμένους επιστήμονες από τους ακαδημαϊκούς χώρους "
+"της Ιστορικής Γεωγραφίας, της Αρχαιολογίας, της Γεωγραφίας και της "
+"Χαρτογραφίας να συγγράψουν μελέτες. Το αποτέλεσμα είναι ένας συλλογικός "
+"τόμος (Festschrift) με τίτλο “Space, Landscapes and Settlements in "
+"Byzantium. Studies in Historical Geography of the Eastern Mediterranean”."
+
+#: mop/data/histgeo.py:95
+msgid "histgeo_vol1_2"
+msgstr ""
+"Ο Johannes Koder, τακτικό μέλος (w. M.) της Αυστριακής Ακαδημίας Επιστημών, "
+"διαμόρφωσε καθοριστικά το επιστημονικό έργο του Tabula Imperii Byzantini από"
+" το 1966 ως ερευνητής της πρώτης ώρας και το διηύθυνε διαδεχόμενος τον Prof."
+" Dr. Herbert Hunger από το 1995 έως το 2015. Είναι ο εκδότης της σειράς "
+"Tabula Imperii Byzantini στην Αυστριακή Ακαδημία Επιστημών. Το επιστημονικό "
+"του έργο περιλαμβάνει πρωτοποριακές δημοσιεύσεις για την Ιστορική Γεωγραφία "
+"της Ανατολικής Μεσογείου και του Βυζαντίου."
+
+#: mop/data/histgeo.py:95
+msgid "histgeo_vol1_3"
+msgstr ""
+"ο συλλογικός τόμος (Festschrift) εκδόθηκε ως τόμος 1 της σειράς “Studies in "
+"Historical Geography and Cultural Heritage”. Η σειρά αυτή ιδρύθηκε από τον "
+"Mihailo Popović ως επικεφαλής του ψηφιακού συνεργατικού έργου “Digitising "
+"Patterns of Power (DPP): Peripheral Mountains in the Medieval World” στο "
+"Ινστιτούτο Μεσαιωνικών Ερευνών της Αυστριακής Ακαδημίας Επιστημών την άνοιξη"
+" του 2016 και εκδίδεται από τους Andreas Külzer και Mihailo Popović με σκοπό"
+" την καινοτομία στην ιστορικο-γεωγραφική έρευνα στις Βυζαντινές Σπουδές. Η "
+"σειρά εκτυπώνεται από τον εκδοτικό οίκο Akademska Knjiga στο Νόβι Σαντ."
+
+#: mop/data/histgeo.py:111
+msgid "ed."
+msgstr "επιμ."
+
+#: mop/data/histgeo.py:112
+msgid "histgeo_vol2_1"
+msgstr ""
+"στις 9 Δεκεμβρίου 2014, ο καθηγητής Dr. Dr. h.c. mult. Herbert Hunger "
+"(1914–2000), ιδρυτής του Ινστιτούτου Βυζαντινών Σπουδών (σήμερα: και "
+"Νεοελληνικών Σπουδών) του Πανεπιστημίου της Βιέννης και επί σειρά ετών "
+"πρόεδρος της Αυστριακής Ακαδημίας Επιστημών, θα γιόρταζε τα εκατοστά του "
+"γενέθλια. Με την ευκαιρία αυτή, διακεκριμένοι επιστήμονες από διάφορα μέρη "
+"της Ευρώπης και των Ηνωμένων Πολιτειών της Αμερικής συγκεντρώθηκαν στη "
+"Βιέννη για να τιμήσουν τον διάσημο ερευνητή και να συζητήσουν την απήχηση "
+"του ακαδημαϊκού του έργου στα πεδία των διεθνών Βυζαντινών Σπουδών. Ο Prof. "
+"Dr. Andreas Külzer συγκέντρωσε αρκετές σημαντικές συμβολές του συνεδρίου σε "
+"αυτόν τον τόμο, ο οποίος μπορεί να χρησιμεύσει ως πηγή επιστημονικής "
+"έμπνευσης, ιδίως για ερευνητές που δραστηριοποιούνται στους διάφορους τομείς"
+" της ιστορίας, της ιστορικής γεωγραφίας και της βασικής έρευνας."
+
+#: mop/data/histgeo.py:131
+msgid "histgeo_vol3_1"
+msgstr ""
+"Το Μακροχρόνιο Έργο “Tabula Imperii Byzantini (TIB)” (Ινστιτούτο Μεσαιωνικών"
+" Ερευνών, Τμήμα Βυζαντινών Ερευνών) της Αυστριακής Ακαδημίας Επιστημών "
+"ιδρύθηκε το 1966. Πρόκειται για μια ιδιαίτερα δραστήρια και καινοτόμο "
+"επιστημονική προσπάθεια και ταυτόχρονα θεματοφύλακα των συνόλων δεδομένων "
+"του TIB (διαφάνειες, φωτογραφίες κ.λπ.), τα οποία έχουν εξαιρετική σημασία "
+"για την Πολιτιστική Κληρονομιά του Μεσογειακού Κόσμου. Ως εκ τούτου, "
+"ολόκληρη η ομάδα του TIB (ενεργοί και ομότιμοι ερευνητές) προετοίμασε έναν "
+"συλλογικό τόμο στα γερμανικά με τίτλο “Raum und Geschichte: der historische "
+"Atlas ‘Tabula Imperii Byzantini (TIB)’ an der Österreichischen Akademie der "
+"Wissenschaften”. Χρηματοδοτείται από το Jubiläumsfonds der Österreichischen "
+"Nationalbank Αρ. 17771 μέσω του επιστημονικού έργου <a "
+"href=\"https://tib.oeaw.ac.at/balkan/subprojects/digtib\" "
+"target=\"_blank\">“Die digitale Tabula Imperii Byzantini (Dig-TIB) als "
+"Beitrag zum Weltkulturerbe”</a> και εκδόθηκε από τους επιμελητές Andreas "
+"Külzer, Veronika Polloczek και Mihailo St. Popović ως τόμος 3 της σειράς "
+"“Studies in Historical Geography and Cultural Heritage” στον εκδοτικό οίκο "
+"Akademska Knjiga (Νόβι Σαντ, Σερβία). Στόχος αυτής της έκδοσης είναι να "
+"παρουσιάσει, ιδίως στο αυστριακό κοινό, την ιστορία, τα επιστημονικά "
+"αποτελέσματα, τις μελλοντικές ιδέες και τα σχέδια, καθώς και τη συμβολή του "
+"TIB στην εθνική και διεθνή ακαδημαϊκή κοινότητα, δεδομένου ότι το TIB "
+"αποτελεί αναπόσπαστο μέρος της αυστριακής επιστήμης που χρηματοδοτείται από "
+"την αυστριακή κοινωνία. Αν και η Ιστορική Γεωγραφία είναι ένας πολύ "
+"εξειδικευμένος κλάδος των Βυζαντινών Σπουδών, πιστεύουμε ότι η ύπαρξη ενός "
+"τέτοιου έργου στην Αυστρία και η τεκμηρίωσή του θα συναντήσουν το δημόσιο "
+"ενδιαφέρον και την ευαισθητοποίηση."
+
+#: mop/data/histgeo.py:150
+msgid "histgeo_vol4_1"
+msgstr ""
+"το τοπίο της Νοτιοανατολικής Πελοποννήσου (Λακωνία, Ελλάδα), μιας πολύ "
+"σημαντικής περιοχής της Αυτοκρατορίας στο πλαίσιο της ύστερης βυζαντινής "
+"περιόδου, περιλάμβανε σημαντικά επισκοπικά κέντρα, όπως ο Μυστράς και η "
+"Μονεμβασιά, καθώς και πολυάριθμα χωριά, ισχυρά μοναστηριακά ιδρύματα και "
+"μικρότερα ησυχαστήρια, συχνά κτισμένα σε σπήλαια και απομονωμένες "
+"τοποθεσίες. Βασισμένο τόσο σε συστηματική εργασία πεδίου όσο και σε "
+"λεπτομερείς αποτυπώσεις των μνημείων, το βιβλίο αυτό αποτελεί την πρώτη "
+"ολοκληρωμένη μελέτη των ερημητικών και μοναστικών τοπίων της περιοχής. "
+"Εξετάζει τις αλληλεπιδράσεις των απομονωμένων ερημιτών και των οργανωμένων "
+"κοινοτήτων, τις σχέσεις των μεγάλων μοναστηριών με τα μικρότερα μετόχια, "
+"καθώς και τη διαπλοκή της μοναστηριακής και της αγροτικής οικονομίας. Στόχος"
+" του είναι ο εντοπισμός των ίδιων των μοναχών, των ενασχολήσεων και των "
+"επιδιώξεών τους, οι οποίες αντικατοπτρίζονται όχι μόνο στην επιλογή των "
+"προστάτιδων αγίων των ιερών τόπων που ίδρυσαν ή στο περιεχόμενο του γραπτού "
+"διακόσμου, αλλά και στην επιλογή της τοποθεσίας ή στη βαθιά σχέση με τα "
+"φυσικά στοιχεία του τοπίου."
+
+#: mop/data/histgeo.py:179
+msgid "sgomez_short_bio"
+msgstr ""
+"Πτυχίο Ιστορίας, Αυτόνομο Πανεπιστήμιο της Μαδρίτης, Μεταπτυχιακό στην "
+"Αρχαιολογία, Πανεπιστήμιο Ca’ Foscari της Βενετίας, Μεταπτυχιακό στην "
+"Αιγυπτιακή Αρχαιολογία, University College του Λονδίνου"
+
+#: mop/data/histgeo.py:180
+msgid "sgomez_bio_1"
+msgstr ""
+"Η Silvia Gómez Senovilla ολοκληρώνει επί του παρόντος τη διδακτορική της "
+"έρευνα στο Πανεπιστήμιο της Βιέννης στο πλαίσιο της προχωρημένης "
+"επιχορήγησης του ERC “The Hyksos Enigma” (Συμφωνία επιχορήγησης Αρ. 668640),"
+" υπό την επίβλεψη του Prof. Manfred Bietak."
+
+#: mop/data/histgeo.py:180
+msgid "sgomez_bio_2"
+msgstr ""
+"στο διδακτορικό της εξετάζει τη δομή και τη διάταξη των οικισμών και των "
+"οικιακών περιοχών κατά την Πρώιμη και Μέση Χαλκοκρατία στην αρχαία Συρο-"
+"Μεσοποταμία και την Αίγυπτο, με ιδιαίτερη έμφαση στο ανατολικό Δέλτα του "
+"Νείλου στην πόλη Avaris-Tell el-Dab’a. Συμπεριλαμβάνοντας ανθρωπολογικές και"
+" κοινωνιολογικές θεωρίες για τη χρήση του χώρου και την ενσωμάτωση χωρικών "
+"και στατιστικών εργαλείων, διερευνά τους μετασχηματισμούς του χώρου κατά τη "
+"διάρκεια αυτής της περιόδου της Χαλκοκρατίας και τις κοινωνικές τους "
+"προεκτάσεις."
+
+#: mop/data/histgeo.py:184 mop/data/histgeo.py:185
+msgid "gbidaut_short_bio"
+msgstr ""
+"Πτυχίο Ιστορίας, Πανεπιστήμιο Paris 1 Panthéon-Sorbonne, Μεταπτυχιακό στην "
+"Ιστορία, École des hautes études en sciences sociales του Παρισιού, "
+"Μεταπτυχιακό δίπλωμα στην Ιστορία και τις Ελληνικές Σπουδές, École normale "
+"supérieure του Παρισιού"
+
+#: mop/data/histgeo.py:191
+msgid "lecture_1_title"
+msgstr "Μελέτη του Χώρου σε Αρχαίους Οικισμούς"
+
+#: mop/data/histgeo.py:192
+msgid "lecture_1_subtitle"
+msgstr ""
+"Οι Δρόμοι της Αβάριδος, η Χρήση του Χώρου και η Παγίδα της Πραγμοποίησης"
+
+#: mop/data/histgeo.py:199 mop/data/histgeo.py:211
+msgid "english"
+msgstr "αγγλικά"
+
+#: mop/data/histgeo.py:200
+msgid "lecture_1_1"
+msgstr ""
+"η αρχαιολογία και η ιστορία αντιμετωπίζουν εκ φύσεως την πρόκληση του "
+"χωροχρόνου. Παρά τις πολυάριθμες προόδους στον τομέα της χωρικής ανάλυσης "
+"και των μελετών τοπίου που προήλθαν από την ποσοτική επανάσταση της "
+"δεκαετίας του 1970, μια πραγματική \"χωρική στροφή\" στην αρχαιολογία "
+"μερικές φορές εξακολουθεί να παραβλέπεται. Όπως επεσήμανε ο Edward Soja σε "
+"ένα από τα πιο επιδραστικά του έργα: \"[η χωρική στροφή] δεν μπορεί να "
+"επιτευχθεί απλώς με την προσάρτηση χωρικών σημείων σε κληρονομημένες "
+"κριτικές προοπτικές και την αναμονή να λάμψουν με λογική πεποίθηση\". Ένα "
+"πρόβλημα που εμποδίζει την παραγωγή -πραγματικών- χωρικών αφηγήσεων στην "
+"αρχαιολογία σχετίζεται με τρία κύρια ζητήματα: πρώτον, την αντιμετώπιση του "
+"χρόνου και των χρονικών κλιμάκων στην αρχαιολογία· δεύτερον, μια μερικές "
+"φορές ασυνείδητη λήθη του γεγονότος ότι ο κοινωνικός χώρος δεν είναι ίσος με"
+" τον φυσικό -ευκλείδειο- χώρο, και τρίτον ότι η κλίμακα είναι, όταν "
+"ασχολούμαστε με το αίνιγμα του χωροχρόνου, ένα θεμελιώδες κομμάτι στη μηχανή"
+" των εξελισσόμενων γεγονότων. Η σιωπηρή παραδοχή ότι τα δεδομένα με τα οποία"
+" εργαζόμαστε, συλλεγμένα από εμάς ή από άλλους συναδέλφους, καθώς και η "
+"μεθοδολογία που χρησιμοποιούμε, δεν παρουσιάζουν μεροληψίες και δεν "
+"υπόκεινται σε μια (συνειδητή ή ασυνείδητη) προεπιλογή, εμποδίζει επίσης "
+"ορισμένες προσπάθειες για μια πραγματική ανάλυση του χώρου και των "
+"συστατικών του."
+
+#: mop/data/histgeo.py:200
+msgid "lecture_1_2"
+msgstr ""
+"σε αυτή τη διάλεξη, θα παρουσιάσω την τρέχουσα κατάσταση της διδακτορικής "
+"μου έρευνας, όπου ασχολούμαι με τη δόμηση του χώρου στην αρχαία Αίγυπτο και "
+"τη Συρο-Μεσοποταμία κατά τη διάρκεια της δεύτερης χιλιετίας π.Χ. Η ομιλία θα"
+" πλαισιωθεί γύρω από τις κύριες προκλήσεις που μπορεί να προκύψουν κατά την "
+"ενασχόληση με αρχαίες χρονικότητες και την υποτιθέμενη αντανάκλασή τους στον"
+" χώρο, και θεωρεί την κλίμακα ως το κύριο συστατικό της. Θα προσπαθήσω "
+"επίσης να επισημάνω και να φέρω προς συζήτηση τα εμπόδια που μπορεί να "
+"προωθήσει μια ψευδής χρήση του τρέχοντος λογισμικού χωρικής ανάλυσης, όπως "
+"τα πακέτα GIS, ενώ παράλληλα θα προσπαθήσω να ανοίξω τη συζήτηση για το "
+"ποιες δυνατότητες μπορούν να μας βοηθήσουν να ξεπεράσουμε την μερικές φορές "
+"πανταχού παρούσα εξάρτηση από καθαρά οπτικά μοντέλα."
+
+#: mop/data/histgeo.py:203
+msgid "lecture_2_title"
+msgstr "Χαρτογράφηση της Κινητικότητας, Συγκρότηση Κοινότητας"
+
+#: mop/data/histgeo.py:204
+msgid "lecture_2_subtitle"
+msgstr ""
+"Σκέψεις για τον Ορισμό, την Αναπαράσταση και τη Χωρικότητα των Ποιμενικών "
+"Κοινοτήτων στα Βυζαντινά και Πρώιμα Οθωμανικά Βαλκάνια"
+
+#: mop/data/histgeo.py:212
+msgid "lecture_2_1"
+msgstr ""
+"Τα προνεωτερικά Βαλκάνια χαρακτηρίζονταν από υψηλό επίπεδο ποικιλομορφίας, "
+"όπου πολλαπλές πολιτείες και πολιτικά μοντέλα, γλωσσικές κοινότητες και "
+"τρόποι κοινωνικής οργάνωσης αλληλεπιδρούσαν, υπερτίθεντο και "
+"υβριδιοποιούνταν. Αυτή η ποικιλομορφία συνεχίζεται μέχρι σήμερα, όπου έχει "
+"αναδιαμορφωθεί και επαναπροσδιοριστεί από το βλέμμα του δυτικού "
+"οριενταλισμού (ή βαλκανισμού, όπως τον ονόμασε η Maria Todorova), τους "
+"ανταγωνιστικούς ιμπεριαλισμούς και τη γενίκευση του παραδείγματος του "
+"έθνους-κράτους. Ως εκ τούτου, η επιστημονική προσέγγιση των προνεωτερικών "
+"κοινωνιών των Βαλκανίων πρέπει να λαμβάνει ιδιαίτερα υπόψη τη "
+"στρωματογράφηση και τη διαπλοκή των παρελθουσών και παρουσών κατηγοριών "
+"συλλογικής ταυτότητας και χώρου."
+
+#: mop/data/histgeo.py:212
+msgid "lecture_2_2"
+msgstr ""
+"Σε αυτή τη διάλεξη, θα παρουσιάσω την τρέχουσα κατάσταση της διδακτορικής "
+"μου έρευνας, η οποία εξετάζει την κοινωνική οργάνωση, τις οικονομικές δομές "
+"και τα πολιτικά δίκτυα των ποιμενικών κοινοτήτων στα Νότια Βαλκάνια "
+"(Μακεδονία, Ήπειρος και Θεσσαλία) από τη Μέση Βυζαντινή έως την Πρώιμη "
+"Οθωμανική περίοδο (10ος-15ος αιώνας). Η εργασία αυτή θα επικεντρωθεί στα "
+"πρώτα αποτελέσματα και στα μεθοδολογικά ερωτήματα που αυτά εγείρουν για την "
+"ιστορία και την ιστορική γεωγραφία των Βαλκανίων. Η πρώτη ομάδα προκλήσεων "
+"αφορά την επεξεργασία σχετικών αναλυτικών κατηγοριών. Οι προνεωτερικές "
+"ποιμενικές κοινότητες ήταν ως επί το πλείστον προφορικές κοινωνίες, "
+"γεωγραφικά και συμβολικά περιφερειακές ως προς τα μοναστικά, αστικά και "
+"πολιτικά κέντρα όπου οι εγγράμματες ελίτ παρήγαγαν τον κύριο όγκο των "
+"σωζόμενων πηγών. Πώς λοιπόν να τις ορίσουμε και να τις αναγνωρίσουμε χωρίς "
+"να επαναχρησιμοποιήσουμε άκριτα τις κατηγορίες που παρήγαγαν οι τρίτοι; "
+"Επιπλέον, οι κατηγορίες αυτές – ορισμένες με συνεχή καταγραφή χρήσης μέχρι "
+"σήμερα – έχουν ιστορικά ταλαντευτεί μεταξύ του να χρησιμεύουν ως οικονομικές"
+" ή/και εθνοτικές ετικέτες. Ως εκ τούτου, θα διερευνήσω τρόπους αποφυγής ενός"
+" ονομαστικού ουσιοκρατισμού που προβάλλει σύγχρονες εθνοεθνικές σημασίες στο"
+" παρελθόν χωρίς να διαλύει τη συνοχή αυτών των συλλογικοτήτων. Η δεύτερη "
+"ομάδα προκλήσεων περιστρέφεται γύρω από την ανασυγκρότηση και τη "
+"χαρτογράφηση της χωρικότητας ομάδων των οποίων η κινητικότητα ήταν βασικό "
+"χαρακτηριστικό. Λαμβάνοντας υπόψη τη σημασία του γεωγραφικού τους πλαισίου, "
+"θα παρουσιάσω τα ζητήματα που εγείρονται από την έλλειψη και την άνιση "
+"κατανομή των πηγών που αφορούν συγκεκριμένα μέρη, και θα συζητήσω σε ποιο "
+"βαθμό τα εργαλεία GIS μπορούν να βοηθήσουν ή να εμποδίσουν την κατανόηση των"
+" χωρικών τους πρακτικών και αναπαραστάσεων."
+
+#: mop/data/histgeo.py:216 mop/templates/histgeo.html:129
+msgid "author"
+msgstr "συγγραφέας"
+
+#: mop/data/histgeo.py:217 mop/templates/histgeo.html:133
+msgid "pages"
+msgstr "σελίδες"
+
+#: mop/data/histgeo.py:218
+msgid "ISBN"
+msgstr "ISBN"
+
+#: mop/data/histgeo.py:219 mop/templates/histgeo.html:141
+msgid "citation"
+msgstr "παραπομπή"
+
+#: mop/data/histgeo.py:220 mop/templates/histgeo.html:146
+#: mop/templates/histgeo.html:149
+msgid "order"
+msgstr "ταξινόμηση"
+
+#: mop/data/histgeo.py:221
+msgid "abstract"
+msgstr "περίληψη"
+
+#: mop/data/images.py:6
+msgid "image_written_source_description"
+msgstr "οι γραπτές πηγές (π.χ. έγγραφα, ιστοριογραφία, επιγραφές κ.λπ.)"
+
+#: mop/data/images.py:7
+msgid "image_written_source_caption"
+msgstr "το Χρυσόβουλο για τη Μονή της Ρίλας στη Βουλγαρία (1378)"
+
+#: mop/data/images.py:13
+msgid "image_excavations_description"
+msgstr "αρχαιολογικά δεδομένα (ανασκαφές, μνημεία και τα ερείπια τους)"
+
+#: mop/data/images.py:14
+msgid "image_excavations_caption"
+msgstr ""
+"Η Ανασκαφή της Αγοράς (Forum) στη Ρωμαϊκή Πόλη της Δόκλειας, Μαυροβούνιο "
+"(2021)"
+
+#: mop/data/images.py:19
+msgid "image_toponym_description"
+msgstr "τοπωνύμια και μικροτοπωνύμια"
+
+#: mop/data/images.py:20
+msgid "image_toponym_caption"
+msgstr "Η Περιοχή του Πρίλεπ στον Αυστροουγγρικό Χάρτη 1:200.000"
+
+#: mop/data/images.py:25
+msgid "image_landscape_description"
+msgstr "τα φυσικά χαρακτηριστικά των τοπίων"
+
+#: mop/data/images.py:26
+msgid "image_landscape_caption"
+msgstr "Ο Κόλπος του Κότορ, Μαυροβούνιο (2021)"
+
+#: mop/data/institutes.py:5
+msgid ""
+"Institute for Byzantine Studies of the Serbian Academy of Sciences and Arts"
+msgstr ""
+"Ινστιτούτο Βυζαντινών Σπουδών της Σερβικής Ακαδημίας Επιστημών και Τεχνών"
+
+#: mop/data/institutes.py:13
+msgid "Science Fund of the Republic of Serbia"
+msgstr "Ταμείο Επιστημών της Δημοκρατίας της Σερβίας"
+
+#: mop/data/institutes.py:19
+msgid "Zukunftsfonds"
+msgstr "Zukunftsfonds"
+
+#: mop/data/institutes.py:25
+msgid "Deutsche Forschungsgemeinschaft"
+msgstr "Γερμανικό Ίδρυμα Ερευνών"
+
+#: mop/data/institutes.py:31
+msgid "Metropolis von Austria"
+msgstr "Μητρόπολις Αυστρίας"
+
+#: mop/data/institutes.py:34
+msgid "S. Em. Metropolit Arsenios von Austria"
+msgstr "Σεβ. Μητροπολίτης Αρσένιος Αυστρίας"
+
+#: mop/data/institutes.py:35
+msgid "Fleischmarkt 13<br>1010 Wien<br>Österreich"
+msgstr "Fleischmarkt 13<br>1010 Βιέννη<br>Αυστρία"
+
+#: mop/data/institutes.py:37 mop/templates/imprint.html:10
+#: mop/templates/layout.html:101
+msgid "Austrian Academy of Sciences"
+msgstr "Αυστριακή Ακαδημία Επιστημών"
+
+#: mop/data/institutes.py:43
+msgid "Austrian Archaeological Institute"
+msgstr "Αυστριακό Αρχαιολογικό Ινστιτούτο"
+
+#: mop/data/institutes.py:49 mop/templates/layout.html:102
+msgid "Institute for Medieval Research"
+msgstr "Ινστιτούτο Μεσαιωνικών Ερευνών"
+
+#: mop/data/institutes.py:55
+msgid "Abteilung Byzanzforschung (ABF)"
+msgstr "Τμήμα Βυζαντινών Ερευνών (ABF)"
+
+#: mop/data/institutes.py:58
+msgid ""
+"Österreichische Akademie der Wissenschaften (ÖAW) <br> Institut für "
+"Mittelalterforschung (IMAFO)"
+msgstr ""
+"Αυστριακή Ακαδημία Επιστημών (ÖAW) <br> Ινστιτούτο Μεσαιωνικών Ερευνών "
+"(IMAFO)"
+
+#: mop/data/institutes.py:62
+msgid "Austrian Centre for Digital Humanities and Cultural Heritage"
+msgstr ""
+"Αυστριακό Κέντρο Ψηφιακών Ανθρωπιστικών Επιστημών και Πολιτιστικής "
+"Κληρονομιάς"
+
+#: mop/data/institutes.py:68
+msgid "University of Vienna"
+msgstr "Πανεπιστήμιο της Βιέννης"
+
+#: mop/data/institutes.py:74
+msgid "Austrian Science Fund"
+msgstr "Αυστριακό Ταμείο Επιστημών"
+
+#: mop/data/institutes.py:80
+msgid "Jubiläumsfonds der Oesterreichischen Nationalbank"
+msgstr "Ιωβηλαίο Ταμείο της Εθνικής Τράπεζας της Αυστρίας"
+
+#: mop/data/institutes.py:87
+msgid ""
+"Austrian Agency for International Cooperation in Education and Research"
+msgstr ""
+"Αυστριακός Οργανισμός Διεθνούς Συνεργασίας στην Εκπαίδευση και την Έρευνα"
+
+#: mop/data/institutes.py:94
+msgid "Wien Kultur (MA 7)"
+msgstr "Πολιτισμός της Βιέννης (MA 7)"
+
+#: mop/data/institutes.py:100
+msgid "Austrian Institute of Technology"
+msgstr "Αυστριακό Ινστιτούτο Τεχνολογίας"
+
+#: mop/data/institutes.py:106
+msgid "Belgrade City Museum"
+msgstr "Μουσείο της Πόλης του Βελιγραδίου"
+
+#: mop/data/institutes.py:112
+msgid "University of Belgrade"
+msgstr "Πανεπιστήμιο του Βελιγραδίου"
+
+#: mop/data/institutes.py:118
+msgid "National Library of Serbia"
+msgstr "Εθνική Βιβλιοθήκη της Σερβίας"
+
+#: mop/data/institutes.py:124
+msgid "Biblioteka Matice Srpske"
+msgstr "Βιβλιοθήκη της Matica Srpska"
+
+#: mop/data/institutes.py:130
+msgid "Tabula Imperii Byzantini"
+msgstr "Tabula Imperii Byzantini"
+
+#: mop/data/institutes.py:136
+msgid "Union Académique Internationale"
+msgstr "Διεθνής Ένωση Ακαδημιών"
+
+#: mop/data/institutes.py:142
+msgid "Land Niederösterreich, Abteilung Wissenschaft und Forschung"
+msgstr "Κράτος της Κάτω Αυστρίας, Τμήμα Επιστήμης και Έρευνας"
+
+#: mop/data/institutes.py:149
+msgid "Katholische Hochschule ITI"
+msgstr "Καθολικό Πανεπιστήμιο ITI"
+
+#: mop/data/institutes.py:155
+msgid "Orient & Méditerranée"
+msgstr "Orient & Méditerranée"
+
+#: mop/data/institutes.py:161
+msgid "Ss. Cyril and Methodius University"
+msgstr "Πανεπιστήμιο Αγίων Κυρίλλου και Μεθοδίου"
+
+#: mop/data/literature.py:9
+msgid "Belgrad"
+msgstr "Βελιγράδι"
+
+#: mop/data/literature.py:24
+msgid "Berlin"
+msgstr "Βερολίνο"
+
+#: mop/data/literature.py:39 mop/data/literature.py:119
+msgid "Novi Sad"
+msgstr "Νόβι Σαντ"
+
+#: mop/data/literature.py:55
+msgid "Bucharest"
+msgstr "Βουκουρέστι"
+
+#: mop/data/literature.py:55
+msgid "Brăila"
+msgstr "Μπράιλα"
+
+#: mop/data/literature.py:68 mop/data/literature.py:95
+#: mop/data/presentations.py:63 mop/data/presentations.py:84
+#: mop/data/presentations.py:93 mop/data/presentations.py:160
+#: mop/data/projects/idcew.py:54 mop/data/projects/idcew.py:57
+msgid "Belgrade"
+msgstr "Βελιγράδι"
+
+#: mop/data/literature.py:81
+msgid "Darmstadt"
+msgstr "Ντάρμστατ"
+
+#: mop/data/literature.py:108 mop/data/literature.py:130
+#: mop/data/presentations.py:175
+msgid "Leipzig"
+msgstr "Λειψία"
+
+#: mop/data/literature.py:144
+msgid "Göttingen"
+msgstr "Γκέτινγκεν"
+
+#: mop/data/literature.py:151
+msgid "etc."
+msgstr "κ.λπ."
+
+#: mop/data/literature.py:156
+msgid "Krems"
+msgstr "Κρεμς"
+
+#: mop/data/literature.py:180
+msgid "cambridge, MA"
+msgstr "Κέιμπριτζ, Μασαχουσέτη"
+
+#: mop/data/literature.py:180 mop/data/literature.py:189
+#: mop/data/literature.py:248
+msgid "london"
+msgstr "Λονδίνο"
+
+#: mop/data/literature.py:189
+msgid "new york"
+msgstr "Νέα Υόρκη"
+
+#: mop/data/literature.py:198
+msgid "stroud"
+msgstr "Στράουντ"
+
+#: mop/data/literature.py:210
+msgid "mainz"
+msgstr "Μάιντς"
+
+#: mop/data/literature.py:210
+msgid "ruhpolding"
+msgstr "Ρούπολντινγκ"
+
+#: mop/data/literature.py:225
+msgid "vienna"
+msgstr "Βιέννη"
+
+#: mop/data/literature.py:225
+msgid "novi sad"
+msgstr "Νόβι Σαντ"
+
+#: mop/data/literature.py:238 mop/data/literature.py:270
+msgid "venice"
+msgstr "Βενετία"
+
+#: mop/data/literature.py:258
+msgid "exter"
+msgstr "Έξετερ"
+
+#: mop/data/presentations.py:9
+msgid "Wien"
+msgstr "Βιέννη"
+
+#: mop/data/presentations.py:21
+msgid "Heidelberg"
+msgstr "Χαϊδελβέργη"
+
+#: mop/data/presentations.py:30
+msgid "Ebreichsdorf"
+msgstr "Έμπραϊχσντορφ"
+
+#: mop/data/presentations.py:41 mop/data/presentations.py:105
+#: mop/data/presentations.py:116 mop/data/presentations.py:126
+#: mop/data/presentations.py:137 mop/data/presentations.py:149
+#: mop/data/presentations.py:224 mop/data/presentations.py:247
+#: mop/data/presentations.py:259 mop/data/presentations.py:270
+#: mop/data/presentations.py:281 mop/data/presentations.py:292
+#: mop/data/presentations.py:302
+msgid "Leeds"
+msgstr "Λιντς"
+
+#: mop/data/presentations.py:51 mop/data/presentations.py:200
+#: mop/data/presentations.py:313 mop/data/presentations.py:325
+#: mop/data/projects/idcew.py:53 mop/data/projects/tarsr.py:55
+#: mop/data/projects/tarsr.py:64 mop/templates/imprint.html:14
+#: mop/templates/layout.html:105
+msgid "Vienna"
+msgstr "Βιέννη"
+
+#: mop/data/presentations.py:62
+msgid "The Society of the Friends of Holy Mount Athos"
+msgstr "Η Εταιρεία των Φίλων του Αγίου Όρους"
+
+#: mop/data/presentations.py:75
+msgid "Oxford"
+msgstr "Οξφόρδη"
+
+#: mop/data/presentations.py:186
+msgid "Los Angeles"
+msgstr "Λος Άντζελες"
+
+#: mop/data/presentations.py:213
+msgid "Thessaloniki"
+msgstr "Θεσσαλονίκη"
+
+#: mop/data/presentations.py:236
+msgid "Florenz"
+msgstr "Φλωρεντία"
+
+#: mop/data/projects/barbyz.py:8 mop/data/projects/barbyz.py:13
+#: mop/data/projects/barbyz.py:18 mop/data/projects/barbyz.py:23
+#: mop/data/projects/barbyz.py:28
+msgid "Surveying in North Macedonia"
+msgstr "Αποτύπωση στη Βόρεια Μακεδονία"
+
+#: mop/data/projects/barbyz.py:36
+msgid ""
+"From Barbarians to Christians and Rhomaioi. The Process of Byzantinization "
+"in the Central Balkans (late 10th – mid-13th century)"
+msgstr ""
+"Από Βαρβάρους σε Χριστιανούς και Ρωμαίους. Η Διαδικασία του Βυζαντινισμού "
+"στα Κεντρικά Βαλκάνια (τέλη 10ου – μέσα 13ου αιώνα)"
+
+#: mop/data/projects/barbyz.py:63
+msgid "barbyz_description_1"
+msgstr ""
+"Ο κύριος στόχος του έργου είναι να εξηγήσει τους βασικούς παράγοντες που "
+"επηρέασαν την πορεία και τα χαρακτηριστικά της διαδικασίας του "
+"βυζαντινισμού, η οποία ορίζεται ως η ενσωμάτωση των τοπικών βαλκανικών "
+"κοινοτήτων στο σύστημα αξιών του κυρίαρχου πολιτισμού. Αυτή η διαδικασία "
+"εξαρτήθηκε τόσο από την «ήπια ισχύ» της Αυτοκρατορίας όσο και από την "
+"επίσημη ένταξη της συγκεκριμένης περιοχής στα σύνορά της. Η έρευνα "
+"διεξάγεται σε τρεις κύριες κατευθύνσεις:"
+
+#: mop/data/projects/barbyz.py:64
+msgid "barbyz_description_2"
+msgstr ""
+"<ol>\n"
+"<li>Μοντέλα βυζαντινής διακυβέρνησης στα κεντρικά Βαλκάνια (τέλη 10ου – μέσα 13ου αιώνα)</li>\n"
+"<li>Η Αρχιεπισκοπή Αχρίδος (από την ίδρυσή της στις αρχές του 11ου έως τα μέσα του 13ου αιώνα)</li>\n"
+"<li>Πολιτικές, ιδεολογικές και κοινωνικές πτυχές του βυζαντινισμού</li>\n"
+"</ol>"
+
+#: mop/data/projects/barbyz.py:65
+msgid "barbyz_description_3"
+msgstr ""
+"Η διαδικασία του βυζαντινισμού δεν εξελίχθηκε πανομοιότυπα σε όλα τα μέρη "
+"των κεντρικών Βαλκανίων, γι' αυτό και η έρευνα οργανώνεται σε τέσσερις "
+"γεωγραφικές και ιστορικές ζώνες: τα βορειοανατολικά Βαλκάνια (τμήματα του "
+"παλαιού βουλγαρικού κράτους μεταξύ του Δούναβη και του Αίμου), τα κεντρικά "
+"Βαλκάνια (τμήμα της Μακεδονίας και γειτονικών περιοχών υπό τη δικαιοδοσία "
+"της Αρχιεπισκοπής Αχρίδος), την περιοχή Δούναβη-Μοράβα (Σρεμ-Βελιγράδι-"
+"Μπρανίτσεβο-Νις) και τα βορειοδυτικά τμήματα των κεντρικών Βαλκανίων "
+"(σερβική και κροατική ζώνη)."
+
+#: mop/data/projects/barbyz.py:66
+msgid "barbyz_description_4"
+msgstr ""
+"Στο χρονικό πλαίσιο του έργου υπάρχουν διάφορες χρονολογικές φάσεις στις "
+"οποίες ο βυζαντινισμός μπορεί να σκιαγραφηθεί σαφέστερα. Το κριτήριο για τη "
+"διάκριση των διαφορετικών φάσεων εξαρτήθηκε από το αν η υπό εξέταση περιοχή "
+"αποτελούσε τμήμα της Αυτοκρατορίας ή βρισκόταν απλώς υπό την πολιτιστική και"
+" πολιτική της επιρροή:"
+
+#: mop/data/projects/barbyz.py:67
+msgid "barbyz_description_5"
+msgstr ""
+"<ol>\n"
+"<li>Η περίοδος της λεγόμενης πρώτης βυζαντινής «Reconquista» ή της βασιλείας του Ιωάννη Α΄ Τσιμισκή (969–976), όταν η Αυτοκρατορία διείσδυσε στο εσωτερικό των Βαλκανίων.</li>\n"
+"<li>Η βασιλεία του Βασιλείου Β΄ (976–1025) ή η δεύτερη Reconquista, η οποία είχε ως αποτέλεσμα την εγκαθίδρυση ενός πιο ολοκληρωμένου βυζαντινού ελέγχου στο εσωτερικό των Βαλκανίων.</li>\n"
+"<li>Ο θάνατος του Βασιλείου Β΄ το 1025 έως τη λατινική άλωση της Κωνσταντινούπολης το 1204, όταν η Αρχιεπισκοπή Αχρίδος έγινε ένα ολοένα και πιο σημαντικό εργαλείο για την εφαρμογή του βυζαντινισμού.</li>\n"
+"<li>Από το 1204 έως την αποκατάσταση της Βυζαντινής Αυτοκρατορίας το 1261, όταν το Βυζάντιο άρχισε να αποσύρεται από τα Βαλκάνια τόσο πολιτικά όσο και στρατιωτικά.</li>\n"
+"</ol>"
+
+#: mop/data/projects/barbyz.py:68
+msgid "barbyz_description_6"
+msgstr ""
+"Η ερευνητική ομάδα αποτελείται από καταξιωμένους επιστήμονες σε διάφορους "
+"τομείς: βυζαντινή και μεσαιωνική σερβική ιστορία, ιστορία της τέχνης, "
+"ιστορία του δικαίου, ιστορία της αρχιτεκτονικής και κλασική φιλολογία. Η "
+"διεπιστημονική έρευνα χρησιμοποιεί τόσο παραδοσιακές όσο και σύγχρονες "
+"μεθόδους κριτικής εξέτασης και ανάλυσης γραπτών και διπλωματικών πηγών, "
+"καθώς και τις μεθόδους της ιστορικής αναλογίας και της ιστορικής "
+"παλινδρόμησης. Τα αναμενόμενα αποτελέσματα του έργου είναι τριπλά: (α) ο "
+"εντοπισμός των δεικτών πολιτιστικής και οικονομικής προόδου, με το "
+"παράδειγμα των τοπικών κοινοτήτων στα μεσαιωνικά κεντρικά Βαλκάνια, (β) ο "
+"προσδιορισμός των παραγόντων που την υποστήριξαν και την εξασφάλισαν, και "
+"(γ) ο εντοπισμός των ιστορικών συνεπειών της πλήρους ή μερικής ενσωματωσής "
+"της. Η επιτυχής ολοκλήρωση του έργου θα είναι χρήσιμη για περαιτέρω έρευνα "
+"στο πεδίο των βυζαντινών σπουδών καθώς και της ιστορίας των μεσαιωνικών "
+"Βαλκανίων."
+
+#: mop/data/projects/borderzones.py:10 mop/data/projects/holdura.py:13
+#: mop/data/projects/tarsr.py:10 mop/data/projects/vlachs.py:10
+msgid "Final project report"
+msgstr "Τελική έκθεση έργου"
+
+#: mop/data/projects/borderzones.py:20
+msgid ""
+"Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from "
+"Different Authors"
+msgstr ""
+"Ερμηνεία των Βυζαντινο-Σερβικών Συνόρων μεταξύ 1228 και 1334 από Διάφορους "
+"Συγγραφείς"
+
+#: mop/data/projects/borderzones.py:27
+msgid ""
+"Fortifications in the Northern Macedonian Region in the 13/14th century"
+msgstr "Οχυρώσεις στην Περιοχή της Βόρειας Μακεδονίας κατά τον 13ο/14ο αιώνα"
+
+#: mop/data/projects/borderzones.py:33
+msgid "Road Model based on a k. u k. Marching Map"
+msgstr ""
+"Οδικό Μοντέλο Βασισμένο σε Αυστροουγγρικό Στρατιωτικό Χάρτη Πορείας (k. u "
+"k.)"
+
+#: mop/data/projects/borderzones.py:39
+msgid ""
+"Markovi Kuli Castle near Prilep from the south, Republic of Northern "
+"Macedonia"
+msgstr ""
+"Το Κάστρο Μάρκοβι Κούλι κοντά στο Πρίλεπ από τα νότια, Δημοκρατία της "
+"Βόρειας Μακεδονίας"
+
+#: mop/data/projects/borderzones.py:47
+msgid "The Kale elevation in Skopje, Republic of Northern Macedonia"
+msgstr "Το Ύψωμα του Καλέ στα Σκόπια, Δημοκρατία της Βόρειας Μακεδονίας"
+
+#: mop/data/projects/borderzones.py:54
+msgid "The old city gate of Ohrid, Republic of Northern Macedonia"
+msgstr ""
+"Η αρχαία πύλη της πόλης της Αχρίδας, Δημοκρατία της Βόρειας Μακεδονίας"
+
+#: mop/data/projects/borderzones.py:61
+msgid "Ohrid and Samuilova tvrdina Castle, Republic of Northern Macedonia"
+msgstr ""
+"Η Αχρίδα και το Κάστρο του Σαμουήλ (Σαμουήλοβα τβρντινα), Δημοκρατία της "
+"Βόρειας Μακεδονίας"
+
+#: mop/data/projects/borderzones.py:70
+msgid ""
+"Byzantino-Serbian Border Zones in Transition: Migration and Elite Change in "
+"pre-Ottoman Macedonia (1282–1355)"
+msgstr ""
+"Βυζαντινο-Σερβικές Συνοριακές Ζώνες σε Μετάβαση: Μετανάστευση και Αλλαγή της"
+" Ελίτ στην Προ-Οθωμανική Μακεδονία (1282–1355)"
+
+#: mop/data/projects/borderzones.py:81
+msgid "borderzones_description_1"
+msgstr ""
+"Η ευρωπαϊκή ήπειρος συνολικά και η Ευρωπαϊκή Ένωση ειδικότερα αντιμετωπίζουν"
+" επί του παρόντος μια περίοδο αυξανόμενης δυναμικής της εσωτερικής "
+"μετανάστευσης καθώς και της εξωτερικής εισροής. Η μετανάστευση σε όλες τις "
+"διάφορες πτυχές της αποτελούσε ανέκαθεν μέρος της ιστορίας της ευρωπαϊκής "
+"ηπείρου. Στις μεσαιωνικές κοινωνίες το ζήτημα της μετανάστευσης είναι στενά "
+"συνδεδεμένο με τον ορισμό καθώς και την αναπαράσταση των μεσαιωνικών "
+"συνόρων. Οι χάρτες στους ιστορικούς άτλαντες έχουν σχεδιαστεί για να "
+"παρέχουν σαφώς καθορισμένες γραμμές πολιτικών σχηματισμών και αυτοκρατοριών,"
+" γεγονός που δεν αντικατοπτρίζει την πραγματικότητα των πολιτισμών ούτε στην"
+" Αρχαιότητα, ούτε στον Μεσαίωνα, ούτε στους Πρώιμους Νεότερους Χρόνους. Η "
+"δυναμική των συνόρων διαμορφώνει ταυτόχρονα τη δυναμική των οικιστικών "
+"προτύπων καθώς και των δικτύων μεταφορών."
+
+#: mop/data/projects/borderzones.py:82
+msgid "borderzones_description_2"
+msgstr ""
+"Το συγκεκριμένο αυτόνομο έργο επικεντρώνεται στα σύνορα της Βυζαντινής "
+"(Ανατολικής Ρωμαϊκής) Αυτοκρατορίας στη μεσαιωνική Νοτιοανατολική Ευρώπη, "
+"συγκεκριμένα στην προ-Οθωμανική (δηλ. βυζαντινή) Μακεδονία. Εκτεταμένες "
+"πολιτικές αλλαγές σημειώθηκαν στη νότια Βαλκανική Χερσόνησο από τα τέλη του "
+"13ου έως τα μέσα του 14ου αιώνα, όταν το σερβικό μεσαιωνικό βασίλειο "
+"επεκτάθηκε προς τα νότια υπό τον βασιλιά Stefan Uroš II Milutin εις βάρος "
+"της Βυζαντινής Αυτοκρατορίας, η οποία διήρκεσε μέχρι τον θάνατο του τσάρου "
+"Stefan Uroš IV Dušan (1355). Αυτό με τη σειρά του είχε σοβαρό αντίκτυπο στις"
+" συνοριακές ζώνες και τις διασυνοριακές κοινωνίες μεταξύ των δύο βασιλείων "
+"στην προ-Οθωμανική (δηλ. βυζαντινή) Μακεδονία κατά την ίδια περίοδο, ιδίως "
+"σε πέντε επιλεγμένες περιοχές-στόχους (την κοιλάδα της Στρούμιτσας, το "
+"Λέσνοβο, τα Σκόπια, την Αχρίδα, το Πρίλεπ)."
+
+#: mop/data/projects/borderzones.py:83
+msgid "borderzones_description_3"
+msgstr ""
+"Αν και υπάρχουν σημαντικές δημοσιεύσεις για τον πληθυσμό καθώς και για τη "
+"μετανάστευση στη βυζαντινή Μακεδονία, εξακολουθεί να υπάρχει επείγουσα "
+"ανάγκη για αυτού του είδους την έρευνα με βάση τις γραπτές πηγές και τα "
+"τοπωνύμια. Δύο αλληλένδετα ερευνητικά ερωτήματα θα εξεταστούν σε δύο "
+"διακριτές ενότητες εργασίας: \"Ανταγωνιστικές Πολιτικές Έννοιες – Το "
+"Βυζάντιο και η Μεσαιωνική Σερβική Οικουμένη\" και \"Διασυνοριακές Κοινωνίες "
+"και Αλλαγή της Ελίτ στη Βυζαντινή Μακεδονία\"."
+
+#: mop/data/projects/borderzones.py:84
+msgid "borderzones_description_4"
+msgstr ""
+"Το αρχικό σημείο εκκίνησης αποτελούν οι μεσαιωνικές γραπτές πηγές, δηλ. οι "
+"σερβικές και βυζαντινές επιστολές και έγγραφα ως κύριο σώμα, καθώς και άλλες"
+" επιλεγμένες γραπτές πηγές από το μεσαιωνικό σερβικό βασίλειο. Οι πηγές θα "
+"αναλυθούν υπό το πρίσμα των προαναφερθέντων ερευνητικών ερωτημάτων και με "
+"ισχυρή βάση στις μεθόδους που προέρχονται από την Ιστορική Γεωγραφία. "
+"Ιδιαίτερη προσοχή θα δοθεί στην ανάλυση των διατυπώσεων σχετικά με τη "
+"σερβική επέκταση στην περιοχή έρευνας, την απόκτηση νέων εδαφών και τη "
+"διοικητική τους ενσωμάτωση σε μακρο-επίπεδο, καθώς και στον εντοπισμό των "
+"κατακτημένων οικισμών με τις σχετικές οικιστικές τυπολογίες, καθώς και στην "
+"αλλαγή των τοπικών ελίτ σε μικρο-επίπεδο. Επιπλέον, θα εφαρμοστούν εργαλεία "
+"από τις Ψηφιακές Ανθρωπιστικές Επιστήμες στη χαρτογράφηση και την "
+"οπτικοποίηση προκειμένου να κοινοποιηθούν τα επιτευχθέντα αποτελέσματα στο "
+"ενδιαφερόμενο κοινό."
+
+#: mop/data/projects/dgse.py:8
+msgid "The Parish Church of Saint Andrew in Ebreichsdorf from the South-East"
+msgstr ""
+"Ο Ενοριακός Ναός του Αγίου Ανδρέα στο Έμπραϊχσντορφ από τα Νοτιοανατολικά"
+
+#: mop/data/projects/dgse.py:14
+msgid "The Luckate Stein"
+msgstr "Ο λίθος Λουκάτε (Luckate Stein)"
+
+#: mop/data/projects/dgse.py:20
+msgid "View of the Area around the Castle of Ebreichsdorf from the East"
+msgstr ""
+"Άποψη της Περιοχής γύρω από το Κάστρο του Έμπραϊχσντορφ από τα Ανατολικά"
+
+#: mop/data/projects/dgse.py:26
+msgid "The Castle of Pottendorf"
+msgstr "Το Κάστρο του Πότεντορφ"
+
+#: mop/data/projects/dgse.py:37
+msgid ""
+"Digital Humanities using the Example of the Castle of Ebreichsdorf in the "
+"Lower Austrian Industrial District"
+msgstr ""
+"Οι Ψηφιακές Ανθρωπιστικές Επιστήμες με το Παράδειγμα του Κάστρου του "
+"Έμπραϊχσντορφ στη Βιομηχανική Περιοχή της Κάτω Αυστρίας"
+
+#: mop/data/projects/dgse.py:58
+msgid "dgse_description_1"
+msgstr ""
+"Μία από τις μεγάλες επιστημονικές και εκλαϊκευτικές προκλήσεις της εποχής "
+"μας είναι ο τρόπος με τον οποίο το ιστορικό και πολιτιστικό-ιστορικό "
+"περιεχόμενο μπορεί να μεταφερθεί στο ευρύ τοπικό κοινό σε περιόδους "
+"αυξημένης ψηφιοποίησης λόγω της πανδημίας. Πώς μπορούν να επιτευχθούν "
+"αντίστοιχα βιώσιμα αποτελέσματα εξοικείωσης και μάθησης στο πλαίσιο αυτό "
+"όταν πρόκειται για την τοπική ιστορική κληρονομιά; Αυτό το ερώτημα αφορά μια"
+" πολύ σημαντική πτυχή της επιστήμης, δηλαδή τον τομέα των «Ψηφιακών "
+"Ανθρωπιστικών Επιστημών», ο οποίος αναμφίβολα έχει επίσης μεγάλη σημασία για"
+" την Κάτω Αυστρία και θα συνεχίσει να έχει στο εγγύς και απώτερο μέλλον."
+
+#: mop/data/projects/dgse.py:59
+msgid "dgse_description_2"
+msgstr ""
+"Το αντικείμενο της μελέτης μας είναι το (υδροχαρές) κάστρο του "
+"Έμπραϊχσντορφ, το οποίο βρίσκεται περίπου 60 χιλιόμετρα νοτιοανατολικά της "
+"πρωτεύουσας Σανκτ Πέλτεν στη βιομηχανική περιοχή της Κάτω Αυστρίας και "
+"ανήκει σε ιδιώτες της οικογένειας Drasche-Wartinberg από το 1909. Βρίσκεται "
+"σε μια περιοχή εξαιρετικής ιστορικής σημασίας τόσο για την Αυστρία όσο και "
+"για την Ευρώπη, καθώς βρίσκεται στο σταυροδρόμι μεταξύ Βορρά και Νότου και "
+"Ανατολής και Δύσης, συνδέοντας έτσι τις πολωνικές και βοημικές χώρες με τη "
+"Βόρεια Ιταλία και τη Νοτιοανατολική Ευρώπη με την Κεντρική Ευρώπη."
+
+#: mop/data/projects/dgse.py:60
+msgid "dgse_description_3"
+msgstr ""
+"Οι στόχοι του έργου μας αντικατοπτρίζονται στα ακόλουθα δύο ερευνητικά ερωτήματα, τα οποία βασίζονται το ένα στο άλλο και ταυτόχρονα αποτελούν δύο ενότητες εργασίας:\n"
+"<ul>\n"
+"<li>α) Ποιο ρόλο έπαιξε το Κάστρο του Έμπραϊχσντορφ (σήμερα παλάτι) στην ιστορία της περιοχής από τον 10ο έως τον 16ο αιώνα και πώς ήταν το τοπίο που το περιέβαλλε εκείνη την εποχή;</li>\n"
+"<li>β) Ήταν το Κάστρο του Έμπραϊχσντορφ ένας σύνδεσμος μεταξύ της Λατινικής Δύσης και της Βυζαντινής Ανατολής;</li>\n"
+"</ul>"
+
+#: mop/data/projects/holdura.py:8
+msgid "holdura_result_text_1"
+msgstr ""
+"Η ομάδα του Τμήματος Γεωγραφίας και Περιφερειακής Έρευνας (Πανεπιστήμιο της "
+"Βιέννης) δημιούργησε μια προσαρμοσμένη ιστοσελίδα για τη Γεωεπικοινωνία του "
+"έργου μας: <a href=\"https://map.geo.univie.ac.at/bew/\" target=\"_blank\" "
+"class=\"link-primary\">https://map.geo.univie.ac.at/bew/</a>"
+
+#: mop/data/projects/holdura.py:9
+msgid "holdura_result_text_2"
+msgstr ""
+"Μια ταινία μικρού μήκους για το έργο μας, που δημιουργήθηκε από τον "
+"συνάδελφό μας Lukas Neugebauer, βραβεύτηκε και προβλήθηκε στο RAM Film "
+"Festival 2024 στο Ροβερέτο της Ιταλίας (2 έως 6 Οκτωβρίου 2024), στο 5ο APOX"
+" Film Festival στο νησί Λόσιν της Κροατίας (3 έως 10 Οκτωβρίου 2024) και στο"
+" 25ο Διεθνές Φεστιβάλ Αρχαιολογικής Ταινίας στο Εθνικό Μουσείο στο Βελιγράδι"
+" της Σερβίας (20 έως 25 Μαΐου 2025)."
+
+#: mop/data/projects/holdura.py:18
+msgid "relief map of Montenegro"
+msgstr "ανάγλυφος χάρτης του Μαυροβουνίου"
+
+#: mop/data/projects/holdura.py:27
+msgid ""
+"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
+"Basilica B and cruciform church, Republic of Montenegro"
+msgstr ""
+"Άποψη από ψηλά της αρχαιολογικής ανασκαφής της Δόκλειας, Α: Βασιλική Α, Β: "
+"Βασιλική Β και σταυροειδής ναός, Δημοκρατία του Μαυροβουνίου"
+
+#: mop/data/projects/holdura.py:34
+msgid ""
+"Bird's eye view of the Doclea archaeological excavation, the western part of"
+" the city in the foreground, Republic of Montenegro"
+msgstr ""
+"Άποψη από ψηλά της αρχαιολογικής ανασκαφής της Δόκλειας, το δυτικό τμήμα της"
+" πόλης σε πρώτο πλάνο, Δημοκρατία του Μαυροβουνίου"
+
+#: mop/data/projects/holdura.py:41
+msgid ""
+"The monastery of Sveti Nikola Vranjina (in the centre of the picture) on "
+"Lake Skadar, Republic of Montenegro"
+msgstr ""
+"Η μονή του Αγίου Νικολάου Βράνγινα (στο κέντρο της εικόνας) στη λίμνη "
+"Σκόδρα, Δημοκρατία του Μαυροβουνίου"
+
+#: mop/data/projects/holdura.py:48
+msgid ""
+"The former Latin (Catholic) monastery of Ratac from the 12th/13th century "
+"near the town of Bar, Republic of Montenegro."
+msgstr ""
+"Η πρώην λατινική (καθολική) μονή του Ράτατς από τον 12ο/13ο αιώνα κοντά στην"
+" πόλη Μπαρ, Δημοκρατία του Μαυροβουνίου."
+
+#: mop/data/projects/holdura.py:58
+msgid ""
+"Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" "
+"and \"Raška\" through Space and Time (11th-14th Cent.)"
+msgstr ""
+"Πέρα από την Ανατολή και τη Δύση: Γεωεπικοινωνία των Ιερών Τοπίων της "
+"\"Δόκλειας\" και της \"Ράσκας\" στον Χώρο και τον Χρόνο (11ος-14ος αιώνες)"
+
+#: mop/data/projects/holdura.py:74
+msgid "holdura_description_1"
+msgstr ""
+"Στον τρέχοντα διάλογο για την ένταξη των Δυτικών Βαλκανίων στην Ευρωπαϊκή "
+"Ένωση, οι συνεχιζόμενες και προβλεπόμενες διαπραγματεύσεις με τις "
+"Δημοκρατίες του Μαυροβουνίου, της Σερβίας και της Αλβανίας φαίνεται να έχουν"
+" εξαιρετική σημασία στη σύγχρονη κάλυψη των μέσων ενημέρωσης. Αποτελούν μια "
+"περιοχή η οποία – σε ένα μακρινό παρελθόν – διαδραμάτισε, υπό το όνομα "
+"Illyricum (Ιλλυρικόν), ζωτικό ρόλο στις στρατηγικές και διοικητικές "
+"επιδιώξεις της Βυζαντινής Αυτοκρατορίας."
+
+#: mop/data/projects/holdura.py:75
+msgid "holdura_description_2"
+msgstr ""
+"Το έργο βασίζεται σε επιστημονική συνεργασία μεταξύ των ακαδημαϊκών πεδίων "
+"των Βυζαντινών Σπουδών, της Μεσαιωνικής Ιστορίας, της Ιστορικής Γεωγραφίας, "
+"της Ιστορίας της Τέχνης, της Γεωγραφίας και της Γεωεπικοινωνίας (GIScience "
+"και Χαρτογραφία) και επικεντρώνεται σε δύο ιστορικές περιοχές της "
+"\"Δόκλειας\" και της \"Ράσκας\" που αποτελούν τμήμα του Ιλλυρικού. Η "
+"ερευνητική υπόθεση είναι ότι και οι δύο ιστορικές περιοχές αποτελούσαν ένα "
+"\"Ιερό Τοπίο\", το οποίο σκοπεύουμε να αποκρυπτογραφήσουμε και να "
+"κοινοποιήσουμε στην επιστημονική κοινότητα καθώς και στο ενδιαφερόμενο κοινό"
+" με τα κοινά μέσα της Ιστορικής Γεωγραφίας, της Ιστορίας της Τέχνης και της "
+"Γεωεπικοινωνίας."
+
+#: mop/data/projects/holdura.py:76
+msgid "holdura_description_3"
+msgstr ""
+"Ως εκ τούτου, το έργο στοχεύει στην προσέγγιση και συστηματική διερεύνηση "
+"των ακόλουθων τριών κύριων ερωτημάτων:"
+
+#: mop/data/projects/holdura.py:77
+msgid "holdura_description_4"
+msgstr ""
+"(1) Με ποιον τρόπο αλληλεπιδρούσαν οι τοπικοί ηγεμόνες και οι Εκκλησίες της "
+"Ρώμης και της Κωνσταντινούπολης στις περιοχές της \"Δόκλειας\" και της "
+"\"Ράσκας\" από τον 11ο έως τον 14ο αιώνα και πώς αντικατοπτρίζεται αυτή η "
+"ίδια αλληλεπίδραση στο πρότυπο κατανομής των μνημείων (δηλ. των ναών και των"
+" μονών) σε αυτό το \"Ιερό Τοπίο\";"
+
+#: mop/data/projects/holdura.py:78
+msgid "holdura_description_5"
+msgstr ""
+"(2) Είχε η ασταθής θρησκευτική τοποθέτηση των τοπικών ηγεμόνων αντίκτυπο στο"
+" \"Ιερό Τοπίο\" και πού μετατράπηκαν ή υπερτέθηκαν λατινικοί ή βυζαντινοί "
+"τόποι λατρείας κατά την πάροδο του χρόνου;"
+
+#: mop/data/projects/holdura.py:79
+msgid "holdura_description_6"
+msgstr ""
+"(3) Μπορεί η θρησκευτική και πολιτιστική επιρροή της λατινικής και "
+"βυζαντινής (ορθόδοξης) πίστης να ανιχνευθεί μέσω μικρών λατινικών (δηλ. "
+"«δυτικών») καθώς και βυζαντινών και σλαβικών (δηλ. «ανατολικών») "
+"αντικειμένων τέχνης, όχι μόνο στην παράκτια ζώνη, αλλά και στην ενδοχώρα της"
+" και στην Ιταλία; Και οι δύο ιστορικές περιοχές θα μπορούσαν να αποδειχθούν "
+"ότι αποτελούν μια ζώνη «Πέρα από την Ανατολή και τη Δύση», υποκείμενη σε "
+"αξιοσημείωτες διαδικασίες μετασχηματισμού από τον 11ο έως τον 14ο αιώνα, και"
+" έχουν τη μεγάλη δυνατότητα να προσφέρουν δεδομένα κατάλληλα για "
+"οπτικοποιήσεις καθώς και τυποποίηση από τη GIScience. Η ενσωμάτωση και "
+"παρουσίαση των ερευνητικών δεδομένων (δηλ. για τις γραπτές πηγές, τα μνημεία"
+" και τα έργα τέχνης) του έργου θα επιτευχθεί μέσω μιας ήδη υπάρχουσας βάσης "
+"δεδομένων και μιας διαδικτυακής <a "
+"href=\"https://map.geo.univie.ac.at/bew/\" class=\"link-primary\">εφαρμογής "
+"χάρτη</a>."
+
+#: mop/data/projects/holdura.py:80
+msgid "holdura_description_7"
+msgstr ""
+"Το έργο είναι αποκλειστικά εφικτό μέσω μιας πολυεπιστημονικής προσέγγισης "
+"και συνεργασίας μεταξύ τριών εταίρων από την Αυστρία (Αυστριακή Ακαδημία "
+"Επιστημών, εδώ Priv.-Doz. Mag. Dr. Mihailo Popović, Πανεπιστήμιο της "
+"Βιέννης, εδώ Professor Dr. Karel Kriz) και τη Γερμανία (Hochschule für "
+"Technik, Wirtschaft und Kultur Leipzig, εδώ Professor Dr. Johannes Tripps). "
+"Επιπλέον, συνδέεται στενά με την τρέχουσα επιστημονική εργασία του Mihailo "
+"Popović για τον <a href=\"https://tib.oeaw.ac.at/current_status/TIB_17\" "
+"class=\"link-primary\">τόμο 17 του TIB “Nea Epeiros and Praevalis”</a> και "
+"για το υποέργο του TIB <a "
+"href=\"https://tib.oeaw.ac.at/subprojects/montenegro\" class=\"link-"
+"primary\">“Cultural Heritage in Times of World War I: The Case of the "
+"Austro-Hungarian Relief Map of Montenegro (1916-1918)”</a>."
+
+#: mop/data/projects/idcew.py:8
+msgid "The Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
+msgstr "Ο Ναός της Αγίας Τριάδας στη Μονή Σοπότσανη κατά τη δεκαετία του 1970"
+
+#: mop/data/projects/idcew.py:11 mop/data/projects/idcew.py:19
+#: mop/data/projects/idcew.py:27
+msgid "Photograph Collection \"Dipl. Kfm. Wolfgang Milan (1924-2015)\""
+msgstr "Φωτογραφική Συλλογή \"Dipl. Kfm. Wolfgang Milan (1924-2015)\""
+
+#: mop/data/projects/idcew.py:16
+msgid ""
+"The Apse of the Church of the Holy Trinity in Sopoćani Monastery in the "
+"1970s"
+msgstr ""
+"Η Αψίδα του Ναού της Αγίας Τριάδας στη Μονή Σοπότσανη κατά τη δεκαετία του "
+"1970"
+
+#: mop/data/projects/idcew.py:24
+msgid ""
+"The Church of the Annunciation of the Holy Mother of God in Gradac Monastery"
+" in the 1970s"
+msgstr ""
+"Ο Ναός του Ευαγγελισμού της Θεοτόκου στη Μονή Γκράντατς κατά τη δεκαετία του"
+" 1970"
+
+#: mop/data/projects/idcew.py:32
+msgid ""
+"The Church of the Annunciation of the Holy Mother of God in Gradac Monastery"
+" in 2007"
+msgstr "Ο Ναός του Ευαγγελισμού της Θεοτόκου στη Μονή Γκράντατς το 2007"
+
+#: mop/data/projects/idcew.py:45
+msgid ""
+"Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor "
+"connecting East and West in the 13th/14th Centuries (IDCEW)"
+msgstr ""
+"Ελένη – μια Καθολική Ευγενής, Σέρβικη Βασίλισσα και Διαθρησκευτική Δωρήτρια "
+"που συνδέει την Ανατολή και τη Δύση κατά τον 13ο/14ο αιώνα (IDCEW)"
+
+#: mop/data/projects/idcew.py:61
+msgid "idcew_description_1"
+msgstr ""
+"Το έργο στοχεύει στην εξέταση της ζωής και των πράξεων της μεσαιωνικής "
+"Σέρβισσας βασίλισσας Ελένης (Ανζού), η οποία έζησε κατά τον 13ο/14ο αιώνα "
+"και ήταν παντρεμένη με τον Σέρβο βασιλιά Uroš I. Θα διεξαχθεί σε συνεργασία "
+"με το Αυστριακό Αρχαιολογικό Ινστιτούτο (ÖAI) της Αυστριακής Ακαδημίας "
+"Επιστημών όσον αφορά τις αποτυπώσεις και την τεκμηρίωση με drone στην "
+"περιοχή έρευνας. Η ζωή της Ελένης πρέπει να γίνει κατανοητή ως μιας "
+"προσωπικότητας που έχτιζε γέφυρες μεταξύ της Ορθόδοξης Ανατολής και της "
+"Λατινικής Δύσης λόγω της γαλλικής καταγωγής της και της ισχυρής σχέσης της "
+"με την ευγενή οικογένεια των Ανδεγαυών (Anjou). Πολλά ερωτήματα σχετικά με "
+"τη ζωή, την επικράτεια και τα ιδρύματα της Ελένης απαιτούν περαιτέρω σε "
+"βάθος έρευνα."
+
+#: mop/data/projects/idcew.py:62
+msgid "idcew_description_2"
+msgstr ""
+"Αυτά τα ερωτήματα περιλαμβάνουν:\n"
+"<ul>\n"
+"<li>Μια επαναξιολόγηση των εγγράφων της Ελένης (δηλ. χαρτών και επιστολών) προκειμένου να οριστεί με μεγαλύτερη ακρίβεια η επικράτειά της στη Ζέτα, το Τρεμπίνιε, το Πλαβ και τον άνω ρου του ποταμού Ιμπάρ (επίσης με μέσα Χαρτογραφίας, Τοπωνυμίας και GIS)</li>\n"
+"<li>Στο πλαίσιο αυτό, μια νέα έκδοση των εγγράφων προς τη Μονή του Αγίου Νικολάου στη Βράνγινα, τα οποία δεν έχουν εκδοθεί επαρκώς μέχρι σήμερα και τα οποία θα συμβάλουν στα ερευνητικά μας ερωτήματα</li>\n"
+"<li>Μια ανασυγκρότηση του \"Ιερού Τοπίου\" (ζώνης επαφής) της επικράτειας της Ελένης μέσω της ανάλυσης της αρχιτεκτονικής των αντίστοιχων μνημείων (ναών και μονών) του 13ου και 14ου αιώνα, ιδιαίτερα του Σοπότσανη και του Γκράντατς, στις περιοχές Ράσκα και Μοράβιτσα (Σερβία) όσον αφορά τις ανατολικές (ορθόδοξες) και δυτικές (λατινικές, καθολικές) επιρροές</li>\n"
+"<li>Οι δωρεές εικόνων και άλλων μικρών αντικειμένων τέχνης από την Ελένη σε ναούς και μονές της επικράτειάς της καθώς και στην Ιταλία (πρβλ. την εικόνα των Αγίων Πέτρου και Παύλου στο Βατικανό), η ανάλυσή τους όσον αφορά τις ανατολικές (ορθόδοξες) και δυτικές (λατινικές, καθολικές) επιρροές και η υστεροφημία της Ελένης στη σερβική τέχνη του 18ου και 19ου αιώνα</li>\n"
+"</ul>"
+
+#: mop/data/projects/rhr.py:8
+msgid "The French King Louis XIV (1638-1715)"
+msgstr "Ο Γάλλος Βασιλιάς Λουδοβίκος ΙΔ΄ (1638-1715)"
+
+#: mop/data/projects/rhr.py:14
+msgid "The Crusaders conquer Constantinople (Eugène Delacroix, 1840)"
+msgstr ""
+"Οι Σταυροφόροι καταλαμβάνουν την Κωνσταντινούπολη (Eugène Delacroix, 1840)"
+
+#: mop/data/projects/rhr.py:24
+msgid ""
+"Reception of the Serbian King Petar I in Skopje in 1912, depicted in a "
+"French illustration"
+msgstr ""
+"Υποδοχή του Σέρβου Βασιλιά Πέτρου Α΄ στα Σκόπια το 1912, σε γαλλική "
+"εικονογράφηση"
+
+#: mop/data/projects/rhr.py:30
+msgid ""
+"The Greek and Serbian pavilions at the World Exhibition in Paris in 1900"
+msgstr ""
+"Τα ελληνικά και σερβικά περίπτερα στην Παγκόσμια Έκθεση στο Παρίσι το 1900"
+
+#: mop/data/projects/rhr.py:40
+msgid ""
+"The Reception History of Rumelia in Austria and France (Late 17th- Early "
+"20th Centuries) (RHR)"
+msgstr ""
+"Η Ιστορία της Πρόσληψης της Ρούμελης στην Αυστρία και τη Γαλλία (Ύστερος "
+"17ος- Πρώιμος 20ός Αιώνας) (RHR)"
+
+#: mop/data/projects/rhr.py:53
+msgid "rhr_description_1"
+msgstr ""
+"Το έργο έχει ως στόχο να επεξεργαστεί τρία ερευνητικά ερωτήματα σχετικά με "
+"την παρουσία και την πρόσληψη της Ρούμελης στην Αυστρία και τη Γαλλία "
+"(Ύστερος 17ος- Πρώιμος 20ός Αιώνας) εξετάζοντας τον οπτικό της αντίκτυπο ανά"
+" τους αιώνες. Η οθωμανική κατάκτηση της Νοτιοανατολικής Ευρώπης κατά τον 14ο"
+" και 15ο αιώνα οδήγησε σε μια τομή στην ιστορία της Βαλκανικής Χερσονήσου "
+"και μετέτρεψε αυτή την περιοχή σε terra incognita από την κεντρική και "
+"δυτικοευρωπαϊκή σκοπιά, η οποία θα επέστρεφε στην πανευρωπαϊκή προοπτική "
+"μόνο κατά τους Πρώιμους Νεότερους Χρόνους."
+
+#: mop/data/projects/rhr.py:54
+msgid "rhr_description_2"
+msgstr ""
+"Τα τρία ερευνητικά μας ερωτήματα περιλαμβάνουν:<br />\n"
+"a) Το πρώτο μας ερευνητικό ερώτημα εξετάζει τον «ιερό χώρο» της Ρούμελης που φτάνει στην πρωτεύουσα των Αψβούργων, τη Βιέννη, κατά το δεύτερο μισό του 17ου αιώνα. Αυτός ο «ιερός χώρος» ενσαρκώνεται από ορθόδοξες εικόνες, οι οποίες εισέρρεαν στη Βιέννη στον απόηχο των συγκρούσεων μεταξύ Αψβούργων και Οθωμανών στη Νοτιοανατολική Ευρώπη.\n"
+"<br />\n"
+"b) Το δεύτερο ερευνητικό μας ερώτημα αφορά τη χαρτογραφική συλλογή δεδομένων από Γάλλους χαρτογράφους στη Ρούμελη κατ' εντολή του βασιλιά Λουδοβίκου ΙΔ΄, η οποία είχε ως αποτέλεσμα τρεις κρίσιμες Συλλογές (Recueils). Δύο από αυτές εξακολουθούν να χρειάζονται σε βάθος έρευνα όσον αφορά το θεματικό τους περιεχόμενο χαρτών.\n"
+"<br />\n"
+"c) Το τρίτο ερευνητικό μας ερώτημα θα διερευνήσει τη λαϊκή φαντασία των κληρονόμων της Ρούμελης, όπως διαφημίστηκε στην Αυστρία και τη Γαλλία μέσω εκδηλώσεων μεγάλης κλίμακας, όπως οι παγκόσμιες εκθέσεις, καθώς και μέσω της μαζικής οπτικής κουλτούρας (ταχυδρομικές κάρτες, συλλεκτικές εκτυπώσεις, χαρακτικά, καρικατούρες). Κατά τον 19ο και τις αρχές του 20ού αιώνα, και οι δύο χώρες πρωτοστάτησαν στις σλαβικές και βυζαντινές σπουδές, στέλνοντας επιστήμονες στα Βαλκάνια και εκπαιδεύοντας επιστήμονες από τη Βαλκανική Χερσόνησο, των οποίων τα έργα συνέβαλαν καθοριστικά στην ανάδυση ισχυρών και συχνά συγκρουόμενων εθνικών αφηγήσεων και ταυτοτήτων στα Βαλκάνια."
+
+#: mop/data/projects/tarsr.py:20
+msgid ""
+"The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in the "
+"Valley of the River Vardar"
+msgstr ""
+"Η Οδική Σήραγγα προς Τιμήν του Γερμανού Αυτοκράτορα Γουλιέλμου Β΄ του 1916 "
+"στην Κοιλάδα του Ποταμού Αξιού (Vardar)"
+
+#: mop/data/projects/tarsr.py:27
+msgid ""
+"Inscription in Honour of the German Emperor Wilhelm II at the Entrance to "
+"the Road Tunnel"
+msgstr ""
+"Επιγραφή προς Τιμήν του Γερμανού Αυτοκράτορα Γουλιέλμου Β΄ στην Είσοδο της "
+"Οδικής Σήραγγας"
+
+#: mop/data/projects/tarsr.py:34
+msgid "German Military Cemetery from the First World War near Bitola"
+msgstr ""
+"Γερμανικό Στρατιωτικό Κοιμητήριο από τον Πρώτο Παγκόσμιο Πόλεμο κοντά στο "
+"Μοναστήρι (Bitola)"
+
+#: mop/data/projects/tarsr.py:39
+msgid "War Relics from the First World War in Mariovo"
+msgstr "Πολεμικά Κειμήλια από τον Πρώτο Παγκόσμιο Πόλεμο στο Μάριοβο"
+
+#: mop/data/projects/tarsr.py:48
+msgid ""
+"Tracing Archaeological Remains and Scholarly Research of the Central Powers "
+"in the Region of Prilep-Bitola during WW I (1915-1918)"
+msgstr ""
+"Ανίχνευση Αρχαιολογικών Καταλοίπων και Επιστημονικής Έρευνας των Κεντρικών "
+"Δυνάμεων στην Περιοχή Πρίλεπ-Μοναστηρίου κατά τον Α΄ Παγκόσμιο Πόλεμο "
+"(1915-1918)"
+
+#: mop/data/projects/tarsr.py:56 mop/data/projects/tarsr.py:59
+#: mop/data/projects/tarsr.py:62
+msgid "Skopje"
+msgstr "Σκόπια"
+
+#: mop/data/projects/tarsr.py:60
+msgid "Prilep"
+msgstr "Πρίλεπ"
+
+#: mop/data/projects/tarsr.py:61
+msgid "Bitola"
+msgstr "Μοναστήρι (Bitola)"
+
+#: mop/data/projects/tarsr.py:63
+msgid "Paris"
+msgstr "Παρίσι"
+
+#: mop/data/projects/tarsr.py:68
+msgid "tracing_description_1"
+msgstr ""
+"Το έργο μας στοχεύει να ρίξει φως στη νότια Βαλκανική Χερσόνησο κατά τον "
+"Πρώτο Παγκόσμιο Πόλεμο (1914-1918) και ειδικότερα στις περιοχές Πρίλεπ-"
+"Μοναστηρίου και Μαριόβου πίσω από το λεγόμενο <span class=\"fst-"
+"italic\">Μέτωπο της Θεσσαλονίκης</span> ή <span class=\"fst-"
+"italic\">Μακεδονικό Μέτωπο</span> στη σημερινή Δημοκρατία της Βόρειας "
+"Μακεδονίας."
+
+#: mop/data/projects/tarsr.py:69
+msgid "tracing_description_2"
+msgstr ""
+"Στενά συνδεδεμένος με τους πολέμους και τις ένοπλες συγκρούσεις είναι ο "
+"καταστροφικός αντίκτυπός τους στην Παγκόσμια Πολιτιστική Κληρονομιά. Στο "
+"έργο μας θα θέλαμε να παρακολουθήσουμε το ζήτημα της Πολιτιστικής "
+"Κληρονομιάς και της έρευνας γύρω από αυτήν κατά τον Πρώτο Παγκόσμιο Πόλεμο."
+
+#: mop/data/projects/tarsr.py:70
+msgid "tracing_description_3"
+msgstr ""
+"Διάφορα ιστορικά και εκκλησιαστικά μνημεία επλήγησαν σοβαρά από την "
+"καταστροφή κατά μήκος του <span class=\"fst-italic\">Μετώπου της "
+"Θεσσαλονίκης</span>. Παραδείγματα αποτελούν ο ναός του Αγίου Χριστοφόρου στο"
+" χωριό Krstoar και ο ναός του Αγίου Νικολάου στο χωριό Gradešnica. "
+"Απαιτείται ακόμη ενδελεχής επιστημονική έρευνα για την αξιολόγηση των "
+"σχετικών πηγών, ειδικά των εικονογραφικών, για τα συγκεκριμένα μνημεία της "
+"περιοχής από τη βυζαντινή και μεταβυζαντινή περίοδο, προκειμένου να ληφθεί "
+"μια ολοκληρωμένη εικόνα της αντίστοιχης Πολιτιστικής Κληρονομιάς."
+
+#: mop/data/projects/tarsr.py:71
+msgid "tracing_description_4"
+msgstr "Θα επιδιωχθούν τρία ερευνητικά ερωτήματα:"
+
+#: mop/data/projects/tarsr.py:72
+msgid "tracing_description_5"
+msgstr ""
+"<ul>\n"
+"<li>Πού επηρεάστηκε η Πολιτιστική Κληρονομιά πίσω από το <span class=\"fst-italic\">Μέτωπο της Θεσσαλονίκης</span> στις περιοχές Πρίλεπ-Μοναστηρίου και Μαριόβου από τις μάχες και πώς τεκμηρίωσαν τη ζημιά οι Κεντρικές Δυνάμεις;</li>\n"
+"<li>Πού πραγματοποιήθηκαν αρχαιολογικές ανασκαφές από τις Κεντρικές Δυνάμεις στις περιοχές Πρίλεπ-Μοναστηρίου και Μαριόβου και ποιοι ήταν οι εμπλεκόμενοι επιστήμονες;</li>\n"
+"<li>Τι είδους στρατιωτική υποδομή των Κεντρικών Δυνάμεων μπορεί ακόμα να ανιχνευθεί <span class=\"fst-italic\">in situ</span> στις περιοχές Πρίλεπ-Μοναστηρίου και Μαριόβου (δηλ. χαρακώματα, καταφύγια, δρόμοι, γέφυρες, σήραγγες, σιδηρόδρομοι, τελεφερίκ, κοιμητήρια);</li>\n"
+"</ul>"
+
+#: mop/data/projects/tarsr.py:73
+msgid "tracing_description_6"
+msgstr ""
+"Το έργο και οι νέες του προσεγγίσεις και μέθοδοι στην Ιστορική Γεωγραφία "
+"παρουσιάστηκαν από τον Mihailo Popović στο ενδιαφερόμενο κοινό στην ψηφιακή "
+"έκδοση της αυστριακής καθημερινής εφημερίδας “Der Standard”. Το διαδικτυακό "
+"άρθρο είναι προσβάσιμο μέσω: <a "
+"href=\"https://www.derstandard.at/story/3000000234089/im-fadenkreuz-der-"
+"kriegsfotografie\" "
+"target=\"_blank\">https://www.derstandard.at/story/3000000234089/im-"
+"fadenkreuz-der-kriegsfotografie</a>"
+
+#: mop/data/projects/tib_balkan.py:8 mop/data/projects/tib_balkan.py:13
+msgid "The Monastery of Saint Naum on Lake Ohrid"
+msgstr "Η Μονή του Αγίου Ναούμ στη λίμνη της Αχρίδας"
+
+#: mop/data/projects/tib_balkan.py:18 mop/data/projects/tib_balkan.py:23
+msgid "The Church of Sveti Jovan Kaneo in Ohrid"
+msgstr "Ο Ναός του Αγίου Ιωάννη του Θεολόγου (Κανέο) στην Αχρίδα"
+
+#: mop/data/projects/tib_balkan.py:31
+msgid "Reverse Engineering of the Tabula Imperii Byzantini Balkans"
+msgstr ""
+"Αντίστροφη Μηχανική (Reverse Engineering) του Tabula Imperii Byzantini "
+"Balkans"
+
+#: mop/data/projects/tib_balkan.py:43
+msgid "tib_balkan_description_1"
+msgstr ""
+"Το 1966 ο καθηγητής Dr. Herbert Hunger (1914-2000) ανακοίνωσε την ίδρυση του"
+" έργου Tabula Imperii Byzantini (εφεξής: TIB) της Αυστριακής Ακαδημίας "
+"Επιστημών στο 13ο Διεθνές Συνέδριο Βυζαντινών Σπουδών στην Οξφόρδη της "
+"Αγγλίας. Έκτοτε, το TIB ερευνά συστηματικά την ιστορική γεωγραφία της "
+"Βυζαντινής Αυτοκρατορίας από τις αρχές του 4ου αιώνα έως τα μέσα του 15ου "
+"αιώνα. Στόχος του έργου TIB είναι η έκδοση ενός ιστορικού άτλαντα των "
+"βυζαντινών επαρχιών και περιοχών από την Ύστερη Αρχαιότητα έως την Πρώιμη "
+"Νεότερη περίοδο. Από τη δεκαετία του 1960 η έρευνα επικεντρώνεται στη "
+"Βαλκανική Χερσόνησο και τη Μικρά Ασία."
+
+#: mop/data/projects/tib_balkan.py:44
+msgid "tib_balkan_description_2"
+msgstr ""
+"Από το 1976 εκδίδονται σε τακτά χρονικά διαστήματα τόμοι του TIB για τις "
+"βυζαντινές επαρχίες και περιοχές στα Βαλκάνια. Το 1976 εκδόθηκε ο τόμος για "
+"την “Hellas und Thessalien” (TIB 1), το 1981 για τη “Nikopolis und "
+"Kephallēnia” (TIB 3), το 1991 για τη “Thrakien (Thrakē, Rodopē und "
+"Haimimontos)” (TIB 6), το 1998 για το “Aigaion Pelagos (Die nördliche "
+"Ägäis)” (TIB 10), το 2008 για την “Ostthrakien (Eurōpē)” (TIB 12) και το "
+"2022 για το “Makedonien, südlicher Teil” (TIB 11). Στόχος του TIB Balkans "
+"ήταν και είναι να φτάσει στα σύνορα του Δούναβη ως το βόρειο σύνορο της "
+"Βυζαντινής Αυτοκρατορίας μέσω της επιστημονικής έρευνας των σχετικών "
+"περιοχών."
+
+#: mop/data/projects/tib_balkan.py:45
+msgid "tib_balkan_description_3"
+msgstr ""
+"Στο έργο “Reverse Engineering of the Tabula Imperii Byzantini Balkans” "
+"προσπαθούμε τώρα να επεξεργαστούμε συστηματικά τους τόμους TIB που "
+"αναφέρονται παραπάνω, οι οποίοι έχουν εκδοθεί σε έντυπη μορφή και είναι σε "
+"μεγάλο βαθμό αναλογικοί (δηλ. χωρίς ψηφιακά στοιχεία), χρησιμοποιώντας τη "
+"μέθοδο της αντίστροφης μηχανικής. Ως εκ τούτου, σαρώνουμε τους "
+"δημοσιευμένους τόμους χρησιμοποιώντας OCR (επειδή μόνο οι TIB 11 και TIB 12 "
+"είναι διαθέσιμοι σε μορφή pdf), εισάγουμε τα αντίστοιχα λήμματα στη βάση "
+"δεδομένων Maps of Power OpenAtlas και συμπληρώνουμε αυτά τα σύνολα δεδομένων"
+" με σαρώσεις ασπρόμαυρων φωτογραφιών και διαφανειών για τη Βαλκανική "
+"Χερσόνησο από το αρχείο του TIB, οι οποίες τραβήχτηκαν μεταξύ της δεκαετίας "
+"του 1960 και του 2008. Αυτά τα εξετάζουμε και μερικά από αυτά πρέπει πρώτα "
+"να τα σαρώσουμε. Με αυτόν τον τρόπο επεξεργαζόμαστε αναλογικά, "
+"αρχειοθετημένα δεδομένα, διασφαλίζοντας τη διατήρησή τους για το μέλλον και "
+"καθιστώντας τα προσβάσιμα στους ερευνητές και στο κοινό (δείτε την ενότητα "
+"Εξερεύνηση παρακάτω)."
+
+#: mop/data/projects/vlachs.py:19 mop/data/projects/vlachs.py:25
+#: mop/data/projects/vlachs.py:31
+msgid "A Sheepflock in the Village of Oxynon, Greece."
+msgstr "Ένα κοπάδι πρόβατα στο χωριό Οξύνον της Ελλάδας."
+
+#: mop/data/projects/vlachs.py:38
+msgid ""
+"Nomadic Infrastructure in the Historical Region of Macedonia (14th Cent.)"
+msgstr "Νομαδική Υποδομή στην Ιστορική Περιοχή της Μακεδονίας (14ος αι.)"
+
+#: mop/data/projects/vlachs.py:48
+msgid "The Winter Pastures in the Historical Region of Macedonia (14th Cent.)"
+msgstr ""
+"Οι Χειμερινοί Βοσκότοποι στην Ιστορική Περιοχή της Μακεδονίας (14ος αι.)"
+
+#: mop/data/projects/vlachs.py:56
+msgid "The Summer Pastures in the Historical Region of Macedonia (14th Cent.)"
+msgstr "Οι Θερινοί Βοσκότοποι στην Ιστορική Περιοχή της Μακεδονίας (14ος αι.)"
+
+#: mop/data/projects/vlachs.py:64
+msgid ""
+"The Distribution of Vlach Temporary Settlements (Katuni) in the Historical "
+"Region of Macedonia (14th Cent.)"
+msgstr ""
+"Η Κατανομή των Προσωρινών Οικισμών των Βλάχων (Κατούνια) στην Ιστορική "
+"Περιοχή της Μακεδονίας (14ος αιώνας)"
+
+#: mop/data/projects/vlachs.py:72
+msgid ""
+"The Source-Based Presence of Vlachs in the Historical Region of Macedonia "
+"(14th Cent.)"
+msgstr ""
+"Η Παρουσία των Βλάχων στην Ιστορική Περιοχή της Μακεδονίας βάσει των Πηγών "
+"(14ος αιώνας)"
+
+#: mop/data/projects/vlachs.py:82
+msgid ""
+"The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the "
+"Historical Region of Macedonia (11th-16th Cent.)"
+msgstr ""
+"Το Εθνώνυμο των Βλάχων στις Γραπτές Πηγές και την Τοπωνυμία στην Ιστορική "
+"Περιοχή της Μακεδονίας (11ος-16ος αιώνας)"
+
+#: mop/data/projects/vlachs.py:100
+msgid "vlachs_description_1"
+msgstr ""
+"Το έργο με τίτλο «Το Εθνώνυμο των Βλάχων στις Γραπτές Πηγές και η Τοπωνυμία "
+"στην Ιστορική Περιοχή της Μακεδονίας» επικεντρώνεται στην αλληλεπίδραση "
+"μεταξύ του μόνιμου πληθυσμού και των νομάδων (δηλ. των Βλάχων) στην ιστορική"
+" περιοχή της Μακεδονίας από τον 11ο έως τον 16ο αιώνα. Αυτό το έργο, το "
+"οποίο υποβλήθηκε με επιτυχία από τους επικεφαλής του έργου Doz. Mag. Dr. "
+"Mihailo Popović και Prof. Dr. Toni Filiposki (Πανεπιστήμιο Αγίων Κυρίλλου "
+"και Μεθοδίου των Σκοπίων, Βόρεια Μακεδονία), χρηματοδοτείται από το Κέντρο "
+"Διεθνούς Συνεργασίας & Κινητικότητας (ICM) του Αυστριακού Οργανισμού για τη "
+"Διεθνή Συνεργασία στην Εκπαίδευση και την Έρευνα (OeAD-GmbH) για δύο έτη "
+"(2016-18) και αποτελεί μια πρόσθετη, νέα μελέτη περίπτωσης στο πλαίσιο της "
+"πρωτοβουλίας «Maps of Power»."
+
+#: mop/data/projects/vlachs.py:101
+msgid "vlachs_description_2"
+msgstr ""
+"Η ιστορική περιοχή της Μακεδονίας στο σταυροδρόμι της Ορθοδοξίας, του "
+"Ρωμαιοκαθολικισμού και του Ισλάμ και το ζήτημα της προέλευσης των Βλάχων, οι"
+" οποίοι αυτοπροσδιορίζονται ως ξεχωριστή εθνοτική ομάδα μέχρι τους νεότερους"
+" χρόνους, καθώς και το εθνώνυμο «Βλάχοι» και τα παράγωγά του με τη μορφή "
+"τοπωνυμίων και προσωπικών ονομάτων βρίσκονται στον πυρήνα της κοινής "
+"έρευνας. Αυτός είναι ο λόγος για τον οποίο το έργο διερευνά τις μεσαιωνικές "
+"βυζαντινές και σλαβικές πηγές που σχετίζονται με τους Βλάχους στην ιστορική "
+"περιοχή της Μακεδονίας. Επιπλέον, η ιστορική και αρχαιολογική έρευνα θα "
+"συνδυαστεί με τις Ψηφιακές Ανθρωπιστικές Επιστήμες (Digital Humanities). Η "
+"αυστριακή πλευρά θα βασιστεί στα ποικίλα δεδομένα που παρέχει ο τόμος Tabula"
+" Imperii Byzantini (TIB) 16 που συνέγραψε ο M. Popović με σκοπό τη "
+"δημιουργία ενός ιστορικού άτλαντα της ιστορικής περιοχής της Μακεδονίας. "
+"Εκτός από τον εντοπισμό και την αξιολόγηση βυζαντινών και σλαβικών πηγών "
+"(ιδίως εγγράφων και ιστοριογραφίας) και τη συλλογή πρόσθετης δευτερογενούς "
+"βιβλιογραφίας, θα πραγματοποιηθούν ταξίδια στην αντίστοιχη χώρα του "
+"συνεργαζόμενου φορέα με σκοπό τη συγκέντρωση των εταίρων του έργου, την "
+"ενίσχυση των δεσμών τους, τη διεξοδική συζήτηση των σχετικών μεσαιωνικών "
+"πηγών για τους Βλάχους για την επίτευξη ενός κοινού επιπέδου ερμηνείας και "
+"για την προετοιμασία της εισαγωγής των επεξεργασμένων δεδομένων στη βάση "
+"δεδομένων του «Maps of Power»."
+
+#: mop/model/explore.py:10
+msgid "Actors"
+msgstr "Δρώντες"
+
+#: mop/model/explore.py:11
+msgid "Persons and Groups"
+msgstr "Πρόσωπα και Ομάδες"
+
+#: mop/model/explore.py:13
+msgid "Places"
+msgstr "Τοποθεσίες"
+
+#: mop/model/explore.py:14
+msgid "Physical places and their locations"
+msgstr "Φυσικές τοποθεσίες και οι θέσεις τους"
+
+#: mop/model/explore.py:16
+msgid "Events"
+msgstr "Γεγονότα"
+
+#: mop/model/explore.py:17
+msgid "Linking places and actors"
+msgstr "Σύνδεση τοποθεσιών και δρώντων"
+
+#: mop/model/explore.py:19
+msgid "Sources"
+msgstr "Πηγές"
+
+#: mop/model/explore.py:20
+msgid "Documents, manuscripts, etc."
+msgstr "Έγγραφα, χειρόγραφα κ.λπ."
+
+#: mop/model/explore.py:22
+msgid "References"
+msgstr "Αναφορές"
+
+#: mop/model/explore.py:23
+msgid "Research literature"
+msgstr "Ερευνητική Βιβλιογραφία"
+
+#: mop/model/explore.py:25
+msgid "Artefacts"
+msgstr "Τεχνουργήματα"
+
+#: mop/model/explore.py:26
+msgid "Physical objects"
+msgstr "Φυσικά αντικείμενα"
+
+#: mop/templates/about.html:16
+msgid "about_text_1"
+msgstr ""
+"η ερευνητική πρωτοβουλία «Maps of Power» χρησιμεύει στη μεθοδολογική και "
+"διεπιστημονική δικτύωση μελετητών από τον τομέα της Ιστορικής Γεωγραφίας. Η "
+"πρωτοβουλία, η οποία λειτουργεί από το 2019 με τον τίτλο «Maps of Power: "
+"Historical Atlas of Places, Borderzones and Migration Dynamics in Byzantium "
+"(TIB Balkans)», προέκυψε από την ιδέα της μεθοδολογικής εμβάθυνσης της "
+"ιστορικο-γεωγραφικής έρευνας και της τοποθέτησής της σε ευρύτερο επίπεδο "
+"όσον αφορά το περιεχόμενο. Βασισμένη στο επιστημονικό έργο <a "
+"href=\"https://tib.oeaw.ac.at\" class=\"link-primary\" "
+"target=\"_blank\">«Tabula Imperii Byzantini (TIB)»</a>, το οποίο διεξάγεται "
+"με επιτυχία στην Αυστριακή Ακαδημία Επιστημών (Βιέννη) από το 1966, η "
+"πρωτοβουλία σκοπεύει να επεκτείνει τη χωρική εστίαση του TIB στη βυζαντινή "
+"περιοχή προκειμένου να συμπεριλάβει και άλλες ευρωπαϊκές περιοχές κατά τον "
+"Μεσαίωνα. Το επιτυχώς ολοκληρωμένο ομαδικό έργο <a "
+"href=\"https://dpp.oeaw.ac.at/\" class=\"link-primary\" "
+"target=\"_blank\">«Digitising Patterns of Power (DPP): Peripherical "
+"Mountains in the Medieval World»</a> μπορεί να θεωρηθεί ως πιλοτικό έργο από"
+" αυτή την άποψη."
+
+#: mop/templates/about.html:19
+msgid "about_text_2"
+msgstr ""
+"προκειμένου να αποδοθεί δικαιοσύνη σε αυτή τη νέα ιδέα της χωρικής "
+"επέκτασης, ο προηγούμενος τίτλος της ερευνητικής πρωτοβουλίας μετονομάστηκε "
+"σε «Maps of Power – Karten der Macht», γεγονός που θα επιτρέψει μεγαλύτερο "
+"θεματικό βάθος και μεγαλύτερο χρονικό εύρος. Οι ερευνητικές προοπτικές του "
+"TIB μέχρι τώρα ως εκπροσώπου του ερευνητικού κλάδου της Ιστορικής Γεωγραφίας"
+" της Βυζαντινής Αυτοκρατορίας αφορούσαν ουσιαστικά τέσσερις κατηγορίες "
+"ιστορικών πηγών:"
+
+#: mop/templates/about.html:25
+msgid "about_text_3"
+msgstr ""
+"οι αλλαγές παραδείγματος στο περιεχόμενο και οι τεχνικο-ψηφιακές καινοτομίες"
+" στην επιστήμη με τις αντίστοιχες μεθοδολογικές επεκτάσεις στο δεύτερο μισό "
+"του 20ού αιώνα και στον 21ο αιώνα απαιτούν μια μεθοδολογική αναθεώρηση. Για "
+"την πρωτοβουλία, αυτό σημαίνει αυξημένη συνεργασία της Ιστορικής Γεωγραφίας "
+"με τις Βυζαντινές Σπουδές με την ευρύτερη έννοια, καθώς και με τις "
+"Μεσαιωνικές Σπουδές και τις Ψηφιακές Ανθρωπιστικές Επιστήμες."
+
+#: mop/templates/about.html:28
+msgid "about_text_4"
+msgstr ""
+"ως εκ τούτου, η ερευνητική πρωτοβουλία «Maps of Power» αναλαμβάνει τρεις "
+"ερευνητικούς τομείς που έχουν τη δυνατότητα να λειτουργήσουν ως σύνδεσμος "
+"μεταξύ της βυζαντινής και της πιο δυτικοευρωπαϊκά προσανατολισμένης "
+"Ιστορικής Γεωγραφίας και ως εκ τούτου να οδηγήσουν σε νέα ερευνητικά "
+"αποτελέσματα που είναι σημαντικά για την κοινωνία:"
+
+#: mop/templates/about.html:34
+msgid "historical ecology"
+msgstr "Ιστορική Οικολογία"
+
+#: mop/templates/about.html:36
+msgid "about_point_1"
+msgstr ""
+"... ασχολείται με την ιστορική εξέλιξη των οικοσυστημάτων και των τοπίων υπό"
+" την επίδραση φυσικών και ανθρωπογενών παραγόντων."
+
+#: mop/templates/about.html:39
+msgid "about_text_5"
+msgstr ""
+"ο στόχος της Ιστορικής Οικολογίας είναι να επικεντρωθεί περισσότερο στη "
+"σχέση μεταξύ φύσης και ανθρώπου, ή ανθρώπου και φύσης, και στον "
+"μετασχηματισμό του τοπίου μέσω της ανθρώπινης παρέμβασης. Σε αυτό το "
+"πλαίσιο, ο όρος «δύναμη» (power) πρέπει να νοηθεί ως «εξουσία» ή «έλεγχος» "
+"πάνω σε κάποιον ή κάτι. Για χιλιάδες χρόνια, ο ανθρώπηνος πολιτισμός έχει "
+"επηρεάσει τη βλάστηση στην Ευρώπη (με την εκχέρσωση και τη φύτευση αγρών, "
+"την εισαγωγή καλλιεργούμενων φυτών κ.λπ.). Ταυτόχειρα, η φύση καθόρισε "
+"σημαντικά τη γεωγραφία των οικισμών, για παράδειγμα μέσω των υδάτινων οδών, "
+"μέχρι την εποχή των υπερβολικών ρυθμίσεων. Έτσι, ο όρος «δύναμη/εξουσία» "
+"είναι εφαρμόσιμος και προς τις δύο κατευθύνσεις (φύση και άνθρωπος)."
+
+#: mop/templates/about.html:43
+msgid "sacred topography"
+msgstr "Τοπίο Πίστης"
+
+#: mop/templates/about.html:45
+msgid "about_point_2"
+msgstr ""
+"… αντανακλά την παρουσία του θείου/ιερού/υπερβατικού σε μια δεδομένη περιοχή"
+" και εκδηλώνεται μέσω θρησκευτικών κτιρίων (π.χ. εκκλησίες και μοναστήρια) "
+"και θρησκευτικών συμβόλων και πράξεων (π.χ. προσκύνημα)."
+
+#: mop/templates/about.html:48
+msgid "about_text_6"
+msgstr ""
+"το αντικείμενο μελέτης του Τοπίου Πίστης (Faithscape) στο Βυζάντιο είναι σε "
+"μεγάλο βαθμό οι αστικές και αγροτικές εκκλησίες, βάσει της κατανομής των "
+"οποίων μπορεί κανείς να εξερευνήσει τον ιερό χώρο, τις τελετουργίες και τις "
+"θρησκευτικές ταυτότητες. Επιπλέον, θα διερευνηθεί εάν ορισμένα "
+"χαρακτηριστικά του τοπίου ευνόησαν τη διαμόρφωση συγκεκριμένων τύπων "
+"λατρειών και τη δημιουργία τόπων λατρείας. Η αντίληψη του χώρου από τους "
+"ανθρώπους κατά τον Μεσαίωνα παίζει σημαντικό ρόλο σε αυτήν ακριβώς την "
+"πτυχή. Λογισμικό GIS, ψηφιακή χαρτογράφηση και συστήματα βάσεων δεδομένων "
+"χρησιμοποιούνται όλο και περισσότερο και στους δύο ερευνητικούς τομείς."
+
+#: mop/templates/about.html:52
+msgid "cultural heritage"
+msgstr "Πολιτιστική Κληρονομιά"
+
+#: mop/templates/about.html:54
+msgid "about_point_3"
+msgstr ""
+"... ως βασικός πυλώνας της έρευνας στην Ιστορική Γεωγραφία, η Πολιτιστική "
+"Κληρονομιά αποκτά όλο και μεγαλύτερη σημασία παγκοσμίως."
+
+#: mop/templates/about.html:57
+msgid "about_text_8"
+msgstr ""
+"Είναι η υλική και άυλη κληρονομιά μιας ομάδας ή κοινωνίας που έχει "
+"κληροδοτηθεί από τις παλαιότερες στις σημερινές γενιές και θα πρέπει να "
+"διαφυλαχθεί για τις μελλοντικές γενιές. Στην πρωτοβουλία μας, αναφερόμαστε "
+"στα μνημεία ως υλική κληρονομιά. Ο εντοπισμός, η περιγραφή, η τεκμηρίωση, η "
+"έρευνα και η παρουσίασή τους με εργαλεία που προέρχονται από τις Ψηφιακές "
+"Ανθρωπιστικές Επιστήμες είναι ένα από τα κεντρικά μας καθήκοντα, ιδιαίτερα "
+"σε περιόδους πολέμων, φυσικών καταστροφών και έργων υποδομής μεγάλης "
+"κλίμακας. Ο τομέας της Πολιτιστικής Κληρονομιάς προσφέρει επίσης πολύ καλές "
+"ευκαιρίες για σύγκριση μεταξύ Ανατολής και Δύσης, κάτι στο οποίο θα θέλαμε "
+"να ανταποκριθούμε περισσότερο στο μέλλον."
+
+#: mop/templates/about.html:64
+msgid "about_text_7"
+msgstr ""
+"Το «Maps of Power» υιοθετεί αυτές τις ιδέες και αυτοπροσδιορίζεται ως μια "
+"επιστημονική πλατφόρμα που θα ήθελε να υλοποιήσει τα δικά της έργα καθώς και"
+" να δικτυωθεί με διεπιστημονικό τρόπο μέσω κοινών έργων. Τα ερευνητικά "
+"αποτελέσματα της πρωτοβουλίας εισάγονται συνεχώς σε μια ξεχωριστή βάση "
+"δεδομένων OpenAtlas (https://openatlas.eu/) και διατίθενται ελεύθερα σε μια "
+"ειδικά προγραμματισμένη πύλη που καθιστά τα δεδομένα αναζητήσιμα, περιέχει "
+"ψηφιακούς χάρτες (επίπεδα/layers) and περιλαμβάνει ολοκληρωμένο φωτογραφικό "
+"υλικό."
+
+#: mop/templates/about.html:67
+msgid "about_text_7a"
+msgstr ""
+"Τα δεδομένα από τα τρέχοντα και τα ολοκληρωμένα έργα μας μπορούν να "
+"αναζητηθούν και να οπτικοποιηθούν μέσω της διεπαφής (frontend) του <a "
+"href=\"/frontend\" target=\"_blank\" class=\"link-primary\">«Maps of "
+"Power»</a>."
+
+#: mop/templates/about.html:77
+msgid "vienna_manifesto"
+msgstr ""
+"Η πρωτοβουλία μας υποστηρίζει πλήρως το <a "
+"href=\"https://dighum.ec.tuwien.ac.at/dighum-manifesto/\" target=\"_blank\" "
+"class=\"link-primary\">«Μανιφέστο της Βιέννης για τον Ψηφιακό "
+"Ανθρωπισμό»</a>."
+
+#: mop/templates/error.html:49
+msgid "go back to the start page"
+msgstr "επιστροφή στην αρχική σελίδα"
+
+#: mop/templates/histgeo.html:19
+msgid "histgeo_intro_1"
+msgstr ""
+"νέες σκέψεις και ιδέες μεταμορφώνουν την Ιστορική Γεωγραφία, όπως για "
+"παράδειγμα οι Ψηφιακές Ανθρωπιστικές Επιστήμες και ένα ευρύ φάσμα νέων "
+"μεθοδολογιών (όπως το GIS – Γεωγραφικό Σύστημα Πληροφοριών και το HGIS – "
+"Ιστορικό Γεωγραφικό Σύστημα Πληροφοριών). Ως εκ τούτου, νέες μέθοδοι και "
+"θεωρίες εφαρμόζονται όλο και περισσότερο και με γρήγορους ρυθμούς στην "
+"Ιστορική Γεωγραφία του Βυζαντίου και των παρακείμενων περιοχών (δηλ. της "
+"Νοτιοανατολικής και Ανατολικής Ευρώπης)."
+
+#: mop/templates/histgeo.html:22
+msgid "histgeo_intro_2"
+msgstr ""
+"αυτή η διεθνής σειρά εκδόσεων στοχεύει στην παρουσίαση πρωτότυπης έρευνας "
+"στους τομείς της Ιστορικής Γεωγραφίας, των Βυζαντινών Σπουδών, των "
+"Μεσαιωνικών Σπουδών, των Βαλκανικών Σπουδών, της Αρχαιολογίας, της "
+"Γεωγραφίας, της Χαρτογραφίας, των GIS / HGIS και της Πολιτιστικής "
+"Κληρονομιάς. Προσκαλούμε χειρόγραφα – μονογραφίες καθώς και πρακτικά "
+"συνεδρίων – από ένα ευρύ φάσμα όλων αυτών των επιστημονικών πεδίων, με "
+"εστίαση στις περιοχές της πρώην Βυζαντινής Αυτοκρατορίας, ιδιαίτερα της "
+"Νοτιοανατολικής και Ανατολικής Ευρώπης, και χαιρετίζουμε ιδιαίτερα τις "
+"διεπιστημονικές προσεγγίσεις."
+
+#: mop/templates/histgeo.html:27
+msgid "Digital HistGeo Lecture Series"
+msgstr "ψηφιακή σειρά διαλέξεων HistGeo"
+
+#: mop/templates/histgeo.html:31
+msgid "histgeo_lecture_1"
+msgstr ""
+"προκειμένου να επικοινωνήσουν τα επιστημονικά αποτελέσματα του «Tabula "
+"Imperii Byzantini (TIB) Balkans» της Αυστριακής Ακαδημίας Επιστημών και των "
+"σχετικών υπο-έργων του σε εθνικούς και διεθνείς επιστήμονες, φοιτητές καθώς "
+"και στο ενδιαφερόμενο κοινό στη Βιέννη, την Αυστρία και τον κόσμο, οι "
+"Mihailo Popović, Veronika Polloczek, Bernhard Koschiček-Krombholz και "
+"Vratislav Zervan ξεκίνησαν μαζί τη «Σειρά Διαλέξεων HistGeo» στη Βιέννη τον "
+"Ιανουάριο του 2019 (σε συνέχεια της «Σειράς Διαλέξεων DPP» που ιδρύθηκε τον "
+"Ιανουάριο του 2017)."
+
+#: mop/templates/histgeo.html:34
+msgid "histgeo_lecture_2"
+msgstr ""
+"αρχικά, είχαμε ξεκινήσει με διαλέξεις με φυσική παρουσία στη Βιέννη, οι "
+"οποίες δυστυχώς διακόπηκαν από την πανδημία COVID. Ως εκ τούτου, αποφασίσαμε"
+" να τις πραγματοποιούμε διαδικτυακά ξεκινώντας από τον Ιανουάριο του 2023. "
+"Τώρα ονομάζονται «Ψηφιακή Σειρά Διαλέξεων HistGeo» και προσπαθούμε να τις "
+"διοργανώνουμε ανά τρίμηνο κάθε χρόνο (περίπου τον Μάρτιο, Ιούνιο, Σεπτέμβριο"
+" και Δεκέμβριο)."
+
+#: mop/templates/histgeo.html:37
+msgid "histgeo_lecture_3"
+msgstr ""
+"στόχος μας είναι να παρουσιάσουμε εργασίες που περιέχουν τη δική μας έρευνα,"
+" αλλά και να προσελκύσουμε και να προσκαλέσουμε ομιλητές, οι εργασίες των "
+"οποίων έχουν τη δυνατότητα να προωθήσουν συζητήσεις σχετικά με νέες μεθόδους"
+" και ψηφιακά εργαλεία στους τομείς της Μεσαιωνικής Ιστορίας, των Βυζαντινών "
+"Σπουδών, των Βαλκανικών Σπουδών, της Ιστορικής Γεωγραφίας, της Χαρτογραφίας,"
+" των Ψηφιακών Ανθρωπιστικών Επιστημών, της Επιστήμης GIS (GIScience) και της"
+" Μηχανικής Λογισμικού."
+
+#: mop/templates/histgeo.html:46 mop/templates/histgeo.html:96
+msgid "no"
+msgstr "αρ."
+
+#: mop/templates/histgeo.html:64
+msgid "HistGeo Newsletter"
+msgstr ""
+"Ενημερωτικό Δελτίο HistGeoΜη διστάσετε να περιηγηθείτε στο αρχείο των "
+"Ενημερωτικών Δελτίων μας. Εάν έχετε οποιεσδήποτε ερωτήσεις ή παρατηρήσεις, "
+"επικοινωνήστε μαζί μας μέσω του mapsofpower@oeaw.ac.at"
+
+#: mop/templates/histgeo.html:68
+msgid "histgeo_newsletter_1"
+msgstr ""
+"το Ενημερωτικό Δελτίο HistGeo σάς ενημερώνει δύο φορές το χρόνο – κατά τους "
+"μήνες Ιούνιο και Δεκέμβριο – για επιστημονικές δραστηριότητες, συνεργασίες, "
+"πρόοδο, αποτελέσματα και νέες εκδόσεις, που έχουν επιτευχθεί ως ακρογωνιαίοι"
+" λίθοι της πρωτοβουλίας Maps of Power. Παλαιότερα, δημοσιεύαμε το "
+"Ενημερωτικό Δελτίο τέσσερις φορές το χρόνο, αλλά το έχουμε αλλάξει σε δύο "
+"εκδόσεις ετησίως από το 2022."
+
+#: mop/templates/histgeo.html:71
+msgid "histgeo_newsletter_2"
+msgstr ""
+"στις εκθέσεις του Ενημερωτικού Δελτίου εστιάζουμε στους τομείς της Ιστορικής"
+" Γεωγραφίας, των Ιστορικών Ατλάντων, της Χαρτογράφησης, της Ψηφιακής "
+"Χαρτογράφησης και των Ψηφιακών Ανθρωπιστικών Επιστημών γενικότερα. Στοχεύει "
+"στην ανάδειξη των επιστημονικών δραστηριοτήτων των μελετητών που συμμετέχουν"
+" στην πρωτοβουλία Maps of Power και στο TIB Balkans, καθώς και συναδέλφων "
+"από άλλα πεδία μελέτης."
+
+#: mop/templates/histgeo.html:74
+msgid "histgeo_newsletter_3"
+msgstr ""
+"Μη διστάσετε να περιηγηθείτε στο αρχείο των Ενημερωτικών Δελτίων μας. Εάν "
+"έχετε οποιεσδήποτε ερωτήσεις ή παρατηρήσεις, επικοινωνήστε μαζί μας μέσω του"
+" mapsofpower@oeaw.ac.at"
+
+#: mop/templates/histgeo.html:109
+msgid "volumes"
+msgstr "τόμοι"
+
+#: mop/templates/histgeo.html:176
+msgid "Citation Rules and Fonts"
+msgstr "κανόνες αναφοράς και γραμματοσειρές"
+
+#: mop/templates/histgeo.html:178
+msgid "histgeo_rules"
+msgstr ""
+"η Σειρά μας εκδίδεται από τον εκδοτικό οίκο <a "
+"href=\"https://akademskaknjiga.com/?lang=en\" target=\"_blank\" class=\"fw-"
+"bolder link-primary\">«Akademska knjiga» στο Νόβι Σαντ της Σερβίας</a>, ο "
+"οποίος ιδρύθηκε τον Ιούλιο του 2006 με σκοπό τη δημοσίευση σημαντικών "
+"επιστημονικών μελετών στις Κοινωνικές και Ανθρωπιστικές Επιστήμες από "
+"εθνικούς και διεθνείς συγγραφείς."
+
+#: mop/templates/histgeo.html:183
+msgid "Citation Rules"
+msgstr "κανόνες αναφοράς"
+
+#: mop/templates/histgeo.html:185
+msgid "histgeo_citation_1"
+msgstr ""
+"κατά την προετοιμασία ενός χειρογράφου για τη Σειρά μας, χρησιμοποιήστε τις "
+"ακόλουθες οδηγίες:"
+
+#: mop/templates/histgeo.html:191
+msgid "Download PDF"
+msgstr "Λήψη PDF"
+
+#: mop/templates/histgeo.html:195
+msgid "Fonts"
+msgstr "γραμματοσειρές"
+
+#: mop/templates/histgeo.html:197
+msgid "histgeo_fonts_1"
+msgstr ""
+"παρακαλούμε χρησιμοποιήστε αυτούς τους τύπους γραμματοσειράς για την Παλαιά "
+"Εκκλησιαστική Σλαβονική:"
+
+#: mop/templates/imprint.html:7 mop/templates/layout.html:130
+msgid "imprint"
+msgstr "στοιχεία έκδοσης"
+
+#: mop/templates/imprint.html:8
+msgid ""
+"Imprint and disclosure according to §§ 24, 25 of the Austrian Media Act "
+"(MedienG) as well as information according to § 5 E-Commerce Act (ECG)"
+msgstr ""
+"Στοιχεία εκδότη (Imprint) και γνωστοποίηση σύμφωνα με τα άρθρα 24, 25 του "
+"Αυστριακού Νόμου περί Μέσων Ενημέρωσης (MedienG), καθώς και πληροφορίες "
+"σύμφωνα με το άρθρο 5 του Νόμου για το Ηλεκτρονικό Εμπόριο (ECG)"
+
+#: mop/templates/imprint.html:9
+msgid "Media owner"
+msgstr "Ιδιοκτήτης μέσου"
+
+#: mop/templates/imprint.html:12
+msgid ""
+"Corporate body under public law (Federal Law Gazette (BGBl) 569/1921 as "
+"amended by Federal Law Gazette (BGBl) I 31/2018)"
+msgstr ""
+"Νομικό πρόσωπο δημοσίου δικαίου (Federal Law Gazette (BGBl) 569/1921 όπως "
+"τροποποιήθηκε από το Federal Law Gazette (BGBl) I 31/2018)"
+
+#: mop/templates/imprint.html:14 mop/templates/layout.html:105
+msgid "Austria"
+msgstr "Αυστρία"
+
+#: mop/templates/imprint.html:22
+msgid "VAT Identification Number"
+msgstr "Αριθμός Φορολογικού Μητρώου (ΑΦΜ)"
+
+#: mop/templates/imprint.html:24
+msgid "Object of the company"
+msgstr "Σκοπός της εταιρείας"
+
+#: mop/templates/imprint.html:25
+msgid ""
+"The Österreichische Akademie der Wissenschaften (Austrian Academy of "
+"Sciences) has the statutory mission to promote science in every way. As a "
+"learned society the OeAW cultivates the discourse and cooperation of science"
+" with the public, politics and business. As the largest institution of non-"
+"university basic research in the country, the OeAW conducts application-open"
+" basic research at the highest international level at its 28 institutes."
+msgstr ""
+"Η Αυστριακή Ακαδημία Επιστημών (Österreichische Akademie der Wissenschaften)"
+" έχει ως καταστατική αποστολή την προώθηση της επιστήμης με κάθε τρόπο. Ως "
+"επιστημονική εταιρεία, η ÖAW καλλιεργεί τον διάλογο και τη συνεργασία της "
+"επιστήμης με το κοινό, την πολιτική και τις επιχειρήσεις. Ως το μεγαλύτερο "
+"ίδρυμα μη πανεπιστημιακής βασικής έρευνας στη χώρα, η ÖAW διεξάγει βασική "
+"έρευνα ανοιχτή σε εφαρμογές στο υψηλότερο διεθνές επίπεδο στα 28 ινστιτούτα "
+"της."
+
+#: mop/templates/imprint.html:26
+msgid "Executive body"
+msgstr "Εκτελεστικό όργανο"
+
+#: mop/templates/imprint.html:28
+msgid "President"
+msgstr "Πρόεδρος"
+
+#: mop/templates/imprint.html:30
+msgid "Vice President"
+msgstr "Αντιπρόεδρος"
+
+#: mop/templates/imprint.html:32 mop/templates/imprint.html:34
+msgid "Class President"
+msgstr "Πρόεδρος Τάξης"
+
+#: mop/templates/imprint.html:36
+msgid ""
+"The Academy Council exists as supervisory body. For more information see"
+msgstr ""
+"Το Συμβούλιο της Ακαδημίας υφίσταται ως εποπτικό όργανο. Για περισσότερες "
+"πληροφορίες δείτε"
+
+#: mop/templates/imprint.html:39
+msgid "Basic line"
+msgstr "Βασική κατεύθυνση"
+
+#: mop/templates/imprint.html:40
+msgid ""
+"This website serves to inform the public on the scientific activities of the"
+" Long-Term Project Tabula Imperii Byzantini of the Austrian Academy of "
+"Sciences."
+msgstr ""
+"Αυτός ο ιστότοπος χρησιμεύει για την ενημέρωση του κοινού σχετικά με τις "
+"επιστημονικές δραστηριότητες του Μακροχρόνιου Έργου Tabula Imperii Byzantini"
+" της Αυστριακής Ακαδημίας Επιστημών."
+
+#: mop/templates/imprint.html:41
+msgid "Disclaimer"
+msgstr "Αποποίηση ευθύνης"
+
+#: mop/templates/imprint.html:43
+msgid ""
+"The Austrian Academy of Sciences gives no warranty as to the topicality, "
+"correctness, completeness or quality of the information provided. In the "
+"case of links to websites of other media owners, for which the OeAW is not "
+"directly or indirectly responsible, the OeAW assumes no liability for their "
+"contents and excludes any liability therefor."
+msgstr ""
+"Η Αυστριακή Ακαδημία Επιστημών δεν παρέχει καμία εγγύηση ως προς την "
+"επικαιρότητα, την ορθότητα, την πληρότητα ή την ποιότητα των παρεχόμενων "
+"πληροφοριών. Σε περίπτωση συνδέσμων προς ιστότοπους άλλων ιδιοκτητών μέσων "
+"ενημέρωσης, για τους οποίους η ÖAW δεν είναι άμεσα ή έμμεσα υπεύθυνη, η ÖAW "
+"δεν αναλαμβάνει καμία ευθύνη για το περιεχόμενό τους και αποκλείει κάθε "
+"ευθύνη γι' αυτό."
+
+#: mop/templates/imprint.html:45
+msgid "Copyright notice"
+msgstr "Σημείωση πνευματικών δικαιωμάτων"
+
+#: mop/templates/imprint.html:47 mop/templates/imprint.html:50
+msgid ""
+"The contents and works created by the Austrian Academy of Sciences on these "
+"pages are subject to Austrian copyright law. The duplication, editing, "
+"distribution and any kind of utilization outside the scope of copyright law "
+"require the written consent of the respective author or creator. Downloads "
+"and copies of these pages are only permitted for private, non-commercial "
+"use. Insofar as the content on this site was not created by the operator, "
+"the copyrights of third parties are respected. In particular, third-party "
+"content is identified as such. In the event that you should nevertheless "
+"become aware of a copyright infringement, we ask that you inform us "
+"accordingly. If we become aware of any infringements, we will remove such "
+"contents immediately."
+msgstr ""
+"Τα περιεχόμενα και τα έργα που δημιουργούνται από την Αυστριακή Ακαδημία "
+"Επιστημών σε αυτές τις σελίδες υπόκεινται στο αυστριακό δίκαιο περί "
+"πνευματικής ιδιοκτησίας. Η αναπαραγωγή, επεξεργασία, διανομή και οποιοδήποτε"
+" είδος εκμετάλλευσης εκτός των ορίων του νόμου περί πνευματικής ιδιοκτησίας "
+"απαιτούν τη γραπτή συγκατάθεση του αντίστοιχου συγγραφέα ή δημιουργού. Οι "
+"λήψεις και τα αντίγραφα αυτών των σελίδων επιτρέπονται μόνο για ιδιωτική, μη"
+" εμπορική χρήση. Εφόσον το περιεχόμενο σε αυτόν τον ιστότοπο δεν έχει "
+"δημιουργηθεί από τον διαχειριστή, γίνονται σεβαστά τα πνευματικά δικαιώματα "
+"τρίτων. Ιδιαίτερα, περιεχόμενα τρίτων προσδιορίζονται ως τέτοια. Σε "
+"περίπτωση που παρόλα αυτά αντιληφθείτε παραβίαση πνευματικών δικαιωμάτων, "
+"παρακαλούμε να μας ενημερώσετε σχετικά. Εάν υποπέσει στην αντίληψή μας "
+"οποιαδήποτε παραβίαση, θα αφαιρέσουμε αμέσως το εν λόγω περιεχόμενο."
+
+#: mop/templates/imprint.html:49
+msgid "Data privacy notice"
+msgstr "Σημείωση προστασίας προσωπικών δεδομένων"
+
+#: mop/templates/imprint.html:51
+msgid ""
+"The contact data published within the scope of the imprint obligation may "
+"not be used by third parties for the transmission of advertising and "
+"information material not expressly requested. Any such use is hereby "
+"expressly contradicted."
+msgstr ""
+"Τα στοιχεία επικοινωνίας που δημοσιεύονται στο πλαίσιο της υποχρέωσης "
+"αναγραφής στοιχείων εκδότη (imprint) δεν επιτρέπεται να χρησιμοποιούνται από"
+" τρίτους για την αποστολή διαφημιστικού και ενημερωτικού υλικού που δεν έχει"
+" ζητηθεί ρητά. Κάθε τέτοια χρήση αντιτίθεται ρητά."
+
+#: mop/templates/imprint.html:53
+msgid "Further information on data protection on websites of the OeAW."
+msgstr ""
+"Περισσότερες πληροφορίες για την προστασία δεδομένων στους ιστότοπους της "
+"OeAW."
+
+#: mop/templates/layout.html:99
+msgid "contact"
+msgstr "επικοινωνία"
+
+#: mop/templates/layout.html:103
+msgid "Division of Byzantine Research"
+msgstr "Τμήμα Βυζαντινών Ερευνών"
+
+#: mop/templates/layout.html:105
+msgid "Europe"
+msgstr "Ευρώπη"
+
+#: mop/templates/layout.html:121
+msgid "navigation"
+msgstr "πλοήγηση"
+
+#: mop/templates/lectures.html:40
+msgid "date"
+msgstr "ημερομηνία"
+
+#: mop/templates/lectures.html:41
+msgid "time"
+msgstr "ώρα"
+
+#: mop/templates/lectures.html:42
+msgid "language"
+msgstr "γλώσσα"
+
+#: mop/templates/lectures.html:43 mop/templates/lectures.html:45
+msgid "link"
+msgstr "σύνδεσμος"
+
+#: mop/templates/lectures.html:55
+msgid "recording"
+msgstr "καταγραφή"
+
+#: mop/templates/literature.html:7
+msgid "Maps of Power"
+msgstr "Χάρτες της Εξουσίας"
+
+#: mop/templates/literature.html:8
+msgid "Beyond East and West"
+msgstr "Πέρα από την Ανατολή και τη Δύση"
+
+#: mop/templates/literature.html:9
+msgid "Further Reading"
+msgstr "Περαιτέρω Μελέτη"
+
+#: mop/templates/macros.html:30
+msgid "Open external link"
+msgstr "Άνοιγμα εξωτερικού συνδέσμου"
+
+#: mop/templates/macros.html:36
+msgid "Download file"
+msgstr "Λήψη αρχείου"
+
+#: mop/templates/macros.html:64
+msgid "Search"
+msgstr "Μάρτιος"
+
+#: mop/templates/navbar.html:61
+msgid "Other"
+msgstr "Άλλο"
+
+#: mop/templates/project_details.html:61
+#: mop/templates/project_details.html:446 mop/templates/projects.html:110
+#: mop/templates/projects.html:143 mop/templates/projects.html:221
+#: mop/templates/projects.html:274 mop/templates/projects.html:598
+msgid "Active"
+msgstr "Ενεργό"
+
+#: mop/templates/project_details.html:80
+msgid "description"
+msgstr "Περιγραφή"
+
+#: mop/templates/project_details.html:93
+msgid "Project Number"
+msgstr "Αριθμός Έργου"
+
+#: mop/templates/project_details.html:100
+msgid "Duration"
+msgstr "Διάρκεια"
+
+#: mop/templates/project_details.html:107
+msgid "Funded by"
+msgstr "Χρηματοδοτείται από"
+
+#: mop/templates/project_details.html:122
+msgid "Hosted by"
+msgstr "Φιλοξενείται από"
+
+#: mop/templates/project_details.html:136
+msgid "PI (Project Investigator)"
+msgstr "Επιστημονικός Υπεύθυνος (PI)"
+
+#: mop/templates/project_details.html:146 mop/templates/projects.html:191
+msgid "Employees"
+msgstr "Συνεργάτες"
+
+#: mop/templates/project_details.html:157
+msgid "Cooperation and External Employees"
+msgstr "Συνεργασίες και Εξωτερικοί Συνεργάτες"
+
+#: mop/templates/project_details.html:173
+msgid "further information"
+msgstr "Περισσότερες πληροφορίες"
+
+#: mop/templates/project_details.html:185
+msgid "media"
+msgstr "Μέσα"
+
+#: mop/templates/project_details.html:226
+msgid "explore"
+msgstr "Εξερεύνηση"
+
+#: mop/templates/project_details.html:236
+msgid "Mapping Spatial Coordinates..."
+msgstr "Χαρτογράφηση Χωρικών Συντεταγμένων..."
+
+#: mop/templates/project_details.html:237
+msgid "Downloading geographical locations from OpenAtlas."
+msgstr "Λήψη γεωγραφικών τοποθεσιών από το OpenAtlas."
+
+#: mop/templates/project_details.html:257
+msgid ""
+"The access and use of our data is subject to the Creative Commons License CC"
+" BY 4.0 (<a href=\"https://creativecommons.org/licenses/by/4.0/\" "
+"target=\"_blank\">https://creativecommons.org/licenses/by/4.0/</a>)."
+msgstr ""
+"Η πρόσβαση και η χρήση των δεδομένων μας υπόκειται στην άδεια Creative "
+"Commons CC BY 4.0 (<a href=\"https://creativecommons.org/licenses/by/4.0/\" "
+"target=\"_blank\">https://creativecommons.org/licenses/by/4.0/</a>)."
+
+#: mop/templates/project_details.html:265
+msgid "results"
+msgstr "Αποτελέσματα"
+
+#: mop/templates/project_details.html:303
+msgid "publications"
+msgstr "Δημοσιεύσεις"
+
+#: mop/templates/project_details.html:313
+msgid "presentations"
+msgstr "Παρουσιάσεις"
+
+#: mop/templates/project_details.html:400 mop/templates/projects.html:846
+msgid "No description available."
+msgstr "Δεν υπάρχει διαθέσιμη περιγραφή."
+
+#: mop/templates/project_details.html:403 mop/templates/projects.html:849
+msgid "View Details"
+msgstr "Προβολή Λεπτομερειών"
+
+#: mop/templates/project_details.html:449 mop/templates/projects.html:222
+msgid "Upcoming"
+msgstr "Επερχόμενα"
+
+#: mop/templates/project_details.html:452 mop/templates/projects.html:111
+#: mop/templates/projects.html:223 mop/templates/projects.html:278
+#: mop/templates/projects.html:603
+msgid "Completed"
+msgstr "Ολοκληρωμένα"
+
+#: mop/templates/projects.html:20
+msgid "Research Portal"
+msgstr "Ερευνητική Πύλη"
+
+#: mop/templates/projects.html:23
+msgid "Research Projects"
+msgstr "Ερευνητικά Έργα"
+
+#: mop/templates/projects.html:26
+msgid ""
+"Discover our ongoing and completed research initiatives in Historical "
+"Geography and Digital Humanities. Explore spatial networks, mapped entities,"
+" and ancient records across centuries."
+msgstr ""
+"Ανακαλύψτε τις τρέχουσες και ολοκληρωμένες ερευνητικές μας πρωτοβουλίες στην"
+" Ιστορική Γεωγραφία και τις Ψηφιακές Ανθρωπιστικές Επιστήμες. Εξερευνήστε "
+"χωρικά δίκτυα, χαρτογραφημένες οντότητες και αρχαία αρχεία ανά τους αιώνες."
+
+#: mop/templates/projects.html:34 mop/templates/projects.html:270
+msgid "Projects"
+msgstr "Έργα"
+
+#: mop/templates/projects.html:40
+msgid "Mapped Places"
+msgstr "Χαρτογραφημένες Τοποθεσίες"
+
+#: mop/templates/projects.html:46
+msgid "Researchers"
+msgstr "Ερευνητές"
+
+#: mop/templates/projects.html:52
+msgid "Funding Bodies"
+msgstr "Φορείς Χρηματοδότησης"
+
+#: mop/templates/projects.html:65
+msgid "Overview"
+msgstr "Επισκόπηση"
+
+#: mop/templates/projects.html:70
+msgid "Timeline Roadmap"
+msgstr "Χρονοδιάγραμμα"
+
+#: mop/templates/projects.html:75
+msgid "Research Analytics"
+msgstr "Αναλυτικά Στοιχεία Έρευνας"
+
+#: mop/templates/projects.html:80
+msgid "Data Portal & Map"
+msgstr "Πύλη Δεδομένων & Χάρτης"
+
+#: mop/templates/projects.html:85
+msgid "Network Visualisation"
+msgstr "Οπτικοποίηση Δικτύου"
+
+#: mop/templates/projects.html:102
+msgid "Search by project name, acronym, PI or employees..."
+msgstr ""
+"Αναζήτηση με βάση το όνομα του έργου, το ακρωνύμιο, τον PI ή τους "
+"συνεργάτες..."
+
+#: mop/templates/projects.html:109
+msgid "All Statuses"
+msgstr "Όλες οι Καταστάσεις"
+
+#: mop/templates/projects.html:116
+msgid "All Funding"
+msgstr "Όλες οι Χρηματοδοτήσεις"
+
+#: mop/templates/projects.html:178
+msgid "Project Investigator"
+msgstr "Επιστημονικός Υπεύθυνος"
+
+#: mop/templates/projects.html:203
+msgid "Explore Project"
+msgstr "Εξερεύνηση Έργου"
+
+#: mop/templates/projects.html:217
+msgid "Interactive Projects Roadmap"
+msgstr "Διαδραστικός Οδικός Χάρτης Έργων"
+
+#: mop/templates/projects.html:218
+msgid ""
+"View project lifespans dynamically across a chronological 10-year timeline "
+"axis."
+msgstr ""
+"Δείτε τη διάρκεια ζωής των έργων δυναμικά σε έναν χρονολογικό άξονα "
+"Zeitleiste 10 ετών."
+
+#: mop/templates/projects.html:231
+msgid "Filter Timeline by Active Year:"
+msgstr "Φιλτράρισμα Χρονολογίου ανά Ενεργό Έτος:"
+
+#: mop/templates/projects.html:266
+msgid "Statistics Overview"
+msgstr "Επισκόπηση Στατιστικών"
+
+#: mop/templates/projects.html:282
+msgid "Scholars"
+msgstr "Μελετητές"
+
+#: mop/templates/projects.html:286
+msgid ""
+"Aggregated live metrics of collaborative initiatives mapping spatial data "
+"and medieval geographies."
+msgstr ""
+"Συγκεντρωτικά ζωντανά μετρικά στοιχεία συνεργατικών πρωτοβουλιών που "
+"χαρτογραφούν χωρικά δεδομένα και μεσαιωνικές γεωγραφίες."
+
+#: mop/templates/projects.html:292
+msgid "Grants by Funding Body"
+msgstr "Επιχορηγήσεις ανά Φορέα Χρηματοδότησης"
+
+#: mop/templates/projects.html:293
+msgid "Proportional project support distribution."
+msgstr "Αναλογική κατανομή υποστήριξης έργων."
+
+#: mop/templates/projects.html:305
+msgid "Academic Host Institutes"
+msgstr "Ακαδημαϊκά Ιδρύματα Υποδοχής"
+
+#: mop/templates/projects.html:306
+msgid "Volume of active project hosting instances."
+msgstr "Όγκος ενεργών περιπτώσεων φιλοξενίας έργων."
+
+#: mop/templates/projects.html:315
+msgid "Collaborators Directory"
+msgstr "Κατάλογος Συνεργατών"
+
+#: mop/templates/projects.html:316
+msgid "Browse and search project scholars and team crossovers."
+msgstr "Περιηγηθείτε και αναζητήστε μελετητές έργων και διασταυρώσεις ομάδων."
+
+#: mop/templates/projects.html:319
+msgid "Search by researcher or project acronym..."
+msgstr "Αναζήτηση ανά ερευνητή ή ακρωνύμιο έργου..."
+
+#: mop/templates/projects.html:333
+msgid "Explore Datasets"
+msgstr "Εξερεύνηση Συνόλων Δεδομένων"
+
+#: mop/templates/projects.html:335
+msgid ""
+"Filter OpenAtlas spatial locations across all active initiatives in real-"
+"time. Select a project to render its mapped nodes on the interactive map."
+msgstr ""
+"Φιλτράρετε τις χωρικές τοποθεσίες του OpenAtlas σε όλες τις ενεργές "
+"πρωτοβουλίες σε πραγμα χρόνο. Επιλέξτε ένα έργο για να εμφανίσετε τους "
+"χαρτογραφημένους κόμβους του στον διαδραστικό χάρτη."
+
+#: mop/templates/projects.html:340
+msgid "Select Project Source"
+msgstr "Επιλογή Πηγής Έργου"
+
+#: mop/templates/projects.html:342
+msgid "Select a project..."
+msgstr "Επιλέξτε ένα έργο..."
+
+#: mop/templates/projects.html:343
+msgid "All Active Projects"
+msgstr "Όλα τα Ενεργά Έργα"
+
+#: mop/templates/projects.html:353
+msgid "Dataset Coverage"
+msgstr "Κάλυψη Συνόλου Δεδομένων"
+
+#: mop/templates/projects.html:357
+msgid "Places Loaded"
+msgstr "Φορτωμένες Τοποθεσίες"
+
+#: mop/templates/projects.html:364
+msgid "Network Endpoint"
+msgstr "Σημείο Σύνδεσης Δικτύου"
+
+#: mop/templates/projects.html:365
+msgid ""
+"Using the dynamic Maps of Power api endpoint to map clustered geo-entities. "
+"Geometries can be clicked to inspect detail records."
+msgstr ""
+"Χρήση του δυναμικού τελικού σημείου API του Maps of Power για τη "
+"χαρτογράφηση ομαδοποιημένων γεωγραφικών οντοτήτων. Μπορείτε να κάνετε κλικ "
+"στις γεωμετρίες για να επιθεωρήσετε λεπτομερείς εγγραφές."
+
+#: mop/templates/projects.html:377
+msgid "Fetching Map Data..."
+msgstr "Ανάκτηση Δεδομένων Χάρτη..."
+
+#: mop/templates/projects.html:378
+msgid "Downloading geographical features from the OpenAtlas database."
+msgstr "Λήψη γεωγραφικών χαρακτηριστικών από τη βάση δεδομένων του OpenAtlas."
+
+#: mop/templates/projects.html:393
+msgid "Network Explorer"
+msgstr "Εξερευνητής Δικτύου"
+
+#: mop/templates/projects.html:395
+msgid ""
+"Visualise the entity networks, connections, and relations from each project "
+"in real-time. Nodes can be clicked and inspected."
+msgstr ""
+"Οπτικοποιήστε τα δίκτυα οντοτήτων, τις συνδέσεις και τις σχέσεις από κάθε "
+"έργο σε πραγματικό χρόνο. Μπορείτε να κάνετε κλικ στους κόμβους και να τους "
+"επιθεωρήσετε."
+
+#: mop/templates/projects.html:400
+msgid "Select Projects"
+msgstr "Επιλογή Έργων"
+
+#: mop/templates/projects.html:417
+msgid "Network Statistics"
+msgstr "Στατιστικά Δικτύου"
+
+#: mop/templates/projects.html:422
+msgid "Entities (Nodes)"
+msgstr "Οντότητες (Κόμβοι)"
+
+#: mop/templates/projects.html:431
+msgid "Relations (Edges)"
+msgstr "Σχέσεις (Ακμές)"
+
+#: mop/templates/projects.html:439
+msgid "Interactive Controls"
+msgstr "Διαδραστικά Στοιχεία Ελέγχου"
+
+#: mop/templates/projects.html:440
+msgid ""
+"Zoom to scroll, drag to pan, and click on any entity node to inspect its "
+"name and class. Double-click a node to open its full details page."
+msgstr ""
+"Κάντε ζουμ για κύλιση, σύρετε για μετατόπιση και κάντε κλικ σε οποιονδήποτε "
+"κόμβο οντότητας για να επιθεωρήσετε το όνομα και την κλάση του. Κάντε διπλό "
+"κλικ σε έναν κόμβο για να ανοίξετε τη σελίδα πλήρων λεπτομερειών του."
+
+#: mop/templates/projects.html:452
+msgid "Generating Network Graph..."
+msgstr "Δημιουργία Γραφήματος Δικτύου..."
+
+#: mop/templates/projects.html:453
+msgid "Fetching entities and computing relations from the database."
+msgstr "Ανάκτηση οντοτήτων και υπολογισμός σχέσεων από τη βάση δεδομένων."
+
+#: mop/templates/projects.html:469
+msgid "Side-by-Side Project Compare"
+msgstr "Σύγκριση Έργων Δίπλα-Δίπλα"
+
+#: mop/templates/explore/project_entity_view.html:22
+#: mop/templates/explore/project_entity_view.html:111
+msgid "properties"
+msgstr "Ιδιότητες"
+
+#: mop/templates/explore/project_entity_view.html:24
+#: mop/templates/explore/project_entity_view.html:489
+#: mop/templates/explore/project_entity_view.html:498
+#: mop/templates/explore/project_entity_view.html:675
+#: mop/templates/explore/project_explore_table.html:52
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: mop/templates/explore/project_entity_view.html:27
+#: mop/templates/explore/project_entity_view.html:582
+msgid "Narrative Connections"
+msgstr "Αφηγηματικές Συνδέσεις"
+
+#: mop/templates/explore/project_entity_view.html:33
+#: mop/templates/explore/project_entity_view.html:223
+#: mop/templates/explore/project_entity_view.html:646
+msgid "Relations"
+msgstr "Σχέσεις"
+
+#: mop/templates/explore/project_entity_view.html:36
+#: mop/templates/explore/project_entity_view.html:744
+msgid "files"
+msgstr "Αρχεία"
+
+#: mop/templates/explore/project_entity_view.html:118
+msgid "Period"
+msgstr "Περίοδος"
+
+#: mop/templates/explore/project_entity_view.html:183
+msgid "Map"
+msgstr "Χάρτης"
+
+#: mop/templates/explore/project_entity_view.html:188
+msgid "Network"
+msgstr "Δίκτυο"
+
+#: mop/templates/explore/project_entity_view.html:193
+msgid "Timeline"
+msgstr "Χρονολόγιο"
+
+#: mop/templates/explore/project_entity_view.html:218
+msgid "Node Details"
+msgstr "Λεπτομέρειες Κόμβου"
+
+#: mop/templates/explore/project_entity_view.html:220
+#: mop/templates/explore/project_entity_view.html:238
+msgid "Place"
+msgstr "Τοποθεσία"
+
+#: mop/templates/explore/project_entity_view.html:222
+msgid "ID"
+msgstr "ID"
+
+#: mop/templates/explore/project_entity_view.html:225
+msgid "View Entity"
+msgstr "Προβολή Οντότητας"
+
+#: mop/templates/explore/project_entity_view.html:231
+msgid "Legend (Click to toggle)"
+msgstr "Υπόμνημα (Κάντε κλικ για εναλλαγή)"
+
+#: mop/templates/explore/project_entity_view.html:234
+msgid "Selected Entity"
+msgstr "Επιλεγμένη Οντότητα"
+
+#: mop/templates/explore/project_entity_view.html:242
+msgid "Person"
+msgstr "Πρόσωπο"
+
+#: mop/templates/explore/project_entity_view.html:246
+msgid "Group"
+msgstr "Ομάδα"
+
+#: mop/templates/explore/project_entity_view.html:250
+msgid "Event / Activity"
+msgstr "Γεγονός / Δραστηριότητα"
+
+#: mop/templates/explore/project_entity_view.html:254
+msgid "Artifact"
+msgstr "Τεχνούργημα"
+
+#: mop/templates/explore/project_entity_view.html:258
+msgid "Literature / Source"
+msgstr "Βιβλιογραφία / Πηγή"
+
+#: mop/templates/explore/project_entity_view.html:265
+msgid "Depth"
+msgstr "Βάθος"
+
+#: mop/templates/explore/project_entity_view.html:277
+msgid "Labels"
+msgstr "Ετικέτες"
+
+#: mop/templates/explore/project_entity_view.html:283
+msgid "Spacing"
+msgstr "Απόσταση"
+
+#: mop/templates/explore/project_entity_view.html:285
+msgid "Compact"
+msgstr "Συμπαγές"
+
+#: mop/templates/explore/project_entity_view.html:286
+msgid "Normal"
+msgstr "Κανονικό"
+
+#: mop/templates/explore/project_entity_view.html:287
+msgid "Wide"
+msgstr "Ευρύ"
+
+#: mop/templates/explore/project_entity_view.html:288
+msgid "Extra Wide"
+msgstr "Εξαιρετικά Ευρύ"
+
+#: mop/templates/explore/project_entity_view.html:295
+msgid "Fullscreen"
+msgstr "Πλήρης Οθόνη"
+
+#: mop/templates/explore/project_entity_view.html:301
+msgid "Export"
+msgstr "Εξαγωγή"
+
+#: mop/templates/explore/project_entity_view.html:312
+msgid "Export Graph as Image"
+msgstr "Εξαγωγή Γραφήματος ως Εικόνα"
+
+#: mop/templates/explore/project_entity_view.html:317
+msgid ""
+"Configure the style, format, and enhancements for your network visualization"
+" image download."
+msgstr ""
+"Διαμορφώστε το στυλ, τη μορφή και τις βελτιώσεις για τη λήψη της εικόνας "
+"οπτικοποίησης δικτύου."
+
+#: mop/templates/explore/project_entity_view.html:322
+msgid "File Format"
+msgstr "Μορφή Αρχείου"
+
+#: mop/templates/explore/project_entity_view.html:328
+msgid "PNG Image"
+msgstr "Εικόνα PNG"
+
+#: mop/templates/explore/project_entity_view.html:329
+msgid "Lossless & Transparent"
+msgstr "Χωρίς απώλειες & Διαφανές"
+
+#: mop/templates/explore/project_entity_view.html:336
+msgid "JPEG Image"
+msgstr "Εικόνα JPEG"
+
+#: mop/templates/explore/project_entity_view.html:337
+msgid "High Compatibility"
+msgstr "Υψηλή Συμβατότητα"
+
+#: mop/templates/explore/project_entity_view.html:345
+msgid "Background Theme"
+msgstr "Θέμα Φόντου"
+
+#: mop/templates/explore/project_entity_view.html:351
+msgid "Transparent"
+msgstr "Διαφανές"
+
+#: mop/templates/explore/project_entity_view.html:358
+msgid "Solid Light"
+msgstr "Συμπαγές Φωτεινό"
+
+#: mop/templates/explore/project_entity_view.html:365
+msgid "Deep Dark"
+msgstr "Βαθύ Σκούρο"
+
+#: mop/templates/explore/project_entity_view.html:373
+msgid "Enhancements"
+msgstr "Βελτιώσεις"
+
+#: mop/templates/explore/project_entity_view.html:376
+msgid "Include Academic Watermark"
+msgstr "Συμπερίληψη Ακαδημαϊκού Υδατογραφήματος"
+
+#: mop/templates/explore/project_entity_view.html:377
+msgid "Adds brand label, entity name, and timestamp to export"
+msgstr ""
+"Προσθέτει την ετικέτα της επωνυμίας, το όνομα της οντότητας και τη χρονική "
+"σήμανση στην εξαγωγή"
+
+#: mop/templates/explore/project_entity_view.html:385
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#: mop/templates/explore/project_entity_view.html:388
+msgid "Generate & Download"
+msgstr "Δημιουργία & Λήψη"
+
+#: mop/templates/explore/project_entity_view.html:461
+msgid "Lifecycle phase of"
+msgstr "Φάση κύκλου ζωής του"
+
+#: mop/templates/explore/project_entity_view.html:473
+msgid "No Timeline Events"
+msgstr "Δεν υπάρχουν συμβάντα χρονολογίου"
+
+#: mop/templates/explore/project_entity_view.html:474
+msgid ""
+"We couldn't find any chronological events or relations with dates for this "
+"entity."
+msgstr ""
+"Δεν μπορέσαμε να βρούμε χρονολογικά γεγονότα ή σχέσεις με ημερομηνίες για "
+"αυτήν την οντότητα."
+
+#: mop/templates/explore/project_entity_view.html:598
+#: mop/templates/explore/project_entity_view.html:805
+msgid "Show more"
+msgstr "Εμφάνιση περισσότερων"
+
+#: mop/templates/explore/project_entity_view.html:628
+msgid "view entity"
+msgstr "προβολή οντότητας"
+
+#: mop/templates/explore/project_entity_view.html:666
+#: mop/templates/explore/project_explore_table.html:50
+msgid "Name"
+msgstr "Όνομα"
+
+#: mop/templates/explore/project_entity_view.html:667
+#: mop/templates/explore/project_explore_table.html:51
+msgid "Class"
+msgstr "Κλάση"
+
+#: mop/templates/explore/project_entity_view.html:669
+msgid "Begin"
+msgstr "Έναρξη"
+
+#: mop/templates/explore/project_entity_view.html:670
+msgid "End"
+msgstr "Λήξη"
+
+#: mop/templates/explore/project_entity_view.html:673
+msgid "Relation Type"
+msgstr "Τύπος Σχέσης"
+
+#: mop/templates/explore/project_entity_view.html:723
+msgid "Search..."
+msgstr "Αναζήτηση..."
+
+#: mop/templates/explore/project_entity_view.html:809
+msgid "Show less"
+msgstr "Εμφάνιση λιγότερων"
+
+#: mop/templates/explore/project_explore_table.html:35
+msgid "is currently unavailable"
+msgstr "είναι προς το παρόν μη διαθέσιμο"
+
+#: mop/templates/explore/project_explore_table.html:38
+msgid "We are working on providing data for this section as soon as possible."
+msgstr ""
+"Εργαζόμαστε για την παροχή δεδομένων για αυτήν την ενότητα το συντομότερο "
+"δυνατό.Εργαζόμαστε για την παροχή δεδομένων για αυτήν την ενότητα το "
+"συντομότερο δυνατό."
+
+#: mop/templates/explore/project_explore_table.html:92
+msgid "Search in"
+msgstr "Αναζήτηση σε"
