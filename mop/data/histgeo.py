@@ -73,7 +73,7 @@ newsletters = {
                'mailing/180/7255820/0/dbc8fdb280/index.html'
     }],
     '2024': [{
-        'title': _('December'),
+        'title': _('december'),
         'url': 'https://t210d45f9.emailsys2a.net/'
                'mailing/180/7964576/0/7067e91da4/index.html'
     }],
@@ -81,6 +81,11 @@ newsletters = {
         'title': _('june'),
         'url': 'https://t210d45f9.emailsys2a.net/'
                'mailing/180/8480109/0/14b0503245/index.html'
+    }],
+    '2026': [{
+        'title': _('may'),
+        'url': 'https://t210d45f9.emailsys2a.net/'
+               'mailing/180/9180194/0/ff484595a4/index.html'
     }]
 }
 

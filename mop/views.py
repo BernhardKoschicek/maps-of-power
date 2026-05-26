@@ -67,11 +67,65 @@ def set_language(language: Optional[str] = None) -> Response:
 
 @app.route('/literature')
 def literature() -> str:
-    literature_ = defaultdict(list)
+    processed_literatures = []
     for lit in literatures:
-        for cat in lit['category']:
-            literature_[cat].append(lit)
-    return render_template('literature.html', literatures=literature_)
+        # Pre-process categories
+        cats = lit.get('category', [])
+        norm_cats = []
+        for c in cats:
+            if c in project_data:
+                norm_cats.append(c)
+        if not norm_cats:
+            norm_cats.append('further')
+        
+        # Pre-render citation string: Author, Title. Location, Year. pp. Pages.
+        author = lit.get('author', '').strip()
+        title = lit.get('title', '').strip()
+        
+        # Form location string
+        locs = lit.get('locations', [])
+        if isinstance(locs, list):
+            loc_str = ', '.join([str(l) for l in locs if l])
+        elif locs:
+            loc_str = str(locs)
+        else:
+            loc_str = ''
+            
+        date = lit.get('date', '').strip()
+        pages = lit.get('pages', '').strip()
+        
+        citation_parts = []
+        if author:
+            citation_parts.append(author)
+        if title:
+            citation_parts.append(f'"{title.rstrip(".")}"')
+        if loc_str:
+            citation_parts.append(loc_str)
+        if date:
+            citation_parts.append(date)
+        if pages:
+            citation_parts.append(f'{_("pp.")} {pages}')
+            
+        citation_text = ', '.join(citation_parts) + '.'
+        
+        processed_lit = {
+            'author': lit.get('author', ''),
+            'title': lit.get('title', ''),
+            'locations': lit.get('locations', []),
+            'date': lit.get('date', ''),
+            'pages': lit.get('pages', ''),
+            'external_link': lit.get('external_link', ''),
+            'download': lit.get('download', ''),
+            'categories': norm_cats,
+            'citation_text': citation_text
+        }
+        processed_literatures.append(processed_lit)
+        
+    return render_template(
+        'literature.html',
+        literatures=processed_literatures,
+        projects=project_data
+    )
 
 
 @app.route('/projects')
@@ -325,7 +379,123 @@ def api_project_network(project_acronym: str) -> Response | tuple[Response, int]
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+import requests as req_lib
 
+
+@cache.memoize(timeout=3600)
+def _fetch_table_rows(
+        view: str,
+        oa_ids: tuple[str, ...],
+        page: int,
+        sort: str,
+        column: str,
+        search: str) -> dict[str, Any]:
+    """Proxy call to OpenAtlas /table_rows/ — cached server-side."""
+    url = f"{app.config['API_PATH']}0.4/table_rows/"
+    params: dict[str, Any] = {
+        'view_classes': view,
+        'sort': sort,
+        'column': column,
+        'page': page,
+        'table_columns': ['begin', 'class', 'description', 'end', 'name', 'type'],
+        'type_id': list(oa_ids),
+    }
+    if search:
+        import json as _json
+        params['search'] = _json.dumps({
+            'entityName': [{'operator': 'like', 'values': [search],
+                            'logicalOperator': 'and'}]
+        })
+    response = req_lib.get(url, params=params,
+                           proxies=get_proxies(), timeout=30)
+    response.raise_for_status()
+    data = response.json()
+    # Strip the checkbox column (always row[0]) and expose the entity ID
+    rows = []
+    for row in data.get('results', []):
+        if not isinstance(row, list) or len(row) < 6:
+            continue
+        import re
+        m = re.search(r'\bid="(\d+)"', str(row[0]))
+        if not m:
+            continue
+        rows.append({
+            'id':          int(m.group(1)),
+            'begin':       row[1] or '',
+            'class_':      row[2] or '',
+            'description': row[3] or '',
+            'end':         row[4] or '',
+            'name':        row[5] or '',
+            'type':        row[6] if len(row) > 6 else '',
+        })
+    return {'results': rows, 'pagination': data.get('pagination', {})}
+
+
+@cache.memoize(timeout=3600)
+def _fetch_table_rows_count(view: str, oa_ids: tuple[str, ...]) -> int:
+    url = f"{app.config['API_PATH']}0.4/table_rows/"
+    params: dict[str, Any] = {
+        'view_classes': view,
+        'count': 'true',
+        'type_id': list(oa_ids),
+    }
+    response = req_lib.get(url, params=params,
+                           proxies=get_proxies(), timeout=30)
+    response.raise_for_status()
+    try:
+        return int(response.text.strip())
+    except ValueError:
+        return 0
+
+
+def _get_proxies() -> dict[str, str] | None:
+    """Alias to avoid import conflict with the module-level helper."""
+    proxy = app.config.get('API_PROXY')
+    if not proxy:
+        return None
+    return {'http': proxy, 'https': proxy}  # pragma: no cover
+
+
+def get_proxies() -> dict[str, str] | None:  # type: ignore[override]
+    return _get_proxies()
+
+
+@app.route('/api/explore/<project_acronym>/<view>')
+def api_explore_entities(
+        project_acronym: str, view: str) -> Response | tuple[Response, int]:
+    if project_acronym not in project_data or view not in view_classes:
+        return jsonify({'error': 'Not found'}), 404
+    oa_id = project_data[project_acronym].get('oaID')
+    if not oa_id:
+        return jsonify({'results': [], 'pagination': {}})
+    oa_ids: tuple[str, ...] = (
+        tuple(oa_id) if isinstance(oa_id, list) else (str(oa_id),))
+    page   = request.args.get('page',   1, type=int)
+    sort   = request.args.get('sort',   'asc')
+    column = request.args.get('column', 'name')
+    search = request.args.get('search', '').strip()
+    try:
+        data = _fetch_table_rows(view, oa_ids, page, sort, column, search)
+        return jsonify(data)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/explore/<project_acronym>/<view>/count')
+def api_explore_count(
+        project_acronym: str, view: str) -> Response | tuple[Response, int]:
+    if project_acronym not in project_data or view not in view_classes:
+        return jsonify({'count': 0}), 404
+    oa_id = project_data[project_acronym].get('oaID')
+    if not oa_id:
+        return jsonify({'count': 0})
+    oa_ids: tuple[str, ...] = (
+        tuple(oa_id) if isinstance(oa_id, list) else (str(oa_id),))
+    try:
+        count = _fetch_table_rows_count(view, oa_ids)
+        return jsonify({'count': count})
+    except Exception as e:
+        return jsonify({'error': str(e), 'count': 0}), 500
 
 
 @app.errorhandler(HTTPException)

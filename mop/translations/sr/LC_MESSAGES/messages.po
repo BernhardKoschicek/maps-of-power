@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-05-26 12:54+0200\n"
+"POT-Creation-Date: 2026-05-26 13:57+0200\n"
 "PO-Revision-Date: 2026-05-25 22:37+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: sr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: mop/util.py:36
 msgid "about"
@@ -42,47 +42,51 @@ msgstr "Догађаји"
 msgid "literature"
 msgstr "Литература"
 
-#: mop/views.py:342
+#: mop/templates/literature.html:182 mop/views.py:107
+msgid "pp."
+msgstr ""
+
+#: mop/views.py:396
 msgid "An error occurred"
 msgstr "Дошло је до грешке"
 
-#: mop/views.py:344
+#: mop/views.py:398
 msgid "An unexpected error occurred. Please try again later."
 msgstr "Дошло је до неочекиване грешке. Молимо покушајте поново касније."
 
-#: mop/views.py:347
+#: mop/views.py:401
 msgid "Page Not Found"
 msgstr "Страница није пронађена"
 
-#: mop/views.py:349
+#: mop/views.py:403
 msgid ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
 msgstr "Унете координате изгледају ван граница. Страница коју тражите не постоји."
 
-#: mop/views.py:352
+#: mop/views.py:406
 msgid "Access Denied"
 msgstr "Приступ одбијен"
 
-#: mop/views.py:354
+#: mop/views.py:408
 msgid "You do not have permission to access this area. Restricted coordinates."
 msgstr "Немате дозволу за приступ овој области. Ограничене координате."
 
-#: mop/views.py:357
+#: mop/views.py:411
 msgid "I'm a Teapot"
 msgstr "Ја сам чајник"
 
-#: mop/views.py:359
+#: mop/views.py:413
 msgid ""
 "The server refuses the attempt to brew coffee with a teapot. Yes, this is"
 " a real error."
 msgstr "Сервер одбија покушај кувања кафе чајником. Да, ово је стварна грешка."
 
-#: mop/views.py:382 mop/views.py:389
+#: mop/views.py:436 mop/views.py:443
 msgid "Internal Server Error"
 msgstr "Унутрашња грешка сервера"
 
-#: mop/views.py:391
+#: mop/views.py:445
 msgid ""
 "An unexpected server error occurred. Our cartographers are looking into "
 "it."
@@ -1948,7 +1952,7 @@ msgstr ""
 "приликом припреме рукописа за нашу серију, молимо користите следећа "
 "упутства:"
 
-#: mop/templates/histgeo.html:191
+#: mop/templates/histgeo.html:191 mop/templates/literature.html:207
 msgid "Download PDF"
 msgstr "Преузми PDF"
 
@@ -2149,21 +2153,56 @@ msgstr "линк"
 msgid "recording"
 msgstr "снимак"
 
-#: mop/templates/literature.html:7
-msgid "Maps of Power"
-msgstr "Мапе моћи"
+#: mop/templates/literature.html:52
+#, fuzzy
+msgid "Literature & Publications"
+msgstr "Публикације"
 
-#: mop/templates/literature.html:8
-msgid "Beyond East and West"
-msgstr "Изнад Истока и Запада"
+#: mop/templates/literature.html:54
+msgid ""
+"Explore academic research and publication records across the initiative's"
+" projects."
+msgstr ""
 
-#: mop/templates/literature.html:9
-msgid "Further Reading"
+#: mop/templates/literature.html:64
+#, fuzzy
+msgid "Filter by Project"
+msgstr "Истражи"
+
+#: mop/templates/literature.html:68
+msgid "All"
+msgstr ""
+
+#: mop/templates/literature.html:99 mop/templates/literature.html:147
+#, fuzzy
+msgid "General Reading"
 msgstr "Додатна литература"
 
-#: mop/templates/macros.html:30
+#: mop/templates/literature.html:112
+msgid "Search by author, title, year..."
+msgstr ""
+
+#: mop/templates/literature.html:194
+#, fuzzy
+msgid "Cite"
+msgstr "Активно"
+
+#: mop/templates/literature.html:200 mop/templates/macros.html:30
 msgid "Open external link"
 msgstr "Отвори спољни линк"
+
+#: mop/templates/literature.html:201
+#, fuzzy
+msgid "Link"
+msgstr "линк"
+
+#: mop/templates/literature.html:208
+msgid "PDF"
+msgstr ""
+
+#: mop/templates/literature.html:274
+msgid "Copied! ✔️"
+msgstr ""
 
 #: mop/templates/macros.html:36
 msgid "Download file"
@@ -2225,9 +2264,9 @@ msgid "This translation was generated using AI."
 msgstr "Овај превод је генерисан помоћу вештачке интелигенције (АИ)."
 
 #: mop/templates/project_details.html:63 mop/templates/project_details.html:433
-#: mop/templates/projects.html:112 mop/templates/projects.html:145
-#: mop/templates/projects.html:223 mop/templates/projects.html:276
-#: mop/templates/projects.html:604
+#: mop/templates/projects.html:113 mop/templates/projects.html:146
+#: mop/templates/projects.html:224 mop/templates/projects.html:277
+#: mop/templates/projects.html:661
 msgid "Active"
 msgstr "Активно"
 
@@ -2255,7 +2294,7 @@ msgstr "Домаћин"
 msgid "PI (Project Investigator)"
 msgstr "Главни истраживач (PI)"
 
-#: mop/templates/project_details.html:148 mop/templates/projects.html:193
+#: mop/templates/project_details.html:148 mop/templates/projects.html:194
 msgid "Employees"
 msgstr "Запослени"
 
@@ -2295,33 +2334,33 @@ msgstr "Публикације"
 msgid "presentations"
 msgstr "Презентације"
 
-#: mop/templates/project_details.html:387 mop/templates/projects.html:830
+#: mop/templates/project_details.html:387 mop/templates/projects.html:887
 msgid "No description available."
 msgstr "Опис"
 
-#: mop/templates/project_details.html:390 mop/templates/projects.html:833
+#: mop/templates/project_details.html:390 mop/templates/projects.html:890
 msgid "View Details"
 msgstr "Прикажи детаље"
 
-#: mop/templates/project_details.html:436 mop/templates/projects.html:224
+#: mop/templates/project_details.html:436 mop/templates/projects.html:225
 msgid "Upcoming"
 msgstr "Рухполдинг"
 
-#: mop/templates/project_details.html:439 mop/templates/projects.html:113
-#: mop/templates/projects.html:225 mop/templates/projects.html:280
-#: mop/templates/projects.html:609
+#: mop/templates/project_details.html:439 mop/templates/projects.html:114
+#: mop/templates/projects.html:226 mop/templates/projects.html:281
+#: mop/templates/projects.html:666
 msgid "Completed"
 msgstr "Завршено"
 
-#: mop/templates/projects.html:22
+#: mop/templates/projects.html:23
 msgid "Research Portal"
 msgstr "Истраживачки портал"
 
-#: mop/templates/projects.html:25
+#: mop/templates/projects.html:26
 msgid "Research Projects"
 msgstr "пројекти"
 
-#: mop/templates/projects.html:28
+#: mop/templates/projects.html:29
 msgid ""
 "Discover our ongoing and completed research initiatives in Historical "
 "Geography and Digital Humanities. Explore spatial networks, mapped "
@@ -2331,69 +2370,69 @@ msgstr ""
 "историјске географије и дигиталне хуманистике. Истражите просторне мреже,"
 " мапиране ентитете и древне записе кроз векове."
 
-#: mop/templates/projects.html:36 mop/templates/projects.html:272
+#: mop/templates/projects.html:37 mop/templates/projects.html:273
 msgid "Projects"
 msgstr "пројекти"
 
-#: mop/templates/projects.html:42
+#: mop/templates/projects.html:43
 msgid "Mapped Places"
 msgstr "Места"
 
-#: mop/templates/projects.html:48
+#: mop/templates/projects.html:49
 msgid "Researchers"
 msgstr "Научна литература"
 
-#: mop/templates/projects.html:54
+#: mop/templates/projects.html:55
 msgid "Funding Bodies"
 msgstr "Органи финансирања"
 
-#: mop/templates/projects.html:67
+#: mop/templates/projects.html:68
 msgid "Overview"
 msgstr "Преглед"
 
-#: mop/templates/projects.html:72
+#: mop/templates/projects.html:73
 msgid "Timeline Roadmap"
 msgstr "Временска мапа пута"
 
-#: mop/templates/projects.html:77
+#: mop/templates/projects.html:78
 msgid "Research Analytics"
 msgstr "Аналитика истраживања"
 
-#: mop/templates/projects.html:82
+#: mop/templates/projects.html:83
 msgid "Data Portal & Map"
 msgstr "Портал са подацима и мапа"
 
-#: mop/templates/projects.html:87
+#: mop/templates/projects.html:88
 msgid "Network Visualisation"
 msgstr "Визуелизација мреже"
 
-#: mop/templates/projects.html:104
+#: mop/templates/projects.html:105
 msgid "Search by project name, acronym, PI or employees..."
 msgstr ""
 "Претражите по називу пројекта, акрониму, главном истраживачу или "
 "запосленима..."
 
-#: mop/templates/projects.html:111
+#: mop/templates/projects.html:112
 msgid "All Statuses"
 msgstr "Сви статуси"
 
-#: mop/templates/projects.html:118
+#: mop/templates/projects.html:119
 msgid "All Funding"
 msgstr "Сва финансирања"
 
-#: mop/templates/projects.html:180
+#: mop/templates/projects.html:181
 msgid "Project Investigator"
 msgstr "Број пројекта"
 
-#: mop/templates/projects.html:205
+#: mop/templates/projects.html:206
 msgid "Explore Project"
 msgstr "Истражи"
 
-#: mop/templates/projects.html:219
+#: mop/templates/projects.html:220
 msgid "Interactive Projects Roadmap"
 msgstr "Интерактивна мапа пута пројеката"
 
-#: mop/templates/projects.html:220
+#: mop/templates/projects.html:221
 msgid ""
 "View project lifespans dynamically across a chronological 10-year "
 "timeline axis."
@@ -2401,19 +2440,19 @@ msgstr ""
 "Динамички прикажите животни век пројекта на хронолошкој временској оси од"
 " 10 година."
 
-#: mop/templates/projects.html:233
+#: mop/templates/projects.html:234
 msgid "Filter Timeline by Active Year:"
 msgstr "Филтрирајте временску линију по активној години:"
 
-#: mop/templates/projects.html:268
+#: mop/templates/projects.html:269
 msgid "Statistics Overview"
 msgstr "Преглед статистике"
 
-#: mop/templates/projects.html:284
+#: mop/templates/projects.html:285
 msgid "Scholars"
 msgstr "Класа"
 
-#: mop/templates/projects.html:288
+#: mop/templates/projects.html:289
 msgid ""
 "Aggregated live metrics of collaborative initiatives mapping spatial data"
 " and medieval geographies."
@@ -2421,41 +2460,41 @@ msgstr ""
 "Збирни живи показатељи заједничких иницијатива које мапирају просторне "
 "податке и средњовековну географију."
 
-#: mop/templates/projects.html:294
+#: mop/templates/projects.html:295
 msgid "Grants by Funding Body"
 msgstr "Грантови по органу финансирања"
 
-#: mop/templates/projects.html:295
+#: mop/templates/projects.html:296
 msgid "Proportional project support distribution."
 msgstr "Пропорционална дистрибуција подршке пројектима."
 
-#: mop/templates/projects.html:307
+#: mop/templates/projects.html:308
 msgid "Academic Host Institutes"
 msgstr "Академски институти домаћини"
 
-#: mop/templates/projects.html:308
+#: mop/templates/projects.html:309
 msgid "Volume of active project hosting instances."
 msgstr "Обим активних хостинг инстанци пројекта."
 
-#: mop/templates/projects.html:317
+#: mop/templates/projects.html:318
 msgid "Collaborators Directory"
 msgstr "Именик сарадника"
 
-#: mop/templates/projects.html:318
+#: mop/templates/projects.html:319
 msgid "Browse and search project scholars and team crossovers."
 msgstr ""
 "Прегледајте и претражите пројектне научнике и сараднике кроз различите "
 "тимове."
 
-#: mop/templates/projects.html:321
+#: mop/templates/projects.html:322
 msgid "Search by researcher or project acronym..."
 msgstr "Претражите по истраживачу или акрониму пројекта..."
 
-#: mop/templates/projects.html:335
+#: mop/templates/projects.html:336
 msgid "Explore Datasets"
 msgstr "Истражи"
 
-#: mop/templates/projects.html:337
+#: mop/templates/projects.html:338
 msgid ""
 "Filter OpenAtlas spatial locations across all active initiatives in real-"
 "time. Select a project to render its mapped nodes on the interactive map."
@@ -2464,31 +2503,31 @@ msgstr ""
 "реалном времену. Изаберите пројекат да бисте приказали његове мапиране "
 "чворове на интерактивној карти."
 
-#: mop/templates/projects.html:342
+#: mop/templates/projects.html:343
 msgid "Select Project Source"
 msgstr "Изаберите извор пројекта"
 
-#: mop/templates/projects.html:344
+#: mop/templates/projects.html:345
 msgid "Select a project..."
 msgstr "Изаберите пројекат..."
 
-#: mop/templates/projects.html:345
+#: mop/templates/projects.html:346
 msgid "All Active Projects"
 msgstr "Сви активни пројекти"
 
-#: mop/templates/projects.html:355
+#: mop/templates/projects.html:356
 msgid "Dataset Coverage"
 msgstr "Покривеност скупа података"
 
-#: mop/templates/projects.html:359
+#: mop/templates/projects.html:360
 msgid "Places Loaded"
 msgstr "Места"
 
-#: mop/templates/projects.html:366
+#: mop/templates/projects.html:367
 msgid "Network Endpoint"
 msgstr "Крајња тачка мреже"
 
-#: mop/templates/projects.html:367
+#: mop/templates/projects.html:368
 msgid ""
 "Using the dynamic Maps of Power api endpoint to map clustered geo-"
 "entities. Geometries can be clicked to inspect detail records."
@@ -2497,19 +2536,19 @@ msgstr ""
 "груписаних гео-ентитета. Кликните на геометрије за преглед детаљних "
 "записа."
 
-#: mop/templates/projects.html:379
+#: mop/templates/projects.html:380
 msgid "Fetching Map Data..."
 msgstr "Преузимање података мапе..."
 
-#: mop/templates/projects.html:380
+#: mop/templates/projects.html:381
 msgid "Downloading geographical features from the OpenAtlas database."
 msgstr "Преузимање географских карактеристика из OpenAtlas базе података."
 
-#: mop/templates/projects.html:395
+#: mop/templates/projects.html:396
 msgid "Network Explorer"
 msgstr "Истражи"
 
-#: mop/templates/projects.html:397
+#: mop/templates/projects.html:398
 msgid ""
 "Visualise the entity networks, connections, and relations from each "
 "project in real-time. Nodes can be clicked and inspected."
@@ -2517,27 +2556,41 @@ msgstr ""
 "Визуализујте мреже ентитета, везе и односе из сваког пројекта у реалном "
 "времену. Чворови се могу кликнути и прегледати."
 
-#: mop/templates/projects.html:402
+#: mop/templates/projects.html:404
 msgid "Select Projects"
 msgstr "пројекти"
 
-#: mop/templates/projects.html:419
+#: mop/templates/projects.html:406 mop/templates/projects.html:1428
+#: mop/templates/projects.html:1437
+msgid "Deselect All"
+msgstr ""
+
+#: mop/templates/projects.html:424
 msgid "Network Statistics"
 msgstr "Статистика мреже"
 
-#: mop/templates/projects.html:424
+#: mop/templates/projects.html:429
 msgid "Entities (Nodes)"
 msgstr "Ентитети (чворови)"
 
-#: mop/templates/projects.html:433
+#: mop/templates/projects.html:438
 msgid "Relations (Edges)"
 msgstr "Односи (ивице)"
 
-#: mop/templates/projects.html:441
+#: mop/templates/projects.html:446 mop/templates/projects.html:1343
+#, fuzzy
+msgid "Physics Layout"
+msgstr "Физички предмети"
+
+#: mop/templates/projects.html:447 mop/templates/projects.html:1347
+msgid "Dynamic node separation"
+msgstr ""
+
+#: mop/templates/projects.html:455
 msgid "Interactive Controls"
 msgstr "Интерактивне контроле"
 
-#: mop/templates/projects.html:442
+#: mop/templates/projects.html:456
 msgid ""
 "Zoom to scroll, drag to pan, and click on any entity node to inspect its "
 "name and class. Double-click a node to open its full details page."
@@ -2546,17 +2599,87 @@ msgstr ""
 "који чвор ентитета да бисте видели његово име и класу. Двоструким кликом "
 "на чвор отварате његову страницу са потпуним детаљима."
 
-#: mop/templates/projects.html:454
+#: mop/templates/projects.html:468
 msgid "Generating Network Graph..."
 msgstr "Генерисање мрежног графа..."
 
-#: mop/templates/projects.html:455
+#: mop/templates/projects.html:469
 msgid "Fetching entities and computing relations from the database."
 msgstr "Преузимање ентитета и израчунавање односа из базе података."
 
-#: mop/templates/projects.html:473
+#: mop/templates/explore/project_entity_view.html:235
+#: mop/templates/projects.html:475
+msgid "Legend (Click to toggle)"
+msgstr "Легенда (Кликните за пребацивање)"
+
+#: mop/templates/explore/project_entity_view.html:224
+#: mop/templates/explore/project_entity_view.html:242
+#: mop/templates/projects.html:478 mop/templates/projects.html:507
+msgid "Place"
+msgstr "Место"
+
+#: mop/templates/explore/project_entity_view.html:246
+#: mop/templates/projects.html:482
+msgid "Person"
+msgstr "Особа"
+
+#: mop/templates/explore/project_entity_view.html:250
+#: mop/templates/projects.html:486
+msgid "Group"
+msgstr "Група"
+
+#: mop/templates/explore/project_entity_view.html:254
+#: mop/templates/projects.html:490
+msgid "Event / Activity"
+msgstr "Догађај / активност"
+
+#: mop/templates/explore/project_entity_view.html:258
+#: mop/templates/projects.html:494
+msgid "Artifact"
+msgstr "Артефакт"
+
+#: mop/templates/explore/project_entity_view.html:262
+#: mop/templates/projects.html:498
+msgid "Literature / Source"
+msgstr "Литература / извор"
+
+#: mop/templates/explore/project_entity_view.html:222
+#: mop/templates/projects.html:505
+msgid "Node Details"
+msgstr "Детаљи о чвору"
+
+#: mop/templates/explore/project_entity_view.html:226
+#: mop/templates/projects.html:509
+msgid "ID"
+msgstr "ИД"
+
+#: mop/templates/explore/project_entity_view.html:34
+#: mop/templates/explore/project_entity_view.html:227
+#: mop/templates/explore/project_entity_view.html:639
+#: mop/templates/projects.html:510
+msgid "Relations"
+msgstr "Односи"
+
+#: mop/templates/explore/project_entity_view.html:229
+#: mop/templates/projects.html:512
+msgid "View Entity"
+msgstr "Прикажи ентитет"
+
+#: mop/templates/projects.html:530
 msgid "Side-by-Side Project Compare"
 msgstr "Упоређивање пројеката упоредо"
+
+#: mop/templates/projects.html:1355
+msgid "High-Performance"
+msgstr ""
+
+#: mop/templates/projects.html:1359
+msgid "Optimized for speed on large networks"
+msgstr ""
+
+#: mop/templates/projects.html:1428 mop/templates/projects.html:1437
+msgid "Select All"
+msgstr ""
 
 #: mop/templates/explore/project_entity_view.html:23
 #: mop/templates/explore/project_entity_view.html:115
@@ -2575,12 +2698,6 @@ msgstr "Опис"
 #: mop/templates/explore/project_entity_view.html:575
 msgid "Narrative Connections"
 msgstr "Наративне везе"
-
-#: mop/templates/explore/project_entity_view.html:34
-#: mop/templates/explore/project_entity_view.html:227
-#: mop/templates/explore/project_entity_view.html:639
-msgid "Relations"
-msgstr "Односи"
 
 #: mop/templates/explore/project_entity_view.html:37
 #: mop/templates/explore/project_entity_view.html:737
@@ -2608,50 +2725,9 @@ msgstr "Њујорк"
 msgid "Timeline"
 msgstr "време"
 
-#: mop/templates/explore/project_entity_view.html:222
-msgid "Node Details"
-msgstr "Детаљи о чвору"
-
-#: mop/templates/explore/project_entity_view.html:224
-#: mop/templates/explore/project_entity_view.html:242
-msgid "Place"
-msgstr "Место"
-
-#: mop/templates/explore/project_entity_view.html:226
-msgid "ID"
-msgstr "ИД"
-
-#: mop/templates/explore/project_entity_view.html:229
-msgid "View Entity"
-msgstr "Прикажи ентитет"
-
-#: mop/templates/explore/project_entity_view.html:235
-msgid "Legend (Click to toggle)"
-msgstr "Легенда (Кликните за пребацивање)"
-
 #: mop/templates/explore/project_entity_view.html:238
 msgid "Selected Entity"
 msgstr "Изабрани ентитет"
-
-#: mop/templates/explore/project_entity_view.html:246
-msgid "Person"
-msgstr "Особа"
-
-#: mop/templates/explore/project_entity_view.html:250
-msgid "Group"
-msgstr "Група"
-
-#: mop/templates/explore/project_entity_view.html:254
-msgid "Event / Activity"
-msgstr "Догађај / активност"
-
-#: mop/templates/explore/project_entity_view.html:258
-msgid "Artifact"
-msgstr "Артефакт"
-
-#: mop/templates/explore/project_entity_view.html:262
-msgid "Literature / Source"
-msgstr "Литература / извор"
 
 #: mop/templates/explore/project_entity_view.html:269
 msgid "Depth"
@@ -2858,4 +2934,10 @@ msgstr "Претражи у"
 
 #~ msgid "Adds brand label, entity name, and timestamp to export"
 #~ msgstr "Додаје ознаку бренда, назив ентитета и временску ознаку у извоз"
+
+#~ msgid "Maps of Power"
+#~ msgstr "Мапе моћи"
+
+#~ msgid "Beyond East and West"
+#~ msgstr "Изнад Истока и Запада"
 

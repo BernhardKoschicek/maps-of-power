@@ -2,16 +2,301 @@
 {% with bg='bg-dark' %}
     {% include 'navbar.html' %}
 {% endwith %}
-{% block content %}
-    {% set titles = {
-    'mop': _('Maps of Power'),
-     'holdura': _('Beyond East and West'),
-      'further': _('Further Reading')} %}
 
-    <div class="container mt-3 mb-5">
-        {% for key, lit in literatures.items() %}
-            <h4 class="text-primary display-5 text-center mt-3">{{ titles[key] }}</h4>
-            {{ create_table(lit,loop.index , 3) }}
+{% block content %}
+<style>
+    /* Styling variables and specific color codes for projects */
+    :root {
+        --color-idcew: #1e3a8a;
+        --color-tarsr: #991b1b;
+        --color-holdura: #73734a;
+        --color-further: #6b7280;
+        --color-default: #4b5563;
+    }
+    
+    .border-start-idcew { border-left: 4px solid var(--color-idcew) !important; }
+    .border-start-tarsr { border-left: 4px solid var(--color-tarsr) !important; }
+    .border-start-holdura { border-left: 4px solid var(--color-holdura) !important; }
+    .border-start-further { border-left: 4px solid var(--color-further) !important; }
+    .border-start-default { border-left: 4px solid var(--color-default) !important; }
+
+    .bg-idcew { background-color: var(--color-idcew) !important; }
+    .bg-tarsr { background-color: var(--color-tarsr) !important; }
+    .bg-holdura { background-color: var(--color-holdura) !important; }
+    .bg-further { background-color: var(--color-further) !important; }
+
+    .publication-card {
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    }
+    
+    .publication-card:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .btn-xs {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        border-radius: 0.25rem;
+    }
+
+    .font-serif {
+        font-family: 'Playfair Display', Georgia, serif;
+    }
+</style>
+
+<div class="container my-5">
+    <!-- Clean, Institutional Page Header -->
+    <div class="pb-3 mb-4 border-bottom">
+        <h1 class="display-6 fw-bold text-dark mb-2">{{ _('Literature & Publications') }}</h1>
+        <p class="text-muted mb-0">
+            {{ _('Explore academic research and publication records across the initiative\'s projects.') }}
+        </p>
+    </div>
+
+    <!-- Active Search & Interactive Project Filters -->
+    <div class="row g-3 mb-4">
+        <!-- Project Filter Pills -->
+        <div class="col-12 col-lg-8 d-flex align-items-center">
+            <div class="d-flex flex-wrap gap-2 align-items-center" id="filter-container">
+                <span class="text-muted small me-2 d-none d-sm-inline">
+                    <i class="bi bi-funnel-fill"></i> {{ _('Filter by Project') }}:
+                </span>
+                
+                <a href="#" class="btn btn-sm btn-primary rounded-pill filter-pill active" data-filter="all">
+                    {{ _('All') }}
+                </a>
+
+                {% set active_categories = [] %}
+                {% for lit in literatures %}
+                    {% for c in lit.categories %}
+                        {% if c not in active_categories %}
+                            {% set _ = active_categories.append(c) %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                
+                {# Explicitly list known main projects first if present #}
+                {% for proj in ['idcew', 'tarsr', 'holdura'] %}
+                    {% if proj in active_categories %}
+                        <a href="#" class="btn btn-sm btn-outline-primary rounded-pill filter-pill" data-filter="{{ proj }}">
+                            {{ proj | upper }}
+                        </a>
+                    {% endif %}
+                {% endfor %}
+                
+                {# Render any other project acronyms #}
+                {% for c in active_categories if c not in ['idcew', 'tarsr', 'holdura', 'further'] %}
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill filter-pill" data-filter="{{ c }}">
+                        {{ c | upper }}
+                    </a>
+                {% endfor %}
+                
+                {# Render general/further reading at the end #}
+                {% if 'further' in active_categories %}
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill filter-pill" data-filter="further">
+                        {{ _('General Reading') }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Keyword Filter Box -->
+        <div class="col-12 col-lg-4">
+            <div class="input-group input-group-sm shadow-sm rounded">
+                <span class="input-group-text bg-white border-end-0 text-muted">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="text" id="search-input" class="form-control border-start-0 ps-0" 
+                       placeholder="{{ _('Search by author, title, year...') }}" aria-label="Search">
+            </div>
+        </div>
+    </div>
+
+    <!-- Vertical Stack of Custom Publication Cards -->
+    <div id="literature-stack" class="d-flex flex-column gap-3">
+        {% set badge_classes = {
+            'idcew': 'bg-idcew',
+            'tarsr': 'bg-tarsr',
+            'holdura': 'bg-holdura',
+            'further': 'bg-further'
+        } %}
+        
+        {% set border_classes = {
+            'idcew': 'border-start-idcew',
+            'tarsr': 'border-start-tarsr',
+            'holdura': 'border-start-holdura',
+            'further': 'border-start-further'
+        } %}
+
+        {% for lit in literatures %}
+            {% set first_cat = lit.categories[0] %}
+            {% set border_class = border_classes.get(first_cat, 'border-start-default') %}
+            
+            <div class="card border-0 shadow-sm rounded-3 publication-card {{ border_class }}" 
+                 data-project="{{ lit.categories | join(' ') }}" 
+                 data-search="{{ (lit.author + ' ' + lit.title + ' ' + lit.date + ' ' + (lit.locations | join(' '))) | lower }}">
+                <div class="card-body p-4">
+                    
+                    <!-- Header with Badge, Project Link, and Date -->
+                    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+                        <div class="d-flex align-items-center flex-wrap gap-2">
+                            {% if first_cat == 'further' %}
+                                <span class="badge bg-further py-1.5 px-2.5 rounded-pill small">
+                                    {{ _('General Reading') }}
+                                </span>
+                            {% else %}
+                                <span class="badge {{ badge_classes.get(first_cat, 'bg-dark') }} py-1.5 px-2.5 rounded-pill small">
+                                    {{ first_cat | upper }}
+                                </span>
+                                {% if first_cat in projects %}
+                                    <a href="{{ url_for('projects', title=first_cat) }}" class="text-decoration-none small text-muted hover-primary fw-semibold" style="font-size: 0.8rem;">
+                                        <i class="bi bi-box-arrow-up-right me-1"></i>{{ projects[first_cat].title }}
+                                    </a>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        <div class="text-muted small">
+                            <i class="bi bi-calendar-event me-1"></i><span class="fw-bold">{{ lit.date }}</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication Title -->
+                    <h5 class="card-title mb-2 text-dark font-serif" style="font-size: 1.15rem; line-height: 1.4; font-weight: 600;">
+                        {{ lit.title }}
+                    </h5>
+                    
+                    <!-- Authors & Secondary metadata -->
+                    <div class="card-text mb-3">
+                        <div class="text-secondary small mb-1.5" style="font-size: 0.88rem;">
+                            <i class="bi bi-person-fill me-1"></i>{{ lit.author }}
+                        </div>
+                        {% if lit.locations or lit.pages %}
+                            <div class="text-muted small" style="font-size: 0.8rem;">
+                                {% if lit.locations %}
+                                    <i class="bi bi-geo-alt-fill me-1"></i>{% if lit.locations is string %}{{ lit.locations }}{% else %}{{ lit.locations | join(', ') }}{% endif %}
+                                {% endif %}
+                                {% if lit.locations and lit.pages %} &middot; {% endif %}
+                                {% if lit.pages %}
+                                    <i class="bi bi-file-text-fill me-1"></i>{{ _('pp.') }} {{ lit.pages }}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Actions Row (Citation Copy + Download/Link) -->
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-2">
+                        <div>
+                            <button class="btn btn-xs btn-outline-secondary btn-cite py-1.5 px-3 text-uppercase fw-bold" 
+                                    style="font-size: 0.7rem; letter-spacing: 0.05em;" 
+                                    data-citation="{{ lit.citation_text }}">
+                                <i class="bi bi-quote me-1"></i>{{ _('Cite') }}
+                            </button>
+                        </div>
+                        <div class="d-flex gap-2">
+                            {% if lit.external_link %}
+                                <a href="{{ lit.external_link }}" class="btn btn-xs btn-outline-primary py-1.5 px-3 text-uppercase fw-bold" 
+                                   target="_blank" title="{{ _('Open external link') }}" style="font-size: 0.7rem; letter-spacing: 0.05em;">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>{{ _('Link') }}
+                                </a>
+                            {% endif %}
+                            {% if lit.download %}
+                                <a href="{{ url_for('static', filename='repository/' + lit.download, v=ASSETS_VERSION ) }}" 
+                                   class="btn btn-xs btn-outline-success py-1.5 px-3 text-uppercase fw-bold" 
+                                   target="_blank" title="{{ _('Download PDF') }}" style="font-size: 0.7rem; letter-spacing: 0.05em;">
+                                    <i class="bi bi-file-earmark-arrow-down-fill me-1"></i>{{ _('PDF') }}
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         {% endfor %}
     </div>
+</div>
+
+<!-- Lightweight Client-Side JavaScript -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("search-input");
+        const filterPills = document.querySelectorAll(".filter-pill");
+        const publicationCards = document.querySelectorAll(".publication-card");
+        let activeFilter = "all";
+
+        // Main filter & search routine
+        function filterList() {
+            const query = searchInput.value.toLowerCase().trim();
+            publicationCards.forEach(card => {
+                const projectsAttr = card.getAttribute("data-project") || "";
+                const projectsList = projectsAttr.split(" ");
+                
+                // 1. Project category match
+                const matchesCategory = (activeFilter === "all") || projectsList.includes(activeFilter);
+                
+                // 2. Search query match
+                const searchText = card.getAttribute("data-search") || "";
+                const matchesSearch = searchText.includes(query);
+                
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        // Keyword search input event listener
+        if (searchInput) {
+            searchInput.addEventListener("input", filterList);
+        }
+
+        // Pill click filter event listeners
+        filterPills.forEach(pill => {
+            pill.addEventListener("click", function (e) {
+                e.preventDefault();
+                
+                // Update active state classes
+                filterPills.forEach(p => {
+                    p.classList.remove("active", "btn-primary");
+                    p.classList.add("btn-outline-primary");
+                });
+                this.classList.add("active", "btn-primary");
+                this.classList.remove("btn-outline-primary");
+                
+                activeFilter = this.getAttribute("data-filter");
+                filterList();
+            });
+        });
+
+        // 1-Click Plain-Text Citation Copy to Clipboard
+        const copyText = "{{ _('Copied! ✔️') }}";
+        const citeButtons = document.querySelectorAll(".btn-cite");
+        
+        citeButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const citation = this.getAttribute("data-citation");
+                if (!citation) return;
+                
+                navigator.clipboard.writeText(citation).then(() => {
+                    const originalHTML = this.innerHTML;
+                    this.innerHTML = `<i class="bi bi-check-all me-1"></i> ${copyText}`;
+                    this.classList.add("btn-success");
+                    this.classList.remove("btn-outline-secondary");
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalHTML;
+                        this.classList.remove("btn-success");
+                        this.classList.add("btn-outline-secondary");
+                        this.disabled = false;
+                    }, 2000);
+                }).catch(err => {
+                    console.error("Could not copy citation to clipboard: ", err);
+                });
+            });
+        });
+    });
+</script>
 {% endblock %}

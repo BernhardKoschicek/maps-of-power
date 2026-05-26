@@ -241,21 +241,369 @@
             <div id="details-project-map" style="height: 460px; margin: 0; border: none; border-radius: 0;"></div>
           </div>
 
-          <!-- OpenAtlas Database access boxes styled elegantly -->
-          <div class="row g-3 justify-content-center mb-4">
-            {% for view, values in view_classes.items() %}
-              <div class="col-12 col-md-6 col-xl-3">
-                <a href="{{ url_for('project_explore_table', view=view, project=project.acronym) }}" class="oa-details-card h-100 text-decoration-none">
-                  <div class="d-flex align-items-center justify-content-between mb-2">
-                    <span class="title" style="font-size:0.95rem; font-weight:800;">{{ values['display_name'] }}</span>
-                    <i class="bi bi-arrow-right-circle text-primary fs-5"></i>
-                  </div>
-                  <p class="desc" style="font-size:0.75rem;">{{ values['description'] }}</p>
-                </a>
+
+          <!-- =====================================================
+               INLINE ENTITY EXPLORER – tabs + search + table
+               ===================================================== -->
+          {% set oa_id_list = project.oaID if project.oaID is iterable and project.oaID is not string else [project.oaID] %}
+          {% set oa_ids_js = oa_id_list | join(',') %}
+
+          <div class="entity-explorer-panel" id="entity-explorer">
+
+            <!-- Tab Bar -->
+            <div class="explorer-tab-bar" id="explorer-tab-bar">
+              {% for view, values in view_classes.items() %}
+                <button class="explorer-tab{% if loop.first %} active{% endif %}"
+                        data-view="{{ view }}"
+                        id="tab-{{ view }}"
+                        type="button">
+                  <i class="bi bi-{% if view == 'place' %}geo-alt{% elif view == 'actor' %}people{% elif view == 'event' %}calendar-event{% elif view == 'source' %}file-text{% elif view == 'reference' %}book{% else %}box{% endif %}"></i>
+                  {{ values['display_name'] }}
+                  <span class="tab-count" id="tab-count-{{ view }}">…</span>
+                </button>
+              {% endfor %}
+            </div>
+
+            <!-- Search / Filter Bar -->
+            <div class="explorer-filter-bar">
+              <div class="explorer-search-wrap">
+                <i class="bi bi-search"></i>
+                <input type="text"
+                       class="explorer-search-input"
+                       id="explorer-search"
+                       placeholder="{{ _('Search entities…') }}"
+                       autocomplete="off">
               </div>
-            {% endfor %}
+              <span class="explorer-filter-info" id="explorer-result-info"></span>
+              <button class="explorer-clear-btn" id="explorer-clear-btn" type="button">
+                <i class="bi bi-x-circle"></i> {{ _('Clear') }}
+              </button>
+            </div>
+
+            <!-- Table Content Area -->
+            <div class="explorer-table-wrap" id="explorer-table-wrap">
+              <!-- populated by JS -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="explorer-pagination" id="explorer-pagination" style="display:none;">
+              <span class="explorer-pag-info" id="explorer-pag-info"></span>
+              <div class="explorer-pag-controls" id="explorer-pag-controls"></div>
+            </div>
+
           </div>
+
           {{ license_banner(project.pi) }}
+
+          <!-- =====================================================
+               EXPLORER JAVASCRIPT
+               ===================================================== -->
+          <script>
+          (function () {
+            'use strict';
+
+            // Same-origin proxy base — avoids CORS issues with external API
+            const PROXY_BASE   = '/api/explore/{{ project.acronym }}';
+            const PROJECT_SLUG = '{{ project.acronym | lower }}';
+            const ENTITY_BASE  = '/projects/' + PROJECT_SLUG + '/explore/';
+
+            // Labels from Jinja (already translated)
+            const LABELS = {
+              name: '{{ _("Name") }}',
+              class_: '{{ _("Class") }}',
+              begin: '{{ _("Begin") }}',
+              end: '{{ _("End") }}',
+              type: '{{ _("Type") }}',
+              description: '{{ _("Description") }}',
+              noData: '{{ _("No entities found.") }}',
+              noDataSub: '{{ _("Try a different search or select another category.") }}',
+              loading: '{{ _("Loading entities…") }}',
+              page: '{{ _("Page") }}',
+              of: '{{ _("of") }}',
+              results: '{{ _("results") }}',
+              searchIn: '{{ _("Search in") }}',
+            };
+
+            // State
+            let activeView   = null;
+            let currentPage  = 0;
+            let totalPages   = 1;
+            let totalEntities = 0;
+            let searchTerm   = '';
+            let searchTimer  = null;
+            let sortCol      = 'name';
+            let sortDir      = 'asc';
+            let tabCounts    = {};  // cached per view
+
+            // DOM refs
+            const tabBar       = document.getElementById('explorer-tab-bar');
+            const tableWrap    = document.getElementById('explorer-table-wrap');
+            const pagDiv       = document.getElementById('explorer-pagination');
+            const pagInfo      = document.getElementById('explorer-pag-info');
+            const pagControls  = document.getElementById('explorer-pag-controls');
+            const searchInput  = document.getElementById('explorer-search');
+            const resultInfo   = document.getElementById('explorer-result-info');
+            const clearBtn     = document.getElementById('explorer-clear-btn');
+
+            // ---- TAB CLICK ----
+            tabBar.addEventListener('click', function (e) {
+              const btn = e.target.closest('.explorer-tab');
+              if (!btn) return;
+              const view = btn.dataset.view;
+              if (view === activeView) return;
+              tabBar.querySelectorAll('.explorer-tab').forEach(t => t.classList.remove('active'));
+              btn.classList.add('active');
+              activeView = view;
+              currentPage = 0;
+              searchInput.value = '';
+              searchTerm = '';
+              clearBtn.classList.remove('visible');
+              fetchEntities();
+            });
+
+            // ---- SEARCH ----
+            searchInput.addEventListener('input', function () {
+              clearTimeout(searchTimer);
+              searchTerm = this.value.trim();
+              clearBtn.classList.toggle('visible', searchTerm.length > 0);
+              searchTimer = setTimeout(function () {
+                currentPage = 0;
+                fetchEntities();
+              }, 320);
+            });
+
+            clearBtn.addEventListener('click', function () {
+              searchInput.value = '';
+              searchTerm = '';
+              clearBtn.classList.remove('visible');
+              currentPage = 0;
+              fetchEntities();
+            });
+
+            // ---- FETCH ----
+            // Uses same-origin proxy /api/explore/<project>/<view>
+            // Returns: { results: [{id, name, class_, begin, end, type, description}], pagination: {...} }
+
+            function buildUrl() {
+              const url = new URL(PROXY_BASE + '/' + activeView, location.origin);
+              url.searchParams.set('sort',   sortDir);
+              url.searchParams.set('column', sortCol === 'class_' ? 'class' : sortCol);
+              url.searchParams.set('page',   currentPage + 1);
+              if (searchTerm) url.searchParams.set('search', searchTerm);
+              return url.toString();
+            }
+
+            function fetchEntities() {
+              showSkeleton();
+              pagDiv.style.display = 'none';
+              resultInfo.textContent = '';
+
+              fetch(buildUrl())
+                .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+                .then(data => {
+                  const results = data.results || [];
+                  const pag = data.pagination || {};
+                  totalPages    = pag.totalPages || 1;
+                  totalEntities = pag.entities || results.length;
+
+                  // Update tab count pill from live fetch (no search active)
+                  if (!searchTerm) {
+                    tabCounts[activeView] = totalEntities;
+                    updateTabCount(activeView, totalEntities);
+                  }
+
+                  renderTable(results);
+                  renderPagination();
+                  resultInfo.textContent = totalEntities + ' ' + LABELS.results;
+                })
+                .catch(err => {
+                  console.error('Explorer fetch error:', err);
+                  renderEmpty(true);
+                });
+            }
+
+            // ---- RENDER TABLE ----
+            function renderTable(rows) {
+              if (!rows || rows.length === 0) {
+                renderEmpty(false);
+                return;
+              }
+
+              const colSort = col => sortCol === col
+                ? `sorted-${sortDir}`
+                : '';
+              const chevron = col => sortCol === col && sortDir === 'asc' ? 'up' : 'down';
+
+              const thead = `
+                <thead>
+                  <tr>
+                    <th data-col="name" class="${colSort('name')}">${LABELS.name} <i class="bi bi-chevron-${chevron('name')} sort-icon"></i></th>
+                    <th data-col="class_" class="${colSort('class_')}">${LABELS.class_} <i class="bi bi-chevron-${chevron('class_')} sort-icon"></i></th>
+                    <th data-col="begin" class="col-hide-sm ${colSort('begin')}">${LABELS.begin} <i class="bi bi-chevron-${chevron('begin')} sort-icon"></i></th>
+                    <th data-col="end" class="col-hide-sm ${colSort('end')}">${LABELS.end} <i class="bi bi-chevron-${chevron('end')} sort-icon"></i></th>
+                    <th class="col-hide-sm">${LABELS.type}</th>
+                    <th class="col-hide-sm">${LABELS.description}</th>
+                  </tr>
+                </thead>`;
+
+              const tbody = '<tbody>' + rows.map(function (row) {
+                // row is a clean object from the proxy
+                const id   = row.id;
+                const name = row.name  || '—';
+                const cls  = row.class_ || '';
+                const begin = row.begin || '';
+                const end   = row.end   || '';
+                const type  = row.type  || '';
+                const desc  = row.description || '';
+
+                if (!id) return '';
+
+                const href = ENTITY_BASE + activeView + '/' + id;
+
+                return `<tr>
+                  <td><a href="${href}" class="entity-name-link">${escHtml(name)}</a></td>
+                  <td><span class="entity-class-badge">${escHtml(cls)}</span></td>
+                  <td class="entity-date-cell col-hide-sm">${escHtml(begin)}</td>
+                  <td class="entity-date-cell col-hide-sm">${escHtml(end)}</td>
+                  <td class="entity-type-cell col-hide-sm" title="${escHtml(type)}">${escHtml(type)}</td>
+                  <td class="entity-desc-cell col-hide-sm" title="${escHtml(desc)}">${escHtml(desc)}</td>
+                </tr>`;
+              }).join('') + '</tbody>';
+
+              tableWrap.innerHTML = '<table class="explorer-entity-table">' + thead + tbody + '</table>';
+
+              // Column sort listeners
+              tableWrap.querySelectorAll('thead th[data-col]').forEach(th => {
+                th.addEventListener('click', function () {
+                  const col = this.dataset.col;
+                  if (sortCol === col) {
+                    sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+                  } else {
+                    sortCol = col;
+                    sortDir = 'asc';
+                  }
+                  currentPage = 0;
+                  fetchEntities();
+                });
+              });
+            }
+
+            function renderEmpty(isError) {
+              const icon  = isError ? 'bi-exclamation-triangle' : 'bi-inbox';
+              const title = isError ? '{{ _("Could not load data.") }}' : LABELS.noData;
+              const sub   = isError ? '{{ _("The data service may be temporarily unavailable.") }}' : LABELS.noDataSub;
+              tableWrap.innerHTML = `
+                <div class="explorer-empty">
+                  <i class="bi ${icon}"></i>
+                  <h6>${title}</h6>
+                  <p>${sub}</p>
+                </div>`;
+              pagDiv.style.display = 'none';
+            }
+
+            function showSkeleton() {
+              const rows = Array.from({length: 8}, () => `
+                <div class="skeleton-row">
+                  <div class="skeleton-cell name"></div>
+                  <div class="skeleton-cell class"></div>
+                  <div class="skeleton-cell date"></div>
+                  <div class="skeleton-cell date"></div>
+                  <div class="skeleton-cell desc"></div>
+                </div>`).join('');
+              tableWrap.innerHTML = '<div class="explorer-loading">' + rows + '</div>';
+            }
+
+            // ---- PAGINATION ----
+            function renderPagination() {
+              if (totalPages <= 1) {
+                pagDiv.style.display = 'none';
+                return;
+              }
+              pagDiv.style.display = 'flex';
+              const perPage = Math.ceil(totalEntities / totalPages);
+              const start = currentPage * perPage + 1;
+              const end   = Math.min((currentPage + 1) * perPage, totalEntities);
+              pagInfo.textContent = start + '–' + end + ' / ' + totalEntities;
+
+              let html = '';
+              html += `<button class="explorer-pag-btn" id="pag-prev" ${currentPage===0?'disabled':''}><i class="bi bi-chevron-left"></i></button>`;
+
+              buildPageWindow(currentPage, totalPages).forEach(function (p) {
+                if (p === '…') {
+                  html += '<span class="explorer-pag-ellipsis">…</span>';
+                } else {
+                  html += `<button class="explorer-pag-btn ${p===currentPage?'active':''}" data-page="${p}">${p+1}</button>`;
+                }
+              });
+
+              html += `<button class="explorer-pag-btn" id="pag-next" ${currentPage>=totalPages-1?'disabled':''}><i class="bi bi-chevron-right"></i></button>`;
+              pagControls.innerHTML = html;
+
+              pagControls.querySelector('#pag-prev').addEventListener('click', function () {
+                if (currentPage > 0) { currentPage--; fetchEntities(); }
+              });
+              pagControls.querySelector('#pag-next').addEventListener('click', function () {
+                if (currentPage < totalPages - 1) { currentPage++; fetchEntities(); }
+              });
+              pagControls.querySelectorAll('[data-page]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                  currentPage = parseInt(this.dataset.page);
+                  fetchEntities();
+                });
+              });
+            }
+
+            function buildPageWindow(cur, total) {
+              if (total <= 7) return Array.from({length: total}, (_, i) => i);
+              const pages = [0];
+              if (cur > 2) pages.push('…');
+              for (let i = Math.max(1, cur-1); i <= Math.min(total-2, cur+1); i++) pages.push(i);
+              if (cur < total - 3) pages.push('…');
+              pages.push(total - 1);
+              return pages;
+            }
+
+            // ---- TAB COUNT FETCHING ----
+            // Uses same-origin proxy /api/explore/<project>/<view>/count → {count: N}
+            function prefetchCounts() {
+              {% for view in view_classes.keys() %}
+              (function() {
+                const v = '{{ view }}';
+                fetch(PROXY_BASE + '/' + v + '/count')
+                  .then(r => r.json())
+                  .then(data => updateTabCount(v, data.count ?? '?'))
+                  .catch(() => updateTabCount(v, '?'));
+              })();
+              {% endfor %}
+            }
+
+            function updateTabCount(view, cnt) {
+              const el = document.getElementById('tab-count-' + view);
+              if (el) el.textContent = cnt;
+            }
+
+            // ---- UTILS ----
+            function escHtml(str) {
+              if (!str) return '';
+              return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+            }
+
+            // ---- INIT ----
+            const firstTab = tabBar.querySelector('.explorer-tab');
+            if (firstTab) {
+              activeView = firstTab.dataset.view;
+              fetchEntities();
+              prefetchCounts();
+            }
+
+          })();
+          </script>
+
+
         {% endif %}
 
         <!-- Results section -->
