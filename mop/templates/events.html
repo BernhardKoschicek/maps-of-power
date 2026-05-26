@@ -3,5 +3,6 @@
     {% include 'navbar.html'  %}
 {% endwith %}
 {% block content %}
+  {% set standalone = true %}
   {% include '_events_list.html' %}
 {% endblock %}

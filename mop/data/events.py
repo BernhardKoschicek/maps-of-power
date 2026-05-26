@@ -28,6 +28,10 @@ types = {
         'name': _('blogpost'),
         'bs_icon': 'bi-blockquote-right'
     },
+    'press_release': {
+        'name': _('press_release'),
+        'bs_icon': 'bi-newspaper'
+    },
 }
 event_list = [{
     'id': 'brno_summer_school_260625',
@@ -53,7 +57,7 @@ event_list = [{
         'type': ''}]
 },{
     'id': 'presse_03052025',
-    'type': types['presentation'],
+    'type': types['press_release'],
     'date': f"{get_dates_formatted(2025, 5, 3)}",
     'who': '',
     'icon': 'presse_03052025.jpg',

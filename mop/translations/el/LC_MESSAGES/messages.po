@@ -119,6 +119,10 @@ msgstr "παρουσίαση βιβλίου"
 msgid "blogpost"
 msgstr "άρθρο ιστολογίου"
 
+#: mop/data/events.py:32
+msgid "press_release"
+msgstr "δελτίο τύπου"
+
 #: mop/data/events.py:38
 msgid "Summer School in Brno"
 msgstr "Θερινό Σχολείο στο Μπρνο"

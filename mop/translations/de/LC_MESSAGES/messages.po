@@ -121,6 +121,10 @@ msgstr "buch Veröffentlichung"
 msgid "blogpost"
 msgstr "blogpost"
 
+#: mop/data/events.py:32
+msgid "press_release"
+msgstr "pressemitteilung"
+
 #: mop/data/events.py:38
 msgid "Summer School in Brno"
 msgstr "Sommerschule in Brünn"

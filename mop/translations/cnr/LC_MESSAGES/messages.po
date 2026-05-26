@@ -114,6 +114,10 @@ msgstr "objavljivanje knjige"
 msgid "blogpost"
 msgstr "blog post"
 
+#: mop/data/events.py:32
+msgid "press_release"
+msgstr "saopštenje za javnost"
+
 #: mop/data/events.py:38
 msgid "Summer School in Brno"
 msgstr "Ljetnja škola u Brnu"

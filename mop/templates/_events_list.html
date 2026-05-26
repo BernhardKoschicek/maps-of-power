@@ -1,89 +1,535 @@
 <style>
-  .grid {
-    position: relative;
+  /* ── Events Page Design System ───────────────────────────────────── */
+  :root {
+    --ev-presentation:      #4f6dab;
+    --ev-online:            #6c8ec7;
+    --ev-award:             #c9933a;
+    --ev-science-fair:      #5a9270;
+    --ev-book-release:      #8b5cf6;
+    --ev-press-release:     #3eb643;
+    --ev-blog-post:         #e06f6f;
+
+    --timeline-line:        rgba(115, 115, 74, 0.3);  /* brand olive tint */
+    --card-radius:          0.875rem;
+    --card-shadow:          0 2px 12px rgba(0,0,0,.07);
+    --card-shadow-hover:    0 8px 28px rgba(0,0,0,.13);
+    --transition-smooth:    0.22s cubic-bezier(.4,0,.2,1);
   }
 
-  .item {
-    display: block;
+  /* ── Standalone page header ───────────────────────────────────── */
+  .events-page-header {
+    padding: 3rem 0 2rem;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    margin-bottom: 2rem;
+  }
+
+  /* ── Filter pills ─────────────────────────────────────────────── */
+  .ev-filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .28rem .85rem;
+    border-radius: 50rem;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: background var(--transition-smooth),
+                color      var(--transition-smooth),
+                border-color var(--transition-smooth),
+                transform  var(--transition-smooth);
+    user-select: none;
+    white-space: nowrap;
+  }
+  .ev-filter-pill:hover { transform: translateY(-1px); }
+
+  /* colour per type */
+  .ev-pill-all          { background: #495057; color: #fff; }
+  .ev-pill-presentation { background: transparent; color: var(--ev-presentation); border-color: var(--ev-presentation); }
+  .ev-pill-online       { background: transparent; color: var(--ev-online);       border-color: var(--ev-online); }
+  .ev-pill-award        { background: transparent; color: var(--ev-award);        border-color: var(--ev-award); }
+  .ev-pill-science-fair { background: transparent; color: var(--ev-science-fair); border-color: var(--ev-science-fair); }
+  .ev-pill-book-release { background: transparent; color: var(--ev-book-release); border-color: var(--ev-book-release); }
+  .ev-pill-press-release { background: transparent; color: var(--ev-press-release); border-color: var(--ev-press-release); }
+  .ev-pill-blog-post    { background: transparent; color: var(--ev-blog-post);    border-color: var(--ev-blog-post); }
+
+  .ev-filter-pill.active.ev-pill-all          { background: #495057; border-color: #495057; }
+  .ev-filter-pill.active.ev-pill-presentation { background: var(--ev-presentation); color: #fff; }
+  .ev-filter-pill.active.ev-pill-online       { background: var(--ev-online);       color: #fff; }
+  .ev-filter-pill.active.ev-pill-award        { background: var(--ev-award);        color: #fff; }
+  .ev-filter-pill.active.ev-pill-science-fair { background: var(--ev-science-fair); color: #fff; }
+  .ev-filter-pill.active.ev-pill-book-release { background: var(--ev-book-release); color: #fff; }
+  .ev-filter-pill.active.ev-pill-press-release { background: var(--ev-press-release); color: #fff; }
+  .ev-filter-pill.active.ev-pill-blog-post    { background: var(--ev-blog-post);    color: #fff; }
+
+  /* ── Timeline layout ──────────────────────────────────────────── */
+  .events-timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .events-timeline::before {
+    content: '';
     position: absolute;
-    width: 100%;
-    z-index: 1;
+    left: .6rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--timeline-line);
+    border-radius: 2px;
   }
 
-  .item.muuri-item-dragging {
-    z-index: 3;
-  }
-
-  .item.muuri-item-releasing {
-    z-index: 2;
-  }
-
-  .item.muuri-item-hidden {
-    z-index: 0;
-  }
-
-  .item-content {
+  .ev-year-divider {
     position: relative;
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 0 1.25rem -2rem;
+    padding-left: 1rem;
+  }
+  .ev-year-divider::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bs-primary, #73734a);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--bs-primary, #73734a);
+    margin-right: .85rem;
+    flex-shrink: 0;
+  }
+  .ev-year-divider h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bs-primary, #73734a);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin: 0;
+    border-bottom: none;
+  }
+
+  /* ── Event card ───────────────────────────────────────────────── */
+  .ev-card {
+    position: relative;
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,.06);
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    transition: box-shadow var(--transition-smooth), transform var(--transition-smooth);
+    display: flex;
+  }
+  .ev-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  /* coloured left accent strip */
+  .ev-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    border-radius: var(--card-radius) 0 0 var(--card-radius);
+  }
+  .ev-card[data-type="presentation"]::before    { background: var(--ev-presentation); }
+  .ev-card[data-type="online_presentation"]::before { background: var(--ev-online); }
+  .ev-card[data-type="award"]::before           { background: var(--ev-award); }
+  .ev-card[data-type="science_fair"]::before    { background: var(--ev-science-fair); }
+  .ev-card[data-type="book_release"]::before    { background: var(--ev-book-release); }
+  .ev-card[data-type="press_release"]::before    { background: var(--ev-press-release); }
+  .ev-card[data-type="blog_post"]::before       { background: var(--ev-blog-post); }
+
+  /* timeline dot connector */
+  .ev-card::after {
+    content: '';
+    position: absolute;
+    left: -1.85rem;
+    top: 1.5rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--bs-primary, #73734a);
+    box-shadow: 0 0 0 3px rgba(115,115,74,.15);
+  }
+
+  .ev-card-img-wrap {
+    flex: 0 0 180px;
+    min-height: 140px;
+    overflow: hidden;
+    border-radius: 0;
+    background: #f0efe8;
+  }
+  @media (max-width: 575.98px) {
+    .ev-card-img-wrap { display: none; }
+  }
+  .ev-card-img-wrap img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .ev-card:hover .ev-card-img-wrap img { transform: scale(1.05); }
+
+  .ev-card-body {
+    flex: 1;
+    padding: 1.1rem 1.3rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
   }
 
-  @media (min-width: 576px) {
-    .item {
-      width: 33.333%;
-    }
+  .ev-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    padding: .2rem .6rem;
+    border-radius: 50rem;
+    color: #fff;
+  }
+  .ev-card[data-type="presentation"]        .ev-type-badge { background: var(--ev-presentation); }
+  .ev-card[data-type="online_presentation"] .ev-type-badge { background: var(--ev-online); }
+  .ev-card[data-type="award"]               .ev-type-badge { background: var(--ev-award); }
+  .ev-card[data-type="science_fair"]        .ev-type-badge { background: var(--ev-science-fair); }
+  .ev-card[data-type="book_release"]        .ev-type-badge { background: var(--ev-book-release); }
+  .ev-card[data-type="press_release"]        .ev-type-badge { background: var(--ev-press-release); }
+  .ev-card[data-type="blog_post"]           .ev-type-badge { background: var(--ev-blog-post); }
+
+  .ev-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #212529;
+    line-height: 1.35;
+    margin: 0;
+  }
+  .ev-card-description {
+    font-size: .87rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin: 0;
+    /* clamp to 3 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .ev-card-date {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    font-size: .75rem;
+    font-weight: 600;
+    color: #868e96;
+    margin-top: auto;
+    padding-top: .5rem;
   }
 
-  @media (min-width: 768px) {
-    .item {
-      width: 25%;
-    }
+  /* ── No-results state ─────────────────────────────────────────── */
+  #ev-no-results {
+    display: none;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #6c757d;
+  }
+
+  /* ── Compact grid for about page (non-standalone) ─────────────── */
+  .events-grid-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+  .ev-preview-card {
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,.06);
+    overflow: hidden;
+    transition: box-shadow var(--transition-smooth), transform var(--transition-smooth);
+  }
+  .ev-preview-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-3px);
+  }
+  .ev-preview-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+  .ev-preview-card-body {
+    padding: .85rem 1rem;
+  }
+  .ev-preview-card-body h3 {
+    font-size: .88rem;
+    font-weight: 700;
+    color: #212529;
+    margin: 0 0 .25rem;
+    line-height: 1.35;
+  }
+  .ev-preview-card-body .ev-type-badge {
+    font-size: .65rem;
+    padding: .15rem .5rem;
+  }
+
+  /* ── Animation for filter transitions ────────────────────────── */
+  .ev-item-hidden {
+    opacity: 0;
+    transform: scale(.97);
+    pointer-events: none;
+  }
+  .ev-item-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .ev-card, .ev-preview-card {
+    transition: box-shadow var(--transition-smooth),
+                transform   var(--transition-smooth),
+                opacity     var(--transition-smooth);
   }
 </style>
-<section>
-  <h2 class="text-primary display-5 text-center">{{ _('events') }}</h2>
-  <div class="container py-2">
-    <div class="grid">
+
+{# ── Standalone: full events page ──────────────────────────────────── #}
+{% if standalone %}
+
+<div class="container my-5">
+
+  {# Page header #}
+  <div class="pb-3 mb-4 border-bottom">
+    <h1 class="display-6 fw-bold text-dark mb-2">{{ _('events') | capitalize }}</h1>
+    <p class="text-muted mb-0">
+      {{ _('Presentations, workshops, awards and publications from the Maps of Power initiative.') }}
+    </p>
+  </div>
+
+  {# Filters + Search bar #}
+  <div class="row g-3 mb-4 align-items-center">
+    <div class="col-12 col-lg-8">
+      <div class="d-flex flex-wrap gap-2 align-items-center">
+        <span class="text-muted small me-1 d-none d-sm-inline">
+          <i class="bi bi-funnel-fill"></i> {{ _('Filter') }}:
+        </span>
+        <span class="ev-filter-pill ev-pill-all active" data-ev-filter="all" id="ev-pill-all">
+          <i class="bi bi-grid-3x3-gap-fill"></i> {{ _('All') }}
+        </span>
+        <span class="ev-filter-pill ev-pill-presentation" data-ev-filter="presentation" id="ev-pill-presentation">
+          <i class="bi bi-chat-text-fill"></i> {{ _('presentation') | capitalize }}
+        </span>
+        <span class="ev-filter-pill ev-pill-science-fair" data-ev-filter="science_fair" id="ev-pill-science-fair">
+          <i class="bi bi-mortarboard-fill"></i> {{ _('science_fair') | capitalize }}
+        </span>
+        <span class="ev-filter-pill ev-pill-book-release" data-ev-filter="book_release" id="ev-pill-book-release">
+          <i class="bi bi-book"></i> {{ _('book_release') | capitalize }}
+        </span>
+        <span class="ev-filter-pill ev-pill-press-release" data-ev-filter="press_release" id="ev-pill-press-release">
+          <i class="bi bi-newspaper"></i> {{ _('press_release') | capitalize }}
+        </span>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="input-group input-group-sm shadow-sm rounded">
+        <span class="input-group-text bg-white border-end-0 text-muted">
+          <i class="bi bi-search"></i>
+        </span>
+        <input type="text" id="ev-search" class="form-control border-start-0 ps-0"
+               placeholder="{{ _('Search events…') }}" aria-label="{{ _('Search events') }}">
+      </div>
+    </div>
+  </div>
+
+  {# Group events by year #}
+  {% set ns = namespace(current_year=none) %}
+  <div class="events-timeline" id="ev-timeline">
+    {% for event in events %}
+      {% set year = event['date'].split(' ')[-1] if event['date'] else '—' %}
+      {% set type_key = event['type']['bs_icon'] | replace('bi-','') | replace('-fill','') | replace('-','-') %}
+
+      {% if event['type']['bs_icon'] == 'bi-chat-text-fill' %}
+        {% set dtype = 'presentation' %}
+      {% elif event['type']['bs_icon'] == 'bi-chat-right-text-fill' %}
+        {% set dtype = 'online_presentation' %}
+      {% elif event['type']['bs_icon'] == 'bi-award' %}
+        {% set dtype = 'award' %}
+      {% elif event['type']['bs_icon'] == 'bi-mortarboard-fill' %}
+        {% set dtype = 'science_fair' %}
+      {% elif event['type']['bs_icon'] == 'bi-book' %}
+        {% set dtype = 'book_release' %}
+      {% elif event['type']['bs_icon'] == 'bi-newspaper' %}
+        {% set dtype = 'press_release' %}
+      {% elif event['type']['bs_icon'] == 'bi-blockquote-right' %}
+        {% set dtype = 'blog_post' %}
+      {% else %}
+        {% set dtype = 'presentation' %}
+      {% endif %}
+
+      {% if year != ns.current_year %}
+        {% set ns.current_year = year %}
+        <div class="ev-year-divider" data-ev-year="{{ year }}">
+          <h2>{{ year }}</h2>
+        </div>
+      {% endif %}
+
+      <div class="ev-card ev-item-visible"
+           data-type="{{ dtype }}"
+           data-search="{{ (event['title']|string + ' ' + event['description']|string + ' ' + event['date']|string) | lower }}"
+           id="ev-{{ event['id'] }}">
+        {% if event['icon'] %}
+        <div class="ev-card-img-wrap">
+          <img src="{{ url_for('static', filename='images/' + event['icon'], v=ASSETS_VERSION) }}"
+               alt="{{ event['title'] }}">
+        </div>
+        {% endif %}
+        <div class="ev-card-body">
+          <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+            <span class="ev-type-badge">
+              <i class="bi {{ event['type']['bs_icon'] }}"></i>
+              {{ event['type']['name'] }}
+            </span>
+            <span class="ev-card-date">
+              <i class="bi bi-calendar3"></i>{{ event['date'] }}
+            </span>
+          </div>
+          <h3 class="ev-card-title">{{ event['title'] }}</h3>
+          {% if event['description'] | string | trim %}
+          <p class="ev-card-description">{{ event['description'] }}</p>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+
+    <div id="ev-no-results">
+      <i class="bi bi-binoculars display-5 d-block mb-3 opacity-50"></i>
+      {{ _('No events found for the selected filter.') }}
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const pills      = document.querySelectorAll('.ev-filter-pill');
+  const cards      = document.querySelectorAll('.ev-card');
+  const yearDivs   = document.querySelectorAll('.ev-year-divider');
+  const searchInput= document.getElementById('ev-search');
+  const noResults  = document.getElementById('ev-no-results');
+  let activeFilter = 'all';
+
+  function applyFilters() {
+    const query = (searchInput ? searchInput.value.toLowerCase().trim() : '');
+    let visibleCount = 0;
+
+    // Track which years still have visible cards
+    const yearHasVisible = {};
+
+    cards.forEach(card => {
+      const type   = card.dataset.type || '';
+      const search = card.dataset.search || '';
+      const matchesType   = (activeFilter === 'all') || type === activeFilter || type.startsWith(activeFilter);
+      const matchesSearch = !query || search.includes(query);
+      const visible = matchesType && matchesSearch;
+
+      if (visible) {
+        card.classList.add('ev-item-visible');
+        card.classList.remove('ev-item-hidden');
+        card.style.display = 'flex';
+        visibleCount++;
+        // Mark year as having a visible card
+        const prevSibling = getPrevYearDivider(card);
+        if (prevSibling) yearHasVisible[prevSibling.dataset.evYear] = true;
+      } else {
+        card.classList.remove('ev-item-visible');
+        card.classList.add('ev-item-hidden');
+        // Small delay then hide
+        setTimeout(() => { if (card.classList.contains('ev-item-hidden')) card.style.display = 'none'; }, 220);
+      }
+    });
+
+    // Show/hide year dividers
+    yearDivs.forEach(div => {
+      const year = div.dataset.evYear;
+      div.style.display = yearHasVisible[year] ? 'flex' : 'none';
+    });
+
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  function getPrevYearDivider(card) {
+    let prev = card.previousElementSibling;
+    while (prev) {
+      if (prev.classList.contains('ev-year-divider')) return prev;
+      if (prev.classList.contains('ev-card')) break; // different year's card first
+      prev = prev.previousElementSibling;
+    }
+    // Walk backwards past other cards to find the year divider
+    prev = card.previousElementSibling;
+    while (prev) {
+      if (prev.classList.contains('ev-year-divider')) return prev;
+      prev = prev.previousElementSibling;
+    }
+    return null;
+  }
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', function () {
+      pills.forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+      activeFilter = this.dataset.evFilter;
+      applyFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilters);
+  }
+});
+</script>
+
+{# ── Non-standalone: compact preview grid for about page ──────────── #}
+{% else %}
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-primary display-5 text-center mb-4">{{ _('events') }}</h2>
+    <div class="events-grid-preview">
       {% for event in events %}
-        <div class="item p-3">
-          <div class="item-content">
-            <div class="card border-primary">
-              <img src="{{ url_for('static', filename='images/' + event['icon'], v=ASSETS_VERSION) }}"
-                   class="card-img-top"
-                   alt="{{ event['id'] }} Image"
-                   onload="refreshGrid()">
-              <div class="card-body">
-                <h3 class="card-title fs-5">{{ event['title'] }}</h3>
-                <p class="card-text">{{ event['description'] }}</p>
-              </div>
-            </div>
+        {% if event['icon'] %}
+        <div class="ev-preview-card">
+          <img src="{{ url_for('static', filename='images/' + event['icon'], v=ASSETS_VERSION) }}"
+               alt="{{ event['title'] }}"
+               loading="lazy">
+          <div class="ev-preview-card-body">
+            <span class="ev-type-badge
+              {% if event['type']['bs_icon'] == 'bi-chat-text-fill' %}ev-badge-presentation
+              {% elif event['type']['bs_icon'] == 'bi-mortarboard-fill' %}ev-badge-science
+              {% elif event['type']['bs_icon'] == 'bi-book' %}ev-badge-book
+              {% elif event['type']['bs_icon'] == 'bi-award' %}ev-badge-award
+              {% elif event['type']['bs_icon'] == 'bi-newspaper' %}ev-badge-press
+              {% elif event['type']['bs_icon'] == 'bi-blockquote-right' %}ev-badge-blog
+              {% else %}ev-badge-presentation{% endif %}
+            " style="
+              background:
+              {% if event['type']['bs_icon'] == 'bi-chat-text-fill' %}var(--ev-presentation)
+              {% elif event['type']['bs_icon'] == 'bi-mortarboard-fill' %}var(--ev-science-fair)
+              {% elif event['type']['bs_icon'] == 'bi-book' %}var(--ev-book-release)
+              {% elif event['type']['bs_icon'] == 'bi-newspaper' %}var(--ev-press-release)
+              {% elif event['type']['bs_icon'] == 'bi-award' %}var(--ev-award)
+              {% elif event['type']['bs_icon'] == 'bi-blockquote-right' %}var(--ev-blog-post)
+              {% else %}var(--ev-presentation){% endif %};
+              color:#fff; margin-bottom:.4rem; display:inline-flex; align-items:center; gap:.25rem;">
+              <i class="bi {{ event['type']['bs_icon'] }}"></i>
+              {{ event['type']['name'] }}
+            </span>
+            <h3>{{ event['title'] }}</h3>
+            <div class="ev-card-date"><i class="bi bi-calendar3"></i> {{ event['date'] }}</div>
           </div>
         </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
 </section>
 
-<script>
-  let grid;
-
-  function refreshGrid() {
-    if (grid) {
-      grid.refreshItems().layout();
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    grid = new Muuri('.grid', {
-      dragEnabled: false,
-      layout: {
-        fillGaps: true
-      }
-    });
-
-    // Erneutes Layout, wenn alle Bilder geladen sind (Sicherheitsnetz)
-    window.addEventListener('load', function () {
-      grid.refreshItems().layout();
-    });
-  });
-</script>
+{% endif %}
