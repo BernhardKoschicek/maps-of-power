@@ -236,3 +236,39 @@ def test_depiction_main_image_and_thumbnail() -> None:
     assert dep.iiif_thumbnail_url == "https://openatlas.maps-of-power.at/iiif/mop/123.tiff/full/400,/0/default.jpg"
 
 
+def test_entity_geometry_fallback_p46() -> None:
+    from mop.model.entity import PresentationViewModel, RelatedEntityModel, RelationTypeModel
+    m = PresentationViewModel(
+        id=123,
+        systemClass="artifact",
+        viewClass="artifact",
+        title="Test Artifact",
+        description="An artifact with no coordinates",
+        geometries=None,
+        relations={
+            "place": [
+                RelatedEntityModel(
+                    id=456,
+                    systemClass="place",
+                    title="Mock Place",
+                    geometries={
+                        "type": "Feature",
+                        "geometry": {"type": "Point", "coordinates": [10.0, 20.0]},
+                        "properties": {}
+                    },
+                    relationTypes=[
+                        RelationTypeModel(
+                            property="crm:P46_is_composed_of",
+                            relationTo=123
+                        )
+                    ]
+                )
+            ]
+        }
+    )
+    entity = Entity.from_model(m)
+    assert entity.geometry is not None
+    assert entity.geometry["geometry"]["coordinates"] == [10.0, 20.0]
+
+
+

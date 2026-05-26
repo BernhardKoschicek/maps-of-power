@@ -1055,12 +1055,10 @@
       }
   </script>
   <script>
-      const gisData = {%  if entity.geometry %}{{ entity.geometry | safe }}{% else %}null
-      {% endif %}
-      const gisRelatedPlaces = {%  if related_places %}{{ related_places | safe }}{% else %}null
-      {% endif %}
-      const entityName = '{{ entity.name | safe }}'
-      window.gisDataEntityId = {{ entity.id_ }}
+      const gisData = {% if entity.geometry %}{{ entity.geometry | tojson }}{% else %}null{% endif %};
+      const gisRelatedPlaces = {% if related_places %}{{ related_places | tojson }}{% else %}null{% endif %};
+      const entityName = {{ entity.name | tojson }};
+      window.gisDataEntityId = {{ entity.id_ }};
       window.entityViewUrlTemplate = "{{ url_for('entity_project_view', id_=999999, project=path[0], view=path[1]) }}";
       window.projectPIs = {{ (project_details.pi | join(', ') if (project_details and project_details.pi) else 'Mihailo Popović') | tojson }};
       window.entityId = "{{ entity.id_ }}";

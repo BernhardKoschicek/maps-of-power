@@ -382,6 +382,16 @@ class Entity:
         begin_from = m.when.start.earliest if (m.when and m.when.start) else None
         end_from = m.when.end.latest if (m.when and m.when.end) else None
 
+        geometry = get_geometry_data(m.geometries)
+        if not geometry:
+            for rel_group in mapped_relations.values():
+                for rel in rel_group:
+                    if rel.geometry and any("P46" in p for p in rel.properties):
+                        geometry = rel.geometry
+                        break
+                if geometry:
+                    break
+
         return cls(
             id_=str(m.id),
             name=m.title,
@@ -394,7 +404,7 @@ class Entity:
             links=links_list,
             begin=begin,
             end=end,
-            geometry=get_geometry_data(m.geometries),
+            geometry=geometry,
             begin_from=begin_from,
             end_from=end_from
         )
