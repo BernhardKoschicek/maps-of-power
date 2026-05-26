@@ -303,4 +303,20 @@
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15) !important;
 }
 
+/* Layout Engine Pulsing Indicator & Theme Colors */
+@keyframes layoutPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.layout-pulsing {
+    animation: layoutPulse 2s infinite ease-in-out;
+    display: inline-block;
+}
+
+.text-purple {
+    color: #ae3ec9 !important;
+}
+
 

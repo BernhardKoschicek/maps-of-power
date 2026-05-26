@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/projects_premium.css', v=ASSETS_VERSION) }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/network_viz.css', v=ASSETS_VERSION) }}">
 
   <div class="container mt-5 mb-5">
     <!-- Premium Header and Dashboard Section -->
@@ -399,13 +400,17 @@
 
               <!-- Network Filter Controls -->
               <div class="mb-3">
-                <label class="form-label small fw-bold text-uppercase text-muted d-block">{{ _('Select Projects') }}</label>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <label class="form-label small fw-bold text-uppercase text-muted mb-0">{{ _('Select Projects') }}</label>
+                  <button type="button" class="btn btn-link btn-xs p-0 text-decoration-none fw-bold" id="network-projects-toggle-all" style="font-size: 0.75rem;">
+                    {{ _('Deselect All') }}
+                  </button>
+                </div>
                 <div class="bg-light p-3 rounded-3 border" style="max-height: 250px; overflow-y: auto;" id="network-projects-checklist">
-                  {% set first_project = namespace(found=false) %}
                   {% for project in projects.values() %}
                     {% if project.oaID %}
                       <div class="form-check mb-2">
-                        <input class="form-check-input network-project-checkbox" type="checkbox" value="{{ project['acronym'] }}" id="chk-proj-{{ project['acronym'] }}" {% if not first_project.found %}{% set first_project.found = true %}checked{% endif %}>
+                        <input class="form-check-input network-project-checkbox" type="checkbox" value="{{ project['acronym'] }}" id="chk-proj-{{ project['acronym'] }}" checked>
                         <label class="form-check-label small fw-semibold text-dark" for="chk-proj-{{ project['acronym'] }}">
                           {{ project['title'] }} ({{ project['acronym'].upper() }})
                         </label>
@@ -435,6 +440,15 @@
                     <i class="bi bi-connector text-secondary fs-4"></i>
                   </div>
                 </div>
+                <div class="stat-card bg-light border-light p-3 rounded-3 mt-2 text-dark" id="network-layout-status-card" style="display: none;">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                      <span class="d-block fw-bold fs-6" id="network-layout-status" style="color: #37b24d;">{{ _('Physics Layout') }}</span>
+                      <span class="text-muted small fw-medium" id="network-layout-desc" style="font-size: 0.75rem;">{{ _('Dynamic node separation') }}</span>
+                    </div>
+                    <i class="bi bi-cpu text-success fs-4" id="network-layout-icon"></i>
+                  </div>
+                </div>
               </div>
 
               <div class="mt-auto bg-light rounded-3 p-3 text-muted small border">
@@ -455,6 +469,49 @@
                 <p class="text-muted small">{{ _('Fetching entities and computing relations from the database.') }}</p>
               </div>
               <div id="project-network-graph" style="height: 520px; width: 100%;"></div>
+
+              <!-- Color Legend -->
+              <div class="network-legend">
+                <div class="legend-title" style="font-size: 0.65rem; letter-spacing: 0.02em;">{{ _('Legend (Click to toggle)') }}</div>
+                <div class="legend-item" role="button" data-category="place">
+                  <span class="legend-color-dot" style="background: #1c7ed6; border-color: #1c7ed6;"></span>
+                  <span>{{ _('Place') }}</span>
+                </div>
+                <div class="legend-item" role="button" data-category="person">
+                  <span class="legend-color-dot" style="background: #0b7285; border-color: #0b7285;"></span>
+                  <span>{{ _('Person') }}</span>
+                </div>
+                <div class="legend-item" role="button" data-category="group">
+                  <span class="legend-color-dot" style="background: #fa5252; border-color: #fa5252;"></span>
+                  <span>{{ _('Group') }}</span>
+                </div>
+                <div class="legend-item" role="button" data-category="event">
+                  <span class="legend-color-dot" style="background: #ae3ec9; border-color: #ae3ec9;"></span>
+                  <span>{{ _('Event / Activity') }}</span>
+                </div>
+                <div class="legend-item" role="button" data-category="artifact">
+                  <span class="legend-color-dot" style="background: #37b24d; border-color: #37b24d;"></span>
+                  <span>{{ _('Artifact') }}</span>
+                </div>
+                <div class="legend-item" role="button" data-category="bibliography">
+                  <span class="legend-color-dot" style="background: #495057; border-color: #495057;"></span>
+                  <span>{{ _('Literature / Source') }}</span>
+                </div>
+              </div>
+
+              <!-- Floating Detail Panel for Clicked Node -->
+              <div id="network-node-detail" class="network-detail-panel d-none">
+                <button id="btn-close-detail" type="button" class="btn-close float-end btn-sm" aria-label="Close" style="font-size: 0.7rem;"></button>
+                <h6 id="detail-node-title" class="fw-bold mb-1 text-dark text-truncate" style="max-width: 90%;">{{ _('Node Details') }}</h6>
+                <div id="detail-node-class" class="mb-2">
+                  <span class="badge bg-secondary text-capitalize">{{ _('Place') }}</span>
+                </div>
+                <div class="small text-muted mb-1">{{ _('ID') }}: <span id="detail-node-id">-</span></div>
+                <div class="small text-muted mb-2">{{ _('Relations') }}: <span id="detail-node-relations">-</span></div>
+                <a id="detail-node-link" href="#" target="_blank" class="btn btn-sm btn-primary rounded-pill w-100 mt-2 d-flex align-items-center justify-content-center text-white fw-bold">
+                  <i class="bi bi-eye me-1"></i>{{ _('View Entity') }}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -946,9 +1003,150 @@
         }
       }
 
+      // Legend state tracking variables
+      let lastCombinedResults = [];
+      let lastSelectedProjects = [];
+      const hiddenCategories = new Set();
+
+      const COLOR_PALETTE = {
+        place: { color: '#1c7ed6' },
+        person: { color: '#0b7285' },
+        group: { color: '#fa5252' },
+        event: { color: '#ae3ec9' },
+        source: { color: '#f59f00' },
+        source_translation: { color: '#d6336c' },
+        artifact: { color: '#37b24d' },
+        bibliography: { color: '#495057' },
+        default: { color: '#ced4da' }
+      };
+
+      function getPaletteCategory(systemClass) {
+        if (!systemClass) return 'default';
+        const sc = systemClass.toLowerCase();
+        if (sc.includes('place') || sc.includes('feature') || sc.includes('stratigraphic_unit')) return 'place';
+        if (sc.includes('person')) return 'person';
+        if (sc.includes('group')) return 'group';
+        if (sc.includes('event') || sc.includes('activity') || sc.includes('acquisition') || sc.includes('move') || sc.includes('production') || sc.includes('creation')) return 'event';
+        if (sc.includes('source_translation')) return 'source_translation';
+        if (sc.includes('source')) return 'source';
+        if (sc.includes('artifact') || sc.includes('human_remains')) return 'artifact';
+        if (sc.includes('bibliography') || sc.includes('edition') || sc.includes('external_reference')) return 'bibliography';
+        return 'default';
+      }
+
+
+
+      function applySpringLayout(graph, iterations) {
+        const nodes = graph.nodes();
+        const numNodes = nodes.length;
+        if (numNodes === 0) return;
+
+        if (!iterations) {
+            iterations = 15; // Capped to 15 to guarantee sub-frame execution and prevent browser crashes!
+        }
+
+        const spacingFactor = 3.5; // High repulsion factor
+        const area = 800 * 600;
+        const k = Math.sqrt(area / numNodes) * 1.2;
+        const kSq = k * k;
+        const repulsionFactor = kSq * spacingFactor * spacingFactor;
+        const gravity = 0.08; // Gravity pulling back to project centers
+
+        const positions = {};
+        nodes.forEach(node => {
+            positions[node] = {
+                x: graph.getNodeAttribute(node, 'x'),
+                y: graph.getNodeAttribute(node, 'y')
+            };
+        });
+
+        const tempStart = Math.sqrt(area / numNodes) * 2;
+        const tempMin = 0.5;
+
+        for (let iter = 0; iter < iterations; iter++) {
+            const progress = iter / iterations;
+            const temp = Math.max(tempMin, tempStart * Math.pow(0.01, progress));
+
+            const disp = {};
+            for (let i = 0; i < numNodes; i++) {
+                disp[nodes[i]] = { x: 0, y: 0 };
+            }
+
+            // 1. Repulsive forces (Optimized O(N^2) without Math.sqrt)
+            for (let i = 0; i < numNodes; i++) {
+                const v = nodes[i];
+                const posV = positions[v];
+                for (let j = i + 1; j < numNodes; j++) {
+                    const u = nodes[j];
+                    const posU = positions[u];
+                    const dx = posV.x - posU.x;
+                    const dy = posV.y - posU.y;
+                    const distSq = dx * dx + dy * dy || 0.01;
+
+                    // fx = dx * repulsionFactor / distSq
+                    const forceOverDistSq = repulsionFactor / distSq;
+                    const fx = dx * forceOverDistSq;
+                    const fy = dy * forceOverDistSq;
+
+                    disp[v].x += fx;
+                    disp[v].y += fy;
+                    disp[u].x -= fx;
+                    disp[u].y -= fy;
+                }
+            }
+
+            // 2. Attractive forces (O(E) along edges)
+            graph.forEachEdge((edge, attributes, source, target) => {
+                const posS = positions[source];
+                const posT = positions[target];
+                if (!posS || !posT) return;
+                const dx = posT.x - posS.x;
+                const dy = posT.y - posS.y;
+                const dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
+
+                const force = (dist * dist) / k;
+                const fx = (dx / dist) * force;
+                const fy = (dy / dist) * force;
+
+                disp[source].x += fx;
+                disp[source].y += fy;
+                disp[target].x -= fx;
+                disp[target].y -= fy;
+            });
+
+            // 3. Gravity toward cluster center coordinates
+            for (let i = 0; i < numNodes; i++) {
+                const node = nodes[i];
+                const pos = positions[node];
+                const initialX = graph.getNodeAttribute(node, 'initialX') || 0;
+                const initialY = graph.getNodeAttribute(node, 'initialY') || 0;
+                disp[node].x -= gravity * (pos.x - initialX);
+                disp[node].y -= gravity * (pos.y - initialY);
+            }
+
+            // 4. Apply displacements
+            for (let i = 0; i < numNodes; i++) {
+                const node = nodes[i];
+                const d = disp[node];
+                const dist = Math.sqrt(d.x * d.x + d.y * d.y) || 0.01;
+                const capped = Math.min(dist, temp);
+                positions[node].x += (d.x / dist) * capped;
+                positions[node].y += (d.y / dist) * capped;
+            }
+        }
+
+        for (let i = 0; i < numNodes; i++) {
+            graph.setNodeAttribute(nodes[i], 'x', positions[nodes[i]].x);
+            graph.setNodeAttribute(nodes[i], 'y', positions[nodes[i]].y);
+        }
+      }
+
       function renderNetworkGraph(results, selectedProjects = []) {
         const container = document.getElementById('project-network-graph');
         if (!container) return;
+
+        lastCombinedResults = results;
+        lastSelectedProjects = selectedProjects;
 
         if (networkInstance) {
           networkInstance.kill();
@@ -957,11 +1155,27 @@
 
         container.innerHTML = "";
 
+        const detailPanel = document.getElementById('network-node-detail');
+        if (detailPanel) {
+          detailPanel.classList.add('d-none');
+        }
+
+        const layoutStatusCard = document.getElementById('network-layout-status-card');
         if (results.length === 0) {
           if (networkNodeCountBadge) networkNodeCountBadge.textContent = "0";
           if (networkEdgeCountBadge) networkEdgeCountBadge.textContent = "0";
+          if (layoutStatusCard) layoutStatusCard.style.display = "none";
           return;
         }
+
+        // Filter results based on hidden categories and exclude 'file' nodes
+        const filteredResults = results.filter(item => {
+          if (item.systemClass && item.systemClass.toLowerCase() === 'file') return false;
+          const category = getPaletteCategory(item.systemClass);
+          return !hiddenCategories.has(category);
+        });
+
+        const nodeIds = new Set(filteredResults.map(item => item.id));
 
         const GraphConstructor = typeof graphology !== 'undefined' && graphology.Graph ? graphology.Graph : null;
         const SigmaConstructor = typeof Sigma !== 'undefined' ? Sigma : (typeof sigma !== 'undefined' && sigma.Sigma ? sigma.Sigma : null);
@@ -972,19 +1186,6 @@
         }
 
         const graph = new GraphConstructor();
-        const nodeIds = new Set(results.map(item => item.id));
-
-        const COLOR_PALETTE = {
-          place: { color: '#1c7ed6' },
-          person: { color: '#0b7285' },
-          group: { color: '#fa5252' },
-          event: { color: '#ae3ec9' },
-          source: { color: '#f59f00' },
-          source_translation: { color: '#d6336c' },
-          artifact: { color: '#37b24d' },
-          bibliography: { color: '#495057' },
-          default: { color: '#ced4da' }
-        };
 
         // 1. Gather all nodes and assign their projects
         const nodeProjects = {}; // nodeId -> array of project acronyms
@@ -994,12 +1195,14 @@
           const data = projectNetworkCache[proj];
           if (data && data.results) {
             data.results.forEach(item => {
-              if (!nodeProjects[item.id]) {
-                nodeProjects[item.id] = [];
-                nodeData[item.id] = item;
-              }
-              if (!nodeProjects[item.id].includes(proj)) {
-                nodeProjects[item.id].push(proj);
+              if (nodeIds.has(item.id)) {
+                if (!nodeProjects[item.id]) {
+                  nodeProjects[item.id] = [];
+                  nodeData[item.id] = item;
+                }
+                if (!nodeProjects[item.id].includes(proj)) {
+                  nodeProjects[item.id].push(proj);
+                }
               }
             });
           }
@@ -1013,7 +1216,7 @@
             centers[proj] = { x: 0, y: 0 };
           } else {
             const angle = (idx / projCount) * 2 * Math.PI;
-            const r = 260; // Spread them out beautifully
+            const r = 1200; // Spread them out beautifully (very high distance)
             centers[proj] = {
               x: r * Math.cos(angle),
               y: r * Math.sin(angle)
@@ -1027,6 +1230,9 @@
           clusterNodeCount[proj] = 0;
         });
 
+        // Track counters for each bridge group combination (e.g. 'projA-projB')
+        const bridgeGroupCounters = {};
+
         // 4. Sort nodes by degree to place hubs closer to their cluster centers
         const sortedNodeIds = Object.keys(nodeData).sort((a, b) => {
           const degA = nodeData[a].relations ? nodeData[a].relations.length : 0;
@@ -1035,6 +1241,10 @@
         });
 
         // 5. Add nodes to graph with Fermat's Spiral positioning around project centers
+        const PHYSICS_THRESHOLD = 150;
+        const totalNodes = sortedNodeIds.length;
+        const spacing = totalNodes > PHYSICS_THRESHOLD ? 55 : 35;
+
         sortedNodeIds.forEach(nodeId => {
           const item = nodeData[nodeId];
           const projs = nodeProjects[nodeId] || [];
@@ -1049,7 +1259,7 @@
             const idx = clusterNodeCount[proj]++;
             
             const angle = idx * 2.39996; // Golden Angle
-            const r = 10 * Math.sqrt(idx);
+            const r = spacing * Math.sqrt(idx); // Dynamic spacing spiral
             x = center.x + r * Math.cos(angle);
             y = center.y + r * Math.sin(angle);
           } else if (projs.length > 1) {
@@ -1065,21 +1275,27 @@
             avgX /= projs.length;
             avgY /= projs.length;
 
-            const jitterAngle = Math.random() * 2 * Math.PI;
-            const jitterR = 5 + Math.random() * 15;
-            x = avgX + jitterR * Math.cos(jitterAngle);
-            y = avgY + jitterR * Math.sin(jitterAngle);
+            const groupKey = projs.slice().sort().join('-');
+            if (!bridgeGroupCounters[groupKey]) {
+              bridgeGroupCounters[groupKey] = 0;
+            }
+            const idx = bridgeGroupCounters[groupKey]++;
+            const angle = idx * 2.39996; // Golden Angle
+            const r = spacing * Math.sqrt(idx); // Dynamic spacing spiral for bridge nodes
+            x = avgX + r * Math.cos(angle);
+            y = avgY + r * Math.sin(angle);
           }
 
-          const systemClass = item.systemClass || 'default';
-          const palette = COLOR_PALETTE[systemClass] || COLOR_PALETTE['default'];
-          const deg = item.relations ? item.relations.length : 0;
-          const size = Math.min(25, Math.max(5, 5 + deg * 0.4));
+          const category = getPaletteCategory(item.systemClass);
+          const palette = COLOR_PALETTE[category] || COLOR_PALETTE['default'];
+          const size = 4; // Uniform node size
 
           graph.addNode(item.id.toString(), {
             label: item.label || `ID: ${item.id}`,
             x: x,
             y: y,
+            initialX: x,
+            initialY: y,
             size: size,
             color: palette.color
           });
@@ -1088,7 +1304,7 @@
         // 6. Fast O(E) Edge creation
         let edgeCount = 0;
         const edgeSet = new Set();
-        results.forEach(item => {
+        filteredResults.forEach(item => {
           if (item.relations) {
             item.relations.forEach(targetId => {
               const s = item.id;
@@ -1112,9 +1328,78 @@
         if (networkEdgeCountBadge) networkEdgeCountBadge.textContent = edgeCount.toLocaleString();
 
         if (graph.order > 0) {
+          // Dynamic layout execution and status card update
+          const layoutStatusCard = document.getElementById('network-layout-status-card');
+          const layoutStatusText = document.getElementById('network-layout-status');
+          const layoutDescText = document.getElementById('network-layout-desc');
+          const layoutIcon = document.getElementById('network-layout-icon');
+
+          if (layoutStatusCard) {
+            layoutStatusCard.style.display = "block";
+          }
+
+          if (graph.order <= PHYSICS_THRESHOLD) {
+            if (layoutStatusText) {
+              layoutStatusText.textContent = "{{ _('Physics Layout') }}";
+              layoutStatusText.style.color = "#37b24d"; // Emerald green
+            }
+            if (layoutDescText) {
+              layoutDescText.textContent = "{{ _('Dynamic node separation') }}";
+            }
+            if (layoutIcon) {
+              layoutIcon.className = "bi bi-cpu text-success fs-4 layout-pulsing";
+            }
+            applySpringLayout(graph);
+          } else {
+            if (layoutStatusText) {
+              layoutStatusText.textContent = "{{ _('High-Performance') }}";
+              layoutStatusText.style.color = "#ae3ec9"; // Orchid purple
+            }
+            if (layoutDescText) {
+              layoutDescText.textContent = "{{ _('Optimized for speed on large networks') }}";
+            }
+            if (layoutIcon) {
+              layoutIcon.className = "bi bi-lightning-charge-fill text-purple fs-4";
+            }
+          }
+
           networkInstance = new SigmaConstructor(graph, container, {
             allowOuterBounds: true,
             renderLabels: true
+          });
+
+          // Handle click on node to show details panel popup
+          networkInstance.on("clickNode", function (event) {
+            const clickedNodeId = event.node;
+            const node = nodeData[clickedNodeId];
+            const detailPanel = document.getElementById('network-node-detail');
+
+            if (node && detailPanel) {
+              const titleElem = document.getElementById('detail-node-title');
+              const classElem = document.getElementById('detail-node-class');
+              const idElem = document.getElementById('detail-node-id');
+              const relationsElem = document.getElementById('detail-node-relations');
+              const linkElem = document.getElementById('detail-node-link');
+
+              if (titleElem) titleElem.innerText = node.label || `ID: ${node.id}`;
+              if (classElem) {
+                const category = getPaletteCategory(node.systemClass);
+                const palette = COLOR_PALETTE[category] || COLOR_PALETTE['default'];
+                classElem.innerHTML = `
+                  <span class="badge text-capitalize" style="background: #fff; color: ${palette.color}; border: 1px solid ${palette.color}; padding: 4px 10px;">
+                    ${(node.systemClass || 'default').replace('_', ' ')}
+                  </span>
+                `;
+              }
+              if (idElem) idElem.innerText = node.id;
+              if (relationsElem) relationsElem.innerText = node.relations ? node.relations.length : 0;
+              
+              if (linkElem) {
+                linkElem.href = `/entity/${node.id}`;
+              }
+
+              detailPanel.classList.remove('d-none');
+            }
           });
 
           networkInstance.on("doubleClickNode", function (event) {
@@ -1122,6 +1407,64 @@
             window.open(`/entity/${nodeId}`, '_blank');
           });
         }
+      }
+
+      // Checkbox event listeners
+      document.querySelectorAll(".network-project-checkbox").forEach(chk => {
+        chk.addEventListener("change", () => {
+          updateNetworkFromCheckboxes();
+          updateToggleAllButtonText();
+        });
+      });
+
+      const toggleAllBtn = document.getElementById("network-projects-toggle-all");
+      if (toggleAllBtn) {
+        toggleAllBtn.addEventListener("click", function() {
+          const checkboxes = document.querySelectorAll(".network-project-checkbox");
+          const allChecked = Array.from(checkboxes).every(chk => chk.checked);
+          checkboxes.forEach(chk => {
+            chk.checked = !allChecked;
+          });
+          toggleAllBtn.textContent = allChecked ? "{{ _('Select All') }}" : "{{ _('Deselect All') }}";
+          updateNetworkFromCheckboxes();
+        });
+      }
+
+      function updateToggleAllButtonText() {
+        if (!toggleAllBtn) return;
+        const checkboxes = document.querySelectorAll(".network-project-checkbox");
+        const allChecked = Array.from(checkboxes).every(chk => chk.checked);
+        toggleAllBtn.textContent = allChecked ? "{{ _('Deselect All') }}" : "{{ _('Select All') }}";
+      }
+
+      // Legend event listeners
+      const legendItems = document.querySelectorAll('.network-legend .legend-item[role="button"]');
+      legendItems.forEach(item => {
+        item.addEventListener('click', function () {
+          const category = item.getAttribute('data-category');
+          if (!category) return;
+          
+          if (hiddenCategories.has(category)) {
+            hiddenCategories.delete(category);
+            item.classList.remove('inactive');
+          } else {
+            hiddenCategories.add(category);
+            item.classList.add('inactive');
+          }
+          
+          renderNetworkGraph(lastCombinedResults, lastSelectedProjects);
+        });
+      });
+
+      // Close button for details panel
+      const closeDetailBtn = document.getElementById('btn-close-detail');
+      if (closeDetailBtn) {
+        closeDetailBtn.addEventListener('click', function () {
+          const detailPanel = document.getElementById('network-node-detail');
+          if (detailPanel) {
+            detailPanel.classList.add('d-none');
+          }
+        });
       }
 
       setTimeout(async () => {
