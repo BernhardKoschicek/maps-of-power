@@ -214,3 +214,25 @@ def test_api_project_places_route() -> None:
     data = response.json
     assert 'error' in data
 
+
+def test_depiction_main_image_and_thumbnail() -> None:
+    from mop.model.entity import Depiction
+    dep = Depiction(
+        link="123",
+        title="Test Title",
+        license="CC BY 4.0",
+        url="http://example.org/image.jpg",
+        creator="Creator",
+        license_holder="Holder",
+        public_shareable=True,
+        mimetype="image/jpeg",
+        iiif_base_path="https://openatlas.maps-of-power.at/iiif/mop/123.jpg",
+        iiif_manifest="https://openatlas.maps-of-power.at/iiif_manifest/123",
+        extension=".jpg",
+        description="Test Desc",
+        main_image=True
+    )
+    assert dep.main_image is True
+    assert dep.iiif_thumbnail_url == "https://openatlas.maps-of-power.at/iiif/mop/123.tiff/full/400,/0/default.jpg"
+
+

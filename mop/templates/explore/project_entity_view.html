@@ -115,65 +115,104 @@
               <i class="bi bi-info-circle me-2"></i>{{ _('properties') }}
             </h3>
 
-            <div class="mb-4">
-              {% if entity.begin or entity.end %}
-                <div class="d-flex align-items-center mb-2">
-                  <i class="bi bi-calendar3 text-primary me-2"></i>
-                  <span class="fw-bold me-2">{{ _('Period') }}:</span>
-                  <span>
-                    {% if entity.begin and entity.end and entity.begin == entity.end %}
-                      {{ entity.begin }}
-                    {% else %}
-                      {% if entity.begin %}{{ entity.begin }}{% endif %}
-                      {% if entity.begin and entity.end %} – {% endif %}
-                      {% if entity.end %}{{ entity.end }}{% endif %}
+            {% set ns = namespace(main_img=none) %}
+            {% if entity.depictions %}
+              {% for img in entity.depictions %}
+                {% if img.main_image and img.public_shareable %}
+                  {% set ns.main_img = img %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+
+            <div class="row g-4">
+              <div class="{% if ns.main_img %}col-md-8 col-sm-12{% else %}col-12{% endif %}">
+                <div class="mb-4">
+                  {% if entity.begin or entity.end %}
+                    <div class="d-flex align-items-center mb-2">
+                      <i class="bi bi-calendar3 text-primary me-2"></i>
+                      <span class="fw-bold me-2">{{ _('Period') }}:</span>
+                      <span>
+                        {% if entity.begin and entity.end and entity.begin == entity.end %}
+                          {{ entity.begin }}
+                        {% else %}
+                          {% if entity.begin %}{{ entity.begin }}{% endif %}
+                          {% if entity.begin and entity.end %} – {% endif %}
+                          {% if entity.end %}{{ entity.end }}{% endif %}
+                        {% endif %}
+                      </span>
+                    </div>
+                  {% endif %}
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle">
+                    <tbody>
+                      <tr>
+                        <th class="text-muted fw-semibold border-0 ps-0" style="width: 35%;">ID</th>
+                        <td class="border-0">{{ entity.id_ }}</td>
+                      </tr>
+                      <tr>
+                        <th class="text-muted fw-semibold ps-0">System Class</th>
+                        <td>
+                          <span class="badge bg-accent2 text-primary rounded-pill px-3">{{ entity.system_class }}</span>
+                        </td>
+                      </tr>
+                      {% if type_hierarchy %}
+                        {% for key, value in type_hierarchy.items() %}
+                          <tr>
+                            <th class="text-muted fw-semibold ps-0">{{ key }}</th>
+                            <td>
+                              {% for type in value %}
+                                {{ type_popover(type) }}{% if not loop.last %}, {% endif %}
+                              {% endfor %}
+                            </td>
+                          </tr>
+                        {% endfor %}
+                      {% endif %}
+                    </tbody>
+                  </table>
+                </div>
+                {% if entity.links %}
+                  <div class="mt-4 pt-3 border-top">
+                    <div class="d-flex flex-wrap gap-2">
+                      {% for system in entity.links %}
+                        <a href="{{ system.identifier }}"
+                           class="btn btn-sm btn-outline-secondary rounded-pill px-3"
+                           target="_blank">
+                          <i class="bi bi-link-45deg me-1"></i>{{ system.referenceSystem }}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+              {% if ns.main_img %}
+                <div class="col-md-4 col-sm-12 text-center">
+                  <div class="position-relative d-inline-block rounded-4 overflow-hidden shadow-sm border border-light-subtle gallery-card w-100" style="max-width: 100%;">
+                    <a href="{{ ns.main_img.url }}" data-fancybox="gallery-main"
+                       data-caption="{{ ns.main_img.title }}{% if ns.main_img.description %} - {{ ns.main_img.description }}{% endif %}">
+                      <div class="ratio ratio-1x1">
+                        <img src="{{ ns.main_img.iiif_thumbnail_url }}"
+                             class="object-fit-cover w-100 h-100"
+                             alt="{{ ns.main_img.title }}">
+                      </div>
+                    </a>
+                    {% if ns.main_img.iiif_manifest %}
+                      <div class="position-absolute bottom-0 end-0 p-2 bg-white bg-opacity-75 rounded-start-3 shadow-sm" style="z-index: 10;">
+                        <a href="{{ url_for('iiif_viewer', manifest=ns.main_img.iiif_manifest) }}"
+                           target="_blank" class="d-inline-block">
+                          <img src="{{ url_for('static', filename='images/icons/iiif.png', v=ASSETS_VERSION) }}"
+                               alt="iiif_logo" style="width: 24px">
+                        </a>
+                      </div>
                     {% endif %}
-                  </span>
+                  </div>
+                  <div class="mt-2 text-center">
+                    <p class="small text-muted mb-0 fw-semibold text-truncate" title="{{ ns.main_img.title }}">{{ ns.main_img.title }}</p>
+                  </div>
                 </div>
               {% endif %}
             </div>
-
-            <div class="table-responsive">
-              <table class="table table-hover align-middle">
-                <tbody>
-                  <tr>
-                    <th class="text-muted fw-semibold border-0 ps-0" style="width: 35%;">ID</th>
-                    <td class="border-0">{{ entity.id_ }}</td>
-                  </tr>
-                  <tr>
-                    <th class="text-muted fw-semibold ps-0">System Class</th>
-                    <td>
-                      <span class="badge bg-accent2 text-primary rounded-pill px-3">{{ entity.system_class }}</span>
-                    </td>
-                  </tr>
-                  {% if type_hierarchy %}
-                    {% for key, value in type_hierarchy.items() %}
-                      <tr>
-                        <th class="text-muted fw-semibold ps-0">{{ key }}</th>
-                        <td>
-                          {% for type in value %}
-                            {{ type_popover(type) }}{% if not loop.last %}, {% endif %}
-                          {% endfor %}
-                        </td>
-                      </tr>
-                    {% endfor %}
-                  {% endif %}
-                </tbody>
-              </table>
-            </div>
-            {% if entity.links %}
-              <div class="mt-4 pt-3 border-top">
-                <div class="d-flex flex-wrap gap-2">
-                  {% for system in entity.links %}
-                    <a href="{{ system.identifier }}"
-                       class="btn btn-sm btn-outline-secondary rounded-pill px-3"
-                       target="_blank">
-                      <i class="bi bi-link-45deg me-1"></i>{{ system.referenceSystem }}
-                    </a>
-                  {% endfor %}
-                </div>
-              </div>
-            {% endif %}
           </div>
         </div>
       </div>

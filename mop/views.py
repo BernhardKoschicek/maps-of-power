@@ -1,7 +1,9 @@
-from collections import defaultdict
+import json
+import re
 from typing import Any, Literal, Optional
 
 import numpy
+import requests
 from flask import abort, jsonify, render_template, request, session
 from flask_babel import lazy_gettext as _
 from werkzeug import Response
@@ -18,11 +20,11 @@ from mop.data.projects.projects import project_data
 from mop.display.image import image_gallery
 from mop.model.api_calls import get_ego_network, get_network_visualisation
 from mop.model.entity import Entity
+from mop.model.explore import (
+    get_oa_by_view_class, system_classes, view_classes)
 from mop.model.narrative import NarrativeGenerator
-from mop.model.explore import (get_oa_by_view_class, system_classes,
-                               view_classes)
-from mop.util import (get_dict_entries_by_category,
-                      get_types_sorted)
+from mop.util import (
+    get_dict_entries_by_category, get_types_sorted)
 
 
 @app.route('/')
@@ -77,11 +79,11 @@ def literature() -> str:
                 norm_cats.append(c)
         if not norm_cats:
             norm_cats.append('further')
-        
+
         # Pre-render citation string: Author, Title. Location, Year. pp. Pages.
         author = lit.get('author', '').strip()
         title = lit.get('title', '').strip()
-        
+
         # Form location string
         locs = lit.get('locations', [])
         if isinstance(locs, list):
@@ -90,10 +92,10 @@ def literature() -> str:
             loc_str = str(locs)
         else:
             loc_str = ''
-            
+
         date = lit.get('date', '').strip()
         pages = lit.get('pages', '').strip()
-        
+
         citation_parts = []
         if author:
             citation_parts.append(author)
@@ -105,9 +107,9 @@ def literature() -> str:
             citation_parts.append(date)
         if pages:
             citation_parts.append(f'{_("pp.")} {pages}')
-            
+
         citation_text = ', '.join(citation_parts) + '.'
-        
+
         processed_lit = {
             'author': lit.get('author', ''),
             'title': lit.get('title', ''),
@@ -120,7 +122,7 @@ def literature() -> str:
             'citation_text': citation_text
         }
         processed_literatures.append(processed_lit)
-        
+
     return render_template(
         'literature.html',
         literatures=processed_literatures,
@@ -172,134 +174,138 @@ def entity_project_view(
         id_: int,
         project: Optional[str] = None,
         view: Optional[str] = None) -> str:
-     if (project is not None and
-             project not in project_data):  # pragma: no cover
-         abort(404)
-     if view is not None and view not in view_classes:  # pragma: no cover
-         abort(404)
-     entity = Entity.get_entity_from_oa(id_)
-     relations = entity.relations or {}
+    if (project is not None and
+            project not in project_data):  # pragma: no cover
+        abort(404)
+    if view is not None and view not in view_classes:  # pragma: no cover
+        abort(404)
+    entity = Entity.get_entity_from_oa(id_)
+    relations = entity.relations or {}
 
-     def normalize_and_inject_geojson(geojson_obj: Any, properties: dict[str, Any]) -> list[dict[str, Any]]:
-         if not geojson_obj:  # pragma: no cover
-             return []
-         if not isinstance(geojson_obj, dict):  # pragma: no cover
-             return []
-         obj_type = geojson_obj.get('type')
-         features = []
-         if obj_type == 'FeatureCollection':
-             for f in geojson_obj.get('features', []):
-                 if isinstance(f, dict):  # pragma: no cover
-                     f_copy = dict(f)
-                     f_copy['properties'] = dict(f_copy.get('properties') or {})
-                     for k, v in properties.items():
-                         f_copy['properties'][k] = v
-                     features.append(f_copy)
-         elif obj_type == 'Feature':
-             f_copy = dict(geojson_obj)
-             f_copy['properties'] = dict(f_copy.get('properties') or {})
-             for k, v in properties.items():
-                 f_copy['properties'][k] = v
-             features.append(f_copy)
-         elif obj_type in [
-             'Point', 'MultiPoint', 'LineString', 'MultiLineString',
-             'Polygon', 'MultiPolygon', 'GeometryCollection']:  # pragma: no cover
-             features.append({
-                 "type": "Feature",
-                 "geometry": geojson_obj,
-                 "properties": dict(properties)
-             })
-         return features
+    def normalize_and_inject_geojson(geojson_obj: Any,
+                                     properties: dict[str, Any]) -> list[
+        dict[str, Any]]:
+        if not geojson_obj:  # pragma: no cover
+            return []
+        if not isinstance(geojson_obj, dict):  # pragma: no cover
+            return []
+        obj_type = geojson_obj.get('type')
+        features = []
+        if obj_type == 'FeatureCollection':
+            for f in geojson_obj.get('features', []):
+                if isinstance(f, dict):  # pragma: no cover
+                    f_copy = dict(f)
+                    f_copy['properties'] = dict(f_copy.get('properties') or {})
+                    for k, v in properties.items():
+                        f_copy['properties'][k] = v
+                    features.append(f_copy)
+        elif obj_type == 'Feature':
+            f_copy = dict(geojson_obj)
+            f_copy['properties'] = dict(f_copy.get('properties') or {})
+            for k, v in properties.items():
+                f_copy['properties'][k] = v
+            features.append(f_copy)
+        elif obj_type in [
+            'Point', 'MultiPoint', 'LineString', 'MultiLineString',
+            'Polygon', 'MultiPolygon',
+            'GeometryCollection']:  # pragma: no cover
+            features.append({
+                "type": "Feature",
+                "geometry": geojson_obj,
+                "properties": dict(properties)
+            })
+        return features
 
-     # Standardize main entity geometry
-     main_geometry = None
-     if entity.geometry:  # pragma: no cover
-         features = normalize_and_inject_geojson(entity.geometry, {
-             "title": entity.name,
-             "description": entity.description or "",
-             "systemClass": "selected",
-             "id": entity.id_
-         })
-         if features:
-             main_geometry = {
-                 "type": "FeatureCollection",
-                 "features": features
-             }
-     entity.geometry = main_geometry
+    # Standardize main entity geometry
+    main_geometry = None
+    if entity.geometry:  # pragma: no cover
+        features = normalize_and_inject_geojson(entity.geometry, {
+            "title": entity.name,
+            "description": entity.description or "",
+            "systemClass": "selected",
+            "id": entity.id_
+        })
+        if features:
+            main_geometry = {
+                "type": "FeatureCollection",
+                "features": features
+            }
+    entity.geometry = main_geometry
 
-     # Standardize related entity geometries
-     related_places = []
-     seen_ids = set()
-     for rel_group, rel_list in relations.items():
-         for rel in rel_list:
-             if rel.geometry and rel.relation_to_id not in seen_ids:
-                 seen_ids.add(rel.relation_to_id)
-                 features = normalize_and_inject_geojson(rel.geometry, {
-                     "title": rel.label,
-                     "description": rel.description or "",
-                     "systemClass": rel.system_class,
-                     "id": rel.relation_to_id
-                 })
-                 related_places.extend(features)
+    # Standardize related entity geometries
+    related_places = []
+    seen_ids = set()
+    for rel_group, rel_list in relations.items():
+        for rel in rel_list:
+            if rel.geometry and rel.relation_to_id not in seen_ids:
+                seen_ids.add(rel.relation_to_id)
+                features = normalize_and_inject_geojson(rel.geometry, {
+                    "title": rel.label,
+                    "description": rel.description or "",
+                    "systemClass": rel.system_class,
+                    "id": rel.relation_to_id
+                })
+                related_places.extend(features)
 
-     # Gather and sort all timeline events
-     timeline_events = []
-     for rel_group, rel_list in relations.items():
-         if rel_group in ['references', 'sources', 'source_translations', 'others']:
-             continue
-         for rel in rel_list:
-             if rel.begin:
-                 sort_date = rel.raw_begin or rel.begin
-                 timeline_events.append({
-                     "is_main": False,
-                     "relation": rel,
-                     "sort_date": sort_date,
-                     "category": rel_group
-                 })
+    # Gather and sort all timeline events
+    timeline_events = []
+    for rel_group, rel_list in relations.items():
+        if rel_group in ['references', 'sources', 'source_translations',
+                         'others']:
+            continue
+        for rel in rel_list:
+            if rel.begin:
+                sort_date = rel.raw_begin or rel.begin
+                timeline_events.append({
+                    "is_main": False,
+                    "relation": rel,
+                    "sort_date": sort_date,
+                    "category": rel_group
+                })
 
-     if entity.begin:  # pragma: no cover
-         timeline_events.append({
-             "is_main": True,
-             "label": f"Start of {entity.name}",
-             "type": "Lifecycle Start",
-             "begin": entity.begin,
-             "sort_date": entity.begin_from or entity.begin,
-             "system_class": entity.system_class
-         })
-     if entity.end:  # pragma: no cover
-         timeline_events.append({
-             "is_main": True,
-             "label": f"End of {entity.name}",
-             "type": "Lifecycle End",
-             "begin": entity.end,
-             "sort_date": entity.end_from or entity.end,
-             "system_class": entity.system_class
-         })
+    if entity.begin:  # pragma: no cover
+        timeline_events.append({
+            "is_main": True,
+            "label": f"Start of {entity.name}",
+            "type": "Lifecycle Start",
+            "begin": entity.begin,
+            "sort_date": entity.begin_from or entity.begin,
+            "system_class": entity.system_class
+        })
+    if entity.end:  # pragma: no cover
+        timeline_events.append({
+            "is_main": True,
+            "label": f"End of {entity.name}",
+            "type": "Lifecycle End",
+            "begin": entity.end,
+            "sort_date": entity.end_from or entity.end,
+            "system_class": entity.system_class
+        })
 
-     timeline_events.sort(key=lambda x: x['sort_date'] or '')
+    timeline_events.sort(key=lambda x: x['sort_date'] or '')
 
-     narratives = NarrativeGenerator.generate(entity, project=project, view=view)
+    narratives = NarrativeGenerator.generate(entity, project=project,
+                                             view=view)
 
-     project_details = project_data.get(project) if project else None
-     if project_details and not project_details.get('pi'):
-         project_details = dict(project_details)
-         project_details['pi'] = ['Mihailo Popović']
+    project_details = project_data.get(project) if project else None
+    if project_details and not project_details.get('pi'):
+        project_details = dict(project_details)
+        project_details['pi'] = ['Mihailo Popović']
 
-     return render_template(
-         'explore/project_entity_view.html',
-         entity=entity,
-         type_hierarchy=get_types_sorted(entity.types or []),
-         images=numpy.array_split(
-             entity.depictions, 4)  # type: ignore[arg-type]
-         if entity.depictions else None,
-         relations=relations,
-         related_places=related_places,
-         timeline_events=timeline_events,
-         path=(project, view),
-         system_classes=system_classes,
-         narratives=narratives,
-         project_details=project_details)
-
+    return render_template(
+        'explore/project_entity_view.html',
+        entity=entity,
+        type_hierarchy=get_types_sorted(entity.types or []),
+        images=numpy.array_split(
+            entity.depictions, 4)  # type: ignore[arg-type]
+        if entity.depictions else None,
+        relations=relations,
+        related_places=related_places,
+        timeline_events=timeline_events,
+        path=(project, view),
+        system_classes=system_classes,
+        narratives=narratives,
+        project_details=project_details)
 
 
 @app.route('/software')
@@ -333,7 +339,8 @@ def network_api(id_: int) -> Response | tuple[Response, int]:
 
 
 @app.route('/api/places/<project_acronym>')
-def api_project_places(project_acronym: str) -> Response | tuple[Response, int]:
+def api_project_places(project_acronym: str) -> Response | tuple[
+    Response, int]:
     if project_acronym not in project_data:
         return jsonify({'error': 'Project not found'}), 404
     oa_id = project_data[project_acronym].get('oaID')
@@ -356,13 +363,15 @@ def api_project_places(project_acronym: str) -> Response | tuple[Response, int]:
 
 
 @app.route('/api/network/project/<project_acronym>')
-def api_project_network(project_acronym: str) -> Response | tuple[Response, int]:
+def api_project_network(project_acronym: str) -> Response | tuple[
+    Response, int]:
     if project_acronym == "all":
         linked_to_ids = []
         for proj in project_data.values():
             oa_id = proj.get('oaID')
             if oa_id:
-                linked_to_ids.extend([int(x) for x in oa_id if str(x).isdigit()])
+                linked_to_ids.extend(
+                    [int(x) for x in oa_id if str(x).isdigit()])
     else:
         if project_acronym not in project_data:
             return jsonify({'error': 'Project not found'}), 404
@@ -378,8 +387,6 @@ def api_project_network(project_acronym: str) -> Response | tuple[Response, int]
         return jsonify(data)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-import requests as req_lib
 
 
 @cache.memoize(timeout=3600)
@@ -397,36 +404,37 @@ def _fetch_table_rows(
         'sort': sort,
         'column': column,
         'page': page,
-        'table_columns': ['begin', 'class', 'description', 'end', 'name', 'type'],
+        'table_columns': ['begin', 'class', 'description', 'end', 'name',
+                          'type'],
         'type_id': list(oa_ids),
     }
     if search:
-        import json as _json
-        params['search'] = _json.dumps({
-            'entityName': [{'operator': 'like', 'values': [search],
-                            'logicalOperator': 'and'}]
-        })
-    response = req_lib.get(url, params=params,
-                           proxies=get_proxies(), timeout=30)
+        params['search'] = json.dumps({
+            'entityName': [{
+                'operator': 'like',
+                'values': [search],
+                'logicalOperator': 'and'}]})
+    response = requests.get(
+        url, params=params,
+        proxies=get_proxies(),
+        timeout=30)
     response.raise_for_status()
     data = response.json()
-    # Strip the checkbox column (always row[0]) and expose the entity ID
     rows = []
     for row in data.get('results', []):
         if not isinstance(row, list) or len(row) < 6:
             continue
-        import re
         m = re.search(r'\bid="(\d+)"', str(row[0]))
         if not m:
             continue
         rows.append({
-            'id':          int(m.group(1)),
-            'begin':       row[1] or '',
-            'class_':      row[2] or '',
+            'id': int(m.group(1)),
+            'begin': row[1] or '',
+            'class_': row[2] or '',
             'description': row[3] or '',
-            'end':         row[4] or '',
-            'name':        row[5] or '',
-            'type':        row[6] if len(row) > 6 else '',
+            'end': row[4] or '',
+            'name': row[5] or '',
+            'type': row[6] if len(row) > 6 else '',
         })
     return {'results': rows, 'pagination': data.get('pagination', {})}
 
@@ -439,8 +447,8 @@ def _fetch_table_rows_count(view: str, oa_ids: tuple[str, ...]) -> int:
         'count': 'true',
         'type_id': list(oa_ids),
     }
-    response = req_lib.get(url, params=params,
-                           proxies=get_proxies(), timeout=30)
+    response = requests.get(url, params=params,
+                            proxies=get_proxies(), timeout=30)
     response.raise_for_status()
     try:
         return int(response.text.strip())
@@ -470,8 +478,8 @@ def api_explore_entities(
         return jsonify({'results': [], 'pagination': {}})
     oa_ids: tuple[str, ...] = (
         tuple(oa_id) if isinstance(oa_id, list) else (str(oa_id),))
-    page   = request.args.get('page',   1, type=int)
-    sort   = request.args.get('sort',   'asc')
+    page = request.args.get('page', 1, type=int)
+    sort = request.args.get('sort', 'asc')
     column = request.args.get('column', 'name')
     search = request.args.get('search', '').strip()
     try:
@@ -561,5 +569,3 @@ def handle_generic_exception(
             "An unexpected server error occurred. "
             "Our cartographers are looking into it.")
     ), 500
-
-

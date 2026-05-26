@@ -45,6 +45,7 @@ class PresentationFileModel(BaseModel):
     IIIFManifest: Optional[str] = Field(None, alias="IIIFManifest")
     creator: Optional[str] = None
     fromSuperEntity: Optional[bool] = Field(None, alias="fromSuperEntity")
+    mainImage: Optional[bool] = Field(None, alias="mainImage")
 
     class Config:
         populate_by_name = True
@@ -151,6 +152,14 @@ class Depiction:
     iiif_manifest: str
     extension: str
     description: str = ""
+    main_image: bool = False
+
+    @property
+    def iiif_thumbnail_url(self) -> str:
+        if not self.iiif_base_path:
+            return ""
+        base, _ = os.path.splitext(self.iiif_base_path)
+        return f"{base}.tiff/full/400,/0/default.jpg"
 
 
 @dataclass
@@ -256,7 +265,8 @@ class Entity:
                     iiif_base_path=f.IIIFBasePath or "",
                     iiif_manifest=f.IIIFManifest or "",
                     extension=os.path.splitext(f.url.rsplit('/', 1)[-1])[1] if f.url else "",
-                    description=""
+                    description="",
+                    main_image=f.mainImage if f.mainImage is not None else False
                 )
                 depictions_list.append(dep)
 
