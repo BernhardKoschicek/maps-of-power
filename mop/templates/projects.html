@@ -4,6 +4,7 @@
 {% endwith %}
 
 {% block content %}
+  {% from "macros.html" import license_banner %}
   <!-- Leaflet and Plugins Stylesheets (Loaded only for this page) -->
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet/dist/leaflet.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/MarkerCluster.css', v=ASSETS_VERSION) }}">
@@ -458,6 +459,8 @@
           </div>
         </div>
       </div>
+
+    {{ license_banner() }}
 
     </div>
   </div>

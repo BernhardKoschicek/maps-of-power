@@ -4,6 +4,7 @@
 {% endwith %}
 {% block title %}{{ entity.name }}{% endblock %}
 {% block content %}
+  {% from "macros.html" import license_banner %}
   <link rel="stylesheet" href="{{ url_for('static', filename='css/map.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/network_viz.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet/dist/leaflet.css', v=ASSETS_VERSION) }}">
@@ -38,7 +39,7 @@
 
   <div class="container-fluid mt-4 mb-5">
     <div class="row g-4">
-      
+
       <!-- Left Column: Glassmorphic Scrollspy Nav Menu -->
       <div class="col-12 col-md-3 col-xl-2">
         <div id="floating-navbar" class="list-group details-scrollspy-menu">
@@ -47,10 +48,10 @@
           {% endfor %}
         </div>
       </div>
-      
+
       <!-- Center Column: Core Content -->
       <div class="col-12 col-md-9 col-xl-10 position-relative" id="main-content">
-        
+
         <!-- Elevated Breadcrumbs Path -->
         <div class="mb-4">
           <nav aria-label="breadcrumb">
@@ -99,6 +100,9 @@
              target="_blank" class="btn btn-outline-primary" title="CSV">
             <i class="bi bi-filetype-csv fs-4"></i>
           </a>
+          <button type="button" class="btn btn-outline-primary" title="{{ _('Cite Entry') }}" data-bs-toggle="modal" data-bs-target="#citationModal">
+            <i class="bi bi-quote fs-4"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -368,17 +372,6 @@
                               </div>
                             </div>
 
-                            <!-- Watermark Option -->
-                            <div>
-                              <label class="form-label fw-bold text-secondary small text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">{{ _('Enhancements') }}</label>
-                              <div class="form-check form-switch p-3 bg-light rounded-3 d-flex align-items-center justify-content-between border">
-                                <div class="me-3">
-                                  <label class="form-check-label fw-semibold text-dark small d-block" for="exportWatermark" style="cursor: pointer;">{{ _('Include Academic Watermark') }}</label>
-                                  <span class="text-muted" style="font-size: 0.65rem; display: block; margin-top: 2px;">{{ _('Adds brand label, entity name, and timestamp to export') }}</span>
-                                </div>
-                                <input class="form-check-input ms-auto" type="checkbox" role="switch" id="exportWatermark" checked style="cursor: pointer;">
-                              </div>
-                            </div>
                           </form>
                         </div>
                         <div class="modal-footer border-0 pt-0 pb-4 px-4 d-flex gap-2">
@@ -774,6 +767,180 @@
       {% endif %}
     </div>
   </div>
+
+        {{ license_banner(project_details.pi if project_details else None) }}
+
+        <!-- Citation Modal -->
+        <div class="modal fade" id="citationModal" tabindex="-1" aria-labelledby="citationModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-4 border-0 shadow-lg" style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);">
+              <div class="modal-header border-0 pb-0 pt-4 px-4">
+                <h5 class="modal-title fw-bold text-dark d-flex align-items-center" id="citationModalLabel">
+                  <i class="bi bi-quote text-primary me-2 fs-3"></i>
+                  {{ _('Cite this Entry') }}
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body p-4">
+                <p class="text-muted small mb-4">{{ _('Choose your preferred academic style to cite this entry. Click copy to save it to your clipboard.') }}</p>
+
+                <!-- Citation Tabs -->
+                <ul class="nav nav-tabs border-0 portal-tabs mb-3 d-flex flex-wrap gap-1" id="citationTabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active rounded-pill px-3 py-1.5" id="apa-tab" data-bs-toggle="tab" data-bs-target="#apa-pane" type="button" role="tab" aria-controls="apa-pane" aria-selected="true">APA 7</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-3 py-1.5" id="bibtex-tab" data-bs-toggle="tab" data-bs-target="#bibtex-pane" type="button" role="tab" aria-controls="bibtex-pane" aria-selected="false">BibTeX</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-3 py-1.5" id="chicago-tab" data-bs-toggle="tab" data-bs-target="#chicago-pane" type="button" role="tab" aria-controls="chicago-pane" aria-selected="false">Chicago</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-3 py-1.5" id="mla-tab" data-bs-toggle="tab" data-bs-target="#mla-pane" type="button" role="tab" aria-controls="mla-pane" aria-selected="false">MLA 9</button>
+                  </li>
+                </ul>
+
+                <div class="tab-content" id="citationTabsContent">
+                  <!-- APA 7 Pane -->
+                  <div class="tab-pane fade show active" id="apa-pane" role="tabpanel" aria-labelledby="apa-tab" tabindex="0">
+                    <div class="position-relative bg-light rounded-3 p-3 border">
+                      <div class="citation-text lh-base text-dark small pe-5" id="citation-apa"></div>
+                      <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-50 translate-middle-y end-0 me-3 btn-copy-citation" data-target="citation-apa" title="{{ _('Copy to clipboard') }}">
+                        <i class="bi bi-copy"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- BibTeX Pane -->
+                  <div class="tab-pane fade" id="bibtex-pane" role="tabpanel" aria-labelledby="bibtex-tab" tabindex="0">
+                    <div class="position-relative bg-light rounded-3 p-3 border">
+                      <pre class="citation-text mb-0 text-dark small pe-5" id="citation-bibtex" style="font-family: monospace; white-space: pre-wrap; word-break: break-all;"></pre>
+                      <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-50 translate-middle-y end-0 me-3 btn-copy-citation" data-target="citation-bibtex" title="{{ _('Copy to clipboard') }}">
+                        <i class="bi bi-copy"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Chicago Pane -->
+                  <div class="tab-pane fade" id="chicago-pane" role="tabpanel" aria-labelledby="chicago-tab" tabindex="0">
+                    <div class="position-relative bg-light rounded-3 p-3 border">
+                      <div class="citation-text lh-base text-dark small pe-5" id="citation-chicago"></div>
+                      <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-50 translate-middle-y end-0 me-3 btn-copy-citation" data-target="citation-chicago" title="{{ _('Copy to clipboard') }}">
+                        <i class="bi bi-copy"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- MLA 9 Pane -->
+                  <div class="tab-pane fade" id="mla-pane" role="tabpanel" aria-labelledby="mla-tab" tabindex="0">
+                    <div class="position-relative bg-light rounded-3 p-3 border">
+                      <div class="citation-text lh-base text-dark small pe-5" id="citation-mla"></div>
+                      <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-50 translate-middle-y end-0 me-3 btn-copy-citation" data-target="citation-mla" title="{{ _('Copy to clipboard') }}">
+                        <i class="bi bi-copy"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer border-0 pt-0 pb-4 px-4">
+                <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">{{ _('Close') }}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          // Dynamic Citation Generator
+          document.addEventListener("DOMContentLoaded", function() {
+              const citationModal = document.getElementById('citationModal');
+              if (!citationModal) return;
+
+              function cleanNames(namesStr) {
+                  return namesStr.split(',').map(name => name.replace(/\s*\([^)]*\)/g, '').trim()).join(', ');
+              }
+
+              function getBibTeXAuthor(namesStr) {
+                  const names = namesStr.split(',').map(name => {
+                      const cleaned = name.replace(/\s*\([^)]*\)/g, '').trim();
+                      const parts = cleaned.split(' ');
+                      if (parts.length > 1) {
+                          const last = parts.pop();
+                          const first = parts.join(' ');
+                          return last + ", " + first;
+                      }
+                      return cleaned;
+                  });
+                  return names.join(' and ');
+              }
+
+              function getAPAAuthor(namesStr) {
+                  const names = namesStr.split(',').map(name => {
+                      const cleaned = name.replace(/\s*\([^)]*\)/g, '').trim();
+                      const parts = cleaned.split(' ');
+                      if (parts.length > 1) {
+                          const last = parts.pop();
+                          const firstInit = parts.map(p => p.charAt(0) + '.').join(' ');
+                          return last + ", " + firstInit;
+                      }
+                      return cleaned;
+                  });
+                  if (names.length === 1) return names[0];
+                  if (names.length === 2) return names.join(' & ');
+                  const last = names.pop();
+                  return names.join(', ') + ', & ' + last;
+              }
+
+              citationModal.addEventListener('show.bs.modal', function() {
+                  const rawPIs = window.projectPIs || "Mihailo Popović";
+                  const cleanedPIs = cleanNames(rawPIs);
+                  const apaPIs = getAPAAuthor(rawPIs);
+                  const bibtexPIs = getBibTeXAuthor(rawPIs);
+                  const title = "{{ entity.name }}" || "Entity View";
+                  const currentUrl = window.location.href;
+                  const currentYear = new Date().getFullYear();
+                  const currentDate = new Date().toISOString().split('T')[0];
+
+                  // Generate APA 7
+                  document.getElementById('citation-apa').innerHTML = `${apaPIs} (${currentYear}). <i>${title}</i>. In Maps of Power: Historical Geography & Digital Humanities. <a href="${currentUrl}" target="_blank" class="text-decoration-none">${currentUrl}</a>`;
+
+                  // Generate BibTeX
+                  const citationKey = "mapsofpower_entity_" + (window.entityId || "entry");
+                  document.getElementById('citation-bibtex').textContent = `@misc{${citationKey},\n` +
+                      `  author = {${bibtexPIs}},\n` +
+                      `  title = {{"{{"}}${title}{{"}}"}},\n` +
+                      `  howpublished = {${currentUrl}},\n` +
+                      `  year = {${currentYear}},\n` +
+                      `  note = {Accessed: ${currentDate}},\n` +
+                      `  urldate = {${currentDate}}\n` +
+                      `}`;
+
+                  // Generate Chicago
+                  document.getElementById('citation-chicago').innerHTML = `${cleanedPIs}. "${title}." <i>Maps of Power: Historical Geography & Digital Humanities</i>. ${currentYear}. <a href="${currentUrl}" target="_blank" class="text-decoration-none">${currentUrl}</a> (accessed ${currentDate}).`;
+
+                  // Generate MLA 9
+                  document.getElementById('citation-mla').innerHTML = `${cleanedPIs}. "${title}." <i>Maps of Power: Historical Geography & Digital Humanities</i>, ${currentYear}, <a href="${currentUrl}" target="_blank" class="text-decoration-none">${currentUrl}</a>. Accessed ${currentDate}.`;
+              });
+
+              // Clipboard copy logic
+              document.querySelectorAll('.btn-copy-citation').forEach(btn => {
+                  btn.addEventListener('click', function() {
+                      const targetId = this.getAttribute('data-target');
+                      const targetEl = document.getElementById(targetId);
+                      let textToCopy = targetEl.textContent || targetEl.innerText;
+
+                      navigator.clipboard.writeText(textToCopy).then(() => {
+                          const originalHTML = this.innerHTML;
+                          this.innerHTML = '<i class="bi bi-check2-all text-success fs-5"></i>';
+                          this.classList.add('border-success');
+
+                          setTimeout(() => {
+                              this.innerHTML = originalHTML;
+                              this.classList.remove('border-success');
+                          }, 2000);
+                      }).catch(err => {
+                          console.error('Failed to copy text: ', err);
+                      });
+                  });
+              });
+          });
+        </script>
       </div>
     </div>
   </div>
@@ -856,6 +1023,8 @@
       const entityName = '{{ entity.name | safe }}'
       window.gisDataEntityId = {{ entity.id_ }}
       window.entityViewUrlTemplate = "{{ url_for('entity_project_view', id_=999999, project=path[0], view=path[1]) }}";
+      window.projectPIs = {{ (project_details.pi | join(', ') if (project_details and project_details.pi) else 'Mihailo Popović') | tojson }};
+      window.entityId = "{{ entity.id_ }}";
   </script>
   <script src="{{ url_for('static', filename='node_modules/leaflet/dist/leaflet.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/leaflet.markercluster.js', v=ASSETS_VERSION) }}"></script>

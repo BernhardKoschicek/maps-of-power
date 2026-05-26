@@ -1,6 +1,41 @@
 // Initialize Leaflet Map
 var map = L.map('map').setView([30, 0], 2);
 
+// Add a custom attribution overlay to the map so it gets captured by html2canvas
+(function() {
+    var watermarkDiv = document.createElement('div');
+    watermarkDiv.className = 'map-watermark-overlay';
+    watermarkDiv.style.position = 'absolute';
+    watermarkDiv.style.bottom = '10px';
+    watermarkDiv.style.left = '10px';
+    watermarkDiv.style.zIndex = '1000';
+    watermarkDiv.style.background = 'rgba(255, 255, 255, 0.85)';
+    watermarkDiv.style.padding = '6px 12px';
+    watermarkDiv.style.borderRadius = '6px';
+    watermarkDiv.style.fontSize = '11px';
+    watermarkDiv.style.color = '#212529';
+    watermarkDiv.style.border = '1px solid rgba(0, 0, 0, 0.1)';
+    watermarkDiv.style.backdropFilter = 'blur(4px)';
+    watermarkDiv.style.pointerEvents = 'none';
+    watermarkDiv.style.fontFamily = '"Outfit", "Inter", sans-serif';
+
+    function cleanNames(namesStr) {
+        if (!namesStr) return 'Mihailo Popović';
+        return namesStr.split(',').map(function(name) {
+            return name.replace(/\s*\([^)]*\)/g, '').trim();
+        }).join(', ');
+    }
+
+    var rawPIs = (typeof window.projectPIs !== 'undefined') ? window.projectPIs : 'Mihailo Popović';
+    var cleanedPIs = cleanNames(rawPIs);
+    watermarkDiv.innerHTML = '<span style="font-weight: bold;">Maps of Power</span> | CC-BY 4.0 &copy; ' + cleanedPIs;
+    
+    var mapEl = document.getElementById('map');
+    if (mapEl) {
+        mapEl.appendChild(watermarkDiv);
+    }
+})();
+
 L.control.scale().addTo(map);
 
 // Add native Fullscreen control if loaded

@@ -7,24 +7,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-05-25 22:42+0200\n"
+"POT-Creation-Date: 2026-05-26 12:54+0200\n"
 "PO-Revision-Date: 2026-05-25 22:38+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: sr_Latn_ME <LL@li.org>\n"
 "Language: sr_Latn_ME\n"
+"Language-Team: sr_Latn_ME <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Generated-By: Babel 2.17.0\n"
+"Generated-By: Babel 2.18.0\n"
 
 #: mop/util.py:36
 msgid "about"
 msgstr "O nama"
 
-#: mop/templates/explore/project_entity_view.html:59
+#: mop/templates/explore/project_entity_view.html:60
 #: mop/templates/explore/project_explore_table.html:10
-#: mop/templates/project_details.html:43 mop/util.py:37
+#: mop/templates/project_details.html:45 mop/util.py:37
 msgid "projects"
 msgstr "Projekti"
 
@@ -32,67 +33,62 @@ msgstr "Projekti"
 msgid "atlas"
 msgstr "Atlas"
 
-#: mop/util.py:39
-msgid "histgeo"
-msgstr "HistGeo"
-
 #: mop/templates/_events_list.html:44 mop/util.py:40
 msgid "events"
 msgstr "Događaji"
 
-#: mop/templates/explore/project_entity_view.html:30
-#: mop/templates/explore/project_entity_view.html:615 mop/util.py:41
+#: mop/templates/explore/project_entity_view.html:31
+#: mop/templates/explore/project_entity_view.html:608 mop/util.py:41
 msgid "literature"
 msgstr "Literatura"
 
-#: mop/views.py:336
+#: mop/views.py:342
 msgid "An error occurred"
 msgstr "Došlo je do greške"
 
-#: mop/views.py:338
+#: mop/views.py:344
 msgid "An unexpected error occurred. Please try again later."
 msgstr "Došlo je do neočekivane greške. Molimo pokušajte ponovo kasnije."
 
-#: mop/views.py:341
+#: mop/views.py:347
 msgid "Page Not Found"
 msgstr "Stranica nije pronađena"
 
-#: mop/views.py:343
+#: mop/views.py:349
 msgid ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
 msgstr ""
-"Unijete koordinate izgledaju van granica. Stranica koju tražite ne postoji."
+"Unijete koordinate izgledaju van granica. Stranica koju tražite ne "
+"postoji."
 
-#: mop/views.py:346
+#: mop/views.py:352
 msgid "Access Denied"
 msgstr "Pristup odbijen"
 
-#: mop/views.py:348
-msgid ""
-"You do not have permission to access this area. Restricted coordinates."
+#: mop/views.py:354
+msgid "You do not have permission to access this area. Restricted coordinates."
 msgstr "Nemate dozvolu za pristup ovoj oblasti. Ograničene koordinate."
 
-#: mop/views.py:351
+#: mop/views.py:357
 msgid "I'm a Teapot"
 msgstr "Ja sam čajnik"
 
-#: mop/views.py:353
+#: mop/views.py:359
 msgid ""
-"The server refuses the attempt to brew coffee with a teapot. Yes, this is a "
-"real error."
-msgstr ""
-"Server odbija pokušaj kuvanja kafe čajnikom. Da, ovo je stvarna greška."
+"The server refuses the attempt to brew coffee with a teapot. Yes, this is"
+" a real error."
+msgstr "Server odbija pokušaj kuvanja kafe čajnikom. Da, ovo je stvarna greška."
 
-#: mop/views.py:376 mop/views.py:383
+#: mop/views.py:382 mop/views.py:389
 msgid "Internal Server Error"
 msgstr "Unutrašnja greška servera"
 
-#: mop/views.py:385
+#: mop/views.py:391
 msgid ""
-"An unexpected server error occurred. Our cartographers are looking into it."
-msgstr ""
-"Došlo je do neočekivane greške na serveru. Naši kartografi je istražuju."
+"An unexpected server error occurred. Our cartographers are looking into "
+"it."
+msgstr "Došlo je do neočekivane greške na serveru. Naši kartografi je istražuju."
 
 #: mop/data/events.py:8 mop/data/events.py:12
 msgid "presentation"
@@ -121,10 +117,10 @@ msgstr "Ljetnja škola u Brnu"
 #: mop/data/events.py:39
 msgid "brno_summer_school_260625"
 msgstr ""
-"Žarko Vujošević i Mihailo Popović održali su zajedničko predavanje o srpskoj"
-" diplomatici pod nazivom „Documentary Spaces - Spaces of Power” na ljetnjoj "
-"školi Scriptorium Brunense u Brnu, Češka Republika, 26. juna 2025. godine. "
-"<a href=\"https://archivnictvi.phil.muni.cz/en/news-and-"
+"Žarko Vujošević i Mihailo Popović održali su zajedničko predavanje o "
+"srpskoj diplomatici pod nazivom „Documentary Spaces - Spaces of Power” na"
+" ljetnjoj školi Scriptorium Brunense u Brnu, Češka Republika, 26. juna "
+"2025. godine. <a href=\"https://archivnictvi.phil.muni.cz/en/news-and-"
 "events/events/scriptorium-brunense-1\" target=\"_blank\">Više "
 "informacija</a>"
 
@@ -135,14 +131,14 @@ msgstr "Diskurs o digitalnoj humanistici i vještačkoj inteligenciji"
 #: mop/data/events.py:50
 msgid "heidelberg_200625"
 msgstr ""
-"Mihailo Popović je 20. juna 2025. održao predavanje o digitalnoj humanistici"
-" i vještačkoj inteligenciji pod nazivom <a href=\"https://www.uni-"
-"heidelberg.de/de/veranstaltungen/ueber-die-sinnhaftigkeit-der-und-die-"
-"nachhaltigkeit-in-den-digitalen-geisteswissenschaften-2025-06-20\" "
-"target=\"_blank\">„Über die Sinnhaftigkeit der und die Nachhaltigkeit in den"
-" Digitalen Geisteswissenschaften: Erkenntnisse aus der Perspektive der "
-"Historiske Geografije, Vizantologije i Istraživanja Jugoistočne Evrope” na "
-"Univerzitetu u Hajdelbergu</a>."
+"Mihailo Popović je 20. juna 2025. održao predavanje o digitalnoj "
+"humanistici i vještačkoj inteligenciji pod nazivom <a href=\"https://www"
+".uni-heidelberg.de/de/veranstaltungen/ueber-die-sinnhaftigkeit-der-und-"
+"die-nachhaltigkeit-in-den-digitalen-geisteswissenschaften-2025-06-20\" "
+"target=\"_blank\">„Über die Sinnhaftigkeit der und die Nachhaltigkeit in "
+"den Digitalen Geisteswissenschaften: Erkenntnisse aus der Perspektive der"
+" Historiske Geografije, Vizantologije i Istraživanja Jugoistočne Evrope” "
+"na Univerzitetu u Hajdelbergu</a>."
 
 #: mop/data/events.py:60
 msgid "Report in the Newspaper Die Presse"
@@ -153,10 +149,10 @@ msgid "presse_03052025"
 msgstr ""
 "U svom štampanom izdanju od 3. maja 2025. godine, dnevni list Die Presse "
 "izvještava o naučnom radu Mihaila Popovića pod naslovom „Unterwegs mit "
-"Notizbuch, Kompass und Melone” („Na putu sa sveskom, kompasom i šeširom”). "
-"Dodatne informacije mogu se naći na: <a "
-"href=\"https://www.diepresse.com/19640086/auf-feldforschung-mit-notizbuch-"
-"kompass-und-melone\" target=\"_blank\">Die Presse</a>"
+"Notizbuch, Kompass und Melone” („Na putu sa sveskom, kompasom i "
+"šeširom”). Dodatne informacije mogu se naći na: <a "
+"href=\"https://www.diepresse.com/19640086/auf-feldforschung-mit-"
+"notizbuch-kompass-und-melone\" target=\"_blank\">Die Presse</a>"
 
 #: mop/data/events.py:71
 msgid "Lecture at the Haus Wittgenstein"
@@ -165,11 +161,11 @@ msgstr "Predavanje u kući Vitgenštajn"
 #: mop/data/events.py:72
 msgid "wittgenstein_13022025"
 msgstr ""
-"Mihailo Popović je 13. februara 2025. godine održao predavanje pod nazivom "
-"„Berge und Wildnis auf der südlichen Balkanhalbinsel im Spiegel der "
-"Lebensbeschreibungen der Heiligen Ivan Rilski, Prohor Pčinjski, Gavrilo "
-"Lesnovski und Joakim Osogovski” u okviru Lectorium Bulgaricum-a u kući "
-"Vitgenštajn u Beču."
+"Mihailo Popović je 13. februara 2025. godine održao predavanje pod "
+"nazivom „Berge und Wildnis auf der südlichen Balkanhalbinsel im Spiegel "
+"der Lebensbeschreibungen der Heiligen Ivan Rilski, Prohor Pčinjski, "
+"Gavrilo Lesnovski und Joakim Osogovski” u okviru Lectorium Bulgaricum-a u"
+" kući Vitgenštajn u Beču."
 
 #: mop/data/events.py:82
 msgid "Workshop in Oxford"
@@ -179,11 +175,11 @@ msgstr "Radionica u Oksfordu"
 msgid "workshop_oxford_300524"
 msgstr ""
 "Krajem maja 2024. godine Mihailo Popović je učestvovao na radionici <a "
-"href=\"https://www.ames.ox.ac.uk/event/workshop-mountains-and-historian\" "
-"target=\"_blank\">„Mountains and the Historian”</a> na Univerzitetu u "
+"href=\"https://www.ames.ox.ac.uk/event/workshop-mountains-and-historian\""
+" target=\"_blank\">„Mountains and the Historian”</a> na Univerzitetu u "
 "Oksfordu, gdje je izložio rad „Terrifying Aspects of Mountains and their "
-"Wilderness in the Medieval Balkans and How to Overcome Them”, koji se može "
-"svrstati u sekciju „Sveta topografija” Inicijative Maps of Power."
+"Wilderness in the Medieval Balkans and How to Overcome Them”, koji se "
+"može svrstati u sekciju „Sveta topografija” Inicijative Maps of Power."
 
 #: mop/data/events.py:93
 msgid "The Long Night of Research in Vienna"
@@ -192,12 +188,12 @@ msgstr "Duga noć istraživanja u Beču"
 #: mop/data/events.py:94
 msgid "lange_nacht_der_forschung_240524"
 msgstr ""
-"U petak, 24. maja 2024. godine, Mihailo Popović je učestvovao u Dugoj noći "
-"istraživanja u Austrijskoj akademiji nauka. Tamo je predstavio projekat <a "
-"href=\"\" target=\"_blank\">„Tracing Archaeological Remains and Scholarly "
-"Research of the Central Powers in the Region of Prilep-Bitola during WW I "
-"(1915-1918)”</a> kao poster, što predstavlja doprinos sekciji „Kulturna "
-"baština” Inicijative Maps of Power."
+"U petak, 24. maja 2024. godine, Mihailo Popović je učestvovao u Dugoj "
+"noći istraživanja u Austrijskoj akademiji nauka. Tamo je predstavio "
+"projekat <a href=\"\" target=\"_blank\">„Tracing Archaeological Remains "
+"and Scholarly Research of the Central Powers in the Region of Prilep-"
+"Bitola during WW I (1915-1918)”</a> kao poster, što predstavlja doprinos "
+"sekciji „Kulturna baština” Inicijative Maps of Power."
 
 #: mop/data/events.py:104
 msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
@@ -206,18 +202,18 @@ msgstr "Predstavljanje zbornika u čast Johannesa Kodera"
 #: mop/data/events.py:105
 msgid "koder_festschrift_230424"
 msgstr ""
-"Povodom 80. rođendana Johannesa Kodera, prijatelji, saradnici, studenti i "
-"kolege uručili su mu 23. aprila 2024. godine u Beču zbornik pod naslovom "
-"„Der den Kordax tanzt: Hommage an Johannes Koder und seine Forschungen über "
-"Byzanz und den Balkan”, čiji se prilozi odnose na istraživačka interesovanja"
-" slavljenika. Zbog toga ovaj zbornik sadrži arheološke, toponomastičke, "
-"istorijske, filološke, istorijsko-geografske i istorijsko-umjetničke teme. "
-"Za dodatne informacije o zborniku viđeti: <a href=\"https://eudora-"
-"verlag.de/de/product/der-den-kodax-tanzt-hommage-an-johannes-"
-"koder_von_mihailo-st-popovic-vratislav-zervan-ralf-c-mueller/\" "
-"target=\"_blank\">https://eudora-verlag.de/de/product/der-den-kodax-tanzt-"
-"hommage-an-johannes-koder_von_mihailo-st-popovic-vratislav-zervan-ralf-c-"
-"mueller/</a>"
+"Povodom 80. rođendana Johannesa Kodera, prijatelji, saradnici, studenti i"
+" kolege uručili su mu 23. aprila 2024. godine u Beču zbornik pod naslovom"
+" „Der den Kordax tanzt: Hommage an Johannes Koder und seine Forschungen "
+"über Byzanz und den Balkan”, čiji se prilozi odnose na istraživačka "
+"interesovanja slavljenika. Zbog toga ovaj zbornik sadrži arheološke, "
+"toponomastičke, istorijske, filološke, istorijsko-geografske i "
+"istorijsko-umjetničke teme. Za dodatne informacije o zborniku viđeti: <a "
+"href=\"https://eudora-verlag.de/de/product/der-den-kodax-tanzt-hommage-"
+"an-johannes-koder_von_mihailo-st-popovic-vratislav-zervan-"
+"ralf-c-mueller/\" target=\"_blank\">https://eudora-verlag.de/de/product"
+"/der-den-kodax-tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-"
+"vratislav-zervan-ralf-c-mueller/</a>"
 
 #: mop/data/events.py:115
 msgid "Two Presentations on the Usefulness of OpenAtlas"
@@ -226,14 +222,15 @@ msgstr "Dvije prezentacije o korisnosti OpenAtlasa"
 #: mop/data/events.py:116
 msgid "belgrade_190923"
 msgstr ""
-"Dana 19. septembra 2023. godine Bernhard Koschiček-Krombholz i Mihailo St. "
-"Popović održali su po predavanje u Srpskoj akademiji nauka i umjetnosti u "
-"Beogradu. Dok je Bernhard Koschiček-Krombholz govorio na temu „OpenAtlas: A "
-"Database System for the Humanities and Beyond”, predavanje Mihaila St. "
-"Popovića bilo je „On the Usefulness of OpenAtlas in Historical Geography”. "
-"Nakon toga su imali intenzivnu razmjenu sa timom projekta „From Barbarians "
-"to Christians and Rhomaioi. The Process of Byzantinization in the Central "
-"Balkans (Late 10th – Mid-13th Century)” o aspektima digitalne humanistike."
+"Dana 19. septembra 2023. godine Bernhard Koschiček-Krombholz i Mihailo "
+"St. Popović održali su po predavanje u Srpskoj akademiji nauka i "
+"umjetnosti u Beogradu. Dok je Bernhard Koschiček-Krombholz govorio na "
+"temu „OpenAtlas: A Database System for the Humanities and Beyond”, "
+"predavanje Mihaila St. Popovića bilo je „On the Usefulness of OpenAtlas "
+"in Historical Geography”. Nakon toga su imali intenzivnu razmjenu sa "
+"timom projekta „From Barbarians to Christians and Rhomaioi. The Process "
+"of Byzantinization in the Central Balkans (Late 10th – Mid-13th Century)”"
+" o aspektima digitalne humanistike."
 
 #: mop/data/events.py:126
 msgid "Workshop on Medieval Athos in Oxford"
@@ -243,10 +240,10 @@ msgstr "Radionica o srednjevjekovnom Atosu u Oksfordu"
 msgid "athos_oxford_290923"
 msgstr ""
 "Dana 29. septembra 2023. godine Mihailo St. Popović je izložio rad pod "
-"nazivom „Serbian Noblewomen and the Clergy in the Middle Ages: A Comparison "
-"between Mara Branković and Jelena Anžujska regarding Athonite Monks and "
-"Franciscan Friars” na radionici „A Special Relationship? Gender on Medieval "
-"Mount Athos” u Oksfordu, Velika Britanija."
+"nazivom „Serbian Noblewomen and the Clergy in the Middle Ages: A "
+"Comparison between Mara Branković and Jelena Anžujska regarding Athonite "
+"Monks and Franciscan Friars” na radionici „A Special Relationship? Gender"
+" on Medieval Mount Athos” u Oksfordu, Velika Britanija."
 
 #: mop/data/events.py:137
 msgid "Paper on the Crown of the Saint King Stefan Dečanski"
@@ -256,13 +253,13 @@ msgstr "Rad o kruni Svetog kralja Stefana Dečanskog"
 msgid "tripps_070923"
 msgstr ""
 "Profesor dr Johannes Trips (Univerzitet primijenjenih nauka u Lajpcigu) "
-"održao je veoma zapaženo predavanje iz istorije umjetnosti o kruni Svetog "
-"kralja Stefana Dečanskog u okviru projekta „Beyond East and West: "
-"Geocommunicating the Sacred Landscapes of \"Duklja\" and \"Raška\" through "
-"Space and Time (11th-14th Cent.)” na Univerzitetu u Beogradu. Snimak "
-"predavanja pogledajte na: <a href=\"https://www.youtube.com/@MapsOfPower\" "
-"target=\"_blank\" class=\"link-"
-"primary\">https://www.youtube.com/@MapsOfPower</a>"
+"održao je veoma zapaženo predavanje iz istorije umjetnosti o kruni Svetog"
+" kralja Stefana Dečanskog u okviru projekta „Beyond East and West: "
+"Geocommunicating the Sacred Landscapes of \"Duklja\" and \"Raška\" "
+"through Space and Time (11th-14th Cent.)” na Univerzitetu u Beogradu. "
+"Snimak predavanja pogledajte na: <a "
+"href=\"https://www.youtube.com/@MapsOfPower\" target=\"_blank\" class"
+"=\"link-primary\">https://www.youtube.com/@MapsOfPower</a>"
 
 #: mop/data/events.py:148
 msgid "TIB Balkans at the IMC Leeds 2023"
@@ -272,11 +269,11 @@ msgstr "TIB Balkan na IMC Leeds 2023"
 msgid "imc_leeds_23"
 msgstr ""
 "Istraživači projekta TIB Balkan predstavili su svoje najnovije naučne "
-"rezultate zajedno sa kolegama iz Prirodnjačkog muzeja u Beču, Društva Ludwig"
-" Boltzmann, Univerziteta primijenjenih nauka u Lajpcigu (HTWK Leipzig), "
-"Univerziteta u Beogradu i ACDH-CH Austrijske akademije nauka u tri sesije "
-"pod nazivom „Entanglements across Medieval Space, Objects, and Data” 6. jula"
-" 2023. godine na IMC Leedsu."
+"rezultate zajedno sa kolegama iz Prirodnjačkog muzeja u Beču, Društva "
+"Ludwig Boltzmann, Univerziteta primijenjenih nauka u Lajpcigu (HTWK "
+"Leipzig), Univerziteta u Beogradu i ACDH-CH Austrijske akademije nauka u "
+"tri sesije pod nazivom „Entanglements across Medieval Space, Objects, and"
+" Data” 6. jula 2023. godine na IMC Leedsu."
 
 #: mop/data/events.py:159
 msgid "presentation on MECERN conference"
@@ -287,9 +284,9 @@ msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan i Mihailo Popović učestvovali su na MECERN konferenciji "
 "„Continuity and Change in Medieval Central Europe” u Bratislavi u aprilu "
-"2023. godine i predstavili zajednički rad pod naslovom „The Hagiogeography "
-"of Saint Archangel Michael in the Balkans and Central Europe in Medieval "
-"Times”."
+"2023. godine i predstavili zajednički rad pod naslovom „The "
+"Hagiogeography of Saint Archangel Michael in the Balkans and Central "
+"Europe in Medieval Times”."
 
 #: mop/data/events.py:170
 msgid "presentation at the Serbian Academy of Sciences and Arts"
@@ -299,9 +296,9 @@ msgstr "prezentacija u Srpskoj akademiji nauka i umjetnosti"
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović je na poziv Instituta za vizantološke studije Srpske "
-"akademije nauka i umjetnosti održao predavanje pod naslovom „Projekat Tabula"
-" Imperii Byzantini: o budućnosti (?) proučavanja istorijske geografije "
-"Vizantije” 22. februara 2023. godine u Beogradu."
+"akademije nauka i umjetnosti održao predavanje pod naslovom „Projekat "
+"Tabula Imperii Byzantini: o budućnosti (?) proučavanja istorijske "
+"geografije Vizantije” 22. februara 2023. godine u Beogradu."
 
 #: mop/data/histgeo.py:7 mop/data/histgeo.py:24 mop/data/histgeo.py:41
 msgid "march"
@@ -333,38 +330,38 @@ msgstr "ur."
 #: mop/data/histgeo.py:95
 msgid "histgeo_vol1_1"
 msgstr ""
-"povodom 75. rođendana profesora dr Johannesa Kodera, rukovodioci dugoročnog "
-"projekta Tabula Imperii Byzantini (TIB) u Austrijskoj akademiji nauka, prof."
-" dr Andreas Külzer i doc. dr Mihailo Popović (obojica sa Instituta za "
-"srednjevjekovna istraživanja, Odjeljenje za vizantološka istraživanja), "
-"pozvali su 21 renomiranog naučnika iz akademskih oblasti istorijske "
-"geografije, arheologije, geografije i kartografije da napišu priloge. "
-"Rezultat je zbornik (Festschrift) pod naslovom „Space, Landscapes and "
-"Settlements in Byzantium. Studies in Historical Geography of the Eastern "
-"Mediterranean”."
+"povodom 75. rođendana profesora dr Johannesa Kodera, rukovodioci "
+"dugoročnog projekta Tabula Imperii Byzantini (TIB) u Austrijskoj "
+"akademiji nauka, prof. dr Andreas Külzer i doc. dr Mihailo Popović "
+"(obojica sa Instituta za srednjevjekovna istraživanja, Odjeljenje za "
+"vizantološka istraživanja), pozvali su 21 renomiranog naučnika iz "
+"akademskih oblasti istorijske geografije, arheologije, geografije i "
+"kartografije da napišu priloge. Rezultat je zbornik (Festschrift) pod "
+"naslovom „Space, Landscapes and Settlements in Byzantium. Studies in "
+"Historical Geography of the Eastern Mediterranean”."
 
 #: mop/data/histgeo.py:95
 msgid "histgeo_vol1_2"
 msgstr ""
-"Johannes Koder, redovni član (w. M.) Austrijske akademije nauka, odlučujuće "
-"je oblikovao naučni rad projekta Tabula Imperii Byzantini od 1966. godine "
-"kao istraživač od samog početka i rukovodio im je kao našljednik prof. dr "
-"Herberta Hungera od 1995. do 2015. godine. On je urednik serije Tabula "
-"Imperii Byzantini pri Austrijskoj akademiji nauka. Njegov naučni opus "
-"obuhvata pionirske publikacije iz istorijske geografije istočnog Mediterana "
-"i Vizantije."
+"Johannes Koder, redovni član (w. M.) Austrijske akademije nauka, "
+"odlučujuće je oblikovao naučni rad projekta Tabula Imperii Byzantini od "
+"1966. godine kao istraživač od samog početka i rukovodio im je kao "
+"našljednik prof. dr Herberta Hungera od 1995. do 2015. godine. On je "
+"urednik serije Tabula Imperii Byzantini pri Austrijskoj akademiji nauka. "
+"Njegov naučni opus obuhvata pionirske publikacije iz istorijske "
+"geografije istočnog Mediterana i Vizantije."
 
 #: mop/data/histgeo.py:95
 msgid "histgeo_vol1_3"
 msgstr ""
 "ovaj zbornik (Festschrift) je objavljen kao 1. tom serije „Studies in "
-"Historical Geography and Cultural Heritage”. Ovu seriju je osnovao Mihailo "
-"Popović kao rukovodilac digitalnog klaster projekta „Digitising Patterns of "
-"Power (DPP): Peripheral Mountains in the Medieval World” na Institutu za "
-"srednjevjekovna istraživanja Austrijske akademije nauka u proljeće 2016. "
-"godine, a uređuju je Andreas Külzer i Mihailo Popović u cilju inoviranja "
-"istorijsko-geografskih istraživanja u vizantologiji. Seriju štampa izdavačka"
-" kuća Akademska knjiga u Novom Sadu."
+"Historical Geography and Cultural Heritage”. Ovu seriju je osnovao "
+"Mihailo Popović kao rukovodilac digitalnog klaster projekta „Digitising "
+"Patterns of Power (DPP): Peripheral Mountains in the Medieval World” na "
+"Institutu za srednjevjekovna istraživanja Austrijske akademije nauka u "
+"proljeće 2016. godine, a uređuju je Andreas Külzer i Mihailo Popović u "
+"cilju inoviranja istorijsko-geografskih istraživanja u vizantologiji. "
+"Seriju štampa izdavačka kuća Akademska knjiga u Novom Sadu."
 
 #: mop/data/histgeo.py:111
 msgid "ed."
@@ -374,16 +371,16 @@ msgstr "ur."
 msgid "histgeo_vol2_1"
 msgstr ""
 "dana 9. decembra 2014. godine, prof. dr dr h.c. mult. Herbert Hunger "
-"(1914–2000), osnivač Instituta za vizantologiju (danas: i novogrčke studije)"
-" Univerziteta u Beču i dugogodišnji predsjednik Austrijske akademije nauka, "
-"proslavio bi svoj stoti rođendan. Ovim povodom, ugledni naučnici iz "
-"različitih djelova Evrope i Sjedinjenih Američkih Država sastali se se u "
-"Beču kako bi odali počast slavnom istraživaču i razgovarali o nasljeđu "
-"njegovog naučnog rada u oblastima međunarodne vizantologije. Prof. dr "
-"Andreas Külzer prikupio je nekoliko značajnih priloga sa konferencije u ovom"
-" zborniku, koji može poslužiti kao izvor naučne inspiracije, posebno za "
-"istraživače koji rade u različitim oblastima istorije, istorijske geografije"
-" i fundamentalnih istraživanja."
+"(1914–2000), osnivač Instituta za vizantologiju (danas: i novogrčke "
+"studije) Univerziteta u Beču i dugogodišnji predsjednik Austrijske "
+"akademije nauka, proslavio bi svoj stoti rođendan. Ovim povodom, ugledni "
+"naučnici iz različitih djelova Evrope i Sjedinjenih Američkih Država "
+"sastali se se u Beču kako bi odali počast slavnom istraživaču i "
+"razgovarali o nasljeđu njegovog naučnog rada u oblastima međunarodne "
+"vizantologije. Prof. dr Andreas Külzer prikupio je nekoliko značajnih "
+"priloga sa konferencije u ovom zborniku, koji može poslužiti kao izvor "
+"naučne inspiracije, posebno za istraživače koji rade u različitim "
+"oblastima istorije, istorijske geografije i fundamentalnih istraživanja."
 
 #: mop/data/histgeo.py:131
 msgid "histgeo_vol3_1"
@@ -391,76 +388,79 @@ msgstr ""
 "Dugoročni projekat „Tabula Imperii Byzantini (TIB)” (Institut za "
 "srednjevjekovna istraživanja, Odjeljenje za vizantološka istraživanja) "
 "Austrijske akademije nauka osnovan je 1966. godine. Riječ je o veoma "
-"aktivnom i inovativnom naučnom poduhvatu, koji je istovremeno i čuvar TIB-"
-"ovih baza podataka (slajdova, fotografija itd.), od izuzetnog značaja za "
-"kulturnu baštinu mediteranskog svijeta. Zbog toga je čitav TIB tim (aktivni "
-"i penzionisani istraživači) pripremio zbornik na njemačkom jeziku pod "
-"naslovom „Raum und Geschichte: der historische Atlas ‘Tabula Imperii "
-"Byzantini (TIB)’ an der Österreichischen Akademie der Wissenschaften”. "
-"Projekat je finansiran od strane Jubilarnog fonda Austrijske nacionalne "
-"banke br. 17771 kroz naučni projekat <a "
+"aktivnom i inovativnom naučnom poduhvatu, koji je istovremeno i čuvar "
+"TIB-ovih baza podataka (slajdova, fotografija itd.), od izuzetnog značaja"
+" za kulturnu baštinu mediteranskog svijeta. Zbog toga je čitav TIB tim "
+"(aktivni i penzionisani istraživači) pripremio zbornik na njemačkom "
+"jeziku pod naslovom „Raum und Geschichte: der historische Atlas ‘Tabula "
+"Imperii Byzantini (TIB)’ an der Österreichischen Akademie der "
+"Wissenschaften”. Projekat je finansiran od strane Jubilarnog fonda "
+"Austrijske nacionalne banke br. 17771 kroz naučni projekat <a "
 "href=\"https://tib.oeaw.ac.at/balkan/subprojects/digtib\" "
 "target=\"_blank\">„Die digitale Tabula Imperii Byzantini (Dig-TIB) als "
-"doprinos svjetskoj baštini”</a>, a objavili su ga urednici Andreas Külzer, "
-"Veronika Polloczek i Mihailo St. Popović kao 3. tom serije „Studies in "
-"Historical Geography and Cultural Heritage” kod izdavačke kuće Akademska "
-"knjiga (Novi Sad, Srbija). Cilj ove publikacije je da se, prije svega "
-"austrijskoj javnosti, predstave istorija, naučni rezultati, buduće ideje i "
-"planovi, kao i doprinos TIB-a nacionalnoj i međunarodnoj akademskoj "
-"zajednici, budući da je TIB sastavni dio austrijske nauke koju finansira "
-"austrijsko društvo. Iako je istorijska geografija veoma specijalizovana "
-"grana vizantologije, vjerujemo da će postojanje ovakvog projekta u Austriji "
-"i njegova dokumentacija naići na interesovanje i svijest javnosti."
+"doprinos svjetskoj baštini”</a>, a objavili su ga urednici Andreas "
+"Külzer, Veronika Polloczek i Mihailo St. Popović kao 3. tom serije "
+"„Studies in Historical Geography and Cultural Heritage” kod izdavačke "
+"kuće Akademska knjiga (Novi Sad, Srbija). Cilj ove publikacije je da se, "
+"prije svega austrijskoj javnosti, predstave istorija, naučni rezultati, "
+"buduće ideje i planovi, kao i doprinos TIB-a nacionalnoj i međunarodnoj "
+"akademskoj zajednici, budući da je TIB sastavni dio austrijske nauke koju"
+" finansira austrijsko društvo. Iako je istorijska geografija veoma "
+"specijalizovana grana vizantologije, vjerujemo da će postojanje ovakvog "
+"projekta u Austriji i njegova dokumentacija naići na interesovanje i "
+"svijest javnosti."
 
 #: mop/data/histgeo.py:150
 msgid "histgeo_vol4_1"
 msgstr ""
-"pejzaž jugoistočnog Peloponeza (Lakonija, Grčka), veoma važne regije Carstva"
-" u kontekstu poznovizantijskog perioda, obuhvatao je značajne episkopske "
-"centre, kao što su Mistra i Monemvasija, kao i brojna sela, moćne "
-"manastirske zadužbine i manja pustinjačka staništa često građena u pećinama "
-"i izolovanim okruženjima. Zasniva se kako na sistematskom terenskom radu, "
-"tako i na detaljnim istraživanjima spomenika, ova knjiga predstavlja prvu "
-"sveobuhvatnu studiju pustinjačkih i manastirskih pejzaža ove regije. Ona "
-"istražuje interakcije izolovanih pustinjaka i uspostavljenih zajednica, "
-"odnose dvoraca i manastira prema manjim zadužbinama, kao i preplitanje "
-"manastirske i ruralne ekonomije. Cilj joj je identifikovanje samih monaha, "
-"njihovih preokupacija i težnji, koje se ogledaju ne samo u izboru svetitelja"
-" zaštitnika svetih mjesta koja su osnovali ili u sadržaju oslikane "
-"dekoracije, već i u izboru lokacije ili dubokom odnosu sa prirodnim "
-"elementima pejzaža."
+"pejzaž jugoistočnog Peloponeza (Lakonija, Grčka), veoma važne regije "
+"Carstva u kontekstu poznovizantijskog perioda, obuhvatao je značajne "
+"episkopske centre, kao što su Mistra i Monemvasija, kao i brojna sela, "
+"moćne manastirske zadužbine i manja pustinjačka staništa često građena u "
+"pećinama i izolovanim okruženjima. Zasniva se kako na sistematskom "
+"terenskom radu, tako i na detaljnim istraživanjima spomenika, ova knjiga "
+"predstavlja prvu sveobuhvatnu studiju pustinjačkih i manastirskih pejzaža"
+" ove regije. Ona istražuje interakcije izolovanih pustinjaka i "
+"uspostavljenih zajednica, odnose dvoraca i manastira prema manjim "
+"zadužbinama, kao i preplitanje manastirske i ruralne ekonomije. Cilj joj "
+"je identifikovanje samih monaha, njihovih preokupacija i težnji, koje se "
+"ogledaju ne samo u izboru svetitelja zaštitnika svetih mjesta koja su "
+"osnovali ili u sadržaju oslikane dekoracije, već i u izboru lokacije ili "
+"dubokom odnosu sa prirodnim elementima pejzaža."
 
 #: mop/data/histgeo.py:179
 msgid "sgomez_short_bio"
 msgstr ""
-"Diplomirani istoričar, Autonomni univerzitet u Madridu, master arheologije, "
-"Univerzitet Ca’ Foscari u Veneciji, master egipatske arheologije, "
-"Univerzitetski koledž u Londonu"
+"Diplomirani istoričar, Autonomni univerzitet u Madridu, master "
+"arheologije, Univerzitet Ca’ Foscari u Veneciji, master egipatske "
+"arheologije, Univerzitetski koledž u Londonu"
 
 #: mop/data/histgeo.py:180
 msgid "sgomez_bio_1"
 msgstr ""
 "Silvia Gómez Senovilla trenutno završava svoje doktorsko istraživanje na "
-"Univerzitetu u Beču u okviru ERC Advanced Grant projekta „The Hyksos Enigma”"
-" (ugovor o grantu br. 668640), pod mentorstvom prof. Manfreda Bietaka."
+"Univerzitetu u Beču u okviru ERC Advanced Grant projekta „The Hyksos "
+"Enigma” (ugovor o grantu br. 668640), pod mentorstvom prof. Manfreda "
+"Bietaka."
 
 #: mop/data/histgeo.py:180
 msgid "sgomez_bio_2"
 msgstr ""
-"u svojoj doktorskoj disertaciji ona ispituje strukturu i raspored naselja i "
-"stambenih područja tokom ranog i srednjeg bronzanog doba u drevnoj Siro-"
-"Mesopotamiji i Egiptu, sa posebnim naglaskom na istočnu deltu Nila u gradu "
-"Avaris-Tell el-Dab’a. Uključivanjem antropoloških i socioloških teorija o "
-"upotrebi prostora, kao i korišćenjem prostornih i statističkih alata, ona "
-"istražuje transformacije prostora tokom ovog dijela bronzanog doba i njegove"
-" društvene implikacije."
+"u svojoj doktorskoj disertaciji ona ispituje strukturu i raspored naselja"
+" i stambenih područja tokom ranog i srednjeg bronzanog doba u drevnoj "
+"Siro-Mesopotamiji i Egiptu, sa posebnim naglaskom na istočnu deltu Nila u"
+" gradu Avaris-Tell el-Dab’a. Uključivanjem antropoloških i socioloških "
+"teorija o upotrebi prostora, kao i korišćenjem prostornih i statističkih "
+"alata, ona istražuje transformacije prostora tokom ovog dijela bronzanog "
+"doba i njegove društvene implikacije."
 
 #: mop/data/histgeo.py:184 mop/data/histgeo.py:185
 msgid "gbidaut_short_bio"
 msgstr ""
-"Diplomirani istoričar, Univerzitet Pariz 1 Panteon-Sorbona, master istorije,"
-" École des hautes études en sciences sociales u Parizu, postdiplomska "
-"diploma iz istorije i grčkih studija, École normale supérieure u Parizu"
+"Diplomirani istoričar, Univerzitet Pariz 1 Panteon-Sorbona, master "
+"istorije, École des hautes études en sciences sociales u Parizu, "
+"postdiplomska diploma iz istorije i grčkih studija, École normale "
+"supérieure u Parizu"
 
 #: mop/data/histgeo.py:191
 msgid "lecture_1_title"
@@ -477,35 +477,37 @@ msgstr "engleski"
 #: mop/data/histgeo.py:200
 msgid "lecture_1_1"
 msgstr ""
-"arheologija i istorija se prirodno bave izazovom vremena i prostora. Uprkos "
-"brojnim naprecima u oblasti prostorne analize i studija pejzaža koji su "
-"proizašli iz kvantitativne revolucije koja se odigrala 70-ih godina prošlog "
-"vijeka, stvarni „prostorni zaokret” u arheologiji ponekad se još uvijek "
-"zanemaruje. Kao što je Edward Soja istakao u jednom od svojih najuticajnijih"
-" djela: „[prostorni zaokret] se ne može postići jednostavnim dodavanjem "
-"prostornih naglasaka naslijeđenim kritičkim perspektivama i čekanjem da oni "
-"zasvijetle logičkim uvjerenjem”. Problem koji stoji na putu produkcije – "
-"stvarnih – prostornih narativa u arheologiji povezan je sa tri glavna "
-"pitanja: prvo, tretmanom vremena i vremenskih skala u arheologiji; drugo, "
-"ponekad nesvjesnim zaboravom činjenice da društveni prostor nije jednak "
-"prirodnom – Euklidskom – prostoru, i treće, da je razmjera, kada se bavimo "
-"zagonetkom vremena i prostora, fundamentalni dio u mašini događaja koji se "
-"odvijaju. Implicitna pretpostavka da podaci sa kojima radimo, prikupljeni od"
-" nas ili od drugih kolega, kao i metodologija koja se koristi, ne "
-"predstavlja pristrasnost i da nijesu podložni predselekciji, ometa takođe i "
-"neke pokušaje analize."
+"arheologija i istorija se prirodno bave izazovom vremena i prostora. "
+"Uprkos brojnim naprecima u oblasti prostorne analize i studija pejzaža "
+"koji su proizašli iz kvantitativne revolucije koja se odigrala 70-ih "
+"godina prošlog vijeka, stvarni „prostorni zaokret” u arheologiji ponekad "
+"se još uvijek zanemaruje. Kao što je Edward Soja istakao u jednom od "
+"svojih najuticajnijih djela: „[prostorni zaokret] se ne može postići "
+"jednostavnim dodavanjem prostornih naglasaka naslijeđenim kritičkim "
+"perspektivama i čekanjem da oni zasvijetle logičkim uvjerenjem”. Problem "
+"koji stoji na putu produkcije – stvarnih – prostornih narativa u "
+"arheologiji povezan je sa tri glavna pitanja: prvo, tretmanom vremena i "
+"vremenskih skala u arheologiji; drugo, ponekad nesvjesnim zaboravom "
+"činjenice da društveni prostor nije jednak prirodnom – Euklidskom – "
+"prostoru, i treće, da je razmjera, kada se bavimo zagonetkom vremena i "
+"prostora, fundamentalni dio u mašini događaja koji se odvijaju. "
+"Implicitna pretpostavka da podaci sa kojima radimo, prikupljeni od nas "
+"ili od drugih kolega, kao i metodologija koja se koristi, ne predstavlja "
+"pristrasnost i da nijesu podložni predselekciji, ometa takođe i neke "
+"pokušaje analize."
 
 #: mop/data/histgeo.py:200
 msgid "lecture_1_2"
 msgstr ""
-"u ovom predavanju predstaviću trenutno stanje svog doktorskog istraživanja, "
-"u kojem se bavim strukturacijom prostora u konceptu drevnog Egipta i Siro-"
-"Mesopotamije tokom drugog milenijuma prije nove ere. Razgovor će biti "
-"uokviren oko glavnih izazova koji se mogu javiti kada se bavimo drevnim "
-"vremenskim dimenzijama i njihovim odrazom u prostoru, pri čemu je razmjera "
-"glavna komponenta. Takođe ću pokušati da istaknem i podstaknem diskusiju o "
-"preprekama koje neodgovorna upotreba savremenih softvera za prostornu "
-"analizy, kao što su GIS paketi, može donijeti, uz pokušaj otvaranja debate."
+"u ovom predavanju predstaviću trenutno stanje svog doktorskog "
+"istraživanja, u kojem se bavim strukturacijom prostora u konceptu drevnog"
+" Egipta i Siro-Mesopotamije tokom drugog milenijuma prije nove ere. "
+"Razgovor će biti uokviren oko glavnih izazova koji se mogu javiti kada se"
+" bavimo drevnim vremenskim dimenzijama i njihovim odrazom u prostoru, pri"
+" čemu je razmjera glavna komponenta. Takođe ću pokušati da istaknem i "
+"podstaknem diskusiju o preprekama koje neodgovorna upotreba savremenih "
+"softvera za prostornu analizy, kao što su GIS paketi, može donijeti, uz "
+"pokušaj otvaranja debate."
 
 #: mop/data/histgeo.py:203
 msgid "lecture_2_title"
@@ -514,47 +516,49 @@ msgstr "Mapiranje mobilnosti, izgradnja zajednice"
 #: mop/data/histgeo.py:204
 msgid "lecture_2_subtitle"
 msgstr ""
-"Razmatranja o definiciji, predstavljanju i prostornosti stočarskih zajednica"
-" na vizantijskom i ranom otomanskom Balkanu"
+"Razmatranja o definiciji, predstavljanju i prostornosti stočarskih "
+"zajednica na vizantijskom i ranom otomanskom Balkanu"
 
 #: mop/data/histgeo.py:212
 msgid "lecture_2_1"
 msgstr ""
 "Predmoderni Balkan je odlikovao visok stepen raznolikosti, u kojem su "
-"višestruki politički entiteti i modeli, jezičke zajednice i načini društvene"
-" organizacije stupali u interakciju, preplitali se i hibridizovali. Ova "
-"raznolikost se nastavlja i danas, pri čemu je preoblikovana i iznova "
-"zamišljena pod uticajem zapadnog orijentalizma (ili balkanizma, kako ga je "
-"nazvala Marija Todorova), rivalskih imperijalizama i generalizacije "
-"paradigme nacije-države. Stoga, naučno razumijevanje predmodernih društava "
-"na Balkanu mora biti posebno svjesno stratifikacije i preplitanja prošlih i "
-"sadašnjih kategorija kolektivnog identiteta i prostora."
+"višestruki politički entiteti i modeli, jezičke zajednice i načini "
+"društvene organizacije stupali u interakciju, preplitali se i "
+"hibridizovali. Ova raznolikost se nastavlja i danas, pri čemu je "
+"preoblikovana i iznova zamišljena pod uticajem zapadnog orijentalizma "
+"(ili balkanizma, kako ga je nazvala Marija Todorova), rivalskih "
+"imperijalizama i generalizacije paradigme nacije-države. Stoga, naučno "
+"razumijevanje predmodernih društava na Balkanu mora biti posebno svjesno "
+"stratifikacije i preplitanja prošlih i sadašnjih kategorija kolektivnog "
+"identiteta i prostora."
 
 #: mop/data/histgeo.py:212
 msgid "lecture_2_2"
 msgstr ""
-"U ovom predavanju predstaviću trenutno stanje svog doktorskog istraživanja, "
-"koje se bavi društvenom organizacijom, ekonomskim strukturama i političkim "
-"mrežama stočarskih zajednica na južnom Balkanu (Makedonija, Epir i Tesalija)"
-" od srednjevizantijskog do ranootomanskog perioda (10–15. vijek). Ovaj rad "
-"će se fokusirati na prve rezultate i metodološka pitanja koja oni pokreću za"
-" istoriju i istorijsku geografiju Balkana. Prvi set izazova tiče se izrade "
-"relevantnih analitičkih kategorija. Predmoderne stočarske zajednice su "
-"uglavnom bile usmena društva, geografski i simbolički periferna u odnosu na "
-"manastirske, urbane i političke centre u kojima je pismena elita proizvodila"
-" većinu preživjelih izvora. Kako ih onda definisati i identifikovati bez "
+"U ovom predavanju predstaviću trenutno stanje svog doktorskog "
+"istraživanja, koje se bavi društvenom organizacijom, ekonomskim "
+"strukturama i političkim mrežama stočarskih zajednica na južnom Balkanu "
+"(Makedonija, Epir i Tesalija) od srednjevizantijskog do ranootomanskog "
+"perioda (10–15. vijek). Ovaj rad će se fokusirati na prve rezultate i "
+"metodološka pitanja koja oni pokreću za istoriju i istorijsku geografiju "
+"Balkana. Prvi set izazova tiče se izrade relevantnih analitičkih "
+"kategorija. Predmoderne stočarske zajednice su uglavnom bile usmena "
+"društva, geografski i simbolički periferna u odnosu na manastirske, "
+"urbane i političke centre u kojima je pismena elita proizvodila većinu "
+"preživjelih izvora. Kako ih onda definisati i identifikovati bez "
 "preuzimanja „zdravo za gotovo” kategorija koje su stvorili spoljni "
-"posmatrači? Štaviše, ove kategorije – od kojih se neke neprekidno koriste do"
-" danas – istorijski su oscilirale između ekonomskih i/ili etničkih oznaka. "
-"Stoga ću istražiti načine da se izbjegne nominalni esencijalizam koji "
-"projektuje savremena etnonacionalna značenja na prošlost, a da se ne naruši "
-"koherentnost ovih kolektiva. Drugi set izazova vrti se oko rekonstrukcije i "
-"mapiranja prostornosti grupa čija je mobilnost bila suštinska "
-"karakteristika. S obzirom na važnost njihovog geografskog konteksta, "
-"predstaviću probleme koji proizilaze iz oskudice i neujednačene distribucije"
-" izvora specifičnih za određena mjesta, i razmotriti u kojoj mjeri alati "
-"GIS-a mogu pomoći ili odmoći našem razumijevanju njihovih prostornih praksi "
-"i reprezentacija."
+"posmatrači? Štaviše, ove kategorije – od kojih se neke neprekidno koriste"
+" do danas – istorijski su oscilirale između ekonomskih i/ili etničkih "
+"oznaka. Stoga ću istražiti načine da se izbjegne nominalni esencijalizam "
+"koji projektuje savremena etnonacionalna značenja na prošlost, a da se ne"
+" naruši koherentnost ovih kolektiva. Drugi set izazova vrti se oko "
+"rekonstrukcije i mapiranja prostornosti grupa čija je mobilnost bila "
+"suštinska karakteristika. S obzirom na važnost njihovog geografskog "
+"konteksta, predstaviću probleme koji proizilaze iz oskudice i "
+"neujednačene distribucije izvora specifičnih za određena mjesta, i "
+"razmotriti u kojoj mjeri alati GIS-a mogu pomoći ili odmoći našem "
+"razumijevanju njihovih prostornih praksi i reprezentacija."
 
 #: mop/data/histgeo.py:216 mop/templates/histgeo.html:129
 msgid "author"
@@ -615,7 +619,8 @@ msgstr "Bokokotorski zaliv, Crna Gora (2021)"
 
 #: mop/data/institutes.py:5
 msgid ""
-"Institute for Byzantine Studies of the Serbian Academy of Sciences and Arts"
+"Institute for Byzantine Studies of the Serbian Academy of Sciences and "
+"Arts"
 msgstr "Vizantološki institut Srpske akademije nauka i umjetnosti"
 
 #: mop/data/institutes.py:13
@@ -684,10 +689,8 @@ msgid "Jubiläumsfonds der Oesterreichischen Nationalbank"
 msgstr "Jubilarni fond Austrijske nacionalne banke"
 
 #: mop/data/institutes.py:87
-msgid ""
-"Austrian Agency for International Cooperation in Education and Research"
-msgstr ""
-"Austrijska agencija za međunarodnu saradnju u obrazovanju i istraživanju"
+msgid "Austrian Agency for International Cooperation in Education and Research"
+msgstr "Austrijska agencija za međunarodnu saradnju u obrazovanju i istraživanju"
 
 #: mop/data/institutes.py:94
 msgid "Wien Kultur (MA 7)"
@@ -884,75 +887,85 @@ msgstr "Terensko istraživanje u Sjevernoj Makedoniji"
 
 #: mop/data/projects/barbyz.py:36
 msgid ""
-"From Barbarians to Christians and Rhomaioi. The Process of Byzantinization "
-"in the Central Balkans (late 10th – mid-13th century)"
+"From Barbarians to Christians and Rhomaioi. The Process of "
+"Byzantinization in the Central Balkans (late 10th – mid-13th century)"
 msgstr ""
-"Od varvara do hrišćana i Romeja. Proces vizantinizacije u centralnom Balkanu"
-" (kraj 10. – sredina 13. vijeka)"
+"Od varvara do hrišćana i Romeja. Proces vizantinizacije u centralnom "
+"Balkanu (kraj 10. – sredina 13. vijeka)"
 
 #: mop/data/projects/barbyz.py:63
 msgid "barbyz_description_1"
 msgstr ""
-"Glavni cilj projekta je da objasni ključne faktore koji su uticali na tok i "
-"karakteristike procesa vizantinizacije, koji se definiše kao integracija "
-"lokalnih balkanskih zajednica u sistem vrijednosti dominantne kulture. Ovaj "
-"proces je zavisio kako od „meke moći” Carstva, tako i od formalnog "
-"uključivanja date oblasti u njegove granice. Istraživanje se sprovodi u tri "
-"glavna pravca:"
+"Glavni cilj projekta je da objasni ključne faktore koji su uticali na tok"
+" i karakteristike procesa vizantinizacije, koji se definiše kao "
+"integracija lokalnih balkanskih zajednica u sistem vrijednosti dominantne"
+" kulture. Ovaj proces je zavisio kako od „meke moći” Carstva, tako i od "
+"formalnog uključivanja date oblasti u njegove granice. Istraživanje se "
+"sprovodi u tri glavna pravca:"
 
 #: mop/data/projects/barbyz.py:64
 msgid "barbyz_description_2"
 msgstr ""
 "<ol>\n"
-"<li>Modeli vizantijske uprave u centralnom Balkanu (kraj 10. – sredina 13. vijeka)</li>\n"
-"<li>Ohridska arhiepiskopija (od osnivanja početkom 11. do sredine 13. vijeka)</li>\n"
+"<li>Modeli vizantijske uprave u centralnom Balkanu (kraj 10. – sredina "
+"13. vijeka)</li>\n"
+"<li>Ohridska arhiepiskopija (od osnivanja početkom 11. do sredine 13. "
+"vijeka)</li>\n"
 "<li>Politički, ideološki i društveni aspekti vizantinizacije</li>\n"
 "</ol>"
 
 #: mop/data/projects/barbyz.py:65
 msgid "barbyz_description_3"
 msgstr ""
-"Proces vizantinizacije se nije odvijao identično u svim djelovima centralnog"
-" Balkana, zbog čega je istraživanje organizovano u četiri geografske i "
-"istorijske zone: sjeveroistočni Balkan (djelovi stare bugarske države između"
-" Dunava i Stare planine), centralni Balkan (dio Makedonije i susjednih "
-"oblasti pod jurisdikcijom Ohridske arhiepiskopije), podunavsko-moravska "
-"oblast (Srem-Beograd-Braničevo-Niš) i sjeverozapadni djelovi centralnog "
-"Balkana (srpska i hrvatska zona)."
+"Proces vizantinizacije se nije odvijao identično u svim djelovima "
+"centralnog Balkana, zbog čega je istraživanje organizovano u četiri "
+"geografske i istorijske zone: sjeveroistočni Balkan (djelovi stare "
+"bugarske države između Dunava i Stare planine), centralni Balkan (dio "
+"Makedonije i susjednih oblasti pod jurisdikcijom Ohridske "
+"arhiepiskopije), podunavsko-moravska oblast (Srem-Beograd-Braničevo-Niš) "
+"i sjeverozapadni djelovi centralnog Balkana (srpska i hrvatska zona)."
 
 #: mop/data/projects/barbyz.py:66
 msgid "barbyz_description_4"
 msgstr ""
 "Unutar vremenskog okvira projekta izdvaja se nekoliko hronoloških faza u "
-"kojima se vizantinizacija može jasnije ocrtati. Kriterijum za razlikovanje "
-"faza zavisio je od toga da li je posmatrana oblast bila dio Carstva ili samo"
-" pod njegovim kulturnim i političkim uticajem:"
+"kojima se vizantinizacija može jasnije ocrtati. Kriterijum za "
+"razlikovanje faza zavisio je od toga da li je posmatrana oblast bila dio "
+"Carstva ili samo pod njegovim kulturnim i političkim uticajem:"
 
 #: mop/data/projects/barbyz.py:67
 msgid "barbyz_description_5"
 msgstr ""
 "<ol>\n"
-"<li>Period takozvane prve vizantijske „rekonkiste” ili vladavine Jovana I Cimiskija (969–976), kada je Carstvo prodrlo u unutrašnjost Balkanа.</li>\n"
-"<li>Vladavina Vasilija II (976–1025) ili druga rekonkista koja je rezultirala uspostavljanjem sveobuhvatnije vizantijske kontrole nad unutrašnjošću Balkana.</li>\n"
-"<li>Smrt Vasilija II 1025. godine do latinskog osvajanja Carigrada 1204. godine, kada Ohridska arhiepiskopija postaje sve značajniji instrument u sprovođenju vizantinizacije.</li>\n"
-"<li>Od 1204. do obnove Vizantijskog carstva 1261. godine, kada je Vizantija počela da se povlači sa Balkana i politički i vojno.</li>\n"
+"<li>Period takozvane prve vizantijske „rekonkiste” ili vladavine Jovana I"
+" Cimiskija (969–976), kada je Carstvo prodrlo u unutrašnjost "
+"Balkanа.</li>\n"
+"<li>Vladavina Vasilija II (976–1025) ili druga rekonkista koja je "
+"rezultirala uspostavljanjem sveobuhvatnije vizantijske kontrole nad "
+"unutrašnjošću Balkana.</li>\n"
+"<li>Smrt Vasilija II 1025. godine do latinskog osvajanja Carigrada 1204. "
+"godine, kada Ohridska arhiepiskopija postaje sve značajniji instrument u "
+"sprovođenju vizantinizacije.</li>\n"
+"<li>Od 1204. do obnove Vizantijskog carstva 1261. godine, kada je "
+"Vizantija počela da se povlači sa Balkana i politički i vojno.</li>\n"
 "</ol>"
 
 #: mop/data/projects/barbyz.py:68
 msgid "barbyz_description_6"
 msgstr ""
-"Projektni tim je sastavljen od priznatih istraživača iz različitih oblasti: "
-"vizantijske i srednjevjekovne srpske istorije, istorije umjetnosti, istorije"
-" prava, istorije arhitekture i klasičnih nauka. Interdisciplinarno "
-"istraživanje primjenjuje kako tradicionalne, tako i savremene metode "
-"kritičkog ispitivanja i analize pisanih i diplomatičkih izvora, kao i metode"
-" istorijske analogije i istorijske regresije. Očekivani rezultati projekta "
-"su trojaki: (a) da se identifikuju pokazatelji kulturnog i ekonomskog "
-"napretka, na primjeru lokalnih zajednica u srednjevjekovnom centralnom "
-"Balkanu; (b) da se utvrde faktori koji su ga podržali i osigurali; i (c) da "
-"se identifikuju istorijske posljedice njegove sveobuhvatne ili djelimične "
-"integracije. Uspješan završetak projekta biće koristan za dalja istraživanja"
-" u oblasti vizantologije, kao i istorije srednjevjekovnog Balkana."
+"Projektni tim je sastavljen od priznatih istraživača iz različitih "
+"oblasti: vizantijske i srednjevjekovne srpske istorije, istorije "
+"umjetnosti, istorije prava, istorije arhitekture i klasičnih nauka. "
+"Interdisciplinarno istraživanje primjenjuje kako tradicionalne, tako i "
+"savremene metode kritičkog ispitivanja i analize pisanih i diplomatičkih "
+"izvora, kao i metode istorijske analogije i istorijske regresije. "
+"Očekivani rezultati projekta su trojaki: (a) da se identifikuju "
+"pokazatelji kulturnog i ekonomskog napretka, na primjeru lokalnih "
+"zajednica u srednjevjekovnom centralnom Balkanu; (b) da se utvrde faktori"
+" koji su ga podržali i osigurali; i (c) da se identifikuju istorijske "
+"posljedice njegove sveobuhvatne ili djelimične integracije. Uspješan "
+"završetak projekta biće koristan za dalja istraživanja u oblasti "
+"vizantologije, kao i istorije srednjevjekovnog Balkana."
 
 #: mop/data/projects/borderzones.py:10 mop/data/projects/holdura.py:13
 #: mop/data/projects/tarsr.py:10 mop/data/projects/vlachs.py:10
@@ -961,15 +974,14 @@ msgstr "Konačni izvještaj projekta"
 
 #: mop/data/projects/borderzones.py:20
 msgid ""
-"Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from "
-"Different Authors"
+"Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from"
+" Different Authors"
 msgstr ""
-"Tumačenje vizantijsko-srpske granice između 1228. i 1334. godine od strane "
-"različitih autora"
+"Tumačenje vizantijsko-srpske granice između 1228. i 1334. godine od "
+"strane različitih autora"
 
 #: mop/data/projects/borderzones.py:27
-msgid ""
-"Fortifications in the Northern Macedonian Region in the 13/14th century"
+msgid "Fortifications in the Northern Macedonian Region in the 13/14th century"
 msgstr "Utvrđenja u sjevernomakedonskoj oblasti u 13. i 14. vijeku"
 
 #: mop/data/projects/borderzones.py:33
@@ -996,40 +1008,40 @@ msgstr "Ohrid i Samuilova tvrđava, Republika Sjeverna Makedonija"
 
 #: mop/data/projects/borderzones.py:70
 msgid ""
-"Byzantino-Serbian Border Zones in Transition: Migration and Elite Change in "
-"pre-Ottoman Macedonia (1282–1355)"
+"Byzantino-Serbian Border Zones in Transition: Migration and Elite Change "
+"in pre-Ottoman Macedonia (1282–1355)"
 msgstr ""
-"Vizantijsko-srpske pogranične zone u tranziciji: migracije i promjena elite "
-"u predotomanskoj Makedoniji (1282–1355)"
+"Vizantijsko-srpske pogranične zone u tranziciji: migracije i promjena "
+"elite u predotomanskoj Makedoniji (1282–1355)"
 
 #: mop/data/projects/borderzones.py:81
 msgid "borderzones_description_1"
 msgstr ""
-"Evropski kontinent u cjelini i Evropska unija posebno suočavaju se trenutno "
-"sa periodom povećane dinamike unutrašnjih migracija, kao i spoljne "
-"imigracije. Migracije u svim svojim različitim aspektima oduvijek su bile "
-"dio istorije evropskog kontinenta. U srednjevjekovnim društvima pitanje "
-"migracija je usko povezano sa definisanjem kao i predstavljanjem "
-"srednjevjekovnih granica. Karte u istorijskim atlasima dizajnirane su tako "
-"da pruže jasno definisane linije političkih formacija i carstava, što ne "
-"odražava stvarnost civilizacija ni u antici, ni u srednjem vijeku, ni u "
-"ranom modernom dobu. Dinamika granica istovremeno oblikuje dinamiku obrasca "
-"naseljavanja kao i transportnih mreža."
+"Evropski kontinent u cjelini i Evropska unija posebno suočavaju se "
+"trenutno sa periodom povećane dinamike unutrašnjih migracija, kao i "
+"spoljne imigracije. Migracije u svim svojim različitim aspektima oduvijek"
+" su bile dio istorije evropskog kontinenta. U srednjevjekovnim društvima "
+"pitanje migracija je usko povezano sa definisanjem kao i predstavljanjem "
+"srednjevjekovnih granica. Karte u istorijskim atlasima dizajnirane su "
+"tako da pruže jasno definisane linije političkih formacija i carstava, "
+"što ne odražava stvarnost civilizacija ni u antici, ni u srednjem vijeku,"
+" ni u ranom modernom dobu. Dinamika granica istovremeno oblikuje dinamiku"
+" obrasca naseljavanja kao i transportnih mreža."
 
 #: mop/data/projects/borderzones.py:82
 msgid "borderzones_description_2"
 msgstr ""
 "Ovaj samostalni projekat fokusira se na granice Vizantijskog (Istočnog "
 "rimskog) carstva u srednjevjekovnoj jugoistočnoj Evropi, tačnije u "
-"predotomanskoj (tj. vizantijskoj) Makedoniji. Dalekosežne političke promjene"
-" dogodile su se na južnom Balkanskom poluostrvu od kraja 13. do sredine 14. "
-"vijeka, kada se srpska srednjevjekovna kraljevina proširila na jug pod "
-"kraljem Stefanom Urošem II Milutinom na račun Vizantijskog carstva, što je "
-"trajalo do smrti cara Stefan Uroša IV Dušana (1355). To je opet imalo "
-"ozbiljan uticaj na pogranične zone i prekogranična društva između oba "
-"carstva u predotomanskoj (tj. vizantijskoj) Makedoniji u istom periodu, "
-"posebno u pet odabranih ciljnih oblasti (dolina Strumice, Lesnovo, Skoplje, "
-"Ohrid, Prilep)."
+"predotomanskoj (tj. vizantijskoj) Makedoniji. Dalekosežne političke "
+"promjene dogodile su se na južnom Balkanskom poluostrvu od kraja 13. do "
+"sredine 14. vijeka, kada se srpska srednjevjekovna kraljevina proširila "
+"na jug pod kraljem Stefanom Urošem II Milutinom na račun Vizantijskog "
+"carstva, što je trajalo do smrti cara Stefan Uroša IV Dušana (1355). To "
+"je opet imalo ozbiljan uticaj na pogranične zone i prekogranična društva "
+"između oba carstva u predotomanskoj (tj. vizantijskoj) Makedoniji u istom"
+" periodu, posebno u pet odabranih ciljnih oblasti (dolina Strumice, "
+"Lesnovo, Skoplje, Ohrid, Prilep)."
 
 #: mop/data/projects/borderzones.py:83
 msgid "borderzones_description_3"
@@ -1046,16 +1058,17 @@ msgstr ""
 msgid "borderzones_description_4"
 msgstr ""
 "Početnu tačku predstavljaju srednjevjekovni pisani izvori, tj. srpske i "
-"vizantijske povelje kao glavni korpus, kao i drugi odabrani pisani izvori iz"
-" srednjevjekovne srpske kraljevine. Izvori će biti analizirani iz ugla "
-"pomenutih istraživačkih pitanja i snažno zasnovani na metodama koje "
-"proizilaze iz istorijske geografije. Posebna pažnja biće posvećena analizi "
-"formulacija u vezi sa srpskom ekspanzijom u oblasti istraživanja, sticanjem "
-"novih teritorija i njihovim administrativnim inkorporiranjem na makro-nivou,"
-" kao i lokalizaciji osvojenih naselja sa povezanim tipologijama naselja, kao"
-" i promjeni lokalnih elita na mikro-nivou. Štaviše, biće primijenjeni alati "
-"iz digitalne humanistike u mapiranju i vizualizaciji kako bi se postignuti "
-"rezultati predstavili zainteresovanoj javnosti."
+"vizantijske povelje kao glavni korpus, kao i drugi odabrani pisani izvori"
+" iz srednjevjekovne srpske kraljevine. Izvori će biti analizirani iz ugla"
+" pomenutih istraživačkih pitanja i snažno zasnovani na metodama koje "
+"proizilaze iz istorijske geografije. Posebna pažnja biće posvećena "
+"analizi formulacija u vezi sa srpskom ekspanzijom u oblasti istraživanja,"
+" sticanjem novih teritorija i njihovim administrativnim inkorporiranjem "
+"na makro-nivou, kao i lokalizaciji osvojenih naselja sa povezanim "
+"tipologijama naselja, kao i promjeni lokalnih elita na mikro-nivou. "
+"Štaviše, biće primijenjeni alati iz digitalne humanistike u mapiranju i "
+"vizualizaciji kako bi se postignuti rezultati predstavili zainteresovanoj"
+" javnosti."
 
 #: mop/data/projects/dgse.py:8
 msgid "The Parish Church of Saint Andrew in Ebreichsdorf from the South-East"
@@ -1075,8 +1088,8 @@ msgstr "Dvorac Pottendorf"
 
 #: mop/data/projects/dgse.py:37
 msgid ""
-"Digital Humanities using the Example of the Castle of Ebreichsdorf in the "
-"Lower Austrian Industrial District"
+"Digital Humanities using the Example of the Castle of Ebreichsdorf in the"
+" Lower Austrian Industrial District"
 msgstr ""
 "Digitalna humanistika na primjeru dvorca Ebreichsdorf u donjoaustrijskom "
 "industrijskom okrugu"
@@ -1084,14 +1097,14 @@ msgstr ""
 #: mop/data/projects/dgse.py:58
 msgid "dgse_description_1"
 msgstr ""
-"Jedan od velikih naučnih i popularno-naučnih izazova našeg vremena je kako "
-"se istorijski i kulturno-istorijski sadržaji mogu približiti lokalnoj, široj"
-" javnosti u vremenima povećane digitalizacije uslijed pandemije. Kako se "
-"mogu postići odgovarajući održivi efekti upoznavanja i učenja u njihovom "
-"kontekstu kada je u pitanju lokalna istorijska baština? Ovo pitanje se "
-"odnosi na veoma važan aspekt nauke, naime na oblast „digitalne humanistike”,"
-" koja je nesumnjivo od velikog značaja i za Donju Austriju i to će biti i u "
-"bliskoj i dalekoj budućnosti."
+"Jedan od velikih naučnih i popularno-naučnih izazova našeg vremena je "
+"kako se istorijski i kulturno-istorijski sadržaji mogu približiti "
+"lokalnoj, široj javnosti u vremenima povećane digitalizacije uslijed "
+"pandemije. Kako se mogu postići odgovarajući održivi efekti upoznavanja i"
+" učenja u njihovom kontekstu kada je u pitanju lokalna istorijska "
+"baština? Ovo pitanje se odnosi na veoma važan aspekt nauke, naime na "
+"oblast „digitalne humanistike”, koja je nesumnjivo od velikog značaja i "
+"za Donju Austriju i to će biti i u bliskoj i dalekoj budućnosti."
 
 #: mop/data/projects/dgse.py:59
 msgid "dgse_description_2"
@@ -1099,36 +1112,41 @@ msgstr ""
 "Naš predmet proučavanja je dvorac (okružen vodom) Ebreichsdorf, koji se "
 "nalazi oko 60 kilometara jugoistočno od glavnog grada St. Pöltena u "
 "industrijskom okrugu Donje Austrije i u privatnom je vlasništvu porodice "
-"Drasche-Wartinberg od 1909. godine. Nalazi se u regiji koja je od izuzetnog "
-"istorijskog značaja kako za Austriju tako i za Evropu, jer se nalazi na "
-"raskrsnici između śevera i juga, istoka i zapada, povezujući tako poljske i "
-"češke zemlje sa śevernom Italijom i jugoistočnu Evropu sa srednjom Evropom."
+"Drasche-Wartinberg od 1909. godine. Nalazi se u regiji koja je od "
+"izuzetnog istorijskog značaja kako za Austriju tako i za Evropu, jer se "
+"nalazi na raskrsnici između śevera i juga, istoka i zapada, povezujući "
+"tako poljske i češke zemlje sa śevernom Italijom i jugoistočnu Evropu sa "
+"srednjom Evropom."
 
 #: mop/data/projects/dgse.py:60
 msgid "dgse_description_3"
 msgstr ""
-"Ciljevi našeg projekta ogledaju se u śledeća dva istraživačka pitanja, koja se nadovezuju jedno na drugo i istovremeno čine dva radna paketa:\n"
+"Ciljevi našeg projekta ogledaju se u śledeća dva istraživačka pitanja, "
+"koja se nadovezuju jedno na drugo i istovremeno čine dva radna paketa:\n"
 "<ul>\n"
-"<li>a) Koju je ulogu dvorac Ebreichsdorf igrao u istoriji regiona od 10. do 16. vijeka i kako je izgledao predio koji ga je okruživao u to vrijeme?</li>\n"
-"<li>b) Da li je dvorac Ebreichsdorf bio spona između latinskog Zapada i vizantijskog Istoka?</li>\n"
+"<li>a) Koju je ulogu dvorac Ebreichsdorf igrao u istoriji regiona od 10. "
+"do 16. vijeka i kako je izgledao predio koji ga je okruživao u to "
+"vrijeme?</li>\n"
+"<li>b) Da li je dvorac Ebreichsdorf bio spona između latinskog Zapada i "
+"vizantijskog Istoka?</li>\n"
 "</ul>"
 
 #: mop/data/projects/holdura.py:8
 msgid "holdura_result_text_1"
 msgstr ""
-"Tim Odjeljenja za geografiju i regionalna istraživanja (Univerzitet u Beču) "
-"kreirao je prilagođenu internet stranicu za geokomunikaciju našeg projekta: "
-"<a href=\"https://map.geo.univie.ac.at/bew/\" target=\"_blank\" "
-"class=\"link-primary\">https://map.geo.univie.ac.at/bew/</a>"
+"Tim Odjeljenja za geografiju i regionalna istraživanja (Univerzitet u "
+"Beču) kreirao je prilagođenu internet stranicu za geokomunikaciju našeg "
+"projekta: <a href=\"https://map.geo.univie.ac.at/bew/\" target=\"_blank\""
+" class=\"link-primary\">https://map.geo.univie.ac.at/bew/</a>"
 
 #: mop/data/projects/holdura.py:9
 msgid "holdura_result_text_2"
 msgstr ""
-"Kratki film o našem projektu koji je napravio naš kolega Lukas Neugebauer "
-"nagrađen je i prikazan na RAM filmskom festivalu u Roveretu, Italija (2–6. "
-"oktobar 2024), 5. APOX filmskom festivalu na ostrvu Lošinj, Hrvatska (3–10. "
-"oktobar 2024) i 25. Međunarodnom festivalu arheološkog filma u Narodnom "
-"muzeju u Beogradu, Srbija (20–25. maj 2025)."
+"Kratki film o našem projektu koji je napravio naš kolega Lukas Neugebauer"
+" nagrađen je i prikazan na RAM filmskom festivalu u Roveretu, Italija "
+"(2–6. oktobar 2024), 5. APOX filmskom festivalu na ostrvu Lošinj, "
+"Hrvatska (3–10. oktobar 2024) i 25. Međunarodnom festivalu arheološkog "
+"filma u Narodnom muzeju u Beogradu, Srbija (20–25. maj 2025)."
 
 #: mop/data/projects/holdura.py:18
 msgid "relief map of Montenegro"
@@ -1136,16 +1154,16 @@ msgstr "reljefna karta Crne Gore"
 
 #: mop/data/projects/holdura.py:27
 msgid ""
-"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, B: "
-"Basilica B and cruciform church, Republic of Montenegro"
+"Bird's eye view of the Doclea archaeological excavation, A: Basilica A, "
+"B: Basilica B and cruciform church, Republic of Montenegro"
 msgstr ""
-"Pogled iz ptičje perspektive na arheološko nalazište Duklja, A: Bazilika A, "
-"B: Bazilika B i krstolika crkva, Republika Crna Gora"
+"Pogled iz ptičje perspektive na arheološko nalazište Duklja, A: Bazilika "
+"A, B: Bazilika B i krstolika crkva, Republika Crna Gora"
 
 #: mop/data/projects/holdura.py:34
 msgid ""
-"Bird's eye view of the Doclea archaeological excavation, the western part of"
-" the city in the foreground, Republic of Montenegro"
+"Bird's eye view of the Doclea archaeological excavation, the western part"
+" of the city in the foreground, Republic of Montenegro"
 msgstr ""
 "Pogled iz ptičje perspektive na arheološko nalazište Duklja, zapadni dio "
 "grada u prvom planu, Republika Crna Gora"
@@ -1160,29 +1178,29 @@ msgstr ""
 
 #: mop/data/projects/holdura.py:48
 msgid ""
-"The former Latin (Catholic) monastery of Ratac from the 12th/13th century "
-"near the town of Bar, Republic of Montenegro."
+"The former Latin (Catholic) monastery of Ratac from the 12th/13th century"
+" near the town of Bar, Republic of Montenegro."
 msgstr ""
-"Nekadašnji latinski (katolički) samostan Ratac iz 12/13. vijeka u blizini "
-"grada Bara, Republika Crna Gora."
+"Nekadašnji latinski (katolički) samostan Ratac iz 12/13. vijeka u blizini"
+" grada Bara, Republika Crna Gora."
 
 #: mop/data/projects/holdura.py:58
 msgid ""
-"Beyond East and West: Geocommunicating the Sacred Landscapes of \"Duklja\" "
-"and \"Raška\" through Space and Time (11th-14th Cent.)"
+"Beyond East and West: Geocommunicating the Sacred Landscapes of "
+"\"Duklja\" and \"Raška\" through Space and Time (11th-14th Cent.)"
 msgstr ""
-"Iznad Istoka i Zapada: geokomunikacija svetih predjela „Duklje” i „Raške” "
-"kroz prostor i vrijeme (11–14. vijek)"
+"Iznad Istoka i Zapada: geokomunikacija svetih predjela „Duklje” i „Raške”"
+" kroz prostor i vrijeme (11–14. vijek)"
 
 #: mop/data/projects/holdura.py:74
 msgid "holdura_description_1"
 msgstr ""
-"U trenutnom diskursu o integraciji Zapadnog Balkana u Evropsku uniju, tekući"
-" i planirani pregovori sa republikama Crnom Gorom, Srbijom i Albanijom "
-"izgledaju od izuzetnog značaja u savremenom medijskom izvještavanju. Oni "
-"obuhvataju region koji je – u dalekoj prošlosti – pod imenom Ilirik "
-"(Illyricum), igrao ključnu ulogu u strateškim i administrativnim "
-"razmatranjima Vizantijskog carstva."
+"U trenutnom diskursu o integraciji Zapadnog Balkana u Evropsku uniju, "
+"tekući i planirani pregovori sa republikama Crnom Gorom, Srbijom i "
+"Albanijom izgledaju od izuzetnog značaja u savremenom medijskom "
+"izvještavanju. Oni obuhvataju region koji je – u dalekoj prošlosti – pod "
+"imenom Ilirik (Illyricum), igrao ključnu ulogu u strateškim i "
+"administrativnim razmatranjima Vizantijskog carstva."
 
 #: mop/data/projects/holdura.py:75
 msgid "holdura_description_2"
@@ -1190,68 +1208,69 @@ msgstr ""
 "Projekat se zasniva na naučnoj saradnji između akademskih oblasti "
 "vizantologije, srednjevjekovne istorije, istorijske geografije, istorije "
 "umjetnosti, geografije i geokomunikacije (GIS nauka i kartografija) i "
-"fokusira se na dvije istorijske regije „Duklju” i „Rašku” koje su bile dio "
-"Ilirika. Istraživačka hipoteza je da su obje istorijske regije konstituisale"
-" „sveti predio”, koji namjeravamo da dešifrujemo i predstavimo naučnoj "
-"zajednici kao i zainteresovanoj javnosti zajedničkim sredstvima istorijske "
-"geografije, istorije umjetnosti i geokomunikacije."
+"fokusira se na dvije istorijske regije „Duklju” i „Rašku” koje su bile "
+"dio Ilirika. Istraživačka hipoteza je da su obje istorijske regije "
+"konstituisale „sveti predio”, koji namjeravamo da dešifrujemo i "
+"predstavimo naučnoj zajednici kao i zainteresovanoj javnosti zajedničkim "
+"sredstvima istorijske geografije, istorije umjetnosti i geokomunikacije."
 
 #: mop/data/projects/holdura.py:76
 msgid "holdura_description_3"
 msgstr ""
-"Zbog toga projekat ima za cilj sistematski pristup i istraživanje śledeća "
-"tri glavna pitanja:"
+"Zbog toga projekat ima za cilj sistematski pristup i istraživanje śledeća"
+" tri glavna pitanja:"
 
 #: mop/data/projects/holdura.py:77
 msgid "holdura_description_4"
 msgstr ""
-"（1） Na koji način su lokalni vladari i crkve u Rimu i Carigradu stupali u "
-"interakciju u oblastima „Duklje” i „Raške” od 11. do 14. vijeka i kako se ta"
-" interakcija ogleda u obrascu distribucije spomenika (tj. crkava i "
+"（1） Na koji način su lokalni vladari i crkve u Rimu i Carigradu stupali u"
+" interakciju u oblastima „Duklje” i „Raške” od 11. do 14. vijeka i kako "
+"se ta interakcija ogleda u obrascu distribucije spomenika (tj. crkava i "
 "manastira) u ovom „svetom predjelu”?"
 
 #: mop/data/projects/holdura.py:78
 msgid "holdura_description_5"
 msgstr ""
-"（2） Da li je nestabilna vjerska pripadnost lokalnih vladara imala uticaj na "
-"„sveti predio” i đe su latinska ili vizantijska mjesta bogosluženja tokom "
-"vremena transformisana ili superponirana?"
+"（2） Da li je nestabilna vjerska pripadnost lokalnih vladara imala uticaj "
+"na „sveti predio” i đe su latinska ili vizantijska mjesta bogosluženja "
+"tokom vremena transformisana ili superponirana?"
 
 #: mop/data/projects/holdura.py:79
 msgid "holdura_description_6"
 msgstr ""
 "（3） Da li se religiozni i kulturni uticaj latinske i vizantijske "
-"(pravoslavne) vjere može pratiti kroz male latinske (tj. „zapadne”) kao i "
-"vizantijske i slovenske (tj. „istočne”) umjetničke predmete, ne samo u "
-"priobalnom području, već i u njegovom zaleđu i u Italiji? Obje istorijske "
-"regije mogle bi se pokazati kao zone „iznad Istoka i Zapada”, podložne "
-"značajnim procesima transformacije od 11. do 14. vijeka, i posjeduju ogroman"
-" potencijal da ponude podatke pogodne za vizualizaciju i formalizaciju od "
-"strane GIS nauke. Integracija i prezentacija istraživačkih podataka (tj. o "
-"pisanim izvorima, spomenicima i umjetničkim predmetima) projekta biće "
-"ostvarena kroz već postojeću bazu podataka i onlajn <a "
-"href=\"https://map.geo.univie.ac.at/bew/\" class=\"link-primary\">aplikaciju"
-" sa kartom</a>."
+"(pravoslavne) vjere može pratiti kroz male latinske (tj. „zapadne”) kao i"
+" vizantijske i slovenske (tj. „istočne”) umjetničke predmete, ne samo u "
+"priobalnom području, već i u njegovom zaleđu i u Italiji? Obje istorijske"
+" regije mogle bi se pokazati kao zone „iznad Istoka i Zapada”, podložne "
+"značajnim procesima transformacije od 11. do 14. vijeka, i posjeduju "
+"ogroman potencijal da ponude podatke pogodne za vizualizaciju i "
+"formalizaciju od strane GIS nauke. Integracija i prezentacija "
+"istraživačkih podataka (tj. o pisanim izvorima, spomenicima i umjetničkim"
+" predmetima) projekta biće ostvarena kroz već postojeću bazu podataka i "
+"onlajn <a href=\"https://map.geo.univie.ac.at/bew/\" class=\"link-"
+"primary\">aplikaciju sa kartom</a>."
 
 #: mop/data/projects/holdura.py:80
 msgid "holdura_description_7"
 msgstr ""
-"Projekat je izvodljiv isključivo kroz multidisciplinarni pristup i saradnju "
-"između tri projektna partnera iz Austrije (Austrijska akademija nauka, ovdje"
-" priv.-doc. mag. dr Mihailo Popović; Univerzitet u Beču, ovdje profesor dr "
-"Karel Kriz) i Njemačke (Univerzitet primijenjenih nauka u Lajpcigu, ovdje "
-"profesor dr Johannes Trips). Osim toga, projekat je usko povezan sa tekućim "
-"naučnim radom Mihaila Popovića na <a "
+"Projekat je izvodljiv isključivo kroz multidisciplinarni pristup i "
+"saradnju između tri projektna partnera iz Austrije (Austrijska akademija "
+"nauka, ovdje priv.-doc. mag. dr Mihailo Popović; Univerzitet u Beču, "
+"ovdje profesor dr Karel Kriz) i Njemačke (Univerzitet primijenjenih nauka"
+" u Lajpcigu, ovdje profesor dr Johannes Trips). Osim toga, projekat je "
+"usko povezan sa tekućim naučnim radom Mihaila Popovića na <a "
 "href=\"https://tib.oeaw.ac.at/current_status/TIB_17\" class=\"link-"
-"primary\">TIB svesci 17 „Nea Epeiros and Praevalis”</a> i na TIB podprojektu"
-" <a href=\"https://tib.oeaw.ac.at/subprojects/montenegro\" class=\"link-"
-"primary\">„Cultural Heritage in Times of World War I: The Case of the "
-"Austro-Hungarian Relief Map of Montenegro (1916-1918)”</a>."
+"primary\">TIB svesci 17 „Nea Epeiros and Praevalis”</a> i na TIB "
+"podprojektu <a href=\"https://tib.oeaw.ac.at/subprojects/montenegro\" "
+"class=\"link-primary\">„Cultural Heritage in Times of World War I: The "
+"Case of the Austro-Hungarian Relief Map of Montenegro (1916-1918)”</a>."
 
 #: mop/data/projects/idcew.py:8
 msgid "The Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
 msgstr ""
-"Crkva Svete Trojice u manastiru Sopoćani sedamdesetih godina prošlog vijeka"
+"Crkva Svete Trojice u manastiru Sopoćani sedamdesetih godina prošlog "
+"vijeka"
 
 #: mop/data/projects/idcew.py:11 mop/data/projects/idcew.py:19
 #: mop/data/projects/idcew.py:27
@@ -1263,55 +1282,67 @@ msgid ""
 "The Apse of the Church of the Holy Trinity in Sopoćani Monastery in the "
 "1970s"
 msgstr ""
-"Apsida crkve Svete Trojice u manastiru Sopoćani sedamdesetih godina prošlog "
-"vijeka"
+"Apsida crkve Svete Trojice u manastiru Sopoćani sedamdesetih godina "
+"prošlog vijeka"
 
 #: mop/data/projects/idcew.py:24
 msgid ""
-"The Church of the Annunciation of the Holy Mother of God in Gradac Monastery"
-" in the 1970s"
+"The Church of the Annunciation of the Holy Mother of God in Gradac "
+"Monastery in the 1970s"
 msgstr ""
 "Crkva Blagoveštenja Presvete Bogorodice u manastiru Gradac sedamdesetih "
 "godina prošlog vijeka"
 
 #: mop/data/projects/idcew.py:32
 msgid ""
-"The Church of the Annunciation of the Holy Mother of God in Gradac Monastery"
-" in 2007"
-msgstr ""
-"Crkva Blagoveštenja Presvete Bogorodice u manastiru Gradac 2007. godine"
+"The Church of the Annunciation of the Holy Mother of God in Gradac "
+"Monastery in 2007"
+msgstr "Crkva Blagoveštenja Presvete Bogorodice u manastiru Gradac 2007. godine"
 
 #: mop/data/projects/idcew.py:45
 msgid ""
 "Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor "
 "connecting East and West in the 13th/14th Centuries (IDCEW)"
 msgstr ""
-"Jelena – katolička plemkinja, srpska kraljica i međureligijski donator koji "
-"povezuje Istok i Zapad u 13. i 14. vijeku (IDCEW)"
+"Jelena – katolička plemkinja, srpska kraljica i međureligijski donator "
+"koji povezuje Istok i Zapad u 13. i 14. vijeku (IDCEW)"
 
 #: mop/data/projects/idcew.py:61
 msgid "idcew_description_1"
 msgstr ""
 "Projekat ima za cilj da se bavi životom i djelima srednjevjekovne srpske "
-"kraljice Jelene (Anžujske), koja je živjela u 13. i 14. vijeku i bila udata "
-"za srpskog kralja Uroša I. Realizovaće se u saradnji sa Austrijskim "
-"arheološkim institutom (ÖAI) Austrijske akademije nauka u vezi sa terenskim "
-"istraživanjima i dron dokumentacijom u oblasti istraživanja. Život kraljice "
-"Jelene mora se razumjeti kroz prizmu ličnosti koja je gradila mostove između"
-" pravoslavnog Istoka i latinskog Zapada zahvaljujući svom francuskom "
-"porijeklu i snažnoj vezi sa plemićkom porodici Anžujaca. Mnoga pitanja u "
-"vezi sa njenim životom, državom i zadužbinama zahtijevaju dalja detaljna "
-"istraživanja."
+"kraljice Jelene (Anžujske), koja je živjela u 13. i 14. vijeku i bila "
+"udata za srpskog kralja Uroša I. Realizovaće se u saradnji sa Austrijskim"
+" arheološkim institutom (ÖAI) Austrijske akademije nauka u vezi sa "
+"terenskim istraživanjima i dron dokumentacijom u oblasti istraživanja. "
+"Život kraljice Jelene mora se razumjeti kroz prizmu ličnosti koja je "
+"gradila mostove između pravoslavnog Istoka i latinskog Zapada "
+"zahvaljujući svom francuskom porijeklu i snažnoj vezi sa plemićkom "
+"porodici Anžujaca. Mnoga pitanja u vezi sa njenim životom, državom i "
+"zadužbinama zahtijevaju dalja detaljna istraživanja."
 
 #: mop/data/projects/idcew.py:62
 msgid "idcew_description_2"
 msgstr ""
 "Ova pitanja obuhvataju:\n"
 "<ul>\n"
-"<li>Reevaluaciju Jeleninih pisanih dokumenata (tj. povelja i pisama) kako bi se preciznije definisala njena vlast u Zeti, Trebinju, Plavu i gornjem toku rijeke Ibar (takođe uz pomoć kartografije, toponimije i GIS-a)</li>\n"
-"<li>U tom kontekstu, novo izdanje povelja za manastir Svetog Nikole na Vranjini, koje do sada nijesu adekvatno priređene i koje će doprinijeti našim istraživačkim pitanjima</li>\n"
-"<li>Rekonstrukciju „svetog predjela” (kontaktne zone) Jelenine oblasti analizom arhitekture odgovarajućih spomenika (crkava i manastira) 13. i 14. vijeka, posebno Sopoćana i Gradca, u Raškom i Moravičkom okrugu (Srbija) sa osvrtom na istočne (pravoslavne) i zapadne (latinske, katoličke) uticaje</li>\n"
-"<li>Darivanje ikona i drugih manjih umjetničkih predmeta od strane kraljice Jelene crkvama i manastirima u njenoj oblasti, kao i u Italiji (up. ikonu Svetih Petra i Pavla u Vatikanu), njihovu analizu u odnosu na istočne (pravoslavne) i zapadne (latinske, katoličke) uticaje, te recepciju kraljice Jelene u srpskoj umjetnosti 18. i 19. vijeka</li>\n"
+"<li>Reevaluaciju Jeleninih pisanih dokumenata (tj. povelja i pisama) kako"
+" bi se preciznije definisala njena vlast u Zeti, Trebinju, Plavu i "
+"gornjem toku rijeke Ibar (takođe uz pomoć kartografije, toponimije i "
+"GIS-a)</li>\n"
+"<li>U tom kontekstu, novo izdanje povelja za manastir Svetog Nikole na "
+"Vranjini, koje do sada nijesu adekvatno priređene i koje će doprinijeti "
+"našim istraživačkim pitanjima</li>\n"
+"<li>Rekonstrukciju „svetog predjela” (kontaktne zone) Jelenine oblasti "
+"analizom arhitekture odgovarajućih spomenika (crkava i manastira) 13. i "
+"14. vijeka, posebno Sopoćana i Gradca, u Raškom i Moravičkom okrugu "
+"(Srbija) sa osvrtom na istočne (pravoslavne) i zapadne (latinske, "
+"katoličke) uticaje</li>\n"
+"<li>Darivanje ikona i drugih manjih umjetničkih predmeta od strane "
+"kraljice Jelene crkvama i manastirima u njenoj oblasti, kao i u Italiji "
+"(up. ikonu Svetih Petra i Pavla u Vatikanu), njihovu analizu u odnosu na "
+"istočne (pravoslavne) i zapadne (latinske, katoličke) uticaje, te "
+"recepciju kraljice Jelene u srpskoj umjetnosti 18. i 19. vijeka</li>\n"
 "</ul>"
 
 #: mop/data/projects/rhr.py:8
@@ -1327,12 +1358,11 @@ msgid ""
 "Reception of the Serbian King Petar I in Skopje in 1912, depicted in a "
 "French illustration"
 msgstr ""
-"Doček srpskog kralja Petra I u Skoplju 1912. godine, prikazan na francuskoj "
-"ilustraciji"
+"Doček srpskog kralja Petra I u Skoplju 1912. godine, prikazan na "
+"francuskoj ilustraciji"
 
 #: mop/data/projects/rhr.py:30
-msgid ""
-"The Greek and Serbian pavilions at the World Exhibition in Paris in 1900"
+msgid "The Greek and Serbian pavilions at the World Exhibition in Paris in 1900"
 msgstr "Grčki i srpski paviljon na Svjetskoj izložbi u Parizu 1900. godine"
 
 #: mop/data/projects/rhr.py:40
@@ -1340,42 +1370,57 @@ msgid ""
 "The Reception History of Rumelia in Austria and France (Late 17th- Early "
 "20th Centuries) (RHR)"
 msgstr ""
-"Istorija recepcije Rumelije u Austriji i Francuskoj (kraj 17. – početak 20. "
-"vijeka) (RHR)"
+"Istorija recepcije Rumelije u Austriji i Francuskoj (kraj 17. – početak "
+"20. vijeka) (RHR)"
 
 #: mop/data/projects/rhr.py:53
 msgid "rhr_description_1"
 msgstr ""
-"Projekat ima za cilj da detaljno obradi tri istraživačka pitanja u vezi sa "
-"prisustvom i recepcijom Rumelije u Austriji i Francuskoj (kraj 17. – početak"
-" 20. vijeka) kroz analizu njenog vizuelnog uticaja tokom vjekova. Otomansko "
-"osvajanje jugoistočne Evrope tokom 14. i 15. vijeka dovelo je do prekretnice"
-" u istoriji Balkanskog poluostrva i pretvorilo ovu regiju u terra incognita "
-"iz srednjeevropske i zapadnoevropske perspektive, koja će se vratiti u "
-"sveevropski fokus tek u ranom modernom dobu."
+"Projekat ima za cilj da detaljno obradi tri istraživačka pitanja u vezi "
+"sa prisustvom i recepcijom Rumelije u Austriji i Francuskoj (kraj 17. – "
+"početak 20. vijeka) kroz analizu njenog vizuelnog uticaja tokom vjekova. "
+"Otomansko osvajanje jugoistočne Evrope tokom 14. i 15. vijeka dovelo je "
+"do prekretnice u istoriji Balkanskog poluostrva i pretvorilo ovu regiju u"
+" terra incognita iz srednjeevropske i zapadnoevropske perspektive, koja "
+"će se vratiti u sveevropski fokus tek u ranom modernom dobu."
 
 #: mop/data/projects/rhr.py:54
 msgid "rhr_description_2"
 msgstr ""
 "Naša tri istraživačka pitanja obuhvataju:<br />\n"
-"a) Naše prvo istraživačko pitanje bavi se „svetim prostorom” Rumelije koji dolazi u habzburšku prijestonicu Beč u drugoj polovini 17. vijeka. Ovaj „sveti prostor” oličen je u pravoslavnim ikonama koje su se slivale u Beč nakon habzburško-otomanskih sukoba u jugoistočnoj Evropi.\n"
+"a) Naše prvo istraživačko pitanje bavi se „svetim prostorom” Rumelije "
+"koji dolazi u habzburšku prijestonicu Beč u drugoj polovini 17. vijeka. "
+"Ovaj „sveti prostor” oličen je u pravoslavnim ikonama koje su se slivale "
+"u Beč nakon habzburško-otomanskih sukoba u jugoistočnoj Evropi.\n"
 "<br />\n"
-"b) Naše drugo istraživačko pitanje odnosi se na kartografsko prikupljanje podataka od strane francuskih kartografa u Rumeliji po nalogu kralja Luja XIV, što je rezultiralo sa tri ključna zbornika (Recueils). Dva od njih još uvijek zahtijevaju detaljna istraživanja u pogledu njihovog tematskog sadržaja karata.\n"
+"b) Naše drugo istraživačko pitanje odnosi se na kartografsko prikupljanje"
+" podataka od strane francuskih kartografa u Rumeliji po nalogu kralja "
+"Luja XIV, što je rezultiralo sa tri ključna zbornika (Recueils). Dva od "
+"njih još uvijek zahtijevaju detaljna istraživanja u pogledu njihovog "
+"tematskog sadržaja karata.\n"
 "<br />\n"
-"c) Naše treće istraživačko pitanje treba da istraži popularne predstave o našljednicima Rumelije koje su se propagirale u Austriji i Francuskoj kroz velike događaje poput svjetskih izložbi, kao i kroz masovnu vizuelnu kulturu (razglednice, kolekcionarske grafike, gravure, karikature). U 19. i početkom 20. vijeka obje zemlje su bile pioniri u slovenskim i vizantijskim studijama, šaljući istraživače na Balkansko poluostrvo i obrazujući naučnike odatle, čiji su radovi bili instrumentalni u stvaranju snažnih, i često sukobljenih, nacionalnih narativa i identiteta na Balkanu."
+"c) Naše treće istraživačko pitanje treba da istraži popularne predstave o"
+" našljednicima Rumelije koje su se propagirale u Austriji i Francuskoj "
+"kroz velike događaje poput svjetskih izložbi, kao i kroz masovnu vizuelnu"
+" kulturu (razglednice, kolekcionarske grafike, gravure, karikature). U "
+"19. i početkom 20. vijeka obje zemlje su bile pioniri u slovenskim i "
+"vizantijskim studijama, šaljući istraživače na Balkansko poluostrvo i "
+"obrazujući naučnike odatle, čiji su radovi bili instrumentalni u "
+"stvaranju snažnih, i često sukobljenih, nacionalnih narativa i identiteta"
+" na Balkanu."
 
 #: mop/data/projects/tarsr.py:20
 msgid ""
-"The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in the "
-"Valley of the River Vardar"
+"The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in "
+"the Valley of the River Vardar"
 msgstr ""
 "Drumski tunel u čast njemačkog cara Vilhelma II iz 1916. godine u dolini "
 "rijeke Vardar"
 
 #: mop/data/projects/tarsr.py:27
 msgid ""
-"Inscription in Honour of the German Emperor Wilhelm II at the Entrance to "
-"the Road Tunnel"
+"Inscription in Honour of the German Emperor Wilhelm II at the Entrance to"
+" the Road Tunnel"
 msgstr "Natpis u čast njemačkog cara Vilhelma II na ulazu u drumski tunel"
 
 #: mop/data/projects/tarsr.py:34
@@ -1388,8 +1433,8 @@ msgstr "Ratni ostaci iz Prvog svjetskog rata u Mariovu"
 
 #: mop/data/projects/tarsr.py:48
 msgid ""
-"Tracing Archaeological Remains and Scholarly Research of the Central Powers "
-"in the Region of Prilep-Bitola during WW I (1915-1918)"
+"Tracing Archaeological Remains and Scholarly Research of the Central "
+"Powers in the Region of Prilep-Bitola during WW I (1915-1918)"
 msgstr ""
 "Praćenje arheoloških ostataka i naučnog istraživanja Centralnih sila u "
 "oblasti Prilepa i Bitolja tokom Prvog svjetskog rata (1915-1918)"
@@ -1414,11 +1459,11 @@ msgstr "Pariz"
 #: mop/data/projects/tarsr.py:68
 msgid "tracing_description_1"
 msgstr ""
-"Naš projekat ima za cilj da osvijetli južni dio Balkanskog poluostrva tokom "
-"Prvog svjetskog rata (1914-1918), a posebno oblasti Prilep-Bitolj i Mariovo "
-"iza takozvanog <span class=\"fst-italic\">Solunskog fronta</span> ili <span "
-"class=\"fst-italic\">Makedonskog fronta</span> u današnjoj Republici "
-"Sjevernoj Makedoniji."
+"Naš projekat ima za cilj da osvijetli južni dio Balkanskog poluostrva "
+"tokom Prvog svjetskog rata (1914-1918), a posebno oblasti Prilep-Bitolj i"
+" Mariovo iza takozvanog <span class=\"fst-italic\">Solunskog "
+"fronta</span> ili <span class=\"fst-italic\">Makedonskog fronta</span> u "
+"današnjoj Republici Sjevernoj Makedoniji."
 
 #: mop/data/projects/tarsr.py:69
 msgid "tracing_description_2"
@@ -1431,12 +1476,12 @@ msgstr ""
 msgid "tracing_description_3"
 msgstr ""
 "Razni istorijski i crkveni spomenici teško su stradali u razaranjima duž "
-"<span class=\"fst-italic\">Solunskog fronta</span>. Primjeri su crkva Svetog"
-" Hristofora u selu Krstoar i crkva Svetog Nikole u selu Gradešnica. Još "
-"uvijek je potrebno temeljno naučno istraživanje kako bi se procijenili "
-"relevantni izvori, posebno slikovni, o konkretnim spomenicima u regionu iz "
-"vizantijskog i postvizantijskog doba kako bi se dobila sveobuhvatna slika o "
-"odgovarajućoj kulturnoj baštini."
+"<span class=\"fst-italic\">Solunskog fronta</span>. Primjeri su crkva "
+"Svetog Hristofora u selu Krstoar i crkva Svetog Nikole u selu Gradešnica."
+" Još uvijek je potrebno temeljno naučno istraživanje kako bi se "
+"procijenili relevantni izvori, posebno slikovni, o konkretnim spomenicima"
+" u regionu iz vizantijskog i postvizantijskog doba kako bi se dobila "
+"sveobuhvatna slika o odgovarajućoj kulturnoj baštini."
 
 #: mop/data/projects/tarsr.py:71
 msgid "tracing_description_4"
@@ -1446,9 +1491,15 @@ msgstr "Istraživaće se tri pitanja:"
 msgid "tracing_description_5"
 msgstr ""
 "<ul>\n"
-"<li>Đe je kulturna baština iza <span class=\"fst-italic\">Solunskog fronta</span> u oblastima Prilepa, Bitolja i Mariova bila pogođena borbama i kako su Centralne sile dokumentovale štetu?</li>\n"
-"<li>Đe su se vršila arheološka iskopavanja Centralnih sila u oblastima Prilepa, Bitolja i Mariova i koji su naučnici bili uključeni?</li>\n"
-"<li>Kakva se vojna infrastruktura Centralnih sila još uvijek može pratiti <span class=\"fst-italic\">in situ</span> u oblastima Prilepa, Bitolja i Mariova (tj. rovovi, bunkeri, putevi, mostovi, tuneli, željeznica, žičare, groblja)?</li>\n"
+"<li>Đe je kulturna baština iza <span class=\"fst-italic\">Solunskog "
+"fronta</span> u oblastima Prilepa, Bitolja i Mariova bila pogođena "
+"borbama i kako su Centralne sile dokumentovale štetu?</li>\n"
+"<li>Đe su se vršila arheološka iskopavanja Centralnih sila u oblastima "
+"Prilepa, Bitolja i Mariova i koji su naučnici bili uključeni?</li>\n"
+"<li>Kakva se vojna infrastruktura Centralnih sila još uvijek može pratiti"
+" <span class=\"fst-italic\">in situ</span> u oblastima Prilepa, Bitolja i"
+" Mariova (tj. rovovi, bunkeri, putevi, mostovi, tuneli, željeznica, "
+"žičare, groblja)?</li>\n"
 "</ul>"
 
 #: mop/data/projects/tarsr.py:73
@@ -1483,37 +1534,38 @@ msgstr ""
 "akademije nauka na 13. međunarodnom kongresu vizantologa u Oksfordu, "
 "Engleska. Od tada, TIB sistematski istražuje istorijsku geografiju "
 "Vizantijskog carstva od početka 4. vijeka do sredine 15. vijeka. Cilj "
-"projekta TIB je objavljivanje istorijskog atlasa vizantijskih provincija i "
-"regija od pozne antike do ranog modernog doba. Od 1960-ih godina "
+"projekta TIB je objavljivanje istorijskog atlasa vizantijskih provincija "
+"i regija od pozne antike do ranog modernog doba. Od 1960-ih godina "
 "istraživanje je fokusirano na Balkansko poluostrvo i Malu Aziju."
 
 #: mop/data/projects/tib_balkan.py:44
 msgid "tib_balkan_description_2"
 msgstr ""
 "Od 1976. godine u redovnim intervalima objavljuju se TIB sveske o "
-"vizantijskim provincijama i regijama na Balkanu. Godine 1976. objavljena je "
-"sveska „Hellas und Thessalien” (TIB 1), 1981. „Nikopolis und Kephallēnia” "
-"(TIB 3), 1991. „Thrakien (Thrakē, Rodopē und Haimimontos)” (TIB 6), 1998. "
-"„Aigaion Pelagos (Die nördliche Ägäis)” (TIB 10), 2008. „Ostthrakien "
-"(Eurōpē)” (TIB 12) i 2022. „Makedonien, südlicher Teil” (TIB 11). Cilj TIB-a"
-" za Balkan bio je i ostaje da kroz naučna istraživanja relevantnih regija "
-"dosegne granicu na Dunavu kao śevernu granicu Vizantijskog carstva."
+"vizantijskim provincijama i regijama na Balkanu. Godine 1976. objavljena "
+"je sveska „Hellas und Thessalien” (TIB 1), 1981. „Nikopolis und "
+"Kephallēnia” (TIB 3), 1991. „Thrakien (Thrakē, Rodopē und Haimimontos)” "
+"(TIB 6), 1998. „Aigaion Pelagos (Die nördliche Ägäis)” (TIB 10), 2008. "
+"„Ostthrakien (Eurōpē)” (TIB 12) i 2022. „Makedonien, südlicher Teil” (TIB"
+" 11). Cilj TIB-a za Balkan bio je i ostaje da kroz naučna istraživanja "
+"relevantnih regija dosegne granicu na Dunavu kao śevernu granicu "
+"Vizantijskog carstva."
 
 #: mop/data/projects/tib_balkan.py:45
 msgid "tib_balkan_description_3"
 msgstr ""
-"U projektu „Obratni inženjering projekta Tabula Imperii Byzantini Balkans” "
-"sada nastojimo da sistematski obradimo gore navedene štampane i uglavnom "
-"analogne TIB sveske (tj. bez digitalnih komponenti) koristeći metodu "
-"obratnog inženjeringa. Stoga skeniramo objavljene sveske koristeći OCR (jer "
-"samo TIB 11 i TIB 12 su dostupni u pdf formatu), unosimo odgovarajuće "
-"odrednice u bazu podataka Maps of Power OpenAtlas i dopunjujemo ove skupove "
-"podataka skeniranim crno-bijelim fotografijama i slajdovima o Balkanskom "
-"poluostrvu iz TIB arhive, koji su nastali u periodu između 1960-ih godina i "
-"2008. godine. Njih pregledamo, a neke od njih moramo najprije skenirati. Na "
-"ovaj način obrađujemo analogne, arhivirane podatke, čuvajući ih za budućnost"
-" i čineći ih dostupnim istraživačima i javnosti (vidjeti opciju Istraži u "
-"nastavku)."
+"U projektu „Obratni inženjering projekta Tabula Imperii Byzantini "
+"Balkans” sada nastojimo da sistematski obradimo gore navedene štampane i "
+"uglavnom analogne TIB sveske (tj. bez digitalnih komponenti) koristeći "
+"metodu obratnog inženjeringa. Stoga skeniramo objavljene sveske koristeći"
+" OCR (jer samo TIB 11 i TIB 12 su dostupni u pdf formatu), unosimo "
+"odgovarajuće odrednice u bazu podataka Maps of Power OpenAtlas i "
+"dopunjujemo ove skupove podataka skeniranim crno-bijelim fotografijama i "
+"slajdovima o Balkanskom poluostrvu iz TIB arhive, koji su nastali u "
+"periodu između 1960-ih godina i 2008. godine. Njih pregledamo, a neke od "
+"njih moramo najprije skenirati. Na ovaj način obrađujemo analogne, "
+"arhivirane podatke, čuvajući ih za budućnost i čineći ih dostupnim "
+"istraživačima i javnosti (vidjeti opciju Istraži u nastavku)."
 
 #: mop/data/projects/vlachs.py:19 mop/data/projects/vlachs.py:25
 #: mop/data/projects/vlachs.py:31
@@ -1521,8 +1573,7 @@ msgid "A Sheepflock in the Village of Oxynon, Greece."
 msgstr "Stado ovaca u selu Oksinon, Grčka."
 
 #: mop/data/projects/vlachs.py:38
-msgid ""
-"Nomadic Infrastructure in the Historical Region of Macedonia (14th Cent.)"
+msgid "Nomadic Infrastructure in the Historical Region of Macedonia (14th Cent.)"
 msgstr "Nomadska infrastruktura u istorijskoj regiji Makedoniji (14. vijek)"
 
 #: mop/data/projects/vlachs.py:48
@@ -1535,23 +1586,24 @@ msgstr "Ljetnji pašnjaci u istorijskoj regiji Makedoniji (14. vijek)"
 
 #: mop/data/projects/vlachs.py:64
 msgid ""
-"The Distribution of Vlach Temporary Settlements (Katuni) in the Historical "
-"Region of Macedonia (14th Cent.)"
+"The Distribution of Vlach Temporary Settlements (Katuni) in the "
+"Historical Region of Macedonia (14th Cent.)"
 msgstr ""
 "Raspored privremenih vlaških naselja (katuna) u istorijskoj oblasti "
 "Makedoniji (14. vijek)"
 
 #: mop/data/projects/vlachs.py:72
 msgid ""
-"The Source-Based Presence of Vlachs in the Historical Region of Macedonia "
-"(14th Cent.)"
+"The Source-Based Presence of Vlachs in the Historical Region of Macedonia"
+" (14th Cent.)"
 msgstr ""
-"Prisustvo Vlaha u istorijskoj oblasti Makedoniji prema izvorima (14. vijek)"
+"Prisustvo Vlaha u istorijskoj oblasti Makedoniji prema izvorima (14. "
+"vijek)"
 
 #: mop/data/projects/vlachs.py:82
 msgid ""
-"The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the "
-"Historical Region of Macedonia (11th-16th Cent.)"
+"The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the"
+" Historical Region of Macedonia (11th-16th Cent.)"
 msgstr ""
 "Etnonim Vlaha u pisanim izvorima i toponimiji u istorijskoj oblasti "
 "Makedoniji (11–16. vijek)"
@@ -1561,34 +1613,36 @@ msgid "vlachs_description_1"
 msgstr ""
 "Projekat pod nazivom „Etnonim Vlaha u pisanim izvorima i toponimiji u "
 "istorijskoj regiji Makedoniji” fokusira se na interakciju između stalnog "
-"stanovništva i nomada (tj. Vlaha) u istorijskoj regiji Makedoniji od 11. do "
-"16. vijeka. Ovaj projekat, koji su uspješno prijavili rukovodioci projekta "
-"doc. mag. dr Mihailo Popović i prof. dr Toni Filiposki (Univerzitet Sv. "
-"Kiril i Metodij u Skoplju, Sjeverna Makedonija), finansira Centar za "
-"međunarodnu saradnju i mobilnost (ICM) Austrijske agencije za međunarodnu "
-"saradnju u obrazovanju i istraživanju (OeAD-GmbH) u trajanju od dvije godine"
-" (2016–2018) i predstavlja dodatnu, novu studiju slučaja u okviru "
-"inicijative „Mape moći”."
+"stanovništva i nomada (tj. Vlaha) u istorijskoj regiji Makedoniji od 11. "
+"do 16. vijeka. Ovaj projekat, koji su uspješno prijavili rukovodioci "
+"projekta doc. mag. dr Mihailo Popović i prof. dr Toni Filiposki "
+"(Univerzitet Sv. Kiril i Metodij u Skoplju, Sjeverna Makedonija), "
+"finansira Centar za međunarodnu saradnju i mobilnost (ICM) Austrijske "
+"agencije za međunarodnu saradnju u obrazovanju i istraživanju (OeAD-GmbH)"
+" u trajanju od dvije godine (2016–2018) i predstavlja dodatnu, novu "
+"studiju slučaja u okviru inicijative „Mape moći”."
 
 #: mop/data/projects/vlachs.py:101
 msgid "vlachs_description_2"
 msgstr ""
-"Istorijska regija Makedonija na raskrsnici pravoslavlja, rimokatoličanstva i"
-" islama i pitanje porijekla Vlaha, koji se sve do modernog doba identifikuju"
-" kao posebna etnička grupa, kao i etnonim „Vlasi” i njegove izvedenice u "
-"obliku toponima i ličnih imena, nalaze se u središtu zajedničkog "
-"istraživanja. Zbog toga projekat istražuje srednjevjekovne vizantijske i "
-"slovenske izvore koji se odnose na Vlahe u istorijskoj regiji Makedoniji. "
-"Štaviše, istorijska i arheološka istraživanja biće kombinovana sa digitalnom"
-" humanistkom. Austrijska strana će se osloniti na raznovrsne podatke iz toma"
-" Tabula Imperii Byzantini (TIB) 16, autora M. Popovića, sa ciljem da se "
-"izradi atlas istorijske regije Makedonije. Pored identifikacije i evaluacije"
-" vizantijskih i slovenskih izvora (posebno povelja i istoriografije) i "
+"Istorijska regija Makedonija na raskrsnici pravoslavlja, "
+"rimokatoličanstva i islama i pitanje porijekla Vlaha, koji se sve do "
+"modernog doba identifikuju kao posebna etnička grupa, kao i etnonim "
+"„Vlasi” i njegove izvedenice u obliku toponima i ličnih imena, nalaze se "
+"u središtu zajedničkog istraživanja. Zbog toga projekat istražuje "
+"srednjevjekovne vizantijske i slovenske izvore koji se odnose na Vlahe u "
+"istorijskoj regiji Makedoniji. Štaviše, istorijska i arheološka "
+"istraživanja biće kombinovana sa digitalnom humanistkom. Austrijska "
+"strana će se osloniti na raznovrsne podatke iz toma Tabula Imperii "
+"Byzantini (TIB) 16, autora M. Popovića, sa ciljem da se izradi atlas "
+"istorijske regije Makedonije. Pored identifikacije i evaluacije "
+"vizantijskih i slovenskih izvora (posebno povelja i istoriografije) i "
 "prikupljanja dodatne sekundarne literature, planirana su i putovanja u "
 "zemlju partnera u saradnji sa ciljem povezivanja projektnih partnera, "
 "jačanja njihovih veza, omogućavanja detaljne rasprave o relevantnim "
-"srednjevjekovnim izvorima o Vlasima radi postizanja zajedničkog tumačenja i "
-"pripreme za uključivanje obrađenih podataka u bazu podataka „Mape moći”."
+"srednjevjekovnim izvorima o Vlasima radi postizanja zajedničkog tumačenja"
+" i pripreme za uključivanje obrađenih podataka u bazu podataka „Mape "
+"moći”."
 
 #: mop/model/explore.py:10
 msgid "Actors"
@@ -1642,47 +1696,47 @@ msgstr "Fizički predmeti"
 msgid "about_text_1"
 msgstr ""
 "istraživačka inicijativa „Mape moći” služi metodološkom i "
-"interdisciplinarnom povezivanju naučnika iz oblasti istorijske geografije. "
-"Inicijativa, koja od 2019. godine radi pod nazivom „Mape moći: Istorijski "
-"atlas mjesta, pograničnih zona i dinamike migracija u Vizantiji (TIB "
-"Balkan)”, nastala je iz ideje da se istorijsko-geografska istraživanja "
-"metodološki prodube i sadržajno postave na širu osnovu. Na osnovu naučnog "
-"projekta <a href=\"https://tib.oeaw.ac.at\" class=\"link-primary\" "
-"target=\"_blank\">„Tabula Imperii Byzantini (TIB)”</a>, koji se uspješno "
-"sprovodi na Austrijskoj akademiji nauka (Beč) od 1966. godine, inicijativa "
-"namjerava da proširi prostorni fokus TIB-a sa vizantijskog područja kako bi "
-"uključila i druge evropske oblasti u srednjem vijeku. Uspješno završeni "
-"klaster projekat <a href=\"https://dpp.oeaw.ac.at/\" class=\"link-primary\" "
-"target=\"_blank\">„Digitalizacija obrazaca moći (DPP): Periferne planine u "
-"srednjevjekovnom svijetu”</a> može se smatrati pilot projektom u tom "
-"pogledu."
+"interdisciplinarnom povezivanju naučnika iz oblasti istorijske "
+"geografije. Inicijativa, koja od 2019. godine radi pod nazivom „Mape "
+"moći: Istorijski atlas mjesta, pograničnih zona i dinamike migracija u "
+"Vizantiji (TIB Balkan)”, nastala je iz ideje da se istorijsko-geografska "
+"istraživanja metodološki prodube i sadržajno postave na širu osnovu. Na "
+"osnovu naučnog projekta <a href=\"https://tib.oeaw.ac.at\" class=\"link-"
+"primary\" target=\"_blank\">„Tabula Imperii Byzantini (TIB)”</a>, koji se"
+" uspješno sprovodi na Austrijskoj akademiji nauka (Beč) od 1966. godine, "
+"inicijativa namjerava da proširi prostorni fokus TIB-a sa vizantijskog "
+"područja kako bi uključila i druge evropske oblasti u srednjem vijeku. "
+"Uspješno završeni klaster projekat <a href=\"https://dpp.oeaw.ac.at/\" "
+"class=\"link-primary\" target=\"_blank\">„Digitalizacija obrazaca moći "
+"(DPP): Periferne planine u srednjevjekovnom svijetu”</a> može se smatrati"
+" pilot projektom u tom pogledu."
 
 #: mop/templates/about.html:19
 msgid "about_text_2"
 msgstr ""
-"kako bi se odgovorilo ovoj novoj ideji prostornog širenja, dosadašnji naziv "
-"istraživačke inicijative preimenovan je u „Mape moći – Karten der Macht”, "
-"što će omogućiti veću tematsku dubinu i duži vremenski raspon. Dosadašnje "
-"istraživačke perspektive TIB-a, kao predstavnika naučne grane istorijske "
-"geografije Vizantijskog carstva, u suštini su se bavile četirima "
-"kategorijama istorijskih izvora:"
+"kako bi se odgovorilo ovoj novoj ideji prostornog širenja, dosadašnji "
+"naziv istraživačke inicijative preimenovan je u „Mape moći – Karten der "
+"Macht”, što će omogućiti veću tematsku dubinu i duži vremenski raspon. "
+"Dosadašnje istraživačke perspektive TIB-a, kao predstavnika naučne grane "
+"istorijske geografije Vizantijskog carstva, u suštini su se bavile "
+"četirima kategorijama istorijskih izvora:"
 
 #: mop/templates/about.html:25
 msgid "about_text_3"
 msgstr ""
 "promjene paradigme u sadržaju i tehničko-digitalne inovacije u nauci sa "
-"odgovarajućim metodološkim proširenjima u drugoj polovini 20. i u 21. vijeku"
-" zahtijevaju metodološko preispitivanje. Za inicijativu to znači povećanu "
-"saradnju istorijske geografije sa vizantologijom u širem smislu, kao i sa "
-"srednjevjekovnim studijama i digitalnom humanistkom."
+"odgovarajućim metodološkim proširenjima u drugoj polovini 20. i u 21. "
+"vijeku zahtijevaju metodološko preispitivanje. Za inicijativu to znači "
+"povećanu saradnju istorijske geografije sa vizantologijom u širem smislu,"
+" kao i sa srednjevjekovnim studijama i digitalnom humanistkom."
 
 #: mop/templates/about.html:28
 msgid "about_text_4"
 msgstr ""
 "stoga, istraživačka inicijativa „Mape moći” obuhvata tri istraživačke "
 "oblasti koje imaju potencijal da djeluju kao veza između vizantijske i "
-"zapadnoevropski orijentisane istorijske geografije i time dovedu do novih "
-"istraživačkih rezultata značajnih za društvo:"
+"zapadnoevropski orijentisane istorijske geografije i time dovedu do novih"
+" istraživačkih rezultata značajnih za društvo:"
 
 #: mop/templates/about.html:34
 msgid "historical ecology"
@@ -1691,20 +1745,21 @@ msgstr "Istorijska ekologija"
 #: mop/templates/about.html:36
 msgid "about_point_1"
 msgstr ""
-"... bavi se istorijskim razvojem ekosistema i pejzaža pod uticajem prirodnih"
-" i antropogenih faktora."
+"... bavi se istorijskim razvojem ekosistema i pejzaža pod uticajem "
+"prirodnih i antropogenih faktora."
 
 #: mop/templates/about.html:39
 msgid "about_text_5"
 msgstr ""
-"cilj istorijske ekologije je da se više fokusira na odnos prirode i čovjeka,"
-" odnosno čovjeka i prirode, i transformaciju pejzaža ljudskom intervencijom."
-" U ovom kontekstu, pojam „moć” treba razumjeti kao „moć” ili „kontrolu” nad "
-"nekoga ili nečega. Hiljadama godina ljudska civilizacija je uticala na "
-"vegetaciju u Evropi (krčenjem i sadnjom polja, uvođenjem kultivisanih "
-"biljaka itd.). Istovremeno, priroda je značajno određivala geografiju "
-"naselja, na primjer kroz vodotokove, sve do ere prekomjernih regulacija. "
-"Tako je termin „moć” primjenljiv u oba smjera (priroda i čovjek)."
+"cilj istorijske ekologije je da se više fokusira na odnos prirode i "
+"čovjeka, odnosno čovjeka i prirode, i transformaciju pejzaža ljudskom "
+"intervencijom. U ovom kontekstu, pojam „moć” treba razumjeti kao „moć” "
+"ili „kontrolu” nad nekoga ili nečega. Hiljadama godina ljudska "
+"civilizacija je uticala na vegetaciju u Evropi (krčenjem i sadnjom polja,"
+" uvođenjem kultivisanih biljaka itd.). Istovremeno, priroda je značajno "
+"određivala geografiju naselja, na primjer kroz vodotokove, sve do ere "
+"prekomjernih regulacija. Tako je termin „moć” primjenljiv u oba smjera "
+"(priroda i čovjek)."
 
 #: mop/templates/about.html:43
 msgid "sacred topography"
@@ -1713,21 +1768,21 @@ msgstr "Pejzaž vjere"
 #: mop/templates/about.html:45
 msgid "about_point_2"
 msgstr ""
-"… odražava prisustvo božanskog/svetog/transcedentnog na određenom području i"
-" manifestuje se kroz vjerske objekte (npr. crkve i manastire) i vjerske "
-"simbole i akcije (npr. hodočašće)."
+"… odražava prisustvo božanskog/svetog/transcedentnog na određenom "
+"području i manifestuje se kroz vjerske objekte (npr. crkve i manastire) i"
+" vjerske simbole i akcije (npr. hodočašće)."
 
 #: mop/templates/about.html:48
 msgid "about_text_6"
 msgstr ""
-"predmet proučavanja pejzaža vjere u Vizantiji su u velikoj mjeri gradske i "
-"seoske crkve, na osnovu čije distribucije se može istraživati sveti prostor,"
-" ritual i vjerski identiteti. Osim toga, istražiće se da li su određene "
-"karakteristike pejzaža pogodovale formiranju određenih vrsta kultova i "
-"stvaranju mjesta obožavanja. Percepcija prostora od strane ljudi u srednjem "
-"vijeku igra važnu ulogu upravo u tom pogledu. GIS softver, digitalna "
-"kartografija i sistemi baza podataka sve više se koriste u obje istraživačke"
-" oblasti."
+"predmet proučavanja pejzaža vjere u Vizantiji su u velikoj mjeri gradske "
+"i seoske crkve, na osnovu čije distribucije se može istraživati sveti "
+"prostor, ritual i vjerski identiteti. Osim toga, istražiće se da li su "
+"određene karakteristike pejzaža pogodovale formiranju određenih vrsta "
+"kultova i stvaranju mjesta obožavanja. Percepcija prostora od strane "
+"ljudi u srednjem vijeku igra važnu ulogu upravo u tom pogledu. GIS "
+"softver, digitalna kartografija i sistemi baza podataka sve više se "
+"koriste u obje istraživačke oblasti."
 
 #: mop/templates/about.html:52
 msgid "cultural heritage"
@@ -1743,25 +1798,25 @@ msgstr ""
 msgid "about_text_8"
 msgstr ""
 "To je materijalno i nematerijalno nasljeđe grupe ili društva koje se "
-"prenosilo sa prošlih na sadašnje generacije i koje treba sačuvati za buduće "
-"generacije. U našoj inicijativi pod materijalnim nasljeđem podrazumijevamo "
-"spomenike. Njihovo lociranje, opisivanje, dokumentovanje, istraživanje i "
-"prezentovanje alatima koji potiču iz digitalne humanistike jedan je od naših"
-" centralnih zadataka, posebno u vremenima ratova, prirodnih katastrofa i "
-"velikih infrastrukturnih projekata. Oblast kulturne baštine takođe nudi "
-"veoma dobre mogućnosti za poređenje Istoka i Zapada, čemu bismo željeli da "
-"posvetimo više pažnje u budućnosti."
+"prenosilo sa prošlih na sadašnje generacije i koje treba sačuvati za "
+"buduće generacije. U našoj inicijativi pod materijalnim nasljeđem "
+"podrazumijevamo spomenike. Njihovo lociranje, opisivanje, dokumentovanje,"
+" istraživanje i prezentovanje alatima koji potiču iz digitalne "
+"humanistike jedan je od naših centralnih zadataka, posebno u vremenima "
+"ratova, prirodnih katastrofa i velikih infrastrukturnih projekata. Oblast"
+" kulturne baštine takođe nudi veoma dobre mogućnosti za poređenje Istoka "
+"i Zapada, čemu bismo željeli da posvetimo više pažnje u budućnosti."
 
 #: mop/templates/about.html:64
 msgid "about_text_7"
 msgstr ""
-"„Mape moći” prihvataju ove ideje i vide sebe kao naučnu platformu koja bi "
-"željela da implementira sopstvene projekte, kao i da se interdisciplinarno "
-"povezuje kroz zajedničke projekte. Rezultati istraživanja inicijative "
-"kontinuirano se unose u posebnu OpenAtlas bazu podataka "
-"(https://openatlas.eu/) i stavljaju na slobodno raspolaganje u posebno "
-"programiranom portalu koji omogućava pretraživanje podataka, sadrži "
-"digitalne mape (slojeve) i uključuje sveobuhvatan foto-materijal."
+"„Mape moći” prihvataju ove ideje i vide sebe kao naučnu platformu koja bi"
+" željela da implementira sopstvene projekte, kao i da se "
+"interdisciplinarno povezuje kroz zajedničke projekte. Rezultati "
+"istraživanja inicijative kontinuirano se unose u posebnu OpenAtlas bazu "
+"podataka (https://openatlas.eu/) i stavljaju na slobodno raspolaganje u "
+"posebno programiranom portalu koji omogućava pretraživanje podataka, "
+"sadrži digitalne mape (slojeve) i uključuje sveobuhvatan foto-materijal."
 
 #: mop/templates/about.html:67
 msgid "about_text_7a"
@@ -1774,8 +1829,9 @@ msgstr ""
 msgid "vienna_manifesto"
 msgstr ""
 "Naša inicijativa u potpunosti podržava <a "
-"href=\"https://dighum.ec.tuwien.ac.at/dighum-manifesto/\" target=\"_blank\" "
-"class=\"link-primary\">„Bečki manifest o digitalnom humanizmu”</a>."
+"href=\"https://dighum.ec.tuwien.ac.at/dighum-manifesto/\" "
+"target=\"_blank\" class=\"link-primary\">„Bečki manifest o digitalnom "
+"humanizmu”</a>."
 
 #: mop/templates/error.html:49
 msgid "go back to the start page"
@@ -1784,12 +1840,12 @@ msgstr "vrati se na početnu stranicu"
 #: mop/templates/histgeo.html:19
 msgid "histgeo_intro_1"
 msgstr ""
-"nove misli i ideje transformišu istorijsku geografiju, kao što su na primjer"
-" digitalna humanistika i širok spektar novih metodologija (poput GIS-a – "
-"geografskog informacionog sistema i HGIS-a – istorijskog geografskog "
-"informacionog sistema). Stoga se nove metode i teorije sve više i brže "
-"primjenjuju na istorijsku geografiju Vizantije i susjednih oblasti (tj. "
-"jugoistočne i istočne Evrope)."
+"nove misli i ideje transformišu istorijsku geografiju, kao što su na "
+"primjer digitalna humanistika i širok spektar novih metodologija (poput "
+"GIS-a – geografskog informacionog sistema i HGIS-a – istorijskog "
+"geografskog informacionog sistema). Stoga se nove metode i teorije sve "
+"više i brže primjenjuju na istorijsku geografiju Vizantije i susjednih "
+"oblasti (tj. jugoistočne i istočne Evrope)."
 
 #: mop/templates/histgeo.html:22
 msgid "histgeo_intro_2"
@@ -1798,10 +1854,10 @@ msgstr ""
 "istraživanja u oblastima istorijske geografije, vizantologije, "
 "srednjevjekovnih studija, balkanologije, arheologije, geografije, "
 "kartografije, GIS-a / HGIS-a i kulturne baštine. Pozivamo rukopise – "
-"monografije kao i zbornike radova sa konferencija – iz širokog spektra svih "
-"ovih naučnih oblasti, sa fokusom na regione nekadašnjeg Vizantijskog "
-"carstva, posebno na jugoistočnu i istočnu Evropu, a posebno pozdravljamo "
-"interdisciplinarne pristupe."
+"monografije kao i zbornike radova sa konferencija – iz širokog spektra "
+"svih ovih naučnih oblasti, sa fokusom na regione nekadašnjeg Vizantijskog"
+" carstva, posebno na jugoistočnu i istočnu Evropu, a posebno pozdravljamo"
+" interdisciplinarne pristupe."
 
 #: mop/templates/histgeo.html:27
 msgid "Digital HistGeo Lecture Series"
@@ -1810,31 +1866,33 @@ msgstr "digitalni HistGeo ciklus predavanja"
 #: mop/templates/histgeo.html:31
 msgid "histgeo_lecture_1"
 msgstr ""
-"kako bi prenijeli naučne rezultate projekta „Tabula Imperii Byzantini (TIB) "
-"Balkan” Austrijske akademije nauka i srodnih potprojekata domaćim i "
-"međunarodnim naučnicima, studentima kao i zainteresovanoj javnosti u Beču, "
-"Austriji i svijetu, Mihailo Popović, Veronika Poloček, Bernhard Košiček-"
-"Krombholc i Vratislav Zervan zajedno su pokrenuli ciklus predavanja „HistGeo"
-" Lecture Series” u Beču u januaru 2019. godine (kao nastavak ciklusa "
-"predavanja „DPP Lecture Series” osnovanog u januaru 2017. godine)."
+"kako bi prenijeli naučne rezultate projekta „Tabula Imperii Byzantini "
+"(TIB) Balkan” Austrijske akademije nauka i srodnih potprojekata domaćim i"
+" međunarodnim naučnicima, studentima kao i zainteresovanoj javnosti u "
+"Beču, Austriji i svijetu, Mihailo Popović, Veronika Poloček, Bernhard "
+"Košiček-Krombholc i Vratislav Zervan zajedno su pokrenuli ciklus "
+"predavanja „HistGeo Lecture Series” u Beču u januaru 2019. godine (kao "
+"nastavak ciklusa predavanja „DPP Lecture Series” osnovanog u januaru "
+"2017. godine)."
 
 #: mop/templates/histgeo.html:34
 msgid "histgeo_lecture_2"
 msgstr ""
 "u početku smo krenuli sa predavanjima uživo u Beču, koja su nažalost "
 "prekinuta pandemijom COVID-a. Zbog toga smo odlučili da ih organizujemo "
-"onlajn počevši od januara 2023. godine. Sada se nazivaju „Digital HistGeo "
-"Lecture Series” i trudimo se da ih organizujemo tromjesečno svake godine "
-"(otprilike u martu, junu, septembru i decembru)."
+"onlajn počevši od januara 2023. godine. Sada se nazivaju „Digital HistGeo"
+" Lecture Series” i trudimo se da ih organizujemo tromjesečno svake godine"
+" (otprilike u martu, junu, septembru i decembru)."
 
 #: mop/templates/histgeo.html:37
 msgid "histgeo_lecture_3"
 msgstr ""
-"naš cilj je da predstavimo radove koji sadrže sopstvena istraživanja, ali i "
-"da privučemo i pozovemo predavače čiji radovi imaju potencijal da podstaknu "
-"diskusije o novim metodama i digitalnim alatima u oblastima srednjevjekovne "
-"istorije, vizantologije, balkanologije, istorijske geografije, kartografije,"
-" digitalne humanistike, GIS nauke i softverskog inženjerstva."
+"naš cilj je da predstavimo radove koji sadrže sopstvena istraživanja, ali"
+" i da privučemo i pozovemo predavače čiji radovi imaju potencijal da "
+"podstaknu diskusije o novim metodama i digitalnim alatima u oblastima "
+"srednjevjekovne istorije, vizantologije, balkanologije, istorijske "
+"geografije, kartografije, digitalne humanistike, GIS nauke i softverskog "
+"inženjerstva."
 
 #: mop/templates/histgeo.html:46 mop/templates/histgeo.html:96
 msgid "no"
@@ -1843,26 +1901,27 @@ msgstr "br."
 #: mop/templates/histgeo.html:64
 msgid "HistGeo Newsletter"
 msgstr ""
-"Informatore HistGeoSlobodno pregledajte našu arhivu informatora. Ako imate "
-"pitanja ili primjedbe, kontaktirajte nas putem imejla mapsofpower@oeaw.ac.at"
+"Informatore HistGeoSlobodno pregledajte našu arhivu informatora. Ako "
+"imate pitanja ili primjedbe, kontaktirajte nas putem imejla "
+"mapsofpower@oeaw.ac.at"
 
 #: mop/templates/histgeo.html:68
 msgid "histgeo_newsletter_1"
 msgstr ""
-"naš informatore HistGeo vas informiše dva puta godišnje – u junu i decembru "
-"– o naučnim aktivnostima, saradnji, napretku, rezultatu i novim "
-"publikacijama, koje su ostvarene kao temelji inicijative Mape moći. Ranije "
-"smo informatore objavljivali četiri puta godišnje, ali smo od 2022. godine "
-"prešli na dva izdanja godišnje."
+"naš informatore HistGeo vas informiše dva puta godišnje – u junu i "
+"decembru – o naučnim aktivnostima, saradnji, napretku, rezultatu i novim "
+"publikacijama, koje su ostvarene kao temelji inicijative Mape moći. "
+"Ranije smo informatore objavljivali četiri puta godišnje, ali smo od "
+"2022. godine prešli na dva izdanja godišnje."
 
 #: mop/templates/histgeo.html:71
 msgid "histgeo_newsletter_2"
 msgstr ""
-"u izvještajima informatora fokusiramo se na oblasti istorijske geografije, "
-"istorijskih atlasa, mapiranja, digitalnog mapiranja i digitalne humanistike "
-"uopšte. Cilj mu je da istakne naučne aktivnosti istraživača uključenih u "
-"inicijativu Mape moći i projekat TIB Balkan, kao i kolega iz drugih oblasti "
-"proučavanja."
+"u izvještajima informatora fokusiramo se na oblasti istorijske "
+"geografije, istorijskih atlasa, mapiranja, digitalnog mapiranja i "
+"digitalne humanistike uopšte. Cilj mu je da istakne naučne aktivnosti "
+"istraživača uključenih u inicijativu Mape moći i projekat TIB Balkan, kao"
+" i kolega iz drugih oblasti proučavanja."
 
 #: mop/templates/histgeo.html:74
 msgid "histgeo_newsletter_3"
@@ -1882,10 +1941,11 @@ msgstr "pravila citiranja i fontovi"
 msgid "histgeo_rules"
 msgstr ""
 "našu seriju objavljuje izdavačka kuća <a "
-"href=\"https://akademskaknjiga.com/?lang=en\" target=\"_blank\" class=\"fw-"
-"bolder link-primary\">„Akademska knjiga” u Novom Sadu, Srbija</a>, koja je "
-"osnovana u julu 2006. godine sa ciljem objavljivanja značajnih naučnih "
-"radova iz oblasti društvenih i humanističkih nauka domaćih i stranih autora."
+"href=\"https://akademskaknjiga.com/?lang=en\" target=\"_blank\" class"
+"=\"fw-bolder link-primary\">„Akademska knjiga” u Novom Sadu, Srbija</a>, "
+"koja je osnovana u julu 2006. godine sa ciljem objavljivanja značajnih "
+"naučnih radova iz oblasti društvenih i humanističkih nauka domaćih i "
+"stranih autora."
 
 #: mop/templates/histgeo.html:183
 msgid "Citation Rules"
@@ -1918,9 +1978,9 @@ msgid ""
 "Imprint and disclosure according to §§ 24, 25 of the Austrian Media Act "
 "(MedienG) as well as information according to § 5 E-Commerce Act (ECG)"
 msgstr ""
-"Impresum i objavljivanje u skladu sa članovima 24. i 25. Austrijskog zakona "
-"o medijima (MedienG), kao i informacije u skladu sa članom 5. Zakona o "
-"elektronskoj trgovini (ECG)"
+"Impresum i objavljivanje u skladu sa članovima 24. i 25. Austrijskog "
+"zakona o medijima (MedienG), kao i informacije u skladu sa članom 5. "
+"Zakona o elektronskoj trgovini (ECG)"
 
 #: mop/templates/imprint.html:9
 msgid "Media owner"
@@ -1949,18 +2009,19 @@ msgstr "Djelatnost organizacije"
 #: mop/templates/imprint.html:25
 msgid ""
 "The Österreichische Akademie der Wissenschaften (Austrian Academy of "
-"Sciences) has the statutory mission to promote science in every way. As a "
-"learned society the OeAW cultivates the discourse and cooperation of science"
-" with the public, politics and business. As the largest institution of non-"
-"university basic research in the country, the OeAW conducts application-open"
-" basic research at the highest international level at its 28 institutes."
+"Sciences) has the statutory mission to promote science in every way. As a"
+" learned society the OeAW cultivates the discourse and cooperation of "
+"science with the public, politics and business. As the largest "
+"institution of non-university basic research in the country, the OeAW "
+"conducts application-open basic research at the highest international "
+"level at its 28 institutes."
 msgstr ""
-"Austrijska akademija nauka (Österreichische Akademie der Wissenschaften) ima"
-" statutarnu misiju da promoviše nauku na svaki način. Kao učeno društvo, "
-"OeAW njeguje dijalog i saradnju nauke sa javnošću, politikom i privredom. "
-"Kao najveća ustanova vanuniverzitetskog fundamentalnog istraživanja u "
-"zemlji, OeAW sprovodi otvorena fundamentalna istraživanja na najvišem "
-"međunarodnom nivou u svojih 28 instituta."
+"Austrijska akademija nauka (Österreichische Akademie der Wissenschaften) "
+"ima statutarnu misiju da promoviše nauku na svaki način. Kao učeno "
+"društvo, OeAW njeguje dijalog i saradnju nauke sa javnošću, politikom i "
+"privredom. Kao najveća ustanova vanuniverzitetskog fundamentalnog "
+"istraživanja u zemlji, OeAW sprovodi otvorena fundamentalna istraživanja "
+"na najvišem međunarodnom nivou u svojih 28 instituta."
 
 #: mop/templates/imprint.html:26
 msgid "Executive body"
@@ -1979,10 +2040,10 @@ msgid "Class President"
 msgstr "Predsjednik odjeljenja"
 
 #: mop/templates/imprint.html:36
-msgid ""
-"The Academy Council exists as supervisory body. For more information see"
+msgid "The Academy Council exists as supervisory body. For more information see"
 msgstr ""
-"Savjet akademije postoji kao nadzorni organ. Za više informacija pogledajte"
+"Savjet akademije postoji kao nadzorni organ. Za više informacija "
+"pogledajte"
 
 #: mop/templates/imprint.html:39
 msgid "Basic line"
@@ -1990,9 +2051,9 @@ msgstr "Osnovni pravac"
 
 #: mop/templates/imprint.html:40
 msgid ""
-"This website serves to inform the public on the scientific activities of the"
-" Long-Term Project Tabula Imperii Byzantini of the Austrian Academy of "
-"Sciences."
+"This website serves to inform the public on the scientific activities of "
+"the Long-Term Project Tabula Imperii Byzantini of the Austrian Academy of"
+" Sciences."
 msgstr ""
 "Ova veb stranica služi za informisanje javnosti o naučnim aktivnostima "
 "dugoročnog projekta Tabula Imperii Byzantini Austrijske akademije nauka."
@@ -2005,15 +2066,15 @@ msgstr "Izjava o odricanju od odgovornosti"
 msgid ""
 "The Austrian Academy of Sciences gives no warranty as to the topicality, "
 "correctness, completeness or quality of the information provided. In the "
-"case of links to websites of other media owners, for which the OeAW is not "
-"directly or indirectly responsible, the OeAW assumes no liability for their "
-"contents and excludes any liability therefor."
+"case of links to websites of other media owners, for which the OeAW is "
+"not directly or indirectly responsible, the OeAW assumes no liability for"
+" their contents and excludes any liability therefor."
 msgstr ""
-"Austrijska akademija nauka ne daje nikakvu garanciju u pogledu aktuelnosti, "
-"tačnosti, potpunosti ili kvaliteta pruženih informacija. U slučaju linkova "
-"ka internet stranicama drugih medija, za koje OeAW nije direktno ili "
-"indirektno odgovorna, OeAW ne preuzima nikakvu odgovornost za njihov sadržaj"
-" i isključuje svaku odgovornost za isti."
+"Austrijska akademija nauka ne daje nikakvu garanciju u pogledu "
+"aktuelnosti, tačnosti, potpunosti ili kvaliteta pruženih informacija. U "
+"slučaju linkova ka internet stranicama drugih medija, za koje OeAW nije "
+"direktno ili indirektno odgovorna, OeAW ne preuzima nikakvu odgovornost "
+"za njihov sadržaj i isključuje svaku odgovornost za isti."
 
 #: mop/templates/imprint.html:45
 msgid "Copyright notice"
@@ -2021,28 +2082,29 @@ msgstr "Obavještenje o autorskim pravima"
 
 #: mop/templates/imprint.html:47 mop/templates/imprint.html:50
 msgid ""
-"The contents and works created by the Austrian Academy of Sciences on these "
-"pages are subject to Austrian copyright law. The duplication, editing, "
-"distribution and any kind of utilization outside the scope of copyright law "
-"require the written consent of the respective author or creator. Downloads "
-"and copies of these pages are only permitted for private, non-commercial "
-"use. Insofar as the content on this site was not created by the operator, "
-"the copyrights of third parties are respected. In particular, third-party "
-"content is identified as such. In the event that you should nevertheless "
-"become aware of a copyright infringement, we ask that you inform us "
-"accordingly. If we become aware of any infringements, we will remove such "
-"contents immediately."
+"The contents and works created by the Austrian Academy of Sciences on "
+"these pages are subject to Austrian copyright law. The duplication, "
+"editing, distribution and any kind of utilization outside the scope of "
+"copyright law require the written consent of the respective author or "
+"creator. Downloads and copies of these pages are only permitted for "
+"private, non-commercial use. Insofar as the content on this site was not "
+"created by the operator, the copyrights of third parties are respected. "
+"In particular, third-party content is identified as such. In the event "
+"that you should nevertheless become aware of a copyright infringement, we"
+" ask that you inform us accordingly. If we become aware of any "
+"infringements, we will remove such contents immediately."
 msgstr ""
 "Sadržaj i radovi koje je Austrijska akademija nauka kreirala na ovim "
-"stranicama podliježu austrijskom zakonu o autorskim pravima. Umnožavanje, "
-"obrada, distribucija i bilo koja vrsta korišćenja van okvira zakona o "
+"stranicama podliježu austrijskom zakonu o autorskim pravima. Umnožavanje,"
+" obrada, distribucija i bilo koja vrsta korišćenja van okvira zakona o "
 "autorskim pravima zahtijevaju pisanu saglasnost odgovarajućeg autora ili "
 "kreatora. Preuzimanje i kopiranje ovih stranica dozvoljeno je samo za "
 "privatnu, nekomercijalnu upotrebu. Ukoliko sadržaj na ovoj stranici nije "
-"kreirao operater, poštuju se autorska prava trećih lica. Posebno se sadržaj "
-"trećih strana identifikuje kao takav. U slučaju da ipak primijetite povredu "
-"autorskih pravima, molimo vas da nas o tome obavijestite. Ako saznamo za "
-"bilo kakvu povredu, odmah ćemo ukloniti takav sadržaj."
+"kreirao operater, poštuju se autorska prava trećih lica. Posebno se "
+"sadržaj trećih strana identifikuje kao takav. U slučaju da ipak "
+"primijetite povredu autorskih pravima, molimo vas da nas o tome "
+"obavijestite. Ako saznamo za bilo kakvu povredu, odmah ćemo ukloniti "
+"takav sadržaj."
 
 #: mop/templates/imprint.html:49
 msgid "Data privacy notice"
@@ -2050,14 +2112,14 @@ msgstr "Obavještenje o privatnosti podataka"
 
 #: mop/templates/imprint.html:51
 msgid ""
-"The contact data published within the scope of the imprint obligation may "
-"not be used by third parties for the transmission of advertising and "
+"The contact data published within the scope of the imprint obligation may"
+" not be used by third parties for the transmission of advertising and "
 "information material not expressly requested. Any such use is hereby "
 "expressly contradicted."
 msgstr ""
-"Kontakt podaci objavljeni u okviru obaveze impresuma ne smiju se koristiti "
-"od strane trećih lica za slanje neželjenog reklamnog i informativnog "
-"materijala. Svaka takva upotreba se ovim izričito odbija."
+"Kontakt podaci objavljeni u okviru obaveze impresuma ne smiju se "
+"koristiti od strane trećih lica za slanje neželjenog reklamnog i "
+"informativnog materijala. Svaka takva upotreba se ovim izričito odbija."
 
 #: mop/templates/imprint.html:53
 msgid "Further information on data protection on websites of the OeAW."
@@ -2123,78 +2185,115 @@ msgstr "Preuzmi datoteku"
 msgid "Search"
 msgstr "mart"
 
+#: mop/templates/macros.html:86
+msgid "License & Attribution"
+msgstr "Licenca i pripisivanje"
+
+#: mop/templates/macros.html:88
+msgid "All data shown here is licensed under the"
+msgstr "Svi prikazani podaci su licencirani pod"
+
+#: mop/templates/macros.html:90 mop/templates/macros.html:103
+msgid "Creative Commons Attribution 4.0 International (CC-BY 4.0) License"
+msgstr "Creative Commons Autorstvo 4.0 Međunarodna (CC-BY 4.0) licenca"
+
+#: mop/templates/macros.html:92
+msgid "Please attribute to"
+msgstr "Molimo pripišite:"
+
+#: mop/templates/macros.html:96
+msgid "Principal Investigator(s)"
+msgstr "Rukovodilac/oci projekta"
+
+#: mop/templates/macros.html:99
+msgid "License & Academic Attribution"
+msgstr "Licenca i akademsko pripisivanje"
+
+#: mop/templates/macros.html:101
+msgid ""
+"All dataset resources and research data presented across these projects "
+"are licensed under the"
+msgstr ""
+"Svi resursi skupova podataka i istraživački podaci predstavljeni u ovim "
+"projektima licencirani su pod"
+
+#: mop/templates/macros.html:105
+msgid ""
+"Please credit and attribute the respective project Principal "
+"Investigator(s) (PI) or the project leader Mihailo Popović when "
+"exporting, visualizing, or publishing any derivative scientific work from"
+" this portal."
+msgstr ""
+"Molimo navedite i pripišite odgovarajućem rukovodiocu projekta (PI) ili "
+"rukovodiocu projekta Mihailu Popoviću prilikom izvoza, vizuelizacije ili "
+"objavljivanja bilo kog izvedenog naučnog rada sa ovog portala."
+
 #: mop/templates/navbar.html:61
 msgid "Other"
 msgstr "Ostalo"
 
-#: mop/templates/project_details.html:61
-#: mop/templates/project_details.html:446 mop/templates/projects.html:110
-#: mop/templates/projects.html:143 mop/templates/projects.html:221
-#: mop/templates/projects.html:274 mop/templates/projects.html:598
+#: mop/templates/navbar.html:73 mop/templates/navbar.html:80
+msgid "This translation was generated using AI."
+msgstr "Ovaj prevod je generisan pomoću vještačke inteligencije (AI)."
+
+#: mop/templates/project_details.html:63 mop/templates/project_details.html:433
+#: mop/templates/projects.html:112 mop/templates/projects.html:145
+#: mop/templates/projects.html:223 mop/templates/projects.html:276
+#: mop/templates/projects.html:604
 msgid "Active"
 msgstr "Aktivno"
 
-#: mop/templates/project_details.html:80
+#: mop/templates/project_details.html:82
 msgid "description"
 msgstr "Opis"
 
-#: mop/templates/project_details.html:93
+#: mop/templates/project_details.html:95
 msgid "Project Number"
 msgstr "Broj projekta"
 
-#: mop/templates/project_details.html:100
+#: mop/templates/project_details.html:102
 msgid "Duration"
 msgstr "Trajanje"
 
-#: mop/templates/project_details.html:107
+#: mop/templates/project_details.html:109
 msgid "Funded by"
 msgstr "Finansira"
 
-#: mop/templates/project_details.html:122
+#: mop/templates/project_details.html:124
 msgid "Hosted by"
 msgstr "Domaćin"
 
-#: mop/templates/project_details.html:136
+#: mop/templates/project_details.html:138
 msgid "PI (Project Investigator)"
 msgstr "Glavni istraživač (PI)"
 
-#: mop/templates/project_details.html:146 mop/templates/projects.html:191
+#: mop/templates/project_details.html:148 mop/templates/projects.html:193
 msgid "Employees"
 msgstr "Zaposleni"
 
-#: mop/templates/project_details.html:157
+#: mop/templates/project_details.html:159
 msgid "Cooperation and External Employees"
 msgstr "Saradnja i spoljni saradnici"
 
-#: mop/templates/project_details.html:173
+#: mop/templates/project_details.html:175
 msgid "further information"
 msgstr "Dodatne informacije"
 
-#: mop/templates/project_details.html:185
+#: mop/templates/project_details.html:187
 msgid "media"
 msgstr "Mediji"
 
-#: mop/templates/project_details.html:226
+#: mop/templates/project_details.html:228
 msgid "explore"
 msgstr "Istraži"
 
-#: mop/templates/project_details.html:236
+#: mop/templates/project_details.html:238
 msgid "Mapping Spatial Coordinates..."
 msgstr "Mapiranje prostornih koordinata..."
 
-#: mop/templates/project_details.html:237
+#: mop/templates/project_details.html:239
 msgid "Downloading geographical locations from OpenAtlas."
 msgstr "Preuzimanje geografskih lokacija sa OpenAtlas-a."
-
-#: mop/templates/project_details.html:257
-msgid ""
-"The access and use of our data is subject to the Creative Commons License CC"
-" BY 4.0 (<a href=\"https://creativecommons.org/licenses/by/4.0/\" "
-"target=\"_blank\">https://creativecommons.org/licenses/by/4.0/</a>)."
-msgstr ""
-"Pristup i korišćenje naših podataka podliježe licenci Creative Commons CC BY"
-" 4.0 (<a href=\"https://creativecommons.org/licenses/by/4.0/\" "
-"target=\"_blank\">https://creativecommons.org/licenses/by/4.0/</a>)."
 
 #: mop/templates/project_details.html:265
 msgid "results"
@@ -2208,167 +2307,167 @@ msgstr "Publikacije"
 msgid "presentations"
 msgstr "Prezentacije"
 
-#: mop/templates/project_details.html:400 mop/templates/projects.html:846
+#: mop/templates/project_details.html:387 mop/templates/projects.html:830
 msgid "No description available."
 msgstr "Opis"
 
-#: mop/templates/project_details.html:403 mop/templates/projects.html:849
+#: mop/templates/project_details.html:390 mop/templates/projects.html:833
 msgid "View Details"
 msgstr "Prikaži detalje"
 
-#: mop/templates/project_details.html:449 mop/templates/projects.html:222
+#: mop/templates/project_details.html:436 mop/templates/projects.html:224
 msgid "Upcoming"
 msgstr "Ruhpolding"
 
-#: mop/templates/project_details.html:452 mop/templates/projects.html:111
-#: mop/templates/projects.html:223 mop/templates/projects.html:278
-#: mop/templates/projects.html:603
+#: mop/templates/project_details.html:439 mop/templates/projects.html:113
+#: mop/templates/projects.html:225 mop/templates/projects.html:280
+#: mop/templates/projects.html:609
 msgid "Completed"
 msgstr "Završeno"
 
-#: mop/templates/projects.html:20
+#: mop/templates/projects.html:22
 msgid "Research Portal"
 msgstr "Istraživački portal"
 
-#: mop/templates/projects.html:23
+#: mop/templates/projects.html:25
 msgid "Research Projects"
 msgstr "projekti"
 
-#: mop/templates/projects.html:26
+#: mop/templates/projects.html:28
 msgid ""
 "Discover our ongoing and completed research initiatives in Historical "
-"Geography and Digital Humanities. Explore spatial networks, mapped entities,"
-" and ancient records across centuries."
+"Geography and Digital Humanities. Explore spatial networks, mapped "
+"entities, and ancient records across centuries."
 msgstr ""
 "Otkrijte naše tekuće i završene istraživačke inicijative u oblasti "
-"istorijske geografije i digitalne humanistike. Istražite prostorne mreže, "
-"mapirane entitete i drevne zapise kroz vjekove."
+"istorijske geografije i digitalne humanistike. Istražite prostorne mreže,"
+" mapirane entitete i drevne zapise kroz vjekove."
 
-#: mop/templates/projects.html:34 mop/templates/projects.html:270
+#: mop/templates/projects.html:36 mop/templates/projects.html:272
 msgid "Projects"
 msgstr "projekti"
 
-#: mop/templates/projects.html:40
+#: mop/templates/projects.html:42
 msgid "Mapped Places"
 msgstr "Mjesta"
 
-#: mop/templates/projects.html:46
+#: mop/templates/projects.html:48
 msgid "Researchers"
 msgstr "Naučna literatura"
 
-#: mop/templates/projects.html:52
+#: mop/templates/projects.html:54
 msgid "Funding Bodies"
 msgstr "Organi finansiranja"
 
-#: mop/templates/projects.html:65
+#: mop/templates/projects.html:67
 msgid "Overview"
 msgstr "Pregled"
 
-#: mop/templates/projects.html:70
+#: mop/templates/projects.html:72
 msgid "Timeline Roadmap"
 msgstr "Vremenska mapa puta"
 
-#: mop/templates/projects.html:75
+#: mop/templates/projects.html:77
 msgid "Research Analytics"
 msgstr "Analitika istraživanja"
 
-#: mop/templates/projects.html:80
+#: mop/templates/projects.html:82
 msgid "Data Portal & Map"
 msgstr "Portal sa podacima i mapa"
 
-#: mop/templates/projects.html:85
+#: mop/templates/projects.html:87
 msgid "Network Visualisation"
 msgstr "Vizuelizacija mreže"
 
-#: mop/templates/projects.html:102
+#: mop/templates/projects.html:104
 msgid "Search by project name, acronym, PI or employees..."
 msgstr ""
 "Pretražite po nazivu projekta, akronimu, glavnom istraživaču ili "
 "zaposlenima..."
 
-#: mop/templates/projects.html:109
+#: mop/templates/projects.html:111
 msgid "All Statuses"
 msgstr "Svi statusi"
 
-#: mop/templates/projects.html:116
+#: mop/templates/projects.html:118
 msgid "All Funding"
 msgstr "Sva finansiranja"
 
-#: mop/templates/projects.html:178
+#: mop/templates/projects.html:180
 msgid "Project Investigator"
 msgstr "Broj projekta"
 
-#: mop/templates/projects.html:203
+#: mop/templates/projects.html:205
 msgid "Explore Project"
 msgstr "Istraži"
 
-#: mop/templates/projects.html:217
+#: mop/templates/projects.html:219
 msgid "Interactive Projects Roadmap"
 msgstr "Interaktivna mapa puta projekata"
 
-#: mop/templates/projects.html:218
+#: mop/templates/projects.html:220
 msgid ""
-"View project lifespans dynamically across a chronological 10-year timeline "
-"axis."
+"View project lifespans dynamically across a chronological 10-year "
+"timeline axis."
 msgstr ""
-"Dinamički prikažite životni vijek projekta na hronološkoj vremenskoj osi od "
-"10 godina."
+"Dinamički prikažite životni vijek projekta na hronološkoj vremenskoj osi "
+"od 10 godina."
 
-#: mop/templates/projects.html:231
+#: mop/templates/projects.html:233
 msgid "Filter Timeline by Active Year:"
 msgstr "Filtrirajte vremensku liniju po aktivnoj godini:"
 
-#: mop/templates/projects.html:266
+#: mop/templates/projects.html:268
 msgid "Statistics Overview"
 msgstr "Pregled statistike"
 
-#: mop/templates/projects.html:282
+#: mop/templates/projects.html:284
 msgid "Scholars"
 msgstr "Klasa"
 
-#: mop/templates/projects.html:286
+#: mop/templates/projects.html:288
 msgid ""
-"Aggregated live metrics of collaborative initiatives mapping spatial data "
-"and medieval geographies."
+"Aggregated live metrics of collaborative initiatives mapping spatial data"
+" and medieval geographies."
 msgstr ""
 "Zbirni živi pokazatelji zajedničkih inicijativa koje mapiraju prostorne "
 "podatke i srednjevjekovnu geografiju."
 
-#: mop/templates/projects.html:292
+#: mop/templates/projects.html:294
 msgid "Grants by Funding Body"
 msgstr "Grantovi po organu finansiranja"
 
-#: mop/templates/projects.html:293
+#: mop/templates/projects.html:295
 msgid "Proportional project support distribution."
 msgstr "Proporcionalna distribucija podrške projektima."
 
-#: mop/templates/projects.html:305
+#: mop/templates/projects.html:307
 msgid "Academic Host Institutes"
 msgstr "Akademski instituti domaćini"
 
-#: mop/templates/projects.html:306
+#: mop/templates/projects.html:308
 msgid "Volume of active project hosting instances."
 msgstr "Obim aktivnih hosting instanci projekta."
 
-#: mop/templates/projects.html:315
+#: mop/templates/projects.html:317
 msgid "Collaborators Directory"
 msgstr "Imenik saradnika"
 
-#: mop/templates/projects.html:316
+#: mop/templates/projects.html:318
 msgid "Browse and search project scholars and team crossovers."
 msgstr ""
 "Pregledajte i pretražite projektne naučnike i saradnike kroz različite "
 "timove."
 
-#: mop/templates/projects.html:319
+#: mop/templates/projects.html:321
 msgid "Search by researcher or project acronym..."
 msgstr "Pretražite po istraživaču ili akronimu projekta..."
 
-#: mop/templates/projects.html:333
+#: mop/templates/projects.html:335
 msgid "Explore Datasets"
 msgstr "Istraži"
 
-#: mop/templates/projects.html:335
+#: mop/templates/projects.html:337
 msgid ""
 "Filter OpenAtlas spatial locations across all active initiatives in real-"
 "time. Select a project to render its mapped nodes on the interactive map."
@@ -2377,345 +2476,361 @@ msgstr ""
 "realnom vremenu. Izaberite projekat da biste prikazali njegove mapirane "
 "čvorove na interaktivnoj karti."
 
-#: mop/templates/projects.html:340
+#: mop/templates/projects.html:342
 msgid "Select Project Source"
 msgstr "Izaberite izvor projekta"
 
-#: mop/templates/projects.html:342
+#: mop/templates/projects.html:344
 msgid "Select a project..."
 msgstr "Izaberite projekat..."
 
-#: mop/templates/projects.html:343
+#: mop/templates/projects.html:345
 msgid "All Active Projects"
 msgstr "Svi aktivni projekti"
 
-#: mop/templates/projects.html:353
+#: mop/templates/projects.html:355
 msgid "Dataset Coverage"
 msgstr "Pokrivenost skupa podataka"
 
-#: mop/templates/projects.html:357
+#: mop/templates/projects.html:359
 msgid "Places Loaded"
 msgstr "Mjesta"
 
-#: mop/templates/projects.html:364
+#: mop/templates/projects.html:366
 msgid "Network Endpoint"
 msgstr "Krajnja tačka mreže"
 
-#: mop/templates/projects.html:365
+#: mop/templates/projects.html:367
 msgid ""
-"Using the dynamic Maps of Power api endpoint to map clustered geo-entities. "
-"Geometries can be clicked to inspect detail records."
+"Using the dynamic Maps of Power api endpoint to map clustered geo-"
+"entities. Geometries can be clicked to inspect detail records."
 msgstr ""
 "Korišćenje dinamičke krajnje tačke API-ja Maps of Power za mapiranje "
-"grupisanih geo-entiteta. Kliknite na geometrije za pregled detaljnih zapisa."
+"grupisanih geo-entiteta. Kliknite na geometrije za pregled detaljnih "
+"zapisa."
 
-#: mop/templates/projects.html:377
+#: mop/templates/projects.html:379
 msgid "Fetching Map Data..."
 msgstr "Preuzimanje podataka mape..."
 
-#: mop/templates/projects.html:378
+#: mop/templates/projects.html:380
 msgid "Downloading geographical features from the OpenAtlas database."
 msgstr "Preuzimanje geografskih karakteristika iz OpenAtlas baze podataka."
 
-#: mop/templates/projects.html:393
+#: mop/templates/projects.html:395
 msgid "Network Explorer"
 msgstr "Istraži"
 
-#: mop/templates/projects.html:395
+#: mop/templates/projects.html:397
 msgid ""
-"Visualise the entity networks, connections, and relations from each project "
-"in real-time. Nodes can be clicked and inspected."
+"Visualise the entity networks, connections, and relations from each "
+"project in real-time. Nodes can be clicked and inspected."
 msgstr ""
 "Vizualizujte mreže entiteta, veze i odnose iz svakog projekta u realnom "
 "vremenu. Čvorovi se mogu kliknuti i pregledati."
 
-#: mop/templates/projects.html:400
+#: mop/templates/projects.html:402
 msgid "Select Projects"
 msgstr "projekti"
 
-#: mop/templates/projects.html:417
+#: mop/templates/projects.html:419
 msgid "Network Statistics"
 msgstr "Statistika mreže"
 
-#: mop/templates/projects.html:422
+#: mop/templates/projects.html:424
 msgid "Entities (Nodes)"
 msgstr "Entiteti (čvorovi)"
 
-#: mop/templates/projects.html:431
+#: mop/templates/projects.html:433
 msgid "Relations (Edges)"
 msgstr "Odnosi (ivice)"
 
-#: mop/templates/projects.html:439
+#: mop/templates/projects.html:441
 msgid "Interactive Controls"
 msgstr "Interaktivne kontrole"
 
-#: mop/templates/projects.html:440
+#: mop/templates/projects.html:442
 msgid ""
 "Zoom to scroll, drag to pan, and click on any entity node to inspect its "
 "name and class. Double-click a node to open its full details page."
 msgstr ""
-"Koristite zum za skrolovanje, prevlačenje za pomjeranje i kliknite na bilo "
-"koji čvor entiteta da biste viđeli njegovo ime i klasu. Dvostrukim klikom na"
-" čvor otvarate njegovu stranicu sa potpunim detaljima."
+"Koristite zum za skrolovanje, prevlačenje za pomjeranje i kliknite na "
+"bilo koji čvor entiteta da biste viđeli njegovo ime i klasu. Dvostrukim "
+"klikom na čvor otvarate njegovu stranicu sa potpunim detaljima."
 
-#: mop/templates/projects.html:452
+#: mop/templates/projects.html:454
 msgid "Generating Network Graph..."
 msgstr "Generisanje mrežnog grafa..."
 
-#: mop/templates/projects.html:453
+#: mop/templates/projects.html:455
 msgid "Fetching entities and computing relations from the database."
 msgstr "Preuzimanje entiteta i izračunavanje odnosa iz baze podataka."
 
-#: mop/templates/projects.html:469
+#: mop/templates/projects.html:473
 msgid "Side-by-Side Project Compare"
 msgstr "Upoređivanje projekata uporedo"
 
-#: mop/templates/explore/project_entity_view.html:22
-#: mop/templates/explore/project_entity_view.html:111
+#: mop/templates/explore/project_entity_view.html:23
+#: mop/templates/explore/project_entity_view.html:115
 msgid "properties"
 msgstr "Svojstva"
 
-#: mop/templates/explore/project_entity_view.html:24
-#: mop/templates/explore/project_entity_view.html:489
-#: mop/templates/explore/project_entity_view.html:498
-#: mop/templates/explore/project_entity_view.html:675
+#: mop/templates/explore/project_entity_view.html:25
+#: mop/templates/explore/project_entity_view.html:482
+#: mop/templates/explore/project_entity_view.html:491
+#: mop/templates/explore/project_entity_view.html:668
 #: mop/templates/explore/project_explore_table.html:52
 msgid "Description"
 msgstr "Opis"
 
-#: mop/templates/explore/project_entity_view.html:27
-#: mop/templates/explore/project_entity_view.html:582
+#: mop/templates/explore/project_entity_view.html:28
+#: mop/templates/explore/project_entity_view.html:575
 msgid "Narrative Connections"
 msgstr "Narativne veze"
 
-#: mop/templates/explore/project_entity_view.html:33
-#: mop/templates/explore/project_entity_view.html:223
-#: mop/templates/explore/project_entity_view.html:646
+#: mop/templates/explore/project_entity_view.html:34
+#: mop/templates/explore/project_entity_view.html:227
+#: mop/templates/explore/project_entity_view.html:639
 msgid "Relations"
 msgstr "Odnosi"
 
-#: mop/templates/explore/project_entity_view.html:36
-#: mop/templates/explore/project_entity_view.html:744
+#: mop/templates/explore/project_entity_view.html:37
+#: mop/templates/explore/project_entity_view.html:737
 msgid "files"
 msgstr "Datoteke"
 
-#: mop/templates/explore/project_entity_view.html:118
+#: mop/templates/explore/project_entity_view.html:103
+#, fuzzy
+msgid "Cite Entry"
+msgstr "prikaži entitet"
+
+#: mop/templates/explore/project_entity_view.html:122
 msgid "Period"
 msgstr "Period"
 
-#: mop/templates/explore/project_entity_view.html:183
+#: mop/templates/explore/project_entity_view.html:187
 msgid "Map"
 msgstr "Mapa"
 
-#: mop/templates/explore/project_entity_view.html:188
+#: mop/templates/explore/project_entity_view.html:192
 msgid "Network"
 msgstr "Njujork"
 
-#: mop/templates/explore/project_entity_view.html:193
+#: mop/templates/explore/project_entity_view.html:197
 msgid "Timeline"
 msgstr "vrijeme"
 
-#: mop/templates/explore/project_entity_view.html:218
+#: mop/templates/explore/project_entity_view.html:222
 msgid "Node Details"
 msgstr "Detalji o čvoru"
 
-#: mop/templates/explore/project_entity_view.html:220
-#: mop/templates/explore/project_entity_view.html:238
+#: mop/templates/explore/project_entity_view.html:224
+#: mop/templates/explore/project_entity_view.html:242
 msgid "Place"
 msgstr "Mjesto"
 
-#: mop/templates/explore/project_entity_view.html:222
+#: mop/templates/explore/project_entity_view.html:226
 msgid "ID"
 msgstr "ID"
 
-#: mop/templates/explore/project_entity_view.html:225
+#: mop/templates/explore/project_entity_view.html:229
 msgid "View Entity"
 msgstr "Prikaži entitet"
 
-#: mop/templates/explore/project_entity_view.html:231
+#: mop/templates/explore/project_entity_view.html:235
 msgid "Legend (Click to toggle)"
 msgstr "Legenda (Kliknite za prebacivanje)"
 
-#: mop/templates/explore/project_entity_view.html:234
+#: mop/templates/explore/project_entity_view.html:238
 msgid "Selected Entity"
 msgstr "Izabrani entitet"
 
-#: mop/templates/explore/project_entity_view.html:242
+#: mop/templates/explore/project_entity_view.html:246
 msgid "Person"
 msgstr "Osoba"
 
-#: mop/templates/explore/project_entity_view.html:246
+#: mop/templates/explore/project_entity_view.html:250
 msgid "Group"
 msgstr "Grupa"
 
-#: mop/templates/explore/project_entity_view.html:250
+#: mop/templates/explore/project_entity_view.html:254
 msgid "Event / Activity"
 msgstr "Događaj / aktivnost"
 
-#: mop/templates/explore/project_entity_view.html:254
+#: mop/templates/explore/project_entity_view.html:258
 msgid "Artifact"
 msgstr "Artefakt"
 
-#: mop/templates/explore/project_entity_view.html:258
+#: mop/templates/explore/project_entity_view.html:262
 msgid "Literature / Source"
 msgstr "Literatura / izvor"
 
-#: mop/templates/explore/project_entity_view.html:265
+#: mop/templates/explore/project_entity_view.html:269
 msgid "Depth"
 msgstr "Dubina"
 
-#: mop/templates/explore/project_entity_view.html:277
+#: mop/templates/explore/project_entity_view.html:281
 msgid "Labels"
 msgstr "Oznake"
 
-#: mop/templates/explore/project_entity_view.html:283
+#: mop/templates/explore/project_entity_view.html:287
 msgid "Spacing"
 msgstr "Razmak"
 
-#: mop/templates/explore/project_entity_view.html:285
+#: mop/templates/explore/project_entity_view.html:289
 msgid "Compact"
 msgstr "Kompaktno"
 
-#: mop/templates/explore/project_entity_view.html:286
+#: mop/templates/explore/project_entity_view.html:290
 msgid "Normal"
 msgstr "Normalno"
 
-#: mop/templates/explore/project_entity_view.html:287
+#: mop/templates/explore/project_entity_view.html:291
 msgid "Wide"
 msgstr "Široko"
 
-#: mop/templates/explore/project_entity_view.html:288
+#: mop/templates/explore/project_entity_view.html:292
 msgid "Extra Wide"
 msgstr "Veoma široko"
 
-#: mop/templates/explore/project_entity_view.html:295
+#: mop/templates/explore/project_entity_view.html:299
 msgid "Fullscreen"
 msgstr "Preko cijelog ekrana"
 
-#: mop/templates/explore/project_entity_view.html:301
+#: mop/templates/explore/project_entity_view.html:305
 msgid "Export"
 msgstr "Izvoz"
 
-#: mop/templates/explore/project_entity_view.html:312
+#: mop/templates/explore/project_entity_view.html:316
 msgid "Export Graph as Image"
 msgstr "Izvezi graf kao sliku"
 
-#: mop/templates/explore/project_entity_view.html:317
+#: mop/templates/explore/project_entity_view.html:321
 msgid ""
-"Configure the style, format, and enhancements for your network visualization"
-" image download."
+"Configure the style, format, and enhancements for your network "
+"visualization image download."
 msgstr ""
-"Konfigurišite stil, format i poboljšanja za preuzimanje slike vizuelizacije "
-"mreže."
+"Konfigurišite stil, format i poboljšanja za preuzimanje slike "
+"vizuelizacije mreže."
 
-#: mop/templates/explore/project_entity_view.html:322
+#: mop/templates/explore/project_entity_view.html:326
 msgid "File Format"
 msgstr "Format datoteke"
 
-#: mop/templates/explore/project_entity_view.html:328
+#: mop/templates/explore/project_entity_view.html:332
 msgid "PNG Image"
 msgstr "PNG slika"
 
-#: mop/templates/explore/project_entity_view.html:329
+#: mop/templates/explore/project_entity_view.html:333
 msgid "Lossless & Transparent"
 msgstr "Bez gubitaka i providno"
 
-#: mop/templates/explore/project_entity_view.html:336
+#: mop/templates/explore/project_entity_view.html:340
 msgid "JPEG Image"
 msgstr "JPEG slika"
 
-#: mop/templates/explore/project_entity_view.html:337
+#: mop/templates/explore/project_entity_view.html:341
 msgid "High Compatibility"
 msgstr "Visoka kompatibilnost"
 
-#: mop/templates/explore/project_entity_view.html:345
+#: mop/templates/explore/project_entity_view.html:349
 msgid "Background Theme"
 msgstr "Tema pozadine"
 
-#: mop/templates/explore/project_entity_view.html:351
+#: mop/templates/explore/project_entity_view.html:355
 msgid "Transparent"
 msgstr "Providno"
 
-#: mop/templates/explore/project_entity_view.html:358
+#: mop/templates/explore/project_entity_view.html:362
 msgid "Solid Light"
 msgstr "Jednobojno svijetlo"
 
-#: mop/templates/explore/project_entity_view.html:365
+#: mop/templates/explore/project_entity_view.html:369
 msgid "Deep Dark"
 msgstr "Duboka tama"
 
-#: mop/templates/explore/project_entity_view.html:373
-msgid "Enhancements"
-msgstr "Poboljšanja"
-
-#: mop/templates/explore/project_entity_view.html:376
-msgid "Include Academic Watermark"
-msgstr "Uključi akademski vodeni žig"
-
-#: mop/templates/explore/project_entity_view.html:377
-msgid "Adds brand label, entity name, and timestamp to export"
-msgstr "Dodaje oznaku brenda, naziv entiteta i vremensku oznaku u izvoz"
-
-#: mop/templates/explore/project_entity_view.html:385
+#: mop/templates/explore/project_entity_view.html:378
 msgid "Cancel"
 msgstr "Otkaži"
 
-#: mop/templates/explore/project_entity_view.html:388
+#: mop/templates/explore/project_entity_view.html:381
 msgid "Generate & Download"
 msgstr "Generiši i preuzmi"
 
-#: mop/templates/explore/project_entity_view.html:461
+#: mop/templates/explore/project_entity_view.html:454
 msgid "Lifecycle phase of"
 msgstr "Faza životnog ciklusa"
 
-#: mop/templates/explore/project_entity_view.html:473
+#: mop/templates/explore/project_entity_view.html:466
 msgid "No Timeline Events"
 msgstr "Nema vremenskih događaja"
 
-#: mop/templates/explore/project_entity_view.html:474
+#: mop/templates/explore/project_entity_view.html:467
 msgid ""
-"We couldn't find any chronological events or relations with dates for this "
-"entity."
+"We couldn't find any chronological events or relations with dates for "
+"this entity."
 msgstr ""
-"Nismo uspjeli da pronađemo hronološke događaje ili relacije sa datumima za "
-"ovaj entitet."
+"Nismo uspjeli da pronađemo hronološke događaje ili relacije sa datumima "
+"za ovaj entitet."
 
-#: mop/templates/explore/project_entity_view.html:598
-#: mop/templates/explore/project_entity_view.html:805
+#: mop/templates/explore/project_entity_view.html:591
+#: mop/templates/explore/project_entity_view.html:972
 msgid "Show more"
 msgstr "Prikaži više"
 
-#: mop/templates/explore/project_entity_view.html:628
+#: mop/templates/explore/project_entity_view.html:621
 msgid "view entity"
 msgstr "prikaži entitet"
 
-#: mop/templates/explore/project_entity_view.html:666
+#: mop/templates/explore/project_entity_view.html:659
 #: mop/templates/explore/project_explore_table.html:50
 msgid "Name"
 msgstr "Ime"
 
-#: mop/templates/explore/project_entity_view.html:667
+#: mop/templates/explore/project_entity_view.html:660
 #: mop/templates/explore/project_explore_table.html:51
 msgid "Class"
 msgstr "Klasa"
 
-#: mop/templates/explore/project_entity_view.html:669
+#: mop/templates/explore/project_entity_view.html:662
 msgid "Begin"
 msgstr "Početak"
 
-#: mop/templates/explore/project_entity_view.html:670
+#: mop/templates/explore/project_entity_view.html:663
 msgid "End"
 msgstr "Kraj"
 
-#: mop/templates/explore/project_entity_view.html:673
+#: mop/templates/explore/project_entity_view.html:666
 msgid "Relation Type"
 msgstr "Tip odnosa"
 
-#: mop/templates/explore/project_entity_view.html:723
+#: mop/templates/explore/project_entity_view.html:716
 msgid "Search..."
 msgstr "Pretraži..."
 
-#: mop/templates/explore/project_entity_view.html:809
+#: mop/templates/explore/project_entity_view.html:780
+msgid "Cite this Entry"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:785
+msgid ""
+"Choose your preferred academic style to cite this entry. Click copy to "
+"save it to your clipboard."
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:808
+#: mop/templates/explore/project_entity_view.html:817
+#: mop/templates/explore/project_entity_view.html:826
+#: mop/templates/explore/project_entity_view.html:835
+msgid "Copy to clipboard"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:843
+#, fuzzy
+msgid "Close"
+msgstr "Klasa"
+
+#: mop/templates/explore/project_entity_view.html:976
 msgid "Show less"
 msgstr "Prikaži manje"
 
@@ -2726,11 +2841,35 @@ msgstr "je trenutno nedostupno"
 #: mop/templates/explore/project_explore_table.html:38
 msgid "We are working on providing data for this section as soon as possible."
 msgstr ""
-"Radimo na tome da obezbijedimo podatke za ovaj odjeljak što je prije moguće."
+"Radimo na tome da obezbijedimo podatke za ovaj odjeljak što je prije "
+"moguće."
 
 #: mop/templates/explore/project_explore_table.html:92
 msgid "Search in"
 msgstr "Pretraži u"
 
-msgid "This translation was generated using AI."
-msgstr "Ovaj prevod je generisan pomoću vještačke inteligencije (AI)."
+#~ msgid "histgeo"
+#~ msgstr "HistGeo"
+
+#~ msgid ""
+#~ "The access and use of our data "
+#~ "is subject to the Creative Commons "
+#~ "License CC BY 4.0 (<a "
+#~ "href=\"https://creativecommons.org/licenses/by/4.0/\" "
+#~ "target=\"_blank\">https://creativecommons.org/licenses/by/4.0/</a>)."
+#~ msgstr ""
+#~ "Pristup i korišćenje naših podataka "
+#~ "podliježe licenci Creative Commons CC BY"
+#~ " 4.0 (<a "
+#~ "href=\"https://creativecommons.org/licenses/by/4.0/\" "
+#~ "target=\"_blank\">https://creativecommons.org/licenses/by/4.0/</a>)."
+
+#~ msgid "Enhancements"
+#~ msgstr "Poboljšanja"
+
+#~ msgid "Include Academic Watermark"
+#~ msgstr "Uključi akademski vodeni žig"
+
+#~ msgid "Adds brand label, entity name, and timestamp to export"
+#~ msgstr "Dodaje oznaku brenda, naziv entiteta i vremensku oznaku u izvoz"
+

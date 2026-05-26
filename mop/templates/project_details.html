@@ -4,6 +4,7 @@
 {% endwith %}
 {% block title %}{{ project.title }}{% endblock %}
 {% block content %}
+  {% from "macros.html" import license_banner %}
   <!-- Leaflet & Plugins Styles (Loaded for detail map) -->
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet/dist/leaflet.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/leaflet.markercluster/dist/MarkerCluster.css', v=ASSETS_VERSION) }}">
@@ -23,7 +24,7 @@
 
   <div class="container-fluid mt-4 mb-5">
     <div class="row g-4">
-      
+
       <!-- Left Column: Glassmorphic Scrollspy Nav Menu -->
       <div class="col-12 col-md-3 col-xl-2">
         <div id="floating-navbar" class="list-group details-scrollspy-menu">
@@ -32,7 +33,7 @@
           {% endfor %}
         </div>
       </div>
-      
+
       <!-- Center Column: Core Content -->
       <div class="col-12 col-md-9 col-xl-8 mx-auto position-relative" id="main-content">
 
@@ -74,7 +75,7 @@
 
         <!-- Split Grid: Info Content & Sidebar -->
         <div class="row mt-4">
-          
+
           <!-- Column 1: Project Description and Details -->
           <div class="col-12 col-lg-8 mb-4">
             <div class="pe-0 pe-lg-3 text-dark leading-relaxed" style="font-size: 1.05rem; line-height: 1.75;">
@@ -88,7 +89,7 @@
           <!-- Column 2: Details Sidebar Card -->
           <div class="col-12 col-lg-4 mb-4">
             <div class="details-sidebar-card text-dark">
-              
+
               {% if project.project_number %}
                 <div class="details-sidebar-section">
                   <div class="details-sidebar-label">{{ _('Project Number') }}:</div>
@@ -108,7 +109,7 @@
                   <div class="details-sidebar-label">{{ _('Funded by') }}:</div>
                   <div class="logo-grid">
                     {% for fund in project.funded_by %}
-                      <a href="{{ fund.url }}" target="_blank" class="logo-item" title="{{ fund.name }}">
+                      <a href="{{ fund.url }}" target="_blank" class="logo-ite/um" title="{{ fund.name }}">
                         <img
                           src="{{ url_for('static', filename='images/institutes/'+fund.logo, v=ASSETS_VERSION) }}"
                           alt="{{ fund.name }}"
@@ -163,7 +164,7 @@
                   </div>
                 </div>
               {% endif %}
-              
+
             </div>
           </div>
         </div>
@@ -227,7 +228,7 @@
               <i class="bi bi-map-fill me-2"></i>{{ _('explore') }}
             </a>
           </h3>
-          
+
           <!-- Integrated Local Locations Map -->
           <div class="map-card-wrapper mb-4 position-relative" style="min-height: 460px; overflow: hidden; border-radius: 20px;">
             <div class="map-loading-overlay" id="details-map-loader" style="display:flex; flex-direction:column; justify-content:center; align-items:center; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.85); z-index:1000; transition: opacity 0.3s ease;">
@@ -254,9 +255,7 @@
               </div>
             {% endfor %}
           </div>
-          <p class="small text-muted text-center">
-            {{ _('The access and use of our data is subject to the Creative Commons License CC BY 4.0 (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">https://creativecommons.org/licenses/by/4.0/</a>).') }}
-          </p>
+          {{ license_banner(project.pi) }}
         {% endif %}
 
         <!-- Results section -->
@@ -318,7 +317,7 @@
         {% endif %}
 
       </div>
-      
+
       <!-- Right margin spacing -->
       <div class="col-md d-none d-xl-block"></div>
     </div>
@@ -376,7 +375,7 @@
 
                   if (!isNaN(latLng[0]) && !isNaN(latLng[1])) {
                     const marker = L.marker(latLng);
-                    
+
                     const exploreUrl = `/projects/${projectAcronym.toLowerCase()}/explore/place/${place.id}`;
                     const popupHtml = `
                       <div class="p-1 text-dark">

@@ -226,6 +226,11 @@ def entity_project_view(
 
      narratives = NarrativeGenerator.generate(entity, project=project, view=view)
 
+     project_details = project_data.get(project) if project else None
+     if project_details and not project_details.get('pi'):
+         project_details = dict(project_details)
+         project_details['pi'] = ['Mihailo Popović']
+
      return render_template(
          'explore/project_entity_view.html',
          entity=entity,
@@ -238,7 +243,8 @@ def entity_project_view(
          timeline_events=timeline_events,
          path=(project, view),
          system_classes=system_classes,
-         narratives=narratives)
+         narratives=narratives,
+         project_details=project_details)
 
 
 

@@ -1,4 +1,12 @@
-// --- Layer Controls (HTTPS basemaps & Historical Overlays) ---
+// Intercept L.tileLayer to ensure crossOrigin is always 'anonymous' for screenshot compatibility
+if (typeof L !== 'undefined' && L.tileLayer) {
+    const originalTileLayer = L.tileLayer;
+    L.tileLayer = function(url, options) {
+        options = options || {};
+        options.crossOrigin = 'anonymous';
+        return originalTileLayer(url, options);
+    };
+}
 
 const OpenStreetMap_HOT = L.tileLayer(
     "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",

@@ -395,11 +395,10 @@
 
         const formatOption = document.querySelector('input[name="exportFormat"]:checked');
         const bgOption = document.querySelector('input[name="exportBg"]:checked');
-        const watermarkOption = document.getElementById('exportWatermark');
 
         const format = formatOption ? formatOption.value : 'png';
         const bgType = bgOption ? bgOption.value : 'transparent';
-        const includeWatermark = watermarkOption ? watermarkOption.checked : true;
+        const includeWatermark = true;
 
         const exportCanvas = document.createElement('canvas');
         exportCanvas.width = visCanvas.width;
@@ -432,7 +431,7 @@
             
             const padding = 20 * scaleFactor;
             const cardWidth = 320 * scaleFactor;
-            const cardHeight = 70 * scaleFactor;
+            const cardHeight = 85 * scaleFactor;
             const cardX = padding;
             const cardY = exportCanvas.height - cardHeight - padding;
             const cornerRadius = 8 * scaleFactor;
@@ -458,12 +457,33 @@
 
             ctx.font = `bold ${13 * scaleFactor}px "Outfit", "Inter", sans-serif`;
             ctx.fillStyle = primaryTextColor;
-            ctx.fillText("Maps of Power", cardX + 15 * scaleFactor, cardY + 28 * scaleFactor);
+            ctx.fillText("Maps of Power", cardX + 15 * scaleFactor, cardY + 25 * scaleFactor);
 
             ctx.font = `${10 * scaleFactor}px "Outfit", "Inter", sans-serif`;
             ctx.fillStyle = secondaryTextColor;
-            ctx.fillText("Historical Geography & Digital Humanities Initiative", cardX + 15 * scaleFactor, cardY + 45 * scaleFactor);
-            ctx.fillText("https://atlas.maps-of-power.at/", cardX + 15 * scaleFactor, cardY + 58 * scaleFactor);
+            ctx.fillText("Historical Geography & Digital Humanities Initiative", cardX + 15 * scaleFactor, cardY + 41 * scaleFactor);
+            ctx.fillText("https://atlas.maps-of-power.at/", cardX + 15 * scaleFactor, cardY + 54 * scaleFactor);
+
+            // Clean name helper
+            function cleanNames(namesStr) {
+                if (!namesStr) return 'Mihailo Popović';
+                return namesStr.split(',').map(function(name) {
+                    return name.replace(/\s*\([^)]*\)/g, '').trim();
+                }).join(', ');
+            }
+            const cleanedPIs = cleanNames(window.projectPIs || 'Mihailo Popović');
+            const licenseText = "CC-BY 4.0 \u00A9 " + cleanedPIs;
+
+            // Font scale scaling for multiple or long PIs names list
+            let fontSize = 10 * scaleFactor;
+            ctx.font = `${fontSize}px "Outfit", "Inter", sans-serif`;
+            let textWidth = ctx.measureText(licenseText).width;
+            const maxTextWidth = cardWidth - (30 * scaleFactor);
+            if (textWidth > maxTextWidth) {
+                fontSize = Math.max(7.5 * scaleFactor, fontSize * (maxTextWidth / textWidth));
+                ctx.font = `${fontSize}px "Outfit", "Inter", sans-serif`;
+            }
+            ctx.fillText(licenseText, cardX + 15 * scaleFactor, cardY + 70 * scaleFactor);
 
             ctx.restore();
         }

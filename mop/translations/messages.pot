@@ -8,22 +8,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-05-25 22:42+0200\n"
+"POT-Creation-Date: 2026-05-26 12:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
+"Generated-By: Babel 2.18.0\n"
 
 #: mop/util.py:36
 msgid "about"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:59
+#: mop/templates/explore/project_entity_view.html:60
 #: mop/templates/explore/project_explore_table.html:10
-#: mop/templates/project_details.html:43 mop/util.py:37
+#: mop/templates/project_details.html:45 mop/util.py:37
 msgid "projects"
 msgstr ""
 
@@ -31,60 +31,56 @@ msgstr ""
 msgid "atlas"
 msgstr ""
 
-#: mop/util.py:39
-msgid "histgeo"
-msgstr ""
-
 #: mop/templates/_events_list.html:44 mop/util.py:40
 msgid "events"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:30
-#: mop/templates/explore/project_entity_view.html:615 mop/util.py:41
+#: mop/templates/explore/project_entity_view.html:31
+#: mop/templates/explore/project_entity_view.html:608 mop/util.py:41
 msgid "literature"
 msgstr ""
 
-#: mop/views.py:336
+#: mop/views.py:342
 msgid "An error occurred"
 msgstr ""
 
-#: mop/views.py:338
+#: mop/views.py:344
 msgid "An unexpected error occurred. Please try again later."
 msgstr ""
 
-#: mop/views.py:341
+#: mop/views.py:347
 msgid "Page Not Found"
 msgstr ""
 
-#: mop/views.py:343
+#: mop/views.py:349
 msgid ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
 msgstr ""
 
-#: mop/views.py:346
+#: mop/views.py:352
 msgid "Access Denied"
 msgstr ""
 
-#: mop/views.py:348
+#: mop/views.py:354
 msgid "You do not have permission to access this area. Restricted coordinates."
 msgstr ""
 
-#: mop/views.py:351
+#: mop/views.py:357
 msgid "I'm a Teapot"
 msgstr ""
 
-#: mop/views.py:353
+#: mop/views.py:359
 msgid ""
 "The server refuses the attempt to brew coffee with a teapot. Yes, this is"
 " a real error."
 msgstr ""
 
-#: mop/views.py:376 mop/views.py:383
+#: mop/views.py:382 mop/views.py:389
 msgid "Internal Server Error"
 msgstr ""
 
-#: mop/views.py:385
+#: mop/views.py:391
 msgid ""
 "An unexpected server error occurred. Our cartographers are looking into "
 "it."
@@ -1418,74 +1414,109 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
+#: mop/templates/macros.html:86
+msgid "License & Attribution"
+msgstr ""
+
+#: mop/templates/macros.html:88
+msgid "All data shown here is licensed under the"
+msgstr ""
+
+#: mop/templates/macros.html:90 mop/templates/macros.html:103
+msgid "Creative Commons Attribution 4.0 International (CC-BY 4.0) License"
+msgstr ""
+
+#: mop/templates/macros.html:92
+msgid "Please attribute to"
+msgstr ""
+
+#: mop/templates/macros.html:96
+msgid "Principal Investigator(s)"
+msgstr ""
+
+#: mop/templates/macros.html:99
+msgid "License & Academic Attribution"
+msgstr ""
+
+#: mop/templates/macros.html:101
+msgid ""
+"All dataset resources and research data presented across these projects "
+"are licensed under the"
+msgstr ""
+
+#: mop/templates/macros.html:105
+msgid ""
+"Please credit and attribute the respective project Principal "
+"Investigator(s) (PI) or the project leader Mihailo Popović when "
+"exporting, visualizing, or publishing any derivative scientific work from"
+" this portal."
+msgstr ""
+
 #: mop/templates/navbar.html:61
 msgid "Other"
 msgstr ""
 
-#: mop/templates/project_details.html:61 mop/templates/project_details.html:446
-#: mop/templates/projects.html:110 mop/templates/projects.html:143
-#: mop/templates/projects.html:221 mop/templates/projects.html:274
-#: mop/templates/projects.html:598
+#: mop/templates/navbar.html:73 mop/templates/navbar.html:80
+msgid "This translation was generated using AI."
+msgstr ""
+
+#: mop/templates/project_details.html:63 mop/templates/project_details.html:433
+#: mop/templates/projects.html:112 mop/templates/projects.html:145
+#: mop/templates/projects.html:223 mop/templates/projects.html:276
+#: mop/templates/projects.html:604
 msgid "Active"
 msgstr ""
 
-#: mop/templates/project_details.html:80
+#: mop/templates/project_details.html:82
 msgid "description"
 msgstr ""
 
-#: mop/templates/project_details.html:93
+#: mop/templates/project_details.html:95
 msgid "Project Number"
 msgstr ""
 
-#: mop/templates/project_details.html:100
+#: mop/templates/project_details.html:102
 msgid "Duration"
 msgstr ""
 
-#: mop/templates/project_details.html:107
+#: mop/templates/project_details.html:109
 msgid "Funded by"
 msgstr ""
 
-#: mop/templates/project_details.html:122
+#: mop/templates/project_details.html:124
 msgid "Hosted by"
 msgstr ""
 
-#: mop/templates/project_details.html:136
+#: mop/templates/project_details.html:138
 msgid "PI (Project Investigator)"
 msgstr ""
 
-#: mop/templates/project_details.html:146 mop/templates/projects.html:191
+#: mop/templates/project_details.html:148 mop/templates/projects.html:193
 msgid "Employees"
 msgstr ""
 
-#: mop/templates/project_details.html:157
+#: mop/templates/project_details.html:159
 msgid "Cooperation and External Employees"
 msgstr ""
 
-#: mop/templates/project_details.html:173
+#: mop/templates/project_details.html:175
 msgid "further information"
 msgstr ""
 
-#: mop/templates/project_details.html:185
+#: mop/templates/project_details.html:187
 msgid "media"
 msgstr ""
 
-#: mop/templates/project_details.html:226
+#: mop/templates/project_details.html:228
 msgid "explore"
 msgstr ""
 
-#: mop/templates/project_details.html:236
+#: mop/templates/project_details.html:238
 msgid "Mapping Spatial Coordinates..."
 msgstr ""
 
-#: mop/templates/project_details.html:237
+#: mop/templates/project_details.html:239
 msgid "Downloading geographical locations from OpenAtlas."
-msgstr ""
-
-#: mop/templates/project_details.html:257
-msgid ""
-"The access and use of our data is subject to the Creative Commons License"
-" CC BY 4.0 (<a href=\"https://creativecommons.org/licenses/by/4.0/\" "
-"target=\"_blank\">https://creativecommons.org/licenses/by/4.0/</a>)."
 msgstr ""
 
 #: mop/templates/project_details.html:265
@@ -1500,489 +1531,502 @@ msgstr ""
 msgid "presentations"
 msgstr ""
 
-#: mop/templates/project_details.html:400 mop/templates/projects.html:846
+#: mop/templates/project_details.html:387 mop/templates/projects.html:830
 msgid "No description available."
 msgstr ""
 
-#: mop/templates/project_details.html:403 mop/templates/projects.html:849
+#: mop/templates/project_details.html:390 mop/templates/projects.html:833
 msgid "View Details"
 msgstr ""
 
-#: mop/templates/project_details.html:449 mop/templates/projects.html:222
+#: mop/templates/project_details.html:436 mop/templates/projects.html:224
 msgid "Upcoming"
 msgstr ""
 
-#: mop/templates/project_details.html:452 mop/templates/projects.html:111
-#: mop/templates/projects.html:223 mop/templates/projects.html:278
-#: mop/templates/projects.html:603
+#: mop/templates/project_details.html:439 mop/templates/projects.html:113
+#: mop/templates/projects.html:225 mop/templates/projects.html:280
+#: mop/templates/projects.html:609
 msgid "Completed"
 msgstr ""
 
-#: mop/templates/projects.html:20
+#: mop/templates/projects.html:22
 msgid "Research Portal"
 msgstr ""
 
-#: mop/templates/projects.html:23
+#: mop/templates/projects.html:25
 msgid "Research Projects"
 msgstr ""
 
-#: mop/templates/projects.html:26
+#: mop/templates/projects.html:28
 msgid ""
 "Discover our ongoing and completed research initiatives in Historical "
 "Geography and Digital Humanities. Explore spatial networks, mapped "
 "entities, and ancient records across centuries."
 msgstr ""
 
-#: mop/templates/projects.html:34 mop/templates/projects.html:270
+#: mop/templates/projects.html:36 mop/templates/projects.html:272
 msgid "Projects"
 msgstr ""
 
-#: mop/templates/projects.html:40
+#: mop/templates/projects.html:42
 msgid "Mapped Places"
 msgstr ""
 
-#: mop/templates/projects.html:46
+#: mop/templates/projects.html:48
 msgid "Researchers"
 msgstr ""
 
-#: mop/templates/projects.html:52
+#: mop/templates/projects.html:54
 msgid "Funding Bodies"
 msgstr ""
 
-#: mop/templates/projects.html:65
+#: mop/templates/projects.html:67
 msgid "Overview"
 msgstr ""
 
-#: mop/templates/projects.html:70
+#: mop/templates/projects.html:72
 msgid "Timeline Roadmap"
 msgstr ""
 
-#: mop/templates/projects.html:75
+#: mop/templates/projects.html:77
 msgid "Research Analytics"
 msgstr ""
 
-#: mop/templates/projects.html:80
+#: mop/templates/projects.html:82
 msgid "Data Portal & Map"
 msgstr ""
 
-#: mop/templates/projects.html:85
+#: mop/templates/projects.html:87
 msgid "Network Visualisation"
 msgstr ""
 
-#: mop/templates/projects.html:102
+#: mop/templates/projects.html:104
 msgid "Search by project name, acronym, PI or employees..."
 msgstr ""
 
-#: mop/templates/projects.html:109
+#: mop/templates/projects.html:111
 msgid "All Statuses"
 msgstr ""
 
-#: mop/templates/projects.html:116
+#: mop/templates/projects.html:118
 msgid "All Funding"
 msgstr ""
 
-#: mop/templates/projects.html:178
+#: mop/templates/projects.html:180
 msgid "Project Investigator"
 msgstr ""
 
-#: mop/templates/projects.html:203
+#: mop/templates/projects.html:205
 msgid "Explore Project"
 msgstr ""
 
-#: mop/templates/projects.html:217
+#: mop/templates/projects.html:219
 msgid "Interactive Projects Roadmap"
 msgstr ""
 
-#: mop/templates/projects.html:218
+#: mop/templates/projects.html:220
 msgid ""
 "View project lifespans dynamically across a chronological 10-year "
 "timeline axis."
 msgstr ""
 
-#: mop/templates/projects.html:231
+#: mop/templates/projects.html:233
 msgid "Filter Timeline by Active Year:"
 msgstr ""
 
-#: mop/templates/projects.html:266
+#: mop/templates/projects.html:268
 msgid "Statistics Overview"
 msgstr ""
 
-#: mop/templates/projects.html:282
+#: mop/templates/projects.html:284
 msgid "Scholars"
 msgstr ""
 
-#: mop/templates/projects.html:286
+#: mop/templates/projects.html:288
 msgid ""
 "Aggregated live metrics of collaborative initiatives mapping spatial data"
 " and medieval geographies."
 msgstr ""
 
-#: mop/templates/projects.html:292
+#: mop/templates/projects.html:294
 msgid "Grants by Funding Body"
 msgstr ""
 
-#: mop/templates/projects.html:293
+#: mop/templates/projects.html:295
 msgid "Proportional project support distribution."
 msgstr ""
 
-#: mop/templates/projects.html:305
+#: mop/templates/projects.html:307
 msgid "Academic Host Institutes"
 msgstr ""
 
-#: mop/templates/projects.html:306
+#: mop/templates/projects.html:308
 msgid "Volume of active project hosting instances."
 msgstr ""
 
-#: mop/templates/projects.html:315
+#: mop/templates/projects.html:317
 msgid "Collaborators Directory"
 msgstr ""
 
-#: mop/templates/projects.html:316
+#: mop/templates/projects.html:318
 msgid "Browse and search project scholars and team crossovers."
 msgstr ""
 
-#: mop/templates/projects.html:319
+#: mop/templates/projects.html:321
 msgid "Search by researcher or project acronym..."
 msgstr ""
 
-#: mop/templates/projects.html:333
+#: mop/templates/projects.html:335
 msgid "Explore Datasets"
 msgstr ""
 
-#: mop/templates/projects.html:335
+#: mop/templates/projects.html:337
 msgid ""
 "Filter OpenAtlas spatial locations across all active initiatives in real-"
 "time. Select a project to render its mapped nodes on the interactive map."
 msgstr ""
 
-#: mop/templates/projects.html:340
+#: mop/templates/projects.html:342
 msgid "Select Project Source"
 msgstr ""
 
-#: mop/templates/projects.html:342
+#: mop/templates/projects.html:344
 msgid "Select a project..."
 msgstr ""
 
-#: mop/templates/projects.html:343
+#: mop/templates/projects.html:345
 msgid "All Active Projects"
 msgstr ""
 
-#: mop/templates/projects.html:353
+#: mop/templates/projects.html:355
 msgid "Dataset Coverage"
 msgstr ""
 
-#: mop/templates/projects.html:357
+#: mop/templates/projects.html:359
 msgid "Places Loaded"
 msgstr ""
 
-#: mop/templates/projects.html:364
+#: mop/templates/projects.html:366
 msgid "Network Endpoint"
 msgstr ""
 
-#: mop/templates/projects.html:365
+#: mop/templates/projects.html:367
 msgid ""
 "Using the dynamic Maps of Power api endpoint to map clustered geo-"
 "entities. Geometries can be clicked to inspect detail records."
 msgstr ""
 
-#: mop/templates/projects.html:377
+#: mop/templates/projects.html:379
 msgid "Fetching Map Data..."
 msgstr ""
 
-#: mop/templates/projects.html:378
+#: mop/templates/projects.html:380
 msgid "Downloading geographical features from the OpenAtlas database."
 msgstr ""
 
-#: mop/templates/projects.html:393
+#: mop/templates/projects.html:395
 msgid "Network Explorer"
 msgstr ""
 
-#: mop/templates/projects.html:395
+#: mop/templates/projects.html:397
 msgid ""
 "Visualise the entity networks, connections, and relations from each "
 "project in real-time. Nodes can be clicked and inspected."
 msgstr ""
 
-#: mop/templates/projects.html:400
+#: mop/templates/projects.html:402
 msgid "Select Projects"
 msgstr ""
 
-#: mop/templates/projects.html:417
+#: mop/templates/projects.html:419
 msgid "Network Statistics"
 msgstr ""
 
-#: mop/templates/projects.html:422
+#: mop/templates/projects.html:424
 msgid "Entities (Nodes)"
 msgstr ""
 
-#: mop/templates/projects.html:431
+#: mop/templates/projects.html:433
 msgid "Relations (Edges)"
 msgstr ""
 
-#: mop/templates/projects.html:439
+#: mop/templates/projects.html:441
 msgid "Interactive Controls"
 msgstr ""
 
-#: mop/templates/projects.html:440
+#: mop/templates/projects.html:442
 msgid ""
 "Zoom to scroll, drag to pan, and click on any entity node to inspect its "
 "name and class. Double-click a node to open its full details page."
 msgstr ""
 
-#: mop/templates/projects.html:452
+#: mop/templates/projects.html:454
 msgid "Generating Network Graph..."
 msgstr ""
 
-#: mop/templates/projects.html:453
+#: mop/templates/projects.html:455
 msgid "Fetching entities and computing relations from the database."
 msgstr ""
 
-#: mop/templates/projects.html:469
+#: mop/templates/projects.html:473
 msgid "Side-by-Side Project Compare"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:22
-#: mop/templates/explore/project_entity_view.html:111
+#: mop/templates/explore/project_entity_view.html:23
+#: mop/templates/explore/project_entity_view.html:115
 msgid "properties"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:24
-#: mop/templates/explore/project_entity_view.html:489
-#: mop/templates/explore/project_entity_view.html:498
-#: mop/templates/explore/project_entity_view.html:675
+#: mop/templates/explore/project_entity_view.html:25
+#: mop/templates/explore/project_entity_view.html:482
+#: mop/templates/explore/project_entity_view.html:491
+#: mop/templates/explore/project_entity_view.html:668
 #: mop/templates/explore/project_explore_table.html:52
 msgid "Description"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:27
-#: mop/templates/explore/project_entity_view.html:582
+#: mop/templates/explore/project_entity_view.html:28
+#: mop/templates/explore/project_entity_view.html:575
 msgid "Narrative Connections"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:33
-#: mop/templates/explore/project_entity_view.html:223
-#: mop/templates/explore/project_entity_view.html:646
+#: mop/templates/explore/project_entity_view.html:34
+#: mop/templates/explore/project_entity_view.html:227
+#: mop/templates/explore/project_entity_view.html:639
 msgid "Relations"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:36
-#: mop/templates/explore/project_entity_view.html:744
+#: mop/templates/explore/project_entity_view.html:37
+#: mop/templates/explore/project_entity_view.html:737
 msgid "files"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:118
+#: mop/templates/explore/project_entity_view.html:103
+msgid "Cite Entry"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:122
 msgid "Period"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:183
+#: mop/templates/explore/project_entity_view.html:187
 msgid "Map"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:188
+#: mop/templates/explore/project_entity_view.html:192
 msgid "Network"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:193
+#: mop/templates/explore/project_entity_view.html:197
 msgid "Timeline"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:218
+#: mop/templates/explore/project_entity_view.html:222
 msgid "Node Details"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:220
-#: mop/templates/explore/project_entity_view.html:238
+#: mop/templates/explore/project_entity_view.html:224
+#: mop/templates/explore/project_entity_view.html:242
 msgid "Place"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:222
+#: mop/templates/explore/project_entity_view.html:226
 msgid "ID"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:225
+#: mop/templates/explore/project_entity_view.html:229
 msgid "View Entity"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:231
+#: mop/templates/explore/project_entity_view.html:235
 msgid "Legend (Click to toggle)"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:234
+#: mop/templates/explore/project_entity_view.html:238
 msgid "Selected Entity"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:242
+#: mop/templates/explore/project_entity_view.html:246
 msgid "Person"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:246
+#: mop/templates/explore/project_entity_view.html:250
 msgid "Group"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:250
+#: mop/templates/explore/project_entity_view.html:254
 msgid "Event / Activity"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:254
+#: mop/templates/explore/project_entity_view.html:258
 msgid "Artifact"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:258
+#: mop/templates/explore/project_entity_view.html:262
 msgid "Literature / Source"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:265
+#: mop/templates/explore/project_entity_view.html:269
 msgid "Depth"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:277
+#: mop/templates/explore/project_entity_view.html:281
 msgid "Labels"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:283
+#: mop/templates/explore/project_entity_view.html:287
 msgid "Spacing"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:285
+#: mop/templates/explore/project_entity_view.html:289
 msgid "Compact"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:286
+#: mop/templates/explore/project_entity_view.html:290
 msgid "Normal"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:287
+#: mop/templates/explore/project_entity_view.html:291
 msgid "Wide"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:288
+#: mop/templates/explore/project_entity_view.html:292
 msgid "Extra Wide"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:295
+#: mop/templates/explore/project_entity_view.html:299
 msgid "Fullscreen"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:301
+#: mop/templates/explore/project_entity_view.html:305
 msgid "Export"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:312
+#: mop/templates/explore/project_entity_view.html:316
 msgid "Export Graph as Image"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:317
+#: mop/templates/explore/project_entity_view.html:321
 msgid ""
 "Configure the style, format, and enhancements for your network "
 "visualization image download."
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:322
+#: mop/templates/explore/project_entity_view.html:326
 msgid "File Format"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:328
+#: mop/templates/explore/project_entity_view.html:332
 msgid "PNG Image"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:329
+#: mop/templates/explore/project_entity_view.html:333
 msgid "Lossless & Transparent"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:336
+#: mop/templates/explore/project_entity_view.html:340
 msgid "JPEG Image"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:337
+#: mop/templates/explore/project_entity_view.html:341
 msgid "High Compatibility"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:345
+#: mop/templates/explore/project_entity_view.html:349
 msgid "Background Theme"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:351
+#: mop/templates/explore/project_entity_view.html:355
 msgid "Transparent"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:358
+#: mop/templates/explore/project_entity_view.html:362
 msgid "Solid Light"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:365
+#: mop/templates/explore/project_entity_view.html:369
 msgid "Deep Dark"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:373
-msgid "Enhancements"
-msgstr ""
-
-#: mop/templates/explore/project_entity_view.html:376
-msgid "Include Academic Watermark"
-msgstr ""
-
-#: mop/templates/explore/project_entity_view.html:377
-msgid "Adds brand label, entity name, and timestamp to export"
-msgstr ""
-
-#: mop/templates/explore/project_entity_view.html:385
+#: mop/templates/explore/project_entity_view.html:378
 msgid "Cancel"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:388
+#: mop/templates/explore/project_entity_view.html:381
 msgid "Generate & Download"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:461
+#: mop/templates/explore/project_entity_view.html:454
 msgid "Lifecycle phase of"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:473
+#: mop/templates/explore/project_entity_view.html:466
 msgid "No Timeline Events"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:474
+#: mop/templates/explore/project_entity_view.html:467
 msgid ""
 "We couldn't find any chronological events or relations with dates for "
 "this entity."
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:598
-#: mop/templates/explore/project_entity_view.html:805
+#: mop/templates/explore/project_entity_view.html:591
+#: mop/templates/explore/project_entity_view.html:972
 msgid "Show more"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:628
+#: mop/templates/explore/project_entity_view.html:621
 msgid "view entity"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:666
+#: mop/templates/explore/project_entity_view.html:659
 #: mop/templates/explore/project_explore_table.html:50
 msgid "Name"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:667
+#: mop/templates/explore/project_entity_view.html:660
 #: mop/templates/explore/project_explore_table.html:51
 msgid "Class"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:669
+#: mop/templates/explore/project_entity_view.html:662
 msgid "Begin"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:670
+#: mop/templates/explore/project_entity_view.html:663
 msgid "End"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:673
+#: mop/templates/explore/project_entity_view.html:666
 msgid "Relation Type"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:723
+#: mop/templates/explore/project_entity_view.html:716
 msgid "Search..."
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:809
+#: mop/templates/explore/project_entity_view.html:780
+msgid "Cite this Entry"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:785
+msgid ""
+"Choose your preferred academic style to cite this entry. Click copy to "
+"save it to your clipboard."
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:808
+#: mop/templates/explore/project_entity_view.html:817
+#: mop/templates/explore/project_entity_view.html:826
+#: mop/templates/explore/project_entity_view.html:835
+msgid "Copy to clipboard"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:843
+msgid "Close"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:976
 msgid "Show less"
 msgstr ""
 
