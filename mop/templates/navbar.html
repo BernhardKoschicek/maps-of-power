@@ -67,10 +67,18 @@
               {% if lang_code not in ['de', 'en'] %}
                 <li>
                   {% if CURRENT_LANGUAGE == lang_code %}
-                    <span class="dropdown-item active fw-bold bg-primary text-white">{{ lang_name }}</span>
-                  {% else %}
-                    <a class="dropdown-item text-secondary fw-normal" href="{{ url_for('set_language', language=lang_code) }}">
+                    <span class="dropdown-item active fw-bold bg-primary text-white d-flex align-items-center justify-content-between">
                       {{ lang_name }}
+                      {% if lang_code in ['el', 'sr', 'cnr'] %}
+                        <i class="bi bi-robot ms-2 text-white-50" title="{{ _('This translation was generated using AI.') }}" style="font-size: 0.9rem;"></i>
+                      {% endif %}
+                    </span>
+                  {% else %}
+                    <a class="dropdown-item text-secondary fw-normal d-flex align-items-center justify-content-between" href="{{ url_for('set_language', language=lang_code) }}">
+                      {{ lang_name }}
+                      {% if lang_code in ['el', 'sr', 'cnr'] %}
+                        <i class="bi bi-robot ms-2 text-primary" title="{{ _('This translation was generated using AI.') }}" style="font-size: 0.9rem;"></i>
+                      {% endif %}
                     </a>
                   {% endif %}
                 </li>

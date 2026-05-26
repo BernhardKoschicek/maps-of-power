@@ -2829,6 +2829,9 @@ msgstr ""
 msgid "Search in"
 msgstr "Suchen in"
 
+msgid "This translation was generated using AI."
+msgstr "Diese Übersetzung wurde mithilfe von KI generiert."
+
 #~ msgid "mop"
 #~ msgstr "Maps of Power"
 

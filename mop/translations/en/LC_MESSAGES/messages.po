@@ -2783,6 +2783,9 @@ msgstr ""
 msgid "Search in"
 msgstr "Search in"
 
+msgid "This translation was generated using AI."
+msgstr "This translation was generated using AI."
+
 #~ msgid "newsletter_header"
 #~ msgstr "Newsletter registration"
 

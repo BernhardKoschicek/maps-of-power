@@ -2720,3 +2720,6 @@ msgstr ""
 #: mop/templates/explore/project_explore_table.html:92
 msgid "Search in"
 msgstr "Претражи у"
+
+msgid "This translation was generated using AI."
+msgstr "Овај превод је генерисан помоћу вештачке интелигенције (АИ)."

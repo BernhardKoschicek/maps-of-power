@@ -2858,3 +2858,6 @@ msgstr ""
 #: mop/templates/explore/project_explore_table.html:92
 msgid "Search in"
 msgstr "Αναζήτηση σε"
+
+msgid "This translation was generated using AI."
+msgstr "Αυτή η μετάφραση δημιουργήθηκε με τη χρήση τεχνητής νοημοσύνης (AI)."
