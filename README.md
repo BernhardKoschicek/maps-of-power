@@ -8,8 +8,8 @@
   <a href="https://github.com/BernhardKoschicek/maps-of-power/actions/workflows/ci-security.yml">
     <img src="https://github.com/BernhardKoschicek/maps-of-power/actions/workflows/ci-security.yml/badge.svg" alt="CI & Security Status" />
   </a>
-  <a href=".github/badges/coverage.svg">
-    <img src=".github/badges/coverage.svg" alt="Test Coverage" />
+  <a href="badges/coverage.svg">
+    <img src="badges/coverage.svg" alt="Test Coverage" />
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License" />

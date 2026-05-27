@@ -51,14 +51,14 @@ jobs:
 
       - name: Generate Coverage Badge
         run: |
-          mkdir -p .github/badges
-          uvx --with defusedxml genbadge coverage -i coverage.xml -o .github/badges/coverage.svg
+          mkdir -p badges
+          uvx --with defusedxml genbadge coverage -i coverage.xml -o badges/coverage.svg
 
       - name: Commit & Push Coverage Badge
         if: github.event_name == 'push'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add .github/badges/coverage.svg
+          git add badges/coverage.svg
           git commit -m "chore: update coverage badge [skip ci]" || exit 0
           git push
