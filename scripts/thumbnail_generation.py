@@ -1,8 +1,9 @@
 from pathlib import Path
 from wand.image import Image
 
-source_folder = Path("mop/static/images/projects")
-target_folder = Path("mop/static/thumbnails")
+ROOT_DIR = Path(__file__).resolve().parent.parent
+source_folder = ROOT_DIR / "mop/static/images/projects"
+target_folder = ROOT_DIR / "mop/static/thumbnails"
 
 THUMBNAIL_WIDTH = 400
 THUMBNAIL_HEIGHT = 400
