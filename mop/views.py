@@ -1,6 +1,6 @@
 import json
 import re
-from typing import Any, Literal, Optional
+from typing import Any
 
 import numpy
 import requests
@@ -23,8 +23,7 @@ from mop.model.entity import Entity
 from mop.model.explore import (
     get_oa_by_view_class, system_classes, view_classes)
 from mop.model.narrative import NarrativeGenerator
-from mop.util import (
-    get_dict_entries_by_category, get_types_sorted)
+from mop.util import get_dict_entries_by_category, get_types_sorted
 
 
 @app.route('/')
@@ -42,7 +41,7 @@ def events() -> str:
 
 @app.route('/histgeo')
 @app.route('/histgeo/<int:id_>')
-def histgeo(id_: Optional[int] = None) -> str:
+def histgeo(id_: int | None = None) -> str:
     if id_:
         if id_ not in lectures:
             abort(404)
@@ -62,7 +61,7 @@ def imprint() -> str:
 
 
 @app.route('/language=<language>')
-def set_language(language: Optional[str] = None) -> Response:
+def set_language(language: str | None = None) -> Response:
     session['language'] = language
     return redirect(request.referrer)
 
@@ -87,7 +86,7 @@ def literature() -> str:
         # Form location string
         locs = lit.get('locations', [])
         if isinstance(locs, list):
-            loc_str = ', '.join([str(l) for l in locs if l])
+            loc_str = ', '.join(str(loc) for loc in locs if loc)
         elif locs:
             loc_str = str(locs)
         else:
@@ -126,13 +125,12 @@ def literature() -> str:
     return render_template(
         'literature.html',
         literatures=processed_literatures,
-        projects=project_data
-    )
+        projects=project_data)
 
 
 @app.route('/projects')
 @app.route('/projects/<title>')
-def projects(title: Optional[str] = None) -> str:
+def projects(title: str | None = None) -> str:
     if title:
         if title not in project_data:
             abort(404)
@@ -158,7 +156,7 @@ def project_explore_table(project: str, view: str) -> str:
     try:
         data = get_oa_by_view_class(view, project_data[project]['oaID'])
     except Exception as e:  # pragma: no cover
-        app.logger.error(f"Error fetching open access data: {e}")
+        app.logger.error("Error fetching open access data: %s", e)
     return render_template(
         'explore/project_explore_table.html',
         data=data,
@@ -170,10 +168,11 @@ def project_explore_table(project: str, view: str) -> str:
 @app.route('/projects')
 @app.route('/entity/<int:id_>')
 @app.route('/projects/<project>/explore/<view>/<int:id_>')
+# pylint: disable=too-many-locals, too-many-branches, too-many-statements
 def entity_project_view(
         id_: int,
-        project: Optional[str] = None,
-        view: Optional[str] = None) -> str:
+        project: str | None = None,
+        view: str | None = None) -> str:
     if (project is not None and
             project not in project_data):  # pragma: no cover
         abort(404)
@@ -182,9 +181,9 @@ def entity_project_view(
     entity = Entity.get_entity_from_oa(id_)
     relations = entity.relations or {}
 
-    def normalize_and_inject_geojson(geojson_obj: Any,
-                                     properties: dict[str, Any]) -> list[
-        dict[str, Any]]:
+    def normalize_and_inject_geojson(
+            geojson_obj: Any,
+            properties: dict[str, Any]) -> list[dict[str, Any]]:
         if not geojson_obj:  # pragma: no cover
             return []
         if not isinstance(geojson_obj, dict):  # pragma: no cover
@@ -205,10 +204,9 @@ def entity_project_view(
             for k, v in properties.items():
                 f_copy['properties'][k] = v
             features.append(f_copy)
-        elif obj_type in [
-            'Point', 'MultiPoint', 'LineString', 'MultiLineString',
-            'Polygon', 'MultiPolygon',
-            'GeometryCollection']:  # pragma: no cover
+        elif obj_type in {
+                'Point', 'MultiPoint', 'LineString', 'MultiLineString',
+                'Polygon', 'MultiPolygon', 'GeometryCollection'}:
             features.append({
                 "type": "Feature",
                 "geometry": geojson_obj,
@@ -219,12 +217,12 @@ def entity_project_view(
     # Standardize main entity geometry
     main_geometry = None
     if entity.geometry:  # pragma: no cover
-        features = normalize_and_inject_geojson(entity.geometry, {
-            "title": entity.name,
-            "description": entity.description or "",
-            "systemClass": "selected",
-            "id": entity.id_
-        })
+        features = normalize_and_inject_geojson(
+            entity.geometry, {
+                "title": entity.name,
+                "description": entity.description or "",
+                "systemClass": "selected",
+                "id": entity.id_})
         if features:
             main_geometry = {
                 "type": "FeatureCollection",
@@ -239,12 +237,12 @@ def entity_project_view(
         for rel in rel_list:
             if rel.geometry and rel.relation_to_id not in seen_ids:
                 seen_ids.add(rel.relation_to_id)
-                features = normalize_and_inject_geojson(rel.geometry, {
-                    "title": rel.label,
-                    "description": rel.description or "",
-                    "systemClass": rel.system_class,
-                    "id": rel.relation_to_id
-                })
+                features = normalize_and_inject_geojson(
+                    rel.geometry, {
+                        "title": rel.label,
+                        "description": rel.description or "",
+                        "systemClass": rel.system_class,
+                        "id": rel.relation_to_id})
                 related_places.extend(features)
 
     # Gather and sort all timeline events
@@ -282,7 +280,7 @@ def entity_project_view(
             "system_class": entity.system_class
         })
 
-    timeline_events.sort(key=lambda x: x['sort_date'] or '')
+    timeline_events.sort(key=lambda x: str(x['sort_date'] or ''))
 
     narratives = NarrativeGenerator.generate(entity, project=project,
                                              view=view)
@@ -339,8 +337,8 @@ def network_api(id_: int) -> Response | tuple[Response, int]:
 
 
 @app.route('/api/places/<project_acronym>')
-def api_project_places(project_acronym: str) -> Response | tuple[
-    Response, int]:
+def api_project_places(
+        project_acronym: str) -> Response | tuple[Response, int]:
     if project_acronym not in project_data:
         return jsonify({'error': 'Project not found'}), 404
     oa_id = project_data[project_acronym].get('oaID')
@@ -363,8 +361,8 @@ def api_project_places(project_acronym: str) -> Response | tuple[
 
 
 @app.route('/api/network/project/<project_acronym>')
-def api_project_network(project_acronym: str) -> Response | tuple[
-    Response, int]:
+def api_project_network(
+        project_acronym: str) -> Response | tuple[Response, int]:
     if project_acronym == "all":
         linked_to_ids = []
         for proj in project_data.values():
@@ -389,6 +387,7 @@ def api_project_network(project_acronym: str) -> Response | tuple[
         return jsonify({"error": str(e)}), 500
 
 
+# pylint: disable=too-many-arguments, too-many-positional-arguments
 @cache.memoize(timeout=3600)
 def _fetch_table_rows(
         view: str,
@@ -464,7 +463,7 @@ def _get_proxies() -> dict[str, str] | None:
     return {'http': proxy, 'https': proxy}  # pragma: no cover
 
 
-def get_proxies() -> dict[str, str] | None:  # type: ignore[override]
+def get_proxies() -> dict[str, str] | None:
     return _get_proxies()
 
 
@@ -508,13 +507,12 @@ def api_explore_count(
 
 @app.errorhandler(HTTPException)
 def handle_http_exception(
-        e: HTTPException) -> (tuple[Response, int | None] |
-                              tuple[str, Literal[404, 403, 418] | int]):
+        e: HTTPException) -> tuple[Response, int] | tuple[str, int]:
     if request.path.startswith('/api/'):
+        code = e.code or 500
         return jsonify({
             'error': e.description,
-            'code': e.code
-        }), e.code
+            'code': code}), code
 
     code = e.code or 500
     title = e.name or _("An error occurred")
@@ -541,8 +539,7 @@ def handle_http_exception(
         'error.html',
         code=code,
         title=title,
-        description=description
-    ), code
+        description=description), code
 
 
 @app.errorhandler(Exception)
@@ -553,13 +550,12 @@ def handle_generic_exception(
     if isinstance(e, HTTPException):
         return handle_http_exception(e)
 
-    app.logger.error(f"Unhandled exception: {e}", exc_info=True)
+    app.logger.error("Unhandled exception: %s", e, exc_info=True)
 
     if request.path.startswith('/api/'):
         return jsonify({
             'error': _('Internal Server Error'),
-            'code': 500
-        }), 500
+            'code': 500}), 500
 
     return render_template(
         'error.html',
@@ -567,5 +563,4 @@ def handle_generic_exception(
         title=_("Internal Server Error"),
         description=_(
             "An unexpected server error occurred. "
-            "Our cartographers are looking into it.")
-    ), 500
+            "Our cartographers are looking into it.")), 500

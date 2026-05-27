@@ -2,11 +2,15 @@ from typing import Any, List, Optional
 
 import requests
 
+from werkzeug.exceptions import NotFound
+
 from mop import app, cache
 from mop.model.typetree import TypeTree
 
 # Proxies are initialized here, but we should ensure app.config is ready.
 # In Flask, app.config is populated when the app is created.
+
+
 def get_proxies() -> dict[str, str] | None:
     proxy = app.config.get('API_PROXY')
     if not proxy:
@@ -17,10 +21,13 @@ def get_proxies() -> dict[str, str] | None:
 
 
 @cache.memoize()
-def get_view_class(parameter: str, params: Optional[dict[str, Any]] = None) -> list[dict[str, Any]]:
+def get_view_class(
+        parameter: str,
+        params: Optional[dict[str, Any]] = None) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/view_class/{parameter}"
     if '?' in parameter:
-        # Legacy support: if the parameter is a full query string like 'actor?limit=1'
+        # Legacy support: if the parameter is a full query string
+        # like 'actor?limit=1'
         url = f"{app.config['API_PATH']}/view_class/{parameter}"
         return requests.get(
             url,
@@ -70,7 +77,6 @@ def get_entity_presentation(id_: int) -> dict[str, Any]:
         proxies=get_proxies(),
         timeout=30)
     if response.status_code == 404:  # pragma: no cover
-        from werkzeug.exceptions import NotFound
         raise NotFound(f"Entity with ID {id_} not found in the external API.")
     response.raise_for_status()
     return response.json()
@@ -85,12 +91,10 @@ def get_entity(id_: int) -> dict[str, Any]:
         proxies=get_proxies(),
         timeout=30)
     if response.status_code == 404:  # pragma: no cover
-        from werkzeug.exceptions import NotFound
         raise NotFound(f"Entity with ID {id_} not found in the external API.")
     response.raise_for_status()
     data = response.json()
     if not data.get('features'):  # pragma: no cover
-        from werkzeug.exceptions import NotFound
         raise NotFound(f"Entity with ID {id_} has no features.")
     return data['features'][0]
 
@@ -111,7 +115,7 @@ EXCLUDE_SYSTEM_CLASSES = [
 def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
     depth_ = max(1, min(5, depth))
     url = f"{app.config['API_PATH']}/ego_network_visualisation/{id_}"
-    params = {
+    params: Any = {
         'depth': depth_,
         'exclude_system_classes': EXCLUDE_SYSTEM_CLASSES
     }
@@ -121,7 +125,6 @@ def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
         proxies=get_proxies(),
         timeout=30)
     if response.status_code == 404:  # pragma: no cover
-        from werkzeug.exceptions import NotFound
         raise NotFound(f"Ego network not found for ID {id_}.")
     response.raise_for_status()
     return response.json()
@@ -134,7 +137,7 @@ def get_network_visualisation(
     if exclude_system_classes is None:
         exclude_system_classes = EXCLUDE_SYSTEM_CLASSES
     url = f"{app.config['API_PATH']}/network_visualisation/"
-    params = {
+    params: Any = {
         'exclude_system_classes': exclude_system_classes,
         'linked_to_ids': linked_to_ids
     }
@@ -145,4 +148,3 @@ def get_network_visualisation(
         timeout=30)
     response.raise_for_status()
     return response.json()
-

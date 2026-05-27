@@ -6,33 +6,25 @@ from mop.util import get_dates_formatted
 types = {
     'presentation': {
         'name': _('presentation'),
-        'bs_icon': 'bi-chat-text-fill'
-    },
+        'bs_icon': 'bi-chat-text-fill'},
     'online_presentation': {
         'name': _('presentation'),
-        'bs_icon': 'bi-chat-right-text-fill'
-    },
+        'bs_icon': 'bi-chat-right-text-fill'},
     'award': {
         'name': _('award'),
-        'bs_icon': 'bi-award'
-    },
+        'bs_icon': 'bi-award'},
     'science_fair': {
         'name': _('science_fair'),
-        'bs_icon': 'bi-mortarboard-fill'
-    },
+        'bs_icon': 'bi-mortarboard-fill'},
     'book_release': {
         'name': _('book_release'),
-        'bs_icon': 'bi-book'
-    },
+        'bs_icon': 'bi-book'},
     'blog_post': {
         'name': _('blogpost'),
-        'bs_icon': 'bi-blockquote-right'
-    },
+        'bs_icon': 'bi-blockquote-right'},
     'press_release': {
         'name': _('press_release'),
-        'bs_icon': 'bi-newspaper'
-    },
-}
+        'bs_icon': 'bi-newspaper'}}
 event_list = [{
     'id': 'brno_summer_school_260625',
     'type': types['presentation'],
@@ -43,8 +35,7 @@ event_list = [{
     'description': _('brno_summer_school_260625'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'heidelberg_200625',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2025, 6, 20)}",
@@ -54,8 +45,7 @@ event_list = [{
     'description': _('heidelberg_200625'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'presse_03052025',
     'type': types['press_release'],
     'date': f"{get_dates_formatted(2025, 5, 3)}",
@@ -65,8 +55,7 @@ event_list = [{
     'description': _('presse_03052025'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'wittgenstein_13022025',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2025, 2, 13)}",
@@ -76,8 +65,7 @@ event_list = [{
     'description': _('wittgenstein_13022025'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'workshop_oxford_300524',
     'type': types['science_fair'],
     'date': f"{get_dates_formatted(2024, 5, 30)}",
@@ -87,8 +75,7 @@ event_list = [{
     'description': _('workshop_oxford_300524'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'lange_nacht_der_forschung_240524',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2024, 5, 24)}",
@@ -98,8 +85,7 @@ event_list = [{
     'description': _('lange_nacht_der_forschung_240524'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'koder_festschrift_230424',
     'type': types['book_release'],
     'date': f"{get_dates_formatted(2024, 4, 23)}",
@@ -109,8 +95,7 @@ event_list = [{
     'description': _('koder_festschrift_230424'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'belgrade_190923',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 9, 19)}",
@@ -120,8 +105,7 @@ event_list = [{
     'description': _('belgrade_190923'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'athos_oxford_290923',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 9, 29)}",
@@ -131,8 +115,7 @@ event_list = [{
     'description': _('athos_oxford_290923'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'tripps_070923',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 9, 7)}",
@@ -142,8 +125,7 @@ event_list = [{
     'description': _('tripps_070923'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'imc_leeds_23',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 7, 6)}",
@@ -153,8 +135,7 @@ event_list = [{
     'description': _('imc_leeds_23'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-},{
+        'type': ''}]}, {
     'id': 'mecern_2023',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 4, 27)}",
@@ -164,8 +145,7 @@ event_list = [{
     'description': _('mecern_2023'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-}, {
+        'type': ''}]}, {
     'id': 'serbian_academy_220223',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2023, 2, 22)}",
@@ -175,5 +155,4 @@ event_list = [{
     'description': _('serbian_academy_220223'),
     'attachment': [{
         'path': '',
-        'type': ''}]
-}]
+        'type': ''}]}]

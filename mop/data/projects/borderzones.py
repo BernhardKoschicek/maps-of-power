@@ -10,8 +10,7 @@ results = {
         'label': _('Final project report'),
         'link': None,
         'file': 'FWF_P 30384-G28_Final_Report.pdf',
-        'icon': 'bi bi-journals',
-    }]}
+        'icon': 'bi bi-journals', }]}
 
 images = [
     {
@@ -20,49 +19,42 @@ images = [
             'Interpretation of the Byzantino-Serbian Border between 1228 and '
             '1334 from Different Authors'),
         'citation': 'Bernhard Koschicek, 2018',
-        'category': ['borderzones']
-    }, {
+        'category': ['borderzones']}, {
         'src': 'fortifications.png',
         'description': _(
             'Fortifications in the Northern Macedonian Region in the '
             '13/14th century'),
         'citation': 'Bernhard Koschicek, 2019',
-        'category': ['borderzones']
-    }, {
+        'category': ['borderzones']}, {
         'src': 'Marschroute_Abstract_cyrillic_km.png',
         'description': _('Road Model based on a k. u k. Marching Map'),
         'citation': 'Bernhard Koschicek, 2018',
-        'category': ['borderzones']
-    }, {
+        'category': ['borderzones']}, {
         'src': 'borderzones_markovi_kuli.jpg',
         'description': _(
             'Markovi Kuli Castle near Prilep from the south, Republic '
             'of Northern Macedonia'),
         'citation': 'M. St. Popović, TIB 16, 2007',
-        'category': ['borderzones']
-    },
+        'category': ['borderzones']},
     {
         'src': 'borderzones_kale_skopje.jpg',
         'description': _(
             'The Kale elevation in Skopje, Republic of Northern Macedonia'),
         'citation': 'M. St. Popović, TIB 16, 2016',
-        'category': ['borderzones']
-    },
+        'category': ['borderzones']},
     {
         'src': 'borderzones_ohrid_stadttor.jpg',
         'description': _(
             'The old city gate of Ohrid, Republic of Northern Macedonia'),
         'citation': 'M. St. Popović, TIB 16, 2018',
-        'category': ['borderzones']
-    },
+        'category': ['borderzones']},
     {
         'src': 'borderzones_ohrid_samuilova.jpg',
         'description': _(
             'Ohrid and Samuilova tvrdina Castle, '
             'Republic of Northern Macedonia'),
         'citation': 'M. St. Popović, TIB 16, 2018',
-        'category': ['borderzones']
-    }, ]
+        'category': ['borderzones']}, ]
 
 project_borderzones = {
     'acronym': 'borderzones',
@@ -86,5 +78,4 @@ project_borderzones = {
     'icon': 'borderzones_icon.jpg',
     'images': images,
     'videos': [],
-    'oaID': '9962',
-}
+    'oaID': '9962', }

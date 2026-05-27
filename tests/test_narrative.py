@@ -2,23 +2,28 @@ from mop.model.entity import Entity, Relation
 from mop.model.narrative import (
     NarrativePropertyConfig,
     NarrativeGenerator,
-    NARRATIVE_CONFIGS,
     parse_relationship_term
 )
 
 
 def test_parse_relationship_term() -> None:
     # Inverse cases
-    assert parse_relationship_term("ParentOf(ChildOf)", inverse=True) == "Child of"
-    assert parse_relationship_term("ParentOf(ChildOf)", inverse=False) == "Parent of"
-    
-    assert parse_relationship_term("Uncle (Nephew or niece)", inverse=True) == "Nephew or niece of"
-    assert parse_relationship_term("Uncle (Nephew or niece)", inverse=False) == "Uncle of"
-    
+    assert parse_relationship_term(
+        "ParentOf(ChildOf)", inverse=True) == "Child of"
+    assert parse_relationship_term(
+        "ParentOf(ChildOf)", inverse=False) == "Parent of"
+
+    assert parse_relationship_term(
+        "Uncle (Nephew or niece)", inverse=True) == "Nephew or niece of"
+    assert parse_relationship_term(
+        "Uncle (Nephew or niece)", inverse=False) == "Uncle of"
+
     # CamelCase conversion
-    assert parse_relationship_term("BrotherInLaw", inverse=False) == "Brother in Law of"
-    assert parse_relationship_term("Brother-in-law", inverse=False) == "Brother-in-law of"
-    
+    assert parse_relationship_term(
+        "BrotherInLaw", inverse=False) == "Brother in Law of"
+    assert parse_relationship_term(
+        "Brother-in-law", inverse=False) == "Brother-in-law of"
+
     # Symmetric cases
     assert parse_relationship_term("Spouse", inverse=False) == "Spouse of"
     assert parse_relationship_term("Sibling", inverse=False) == "Sibling of"
@@ -34,7 +39,8 @@ def test_narrative_property_config() -> None:
     )
     assert config.get_template("Place") == "Place template for {targets}."
     assert config.get_template("Person") == "Person template for {targets}."
-    assert config.get_template("Unknown") == "Connected via {property_label} to {targets}."
+    assert config.get_template("Unknown") == (
+        "Connected via {property_label} to {targets}.")
 
 
 def test_narrative_generator_empty() -> None:
@@ -45,7 +51,7 @@ def test_narrative_generator_empty() -> None:
         system_class="Place",
         relations=None
     )
-    assert NarrativeGenerator.generate(entity) == []
+    assert not NarrativeGenerator.generate(entity)
 
 
 def test_narrative_generator_single_relation() -> None:
@@ -67,7 +73,7 @@ def test_narrative_generator_single_relation() -> None:
         system_class="Person",
         relations={"places": [rel]}
     )
-    
+
     narratives = NarrativeGenerator.generate(entity)
     assert len(narratives) == 1
     # Person source templates: "Had their residence/home in {targets}."
@@ -101,7 +107,7 @@ def test_narrative_generator_grouping() -> None:
         geometry=None,
         properties=["crm:P74_has_current_or_former_residence"]
     )
-    
+
     entity = Entity(
         id_="111840",
         name="Thessalonike",
@@ -109,14 +115,17 @@ def test_narrative_generator_grouping() -> None:
         system_class="Place",
         relations={"actors": [rel1, rel2]}
     )
-    
-    narratives = NarrativeGenerator.generate(entity, project="macedonia", view="place")
+
+    narratives = NarrativeGenerator.generate(entity, project="macedonia",
+                                             view="place")
     assert len(narratives) == 1
     # Place source template: "Served as the residence/home for {targets}."
     assert "Served as the residence/home for" in narratives[0]['text']
-    assert 'href="/projects/macedonia/explore/place/116716"' in narratives[0]['text']
+    assert ('href="/projects/macedonia/explore/place/116716"' in
+            narratives[0]['text'])
     assert 'Anna Palaiologina' in narratives[0]['text']
-    assert 'href="/projects/macedonia/explore/place/119946"' in narratives[0]['text']
+    assert ('href="/projects/macedonia/explore/place/119946"' in
+            narratives[0]['text'])
     assert 'Palaiologos Ioannes' in narratives[0]['text']
     assert '(1325 – 1326)' in narratives[0]['text']
     assert 'Anna Palaiologina</a> and <a' in narratives[0]['text']
@@ -124,8 +133,9 @@ def test_narrative_generator_grouping() -> None:
 
 
 def test_actor_to_actor_relationship_narrative() -> None:
-    # Related person: Andronikos (116701), who is the parent/inverse of Anna (116716)
-    # The relation points from Andronikos to Anna with property crm:OA7i_has_relationship_to (inverse)
+    # Related person: Andronikos (116701), who is the parent/inverse of Anna
+    # (116716). The relation points from Andronikos to Anna with property
+    # crm:OA7i_has_relationship_to (inverse)
     rel = Relation(
         relation_to_id="116701",
         label="Andronikos Angelos Komnenos Dukas Palaiologos",
@@ -138,7 +148,7 @@ def test_actor_to_actor_relationship_narrative() -> None:
         properties=["crm:OA7i_has_relationship_to"],
         inverse=True
     )
-    
+
     entity = Entity(
         id_="116716",
         name="Anna Palaiologina",
@@ -148,12 +158,13 @@ def test_actor_to_actor_relationship_narrative() -> None:
         end=None,
         relations={"actors": [rel]}
     )
-    
+
     narratives = NarrativeGenerator.generate(entity)
     assert len(narratives) == 1
     # Since inverse=True, resolves to "Child of"
     assert narratives[0]['text'].startswith("Child of ")
-    assert 'Andronikos Angelos Komnenos Dukas Palaiologos' in narratives[0]['text']
+    assert 'Andronikos Angelos Komnenos Dukas Palaiologos' in (
+        narratives[0]['text'])
     assert narratives[0]['icon'] == 'bi-people'
 
 
@@ -179,7 +190,8 @@ def test_new_crm_properties_narrative() -> None:
     )
     narratives_p11 = NarrativeGenerator.generate(entity_p11)
     assert len(narratives_p11) == 1
-    assert "Participated in the historical event or activity of" in narratives_p11[0]['text']
+    assert ("Participated in the historical event or activity of" in
+            narratives_p11[0]['text'])
     assert narratives_p11[0]['icon'] == 'bi-person-check'
 
     # 2. Test crm:P14i_performed
@@ -203,7 +215,8 @@ def test_new_crm_properties_narrative() -> None:
     )
     narratives_p14 = NarrativeGenerator.generate(entity_p14)
     assert len(narratives_p14) == 1
-    assert "Sponsored or carried out the execution of" in narratives_p14[0]['text']
+    assert ("Sponsored or carried out the execution of" in
+            narratives_p14[0]['text'])
     assert narratives_p14[0]['icon'] == 'bi-briefcase'
 
 
@@ -229,7 +242,6 @@ def test_title_narrative_icon() -> None:
     )
     narratives = NarrativeGenerator.generate(entity)
     assert len(narratives) == 1
-    assert "Acquired their noble title or administrative rank through the transaction of" in narratives[0]['text']
+    assert ("Acquired their noble title or administrative rank through the "
+            "transaction of" in narratives[0]['text'])
     assert narratives[0]['icon'] == 'bi-award'
-
-

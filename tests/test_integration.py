@@ -50,9 +50,6 @@ def test_api_get_typed_entities_all_results() -> None:
     assert isinstance(results, list)
 
 
-
-
-
 def test_api_get_ego_network() -> None:
     results = get_ego_network(237, 1)
     assert isinstance(results, dict)
@@ -66,7 +63,6 @@ def test_api_get_entity_presentation() -> None:
     assert 'id' in data
     assert 'systemClass' in data
     assert 'relations' in data
-
 
 
 def test_entity_model() -> None:
@@ -115,8 +111,10 @@ def test_util_get_dict_entries_by_category() -> None:
         {'category': ['rhr', 'other']},
         {'category': ['vlachs']},
     ]
-    assert get_dict_entries_by_category('rhr', data) == [{'category': ['rhr', 'other']}]
-    assert get_dict_entries_by_category(['vlachs'], data) == [{'category': ['vlachs']}]
+    assert get_dict_entries_by_category('rhr', data) == [
+        {'category': ['rhr', 'other']}]
+    assert get_dict_entries_by_category(['vlachs'], data) == [
+        {'category': ['vlachs']}]
 
 
 def test_util_get_types_sorted() -> None:
@@ -199,6 +197,7 @@ def test_api_project_places_route() -> None:
     response = client.get('/api/places/idcew')
     assert response.status_code == 200
     data = response.json
+    assert data is not None
     assert 'places' in data
     assert isinstance(data['places'], list)
 
@@ -212,8 +211,8 @@ def test_api_project_places_route() -> None:
     response = client.get('/api/places/nonexistent')
     assert response.status_code == 404
     data = response.json
+    assert data is not None
     assert 'error' in data
-
 
 def test_depiction_main_image_and_thumbnail() -> None:
     from mop.model.entity import Depiction
@@ -233,11 +232,17 @@ def test_depiction_main_image_and_thumbnail() -> None:
         main_image=True
     )
     assert dep.main_image is True
-    assert dep.iiif_thumbnail_url == "https://openatlas.maps-of-power.at/iiif/mop/123.tiff/full/400,/0/default.jpg"
+    assert dep.iiif_thumbnail_url == (
+        "https://openatlas.maps-of-power.at/iiif/mop/"
+        "123.tiff/full/400,/0/default.jpg")
 
 
 def test_entity_geometry_fallback_p46() -> None:
-    from mop.model.entity import PresentationViewModel, RelatedEntityModel, RelationTypeModel
+    from mop.model.entity import (
+        PresentationViewModel,
+        RelatedEntityModel,
+        RelationTypeModel
+    )
     m = PresentationViewModel(
         id=123,
         systemClass="artifact",
@@ -245,15 +250,20 @@ def test_entity_geometry_fallback_p46() -> None:
         title="Test Artifact",
         description="An artifact with no coordinates",
         geometries=None,
+        externalReferenceSystems=None,
         relations={
             "place": [
                 RelatedEntityModel(
                     id=456,
                     systemClass="place",
+                    viewClass=None,
+                    standardType=None,
                     title="Mock Place",
                     geometries={
                         "type": "Feature",
-                        "geometry": {"type": "Point", "coordinates": [10.0, 20.0]},
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [10.0, 20.0]},
                         "properties": {}
                     },
                     relationTypes=[
@@ -269,6 +279,3 @@ def test_entity_geometry_fallback_p46() -> None:
     entity = Entity.from_model(m)
     assert entity.geometry is not None
     assert entity.geometry["geometry"]["coordinates"] == [10.0, 20.0]
-
-
-

@@ -4,8 +4,8 @@ from wand.image import Image
 source_folder = Path("mop/static/images/projects")
 target_folder = Path("mop/static/thumbnails")
 
-thumbnail_width = 400
-thumbnail_height = 400
+THUMBNAIL_WIDTH = 400
+THUMBNAIL_HEIGHT = 400
 
 target_folder.mkdir(parents=True, exist_ok=True)
 
@@ -14,11 +14,15 @@ for source_file in source_folder.rglob("*"):
         target_file = target_folder / source_file.name
 
         with Image(filename=str(source_file)) as img:
-            img.transform(resize=f"{thumbnail_width}x")
+            img.transform(resize=f"{THUMBNAIL_WIDTH}x")
 
-            if img.height > thumbnail_height:
-                top = (img.height - thumbnail_height) // 2
-                img.crop(width=thumbnail_width, height=thumbnail_height, left=0, top=top)
+            if img.height > THUMBNAIL_HEIGHT:
+                top = (img.height - THUMBNAIL_HEIGHT) // 2
+                img.crop(
+                    width=THUMBNAIL_WIDTH,
+                    height=THUMBNAIL_HEIGHT,
+                    left=0,
+                    top=top)
 
             img.save(filename=str(target_file))
 

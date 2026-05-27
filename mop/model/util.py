@@ -21,11 +21,10 @@ def format_date(
                 day_from, month_from, year_from = parts_from
                 day_to, month_to, year_to = parts_to
                 if (int(day_from) == 1 and int(month_from) == 1 and
-                    int(day_to) == 31 and int(month_to) == 12):
+                        int(day_to) == 31 and int(month_to) == 12):
                     if year_from == year_to:
                         return year_from
-                    else:
-                        return f'{year_from} – {year_to}'
+                    return f'{year_from} – {year_to}'
             except ValueError:
                 pass
     return f'between {date_from} and {date_to}' if date_to else date_from

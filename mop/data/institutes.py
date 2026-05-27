@@ -56,10 +56,11 @@ institutes = {
         'url': 'https://www.oeaw.ac.at/byzanz',
         'logo': 'imafo.png',
         'member': _('Österreichische Akademie der Wissenschaften (ÖAW) '
-                     '<br> Institut für Mittelalterforschung (IMAFO)'),
+                    '<br> Institut für Mittelalterforschung (IMAFO)'),
         'address': ''},
     'acdh-ch': {
-        'name': _('Austrian Centre for Digital Humanities and Cultural Heritage'),
+        'name': _('Austrian Centre for Digital Humanities and '
+                  'Cultural Heritage'),
         'url': 'https://www.oeaw.ac.at/acdh/',
         'logo': 'acdh.png',
         'member': '',
@@ -139,7 +140,8 @@ institutes = {
         'member': '',
         'address': ''},
     'noe': {
-        'name': _('Land Niederösterreich, Abteilung Wissenschaft und Forschung'),
+        'name': _('Land Niederösterreich, Abteilung Wissenschaft '
+                  'und Forschung'),
         'url': 'https://sciencecenter.noe.gv.at/massnahme/'
                '4da6e8c1-306b-4381-b20a-4128644b95b3',
         'logo': 'noe.jpg',
@@ -162,5 +164,4 @@ institutes = {
         'url': 'https://www.ukim.edu.mk/',
         'logo': 'ukim_i_fzf.png',
         'member': '',
-        'address': ''}
-}
+        'address': ''}}

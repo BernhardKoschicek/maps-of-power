@@ -16,16 +16,15 @@ ASSETS_VERSION = int(time.time())
 
 
 def get_locale() -> str:
-    if 'language' in session:
-        return session['language']
-    return request.accept_languages.best_match(app.config['LANGUAGES']) or 'en'
+    return session.get('language') or request.accept_languages.best_match(
+        app.config['LANGUAGES']) or 'en'
 
 
 babel = Babel(app, locale_selector=get_locale)
 cache = Cache(app)
 
 # pylint: disable=wrong-import-position, import-outside-toplevel
-from mop import  data, display, util, views
+from mop import data, display, util, views  # noqa: E402, F401
 
 ROOT_PATH = Path(__file__).parent
 

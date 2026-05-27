@@ -27,6 +27,9 @@ This guide establishes the styling rules, user interface specifications, and cor
 - **CSS / SCSS**: Maximum line length of **120 characters**.
 - **HTML / Jinja Templates**: Maximum line length of **120 characters** to maintain template readability and prevent excessive wrapping.
 - **Bracket Placement**: Closing brackets, braces, and parentheses (e.g., `]})`) must **always reside on the same line as the last statement/value** inside lists, dictionaries, function arguments, or multi-line calls.
+- **Function Parameter Alignment**: If a function call wraps onto multiple lines, each parameter must be horizontally aligned with the opening parenthesis.
+- **Python Syntax (3.13+)**: Utilize Python 3.13+ syntax features. For example, use the `|` operator for type hinting (e.g., `str | None` instead of `Optional[str]`).
+- **EAFP & Dictionaries**: Follow "Easier to Ask for Forgiveness than Permission". Specifically, avoid `if key in dict:` checks; instead, use `dict.get()`, `dict.setdefault()`, or `try...except KeyError` for dictionary handling.
 
 ---
 

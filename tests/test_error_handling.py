@@ -43,7 +43,8 @@ def test_api_error_returns_json(client: FlaskClient) -> None:
 
 
 def test_api_500_error_returns_json(client: FlaskClient) -> None:
-    with patch('mop.views.get_ego_network', side_effect=ValueError("Test unhandled error")):
+    with patch('mop.views.get_ego_network',
+               side_effect=ValueError("Test unhandled error")):
         response = client.get('/api/network/123')
         assert response.status_code == 500
         assert response.json is not None
@@ -51,19 +52,22 @@ def test_api_500_error_returns_json(client: FlaskClient) -> None:
 
 
 def test_custom_errors_rendering(client: FlaskClient) -> None:
-    with patch('mop.views.image_gallery', side_effect=Forbidden("Forbidden test")):
+    with patch('mop.views.image_gallery',
+               side_effect=Forbidden("Forbidden test")):
         response = client.get('/')
         assert response.status_code == 403
         assert b'403' in response.data
         assert b'Access Denied' in response.data
 
-    with patch('mop.views.image_gallery', side_effect=ImATeapot("Teapot test")):
+    with patch('mop.views.image_gallery',
+               side_effect=ImATeapot("Teapot test")):
         response = client.get('/')
         assert response.status_code == 418
         assert b'418' in response.data
         assert b"I'm a Teapot" in response.data
 
-    with patch('mop.views.image_gallery', side_effect=InternalServerError("Server test")):
+    with patch('mop.views.image_gallery',
+               side_effect=InternalServerError("Server test")):
         response = client.get('/')
         assert response.status_code == 500
         assert b'500' in response.data

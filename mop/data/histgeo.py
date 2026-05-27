@@ -6,88 +6,68 @@ newsletters = {
     '2019': [{
         'title': _('march'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/1931555/0/4c8ef08a44/index.html'
-    }, {
+               'mailing/180/1931555/0/4c8ef08a44/index.html'}, {
         'title': _('june'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/2098849/0/f89bc47dd2/index.html'
-    }, {
+               'mailing/180/2098849/0/f89bc47dd2/index.html'}, {
         'title': _('september'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/2304029/0/ae2843a1db/index.html'
-    }, {
+               'mailing/180/2304029/0/ae2843a1db/index.html'}, {
         'title': _('december'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/2473597/0/aa3077aebc/index.html'
-    }],
+               'mailing/180/2473597/0/aa3077aebc/index.html'}],
     '2020': [{
         'title': _('march'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/2695141/1800344/67/a3037fe6ef/index.html'
-    }, {
+               'mailing/180/2695141/1800344/67/a3037fe6ef/index.html'}, {
         'title': _('june'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/3027457/0/2b15372ebf/index.html'
-    }, {
+               'mailing/180/3027457/0/2b15372ebf/index.html'}, {
         'title': _('september'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/3290677/0/e213d9d6ef/index.html'
-    }, {
+               'mailing/180/3290677/0/e213d9d6ef/index.html'}, {
         'title': _('december'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/3551107/0/6bb9bf3335/index.html'
-    }],
+               'mailing/180/3551107/0/6bb9bf3335/index.html'}],
     '2021': [{
         'title': _('march'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/3919231/0/d9dd25f276/index.html'
-    }, {
+               'mailing/180/3919231/0/d9dd25f276/index.html'}, {
         'title': _('june'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/4245827/1796772/b715f05a17/index.html'
-    }, {
+               'mailing/180/4245827/1796772/b715f05a17/index.html'}, {
         'title': _('september'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/4549023/0/2c8778ca96/index.html'
-    }, {
+               'mailing/180/4549023/0/2c8778ca96/index.html'}, {
         'title': _('december'),
         'url': 'https://t210d45f9.emailsys2b.net/'
-               'mailing/180/4858583/9401703/1373/38501319f6/index.html'
-    }],
+               'mailing/180/4858583/9401703/1373/38501319f6/index.html'}],
     '2022': [{
         'title': _('june'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/5374373/0/3d244bbdd7/index.html'
-    }, {
+               'mailing/180/5374373/0/3d244bbdd7/index.html'}, {
         'title': _('december'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/6008245/0/e74da87270/index.html'
-    }],
+               'mailing/180/6008245/0/e74da87270/index.html'}],
     '2023': [{
         'title': _('june'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/6774474/0/39bcfcd223/index.html'
-    }, {
+               'mailing/180/6774474/0/39bcfcd223/index.html'}, {
         'title': _('december'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/7255820/0/dbc8fdb280/index.html'
-    }],
+               'mailing/180/7255820/0/dbc8fdb280/index.html'}],
     '2024': [{
         'title': _('december'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/7964576/0/7067e91da4/index.html'
-    }],
+               'mailing/180/7964576/0/7067e91da4/index.html'}],
     '2025': [{
         'title': _('june'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/8480109/0/14b0503245/index.html'
-    }],
+               'mailing/180/8480109/0/14b0503245/index.html'}],
     '2026': [{
         'title': _('may'),
         'url': 'https://t210d45f9.emailsys2a.net/'
-               'mailing/180/9180194/0/ff484595a4/index.html'
-    }]
-}
+               'mailing/180/9180194/0/ff484595a4/index.html'}]}
 
 volumes = {
     1: {
@@ -109,8 +89,7 @@ volumes = {
             'Historical Geography of the Eastern Mediterranean '
             'Presented to Johannes Koder (Studies in Historical '
             'Geography and Cultural Heritage 1). Vienna–Novi Sad '
-            '(Akademska knjiga) 2017.',
-    },
+            '(Akademska knjiga) 2017.'},
     2: {
         'title': 'Herbert Hunger und die Wiener Schule der Byzantinistik',
         'author': 'Andreas Külzer ' + _('ed.'),
@@ -123,8 +102,7 @@ volumes = {
             'Andreas Külzer (ed.), Herbert Hunger und die Wiener '
             'Schule der Byzantinistik (Studies in Historical '
             'Geography and Cultural Heritage 2). Vienna–Novi Sad '
-            '(Akademska knjiga) 2019.',
-    },
+            '(Akademska knjiga) 2019.'},
     3: {
         'title':
             'Raum und Geschichte: der historische Atlas \'Tabula Imperii '
@@ -145,8 +123,7 @@ volumes = {
             '\'Tabula Imperii Byzantini (TIB)\' an der '
             'Österreichischen Akademie der Wissenschaften (Studies in '
             'Historical Geography and Cultural Heritage 3). '
-            'Vienna–Novi Sad (Akademska knjiga) 2020.',
-    },
+            'Vienna–Novi Sad (Akademska knjiga) 2020.'},
     4: {
         'title':
             'Ermitages et monastères rupestres de la Laconie byzantine '
@@ -163,8 +140,7 @@ volumes = {
             'Laconie byzantine (XIe-XVe siècle) : Archéologie, '
             'topographie et paysages (Studies in Historical Geography '
             'and Cultural Heritage 4). Vienna–Novi Sad (Akademska '
-            'knjiga) 2022.',
-    },
+            'knjiga) 2022.'},
     5: {
         'title':
             'Wilderness Revisited: Its Essence, Perception, Description and '
@@ -174,22 +150,19 @@ volumes = {
         'order': '',
         'ISBN': '',
         'pages': '',
-        'citation': '',
-    }
-}
+        'citation': ''}}
 
 lecturer = {
     'sgomez': {
         'name': 'Silvia Gómez Senovilla',
         'short_bio': _('sgomez_short_bio'),
         'bio': [_('sgomez_bio_1'), _('sgomez_bio_2')],
-        'portrait': 'sgomez.jpg'    },
+        'portrait': 'sgomez.jpg'},
     'gbidaut': {
         'name': 'Guillaume Bidaut',
         'short_bio': _('gbidaut_short_bio'),
         'bio': [_('gbidaut_short_bio')],
-        'portrait': 'gbidaut.jpg'},
-}
+        'portrait': 'gbidaut.jpg'}}
 
 lectures = {
     1: {
@@ -202,8 +175,7 @@ lectures = {
         'youtube_code': '4b_GFAd2odE',
         'presenters': [lecturer['sgomez']],
         'language': _('english'),
-        'abstract': [_('lecture_1_1'), _('lecture_1_2')]
-    },
+        'abstract': [_('lecture_1_1'), _('lecture_1_2')]},
     2: {
         'title': _('lecture_2_title'),
         'subtitle': _('lecture_2_subtitle'),
@@ -214,9 +186,7 @@ lectures = {
         'youtube_code': 'mg2UZHzx410',
         'presenters': [lecturer['gbidaut']],
         'language': _('english'),
-        'abstract': [_('lecture_2_1'), _('lecture_2_2')]
-    },
-}
+        'abstract': [_('lecture_2_1'), _('lecture_2_2')]}}
 
 _('author')
 _('pages')

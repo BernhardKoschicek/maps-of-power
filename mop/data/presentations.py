@@ -10,8 +10,7 @@ presentations = [{
     'date': get_table_dates_formatted(2026, 4, 24),
     'external_link': '',
     'download': '',
-    'category': ['dgse']
-},{
+    'category': ['dgse']}, {
     'presenter': 'Mihailo Popović',
     'title': 'Über die Sinnhaftigkeit der und die Nachhaltigkeit in den '
              'Digitalen Geisteswissenschaften: Erkenntnisse aus der '
@@ -22,8 +21,7 @@ presentations = [{
     'date': get_table_dates_formatted(2025, 6, 10),
     'external_link': '',
     'download': '',
-    'category': ['dgse']
-}, {
+    'category': ['dgse']}, {
     'presenter': 'Schloß Ebreichsdorf/Castle of Ebreichsdorf',
     'title': 'Erstes Projekttreffen / First Project Meeting',
     'conference': '',
@@ -31,8 +29,7 @@ presentations = [{
     'date': get_table_dates_formatted(2025, 5, 15),
     'external_link': '',
     'download': '',
-    'category': ['dgse']
-}, {
+    'category': ['dgse']}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'A Monumental Crisis in Times of War: Endangered or Researched '
              'Medieval Cultural Heritage in Macedonia during the First '
@@ -42,8 +39,7 @@ presentations = [{
     'date': get_table_dates_formatted(2024, 7, 2),
     'external_link': '',
     'download': '',
-    'category': ['tarsr']
-}, {
+    'category': ['tarsr']}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'Wie die Byzantinistik Denkmalschutz betreibt … '
              '(Posterpräsentation/Poster Session)',
@@ -52,8 +48,7 @@ presentations = [{
     'date': get_table_dates_formatted(2024, 5, 24),
     'external_link': '',
     'download': 'MPopovic_Plakate_LNF.pdf',
-    'category': ['tarsr']
-}, {
+    'category': ['tarsr']}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'Српске племкиње и монаштво у средњем веку: поређење Јелене'
              ' Анжујске и Маре Бранковић у њиховим односима према '
@@ -64,8 +59,7 @@ presentations = [{
     'date': get_table_dates_formatted(2023, 10, 26),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'Serbian Noblewomen and the Clergy in the Middle Ages: '
              'A Comparison between Mara Branković and Jelena Anžujska '
@@ -76,8 +70,7 @@ presentations = [{
     'date': get_table_dates_formatted(2023, 9, 29),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'On the Usefulness of OpenAtlas in Historical Geography',
     'conference': '',
@@ -85,8 +78,7 @@ presentations = [{
     'date': get_table_dates_formatted(2023, 9, 19),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Johannes Tripps',
     'title': 'The Metamorphosing Crown of Saint Stefan Dečanski',
     'conference': '',
@@ -95,8 +87,7 @@ presentations = [{
     'external_link': 'https://www.youtube-nocookie.com/'
                      'embed/HF7fLgHFnaI?si=AIghTnDMknsnvlvm',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Branka Vranešević',
     'title':
         'Initials with Teratological Motifs in the Belgrade Prophetologion: '
@@ -106,8 +97,7 @@ presentations = [{
     'date': get_table_dates_formatted(2023, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Johannes Tripps',
     'title':
         'Objects of Private Devotion as Witnesses to Entanglement between '
@@ -117,8 +107,7 @@ presentations = [{
     'date': get_table_dates_formatted(2023, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Bernhard Koschiček-Krombholz',
     'title':
         'OpenAtlas: Handling Entangled Data in a Linked Data World',
@@ -127,8 +116,7 @@ presentations = [{
     'date': get_table_dates_formatted(2023, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Mihailo St. Popović',
     'title':
         'A Mother and Two Sons: the Serbian Rulers Helen, Dragutin, and '
@@ -138,8 +126,7 @@ presentations = [{
     'date': get_table_dates_formatted(2023, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Dorota Vargová',
     'title':
         'Stefan Uroš I and Helen of Anjou: The Royal Couple\'s Influence on '
@@ -150,8 +137,7 @@ presentations = [{
     'date': get_table_dates_formatted(2023, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Mihailo St. Popović',
     'title':
         'Пројекат Tabula Imperii Byzantini: о будућности (?) проучавања '
@@ -161,8 +147,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 2, 22),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Mihailo St. Popović',
     'title':
         'Die historische Geographie von Byzanz neu gedacht – Über den '
@@ -176,8 +161,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 11, 10),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Mihailo St. Popović',
     'title':
         'Doing Historical Geography in A Digital Age: The Case of The '
@@ -187,8 +171,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 11, 6),
     'external_link': 'https://bsana.net/annual-conference/',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Mihailo St. Popović',
     'title':
         'Historical Geography, Digital Humanities and Database Systems: '
@@ -201,8 +184,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 5, 12),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Mihailo St. Popović',
     'title':
         'On the Use and Usefulness of Digital Humanities in the '
@@ -214,8 +196,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 4, 1),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Markus Breier',
     'title':
         'Beyond East and West – '
@@ -225,8 +206,7 @@ presentations = [{
     'date': get_table_dates_formatted(2021, 7, 7),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter':
         'Markus Breier, Karel Kriz, Lukas Neugebauer, Alexander Pucher',
     'title':
@@ -237,8 +217,7 @@ presentations = [{
     'date': get_table_dates_formatted(2021, 12, 18),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Dorota Vargová',
     'title':
         'An Ecclesiastical History of Medieval Duklja:'
@@ -248,8 +227,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Branka Vranešević',
     'title':
         'Towards Imperial Dignity: A Contribution to the Study of the '
@@ -260,8 +238,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Moisés Hernández Cordero',
     'title':
         'Mapping Cultural Heritage beyond the Eye: The Case of the Crown '
@@ -271,8 +248,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura', 'montenegro']
-}, {
+    'category': ['holdura', 'montenegro']}, {
     'presenter': 'Mihailo Popović',
     'title':
         'Beyond East and West: Sacred Landscapes in the Territory of '
@@ -282,8 +258,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Markus Breier',
     'title':
         'Modern Cartographic Representations of Medieval Borders '
@@ -293,8 +268,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Lukas Neugebauer',
     'title':
         'Experiencing Historical Landscapes Using Visual Storytelling',
@@ -303,8 +277,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Markus Breier',
     'title':
         'Beyond East and West - A Framework for Researching and '
@@ -314,8 +287,7 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 9, 19),
     'external_link': '',
     'download': 'eurocarto_2022.pdf',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'presenter': 'Markus Breier',
     'title':
         'The Sacred Landscape of Medieval Montenegro: '
@@ -326,5 +298,4 @@ presentations = [{
     'date': get_table_dates_formatted(2022, 9, 20),
     'external_link': '',
     'download': '2022-09-20_Geographiewerkstatt_Poster.jpg',
-    'category': ['holdura']
-}]
+    'category': ['holdura']}]

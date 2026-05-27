@@ -4,43 +4,36 @@ from mop.data.institutes import institutes
 from mop.util import get_dates_formatted
 
 results = {
-    'text': [    ],
+    'text': [],
     'list': [],
     'icons': [{
         'label': _('Final project report'),
         'link': None,
         'file': 'MK_07_2024_Project_Report.pdf',
-        'icon': 'bi bi-journals',
-    }]
-}
+        'icon': 'bi bi-journals', }]}
 
 images = [{
     'src': 'tarsr_1.jpg',
-    'description':
-        _('The Road Tunnel in Honour of the German Emperor Wilhelm '
-                     'II from 1916 in the Valley of the River Vardar'),
+    'description': _(
+        'The Road Tunnel in Honour of the German Emperor Wilhelm '
+        'II from 1916 in the Valley of the River Vardar'),
     'citation': 'M. Popović, 2016',
-    'category': ['tarsr']
-}, {
+    'category': ['tarsr']}, {
     'src': 'tarsr_2.jpg',
-    'description':
-        _('Inscription in Honour of the German Emperor Wilhelm II '
-                     'at the Entrance to the Road Tunnel'),
+    'description': _(
+        'Inscription in Honour of the German Emperor Wilhelm II '
+        'at the Entrance to the Road Tunnel'),
     'citation': 'M. Popović, 2016',
-    'category': ['tarsr']
-}, {
+    'category': ['tarsr']}, {
     'src': 'tarsr_3.jpg',
     'description':
         _('German Military Cemetery from the First World War near Bitola'),
     'citation': 'M. Popović, 2016',
-    'category': ['tarsr']
-}, {
+    'category': ['tarsr']}, {
     'src': 'tarsr_4.jpg',
     'description': _('War Relics from the First World War in Mariovo'),
     'citation': 'M. Popović, 2016',
-    'category': ['tarsr']
-},
-]
+    'category': ['tarsr']}, ]
 
 project_tarsr = {
     'acronym': 'tarsr',
@@ -70,11 +63,9 @@ project_tarsr = {
         _('tracing_description_3'),
         _('tracing_description_4'),
         _('tracing_description_5'),
-        _('tracing_description_6'),
-    ],
+        _('tracing_description_6'), ],
     'results': results,
     'icon': 'tarsr_1.jpg',
     'images': images,
     'videos': [],
-    'oaID': '135005',
-}
+    'oaID': '135005', }

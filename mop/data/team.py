@@ -1,4 +1,3 @@
 team = {
     'mpopovic':
-        {'name': 'Mihailo Popović'}
-}
+        {'name': 'Mihailo Popović'}}

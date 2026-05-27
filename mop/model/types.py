@@ -14,7 +14,8 @@ class EntityTypeModel(BaseModel):
     title: str
     isStandard: bool = Field(..., alias="isStandard")
     descriptions: Optional[str] = None
-    typeHierarchy: Optional[List[TypeHierarchyEntryModel]] = Field(None, alias="typeHierarchy")
+    typeHierarchy: Optional[List[TypeHierarchyEntryModel]] = Field(
+        None, alias="typeHierarchy")
     unit: Optional[str] = None
     value: Optional[str] = None
 
@@ -52,7 +53,9 @@ class Types:
 
     @classmethod
     def from_model(cls, m: EntityTypeModel) -> 'Types':
-        hierarchy_labels = [entry.label for entry in m.typeHierarchy] if m.typeHierarchy else []
+        hierarchy_labels = (
+            [entry.label for entry in m.typeHierarchy]
+            if m.typeHierarchy else [])
         hierarchy_str = " > ".join(hierarchy_labels)
         root_str = hierarchy_labels[0] if hierarchy_labels else m.title
         return cls(

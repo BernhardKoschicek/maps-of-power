@@ -17,5 +17,4 @@ project_data = {
     'barbyz_10-13': project_barbyz,
     'holdura': project_holdura,
     'borderzones': project_borderzones,
-    'vlachs': project_vlachs
-}
+    'vlachs': project_vlachs}

@@ -6,21 +6,17 @@ from mop.util import get_dates_formatted, get_image_frame, youtube_iframe
 results = {
     'text': [
         _('holdura_result_text_1'),
-        _('holdura_result_text_2')
-    ],
+        _('holdura_result_text_2')],
     'list': [],
     'icons': [{
         'label': _('Final project report'),
         'link': None,
         'file': 'FWF_DFG_I 4330_Final Report.pdf',
-        'icon': 'bi bi-journals',
-    }, {
+        'icon': 'bi bi-journals', }, {
         'label': _("relief map of Montenegro"),
         'link': 'https://tib.oeaw.ac.at/static/3dhop/relief.html',
         'file': None,
-        'icon': 'bi-image-alt',
-    }]
-}
+        'icon': 'bi-image-alt', }]}
 
 images = [{
     'src': 'holdura_doclea_1.jpg',
@@ -28,29 +24,25 @@ images = [{
                      'excavation, A: Basilica A, B: Basilica B and'
                      ' cruciform church, Republic of Montenegro'),
     'citation': 'L. Neugebauer, 2021',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'src': 'holdura_doclea_2.jpg',
     'description': _('Bird\'s eye view of the Doclea archaeological '
                      'excavation, the western part of the city in '
                      'the foreground, Republic of Montenegro'),
     'citation': 'L. Neugebauer, 2021',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'src': 'holdura_sveti_nikola.jpg',
     'description': _('The monastery of Sveti Nikola Vranjina (in the '
                      'centre of the picture) on Lake Skadar, '
                      'Republic of Montenegro'),
     'citation': 'B. Koschiček-Krombholz, 2021',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'src': 'holdura_ratac.jpg',
     'description': _('The former Latin (Catholic) monastery of Ratac '
                      'from the 12th/13th century near the town '
                      'of Bar, Republic of Montenegro.'),
     'citation': 'M. St. Popović, 2021',
-    'category': ['holdura']
-}]
+    'category': ['holdura']}]
 
 project_holdura = {
     'acronym': 'holdura',
@@ -77,8 +69,7 @@ project_holdura = {
         _('holdura_description_4'),
         _('holdura_description_5'),
         _('holdura_description_6'),
-        _('holdura_description_7'),
-    ],
+        _('holdura_description_7'), ],
     'results': results,
     'icon': 'holdura_icon.jpg',
     'images': images,
@@ -86,5 +77,4 @@ project_holdura = {
         get_image_frame('/static/images/projects/holdura/apox_schwarz.png'),
         youtube_iframe('https://www.youtube-nocookie.com/embed/NV4TT4QnFNI'),
         get_image_frame('/static/images/projects/holdura/ram_schwarz.png')],
-    'oaID': '117730',
-}
+    'oaID': '117730', }

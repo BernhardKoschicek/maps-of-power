@@ -7,28 +7,23 @@ images = [{
     'src': 'barbyz_1.jpg',
     'description': _('Surveying in North Macedonia'),
     'citation': 'Marka Tomić',
-    'category': ['barbyz_10-13']
-}, {
+    'category': ['barbyz_10-13']}, {
     'src': 'barbyz_2.jpg',
     'description': _('Surveying in North Macedonia'),
     'citation': 'Marka Tomić',
-    'category': ['barbyz_10-13']
-}, {
+    'category': ['barbyz_10-13']}, {
     'src': 'barbyz_3.jpg',
     'description': _('Surveying in North Macedonia'),
     'citation': 'Marka Tomić',
-    'category': ['barbyz_10-13']
-}, {
+    'category': ['barbyz_10-13']}, {
     'src': 'barbyz_4.jpg',
     'description': _('Surveying in North Macedonia'),
     'citation': 'Marka Tomić',
-    'category': ['barbyz_10-13']
-}, {
+    'category': ['barbyz_10-13']}, {
     'src': 'barbyz_5.jpg',
     'description': _('Surveying in North Macedonia'),
     'citation': 'Marka Tomić',
-    'category': ['barbyz_10-13']
-}]
+    'category': ['barbyz_10-13']}]
 
 project_barbyz = {
     'acronym': 'barbyz_10-13',
@@ -65,11 +60,9 @@ project_barbyz = {
         _('barbyz_description_3'),
         _('barbyz_description_4'),
         _('barbyz_description_5'),
-        _('barbyz_description_6'),
-    ],
+        _('barbyz_description_6'), ],
     'results': '',
     'icon': 'barbyz_1.jpg',
     'images': images,
     'videos': '',
-    'oaID': '133694',
-}
+    'oaID': '133694', }

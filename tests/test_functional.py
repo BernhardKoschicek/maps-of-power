@@ -67,9 +67,10 @@ def test_entity_view_route_with_translations(client: FlaskClient) -> None:
     assert response.status_code == 200
     assert b'Treskavac 2 cyrillic' in response.data
     assert b'Treskavac 2 latin' in response.data
-    assert b'href="#trans-2772-pane"' in response.data or b'data-bs-target="#trans-2772-pane"' in response.data
-    assert b'href="#trans-881-pane"' in response.data or b'data-bs-target="#trans-881-pane"' in response.data
-
+    assert (b'href="#trans-2772-pane"' in response.data or
+            b'data-bs-target="#trans-2772-pane"' in response.data)
+    assert (b'href="#trans-881-pane"' in response.data or
+            b'data-bs-target="#trans-881-pane"' in response.data)
 
 
 def test_project_entity_view_route(client: FlaskClient) -> None:
@@ -129,5 +130,3 @@ def test_api_project_network_routes(client: FlaskClient) -> None:
     # Test invalid project network route
     response_invalid = client.get('/api/network/project/invalid_project')
     assert response_invalid.status_code == 404
-
-

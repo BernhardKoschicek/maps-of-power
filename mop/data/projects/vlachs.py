@@ -10,28 +10,24 @@ results = {
         'label': _('Final project report'),
         'link': None,
         'file': 'Project_Report_MK_03_2016.pdf',
-        'icon': 'bi bi-journals',
-    }]}
+        'icon': 'bi bi-journals', }]}
 
 images = [
     {
         'src': 'vlachs_1.png',
         'description': _('A Sheepflock in the Village of Oxynon, Greece.'),
         'citation': 'M. Popović, 2004',
-        'category': ['vlachs']
-    },
+        'category': ['vlachs']},
     {
         'src': 'vlachs_2.png',
         'description': _('A Sheepflock in the Village of Oxynon, Greece.'),
         'citation': 'M. Popović, 2004',
-        'category': ['vlachs']
-    },
+        'category': ['vlachs']},
     {
         'src': 'vlachs_3.png',
         'description': _('A Sheepflock in the Village of Oxynon, Greece.'),
         'citation': 'M. Popović, 2004',
-        'category': ['vlachs']
-    },
+        'category': ['vlachs']},
     {
         'src': 'vlachs_4.png',
         'description':
@@ -40,41 +36,35 @@ images = [
         'citation':
             'Department of Geography and Reginal Research, '
             'University of Vienna, 2014',
-        'category': ['vlachs']
-    },
+        'category': ['vlachs']},
     {
         'src': 'vlachs_5.png',
         'description':
             _('The Winter Pastures in the Historical Region of '
               'Macedonia (14th Cent.)'),
         'citation': 'M. Popović',
-        'category': ['vlachs']
-    },
+        'category': ['vlachs']},
     {
         'src': 'vlachs_6.png',
         'description':
             _('The Summer Pastures in the Historical Region of '
               'Macedonia (14th Cent.)'),
         'citation': 'M. Popović',
-        'category': ['vlachs']
-    },
+        'category': ['vlachs']},
     {
         'src': 'vlachs_7.png',
         'description':
             _('The Distribution of Vlach Temporary Settlements (Katuni) in '
               'the Historical Region of Macedonia (14th Cent.)'),
         'citation': 'M. Popović',
-        'category': ['vlachs']
-    },
+        'category': ['vlachs']},
     {
         'src': 'vlachs_8.png',
         'description':
             _('The Source-Based Presence of Vlachs in the Historical '
               'Region of Macedonia (14th Cent.)'),
         'citation': 'M. Popović',
-        'category': ['vlachs']
-    },
-]
+        'category': ['vlachs']}, ]
 
 project_vlachs = {
     'acronym': 'vlachs',
@@ -92,8 +82,7 @@ project_vlachs = {
         'Vladimir Kuhar (Skopje)',
         'Boban Gjorgjievski (Skopje)',
         'Jelena Nikić (Vienna)',
-        'David Schmid (Vienna)',
-    ],
+        'David Schmid (Vienna)', ],
     'begin': get_dates_formatted(2016, 7, 1),
     'end': get_dates_formatted(2018, 6, 30),
     'description': [
@@ -103,5 +92,4 @@ project_vlachs = {
     'icon': 'vlachs_1.png',
     'images': images,
     'videos': [],
-    'oaID': '8247',
-}
+    'oaID': '8247', }

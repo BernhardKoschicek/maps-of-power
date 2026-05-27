@@ -11,8 +11,7 @@ literatures = [{
     'pages': '57-80',
     'external_link': '',
     'download': 'MPopovicSrpskeplemkinje.pdf',
-    'category': ['idcew']
-},{
+    'category': ['idcew']}, {
     'author': 'Mihailo St. Popović',
     'title':
         '„Friedensarbeit inmitten tollsten Krieges“ – Hochschulkurse, '
@@ -27,8 +26,7 @@ literatures = [{
     'external_link': 'https://journals.ub.uni-heidelberg.de/index.php/'
                      'kunsttexte/article/view/101426/105841',
     'download': '',
-    'category': ['tarsr']
-}, {
+    'category': ['tarsr']}, {
     'author':
         'Mihailo St. Popović, Branka Vranešević,'
         ' Moisés Hernández Cordero, Johannes Tripps,',
@@ -41,8 +39,7 @@ literatures = [{
     'pages': '27-50',
     'external_link': '',
     'download': 'MPopovic_et_al_The_Crown_of_King_Stefan_Uros_Decanski.pdf',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'author':
         'Mihailo St. Popović',
     'title':
@@ -57,8 +54,7 @@ literatures = [{
     'pages': '337',
     'external_link': '',
     'download': '',
-    'category': ['mop']
-}, {
+    'category': ['mop']}, {
     'author':
         'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
     'title':
@@ -70,8 +66,7 @@ literatures = [{
     'pages': '3-33',
     'external_link': '',
     'download': 'DVargovaBVranesevicMPopovic_To_Put_the_Church_on_the_Map.pdf',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'author':
         'Katrin Haase',
     'title':
@@ -83,8 +78,7 @@ literatures = [{
     'pages': '73-76',
     'external_link': 'https://wbg-zeitschriften.de/produkt/die-iberer/',
     'download': '',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'author':
         'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
     'title':
@@ -97,8 +91,7 @@ literatures = [{
     'pages': '899-928',
     'external_link': '',
     'download': 'MPopovicBVranesevicDVargova_SacredLandscapeDukljaRaska.pdf',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'author':
         'Mihailo St. Popović, Vratislav Zervan, Ralf C. Müller '
         + _('eds.'),
@@ -110,8 +103,7 @@ literatures = [{
     'pages': '176',
     'external_link': '',
     'download': 'Festschrift_Johannes_Koder.pdf',
-    'category': ['mop']
-}, {
+    'category': ['mop']}, {
     'author': 'Branka Vranešević',
     'title': 'The Iconography of the Parapet Slab from the Church of St.Thomas'
              ' in Kuti: New Reflections and Possible Interpretations. '
@@ -121,8 +113,7 @@ literatures = [{
     'pages': '11-26',
     'external_link': '',
     'download': 'Likovno_51_papir_1_za_split-11-26_Branka_Vranesevic.pdf',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'author': 'Katrin Haase, Johannes Tripps',
     'title':
         'Jenseits von Ost und West, in: Forschungsmagazin der HTWK '
@@ -134,8 +125,7 @@ literatures = [{
         'https://www.htwk-leipzig.de/forschen/'
         'aktuelles/detailansicht/artikel/6277',
     'download': 'Einblicke_SakraleLandschaften.pdf',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'author': 'Markus Breier, Karel Kriz, Alexander Pucher, Lukas Neugebauer',
     'title':
         'Beyond East and West – Geocommunicating Historical Sacred '
@@ -146,8 +136,7 @@ literatures = [{
     'pages': '5',
     'external_link': 'https://doi.org/10.5194/ica-proc-4-14-2021',
     'download': 'ica-proc-4-14-2021.pdf',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'author': 'A. Bracanović, M. Breier, M. Hernández Cordero ' + _('etc.'),
     'title':
         'On the Crossroads between East and West: Geocommunicating Medieval '
@@ -158,8 +147,7 @@ literatures = [{
     'pages': '33',
     'external_link': 'https://dx.doi.org/10.25536/2022q004',
     'download': 'On_the_Crossroads_memo_quer_04.pdf',
-    'category': ['holdura']
-}, {
+    'category': ['holdura']}, {
     'author': 'Matthias Bürgi',
     'title':
         'Historische Ökologie – ein interdisziplinärer Forschungsansatz, '
@@ -171,8 +159,7 @@ literatures = [{
     'external_link':
         'https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A6545',
     'download': '',
-    'category': ['further']
-}, {
+    'category': ['further']}, {
     'author': 'Béatrice Caseau',
     'title':
         'Sacred Landscapes, in: Interpreting Late Antiquity. Essays on '
@@ -182,8 +169,7 @@ literatures = [{
     'pages': '21-59',
     'external_link': '',
     'download': '',
-    'category': ['further']
-}, {
+    'category': ['further']}, {
     'author': 'Peter Howard, Ian Thompson, Emma Waterton, Mick Atha',
     'title': 'The Routledge Companion to Landscape Studies',
     'locations': [_('london'), _('new york')],
@@ -191,8 +177,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['further']
-}, {
+    'category': ['further']}, {
     'author': 'Graham Jones',
     'title': 'Saints in the Landscape',
     'locations': [_('stroud')],
@@ -200,8 +185,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['further']
-}, {
+    'category': ['further']}, {
     'author': 'Mihailo St. Popović',
     'title': 'Historische Geographie und Digital Humanities. Eine '
              'Fallstudie zum spätbyzantinischen und osmanischen '
@@ -212,8 +196,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['further']
-}, {
+    'category': ['further']}, {
     'author': 'Mihailo St. Popović',
     'title': 'Das Langzeitprojekt TIB im 21. Jahrhundert: '
              'Bestandsaufnahme, Adaptierung und Methodenerweiterung in '
@@ -227,8 +210,7 @@ literatures = [{
     'pages': '157-180, 231-238',
     'external_link': '',
     'download': '',
-    'category': ['further']
-}, {
+    'category': ['further']}, {
     'author': 'Mihailo St. Popović',
     'title': 'A Race Against Time: The Impact of Contemporary '
              'Environmental and Demographic Changes on the Research of '
@@ -240,8 +222,7 @@ literatures = [{
     'pages': '191-210',
     'external_link': 'https://doi.org/10.30687/978-88-6969-590-2/012',
     'download': '',
-    'category': ['further']
-}, {
+    'category': ['further']}, {
     'author': 'Oliver Rackham',
     'title': 'The History of the Countryside. The Classic History of '
              'Britain’s Landscape, Flora and Fauna',
@@ -250,8 +231,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['further']
-}, {
+    'category': ['further']}, {
     'author': 'Sam Turner',
     'title': 'Making a Christian Landscape: The Countryside in '
              'Early-Medieval Cornwall, Devon and Wessex',
@@ -260,8 +240,7 @@ literatures = [{
     'pages': '',
     'external_link': '',
     'download': '',
-    'category': ['further']
-}, {
+    'category': ['further']}, {
     'author': 'Athanasios Vionis',
     'title': 'Interdisciplinarity in Byzantine Studies. A '
              'Sacred-Landscapes and Digital-Humanities Approach, in: '
@@ -272,5 +251,4 @@ literatures = [{
     'pages': '121-140',
     'external_link': 'https://doi.org/10.30687/978-88-6969-590-2/008',
     'download': '',
-    'category': ['further']
-}]
+    'category': ['further']}]

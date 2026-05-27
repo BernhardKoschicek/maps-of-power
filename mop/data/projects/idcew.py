@@ -9,24 +9,21 @@ images = [{
         'Sopoćani Monastery in the 1970s'),
     'citation': _(
         'Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
-    'category': ['idcew']
-}, {
+    'category': ['idcew']}, {
     'src': 'idcew_2.jpg',
     'description': _(
         'The Apse of the Church of the Holy Trinity in '
         'Sopoćani Monastery in the 1970s'),
     'citation': _(
         'Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
-    'category': ['idcew']
-}, {
+    'category': ['idcew']}, {
     'src': 'idcew_3.jpg',
     'description': _(
         'The Church of the Annunciation of the Holy '
         'Mother of God in Gradac Monastery in the 1970s'),
     'citation': _(
         'Photograph Collection "Dipl. Kfm. Wolfgang Milan (1924-2015)"'),
-    'category': ['idcew']
-}, {
+    'category': ['idcew']}, {
     'src': 'idcew_4.jpg',
     'description': _(
         'The Church of the Annunciation of the Holy '
@@ -35,8 +32,7 @@ images = [{
         'M.radosavljevic, 2007 <a '
         'href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" '
         'target="_blank">CC BY-SA 3.0</a>'),
-    'category': ['idcew']
-}]
+    'category': ['idcew']}]
 
 
 project_idcew = {
@@ -59,11 +55,9 @@ project_idcew = {
     'end': get_dates_formatted(2026, 6, 30),
     'description': [
         _('idcew_description_1'),
-        _('idcew_description_2')
-    ],
+        _('idcew_description_2')],
     'results': '',
     'icon': 'idcew_1.jpg',
     'images': images,
     'videos': [],
-    'oaID': '135263',
-}
+    'oaID': '135263', }
