@@ -10,6 +10,13 @@
         of scholars from the field of Historical Geography."/>
   <meta name="author"
         content="Bernhard Koschicek-Krombholz, Mihailo Popovic"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Maps of Power">
+  <meta property="og:description" content="The research initiative 'Maps of Power' serves the methodological and interdisciplinary networking of scholars from the field of Historical Geography.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.url }}">
+  <meta property="og:image" content="{{ url_for('static', filename='images/mop_logo.svg', _external=True) }}">
+  <meta name="twitter:card" content="summary_large_image">
   <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
   <link rel="apple-touch-icon" sizes="180x180"
         href="{{ url_for('static', filename='apple-touch-icon.png', v=ASSETS_VERSION) }}">
@@ -30,54 +37,21 @@
   <link rel="stylesheet"
         href="{{ url_for('static', filename='node_modules/baguettebox.js/dist/baguetteBox.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet"
-        href="{{ url_for('static', filename='node_modules/datatables.net-bs5/css/dataTables.bootstrap5.css', v=ASSETS_VERSION) }}">
-  <link rel="stylesheet"
-        href="{{ url_for('static', filename='node_modules/datatables.net-buttons-bs5/css/buttons.bootstrap5.css', v=ASSETS_VERSION) }}">
-  <link rel="stylesheet"
-        href="{{ url_for('static', filename='node_modules/datatables.net-responsive-bs5/css/responsive.bootstrap5.css', v=ASSETS_VERSION) }}">
-  <link rel="stylesheet"
-        href="{{ url_for('static', filename='node_modules/datatables.net-searchbuilder-bs5/css/searchBuilder.bootstrap5.css', v=ASSETS_VERSION) }}">
-  <link rel="stylesheet"
-        href="{{ url_for('static', filename='node_modules/datatables.net-searchpanes-bs5/css/searchPanes.bootstrap5.css', v=ASSETS_VERSION) }}">
+        href="{{ url_for('static', filename='node_modules/simple-datatables/dist/style.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet"
         href="{{ url_for('static', filename='node_modules/@fancyapps/ui/dist/fancybox/fancybox.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/color.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css', v=ASSETS_VERSION) }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/datatables.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/boxes_background.css', v=ASSETS_VERSION) }}">
 
   <script
     src="{{ url_for('static', filename='node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/muuri/dist/muuri.js', v=ASSETS_VERSION) }}"></script>
-  <script src="{{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js', v=ASSETS_VERSION) }}"></script>
-  <script src="{{ url_for('static', filename='node_modules/jquery-ui-dist/jquery-ui.min.js', v=ASSETS_VERSION) }}"></script>
   <script
     src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', v=ASSETS_VERSION) }}"></script>
   <script
-    src="{{ url_for('static', filename='node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.min.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net/js/jquery.dataTables.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net-bs5/js/dataTables.bootstrap5.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net-buttons/js/dataTables.buttons.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net-buttons-bs5/js/buttons.bootstrap5.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net-responsive/js/dataTables.responsive.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net-responsive-bs5/js/responsive.bootstrap5.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net-searchbuilder/js/dataTables.searchBuilder.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net-searchbuilder-bs5/js/searchBuilder.bootstrap5.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net-searchpanes/js/dataTables.searchPanes.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net-searchpanes-bs5/js/searchPanes.bootstrap5.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/datatables.net-plugins/dataRender/ellipsis.js', v=ASSETS_VERSION) }}"></script>
+    src="{{ url_for('static', filename='node_modules/simple-datatables/dist/umd/simple-datatables.js', v=ASSETS_VERSION) }}"></script>
   <script
     src="{{ url_for('static', filename='node_modules/@popperjs/core/dist/umd/popper.min.js', v=ASSETS_VERSION) }}"></script>
   <script

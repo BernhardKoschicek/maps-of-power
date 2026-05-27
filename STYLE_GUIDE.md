@@ -10,6 +10,7 @@ This guide establishes the styling rules, user interface specifications, and cor
 - **Simplicity First**: Avoid over-engineered architectures. Write code that is straightforward to read, test, and maintain.
 - **Clear Routing**: Keep controller routes in `views.py` focused. Complex data parsing should live inside models or helper functions in `util.py`.
 - **Minimal Dependencies**: Do not add external packages unless absolutely necessary. Rely on existing, well-tested Python and Node packages.
+- **Local Asset Serving (No CDNs)**: Never use external CDNs for production. All JavaScript, CSS, and font dependencies must be added to `mop/static/package.json`, installed via `npm`, and served locally from the `static/node_modules/` folder using Flask's `url_for`.
 - **Readable Templates**: Keep Jinja templates legible. Use simple loops and conditionals. Avoid embedding heavy logical expressions inside templates.
 
 ### 2. ☔ The DRY Principle (Don't Repeat Yourself)

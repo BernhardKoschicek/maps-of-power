@@ -4,16 +4,9 @@
         "@mapbox/leaflet-pip": "^1.1.0",
         "baguettebox.js": "^1.11.1",
         "bootstrap": "^5.3.2",
-        "bootstrap-autocomplete": "^2.3.7",
         "bootstrap-icons": "^1.11.3",
-        "datatables.net-bs5": "^1.13.8",
-        "datatables.net-buttons-bs5": "^2.4.2",
-        "datatables.net-plugins": "^1.13.6",
-        "datatables.net-responsive-bs5": "^2.5.0",
-        "datatables.net-searchbuilder-bs5": "^1.6.0",
-        "datatables.net-searchpanes-bs5": "^2.2.0",
-        "jquery": "^3.7.1",
-        "jquery-ui-dist": "^1.13.2",
+        "graphology": "^0.25.4",
+        "html2canvas": "^1.4.1",
         "leaflet": "^1.9.4",
         "leaflet-draw": "^1.0.4",
         "leaflet-groupedlayercontrol": "^0.6.1",
@@ -22,7 +15,12 @@
         "leaflet.markercluster": "^1.5.3",
         "mirador": "^3.3.0",
         "muuri": "^0.9.5",
+        "sigma": "^2.4.0",
+        "simple-datatables": "^10.2.0",
         "vis-network": "^10.1.0"
     },
-    "name": "mop"
+    "name": "mop",
+    "scripts": {
+        "dev": "echo 'No frontend build step required. Dependencies are served directly from node_modules.'"
+    }
 }

@@ -46,31 +46,47 @@
         </div>
     </div>
     <script>
-        $(document).ready(function () {
-            $('#table-{{ id }}').DataTable({
-                "paging": true,
-                "autoWidth": false,
-                "columnDefs": [
-                    {"width": "20%", "targets": 0},
-                ],
-                "ordering": true,
-                "order": [[{{ order_column }}, 'desc']],
-                "info": true,
-                "searching": true,
-                "pageLength": 10,
-                "dom": '<"d-flex justify-content-between align-items-center mb-4"f>t<"d-flex justify-content-between align-items-center mt-4"ip>',
-                "language": {
-                    "search": "",
-                    "searchPlaceholder": "{{ _('Search') }}..."
-                }
-            });
+        document.addEventListener("DOMContentLoaded", function () {
+            const tableElement = document.querySelector('#table-{{ id }}');
+            if (tableElement) {
+                const dataTable = new simpleDatatables.DataTable(tableElement, {
+                    searchable: true,
+                    fixedHeight: false,
+                    perPage: 10,
+                    labels: {
+                        placeholder: "{{ _('Search') }}...",
+                        searchTitle: "{{ _('Search') }}..."
+                    }
+                });
 
-            // Style search input to match project style
-            $('#table-{{ id }}_wrapper .dataTables_filter input').addClass('form-control form-control-sm rounded-pill px-4 py-2 border-1 shadow-none');
-            $('#table-{{ id }}_wrapper .dataTables_filter').addClass('w-100');
-            $('#table-{{ id }}_wrapper .dataTables_filter label').addClass('w-100');
+                dataTable.on('datatable.init', function() {
+                    // Try to sort initially if API supports it
+                    try {
+                        dataTable.columns.sort({{ order_column }}, "desc");
+                    } catch(e) {}
+
+                    const wrapper = tableElement.closest('.dataTable-wrapper');
+                    if (wrapper) {
+                        const top = wrapper.querySelector('.dataTable-top');
+                        if (top) {
+                            top.classList.add('d-flex', 'flex-wrap', 'justify-content-between', 'align-items-center', 'mb-3', 'gap-3');
+                        }
+                        const input = wrapper.querySelector('.dataTable-input');
+                        if (input) {
+                            input.classList.add('form-control', 'form-control-sm', 'rounded-pill', 'px-4', 'py-2', 'border-1', 'shadow-none');
+                        }
+                        const searchContainer = wrapper.querySelector('.dataTable-search');
+                        if (searchContainer) {
+                            searchContainer.classList.add('ms-auto');
+                        }
+                        const select = wrapper.querySelector('.dataTable-selector');
+                        if (select) {
+                            select.classList.add('form-select', 'form-select-sm', 'd-inline-block', 'w-auto', 'me-2');
+                        }
+                    }
+                });
+            }
         });
-
     </script>
 
 {% endmacro %}

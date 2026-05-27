@@ -728,7 +728,11 @@
                           {% if key in ['actors'] %}
                             <td class="small">{{ item.type if item.type }}</td>
                           {% endif %}
-                          <td class="small text-muted pe-3">{{ item.description }}</td>
+                          <td class="small text-muted pe-3">
+                            <div class="text-truncate" style="max-width: 300px;" title="{{ item.description }}">
+                              {{ item.description }}
+                            </div>
+                          </td>
                         </tr>
                       {% endfor %}
                     </tbody>
@@ -739,32 +743,42 @@
           </div>
 
           <script>
-              $(document).ready(function () {
-                  var tableId = '#table-{{ key }}';
-                  var indexLastColumn = $(tableId).find('thead th').length - 1;
-                  $(tableId).dataTable({
-                      "paging": true,
-                      "autoWidth": false,
-                      "ordering": true,
-                      "info": true,
-                      "searching": true,
-                      "pageLength": 10,
-                      "dom": '<"d-flex justify-content-between align-items-center mb-3"f>t<"d-flex justify-content-between align-items-center mt-3"ip>',
-                      "language": {
-                          "search": "",
-                          "searchPlaceholder": "{{ _('Search...') }}"
-                      },
-                      "columnDefs": [
-                          {"width": "25%", "targets": 0},
-                          {
-                              targets: indexLastColumn,
-                              render: DataTable.render.ellipsis(300, true)
-                          }]
-                  });
-                  // Style search input
-                  $('#table-{{ key }}_wrapper .dataTables_filter input').addClass('form-control form-control-sm rounded-pill px-4 py-2 border-1 shadow-none');
-                  $('#table-{{ key }}_wrapper .dataTables_filter').addClass('w-100');
-                  $('#table-{{ key }}_wrapper .dataTables_filter label').addClass('w-100');
+              document.addEventListener("DOMContentLoaded", function () {
+                  const tableElement = document.querySelector('#table-{{ key }}');
+                  if (tableElement) {
+                      const dataTable = new simpleDatatables.DataTable(tableElement, {
+                          searchable: true,
+                          fixedHeight: false,
+                          perPage: 10,
+                          labels: {
+                              placeholder: "{{ _('Search...') }}",
+                              searchTitle: "{{ _('Search...') }}"
+                          }
+                      });
+                      
+                      // Style search input to match project style
+                      dataTable.on('datatable.init', function() {
+                          const wrapper = tableElement.closest('.dataTable-wrapper');
+                          if (wrapper) {
+                              const top = wrapper.querySelector('.dataTable-top');
+                              if (top) {
+                                  top.classList.add('d-flex', 'flex-wrap', 'justify-content-between', 'align-items-center', 'mb-3', 'gap-3');
+                              }
+                              const input = wrapper.querySelector('.dataTable-input');
+                              if (input) {
+                                  input.classList.add('form-control', 'form-control-sm', 'rounded-pill', 'px-4', 'py-2', 'border-1', 'shadow-none');
+                              }
+                              const searchContainer = wrapper.querySelector('.dataTable-search');
+                              if (searchContainer) {
+                                  searchContainer.classList.add('ms-auto');
+                              }
+                              const select = wrapper.querySelector('.dataTable-selector');
+                              if (select) {
+                                  select.classList.add('form-select', 'form-select-sm', 'd-inline-block', 'w-auto', 'me-2');
+                              }
+                          }
+                      });
+                  }
               });
           </script>
         {% endfor %}
@@ -1024,28 +1038,7 @@
       });
   </script>
 
-  {#  <script>#}
-  {#      $(document).ready(function () {#}
-  {#          let desc = $('#description');#}
-  {#          let str = desc.text();#}
-  {##}
-  {##}
-  {#          if (str.length > 300) {#}
-  {##}
-  {#              desc.empty().html(str.substring(0, 500));#}
-  {##}
-  {#              let moreLink = '... <a href="#" class="read_more btn btn-violet-light">Read more</a>';#}
-  {#              desc.append(moreLink);#}
-  {##}
-  {#              $('.read_more').on('click', function (e) {#}
-  {#                  e.preventDefault();#}
-  {#                  desc.empty().html(str);#}
-  {#              });#}
-  {##}
-  {#          }#}
-  {##}
-  {#      });#}
-  {#  </script>#}
+
   <script>
       function toggleIcon(key) {
           const icon = document.getElementById('icon-' + key);
@@ -1069,11 +1062,11 @@
   <script src="{{ url_for('static', filename='node_modules/leaflet.fullscreen/Control.FullScreen.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/leaflet-imageoverlay-rotated/Leaflet.ImageOverlay.Rotated.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='node_modules/@mapbox/leaflet-pip/leaflet-pip.js', v=ASSETS_VERSION) }}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="{{ url_for('static', filename='node_modules/html2canvas/dist/html2canvas.min.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='js/map_layers.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='js/map.js', v=ASSETS_VERSION) }}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/graphology/0.25.4/graphology.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js"></script>
+  <script src="{{ url_for('static', filename='node_modules/graphology/dist/graphology.umd.min.js', v=ASSETS_VERSION) }}"></script>
+  <script src="{{ url_for('static', filename='node_modules/sigma/build/sigma.min.js', v=ASSETS_VERSION) }}"></script>
   <script src="{{ url_for('static', filename='js/network_viz.js', v=ASSETS_VERSION) }}"></script>
 
   <script>

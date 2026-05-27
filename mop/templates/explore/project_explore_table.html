@@ -61,7 +61,9 @@
                       </td>
                       <td>
                         <a href="{{ url_for('entity_project_view', id_=entity.id_, project=project.acronym, view=view) }}"
-                           class="text-decoration-none fw-bold link-primary">{{ entity.name }}</a>
+                           class="text-decoration-none fw-bold link-primary">
+                           <div class="text-truncate" style="max-width: 180px;" title="{{ entity.name }}">{{ entity.name }}</div>
+                        </a>
                       </td>
                       <td>
                         <span class="badge bg-accent2 text-primary rounded-pill px-3 fw-normal">
@@ -69,7 +71,9 @@
                         </span>
                       </td>
                       <td class="small text-muted pe-3">
-                        {{ entity.description or '' | safe }}
+                        <div class="text-truncate" style="max-width: 300px;" title="{{ entity.description|striptags }}">
+                          {{ entity.description or '' | safe }}
+                        </div>
                       </td>
                     </tr>
                   {% endfor %}
@@ -83,29 +87,42 @@
   </section>
 
   <script>
-      $(document).ready(function () {
-          $('#entity_table').DataTable({
-              'order': [[1, 'asc']],
-              "dom": '<"d-flex justify-content-between align-items-center mb-4"f>t<"d-flex justify-content-between align-items-center mt-4"ip>',
-              "language": {
-                  "search": "",
-                  "searchPlaceholder": "{{ _('Search in') }} {{ view_classes['display_name'] }}..."
-              },
-              'columnDefs': [
-                  {
-                      'targets': 3,
-                      'render': DataTable.render.ellipsis(300, true)
-                  },
-                  {
-                      'targets': 1,
-                      'render': DataTable.render.ellipsis(180, true)
-                  }]
-          });
+      document.addEventListener("DOMContentLoaded", function () {
+          const tableElement = document.querySelector('#entity_table');
+          if (tableElement) {
+              const dataTable = new simpleDatatables.DataTable(tableElement, {
+                  searchable: true,
+                  fixedHeight: false,
+                  perPage: 10,
+                  labels: {
+                      placeholder: "{{ _('Search in') }} {{ view_classes['display_name'] }}...",
+                      searchTitle: "{{ _('Search in') }} {{ view_classes['display_name'] }}..."
+                  }
+              });
 
-          // Style search input to match project style
-          $('.dataTables_filter input').addClass('form-control form-control-sm rounded-pill px-4 py-2 border-1 shadow-none');
-          $('.dataTables_filter').addClass('w-100');
-          $('.dataTables_filter label').addClass('w-100');
+              // Style search input to match project style
+              dataTable.on('datatable.init', function() {
+                  const wrapper = tableElement.closest('.dataTable-wrapper');
+                  if (wrapper) {
+                      const top = wrapper.querySelector('.dataTable-top');
+                      if (top) {
+                          top.classList.add('d-flex', 'flex-wrap', 'justify-content-between', 'align-items-center', 'mb-3', 'gap-3');
+                      }
+                      const input = wrapper.querySelector('.dataTable-input');
+                      if (input) {
+                          input.classList.add('form-control', 'form-control-sm', 'rounded-pill', 'px-4', 'py-2', 'border-1', 'shadow-none');
+                      }
+                      const searchContainer = wrapper.querySelector('.dataTable-search');
+                      if (searchContainer) {
+                          searchContainer.classList.add('ms-auto');
+                      }
+                      const select = wrapper.querySelector('.dataTable-selector');
+                      if (select) {
+                          select.classList.add('form-select', 'form-select-sm', 'd-inline-block', 'w-auto', 'me-2');
+                      }
+                  }
+              });
+          }
       });
   </script>
 {% endblock %}

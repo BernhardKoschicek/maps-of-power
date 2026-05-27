@@ -25,6 +25,16 @@
     .bg-holdura { background-color: var(--color-holdura) !important; }
     .bg-further { background-color: var(--color-further) !important; }
 
+    /* Custom button styles for projects */
+    .btn-outline-idcew { color: var(--color-idcew); border-color: var(--color-idcew); }
+    .btn-outline-idcew:hover, .btn-idcew { background-color: var(--color-idcew); color: white; border-color: var(--color-idcew); }
+    .btn-outline-tarsr { color: var(--color-tarsr); border-color: var(--color-tarsr); }
+    .btn-outline-tarsr:hover, .btn-tarsr { background-color: var(--color-tarsr); color: white; border-color: var(--color-tarsr); }
+    .btn-outline-holdura { color: var(--color-holdura); border-color: var(--color-holdura); }
+    .btn-outline-holdura:hover, .btn-holdura { background-color: var(--color-holdura); color: white; border-color: var(--color-holdura); }
+    .btn-outline-further { color: var(--color-further); border-color: var(--color-further); }
+    .btn-outline-further:hover, .btn-further { background-color: var(--color-further); color: white; border-color: var(--color-further); }
+
     .publication-card {
         transition: transform 0.15s ease, box-shadow 0.15s ease;
         border: 1px solid rgba(0, 0, 0, 0.08) !important;
@@ -80,7 +90,7 @@
                 {# Explicitly list known main projects first if present #}
                 {% for proj in ['idcew', 'tarsr', 'holdura'] %}
                     {% if proj in active_categories %}
-                        <a href="#" class="btn btn-sm btn-outline-primary rounded-pill filter-pill" data-filter="{{ proj }}">
+                        <a href="#" class="btn btn-sm btn-outline-{{ proj }} rounded-pill filter-pill" data-filter="{{ proj }}">
                             {{ proj | upper }}
                         </a>
                     {% endif %}
@@ -95,7 +105,7 @@
                 
                 {# Render general/further reading at the end #}
                 {% if 'further' in active_categories %}
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill filter-pill" data-filter="further">
+                    <a href="#" class="btn btn-sm btn-outline-further rounded-pill filter-pill" data-filter="further">
                         {{ _('General Reading') }}
                     </a>
                 {% endif %}
@@ -259,13 +269,18 @@
                 
                 // Update active state classes
                 filterPills.forEach(p => {
-                    p.classList.remove("active", "btn-primary");
-                    p.classList.add("btn-outline-primary");
+                    const f = p.getAttribute("data-filter");
+                    const colorClass = ['idcew', 'tarsr', 'holdura', 'further'].includes(f) ? f : 'primary';
+                    p.classList.remove("active", `btn-${colorClass}`);
+                    p.classList.add(`btn-outline-${colorClass}`);
                 });
-                this.classList.add("active", "btn-primary");
-                this.classList.remove("btn-outline-primary");
                 
-                activeFilter = this.getAttribute("data-filter");
+                const f = this.getAttribute("data-filter");
+                const colorClass = ['idcew', 'tarsr', 'holdura', 'further'].includes(f) ? f : 'primary';
+                this.classList.add("active", `btn-${colorClass}`);
+                this.classList.remove(`btn-outline-${colorClass}`);
+                
+                activeFilter = f;
                 filterList();
             });
         });
