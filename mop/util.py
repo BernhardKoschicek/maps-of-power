@@ -32,13 +32,19 @@ def get_image_frame(filepath: str) -> str:
 
 @app.context_processor
 def inject_menu() -> dict[str, Any]:
-    navbar = [
-        {'name': _('about'), 'to': url_for('about')},
-        {'name': _('projects'), 'to': url_for('projects')},
-        {'name': _('atlas'), 'to': url_for('frontend')},
-        {'name': 'histgeo', 'to': url_for('histgeo')},
-        {'name': _('events'), 'to': url_for('events')},
-        {'name': _('literature'), 'to': url_for('literature')}]
+    navbar = [{
+        'name': _('about'),
+        'to': url_for('about')}, {
+        'name': _('projects'),
+        'to': url_for('projects')}, {
+        'name': _('atlas'),
+        'to': url_for('frontend')}, {
+        'name': 'histgeo',
+        'to': url_for('histgeo')}, {
+        'name': _('events'),
+        'to': url_for('events')}, {
+        'name': _('literature'),
+        'to': url_for('literature')}]
     return {'navbar': navbar}
 
 
@@ -46,8 +52,9 @@ def get_dict_entries_by_category(
         categories: Union[list[str], str],
         list_: list[dict[str, Any]]) -> list[dict[str, Any]]:
     categories = [categories] if isinstance(categories, str) else categories
-    return [entry for entry in list_
-            if any(item in categories for item in entry['category'])]
+    return [
+        entry for entry in list_ if any(
+            item in categories for item in entry['category'])]
 
 
 def get_types_sorted(types: list[Types]) -> Optional[dict[str, Any]]:

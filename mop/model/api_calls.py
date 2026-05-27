@@ -30,14 +30,10 @@ def get_view_class(
         # like 'actor?limit=1'
         url = f"{app.config['API_PATH']}/view_class/{parameter}"
         return requests.get(
-            url,
-            proxies=get_proxies(),
-            timeout=30).json()['results']
+            url, proxies=get_proxies(), timeout=30).json()['results']
 
     return requests.get(
-        url,
-        params=params,
-        proxies=get_proxies(),
+        url, params=params, proxies=get_proxies(),
         timeout=30).json()['results']
 
 
@@ -45,8 +41,7 @@ def get_view_class(
 def system_class_results(parameter: str) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/system_class/"
     return requests.get(
-        f"{url}{parameter}",
-        proxies=get_proxies(),
+        f"{url}{parameter}", proxies=get_proxies(),
         timeout=30).json()['results']
 
 
@@ -54,28 +49,21 @@ def system_class_results(parameter: str) -> list[dict[str, Any]]:
 def get_typed_entities_all_results(id_: int) -> list[dict[str, Any]]:
     url = f"{app.config['API_PATH']}/type_entities_all/"
     return requests.get(
-        f"{url}{id_}",
-        proxies=get_proxies(),
-        timeout=30).json()['results']
+        f"{url}{id_}", proxies=get_proxies(), timeout=30).json()['results']
 
 
 @cache.cached(key_prefix='type_tree')
 def get_type_tree() -> List[TypeTree]:
     url = f"{app.config['API_PATH']}/type_tree/"
     type_tree = requests.get(
-        url,
-        proxies=get_proxies(),
-        timeout=30).json()['typeTree']
+        url, proxies=get_proxies(), timeout=30).json()['typeTree']
     return [TypeTree(types) for types in type_tree.values()]
 
 
 @cache.memoize()
 def get_entity_presentation(id_: int) -> dict[str, Any]:
     url = f"{app.config['API_PATH']}/entity_presentation_view/{id_}"
-    response = requests.get(
-        url,
-        proxies=get_proxies(),
-        timeout=30)
+    response = requests.get(url, proxies=get_proxies(), timeout=30)
     if response.status_code == 404:  # pragma: no cover
         raise NotFound(f"Entity with ID {id_} not found in the external API.")
     response.raise_for_status()
@@ -86,10 +74,7 @@ def get_entity_presentation(id_: int) -> dict[str, Any]:
 def get_entity(id_: int) -> dict[str, Any]:
     # Deprecated raw entity loader
     url = f"{app.config['API_PATH']}/entity/"
-    response = requests.get(
-        f"{url}{id_}",
-        proxies=get_proxies(),
-        timeout=30)
+    response = requests.get(f"{url}{id_}", proxies=get_proxies(), timeout=30)
     if response.status_code == 404:  # pragma: no cover
         raise NotFound(f"Entity with ID {id_} not found in the external API.")
     response.raise_for_status()
@@ -107,8 +92,7 @@ EXCLUDE_SYSTEM_CLASSES = [
     'external_reference',
     'reference_system',
     'source',
-    'source_translation',
-]
+    'source_translation', ]
 
 
 @cache.memoize()
@@ -117,13 +101,9 @@ def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
     url = f"{app.config['API_PATH']}/ego_network_visualisation/{id_}"
     params: Any = {
         'depth': depth_,
-        'exclude_system_classes': EXCLUDE_SYSTEM_CLASSES
-    }
+        'exclude_system_classes': EXCLUDE_SYSTEM_CLASSES}
     response = requests.get(
-        url,
-        params=params,
-        proxies=get_proxies(),
-        timeout=30)
+        url, params=params, proxies=get_proxies(), timeout=30)
     if response.status_code == 404:  # pragma: no cover
         raise NotFound(f"Ego network not found for ID {id_}.")
     response.raise_for_status()
@@ -139,12 +119,8 @@ def get_network_visualisation(
     url = f"{app.config['API_PATH']}/network_visualisation/"
     params: Any = {
         'exclude_system_classes': exclude_system_classes,
-        'linked_to_ids': linked_to_ids
-    }
+        'linked_to_ids': linked_to_ids}
     response = requests.get(
-        url,
-        params=params,
-        proxies=get_proxies(),
-        timeout=30)
+        url, params=params, proxies=get_proxies(), timeout=30)
     response.raise_for_status()
     return response.json()

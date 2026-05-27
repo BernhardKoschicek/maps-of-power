@@ -10,18 +10,20 @@ presentations = [{
     'date': get_table_dates_formatted(2026, 4, 24),
     'external_link': '',
     'download': '',
-    'category': ['dgse']}, {
+    'category': ['dgse']
+}, {
     'presenter': 'Mihailo Popović',
     'title': 'Über die Sinnhaftigkeit der und die Nachhaltigkeit in den '
-             'Digitalen Geisteswissenschaften: Erkenntnisse aus der '
-             'Perspektive der Historischen Geographie, Byzantinistik und '
-             'Südosteuropaforschung',
+    'Digitalen Geisteswissenschaften: Erkenntnisse aus der '
+    'Perspektive der Historischen Geographie, Byzantinistik und '
+    'Südosteuropaforschung',
     'conference': 'Ringvorlesung Master Mittelalterstudien',
     'location': [_('Heidelberg')],
     'date': get_table_dates_formatted(2025, 6, 10),
     'external_link': '',
     'download': '',
-    'category': ['dgse']}, {
+    'category': ['dgse']
+}, {
     'presenter': 'Schloß Ebreichsdorf/Castle of Ebreichsdorf',
     'title': 'Erstes Projekttreffen / First Project Meeting',
     'conference': '',
@@ -29,48 +31,53 @@ presentations = [{
     'date': get_table_dates_formatted(2025, 5, 15),
     'external_link': '',
     'download': '',
-    'category': ['dgse']}, {
+    'category': ['dgse']
+}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'A Monumental Crisis in Times of War: Endangered or Researched '
-             'Medieval Cultural Heritage in Macedonia during the First '
-             'World War?',
+    'Medieval Cultural Heritage in Macedonia during the First '
+    'World War?',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2024, 7, 2),
     'external_link': '',
     'download': '',
-    'category': ['tarsr']}, {
+    'category': ['tarsr']
+}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'Wie die Byzantinistik Denkmalschutz betreibt … '
-             '(Posterpräsentation/Poster Session)',
+    '(Posterpräsentation/Poster Session)',
     'conference': 'Lange Nacht der Forschung 2024',
     'location': [_('Vienna')],
     'date': get_table_dates_formatted(2024, 5, 24),
     'external_link': '',
     'download': 'MPopovic_Plakate_LNF.pdf',
-    'category': ['tarsr']}, {
+    'category': ['tarsr']
+}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'Српске племкиње и монаштво у средњем веку: поређење Јелене'
-             ' Анжујске и Маре Бранковић у њиховим односима према '
-             'бенедиктинцима/фрањевцима и светогорским монасима',
+    ' Анжујске и Маре Бранковић у њиховим односима према '
+    'бенедиктинцима/фрањевцима и светогорским монасима',
     'conference': 'Друштво пријатеља Свете Горе Атонске / ' +
-                  _('The Society of the Friends of Holy Mount Athos'),
+    _('The Society of the Friends of Holy Mount Athos'),
     'location': [_('Belgrade')],
     'date': get_table_dates_formatted(2023, 10, 26),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'Serbian Noblewomen and the Clergy in the Middle Ages: '
-             'A Comparison between Mara Branković and Jelena Anžujska '
-             'regarding Athonite Monks and Franciscan Friars',
+    'A Comparison between Mara Branković and Jelena Anžujska '
+    'regarding Athonite Monks and Franciscan Friars',
     'conference': 'Workshop „A Special Relationship? Gender on Medieval '
-                  'Mount Athos“',
+    'Mount Athos“',
     'location': [_('Oxford')],
     'date': get_table_dates_formatted(2023, 9, 29),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Mihailo St. Popović',
     'title': 'On the Usefulness of OpenAtlas in Historical Geography',
     'conference': '',
@@ -78,222 +85,218 @@ presentations = [{
     'date': get_table_dates_formatted(2023, 9, 19),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Johannes Tripps',
     'title': 'The Metamorphosing Crown of Saint Stefan Dečanski',
     'conference': '',
     'location': [_('Belgrade')],
     'date': get_table_dates_formatted(2023, 9, 7),
     'external_link': 'https://www.youtube-nocookie.com/'
-                     'embed/HF7fLgHFnaI?si=AIghTnDMknsnvlvm',
+    'embed/HF7fLgHFnaI?si=AIghTnDMknsnvlvm',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Branka Vranešević',
-    'title':
-        'Initials with Teratological Motifs in the Belgrade Prophetologion: '
-        'Witnesses of Entanglement between East and West',
+    'title': 'Initials with Teratological Motifs in the Belgrade Prophetologion: '
+    'Witnesses of Entanglement between East and West',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2023, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Johannes Tripps',
-    'title':
-        'Objects of Private Devotion as Witnesses to Entanglement between '
-        'Venice and the Árpád and Nemanjić Dynasties',
+    'title': 'Objects of Private Devotion as Witnesses to Entanglement between '
+    'Venice and the Árpád and Nemanjić Dynasties',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2023, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Bernhard Koschiček-Krombholz',
-    'title':
-        'OpenAtlas: Handling Entangled Data in a Linked Data World',
+    'title': 'OpenAtlas: Handling Entangled Data in a Linked Data World',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2023, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Mihailo St. Popović',
-    'title':
-        'A Mother and Two Sons: the Serbian Rulers Helen, Dragutin, and '
-        'Milutin and Their Entangled Realms in Medieval Serbia',
+    'title': 'A Mother and Two Sons: the Serbian Rulers Helen, Dragutin, and '
+    'Milutin and Their Entangled Realms in Medieval Serbia',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2023, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Dorota Vargová',
-    'title':
-        'Stefan Uroš I and Helen of Anjou: The Royal Couple\'s Influence on '
-        'the Confessional Structure of the Principality of Zeta in the Late '
-        '13th and Early 14th Century ',
+    'title': 'Stefan Uroš I and Helen of Anjou: The Royal Couple\'s Influence on '
+    'the Confessional Structure of the Principality of Zeta in the Late '
+    '13th and Early 14th Century ',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2023, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Mihailo St. Popović',
-    'title':
-        'Пројекат Tabula Imperii Byzantini: о будућности (?) проучавања '
-        'историјске географије Византије ',
+    'title': 'Пројекат Tabula Imperii Byzantini: о будућности (?) проучавања '
+    'историјске географије Византије ',
     'conference': 'Serbian Academy of Sciences and Arts – SANU',
     'location': [_('Belgrade')],
     'date': get_table_dates_formatted(2022, 2, 22),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Mihailo St. Popović',
-    'title':
-        'Die historische Geographie von Byzanz neu gedacht – Über den '
-        'Wert der digitalen Kartographie und Geokommunikation in der '
-        'Vermittlung historischer Inhalte am Beispiel des Projektes '
-        '„Jenseits von Ost und West“',
-    'conference':
-        'Deutsche Gesellschaft für Kartographie e.V., '
-        'Sektion Halle – Leipzig',
+    'title': 'Die historische Geographie von Byzanz neu gedacht – Über den '
+    'Wert der digitalen Kartographie und Geokommunikation in der '
+    'Vermittlung historischer Inhalte am Beispiel des Projektes '
+    '„Jenseits von Ost und West“',
+    'conference': 'Deutsche Gesellschaft für Kartographie e.V., '
+    'Sektion Halle – Leipzig',
     'location': [_('Leipzig')],
     'date': get_table_dates_formatted(2022, 11, 10),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Mihailo St. Popović',
-    'title':
-        'Doing Historical Geography in A Digital Age: The Case of The '
-        'Tabula Imperii Byzantini Balkans and Its Public Outreach',
+    'title': 'Doing Historical Geography in A Digital Age: The Case of The '
+    'Tabula Imperii Byzantini Balkans and Its Public Outreach',
     'conference': '2022 Byzantine Studies Conference',
     'location': [_('Los Angeles')],
     'date': get_table_dates_formatted(2022, 11, 6),
     'external_link': 'https://bsana.net/annual-conference/',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Mihailo St. Popović',
-    'title':
-        'Historical Geography, Digital Humanities and Database Systems: '
-        'an Approach to reconstruct “Sacred Landscapes” – the Case of '
-        'Medieval Duklja and Raška (today’s Montenegro and Serbia)',
-    'conference':
-        'Global Eurasia, Workshop II: Handlungsspielräume, Netzwerke und '
-        'transregionale Kontexte',
+    'title': 'Historical Geography, Digital Humanities and Database Systems: '
+    'an Approach to reconstruct “Sacred Landscapes” – the Case of '
+    'Medieval Duklja and Raška (today’s Montenegro and Serbia)',
+    'conference': 'Global Eurasia, Workshop II: Handlungsspielräume, Netzwerke und '
+    'transregionale Kontexte',
     'location': [_('Vienna')],
     'date': get_table_dates_formatted(2022, 5, 12),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Mihailo St. Popović',
-    'title':
-        'On the Use and Usefulness of Digital Humanities in the '
-        'Historical Geography of Byzantium',
-    'conference':
-        'Seminar Series: The Balkans Between Empires, Aristotle '
-        'University of Thessaloniki, Ibn Haldun University Istanbul',
+    'title': 'On the Use and Usefulness of Digital Humanities in the '
+    'Historical Geography of Byzantium',
+    'conference': 'Seminar Series: The Balkans Between Empires, Aristotle '
+    'University of Thessaloniki, Ibn Haldun University Istanbul',
     'location': [_('Thessaloniki')],
     'date': get_table_dates_formatted(2022, 4, 1),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Markus Breier',
-    'title':
-        'Beyond East and West – '
-        'Geocommunicating Historical Sacred Landscapes',
+    'title': 'Beyond East and West – '
+    'Geocommunicating Historical Sacred Landscapes',
     'conference': 'International Medieval Congress, University of Leeds',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2021, 7, 7),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
-    'presenter':
-        'Markus Breier, Karel Kriz, Lukas Neugebauer, Alexander Pucher',
-    'title':
-        'Beyond East and West – '
-        'Geocommunicating Historical Sacred Landscapes',
+    'category': ['holdura']
+}, {
+    'presenter': 'Markus Breier, Karel Kriz, Lukas Neugebauer, Alexander Pucher',
+    'title': 'Beyond East and West – '
+    'Geocommunicating Historical Sacred Landscapes',
     'conference': '30th International Cartographic Conference 2021',
     'location': [_('Florenz')],
     'date': get_table_dates_formatted(2021, 12, 18),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Dorota Vargová',
-    'title':
-        'An Ecclesiastical History of Medieval Duklja:'
-        ' A Landscape Defined by Rite',
+    'title': 'An Ecclesiastical History of Medieval Duklja:'
+    ' A Landscape Defined by Rite',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Branka Vranešević',
-    'title':
-        'Towards Imperial Dignity: A Contribution to the Study of the '
-        'Imperial Crown of King Stefan Uroš III Dečanski in the '
-        'Cetinje Monastery',
+    'title': 'Towards Imperial Dignity: A Contribution to the Study of the '
+    'Imperial Crown of King Stefan Uroš III Dečanski in the '
+    'Cetinje Monastery',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Moisés Hernández Cordero',
-    'title':
-        'Mapping Cultural Heritage beyond the Eye: The Case of the Crown '
-        'of the Serbian King Stefan Dečanski',
+    'title': 'Mapping Cultural Heritage beyond the Eye: The Case of the Crown '
+    'of the Serbian King Stefan Dečanski',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura', 'montenegro']}, {
+    'category': ['holdura', 'montenegro']
+}, {
     'presenter': 'Mihailo Popović',
-    'title':
-        'Beyond East and West: Sacred Landscapes in the Territory of '
-        'Today\'s Montenegro, 11th-14th Centuries',
+    'title': 'Beyond East and West: Sacred Landscapes in the Territory of '
+    'Today\'s Montenegro, 11th-14th Centuries',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Markus Breier',
-    'title':
-        'Modern Cartographic Representations of Medieval Borders '
-        'and Border Zones',
+    'title': 'Modern Cartographic Representations of Medieval Borders '
+    'and Border Zones',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Lukas Neugebauer',
-    'title':
-        'Experiencing Historical Landscapes Using Visual Storytelling',
+    'title': 'Experiencing Historical Landscapes Using Visual Storytelling',
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2022, 7, 6),
     'external_link': '',
     'download': '',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Markus Breier',
-    'title':
-        'Beyond East and West - A Framework for Researching and '
-        'Communicating Historical Landscapes',
+    'title': 'Beyond East and West - A Framework for Researching and '
+    'Communicating Historical Landscapes',
     'conference': 'EuroCarto 2022',
     'location': [_('Vienna')],
     'date': get_table_dates_formatted(2022, 9, 19),
     'external_link': '',
     'download': 'eurocarto_2022.pdf',
-    'category': ['holdura']}, {
+    'category': ['holdura']
+}, {
     'presenter': 'Markus Breier',
-    'title':
-        'The Sacred Landscape of Medieval Montenegro: '
-        'Map-Based Communication',
-    'conference':
-        '5. Geographie-Werkstatt des Österreichischem Geographieverbands',
+    'title': 'The Sacred Landscape of Medieval Montenegro: '
+    'Map-Based Communication',
+    'conference': '5. Geographie-Werkstatt des Österreichischem Geographieverbands',
     'location': [_('Vienna')],
     'date': get_table_dates_formatted(2022, 9, 20),
     'external_link': '',

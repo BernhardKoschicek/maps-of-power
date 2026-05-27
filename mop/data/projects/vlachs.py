@@ -30,39 +30,38 @@ images = [
         'category': ['vlachs']},
     {
         'src': 'vlachs_4.png',
-        'description':
-            _('Nomadic Infrastructure in the Historical '
-              'Region of Macedonia (14th Cent.)'),
-        'citation':
-            'Department of Geography and Reginal Research, '
-            'University of Vienna, 2014',
+        'description': _(
+            'Nomadic Infrastructure in the Historical '
+            'Region of Macedonia (14th Cent.)'),
+        'citation': 'Department of Geography and Reginal Research, '
+        'University of Vienna, 2014',
         'category': ['vlachs']},
     {
         'src': 'vlachs_5.png',
-        'description':
-            _('The Winter Pastures in the Historical Region of '
-              'Macedonia (14th Cent.)'),
+        'description': _(
+            'The Winter Pastures in the Historical Region of '
+            'Macedonia (14th Cent.)'),
         'citation': 'M. Popović',
         'category': ['vlachs']},
     {
         'src': 'vlachs_6.png',
-        'description':
-            _('The Summer Pastures in the Historical Region of '
-              'Macedonia (14th Cent.)'),
+        'description': _(
+            'The Summer Pastures in the Historical Region of '
+            'Macedonia (14th Cent.)'),
         'citation': 'M. Popović',
         'category': ['vlachs']},
     {
         'src': 'vlachs_7.png',
-        'description':
-            _('The Distribution of Vlach Temporary Settlements (Katuni) in '
-              'the Historical Region of Macedonia (14th Cent.)'),
+        'description': _(
+            'The Distribution of Vlach Temporary Settlements (Katuni) in '
+            'the Historical Region of Macedonia (14th Cent.)'),
         'citation': 'M. Popović',
         'category': ['vlachs']},
     {
         'src': 'vlachs_8.png',
-        'description':
-            _('The Source-Based Presence of Vlachs in the Historical '
-              'Region of Macedonia (14th Cent.)'),
+        'description': _(
+            'The Source-Based Presence of Vlachs in the Historical '
+            'Region of Macedonia (14th Cent.)'),
         'citation': 'M. Popović',
         'category': ['vlachs']}, ]
 
@@ -85,9 +84,8 @@ project_vlachs = {
         'David Schmid (Vienna)', ],
     'begin': get_dates_formatted(2016, 7, 1),
     'end': get_dates_formatted(2018, 6, 30),
-    'description': [
-        _('vlachs_description_1'),
-        _('vlachs_description_2')],
+    'description': [_('vlachs_description_1'),
+                    _('vlachs_description_2')],
     'results': results,
     'icon': 'vlachs_1.png',
     'images': images,

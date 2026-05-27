@@ -7,8 +7,8 @@ from mop.model.types import Types, EntityTypeModel
 from mop.model.util import split_date_string, format_date, uc_first
 from mop.model.api_calls import get_entity_presentation
 
-
 # --- Pydantic Models for API Response ---
+
 
 class TimeRangeSubModel(BaseModel):
     earliest: Optional[str] = None
@@ -104,8 +104,8 @@ class PresentationViewModel(BaseModel):
     files: Optional[List[PresentationFileModel]] = None
     geometries: Optional[Dict[str, Any]] = None
     references: Optional[List[PresentationReferenceModel]] = None
-    relations: Dict[str, List[RelatedEntityModel]] = Field(
-        default_factory=dict)
+    relations: Dict[str,
+                    List[RelatedEntityModel]] = Field(default_factory=dict)
     types: Optional[List[EntityTypeModel]] = None
     when: Optional[TimeRangeModel] = None
 
@@ -115,8 +115,9 @@ class PresentationViewModel(BaseModel):
 
 # --- Helper functions for parsing ---
 
+
 def format_time_range(
-        time_range: Optional[TimeRangeModel]
+    time_range: Optional[TimeRangeModel]
 ) -> tuple[Optional[str], Optional[str]]:
     if not time_range:  # pragma: no cover
         return None, None
@@ -136,14 +137,15 @@ def format_time_range(
 def get_geometry_data(geometries: Optional[Dict[str, Any]]) -> Optional[Any]:
     if not geometries:
         return None
-    if (isinstance(geometries, dict) and
-            geometries.get('type') == 'GeometryCollection'):
+    if (isinstance(geometries, dict)
+            and geometries.get('type') == 'GeometryCollection'):
         # pragma: no cover
         return geometries.get('geometries')
     return geometries
 
 
 # --- Dataclasses used in Views & Templates ---
+
 
 @dataclass
 class Depiction:
@@ -209,7 +211,8 @@ class Entity:
     end_from: Optional[str] = None
 
     def __init__(
-            self, data: Optional[Dict[str, Any]] = None,
+            self,
+            data: Optional[Dict[str, Any]] = None,
             **kwargs: Any) -> None:
         if data is not None:
             # Legacy initialization from standard list endpoints (/view_class)
@@ -256,8 +259,8 @@ class Entity:
         begin, end = format_time_range(m.when)
 
         # 2. Parse types
-        types_list = (
-            [Types.from_model(t) for t in m.types] if m.types else None)
+        types_list = ([Types.from_model(t)
+                       for t in m.types] if m.types else None)
 
         # 3. Parse depictions (files)
         depictions_list = []
@@ -270,13 +273,13 @@ class Entity:
                     url=f.url,
                     creator=f.creator or "",
                     license_holder=f.licenseHolder or "",
-                    public_shareable=f.publicShareable if (
-                        f.publicShareable is not None) else True,
+                    public_shareable=f.publicShareable if
+                    (f.publicShareable is not None) else True,
                     mimetype=f.mimetype,
                     iiif_base_path=f.IIIFBasePath or "",
                     iiif_manifest=f.IIIFManifest or "",
-                    extension=os.path.splitext(
-                        f.url.rsplit('/', 1)[-1])[1] if f.url else "",
+                    extension=os.path.splitext(f.url.rsplit('/', 1)[-1])[1]
+                    if f.url else "",
                     description="",
                     main_image=(
                         f.mainImage if f.mainImage is not None else False))
@@ -289,9 +292,7 @@ class Entity:
                 links_list.append(
                     ExternalLink(
                         identifier=ref.referenceURL or ref.identifier or "",
-                        referenceSystem=ref.referenceSystem or ""
-                    )
-                )
+                        referenceSystem=ref.referenceSystem or ""))
 
         # 5. Parse relations
         mapped_relations: Dict[str, List[Relation]] = {}
@@ -324,18 +325,18 @@ class Entity:
         for sys_class_key, rel_list in m.relations.items():
             for rel in rel_list:
                 rel_begin, rel_end = format_time_range(rel.when)
-                rel_type = ", ".join(
-                    [rt.type for rt in rel.relationTypes if rt.type]
-                ) if rel.relationTypes else None
+                rel_type = ", ".join([
+                    rt.type for rt in rel.relationTypes
+                    if rt.type]) if rel.relationTypes else None
                 raw_begin_val = (
-                    rel.when.start.earliest
-                    if (rel.when and rel.when.start) else None)
+                    rel.when.start.earliest if
+                    (rel.when and rel.when.start) else None)
                 raw_end_val = (
-                    rel.when.end.latest
-                    if (rel.when and rel.when.end) else None)
-                properties = (
-                    [rt.property for rt in rel.relationTypes if rt.property]
-                    if rel.relationTypes else [])
+                    rel.when.end.latest if
+                    (rel.when and rel.when.end) else None)
+                properties = ([
+                    rt.property for rt in rel.relationTypes
+                    if rt.property] if rel.relationTypes else [])
                 is_inverse = any(
                     p.split("_", 1)[0].endswith("i") for p in properties)
 
@@ -358,9 +359,8 @@ class Entity:
                     places.append(rel_obj)
                 elif sc in ['group', 'person']:
                     actors.append(rel_obj)
-                elif sc in [
-                        'acquisition', 'activity', 'event', 'move',
-                        'production', 'creation']:
+                elif sc in ['acquisition', 'activity', 'event', 'move',
+                            'production', 'creation']:
                     events.append(rel_obj)
                 elif sc in ['artifact', 'human_remains']:  # pragma: no cover
                     artifacts.append(rel_obj)
@@ -370,9 +370,8 @@ class Entity:
                     source_translations.append(rel_obj)
                 elif sc == 'administrative_unit':  # pragma: no cover
                     administrative_unit.append(rel_obj)
-                elif sc in [
-                        'bibliography', 'edition', 'external_reference',
-                        'reference_system', 'file']:  # pragma: no cover
+                elif sc in ['bibliography', 'edition', 'external_reference',
+                            'reference_system', 'file']:  # pragma: no cover
                     if sc in ['bibliography', 'edition', 'external_reference']:
                         # Avoid duplicates from top-level references
                         pass
@@ -402,15 +401,15 @@ class Entity:
 
         begin_from = (
             m.when.start.earliest if (m.when and m.when.start) else None)
-        end_from = (
-            m.when.end.latest if (m.when and m.when.end) else None)
+        end_from = (m.when.end.latest if (m.when and m.when.end) else None)
 
         geometry = get_geometry_data(m.geometries)
         if not geometry:
             for rel_group in mapped_relations.values():
                 for mapped_rel in rel_group:
-                    if (mapped_rel.geometry and
-                            any("P46" in p for p in mapped_rel.properties)):
+                    if (mapped_rel.geometry
+                            and any("P46" in p
+                                    for p in mapped_rel.properties)):
                         geometry = mapped_rel.geometry
                         break
                 if geometry:
@@ -430,5 +429,4 @@ class Entity:
             end=end,
             geometry=geometry,
             begin_from=begin_from,
-            end_from=end_from
-        )
+            end_from=end_from)

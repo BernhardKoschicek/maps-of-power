@@ -1,19 +1,19 @@
 import re
-from typing import Any, List, Dict, Optional
+from typing import Any
 from flask import url_for
 from mop.model.entity import Entity, Relation
 
 
 def build_target_link(
-        rel: Relation, project: Optional[str] = None,
-        view: Optional[str] = None) -> str:
+        rel: Relation,
+        project: str | None = None,
+        view: str | None = None) -> str:
     try:
         url = url_for(
             'entity_project_view',
             id_=rel.relation_to_id,
             project=project,
-            view=view
-        )
+            view=view)
     except Exception:
         # Fallback URL if flask application context is missing or url_for fails
         url = (
@@ -42,7 +42,7 @@ def build_target_link(
     return link_html
 
 
-def join_targets(target_links: List[str]) -> str:
+def join_targets(target_links: list[str]) -> str:
     if not target_links:
         return ""
     if len(target_links) == 1:
@@ -76,8 +76,8 @@ def parse_relationship_term(type_str: str, inverse: bool) -> str:
         return "Related to"
 
     prepositions = {
-        "of", "to", "in", "for", "with", "by", "at", "on", "from", "and",
-        "or", "in-law", "or-niece", "niece"}
+        "of", "to", "in", "for", "with", "by", "at", "on", "from", "and", "or",
+        "in-law", "or-niece", "niece"}
 
     formatted_words = []
     for i, word in enumerate(words):
@@ -96,21 +96,23 @@ def parse_relationship_term(type_str: str, inverse: bool) -> str:
     formatted_term = " ".join(formatted_words)
 
     # 4. Append "of" if it doesn't end with "of" or "to"
-    if (not formatted_term.lower().endswith("of") and
-            not formatted_term.lower().endswith("to")):
+    if (not formatted_term.lower().endswith("of")
+            and not formatted_term.lower().endswith("to")):
         formatted_term = f"{formatted_term} of"
 
     return formatted_term
 
 
 class NarrativePropertyConfig:
+
     def __init__(
-        self,
-        label: str,
-        templates: Dict[str, str],
-        default_template: str = "Connected via {property_label} to {targets}.",
-        icon: str = "bi-chat-left-quote"
-    ):
+            self,
+            label: str,
+            templates: dict[str, str],
+            default_template: str = (
+                "Connected via {property_label} "
+                "to {targets}."),
+            icon: str = "bi-chat-left-quote"):
         self.label = label
         self.templates = templates
         self.default_template = default_template
@@ -121,12 +123,11 @@ class NarrativePropertyConfig:
         return self.templates.get(key, self.default_template)
 
     def generate_narratives(
-        self,
-        source_entity: Entity,
-        relations: List[Relation],
-        project: Optional[str] = None,
-        view: Optional[str] = None
-    ) -> List[Dict[str, Any]]:
+            self,
+            source_entity: Entity,
+            relations: list[Relation],
+            project: str | None = None,
+            view: str | None = None) -> list[dict[str, Any]]:
         target_links = []
         for rel in relations:
             link_html = build_target_link(rel, project, view)
@@ -138,23 +139,21 @@ class NarrativePropertyConfig:
         targets_str = join_targets(target_links)
         template = self.get_template(source_entity.system_class)
         narrative_text = template.format(
-            targets=targets_str,
-            property_label=self.label
-        )
+            targets=targets_str, property_label=self.label)
         return [{"text": narrative_text, "icon": self.icon}]
 
 
 class ActorRelationshipConfig(NarrativePropertyConfig):
+
     def generate_narratives(
-        self,
-        source_entity: Entity,
-        relations: List[Relation],
-        project: Optional[str] = None,
-        view: Optional[str] = None
-    ) -> List[Dict[str, Any]]:
+            self,
+            source_entity: Entity,
+            relations: list[Relation],
+            project: str | None = None,
+            view: str | None = None) -> list[dict[str, Any]]:
         # Group relations by their resolved relationship term
         # (e.g. "Child of", "Spouse of")
-        term_groups: Dict[str, List[Relation]] = {}
+        term_groups: dict[str, list[Relation]] = {}
 
         for rel in relations:
             type_str = rel.type or ""
@@ -187,29 +186,19 @@ NARRATIVE_CONFIGS = {
         templates={
             "place": "Served as the residence/home for {targets}.",
             "person": "Had their residence/home in {targets}.",
-            "group": "Had their residence/home in {targets}."
-        },
-        icon="bi-geo-alt"
-    ),
+            "group": "Had their residence/home in {targets}."},
+        icon="bi-geo-alt"),
     "crm:P74i_is_current_or_former_residence_of": NarrativePropertyConfig(
         label="residence/home",
         templates={
             "place": "Served as the residence/home for {targets}.",
             "person": "Had their residence/home in {targets}.",
-            "group": "Had their residence/home in {targets}."
-        },
-        icon="bi-geo-alt"
-    ),
+            "group": "Had their residence/home in {targets}."},
+        icon="bi-geo-alt"),
     "crm:OA7_has_relationship_to": ActorRelationshipConfig(
-        label="relationship",
-        templates={},
-        icon="bi-people"
-    ),
+        label="relationship", templates={}, icon="bi-people"),
     "crm:OA7i_has_relationship_to": ActorRelationshipConfig(
-        label="relationship",
-        templates={},
-        icon="bi-people"
-    ),
+        label="relationship", templates={}, icon="bi-people"),
     "crm:P2_has_type": NarrativePropertyConfig(
         label="classification",
         templates={
@@ -225,18 +214,15 @@ NARRATIVE_CONFIGS = {
             "activity": "Associated with the project or case study {targets}.",
             "move": "Associated with the project or case study {targets}.",
             "acquisition": (
-                "Associated with the project or case study {targets}.")
-        },
+                "Associated with the project or case study {targets}.")},
         default_template="Categorized under the type/project {targets}.",
-        icon="bi-bookmark-star"
-    ),
+        icon="bi-bookmark-star"),
     "crm:P2i_is_type_of": NarrativePropertyConfig(
         label="type categorization",
         templates={},
         default_template=(
             "Serves as the type/project classification for {targets}."),
-        icon="bi-bookmark-star"
-    ),
+        icon="bi-bookmark-star"),
     "crm:P11_had_participant": NarrativePropertyConfig(
         label="participant",
         templates={
@@ -245,11 +231,9 @@ NARRATIVE_CONFIGS = {
             "event": (
                 "Brought together the historical participants {targets}."),
             "acquisition": "Brought together the participants {targets}.",
-            "move": "Brought together the participants {targets}."
-        },
+            "move": "Brought together the participants {targets}."},
         default_template="Had participant {targets}.",
-        icon="bi-person-check"
-    ),
+        icon="bi-person-check"),
     "crm:P11i_participated_in": NarrativePropertyConfig(
         label="participation",
         templates={
@@ -258,11 +242,9 @@ NARRATIVE_CONFIGS = {
                 "{targets}."),
             "group": (
                 "Participated as a collective in the event or activity of "
-                "{targets}.")
-        },
+                "{targets}.")},
         default_template="Participated in {targets}.",
-        icon="bi-person-check"
-    ),
+        icon="bi-person-check"),
     "crm:P14_carried_out_by": NarrativePropertyConfig(
         label="executor",
         templates={
@@ -274,70 +256,56 @@ NARRATIVE_CONFIGS = {
                 "Was carried out by the historical actor(s) {targets}."),
             "move": "Was carried out by the historical actor(s) {targets}.",
             "production": "Was produced by the historical actor(s) {targets}.",
-            "creation": "Was created by the historical actor(s) {targets}."
-        },
+            "creation": "Was created by the historical actor(s) {targets}."},
         default_template="Was carried out by {targets}.",
-        icon="bi-briefcase"
-    ),
+        icon="bi-briefcase"),
     "crm:P14i_performed": NarrativePropertyConfig(
         label="performed action",
         templates={
             "person": "Sponsored or carried out the execution of {targets}.",
-            "group": "Sponsored or carried out the execution of {targets}."
-        },
+            "group": "Sponsored or carried out the execution of {targets}."},
         default_template="Successfully performed or executed {targets}.",
-        icon="bi-briefcase"
-    ),
+        icon="bi-briefcase"),
     "crm:P22_transferred_title_to": NarrativePropertyConfig(
         label="title transfer",
         templates={
             "activity": "Transferred legal title or rank to {targets}.",
-            "acquisition": "Transferred legal title or rank to {targets}."
-        },
+            "acquisition": "Transferred legal title or rank to {targets}."},
         default_template="Transferred title to {targets}.",
-        icon="bi-award"
-    ),
+        icon="bi-award"),
     "crm:P22i_acquired_title_through": NarrativePropertyConfig(
         label="acquired title",
         templates={
             "person": (
                 "Acquired their noble title or administrative rank through "
                 "the transaction of {targets}."),
-            "group": "Acquired title or rank through {targets}."
-        },
+            "group": "Acquired title or rank through {targets}."},
         default_template="Acquired title through {targets}.",
-        icon="bi-award"
-    ),
+        icon="bi-award"),
     "crm:P23_transferred_title_from": NarrativePropertyConfig(
         label="title relinquishment",
         templates={
             "activity": "Transferred legal title or property from {targets}.",
             "acquisition": (
-                "Transferred legal title or property from {targets}.")
-        },
+                "Transferred legal title or property from {targets}.")},
         default_template="Transferred title from {targets}.",
-        icon="bi-shield-x"
-    ),
+        icon="bi-shield-x"),
     "crm:P23i_surrendered_title_through": NarrativePropertyConfig(
         label="surrendered title",
         templates={
             "person": (
                 "Surrendered or relinquished their title/estate through the "
                 "transaction of {targets}."),
-            "group": "Surrendered title or property through {targets}."
-        },
+            "group": "Surrendered title or property through {targets}."},
         default_template="Relinquished rights through {targets}.",
-        icon="bi-shield-x"
-    ),
+        icon="bi-shield-x"),
     "crm:P24_transferred_title_of": NarrativePropertyConfig(
         label="ownership transfer",
         templates={
             "activity": "Transferred ownership or donation of {targets}.",
-            "acquisition": "Transferred ownership or donation of {targets}."
-        },
+            "acquisition": "Transferred ownership or donation of {targets}."},
         default_template="Transferred ownership/donation of {targets}.",
-        icon="bi-gift"
-    ),
+        icon="bi-gift"),
     "crm:P24i_changed_ownership_through": NarrativePropertyConfig(
         label="ownership change",
         templates={
@@ -346,39 +314,31 @@ NARRATIVE_CONFIGS = {
                 "{targets}."),
             "artifact": (
                 "Passed into new ownership or was formally donated through "
-                "{targets}.")
-        },
+                "{targets}.")},
         default_template="Changed ownership or was donated through {targets}.",
-        icon="bi-gift"
-    ),
+        icon="bi-gift"),
     "crm:P25_moved": NarrativePropertyConfig(
         label="moved object",
         templates={
             "move": (
-                "Involved the spatial transfer and relocation of {targets}.")
-        },
+                "Involved the spatial transfer and relocation of {targets}.")},
         default_template="Moved {targets}.",
-        icon="bi-arrows-move"
-    ),
+        icon="bi-arrows-move"),
     "crm:P25i_moved_by": NarrativePropertyConfig(
         label="relocated by",
         templates={
             "artifact": (
                 "Was moved or transported during the historical event of "
-                "{targets}.")
-        },
+                "{targets}.")},
         default_template="Was relocated or moved by {targets}.",
-        icon="bi-arrows-move"
-    ),
+        icon="bi-arrows-move"),
     "crm:P9_consists_of": NarrativePropertyConfig(
         label="composition",
         templates={
             "activity": "Consists of the sub-events of {targets}.",
-            "event": "Consists of the sub-events of {targets}."
-        },
+            "event": "Consists of the sub-events of {targets}."},
         default_template="Consists of {targets}.",
-        icon="bi-diagram-3"
-    ),
+        icon="bi-diagram-3"),
     "crm:P9i_forms_part_of": NarrativePropertyConfig(
         label="constituent part",
         templates={
@@ -387,24 +347,23 @@ NARRATIVE_CONFIGS = {
                 "{targets}."),
             "event": (
                 "Forms a constituent part of the larger historical episode of "
-                "{targets}.")
-        },
+                "{targets}.")},
         default_template="Forms part of {targets}.",
-        icon="bi-diagram-3"
-    )
-}
+        icon="bi-diagram-3")}
 
 
 class NarrativeGenerator:
+
     @staticmethod
     def generate(
-            entity: Entity, project: Optional[str] = None,
-            view: Optional[str] = None) -> List[Dict[str, Any]]:
+            entity: Entity,
+            project: str | None = None,
+            view: str | None = None) -> list[dict[str, Any]]:
         if not entity.relations:
             return []
 
         # We will group relations by the matched narrative property key
-        groups: Dict[str, List[Relation]] = {}
+        groups: dict[str, list[Relation]] = {}
 
         for _, rel_list in entity.relations.items():
             for rel in rel_list:

@@ -35,7 +35,8 @@ event_list = [{
     'description': _('brno_summer_school_260625'),
     'attachment': [{
         'path': '',
-        'type': ''}]}, {
+        'type': ''}]
+}, {
     'id': 'heidelberg_200625',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2025, 6, 20)}",
@@ -45,7 +46,8 @@ event_list = [{
     'description': _('heidelberg_200625'),
     'attachment': [{
         'path': '',
-        'type': ''}]}, {
+        'type': ''}]
+}, {
     'id': 'presse_03052025',
     'type': types['press_release'],
     'date': f"{get_dates_formatted(2025, 5, 3)}",
@@ -55,7 +57,8 @@ event_list = [{
     'description': _('presse_03052025'),
     'attachment': [{
         'path': '',
-        'type': ''}]}, {
+        'type': ''}]
+}, {
     'id': 'wittgenstein_13022025',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2025, 2, 13)}",
@@ -65,7 +68,8 @@ event_list = [{
     'description': _('wittgenstein_13022025'),
     'attachment': [{
         'path': '',
-        'type': ''}]}, {
+        'type': ''}]
+}, {
     'id': 'workshop_oxford_300524',
     'type': types['science_fair'],
     'date': f"{get_dates_formatted(2024, 5, 30)}",
@@ -75,7 +79,9 @@ event_list = [{
     'description': _('workshop_oxford_300524'),
     'attachment': [{
         'path': '',
-        'type': ''}]}, {
+        'type': ''
+    }]
+}, {
     'id': 'lange_nacht_der_forschung_240524',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2024, 5, 24)}",
@@ -85,7 +91,9 @@ event_list = [{
     'description': _('lange_nacht_der_forschung_240524'),
     'attachment': [{
         'path': '',
-        'type': ''}]}, {
+        'type': ''
+    }]
+}, {
     'id': 'koder_festschrift_230424',
     'type': types['book_release'],
     'date': f"{get_dates_formatted(2024, 4, 23)}",
@@ -95,64 +103,72 @@ event_list = [{
     'description': _('koder_festschrift_230424'),
     'attachment': [{
         'path': '',
-        'type': ''}]}, {
-    'id': 'belgrade_190923',
-    'type': types['presentation'],
-    'date': f"{get_dates_formatted(2023, 9, 19)}",
-    'who': '',
-    'icon': 'belgrade_190923.png',
-    'title': _('Two Presentations on the Usefulness of OpenAtlas'),
-    'description': _('belgrade_190923'),
-    'attachment': [{
-        'path': '',
-        'type': ''}]}, {
-    'id': 'athos_oxford_290923',
-    'type': types['presentation'],
-    'date': f"{get_dates_formatted(2023, 9, 29)}",
-    'who': [team['mpopovic']],
-    'icon': 'athos_oxford_290923.png',
-    'title': _('Workshop on Medieval Athos in Oxford'),
-    'description': _('athos_oxford_290923'),
-    'attachment': [{
-        'path': '',
-        'type': ''}]}, {
-    'id': 'tripps_070923',
-    'type': types['presentation'],
-    'date': f"{get_dates_formatted(2023, 9, 7)}",
-    'who': '',
-    'icon': 'tripps_070923.jpg',
-    'title': _('Paper on the Crown of the Saint King Stefan Dečanski'),
-    'description': _('tripps_070923'),
-    'attachment': [{
-        'path': '',
-        'type': ''}]}, {
-    'id': 'imc_leeds_23',
-    'type': types['presentation'],
-    'date': f"{get_dates_formatted(2023, 7, 6)}",
-    'who': '',
-    'icon': 'imc_leeds_23.jpg',
-    'title': _('TIB Balkans at the IMC Leeds 2023'),
-    'description': _('imc_leeds_23'),
-    'attachment': [{
-        'path': '',
-        'type': ''}]}, {
-    'id': 'mecern_2023',
-    'type': types['presentation'],
-    'date': f"{get_dates_formatted(2023, 4, 27)}",
-    'who': [team['mpopovic']],
-    'icon': 'mecern_2023.jpg',
-    'title': _('presentation on MECERN conference'),
-    'description': _('mecern_2023'),
-    'attachment': [{
-        'path': '',
-        'type': ''}]}, {
-    'id': 'serbian_academy_220223',
-    'type': types['presentation'],
-    'date': f"{get_dates_formatted(2023, 2, 22)}",
-    'who': [team['mpopovic']],
-    'icon': 'serbian_academy_220223.jpg',
-    'title': _('presentation at the Serbian Academy of Sciences and Arts'),
-    'description': _('serbian_academy_220223'),
-    'attachment': [{
-        'path': '',
-        'type': ''}]}]
+        'type': ''
+    }]}, {
+        'id': 'belgrade_190923',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2023, 9, 19)}",
+        'who': '',
+        'icon': 'belgrade_190923.png',
+        'title': _('Two Presentations on the Usefulness of OpenAtlas'),
+        'description': _('belgrade_190923'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]
+    }, {
+        'id': 'athos_oxford_290923',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2023, 9, 29)}",
+        'who': [team['mpopovic']],
+        'icon': 'athos_oxford_290923.png',
+        'title': _('Workshop on Medieval Athos in Oxford'),
+        'description': _('athos_oxford_290923'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]
+    }, {
+        'id': 'tripps_070923',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2023, 9, 7)}",
+        'who': '',
+        'icon': 'tripps_070923.jpg',
+        'title': _('Paper on the Crown of the Saint King Stefan Dečanski'),
+        'description': _('tripps_070923'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]
+    }, {
+        'id': 'imc_leeds_23',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2023, 7, 6)}",
+        'who': '',
+        'icon': 'imc_leeds_23.jpg',
+        'title': _('TIB Balkans at the IMC Leeds 2023'),
+        'description': _('imc_leeds_23'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]
+    }, {
+        'id': 'mecern_2023',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2023, 4, 27)}",
+        'who': [team['mpopovic']],
+        'icon': 'mecern_2023.jpg',
+        'title': _('presentation on MECERN conference'),
+        'description': _('mecern_2023'),
+        'attachment': [{
+            'path': '',
+            'type': ''
+        }]
+    }, {
+        'id': 'serbian_academy_220223',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2023, 2, 22)}",
+        'who': [team['mpopovic']
+               ],
+        'icon': 'serbian_academy_220223.jpg',
+        'title': _('presentation at the Serbian Academy of Sciences and Arts'),
+        'description': _('serbian_academy_220223'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]}]

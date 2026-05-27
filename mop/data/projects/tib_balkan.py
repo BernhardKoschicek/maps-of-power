@@ -8,25 +8,23 @@ images = [{
     'description': _('The Monastery of Saint Naum on Lake Ohrid'),
     'citation': 'Johannes Koder, 1965',
     'category': ['tib_balkan']}, {
-    'src': 'tib_balkan_2.jpg',
-    'description': _('The Monastery of Saint Naum on Lake Ohrid'),
-    'citation': 'Mihailo Popović, 2017',
-    'category': ['tib_balkan']}, {
-    'src': 'tib_balkan_3.jpg',
-    'description': _('The Church of Sveti Jovan Kaneo in Ohrid'),
-    'citation': 'Wolfgang Lanz, 1970',
-    'category': ['tib_balkan']}, {
-    'src': 'tib_balkan_4.jpg',
-    'description': _('The Church of Sveti Jovan Kaneo in Ohrid'),
-    'citation': 'Mihailo Popović, 2008',
-    'category': ['tib_balkan']}]
+        'src': 'tib_balkan_2.jpg',
+        'description': _('The Monastery of Saint Naum on Lake Ohrid'),
+        'citation': 'Mihailo Popović, 2017',
+        'category': ['tib_balkan']}, {
+            'src': 'tib_balkan_3.jpg',
+            'description': _('The Church of Sveti Jovan Kaneo in Ohrid'),
+            'citation': 'Wolfgang Lanz, 1970',
+            'category': ['tib_balkan']}, {
+                'src': 'tib_balkan_4.jpg',
+                'description': _('The Church of Sveti Jovan Kaneo in Ohrid'),
+                'citation': 'Mihailo Popović, 2008',
+                'category': ['tib_balkan']}]
 
 project_tib_balkan = {
     'acronym': 'tib_balkan',
-    'title': _(
-        'Reverse Engineering of the Tabula Imperii Byzantini Balkans'),
-    'website':
-        'https://tib.oeaw.ac.at/',
+    'title': _('Reverse Engineering of the Tabula Imperii Byzantini Balkans'),
+    'website': 'https://tib.oeaw.ac.at/',
     'host_institutes': [institutes['abf']],
     'funded_by': [],
     'project_number': '',

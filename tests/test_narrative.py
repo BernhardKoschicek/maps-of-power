@@ -1,9 +1,6 @@
 from mop.model.entity import Entity, Relation
 from mop.model.narrative import (
-    NarrativePropertyConfig,
-    NarrativeGenerator,
-    parse_relationship_term
-)
+    NarrativePropertyConfig, NarrativeGenerator, parse_relationship_term)
 
 
 def test_parse_relationship_term() -> None:
@@ -34,9 +31,7 @@ def test_narrative_property_config() -> None:
         label="test_prop",
         templates={
             "place": "Place template for {targets}.",
-            "person": "Person template for {targets}."
-        }
-    )
+            "person": "Person template for {targets}."})
     assert config.get_template("Place") == "Place template for {targets}."
     assert config.get_template("Person") == "Person template for {targets}."
     assert config.get_template("Unknown") == (
@@ -49,8 +44,7 @@ def test_narrative_generator_empty() -> None:
         name="Test Entity",
         description="",
         system_class="Place",
-        relations=None
-    )
+        relations=None)
     assert not NarrativeGenerator.generate(entity)
 
 
@@ -64,15 +58,13 @@ def test_narrative_generator_single_relation() -> None:
         type="Residence",
         description="",
         geometry=None,
-        properties=["crm:P74_has_current_or_former_residence"]
-    )
+        properties=["crm:P74_has_current_or_former_residence"])
     entity = Entity(
         id_="222",
         name="John Doe",
         description="",
         system_class="Person",
-        relations={"places": [rel]}
-    )
+        relations={"places": [rel]})
 
     narratives = NarrativeGenerator.generate(entity)
     assert len(narratives) == 1
@@ -94,8 +86,7 @@ def test_narrative_generator_grouping() -> None:
         type=None,
         description="",
         geometry=None,
-        properties=["crm:P74_has_current_or_former_residence"]
-    )
+        properties=["crm:P74_has_current_or_former_residence"])
     rel2 = Relation(
         relation_to_id="119946",
         label="Palaiologos Ioannes",
@@ -105,27 +96,27 @@ def test_narrative_generator_grouping() -> None:
         type=None,
         description="",
         geometry=None,
-        properties=["crm:P74_has_current_or_former_residence"]
-    )
+        properties=["crm:P74_has_current_or_former_residence"])
 
     entity = Entity(
         id_="111840",
         name="Thessalonike",
         description="",
         system_class="Place",
-        relations={"actors": [rel1, rel2]}
-    )
+        relations={"actors": [rel1, rel2]})
 
-    narratives = NarrativeGenerator.generate(entity, project="macedonia",
-                                             view="place")
+    narratives = NarrativeGenerator.generate(
+        entity, project="macedonia", view="place")
     assert len(narratives) == 1
     # Place source template: "Served as the residence/home for {targets}."
     assert "Served as the residence/home for" in narratives[0]['text']
-    assert ('href="/projects/macedonia/explore/place/116716"' in
-            narratives[0]['text'])
+    assert (
+        'href="/projects/macedonia/explore/place/116716"'
+        in narratives[0]['text'])
     assert 'Anna Palaiologina' in narratives[0]['text']
-    assert ('href="/projects/macedonia/explore/place/119946"' in
-            narratives[0]['text'])
+    assert (
+        'href="/projects/macedonia/explore/place/119946"'
+        in narratives[0]['text'])
     assert 'Palaiologos Ioannes' in narratives[0]['text']
     assert '(1325 – 1326)' in narratives[0]['text']
     assert 'Anna Palaiologina</a> and <a' in narratives[0]['text']
@@ -146,8 +137,7 @@ def test_actor_to_actor_relationship_narrative() -> None:
         description="",
         geometry=None,
         properties=["crm:OA7i_has_relationship_to"],
-        inverse=True
-    )
+        inverse=True)
 
     entity = Entity(
         id_="116716",
@@ -156,8 +146,7 @@ def test_actor_to_actor_relationship_narrative() -> None:
         system_class="Person",
         begin="1313",
         end=None,
-        relations={"actors": [rel]}
-    )
+        relations={"actors": [rel]})
 
     narratives = NarrativeGenerator.generate(entity)
     assert len(narratives) == 1
@@ -179,19 +168,18 @@ def test_new_crm_properties_narrative() -> None:
         type=None,
         description="",
         geometry=None,
-        properties=["crm:P11i_participated_in"]
-    )
+        properties=["crm:P11i_participated_in"])
     entity_p11 = Entity(
         id_="123",
         name="Demetrios",
         description="",
         system_class="Person",
-        relations={"others": [rel_p11]}
-    )
+        relations={"others": [rel_p11]})
     narratives_p11 = NarrativeGenerator.generate(entity_p11)
     assert len(narratives_p11) == 1
-    assert ("Participated in the historical event or activity of" in
-            narratives_p11[0]['text'])
+    assert (
+        "Participated in the historical event or activity of"
+        in narratives_p11[0]['text'])
     assert narratives_p11[0]['icon'] == 'bi-person-check'
 
     # 2. Test crm:P14i_performed
@@ -204,19 +192,18 @@ def test_new_crm_properties_narrative() -> None:
         type=None,
         description="",
         geometry=None,
-        properties=["crm:P14i_performed"]
-    )
+        properties=["crm:P14i_performed"])
     entity_p14 = Entity(
         id_="118622",
         name="Jelena Anžujska",
         description="",
         system_class="Person",
-        relations={"places": [rel_p14]}
-    )
+        relations={"places": [rel_p14]})
     narratives_p14 = NarrativeGenerator.generate(entity_p14)
     assert len(narratives_p14) == 1
-    assert ("Sponsored or carried out the execution of" in
-            narratives_p14[0]['text'])
+    assert (
+        "Sponsored or carried out the execution of"
+        in narratives_p14[0]['text'])
     assert narratives_p14[0]['icon'] == 'bi-briefcase'
 
 
@@ -231,17 +218,16 @@ def test_title_narrative_icon() -> None:
         type=None,
         description="",
         geometry=None,
-        properties=["crm:P22i_acquired_title_through"]
-    )
+        properties=["crm:P22i_acquired_title_through"])
     entity = Entity(
         id_="118511",
         name="Musa",
         description="",
         system_class="Person",
-        relations={"activities": [rel]}
-    )
+        relations={"activities": [rel]})
     narratives = NarrativeGenerator.generate(entity)
     assert len(narratives) == 1
-    assert ("Acquired their noble title or administrative rank through the "
-            "transaction of" in narratives[0]['text'])
+    assert (
+        "Acquired their noble title or administrative rank through the "
+        "transaction of" in narratives[0]['text'])
     assert narratives[0]['icon'] == 'bi-award'

@@ -2,10 +2,11 @@ from flask_babel import lazy_gettext as _
 
 institutes = {
     'sasa': {
-        'name': _('Institute for Byzantine Studies '
-                  'of the Serbian Academy of Sciences and Arts'),
+        'name': _(
+            'Institute for Byzantine Studies '
+            'of the Serbian Academy of Sciences and Arts'),
         'url': 'https://www.sanu.ac.rs/en/sasa-institutes/'
-               'institute-for-byzantine-studies/',
+        'institute-for-byzantine-studies/',
         'logo': 'sasa.png',
         'member': '',
         'address': ''},
@@ -55,12 +56,14 @@ institutes = {
         'name': _('Abteilung Byzanzforschung (ABF)'),
         'url': 'https://www.oeaw.ac.at/byzanz',
         'logo': 'imafo.png',
-        'member': _('Österreichische Akademie der Wissenschaften (ÖAW) '
-                    '<br> Institut für Mittelalterforschung (IMAFO)'),
+        'member': _(
+            'Österreichische Akademie der Wissenschaften (ÖAW) '
+            '<br> Institut für Mittelalterforschung (IMAFO)'),
         'address': ''},
     'acdh-ch': {
-        'name': _('Austrian Centre for Digital Humanities and '
-                  'Cultural Heritage'),
+        'name': _(
+            'Austrian Centre for Digital Humanities and '
+            'Cultural Heritage'),
         'url': 'https://www.oeaw.ac.at/acdh/',
         'logo': 'acdh.png',
         'member': '',
@@ -80,13 +83,14 @@ institutes = {
     'oenb': {
         'name': _('Jubiläumsfonds der Oesterreichischen Nationalbank'),
         'url': 'https://www.oenb.at/Ueber-Uns/'
-               'Forschungsfoerderung/Jubilaeumsfonds.html',
+        'Forschungsfoerderung/Jubilaeumsfonds.html',
         'logo': 'oenb.png',
         'member': '',
         'address': ''},
     'oead': {
-        'name': _('Austrian Agency for International'
-                  ' Cooperation in Education and Research'),
+        'name': _(
+            'Austrian Agency for International'
+            ' Cooperation in Education and Research'),
         'url': 'https://oead.at/de/',
         'logo': 'oead.svg',
         'member': '',
@@ -140,10 +144,11 @@ institutes = {
         'member': '',
         'address': ''},
     'noe': {
-        'name': _('Land Niederösterreich, Abteilung Wissenschaft '
-                  'und Forschung'),
+        'name': _(
+            'Land Niederösterreich, Abteilung Wissenschaft '
+            'und Forschung'),
         'url': 'https://sciencecenter.noe.gv.at/massnahme/'
-               '4da6e8c1-306b-4381-b20a-4128644b95b3',
+        '4da6e8c1-306b-4381-b20a-4128644b95b3',
         'logo': 'noe.jpg',
         'member': '',
         'address': ''},

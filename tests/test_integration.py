@@ -108,13 +108,14 @@ def test_util_get_table_dates_formatted() -> None:
 
 def test_util_get_dict_entries_by_category() -> None:
     data = [
-        {'category': ['rhr', 'other']},
-        {'category': ['vlachs']},
-    ]
-    assert get_dict_entries_by_category('rhr', data) == [
-        {'category': ['rhr', 'other']}]
-    assert get_dict_entries_by_category(['vlachs'], data) == [
-        {'category': ['vlachs']}]
+        {
+            'category': ['rhr', 'other']},
+        {
+            'category': ['vlachs']}, ]
+    assert get_dict_entries_by_category('rhr', data) == [{
+        'category': ['rhr', 'other']}]
+    assert get_dict_entries_by_category(['vlachs'], data) == [{
+        'category': ['vlachs']}]
 
 
 def test_util_get_types_sorted() -> None:
@@ -162,11 +163,12 @@ def test_types_constructor_with_dict() -> None:
 
 def test_model_util_format_date_fallbacks() -> None:
     # Test len != 3
-    assert (format_date('01.01', '31.12.2026') ==
-            'between 01.01 and 31.12.2026')
+    assert (
+        format_date('01.01', '31.12.2026') == 'between 01.01 and 31.12.2026')
     # Test ValueError
-    assert (format_date('ab.cd.efgh', '31.12.2026') ==
-            'between ab.cd.efgh and 31.12.2026')
+    assert (
+        format_date('ab.cd.efgh',
+                    '31.12.2026') == 'between ab.cd.efgh and 31.12.2026')
 
 
 def test_display_image_gallery() -> None:
@@ -214,6 +216,7 @@ def test_api_project_places_route() -> None:
     assert data is not None
     assert 'error' in data
 
+
 def test_depiction_main_image_and_thumbnail() -> None:
     from mop.model.entity import Depiction
     dep = Depiction(
@@ -229,8 +232,7 @@ def test_depiction_main_image_and_thumbnail() -> None:
         iiif_manifest="https://openatlas.maps-of-power.at/iiif_manifest/123",
         extension=".jpg",
         description="Test Desc",
-        main_image=True
-    )
+        main_image=True)
     assert dep.main_image is True
     assert dep.iiif_thumbnail_url == (
         "https://openatlas.maps-of-power.at/iiif/mop/"
@@ -239,10 +241,7 @@ def test_depiction_main_image_and_thumbnail() -> None:
 
 def test_entity_geometry_fallback_p46() -> None:
     from mop.model.entity import (
-        PresentationViewModel,
-        RelatedEntityModel,
-        RelationTypeModel
-    )
+        PresentationViewModel, RelatedEntityModel, RelationTypeModel)
     m = PresentationViewModel(
         id=123,
         systemClass="artifact",
@@ -264,18 +263,11 @@ def test_entity_geometry_fallback_p46() -> None:
                         "geometry": {
                             "type": "Point",
                             "coordinates": [10.0, 20.0]},
-                        "properties": {}
-                    },
+                        "properties": {}},
                     relationTypes=[
                         RelationTypeModel(
                             property="crm:P46_is_composed_of",
-                            relationTo=123
-                        )
-                    ]
-                )
-            ]
-        }
-    )
+                            relationTo=123)])]})
     entity = Entity.from_model(m)
     assert entity.geometry is not None
     assert entity.geometry["geometry"]["coordinates"] == [10.0, 20.0]

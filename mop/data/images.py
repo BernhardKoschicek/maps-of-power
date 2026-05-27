@@ -5,8 +5,8 @@ category_images = {
         'src': 'rilska-gramota.png',
         'description': _('image_written_source_description'),
         'caption': _('image_written_source_caption'),
-        'citation':
-            'https://commons.wikimedia.org/wiki/File:Rilska-gramota.jpg'},
+        'citation': 'https://commons.wikimedia.org/wiki/File:Rilska-gramota.jpg'
+    },
     'excavation': {
         'src': 'doclea.png',
         'description': _('image_excavations_description'),

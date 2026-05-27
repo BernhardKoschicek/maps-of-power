@@ -48,13 +48,11 @@ system_classes = {
     'source': 'source',
     'source_translation': 'source_translation',
     'stratigraphic_unit': 'place',
-    'type': 'type',
-}
+    'type': 'type', }
 
 
 def get_oa_by_view_class(
-        view: str,
-        project_id: str | list[str]) -> list[Optional[Entity]]:
+        view: str, project_id: str | list[str]) -> list[Optional[Entity]]:
     if view not in view_classes:
         return []
 

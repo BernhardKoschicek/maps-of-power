@@ -8,22 +8,22 @@ images = [{
     'description': _('Surveying in North Macedonia'),
     'citation': 'Marka Tomić',
     'category': ['barbyz_10-13']}, {
-    'src': 'barbyz_2.jpg',
-    'description': _('Surveying in North Macedonia'),
-    'citation': 'Marka Tomić',
-    'category': ['barbyz_10-13']}, {
-    'src': 'barbyz_3.jpg',
-    'description': _('Surveying in North Macedonia'),
-    'citation': 'Marka Tomić',
-    'category': ['barbyz_10-13']}, {
-    'src': 'barbyz_4.jpg',
-    'description': _('Surveying in North Macedonia'),
-    'citation': 'Marka Tomić',
-    'category': ['barbyz_10-13']}, {
-    'src': 'barbyz_5.jpg',
-    'description': _('Surveying in North Macedonia'),
-    'citation': 'Marka Tomić',
-    'category': ['barbyz_10-13']}]
+        'src': 'barbyz_2.jpg',
+        'description': _('Surveying in North Macedonia'),
+        'citation': 'Marka Tomić',
+        'category': ['barbyz_10-13']}, {
+            'src': 'barbyz_3.jpg',
+            'description': _('Surveying in North Macedonia'),
+            'citation': 'Marka Tomić',
+            'category': ['barbyz_10-13']}, {
+                'src': 'barbyz_4.jpg',
+                'description': _('Surveying in North Macedonia'),
+                'citation': 'Marka Tomić',
+                'category': ['barbyz_10-13']}, {
+                    'src': 'barbyz_5.jpg',
+                    'description': _('Surveying in North Macedonia'),
+                    'citation': 'Marka Tomić',
+                    'category': ['barbyz_10-13']}]
 
 project_barbyz = {
     'acronym': 'barbyz_10-13',
@@ -31,9 +31,8 @@ project_barbyz = {
         'From Barbarians to Christians and Rhomaioi. The Process of '
         'Byzantinization in the Central Balkans (late 10th – mid-13th '
         'century)'),
-    'website':
-        'http://www.byzinst-sasa.rs/eng/project-barbyz_10-13/119/2022/'
-        '04/08/project-barbyz_10-13.html',
+    'website': 'http://www.byzinst-sasa.rs/eng/project-barbyz_10-13/119/2022/'
+    '04/08/project-barbyz_10-13.html',
     'host_institutes': [institutes['sasa']],
     'funded_by': [institutes['sfrs']],
     'project_number': '7748349',
@@ -42,16 +41,9 @@ project_barbyz = {
         'Miloš Živković, Assistant professor, Faculty of Philosophy – '
         'University of Belgrade'],
     'employees': [
-        'Predrag Komatina',
-        'Stanoje Bojanin',
-        'Ljubomir Milanović',
-        'Maja Nikolić',
-        'Marka Tomić',
-        'Jovana Šijaković',
-        'Miloš Cvetković',
-        'Tamara Ilić',
-        'Bojana Pavlović',
-        'Vladan Zdravković'],
+        'Predrag Komatina', 'Stanoje Bojanin', 'Ljubomir Milanović',
+        'Maja Nikolić', 'Marka Tomić', 'Jovana Šijaković', 'Miloš Cvetković',
+        'Tamara Ilić', 'Bojana Pavlović', 'Vladan Zdravković'],
     'begin': get_dates_formatted(2022, 1, 15),
     'end': get_dates_formatted(2025, 1, 14),
     'description': [

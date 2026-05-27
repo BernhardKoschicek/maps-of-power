@@ -19,17 +19,20 @@ images = [
             'Interpretation of the Byzantino-Serbian Border between 1228 and '
             '1334 from Different Authors'),
         'citation': 'Bernhard Koschicek, 2018',
-        'category': ['borderzones']}, {
+        'category': ['borderzones']},
+    {
         'src': 'fortifications.png',
         'description': _(
             'Fortifications in the Northern Macedonian Region in the '
             '13/14th century'),
         'citation': 'Bernhard Koschicek, 2019',
-        'category': ['borderzones']}, {
+        'category': ['borderzones']},
+    {
         'src': 'Marschroute_Abstract_cyrillic_km.png',
         'description': _('Road Model based on a k. u k. Marching Map'),
         'citation': 'Bernhard Koschicek, 2018',
-        'category': ['borderzones']}, {
+        'category': ['borderzones']},
+    {
         'src': 'borderzones_markovi_kuli.jpg',
         'description': _(
             'Markovi Kuli Castle near Prilep from the south, Republic '

@@ -12,28 +12,32 @@ results = {
         'file': 'MK_07_2024_Project_Report.pdf',
         'icon': 'bi bi-journals', }]}
 
-images = [{
-    'src': 'tarsr_1.jpg',
-    'description': _(
-        'The Road Tunnel in Honour of the German Emperor Wilhelm '
-        'II from 1916 in the Valley of the River Vardar'),
-    'citation': 'M. Popović, 2016',
-    'category': ['tarsr']}, {
-    'src': 'tarsr_2.jpg',
-    'description': _(
-        'Inscription in Honour of the German Emperor Wilhelm II '
-        'at the Entrance to the Road Tunnel'),
-    'citation': 'M. Popović, 2016',
-    'category': ['tarsr']}, {
-    'src': 'tarsr_3.jpg',
-    'description':
-        _('German Military Cemetery from the First World War near Bitola'),
-    'citation': 'M. Popović, 2016',
-    'category': ['tarsr']}, {
-    'src': 'tarsr_4.jpg',
-    'description': _('War Relics from the First World War in Mariovo'),
-    'citation': 'M. Popović, 2016',
-    'category': ['tarsr']}, ]
+images = [
+    {
+        'src': 'tarsr_1.jpg',
+        'description': _(
+            'The Road Tunnel in Honour of the German Emperor Wilhelm '
+            'II from 1916 in the Valley of the River Vardar'),
+        'citation': 'M. Popović, 2016',
+        'category': ['tarsr']},
+    {
+        'src': 'tarsr_2.jpg',
+        'description': _(
+            'Inscription in Honour of the German Emperor Wilhelm II '
+            'at the Entrance to the Road Tunnel'),
+        'citation': 'M. Popović, 2016',
+        'category': ['tarsr']},
+    {
+        'src': 'tarsr_3.jpg',
+        'description': _(
+            'German Military Cemetery from the First World War near Bitola'),
+        'citation': 'M. Popović, 2016',
+        'category': ['tarsr']},
+    {
+        'src': 'tarsr_4.jpg',
+        'description': _('War Relics from the First World War in Mariovo'),
+        'citation': 'M. Popović, 2016',
+        'category': ['tarsr']}, ]
 
 project_tarsr = {
     'acronym': 'tarsr',
@@ -49,8 +53,7 @@ project_tarsr = {
         f'Viktor Lilchikj Adams ({_("Skopje")})'],
     'cooperation': [],
     'employees': [
-        f'Toni Filiposki ({_("Skopje")})',
-        f'Ordanče Petrov ({_("Prilep")})',
+        f'Toni Filiposki ({_("Skopje")})', f'Ordanče Petrov ({_("Prilep")})',
         f'Filip Markovski ({_("Bitola")})',
         f'Hristijan Petrovski ({_("Skopje")})',
         f'Guillaume Bidaut ({_("Paris")})',

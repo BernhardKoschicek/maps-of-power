@@ -1,6 +1,6 @@
 import json
 import re
-from typing import Any
+from typing import Any, cast
 
 import numpy
 import requests
@@ -45,9 +45,7 @@ def histgeo(id_: int | None = None) -> str:
     if id_:
         if id_ not in lectures:
             abort(404)
-        return render_template(
-            'lectures.html',
-            lecture=lectures[id_])
+        return render_template('lectures.html', lecture=lectures[id_])
     return render_template(
         'histgeo.html',
         lectures=lectures,
@@ -118,8 +116,7 @@ def literature() -> str:
             'external_link': lit.get('external_link', ''),
             'download': lit.get('download', ''),
             'categories': norm_cats,
-            'citation_text': citation_text
-        }
+            'citation_text': citation_text}
         processed_literatures.append(processed_lit)
 
     return render_template(
@@ -137,12 +134,8 @@ def projects(title: str | None = None) -> str:
         return render_template(
             'project_details.html',
             project=project_data[title],
-            presentations=get_dict_entries_by_category(
-                title,
-                presentations),
-            publications=get_dict_entries_by_category(
-                title,
-                literatures),
+            presentations=get_dict_entries_by_category(title, presentations),
+            publications=get_dict_entries_by_category(title, literatures),
             view_classes=view_classes)
     return render_template('projects.html', projects=project_data)
 
@@ -170,11 +163,9 @@ def project_explore_table(project: str, view: str) -> str:
 @app.route('/projects/<project>/explore/<view>/<int:id_>')
 # pylint: disable=too-many-locals, too-many-branches, too-many-statements
 def entity_project_view(
-        id_: int,
-        project: str | None = None,
-        view: str | None = None) -> str:
-    if (project is not None and
-            project not in project_data):  # pragma: no cover
+        id_: int, project: str | None = None, view: str | None = None) -> str:
+    if (project is not None
+            and project not in project_data):  # pragma: no cover
         abort(404)
     if view is not None and view not in view_classes:  # pragma: no cover
         abort(404)
@@ -204,14 +195,13 @@ def entity_project_view(
             for k, v in properties.items():
                 f_copy['properties'][k] = v
             features.append(f_copy)
-        elif obj_type in {
-                'Point', 'MultiPoint', 'LineString', 'MultiLineString',
-                'Polygon', 'MultiPolygon', 'GeometryCollection'}:
+        elif obj_type in {'Point', 'MultiPoint', 'LineString',
+                          'MultiLineString', 'Polygon', 'MultiPolygon',
+                          'GeometryCollection'}:
             features.append({
                 "type": "Feature",
                 "geometry": geojson_obj,
-                "properties": dict(properties)
-            })
+                "properties": dict(properties)})
         return features
 
     # Standardize main entity geometry
@@ -224,10 +214,7 @@ def entity_project_view(
                 "systemClass": "selected",
                 "id": entity.id_})
         if features:
-            main_geometry = {
-                "type": "FeatureCollection",
-                "features": features
-            }
+            main_geometry = {"type": "FeatureCollection", "features": features}
     entity.geometry = main_geometry
 
     # Standardize related entity geometries
@@ -258,8 +245,7 @@ def entity_project_view(
                     "is_main": False,
                     "relation": rel,
                     "sort_date": sort_date,
-                    "category": rel_group
-                })
+                    "category": rel_group})
 
     if entity.begin:  # pragma: no cover
         timeline_events.append({
@@ -268,8 +254,7 @@ def entity_project_view(
             "type": "Lifecycle Start",
             "begin": entity.begin,
             "sort_date": entity.begin_from or entity.begin,
-            "system_class": entity.system_class
-        })
+            "system_class": entity.system_class})
     if entity.end:  # pragma: no cover
         timeline_events.append({
             "is_main": True,
@@ -277,13 +262,12 @@ def entity_project_view(
             "type": "Lifecycle End",
             "begin": entity.end,
             "sort_date": entity.end_from or entity.end,
-            "system_class": entity.system_class
-        })
+            "system_class": entity.system_class})
 
     timeline_events.sort(key=lambda x: str(x['sort_date'] or ''))
 
-    narratives = NarrativeGenerator.generate(entity, project=project,
-                                             view=view)
+    narratives = NarrativeGenerator.generate(
+        entity, project=project, view=view)
 
     project_details = project_data.get(project) if project else None
     if project_details and not project_details.get('pi'):
@@ -294,9 +278,8 @@ def entity_project_view(
         'explore/project_entity_view.html',
         entity=entity,
         type_hierarchy=get_types_sorted(entity.types or []),
-        images=numpy.array_split(
-            entity.depictions, 4)  # type: ignore[arg-type]
-        if entity.depictions else None,
+        images=(numpy.array_split(cast(Any, entity.depictions), 4)
+                if entity.depictions else None),
         relations=relations,
         related_places=related_places,
         timeline_events=timeline_events,
@@ -368,8 +351,8 @@ def api_project_network(
         for proj in project_data.values():
             oa_id = proj.get('oaID')
             if oa_id:
-                linked_to_ids.extend(
-                    [int(x) for x in oa_id if str(x).isdigit()])
+                linked_to_ids.extend([
+                    int(x) for x in oa_id if str(x).isdigit()])
     else:
         if project_acronym not in project_data:
             return jsonify({'error': 'Project not found'}), 404
@@ -390,11 +373,7 @@ def api_project_network(
 # pylint: disable=too-many-arguments, too-many-positional-arguments
 @cache.memoize(timeout=3600)
 def _fetch_table_rows(
-        view: str,
-        oa_ids: tuple[str, ...],
-        page: int,
-        sort: str,
-        column: str,
+        view: str, oa_ids: tuple[str, ...], page: int, sort: str, column: str,
         search: str) -> dict[str, Any]:
     """Proxy call to OpenAtlas /table_rows/ — cached server-side."""
     url = f"{app.config['API_PATH']}0.4/table_rows/"
@@ -403,10 +382,9 @@ def _fetch_table_rows(
         'sort': sort,
         'column': column,
         'page': page,
-        'table_columns': ['begin', 'class', 'description', 'end', 'name',
-                          'type'],
-        'type_id': list(oa_ids),
-    }
+        'table_columns': [
+            'begin', 'class', 'description', 'end', 'name', 'type'],
+        'type_id': list(oa_ids), }
     if search:
         params['search'] = json.dumps({
             'entityName': [{
@@ -414,9 +392,7 @@ def _fetch_table_rows(
                 'values': [search],
                 'logicalOperator': 'and'}]})
     response = requests.get(
-        url, params=params,
-        proxies=get_proxies(),
-        timeout=30)
+        url, params=params, proxies=get_proxies(), timeout=30)
     response.raise_for_status()
     data = response.json()
     rows = []
@@ -433,8 +409,7 @@ def _fetch_table_rows(
             'description': row[3] or '',
             'end': row[4] or '',
             'name': row[5] or '',
-            'type': row[6] if len(row) > 6 else '',
-        })
+            'type': row[6] if len(row) > 6 else '', })
     return {'results': rows, 'pagination': data.get('pagination', {})}
 
 
@@ -444,10 +419,9 @@ def _fetch_table_rows_count(view: str, oa_ids: tuple[str, ...]) -> int:
     params: dict[str, Any] = {
         'view_classes': view,
         'count': 'true',
-        'type_id': list(oa_ids),
-    }
-    response = requests.get(url, params=params,
-                            proxies=get_proxies(), timeout=30)
+        'type_id': list(oa_ids), }
+    response = requests.get(
+        url, params=params, proxies=get_proxies(), timeout=30)
     response.raise_for_status()
     try:
         return int(response.text.strip())
@@ -469,7 +443,8 @@ def get_proxies() -> dict[str, str] | None:
 
 @app.route('/api/explore/<project_acronym>/<view>')
 def api_explore_entities(
-        project_acronym: str, view: str) -> Response | tuple[Response, int]:
+        project_acronym: str,
+        view: str) -> Response | tuple[Response, int]:
     if project_acronym not in project_data or view not in view_classes:
         return jsonify({'error': 'Not found'}), 404
     oa_id = project_data[project_acronym].get('oaID')
@@ -490,7 +465,8 @@ def api_explore_entities(
 
 @app.route('/api/explore/<project_acronym>/<view>/count')
 def api_explore_count(
-        project_acronym: str, view: str) -> Response | tuple[Response, int]:
+        project_acronym: str,
+        view: str) -> Response | tuple[Response, int]:
     if project_acronym not in project_data or view not in view_classes:
         return jsonify({'count': 0}), 404
     oa_id = project_data[project_acronym].get('oaID')
@@ -510,9 +486,7 @@ def handle_http_exception(
         e: HTTPException) -> tuple[Response, int] | tuple[str, int]:
     if request.path.startswith('/api/'):
         code = e.code or 500
-        return jsonify({
-            'error': e.description,
-            'code': code}), code
+        return jsonify({'error': e.description, 'code': code}), code
 
     code = e.code or 500
     title = e.name or _("An error occurred")
@@ -536,26 +510,20 @@ def handle_http_exception(
             "Yes, this is a real error.")
 
     return render_template(
-        'error.html',
-        code=code,
-        title=title,
-        description=description), code
+        'error.html', code=code, title=title, description=description), code
 
 
 @app.errorhandler(Exception)
 def handle_generic_exception(
         e: Exception
-) -> (Response | tuple[str, int] |
-      tuple[Response, int]):  # pragma: no cover
+) -> (Response | tuple[str, int] | tuple[Response, int]):  # pragma: no cover
     if isinstance(e, HTTPException):
         return handle_http_exception(e)
 
     app.logger.error("Unhandled exception: %s", e, exc_info=True)
 
     if request.path.startswith('/api/'):
-        return jsonify({
-            'error': _('Internal Server Error'),
-            'code': 500}), 500
+        return jsonify({'error': _('Internal Server Error'), 'code': 500}), 500
 
     return render_template(
         'error.html',

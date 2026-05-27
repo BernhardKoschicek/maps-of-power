@@ -4,45 +4,48 @@ from mop.data.institutes import institutes
 from mop.util import get_dates_formatted, get_image_frame, youtube_iframe
 
 results = {
-    'text': [
-        _('holdura_result_text_1'),
-        _('holdura_result_text_2')],
+    'text': [_('holdura_result_text_1'),
+             _('holdura_result_text_2')],
     'list': [],
     'icons': [{
         'label': _('Final project report'),
         'link': None,
         'file': 'FWF_DFG_I 4330_Final Report.pdf',
         'icon': 'bi bi-journals', }, {
-        'label': _("relief map of Montenegro"),
-        'link': 'https://tib.oeaw.ac.at/static/3dhop/relief.html',
-        'file': None,
-        'icon': 'bi-image-alt', }]}
+            'label': _("relief map of Montenegro"),
+            'link': 'https://tib.oeaw.ac.at/static/3dhop/relief.html',
+            'file': None,
+            'icon': 'bi-image-alt', }]}
 
 images = [{
     'src': 'holdura_doclea_1.jpg',
-    'description': _('Bird\'s eye view of the Doclea archaeological '
-                     'excavation, A: Basilica A, B: Basilica B and'
-                     ' cruciform church, Republic of Montenegro'),
+    'description': _(
+        'Bird\'s eye view of the Doclea archaeological '
+        'excavation, A: Basilica A, B: Basilica B and'
+        ' cruciform church, Republic of Montenegro'),
     'citation': 'L. Neugebauer, 2021',
     'category': ['holdura']}, {
-    'src': 'holdura_doclea_2.jpg',
-    'description': _('Bird\'s eye view of the Doclea archaeological '
-                     'excavation, the western part of the city in '
-                     'the foreground, Republic of Montenegro'),
-    'citation': 'L. Neugebauer, 2021',
-    'category': ['holdura']}, {
-    'src': 'holdura_sveti_nikola.jpg',
-    'description': _('The monastery of Sveti Nikola Vranjina (in the '
-                     'centre of the picture) on Lake Skadar, '
-                     'Republic of Montenegro'),
-    'citation': 'B. Koschiček-Krombholz, 2021',
-    'category': ['holdura']}, {
-    'src': 'holdura_ratac.jpg',
-    'description': _('The former Latin (Catholic) monastery of Ratac '
-                     'from the 12th/13th century near the town '
-                     'of Bar, Republic of Montenegro.'),
-    'citation': 'M. St. Popović, 2021',
-    'category': ['holdura']}]
+        'src': 'holdura_doclea_2.jpg',
+        'description': _(
+            'Bird\'s eye view of the Doclea archaeological '
+            'excavation, the western part of the city in '
+            'the foreground, Republic of Montenegro'),
+        'citation': 'L. Neugebauer, 2021',
+        'category': ['holdura']}, {
+            'src': 'holdura_sveti_nikola.jpg',
+            'description': _(
+                'The monastery of Sveti Nikola Vranjina (in the '
+                'centre of the picture) on Lake Skadar, '
+                'Republic of Montenegro'),
+            'citation': 'B. Koschiček-Krombholz, 2021',
+            'category': ['holdura']}, {
+                'src': 'holdura_ratac.jpg',
+                'description': _(
+                    'The former Latin (Catholic) monastery of Ratac '
+                    'from the 12th/13th century near the town '
+                    'of Bar, Republic of Montenegro.'),
+                'citation': 'M. St. Popović, 2021',
+                'category': ['holdura']}]
 
 project_holdura = {
     'acronym': 'holdura',

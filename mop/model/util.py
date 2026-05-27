@@ -1,18 +1,18 @@
-from typing import Optional, Any
+from typing import Any
 
 
 def uc_first(string: str) -> str:
     return str(string)[0].upper() + str(string)[1:] if string else ''
 
 
-def split_date_string(data: Optional[str]) -> Optional[str]:
+def split_date_string(data: str | None) -> str | None:
     return '.'.join(map(str, data.split('T')[0].split('-')[::-1])) \
         if data else ''
 
 
 def format_date(
-        date_from: Optional[str],
-        date_to: Optional[str]) -> Optional[str]:
+        date_from: str | None,
+        date_to: str | None) -> str | None:
     if date_from and date_to:
         parts_from = date_from.split('.')
         parts_to = date_to.split('.')
@@ -20,8 +20,8 @@ def format_date(
             try:
                 day_from, month_from, year_from = parts_from
                 day_to, month_to, year_to = parts_to
-                if (int(day_from) == 1 and int(month_from) == 1 and
-                        int(day_to) == 31 and int(month_to) == 12):
+                if (int(day_from) == 1 and int(month_from) == 1
+                        and int(day_to) == 31 and int(month_to) == 12):
                     if year_from == year_to:
                         return year_from
                     return f'{year_from} – {year_to}'
