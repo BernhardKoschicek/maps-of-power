@@ -81,4 +81,5 @@ project_borderzones = {
     'icon': 'borderzones_icon.jpg',
     'images': images,
     'videos': [],
-    'oaID': '9962', }
+    'oaID': '9962',
+    'api': 'mop', }

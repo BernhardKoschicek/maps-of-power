@@ -55,4 +55,5 @@ project_dgse = {
     'icon': 'dgse_1.jpg',
     'images': images,
     'videos': [],
-    'oaID': '135379', }
+    'oaID': '135379',
+    'api': 'mop', }

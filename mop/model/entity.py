@@ -248,8 +248,8 @@ class Entity:
         return [i['value'] for i in data][0] if data else ''
 
     @classmethod
-    def get_entity_from_oa(cls, id_: int) -> 'Entity':
-        raw_data = get_entity_presentation(id_)
+    def get_entity_from_oa(cls, id_: int, api_path: Optional[str] = None) -> 'Entity':
+        raw_data = get_entity_presentation(id_, api_path=api_path)
         model = PresentationViewModel.model_validate(raw_data)
         return cls.from_model(model)
 
@@ -366,7 +366,7 @@ class Entity:
                     artifacts.append(rel_obj)
                 elif sc == 'source':  # pragma: no cover
                     sources.append(rel_obj)
-                elif sc == 'source_translation':  # pragma: no cover
+                elif sc in ['source_translation', 'text']:  # pragma: no cover
                     source_translations.append(rel_obj)
                 elif sc == 'administrative_unit':  # pragma: no cover
                     administrative_unit.append(rel_obj)

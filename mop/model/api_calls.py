@@ -20,15 +20,23 @@ def get_proxies() -> dict[str, str] | None:
         "https": proxy}
 
 
+def _get_api_path(api_path: Optional[str] = None) -> str:
+    if api_path:
+        return api_path
+    return app.config.get('MOP_API_PATH', '')
+
+
 @cache.memoize()
 def get_view_class(
         parameter: str,
-        params: Optional[dict[str, Any]] = None) -> list[dict[str, Any]]:
-    url = f"{app.config['API_PATH']}/view_class/{parameter}"
+        params: Optional[dict[str, Any]] = None,
+        api_path: Optional[str] = None) -> list[dict[str, Any]]:
+    base = _get_api_path(api_path).rstrip('/')
+    url = f"{base}/view_class/{parameter}"
     if '?' in parameter:
         # Legacy support: if the parameter is a full query string
         # like 'actor?limit=1'
-        url = f"{app.config['API_PATH']}/view_class/{parameter}"
+        url = f"{base}/view_class/{parameter}"
         return requests.get(
             url, proxies=get_proxies(), timeout=30).json()['results']
 
@@ -38,31 +46,35 @@ def get_view_class(
 
 
 @cache.memoize()
-def system_class_results(parameter: str) -> list[dict[str, Any]]:
-    url = f"{app.config['API_PATH']}/system_class/"
+def system_class_results(parameter: str, api_path: Optional[str] = None) -> list[dict[str, Any]]:
+    base = _get_api_path(api_path).rstrip('/')
+    url = f"{base}/system_class/"
     return requests.get(
         f"{url}{parameter}", proxies=get_proxies(),
         timeout=30).json()['results']
 
 
 @cache.memoize()
-def get_typed_entities_all_results(id_: int) -> list[dict[str, Any]]:
-    url = f"{app.config['API_PATH']}/type_entities_all/"
+def get_typed_entities_all_results(id_: int, api_path: Optional[str] = None) -> list[dict[str, Any]]:
+    base = _get_api_path(api_path).rstrip('/')
+    url = f"{base}/type_entities_all/"
     return requests.get(
         f"{url}{id_}", proxies=get_proxies(), timeout=30).json()['results']
 
 
-@cache.cached(key_prefix='type_tree')
-def get_type_tree() -> List[TypeTree]:
-    url = f"{app.config['API_PATH']}/type_tree/"
+@cache.memoize()
+def get_type_tree(api_path: Optional[str] = None) -> List[TypeTree]:
+    base = _get_api_path(api_path).rstrip('/')
+    url = f"{base}/type_tree/"
     type_tree = requests.get(
         url, proxies=get_proxies(), timeout=30).json()['typeTree']
     return [TypeTree(types) for types in type_tree.values()]
 
 
 @cache.memoize()
-def get_entity_presentation(id_: int) -> dict[str, Any]:
-    url = f"{app.config['API_PATH']}/entity_presentation_view/{id_}"
+def get_entity_presentation(id_: int, api_path: Optional[str] = None) -> dict[str, Any]:
+    base = _get_api_path(api_path).rstrip('/')
+    url = f"{base}/entity_presentation_view/{id_}"
     response = requests.get(url, proxies=get_proxies(), timeout=30)
     if response.status_code == 404:  # pragma: no cover
         raise NotFound(f"Entity with ID {id_} not found in the external API.")
@@ -71,9 +83,10 @@ def get_entity_presentation(id_: int) -> dict[str, Any]:
 
 
 @cache.memoize()
-def get_entity(id_: int) -> dict[str, Any]:
+def get_entity(id_: int, api_path: Optional[str] = None) -> dict[str, Any]:
     # Deprecated raw entity loader
-    url = f"{app.config['API_PATH']}/entity/"
+    base = _get_api_path(api_path).rstrip('/')
+    url = f"{base}/entity/"
     response = requests.get(f"{url}{id_}", proxies=get_proxies(), timeout=30)
     if response.status_code == 404:  # pragma: no cover
         raise NotFound(f"Entity with ID {id_} not found in the external API.")
@@ -86,19 +99,20 @@ def get_entity(id_: int) -> dict[str, Any]:
 
 EXCLUDE_SYSTEM_CLASSES = [
     'administrative_unit',
-    'appellation',
+    'alias',
     'type',
     'type_tools',
     'external_reference',
     'reference_system',
     'source',
-    'source_translation', ]
+    'text', ]
 
 
 @cache.memoize()
-def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
+def get_ego_network(id_: int, depth: int = 2, api_path: Optional[str] = None) -> dict[str, Any]:
     depth_ = max(1, min(5, depth))
-    url = f"{app.config['API_PATH']}/ego_network_visualisation/{id_}"
+    base = _get_api_path(api_path).rstrip('/')
+    url = f"{base}/ego_network_visualisation/{id_}"
     params: Any = {
         'depth': depth_,
         'exclude_system_classes': EXCLUDE_SYSTEM_CLASSES}
@@ -113,10 +127,12 @@ def get_ego_network(id_: int, depth: int = 2) -> dict[str, Any]:
 @cache.memoize()
 def get_network_visualisation(
         linked_to_ids: list[int],
-        exclude_system_classes: Optional[list[str]] = None) -> dict[str, Any]:
+        exclude_system_classes: Optional[list[str]] = None,
+        api_path: Optional[str] = None) -> dict[str, Any]:
     if exclude_system_classes is None:
         exclude_system_classes = EXCLUDE_SYSTEM_CLASSES
-    url = f"{app.config['API_PATH']}/network_visualisation/"
+    base = _get_api_path(api_path).rstrip('/')
+    url = f"{base}/network_visualisation/"
     params: Any = {
         'exclude_system_classes': exclude_system_classes,
         'linked_to_ids': linked_to_ids}

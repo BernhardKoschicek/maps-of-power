@@ -80,4 +80,5 @@ project_holdura = {
         get_image_frame('/static/images/projects/holdura/apox_schwarz.png'),
         youtube_iframe('https://www.youtube-nocookie.com/embed/NV4TT4QnFNI'),
         get_image_frame('/static/images/projects/holdura/ram_schwarz.png')],
-    'oaID': '117730', }
+    'oaID': '117730',
+    'api': 'mop', }

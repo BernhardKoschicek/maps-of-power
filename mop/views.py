@@ -1,6 +1,6 @@
 import json
 import re
-from typing import Any, cast
+from typing import Any, cast, Optional
 
 import numpy
 import requests
@@ -24,6 +24,14 @@ from mop.model.explore import (
     get_oa_by_view_class, system_classes, view_classes)
 from mop.model.narrative import NarrativeGenerator
 from mop.util import get_dict_entries_by_category, get_types_sorted
+
+
+def get_project_api_path(project_acronym: str | None) -> str:
+    if project_acronym and project_acronym in project_data:
+        api_type = project_data[project_acronym].get('api')
+        if api_type == 'ortho':
+            return app.config.get('ORTHO_API_PATH', '')
+    return app.config.get('MOP_API_PATH', '')
 
 
 @app.route('/')
@@ -147,7 +155,8 @@ def project_explore_table(project: str, view: str) -> str:
         abort(404)
     data = []
     try:
-        data = get_oa_by_view_class(view, project_data[project]['oaID'])
+        api_path = get_project_api_path(project)
+        data = get_oa_by_view_class(view, project_data[project]['oaID'], api_path=api_path)
     except Exception as e:  # pragma: no cover
         app.logger.error("Error fetching open access data: %s", e)
     return render_template(
@@ -169,7 +178,8 @@ def entity_project_view(
         abort(404)
     if view is not None and view not in view_classes:  # pragma: no cover
         abort(404)
-    entity = Entity.get_entity_from_oa(id_)
+    api_path = get_project_api_path(project)
+    entity = Entity.get_entity_from_oa(id_, api_path=api_path)
     relations = entity.relations or {}
 
     def normalize_and_inject_geojson(
@@ -286,7 +296,8 @@ def entity_project_view(
         path=(project, view),
         system_classes=system_classes,
         narratives=narratives,
-        project_details=project_details)
+        project_details=project_details,
+        api_path=api_path)
 
 
 @app.route('/software')
@@ -310,8 +321,10 @@ def frontend() -> Response:
 @app.route('/api/network/<int:id_>')
 def network_api(id_: int) -> Response | tuple[Response, int]:
     depth = request.args.get('depth', default=2, type=int)
+    project = request.args.get('project')
     try:
-        data = get_ego_network(id_, depth)
+        api_path = get_project_api_path(project)
+        data = get_ego_network(id_, depth, api_path=api_path)
         return jsonify(data)
     except HTTPException:
         raise
@@ -328,7 +341,8 @@ def api_project_places(
     if not oa_id:
         return jsonify({'places': []})
     try:
-        places = get_oa_by_view_class('place', oa_id)
+        api_path = get_project_api_path(project_acronym)
+        places = get_oa_by_view_class('place', oa_id, api_path=api_path)
         simplified = []
         for p in places:
             if p and p.geometry:
@@ -347,36 +361,50 @@ def api_project_places(
 def api_project_network(
         project_acronym: str) -> Response | tuple[Response, int]:
     if project_acronym == "all":
-        linked_to_ids = []
+        mop_ids = []
+        ortho_ids = []
         for proj in project_data.values():
             oa_id = proj.get('oaID')
-            if oa_id:
-                linked_to_ids.extend([
-                    int(x) for x in oa_id if str(x).isdigit()])
+            if not oa_id:
+                continue
+            ids_to_add = [int(x) for x in (oa_id if isinstance(oa_id, list) else [oa_id]) if str(x).isdigit()]
+            if proj.get('api') == 'ortho':
+                ortho_ids.extend(ids_to_add)
+            else:
+                mop_ids.extend(ids_to_add)
+
+        try:
+            mop_res = get_network_visualisation(mop_ids, api_path=get_project_api_path('mop')) if mop_ids else {'results': []}
+            ortho_res = get_network_visualisation(ortho_ids, api_path=get_project_api_path('rhr')) if ortho_ids else {'results': []}
+            combined_results = mop_res.get('results', []) + ortho_res.get('results', [])
+            return jsonify({'results': combined_results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
     else:
         if project_acronym not in project_data:
             return jsonify({'error': 'Project not found'}), 404
         oa_id = project_data[project_acronym].get('oaID')
         if not oa_id:
             return jsonify({'results': []})
-        linked_to_ids = [int(x) for x in oa_id if str(x).isdigit()]
-
-    if not linked_to_ids:
-        return jsonify({'results': []})
-    try:
-        data = get_network_visualisation(linked_to_ids)
-        return jsonify(data)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        linked_to_ids = [int(x) for x in (oa_id if isinstance(oa_id, list) else [oa_id]) if str(x).isdigit()]
+        if not linked_to_ids:
+            return jsonify({'results': []})
+        try:
+            api_path = get_project_api_path(project_acronym)
+            data = get_network_visualisation(linked_to_ids, api_path=api_path)
+            return jsonify(data)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
 
 # pylint: disable=too-many-arguments, too-many-positional-arguments
 @cache.memoize(timeout=3600)
 def _fetch_table_rows(
         view: str, oa_ids: tuple[str, ...], page: int, sort: str, column: str,
-        search: str) -> dict[str, Any]:
+        search: str, api_path: Optional[str] = None) -> dict[str, Any]:
     """Proxy call to OpenAtlas /table_rows/ — cached server-side."""
-    url = f"{app.config['API_PATH']}0.4/table_rows/"
+    base = (api_path or app.config.get('MOP_API_PATH', '')).rstrip('/')
+    url = f"{base}/0.4/table_rows/"
     params: dict[str, Any] = {
         'view_classes': view,
         'sort': sort,
@@ -414,8 +442,9 @@ def _fetch_table_rows(
 
 
 @cache.memoize(timeout=3600)
-def _fetch_table_rows_count(view: str, oa_ids: tuple[str, ...]) -> int:
-    url = f"{app.config['API_PATH']}0.4/table_rows/"
+def _fetch_table_rows_count(view: str, oa_ids: tuple[str, ...], api_path: Optional[str] = None) -> int:
+    base = (api_path or app.config.get('MOP_API_PATH', '')).rstrip('/')
+    url = f"{base}/0.4/table_rows/"
     params: dict[str, Any] = {
         'view_classes': view,
         'count': 'true',
@@ -457,7 +486,8 @@ def api_explore_entities(
     column = request.args.get('column', 'name')
     search = request.args.get('search', '').strip()
     try:
-        data = _fetch_table_rows(view, oa_ids, page, sort, column, search)
+        api_path = get_project_api_path(project_acronym)
+        data = _fetch_table_rows(view, oa_ids, page, sort, column, search, api_path=api_path)
         return jsonify(data)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -475,7 +505,8 @@ def api_explore_count(
     oa_ids: tuple[str, ...] = (
         tuple(oa_id) if isinstance(oa_id, list) else (str(oa_id),))
     try:
-        count = _fetch_table_rows_count(view, oa_ids)
+        api_path = get_project_api_path(project_acronym)
+        count = _fetch_table_rows_count(view, oa_ids, api_path=api_path)
         return jsonify({'count': count})
     except Exception as e:
         return jsonify({'error': str(e), 'count': 0}), 500

@@ -47,12 +47,13 @@ system_classes = {
     'reference_system': 'reference_system',
     'source': 'source',
     'source_translation': 'source_translation',
+    'text': 'text',
     'stratigraphic_unit': 'place',
     'type': 'type', }
 
 
 def get_oa_by_view_class(
-        view: str, project_id: str | list[str]) -> list[Optional[Entity]]:
+        view: str, project_id: str | list[str], api_path: Optional[str] = None) -> list[Optional[Entity]]:
     if view not in view_classes:
         return []
 
@@ -63,5 +64,5 @@ def get_oa_by_view_class(
         'show': ['description', 'geometry'],
         'type_id': project_id}
 
-    results = get_view_class(view, params=params)
+    results = get_view_class(view, params=params, api_path=api_path)
     return [Entity(entry['features'][0]) for entry in results]

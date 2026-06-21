@@ -39,7 +39,7 @@
         if (sc.includes('person')) return 'person';
         if (sc.includes('group')) return 'group';
         if (sc.includes('event') || sc.includes('activity') || sc.includes('acquisition') || sc.includes('move') || sc.includes('production') || sc.includes('creation')) return 'event';
-        if (sc.includes('source_translation')) return 'source_translation';
+        if (sc.includes('source_translation') || sc === 'text') return 'source_translation';
         if (sc.includes('source')) return 'source';
         if (sc.includes('artifact') || sc.includes('human_remains')) return 'artifact';
         if (sc.includes('bibliography') || sc.includes('edition') || sc.includes('external_reference')) return 'bibliography';
@@ -51,7 +51,12 @@
         if (fetchCache[cacheKey]) {
             return fetchCache[cacheKey];
         }
-        const response = await fetch(`/api/network/${id}?depth=${depth}`);
+        let projectParam = '';
+        const pathSegments = window.location.pathname.split('/').filter(Boolean);
+        if (pathSegments.length > 1 && pathSegments[0] === 'projects') {
+            projectParam = `&project=${pathSegments[1]}`;
+        }
+        const response = await fetch(`/api/network/${id}?depth=${depth}${projectParam}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

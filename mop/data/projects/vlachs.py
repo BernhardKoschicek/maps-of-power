@@ -90,4 +90,5 @@ project_vlachs = {
     'icon': 'vlachs_1.png',
     'images': images,
     'videos': [],
-    'oaID': '8247', }
+    'oaID': '8247',
+    'api': 'mop', }

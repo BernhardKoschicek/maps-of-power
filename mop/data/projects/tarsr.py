@@ -71,4 +71,5 @@ project_tarsr = {
     'icon': 'tarsr_1.jpg',
     'images': images,
     'videos': [],
-    'oaID': '135005', }
+    'oaID': '135005',
+    'api': 'mop', }

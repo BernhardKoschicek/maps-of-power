@@ -56,4 +56,5 @@ project_rhr = {
     'icon': 'rhr_01.jpg',
     'images': images,
     'videos': [],
-    'oaID': '', }
+    'oaID': '',
+    'api': 'ortho', }

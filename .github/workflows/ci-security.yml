@@ -44,7 +44,8 @@ jobs:
       - name: Create production configuration
         run: |
           mkdir -p instance
-          echo "API_PATH = 'https://openatlas.maps-of-power.at/api/'" > instance/production.py
+          echo "MOP_API_PATH = 'https://openatlas.maps-of-power.at/api/'" > instance/production.py
+          echo "ORTHO_API_PATH = 'https://openatlas.orthodoxes-europa.at/api/'" >> instance/production.py
 
       - name: Run Tests with Coverage
         run: uv run pytest --cov=. --cov-report=xml --cov-report=term-missing

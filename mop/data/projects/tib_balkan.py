@@ -41,4 +41,5 @@ project_tib_balkan = {
     'icon': 'tib_balkan_3.jpg',
     'images': images,
     'videos': '',
-    'oaID': ['124486', '124485', '124487', '124484']}
+    'oaID': ['124486', '124485', '124487', '124484'],
+    'api': 'mop'}

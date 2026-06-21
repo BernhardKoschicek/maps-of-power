@@ -60,4 +60,5 @@ project_idcew = {
     'icon': 'idcew_1.jpg',
     'images': images,
     'videos': [],
-    'oaID': '135263', }
+    'oaID': '135263',
+    'api': 'mop', }

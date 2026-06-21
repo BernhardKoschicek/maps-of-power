@@ -15,7 +15,8 @@ SESSION_COOKIE_SECURE = False
 REMEMBER_COOKIE_SECURE = True
 SESSION_COOKIE_SAMESITE = 'Lax'
 
-API_PATH = ''
+MOP_API_PATH = ''
+ORTHO_API_PATH = 'https://openatlas.orthodoxes-europa.at/api/'
 API_PROXY = ''
 
 # Caching
