@@ -1027,7 +1027,7 @@
         if (sc.includes('person')) return 'person';
         if (sc.includes('group')) return 'group';
         if (sc.includes('event') || sc.includes('activity') || sc.includes('acquisition') || sc.includes('move') || sc.includes('production') || sc.includes('creation')) return 'event';
-        if (sc.includes('source_translation')) return 'source_translation';
+        if (sc.includes('source_translation') || sc === 'text') return 'source_translation';
         if (sc.includes('source')) return 'source';
         if (sc.includes('artifact') || sc.includes('human_remains')) return 'artifact';
         if (sc.includes('bibliography') || sc.includes('edition') || sc.includes('external_reference')) return 'bibliography';

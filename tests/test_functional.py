@@ -132,3 +132,14 @@ def test_api_project_network_routes(client: FlaskClient) -> None:
     # Test invalid project network route
     response_invalid = client.get('/api/network/project/invalid_project')
     assert response_invalid.status_code == 404
+
+
+def test_project_api_routing() -> None:
+    from mop.views import get_project_api_path
+    # 'rhr' project has 'api': 'ortho'
+    assert get_project_api_path('rhr') == 'https://openatlas.orthodoxes-europa.at/api/'
+    # 'holdura' project does not have 'api': 'ortho'
+    assert get_project_api_path('holdura') == 'https://openatlas.maps-of-power.at/api/'
+    # None or invalid project acronyms should default to MOP
+    assert get_project_api_path(None) == 'https://openatlas.maps-of-power.at/api/'
+    assert get_project_api_path('invalid') == 'https://openatlas.maps-of-power.at/api/'
