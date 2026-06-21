@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-05-26 13:57+0200\n"
+"POT-Creation-Date: 2026-06-21 16:37+0200\n"
 "PO-Revision-Date: 2026-05-25 22:38+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: sr_Latn_ME\n"
@@ -25,40 +25,41 @@ msgstr "O nama"
 
 #: mop/templates/explore/project_entity_view.html:60
 #: mop/templates/explore/project_explore_table.html:10
-#: mop/templates/project_details.html:45 mop/util.py:37
+#: mop/templates/project_details.html:45 mop/util.py:38
 msgid "projects"
 msgstr "Projekti"
 
-#: mop/util.py:38
+#: mop/util.py:40
 msgid "atlas"
 msgstr "Atlas"
 
-#: mop/templates/_events_list.html:44 mop/util.py:40
+#: mop/templates/_events_list.html:303 mop/templates/_events_list.html:495
+#: mop/util.py:44
 msgid "events"
 msgstr "Događaji"
 
 #: mop/templates/explore/project_entity_view.html:31
-#: mop/templates/explore/project_entity_view.html:608 mop/util.py:41
+#: mop/templates/explore/project_entity_view.html:647 mop/util.py:46
 msgid "literature"
 msgstr "Literatura"
 
-#: mop/templates/literature.html:182 mop/views.py:107
+#: mop/templates/literature.html:192 mop/views.py:106
 msgid "pp."
 msgstr ""
 
-#: mop/views.py:396
+#: mop/views.py:492
 msgid "An error occurred"
 msgstr "Došlo je do greške"
 
-#: mop/views.py:398
+#: mop/views.py:494
 msgid "An unexpected error occurred. Please try again later."
 msgstr "Došlo je do neočekivane greške. Molimo pokušajte ponovo kasnije."
 
-#: mop/views.py:401
+#: mop/views.py:497
 msgid "Page Not Found"
 msgstr "Stranica nije pronađena"
 
-#: mop/views.py:403
+#: mop/views.py:499
 msgid ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
@@ -66,63 +67,86 @@ msgstr ""
 "Unijete koordinate izgledaju van granica. Stranica koju tražite ne "
 "postoji."
 
-#: mop/views.py:406
+#: mop/views.py:502
 msgid "Access Denied"
 msgstr "Pristup odbijen"
 
-#: mop/views.py:408
+#: mop/views.py:504
 msgid "You do not have permission to access this area. Restricted coordinates."
 msgstr "Nemate dozvolu za pristup ovoj oblasti. Ograničene koordinate."
 
-#: mop/views.py:411
+#: mop/views.py:507
 msgid "I'm a Teapot"
 msgstr "Ja sam čajnik"
 
-#: mop/views.py:413
+#: mop/views.py:509
 msgid ""
 "The server refuses the attempt to brew coffee with a teapot. Yes, this is"
 " a real error."
 msgstr "Server odbija pokušaj kuvanja kafe čajnikom. Da, ovo je stvarna greška."
 
-#: mop/views.py:436 mop/views.py:443
+#: mop/views.py:526 mop/views.py:531
 msgid "Internal Server Error"
 msgstr "Unutrašnja greška servera"
 
-#: mop/views.py:445
+#: mop/views.py:533
 msgid ""
 "An unexpected server error occurred. Our cartographers are looking into "
 "it."
 msgstr "Došlo je do neočekivane greške na serveru. Naši kartografi je istražuju."
 
-#: mop/data/events.py:8 mop/data/events.py:12
+#: mop/data/events.py:8 mop/data/events.py:11
+#: mop/templates/_events_list.html:320
 msgid "presentation"
 msgstr "prezentacija"
 
-#: mop/data/events.py:16
+#: mop/data/events.py:14
 msgid "award"
 msgstr "nagrada"
 
-#: mop/data/events.py:20
+#: mop/data/events.py:17 mop/templates/_events_list.html:323
 msgid "science_fair"
 msgstr "sajam nauke"
 
-#: mop/data/events.py:24
+#: mop/data/events.py:20 mop/templates/_events_list.html:326
 msgid "book_release"
 msgstr "objavljivanje knjige"
 
-#: mop/data/events.py:28
+#: mop/data/events.py:23
 msgid "blogpost"
 msgstr "blog post"
 
-#: mop/data/events.py:32
+#: mop/data/events.py:26 mop/templates/_events_list.html:329
 msgid "press_release"
 msgstr "saopštenje za javnost"
 
-#: mop/data/events.py:38
+#: mop/data/events.py:34
+#, fuzzy
+msgid "Lange Nacht der Forschung 2026"
+msgstr ""
+"U petak, 24. maja 2024. godine, Mihailo Popović je učestvovao u Dugoj "
+"noći istraživanja u Austrijskoj akademiji nauka. Tamo je predstavio "
+"projekat <a href=\"\" target=\"_blank\">„Tracing Archaeological Remains "
+"and Scholarly Research of the Central Powers in the Region of Prilep-"
+"Bitola during WW I (1915-1918)”</a> kao poster, što predstavlja doprinos "
+"sekciji „Kulturna baština” Inicijative Maps of Power."
+
+#: mop/data/events.py:35
+#, fuzzy
+msgid "lange_nacht_der_forschung_240426"
+msgstr ""
+"U petak, 24. maja 2024. godine, Mihailo Popović je učestvovao u Dugoj "
+"noći istraživanja u Austrijskoj akademiji nauka. Tamo je predstavio "
+"projekat <a href=\"\" target=\"_blank\">„Tracing Archaeological Remains "
+"and Scholarly Research of the Central Powers in the Region of Prilep-"
+"Bitola during WW I (1915-1918)”</a> kao poster, što predstavlja doprinos "
+"sekciji „Kulturna baština” Inicijative Maps of Power."
+
+#: mop/data/events.py:46
 msgid "Summer School in Brno"
 msgstr "Ljetnja škola u Brnu"
 
-#: mop/data/events.py:39
+#: mop/data/events.py:47
 msgid "brno_summer_school_260625"
 msgstr ""
 "Žarko Vujošević i Mihailo Popović održali su zajedničko predavanje o "
@@ -132,11 +156,11 @@ msgstr ""
 "events/events/scriptorium-brunense-1\" target=\"_blank\">Više "
 "informacija</a>"
 
-#: mop/data/events.py:49
+#: mop/data/events.py:57
 msgid "Discourse on DH and AI"
 msgstr "Diskurs o digitalnoj humanistici i vještačkoj inteligenciji"
 
-#: mop/data/events.py:50
+#: mop/data/events.py:58
 msgid "heidelberg_200625"
 msgstr ""
 "Mihailo Popović je 20. juna 2025. održao predavanje o digitalnoj "
@@ -148,11 +172,11 @@ msgstr ""
 " Historiske Geografije, Vizantologije i Istraživanja Jugoistočne Evrope” "
 "na Univerzitetu u Hajdelbergu</a>."
 
-#: mop/data/events.py:60
+#: mop/data/events.py:68
 msgid "Report in the Newspaper Die Presse"
 msgstr "Izvještaj u novinama Die Presse"
 
-#: mop/data/events.py:61
+#: mop/data/events.py:69
 msgid "presse_03052025"
 msgstr ""
 "U svom štampanom izdanju od 3. maja 2025. godine, dnevni list Die Presse "
@@ -162,11 +186,11 @@ msgstr ""
 "href=\"https://www.diepresse.com/19640086/auf-feldforschung-mit-"
 "notizbuch-kompass-und-melone\" target=\"_blank\">Die Presse</a>"
 
-#: mop/data/events.py:71
+#: mop/data/events.py:79
 msgid "Lecture at the Haus Wittgenstein"
 msgstr "Predavanje u kući Vitgenštajn"
 
-#: mop/data/events.py:72
+#: mop/data/events.py:80
 msgid "wittgenstein_13022025"
 msgstr ""
 "Mihailo Popović je 13. februara 2025. godine održao predavanje pod "
@@ -175,11 +199,11 @@ msgstr ""
 "Gavrilo Lesnovski und Joakim Osogovski” u okviru Lectorium Bulgaricum-a u"
 " kući Vitgenštajn u Beču."
 
-#: mop/data/events.py:82
+#: mop/data/events.py:90
 msgid "Workshop in Oxford"
 msgstr "Radionica u Oksfordu"
 
-#: mop/data/events.py:83
+#: mop/data/events.py:91
 msgid "workshop_oxford_300524"
 msgstr ""
 "Krajem maja 2024. godine Mihailo Popović je učestvovao na radionici <a "
@@ -189,11 +213,11 @@ msgstr ""
 "Wilderness in the Medieval Balkans and How to Overcome Them”, koji se "
 "može svrstati u sekciju „Sveta topografija” Inicijative Maps of Power."
 
-#: mop/data/events.py:93
+#: mop/data/events.py:102
 msgid "The Long Night of Research in Vienna"
 msgstr "Duga noć istraživanja u Beču"
 
-#: mop/data/events.py:94
+#: mop/data/events.py:103
 msgid "lange_nacht_der_forschung_240524"
 msgstr ""
 "U petak, 24. maja 2024. godine, Mihailo Popović je učestvovao u Dugoj "
@@ -203,11 +227,11 @@ msgstr ""
 "Bitola during WW I (1915-1918)”</a> kao poster, što predstavlja doprinos "
 "sekciji „Kulturna baština” Inicijative Maps of Power."
 
-#: mop/data/events.py:104
+#: mop/data/events.py:114
 msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
 msgstr "Predstavljanje zbornika u čast Johannesa Kodera"
 
-#: mop/data/events.py:105
+#: mop/data/events.py:115
 msgid "koder_festschrift_230424"
 msgstr ""
 "Povodom 80. rođendana Johannesa Kodera, prijatelji, saradnici, studenti i"
@@ -223,11 +247,11 @@ msgstr ""
 "/der-den-kodax-tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-"
 "vratislav-zervan-ralf-c-mueller/</a>"
 
-#: mop/data/events.py:115
+#: mop/data/events.py:125
 msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr "Dvije prezentacije o korisnosti OpenAtlasa"
 
-#: mop/data/events.py:116
+#: mop/data/events.py:126
 msgid "belgrade_190923"
 msgstr ""
 "Dana 19. septembra 2023. godine Bernhard Koschiček-Krombholz i Mihailo "
@@ -240,11 +264,11 @@ msgstr ""
 "of Byzantinization in the Central Balkans (Late 10th – Mid-13th Century)”"
 " o aspektima digitalne humanistike."
 
-#: mop/data/events.py:126
+#: mop/data/events.py:136
 msgid "Workshop on Medieval Athos in Oxford"
 msgstr "Radionica o srednjevjekovnom Atosu u Oksfordu"
 
-#: mop/data/events.py:127
+#: mop/data/events.py:137
 msgid "athos_oxford_290923"
 msgstr ""
 "Dana 29. septembra 2023. godine Mihailo St. Popović je izložio rad pod "
@@ -253,11 +277,11 @@ msgstr ""
 "Monks and Franciscan Friars” na radionici „A Special Relationship? Gender"
 " on Medieval Mount Athos” u Oksfordu, Velika Britanija."
 
-#: mop/data/events.py:137
+#: mop/data/events.py:147
 msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr "Rad o kruni Svetog kralja Stefana Dečanskog"
 
-#: mop/data/events.py:138
+#: mop/data/events.py:148
 msgid "tripps_070923"
 msgstr ""
 "Profesor dr Johannes Trips (Univerzitet primijenjenih nauka u Lajpcigu) "
@@ -269,11 +293,11 @@ msgstr ""
 "href=\"https://www.youtube.com/@MapsOfPower\" target=\"_blank\" class"
 "=\"link-primary\">https://www.youtube.com/@MapsOfPower</a>"
 
-#: mop/data/events.py:148
+#: mop/data/events.py:158
 msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr "TIB Balkan na IMC Leeds 2023"
 
-#: mop/data/events.py:149
+#: mop/data/events.py:159
 msgid "imc_leeds_23"
 msgstr ""
 "Istraživači projekta TIB Balkan predstavili su svoje najnovije naučne "
@@ -283,11 +307,11 @@ msgstr ""
 "tri sesije pod nazivom „Entanglements across Medieval Space, Objects, and"
 " Data” 6. jula 2023. godine na IMC Leedsu."
 
-#: mop/data/events.py:159
+#: mop/data/events.py:169
 msgid "presentation on MECERN conference"
 msgstr "prezentacija na MECERN konferenciji"
 
-#: mop/data/events.py:160
+#: mop/data/events.py:170
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan i Mihailo Popović učestvovali su na MECERN konferenciji "
@@ -296,11 +320,11 @@ msgstr ""
 "Hagiogeography of Saint Archangel Michael in the Balkans and Central "
 "Europe in Medieval Times”."
 
-#: mop/data/events.py:170
+#: mop/data/events.py:182
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "prezentacija u Srpskoj akademiji nauka i umjetnosti"
 
-#: mop/data/events.py:171
+#: mop/data/events.py:183
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović je na poziv Instituta za vizantološke studije Srpske "
@@ -308,34 +332,35 @@ msgstr ""
 "Tabula Imperii Byzantini: o budućnosti (?) proučavanja istorijske "
 "geografije Vizantije” 22. februara 2023. godine u Beogradu."
 
-#: mop/data/histgeo.py:7 mop/data/histgeo.py:24 mop/data/histgeo.py:41
+#: mop/data/histgeo.py:7 mop/data/histgeo.py:20 mop/data/histgeo.py:33
 msgid "march"
 msgstr "mart"
 
-#: mop/data/histgeo.py:11 mop/data/histgeo.py:28 mop/data/histgeo.py:45
-#: mop/data/histgeo.py:58 mop/data/histgeo.py:67 mop/data/histgeo.py:81
+#: mop/data/histgeo.py:10 mop/data/histgeo.py:23 mop/data/histgeo.py:36
+#: mop/data/histgeo.py:46 mop/data/histgeo.py:53 mop/data/histgeo.py:64
 msgid "june"
 msgstr "jun"
 
-#: mop/data/histgeo.py:15 mop/data/histgeo.py:32 mop/data/histgeo.py:49
+#: mop/data/histgeo.py:13 mop/data/histgeo.py:26 mop/data/histgeo.py:39
 msgid "september"
 msgstr "septembar"
 
-#: mop/data/histgeo.py:19 mop/data/histgeo.py:36 mop/data/histgeo.py:53
-#: mop/data/histgeo.py:62 mop/data/histgeo.py:71
+#: mop/data/histgeo.py:16 mop/data/histgeo.py:29 mop/data/histgeo.py:42
+#: mop/data/histgeo.py:49 mop/data/histgeo.py:56 mop/data/histgeo.py:60
 msgid "december"
 msgstr "decembar"
 
-#: mop/data/histgeo.py:76
-msgid "December"
-msgstr "decembar"
+#: mop/data/histgeo.py:68
+#, fuzzy
+msgid "may"
+msgstr "Mapa"
 
-#: mop/data/histgeo.py:93 mop/data/histgeo.py:130 mop/data/histgeo.py:167
-#: mop/data/literature.py:104
+#: mop/data/histgeo.py:77 mop/data/histgeo.py:109 mop/data/histgeo.py:140
+#: mop/data/literature.py:91
 msgid "eds."
 msgstr "ur."
 
-#: mop/data/histgeo.py:95
+#: mop/data/histgeo.py:79
 msgid "histgeo_vol1_1"
 msgstr ""
 "povodom 75. rođendana profesora dr Johannesa Kodera, rukovodioci "
@@ -348,7 +373,7 @@ msgstr ""
 "naslovom „Space, Landscapes and Settlements in Byzantium. Studies in "
 "Historical Geography of the Eastern Mediterranean”."
 
-#: mop/data/histgeo.py:95
+#: mop/data/histgeo.py:80
 msgid "histgeo_vol1_2"
 msgstr ""
 "Johannes Koder, redovni član (w. M.) Austrijske akademije nauka, "
@@ -359,7 +384,7 @@ msgstr ""
 "Njegov naučni opus obuhvata pionirske publikacije iz istorijske "
 "geografije istočnog Mediterana i Vizantije."
 
-#: mop/data/histgeo.py:95
+#: mop/data/histgeo.py:81
 msgid "histgeo_vol1_3"
 msgstr ""
 "ovaj zbornik (Festschrift) je objavljen kao 1. tom serije „Studies in "
@@ -371,11 +396,11 @@ msgstr ""
 "cilju inoviranja istorijsko-geografskih istraživanja u vizantologiji. "
 "Seriju štampa izdavačka kuća Akademska knjiga u Novom Sadu."
 
-#: mop/data/histgeo.py:111
+#: mop/data/histgeo.py:94
 msgid "ed."
 msgstr "ur."
 
-#: mop/data/histgeo.py:112
+#: mop/data/histgeo.py:95
 msgid "histgeo_vol2_1"
 msgstr ""
 "dana 9. decembra 2014. godine, prof. dr dr h.c. mult. Herbert Hunger "
@@ -390,7 +415,7 @@ msgstr ""
 "naučne inspiracije, posebno za istraživače koji rade u različitim "
 "oblastima istorije, istorijske geografije i fundamentalnih istraživanja."
 
-#: mop/data/histgeo.py:131
+#: mop/data/histgeo.py:110
 msgid "histgeo_vol3_1"
 msgstr ""
 "Dugoročni projekat „Tabula Imperii Byzantini (TIB)” (Institut za "
@@ -418,7 +443,7 @@ msgstr ""
 "projekta u Austriji i njegova dokumentacija naići na interesovanje i "
 "svijest javnosti."
 
-#: mop/data/histgeo.py:150
+#: mop/data/histgeo.py:126
 msgid "histgeo_vol4_1"
 msgstr ""
 "pejzaž jugoistočnog Peloponeza (Lakonija, Grčka), veoma važne regije "
@@ -436,14 +461,14 @@ msgstr ""
 "osnovali ili u sadržaju oslikane dekoracije, već i u izboru lokacije ili "
 "dubokom odnosu sa prirodnim elementima pejzaža."
 
-#: mop/data/histgeo.py:179
+#: mop/data/histgeo.py:150
 msgid "sgomez_short_bio"
 msgstr ""
 "Diplomirani istoričar, Autonomni univerzitet u Madridu, master "
 "arheologije, Univerzitet Ca’ Foscari u Veneciji, master egipatske "
 "arheologije, Univerzitetski koledž u Londonu"
 
-#: mop/data/histgeo.py:180
+#: mop/data/histgeo.py:151
 msgid "sgomez_bio_1"
 msgstr ""
 "Silvia Gómez Senovilla trenutno završava svoje doktorsko istraživanje na "
@@ -451,7 +476,7 @@ msgstr ""
 "Enigma” (ugovor o grantu br. 668640), pod mentorstvom prof. Manfreda "
 "Bietaka."
 
-#: mop/data/histgeo.py:180
+#: mop/data/histgeo.py:151
 msgid "sgomez_bio_2"
 msgstr ""
 "u svojoj doktorskoj disertaciji ona ispituje strukturu i raspored naselja"
@@ -462,7 +487,7 @@ msgstr ""
 "alata, ona istražuje transformacije prostora tokom ovog dijela bronzanog "
 "doba i njegove društvene implikacije."
 
-#: mop/data/histgeo.py:184 mop/data/histgeo.py:185
+#: mop/data/histgeo.py:155 mop/data/histgeo.py:156
 msgid "gbidaut_short_bio"
 msgstr ""
 "Diplomirani istoričar, Univerzitet Pariz 1 Panteon-Sorbona, master "
@@ -470,19 +495,19 @@ msgstr ""
 "postdiplomska diploma iz istorije i grčkih studija, École normale "
 "supérieure u Parizu"
 
-#: mop/data/histgeo.py:191
+#: mop/data/histgeo.py:161
 msgid "lecture_1_title"
 msgstr "Proučavanje prostora u drevnim naseljima"
 
-#: mop/data/histgeo.py:192
+#: mop/data/histgeo.py:162
 msgid "lecture_1_subtitle"
 msgstr "Ulice Avarisa, upotreba prostora i zamka reifikacije"
 
-#: mop/data/histgeo.py:199 mop/data/histgeo.py:211
+#: mop/data/histgeo.py:169 mop/data/histgeo.py:180
 msgid "english"
 msgstr "engleski"
 
-#: mop/data/histgeo.py:200
+#: mop/data/histgeo.py:170
 msgid "lecture_1_1"
 msgstr ""
 "arheologija i istorija se prirodno bave izazovom vremena i prostora. "
@@ -504,7 +529,7 @@ msgstr ""
 "pristrasnost i da nijesu podložni predselekciji, ometa takođe i neke "
 "pokušaje analize."
 
-#: mop/data/histgeo.py:200
+#: mop/data/histgeo.py:170
 msgid "lecture_1_2"
 msgstr ""
 "u ovom predavanju predstaviću trenutno stanje svog doktorskog "
@@ -517,17 +542,17 @@ msgstr ""
 "softvera za prostornu analizy, kao što su GIS paketi, može donijeti, uz "
 "pokušaj otvaranja debate."
 
-#: mop/data/histgeo.py:203
+#: mop/data/histgeo.py:172
 msgid "lecture_2_title"
 msgstr "Mapiranje mobilnosti, izgradnja zajednice"
 
-#: mop/data/histgeo.py:204
+#: mop/data/histgeo.py:173
 msgid "lecture_2_subtitle"
 msgstr ""
 "Razmatranja o definiciji, predstavljanju i prostornosti stočarskih "
 "zajednica na vizantijskom i ranom otomanskom Balkanu"
 
-#: mop/data/histgeo.py:212
+#: mop/data/histgeo.py:181
 msgid "lecture_2_1"
 msgstr ""
 "Predmoderni Balkan je odlikovao visok stepen raznolikosti, u kojem su "
@@ -541,7 +566,7 @@ msgstr ""
 "stratifikacije i preplitanja prošlih i sadašnjih kategorija kolektivnog "
 "identiteta i prostora."
 
-#: mop/data/histgeo.py:212
+#: mop/data/histgeo.py:181
 msgid "lecture_2_2"
 msgstr ""
 "U ovom predavanju predstaviću trenutno stanje svog doktorskog "
@@ -568,28 +593,28 @@ msgstr ""
 "razmotriti u kojoj mjeri alati GIS-a mogu pomoći ili odmoći našem "
 "razumijevanju njihovih prostornih praksi i reprezentacija."
 
-#: mop/data/histgeo.py:216 mop/templates/histgeo.html:129
+#: mop/data/histgeo.py:183 mop/templates/histgeo.html:129
 msgid "author"
 msgstr "autor"
 
-#: mop/data/histgeo.py:217 mop/templates/histgeo.html:133
+#: mop/data/histgeo.py:184 mop/templates/histgeo.html:133
 msgid "pages"
 msgstr "stranice"
 
-#: mop/data/histgeo.py:218
+#: mop/data/histgeo.py:185
 msgid "ISBN"
 msgstr "ISBN"
 
-#: mop/data/histgeo.py:219 mop/templates/histgeo.html:141
+#: mop/data/histgeo.py:186 mop/templates/histgeo.html:141
 msgid "citation"
 msgstr "citat"
 
-#: mop/data/histgeo.py:220 mop/templates/histgeo.html:146
+#: mop/data/histgeo.py:187 mop/templates/histgeo.html:146
 #: mop/templates/histgeo.html:149
 msgid "order"
 msgstr "redosljed"
 
-#: mop/data/histgeo.py:221
+#: mop/data/histgeo.py:188
 msgid "abstract"
 msgstr "apstrakt"
 
@@ -601,78 +626,78 @@ msgstr "pisani izvori (npr. povelje, istoriografija, natpisi itd.)"
 msgid "image_written_source_caption"
 msgstr "Rilska povelja za manastir Rila u Bugarskoj (1378)"
 
-#: mop/data/images.py:13
+#: mop/data/images.py:12
 msgid "image_excavations_description"
 msgstr "arheološki podaci (iskopavanja, spomenici i njihovi ostaci)"
 
-#: mop/data/images.py:14
+#: mop/data/images.py:13
 msgid "image_excavations_caption"
 msgstr "Iskopavanje Foruma u rimskom gradu Duklja, Crna Gora (2021)"
 
-#: mop/data/images.py:19
+#: mop/data/images.py:17
 msgid "image_toponym_description"
 msgstr "nazivi mjesta i predjela (toponimi)"
 
-#: mop/data/images.py:20
+#: mop/data/images.py:18
 msgid "image_toponym_caption"
 msgstr "Oblast Prilepa na austrougarskoj karti 1:200.000"
 
-#: mop/data/images.py:25
+#: mop/data/images.py:22
 msgid "image_landscape_description"
 msgstr "prirodne odlike predjela"
 
-#: mop/data/images.py:26
+#: mop/data/images.py:23
 msgid "image_landscape_caption"
 msgstr "Bokokotorski zaliv, Crna Gora (2021)"
 
-#: mop/data/institutes.py:5
+#: mop/data/institutes.py:6
 msgid ""
 "Institute for Byzantine Studies of the Serbian Academy of Sciences and "
 "Arts"
 msgstr "Vizantološki institut Srpske akademije nauka i umjetnosti"
 
-#: mop/data/institutes.py:13
+#: mop/data/institutes.py:14
 msgid "Science Fund of the Republic of Serbia"
 msgstr "Fond za nauku Republike Srbije"
 
-#: mop/data/institutes.py:19
+#: mop/data/institutes.py:20
 msgid "Zukunftsfonds"
 msgstr "Zukunftsfonds"
 
-#: mop/data/institutes.py:25
+#: mop/data/institutes.py:26
 msgid "Deutsche Forschungsgemeinschaft"
 msgstr "Njemačka istraživačka fondacija"
 
-#: mop/data/institutes.py:31
+#: mop/data/institutes.py:32
 msgid "Metropolis von Austria"
 msgstr "Mitropolija austrijska"
 
-#: mop/data/institutes.py:34
+#: mop/data/institutes.py:35
 msgid "S. Em. Metropolit Arsenios von Austria"
 msgstr "Nj. V. Mitropolit Arsenije austrijski"
 
-#: mop/data/institutes.py:35
+#: mop/data/institutes.py:36
 msgid "Fleischmarkt 13<br>1010 Wien<br>Österreich"
 msgstr "Fleischmarkt 13<br>1010 Beč<br>Austrija"
 
-#: mop/data/institutes.py:37 mop/templates/imprint.html:10
-#: mop/templates/layout.html:101
+#: mop/data/institutes.py:38 mop/templates/imprint.html:10
+#: mop/templates/layout.html:75
 msgid "Austrian Academy of Sciences"
 msgstr "Austrijska akademija nauka"
 
-#: mop/data/institutes.py:43
+#: mop/data/institutes.py:44
 msgid "Austrian Archaeological Institute"
 msgstr "Austrijski arheološki institut"
 
-#: mop/data/institutes.py:49 mop/templates/layout.html:102
+#: mop/data/institutes.py:50 mop/templates/layout.html:76
 msgid "Institute for Medieval Research"
 msgstr "Institut za proučavanje srednjeg vijeka"
 
-#: mop/data/institutes.py:55
+#: mop/data/institutes.py:56
 msgid "Abteilung Byzanzforschung (ABF)"
 msgstr "Odjeljenje za vizantološke studije (ABF)"
 
-#: mop/data/institutes.py:58
+#: mop/data/institutes.py:60
 msgid ""
 "Österreichische Akademie der Wissenschaften (ÖAW) <br> Institut für "
 "Mittelalterforschung (IMAFO)"
@@ -680,160 +705,160 @@ msgstr ""
 "Austrijska akademija nauka (ÖAW) <br> Institut za srednjevjekovna "
 "istraživanja (IMAFO)"
 
-#: mop/data/institutes.py:62
+#: mop/data/institutes.py:65
 msgid "Austrian Centre for Digital Humanities and Cultural Heritage"
 msgstr "Austrijski centar za digitalnu humanistiku i kulturno nasljeđe"
 
-#: mop/data/institutes.py:68
+#: mop/data/institutes.py:72
 msgid "University of Vienna"
 msgstr "Univerzitet u Beču"
 
-#: mop/data/institutes.py:74
+#: mop/data/institutes.py:78
 msgid "Austrian Science Fund"
 msgstr "Austrijski naučni fond"
 
-#: mop/data/institutes.py:80
+#: mop/data/institutes.py:84
 msgid "Jubiläumsfonds der Oesterreichischen Nationalbank"
 msgstr "Jubilarni fond Austrijske nacionalne banke"
 
-#: mop/data/institutes.py:87
+#: mop/data/institutes.py:92
 msgid "Austrian Agency for International Cooperation in Education and Research"
 msgstr "Austrijska agencija za međunarodnu saradnju u obrazovanju i istraživanju"
 
-#: mop/data/institutes.py:94
+#: mop/data/institutes.py:99
 msgid "Wien Kultur (MA 7)"
 msgstr "Grad Beč - Odjeljenje za kulturu (MA 7)"
 
-#: mop/data/institutes.py:100
+#: mop/data/institutes.py:105
 msgid "Austrian Institute of Technology"
 msgstr "Austrijski institut za tehnologiju"
 
-#: mop/data/institutes.py:106
+#: mop/data/institutes.py:111
 msgid "Belgrade City Museum"
 msgstr "Muzej grada Beograda"
 
-#: mop/data/institutes.py:112
+#: mop/data/institutes.py:117
 msgid "University of Belgrade"
 msgstr "Univerzitet u Beogradu"
 
-#: mop/data/institutes.py:118
+#: mop/data/institutes.py:123
 msgid "National Library of Serbia"
 msgstr "Narodna biblioteka Srbije"
 
-#: mop/data/institutes.py:124
+#: mop/data/institutes.py:129
 msgid "Biblioteka Matice Srpske"
 msgstr "Biblioteka Matice srpske"
 
-#: mop/data/institutes.py:130
+#: mop/data/institutes.py:135
 msgid "Tabula Imperii Byzantini"
 msgstr "Tabula Imperii Byzantini"
 
-#: mop/data/institutes.py:136
+#: mop/data/institutes.py:141
 msgid "Union Académique Internationale"
 msgstr "Međunarodna akademska unija"
 
-#: mop/data/institutes.py:142
+#: mop/data/institutes.py:148
 msgid "Land Niederösterreich, Abteilung Wissenschaft und Forschung"
 msgstr "Pokrajina Donja Austrija, Odjeljenje za nauku i istraživanje"
 
-#: mop/data/institutes.py:149
+#: mop/data/institutes.py:156
 msgid "Katholische Hochschule ITI"
 msgstr "Katolički univerzitet ITI"
 
-#: mop/data/institutes.py:155
+#: mop/data/institutes.py:162
 msgid "Orient & Méditerranée"
 msgstr "Orijent i Mediteran"
 
-#: mop/data/institutes.py:161
+#: mop/data/institutes.py:168
 msgid "Ss. Cyril and Methodius University"
 msgstr "Univerzitet Sv. Ćirilo i Metodije"
 
-#: mop/data/literature.py:9
+#: mop/data/literature.py:8
 msgid "Belgrad"
 msgstr "Beograd"
 
-#: mop/data/literature.py:24
+#: mop/data/literature.py:22
 msgid "Berlin"
 msgstr "Berlin"
 
-#: mop/data/literature.py:39 mop/data/literature.py:119
+#: mop/data/literature.py:35 mop/data/literature.py:105
 msgid "Novi Sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:55
+#: mop/data/literature.py:49
 msgid "Bucharest"
 msgstr "Bukurešt"
 
-#: mop/data/literature.py:55
+#: mop/data/literature.py:49
 msgid "Brăila"
 msgstr "Brăila"
 
-#: mop/data/literature.py:68 mop/data/literature.py:95
+#: mop/data/literature.py:60 mop/data/literature.py:83
 #: mop/data/presentations.py:63 mop/data/presentations.py:84
-#: mop/data/presentations.py:93 mop/data/presentations.py:160
-#: mop/data/projects/idcew.py:54 mop/data/projects/idcew.py:57
+#: mop/data/presentations.py:93 mop/data/presentations.py:154
+#: mop/data/projects/idcew.py:52 mop/data/projects/idcew.py:54
 msgid "Belgrade"
 msgstr "Beograd"
 
-#: mop/data/literature.py:81
+#: mop/data/literature.py:71
 msgid "Darmstadt"
 msgstr "Darmstadt"
 
-#: mop/data/literature.py:108 mop/data/literature.py:130
-#: mop/data/presentations.py:175
+#: mop/data/literature.py:94 mop/data/literature.py:115
+#: mop/data/presentations.py:167
 msgid "Leipzig"
 msgstr "Leipzig"
 
-#: mop/data/literature.py:144
+#: mop/data/literature.py:127
 msgid "Göttingen"
 msgstr "Göttingen"
 
-#: mop/data/literature.py:151
+#: mop/data/literature.py:134
 msgid "etc."
 msgstr "itd."
 
-#: mop/data/literature.py:156
+#: mop/data/literature.py:138
 msgid "Krems"
 msgstr "Krems"
 
-#: mop/data/literature.py:180
+#: mop/data/literature.py:159
 msgid "cambridge, MA"
 msgstr "Kembridž, Masačusets"
 
-#: mop/data/literature.py:180 mop/data/literature.py:189
-#: mop/data/literature.py:248
+#: mop/data/literature.py:159 mop/data/literature.py:167
+#: mop/data/literature.py:225
 msgid "london"
 msgstr "London"
 
-#: mop/data/literature.py:189
+#: mop/data/literature.py:167
 msgid "new york"
 msgstr "Njujork"
 
-#: mop/data/literature.py:198
+#: mop/data/literature.py:175
 msgid "stroud"
 msgstr "Stroud"
 
-#: mop/data/literature.py:210
+#: mop/data/literature.py:187
 msgid "mainz"
 msgstr "Mainz"
 
-#: mop/data/literature.py:210
+#: mop/data/literature.py:187
 msgid "ruhpolding"
 msgstr "Ruhpolding"
 
-#: mop/data/literature.py:225
+#: mop/data/literature.py:202
 msgid "vienna"
 msgstr "Beč"
 
-#: mop/data/literature.py:225
+#: mop/data/literature.py:202
 msgid "novi sad"
 msgstr "Novi Sad"
 
-#: mop/data/literature.py:238 mop/data/literature.py:270
+#: mop/data/literature.py:215 mop/data/literature.py:247
 msgid "venice"
 msgstr "Venecija"
 
-#: mop/data/literature.py:258
+#: mop/data/literature.py:235
 msgid "exter"
 msgstr "Ekseter"
 
@@ -849,21 +874,21 @@ msgstr "Heidelberg"
 msgid "Ebreichsdorf"
 msgstr "Ebreichsdorf"
 
-#: mop/data/presentations.py:41 mop/data/presentations.py:105
-#: mop/data/presentations.py:116 mop/data/presentations.py:126
-#: mop/data/presentations.py:137 mop/data/presentations.py:149
-#: mop/data/presentations.py:224 mop/data/presentations.py:247
-#: mop/data/presentations.py:259 mop/data/presentations.py:270
-#: mop/data/presentations.py:281 mop/data/presentations.py:292
-#: mop/data/presentations.py:302
+#: mop/data/presentations.py:41 mop/data/presentations.py:104
+#: mop/data/presentations.py:114 mop/data/presentations.py:123
+#: mop/data/presentations.py:133 mop/data/presentations.py:144
+#: mop/data/presentations.py:210 mop/data/presentations.py:230
+#: mop/data/presentations.py:241 mop/data/presentations.py:251
+#: mop/data/presentations.py:261 mop/data/presentations.py:271
+#: mop/data/presentations.py:280
 msgid "Leeds"
 msgstr "Leeds"
 
-#: mop/data/presentations.py:51 mop/data/presentations.py:200
-#: mop/data/presentations.py:313 mop/data/presentations.py:325
-#: mop/data/projects/idcew.py:53 mop/data/projects/tarsr.py:55
-#: mop/data/projects/tarsr.py:64 mop/templates/imprint.html:14
-#: mop/templates/layout.html:105
+#: mop/data/presentations.py:51 mop/data/presentations.py:189
+#: mop/data/presentations.py:290 mop/data/presentations.py:300
+#: mop/data/projects/idcew.py:51 mop/data/projects/tarsr.py:52
+#: mop/data/projects/tarsr.py:60 mop/templates/imprint.html:14
+#: mop/templates/layout.html:79
 msgid "Vienna"
 msgstr "Beč"
 
@@ -875,25 +900,25 @@ msgstr "Društvo prijatelja Svete Gore"
 msgid "Oxford"
 msgstr "Oksford"
 
-#: mop/data/presentations.py:186
+#: mop/data/presentations.py:177
 msgid "Los Angeles"
 msgstr "Los Anđeles"
 
-#: mop/data/presentations.py:213
+#: mop/data/presentations.py:200
 msgid "Thessaloniki"
 msgstr "Solun"
 
-#: mop/data/presentations.py:236
+#: mop/data/presentations.py:220
 msgid "Florenz"
 msgstr "Firenca"
 
-#: mop/data/projects/barbyz.py:8 mop/data/projects/barbyz.py:13
-#: mop/data/projects/barbyz.py:18 mop/data/projects/barbyz.py:23
-#: mop/data/projects/barbyz.py:28
+#: mop/data/projects/barbyz.py:8 mop/data/projects/barbyz.py:12
+#: mop/data/projects/barbyz.py:16 mop/data/projects/barbyz.py:20
+#: mop/data/projects/barbyz.py:24
 msgid "Surveying in North Macedonia"
 msgstr "Terensko istraživanje u Sjevernoj Makedoniji"
 
-#: mop/data/projects/barbyz.py:36
+#: mop/data/projects/barbyz.py:31
 msgid ""
 "From Barbarians to Christians and Rhomaioi. The Process of "
 "Byzantinization in the Central Balkans (late 10th – mid-13th century)"
@@ -901,7 +926,7 @@ msgstr ""
 "Od varvara do hrišćana i Romeja. Proces vizantinizacije u centralnom "
 "Balkanu (kraj 10. – sredina 13. vijeka)"
 
-#: mop/data/projects/barbyz.py:63
+#: mop/data/projects/barbyz.py:50
 msgid "barbyz_description_1"
 msgstr ""
 "Glavni cilj projekta je da objasni ključne faktore koji su uticali na tok"
@@ -911,7 +936,7 @@ msgstr ""
 "formalnog uključivanja date oblasti u njegove granice. Istraživanje se "
 "sprovodi u tri glavna pravca:"
 
-#: mop/data/projects/barbyz.py:64
+#: mop/data/projects/barbyz.py:51
 msgid "barbyz_description_2"
 msgstr ""
 "<ol>\n"
@@ -922,7 +947,7 @@ msgstr ""
 "<li>Politički, ideološki i društveni aspekti vizantinizacije</li>\n"
 "</ol>"
 
-#: mop/data/projects/barbyz.py:65
+#: mop/data/projects/barbyz.py:52
 msgid "barbyz_description_3"
 msgstr ""
 "Proces vizantinizacije se nije odvijao identično u svim djelovima "
@@ -933,7 +958,7 @@ msgstr ""
 "arhiepiskopije), podunavsko-moravska oblast (Srem-Beograd-Braničevo-Niš) "
 "i sjeverozapadni djelovi centralnog Balkana (srpska i hrvatska zona)."
 
-#: mop/data/projects/barbyz.py:66
+#: mop/data/projects/barbyz.py:53
 msgid "barbyz_description_4"
 msgstr ""
 "Unutar vremenskog okvira projekta izdvaja se nekoliko hronoloških faza u "
@@ -941,7 +966,7 @@ msgstr ""
 "razlikovanje faza zavisio je od toga da li je posmatrana oblast bila dio "
 "Carstva ili samo pod njegovim kulturnim i političkim uticajem:"
 
-#: mop/data/projects/barbyz.py:67
+#: mop/data/projects/barbyz.py:54
 msgid "barbyz_description_5"
 msgstr ""
 "<ol>\n"
@@ -958,7 +983,7 @@ msgstr ""
 "Vizantija počela da se povlači sa Balkana i politički i vojno.</li>\n"
 "</ol>"
 
-#: mop/data/projects/barbyz.py:68
+#: mop/data/projects/barbyz.py:55
 msgid "barbyz_description_6"
 msgstr ""
 "Projektni tim je sastavljen od priznatih istraživača iz različitih "
@@ -975,12 +1000,12 @@ msgstr ""
 "završetak projekta biće koristan za dalja istraživanja u oblasti "
 "vizantologije, kao i istorije srednjevjekovnog Balkana."
 
-#: mop/data/projects/borderzones.py:10 mop/data/projects/holdura.py:13
+#: mop/data/projects/borderzones.py:10 mop/data/projects/holdura.py:11
 #: mop/data/projects/tarsr.py:10 mop/data/projects/vlachs.py:10
 msgid "Final project report"
 msgstr "Konačni izvještaj projekta"
 
-#: mop/data/projects/borderzones.py:20
+#: mop/data/projects/borderzones.py:19
 msgid ""
 "Interpretation of the Byzantino-Serbian Border between 1228 and 1334 from"
 " Different Authors"
@@ -988,33 +1013,33 @@ msgstr ""
 "Tumačenje vizantijsko-srpske granice između 1228. i 1334. godine od "
 "strane različitih autora"
 
-#: mop/data/projects/borderzones.py:27
+#: mop/data/projects/borderzones.py:26
 msgid "Fortifications in the Northern Macedonian Region in the 13/14th century"
 msgstr "Utvrđenja u sjevernomakedonskoj oblasti u 13. i 14. vijeku"
 
-#: mop/data/projects/borderzones.py:33
+#: mop/data/projects/borderzones.py:32
 msgid "Road Model based on a k. u k. Marching Map"
 msgstr "Model puta zasnovan na k. u k. marševskoj karti"
 
-#: mop/data/projects/borderzones.py:39
+#: mop/data/projects/borderzones.py:38
 msgid ""
 "Markovi Kuli Castle near Prilep from the south, Republic of Northern "
 "Macedonia"
 msgstr "Zamak Markove Kule kod Prilepa sa juga, Republika Sjeverna Makedonija"
 
-#: mop/data/projects/borderzones.py:47
+#: mop/data/projects/borderzones.py:45
 msgid "The Kale elevation in Skopje, Republic of Northern Macedonia"
 msgstr "Uzvišenje Kale u Skoplju, Republika Sjeverna Makedonija"
 
-#: mop/data/projects/borderzones.py:54
+#: mop/data/projects/borderzones.py:51
 msgid "The old city gate of Ohrid, Republic of Northern Macedonia"
 msgstr "Stara gradska kapija u Ohridu, Republika Sjeverna Makedonija"
 
-#: mop/data/projects/borderzones.py:61
+#: mop/data/projects/borderzones.py:57
 msgid "Ohrid and Samuilova tvrdina Castle, Republic of Northern Macedonia"
 msgstr "Ohrid i Samuilova tvrđava, Republika Sjeverna Makedonija"
 
-#: mop/data/projects/borderzones.py:70
+#: mop/data/projects/borderzones.py:65
 msgid ""
 "Byzantino-Serbian Border Zones in Transition: Migration and Elite Change "
 "in pre-Ottoman Macedonia (1282–1355)"
@@ -1022,7 +1047,7 @@ msgstr ""
 "Vizantijsko-srpske pogranične zone u tranziciji: migracije i promjena "
 "elite u predotomanskoj Makedoniji (1282–1355)"
 
-#: mop/data/projects/borderzones.py:81
+#: mop/data/projects/borderzones.py:76
 msgid "borderzones_description_1"
 msgstr ""
 "Evropski kontinent u cjelini i Evropska unija posebno suočavaju se "
@@ -1036,7 +1061,7 @@ msgstr ""
 " ni u ranom modernom dobu. Dinamika granica istovremeno oblikuje dinamiku"
 " obrasca naseljavanja kao i transportnih mreža."
 
-#: mop/data/projects/borderzones.py:82
+#: mop/data/projects/borderzones.py:77
 msgid "borderzones_description_2"
 msgstr ""
 "Ovaj samostalni projekat fokusira se na granice Vizantijskog (Istočnog "
@@ -1051,7 +1076,7 @@ msgstr ""
 " periodu, posebno u pet odabranih ciljnih oblasti (dolina Strumice, "
 "Lesnovo, Skoplje, Ohrid, Prilep)."
 
-#: mop/data/projects/borderzones.py:83
+#: mop/data/projects/borderzones.py:78
 msgid "borderzones_description_3"
 msgstr ""
 "Iako postoje značajne publikacije o stanovništvu kao i o migracijama u "
@@ -1062,7 +1087,7 @@ msgstr ""
 "vaseljena” i „Prekogranična društva i promjena elite u vizantijskoj "
 "Makedoniji”."
 
-#: mop/data/projects/borderzones.py:84
+#: mop/data/projects/borderzones.py:79
 msgid "borderzones_description_4"
 msgstr ""
 "Početnu tačku predstavljaju srednjevjekovni pisani izvori, tj. srpske i "
@@ -1078,7 +1103,7 @@ msgstr ""
 "vizualizaciji kako bi se postignuti rezultati predstavili zainteresovanoj"
 " javnosti."
 
-#: mop/data/projects/dgse.py:8
+#: mop/data/projects/dgse.py:9
 msgid "The Parish Church of Saint Andrew in Ebreichsdorf from the South-East"
 msgstr "Parohijska crkva Svetog Andreja u Ebreichsdorfu sa jugoistoka"
 
@@ -1086,15 +1111,15 @@ msgstr "Parohijska crkva Svetog Andreja u Ebreichsdorfu sa jugoistoka"
 msgid "The Luckate Stein"
 msgstr "Luckate Stein"
 
-#: mop/data/projects/dgse.py:20
+#: mop/data/projects/dgse.py:19
 msgid "View of the Area around the Castle of Ebreichsdorf from the East"
 msgstr "Pogled na oblast oko dvorca Ebreichsdorf sa istoka"
 
-#: mop/data/projects/dgse.py:26
+#: mop/data/projects/dgse.py:25
 msgid "The Castle of Pottendorf"
 msgstr "Dvorac Pottendorf"
 
-#: mop/data/projects/dgse.py:37
+#: mop/data/projects/dgse.py:34
 msgid ""
 "Digital Humanities using the Example of the Castle of Ebreichsdorf in the"
 " Lower Austrian Industrial District"
@@ -1102,7 +1127,7 @@ msgstr ""
 "Digitalna humanistika na primjeru dvorca Ebreichsdorf u donjoaustrijskom "
 "industrijskom okrugu"
 
-#: mop/data/projects/dgse.py:58
+#: mop/data/projects/dgse.py:51
 msgid "dgse_description_1"
 msgstr ""
 "Jedan od velikih naučnih i popularno-naučnih izazova našeg vremena je "
@@ -1114,7 +1139,7 @@ msgstr ""
 "oblast „digitalne humanistike”, koja je nesumnjivo od velikog značaja i "
 "za Donju Austriju i to će biti i u bliskoj i dalekoj budućnosti."
 
-#: mop/data/projects/dgse.py:59
+#: mop/data/projects/dgse.py:52
 msgid "dgse_description_2"
 msgstr ""
 "Naš predmet proučavanja je dvorac (okružen vodom) Ebreichsdorf, koji se "
@@ -1126,7 +1151,7 @@ msgstr ""
 "tako poljske i češke zemlje sa śevernom Italijom i jugoistočnu Evropu sa "
 "srednjom Evropom."
 
-#: mop/data/projects/dgse.py:60
+#: mop/data/projects/dgse.py:53
 msgid "dgse_description_3"
 msgstr ""
 "Ciljevi našeg projekta ogledaju se u śledeća dva istraživačka pitanja, "
@@ -1139,7 +1164,7 @@ msgstr ""
 "vizantijskog Istoka?</li>\n"
 "</ul>"
 
-#: mop/data/projects/holdura.py:8
+#: mop/data/projects/holdura.py:7
 msgid "holdura_result_text_1"
 msgstr ""
 "Tim Odjeljenja za geografiju i regionalna istraživanja (Univerzitet u "
@@ -1147,7 +1172,7 @@ msgstr ""
 "projekta: <a href=\"https://map.geo.univie.ac.at/bew/\" target=\"_blank\""
 " class=\"link-primary\">https://map.geo.univie.ac.at/bew/</a>"
 
-#: mop/data/projects/holdura.py:9
+#: mop/data/projects/holdura.py:8
 msgid "holdura_result_text_2"
 msgstr ""
 "Kratki film o našem projektu koji je napravio naš kolega Lukas Neugebauer"
@@ -1156,11 +1181,11 @@ msgstr ""
 "Hrvatska (3–10. oktobar 2024) i 25. Međunarodnom festivalu arheološkog "
 "filma u Narodnom muzeju u Beogradu, Srbija (20–25. maj 2025)."
 
-#: mop/data/projects/holdura.py:18
+#: mop/data/projects/holdura.py:15
 msgid "relief map of Montenegro"
 msgstr "reljefna karta Crne Gore"
 
-#: mop/data/projects/holdura.py:27
+#: mop/data/projects/holdura.py:23
 msgid ""
 "Bird's eye view of the Doclea archaeological excavation, A: Basilica A, "
 "B: Basilica B and cruciform church, Republic of Montenegro"
@@ -1168,7 +1193,7 @@ msgstr ""
 "Pogled iz ptičje perspektive na arheološko nalazište Duklja, A: Bazilika "
 "A, B: Bazilika B i krstolika crkva, Republika Crna Gora"
 
-#: mop/data/projects/holdura.py:34
+#: mop/data/projects/holdura.py:30
 msgid ""
 "Bird's eye view of the Doclea archaeological excavation, the western part"
 " of the city in the foreground, Republic of Montenegro"
@@ -1176,7 +1201,7 @@ msgstr ""
 "Pogled iz ptičje perspektive na arheološko nalazište Duklja, zapadni dio "
 "grada u prvom planu, Republika Crna Gora"
 
-#: mop/data/projects/holdura.py:41
+#: mop/data/projects/holdura.py:37
 msgid ""
 "The monastery of Sveti Nikola Vranjina (in the centre of the picture) on "
 "Lake Skadar, Republic of Montenegro"
@@ -1184,7 +1209,7 @@ msgstr ""
 "Manastir Sveti Nikola Vranjina (u centru slike) na Skadarskom jezeru, "
 "Republika Crna Gora"
 
-#: mop/data/projects/holdura.py:48
+#: mop/data/projects/holdura.py:44
 msgid ""
 "The former Latin (Catholic) monastery of Ratac from the 12th/13th century"
 " near the town of Bar, Republic of Montenegro."
@@ -1192,7 +1217,7 @@ msgstr ""
 "Nekadašnji latinski (katolički) samostan Ratac iz 12/13. vijeka u blizini"
 " grada Bara, Republika Crna Gora."
 
-#: mop/data/projects/holdura.py:58
+#: mop/data/projects/holdura.py:53
 msgid ""
 "Beyond East and West: Geocommunicating the Sacred Landscapes of "
 "\"Duklja\" and \"Raška\" through Space and Time (11th-14th Cent.)"
@@ -1200,7 +1225,7 @@ msgstr ""
 "Iznad Istoka i Zapada: geokomunikacija svetih predjela „Duklje” i „Raške”"
 " kroz prostor i vrijeme (11–14. vijek)"
 
-#: mop/data/projects/holdura.py:74
+#: mop/data/projects/holdura.py:69
 msgid "holdura_description_1"
 msgstr ""
 "U trenutnom diskursu o integraciji Zapadnog Balkana u Evropsku uniju, "
@@ -1210,7 +1235,7 @@ msgstr ""
 "imenom Ilirik (Illyricum), igrao ključnu ulogu u strateškim i "
 "administrativnim razmatranjima Vizantijskog carstva."
 
-#: mop/data/projects/holdura.py:75
+#: mop/data/projects/holdura.py:70
 msgid "holdura_description_2"
 msgstr ""
 "Projekat se zasniva na naučnoj saradnji između akademskih oblasti "
@@ -1222,13 +1247,13 @@ msgstr ""
 "predstavimo naučnoj zajednici kao i zainteresovanoj javnosti zajedničkim "
 "sredstvima istorijske geografije, istorije umjetnosti i geokomunikacije."
 
-#: mop/data/projects/holdura.py:76
+#: mop/data/projects/holdura.py:71
 msgid "holdura_description_3"
 msgstr ""
 "Zbog toga projekat ima za cilj sistematski pristup i istraživanje śledeća"
 " tri glavna pitanja:"
 
-#: mop/data/projects/holdura.py:77
+#: mop/data/projects/holdura.py:72
 msgid "holdura_description_4"
 msgstr ""
 "（1） Na koji način su lokalni vladari i crkve u Rimu i Carigradu stupali u"
@@ -1236,14 +1261,14 @@ msgstr ""
 "se ta interakcija ogleda u obrascu distribucije spomenika (tj. crkava i "
 "manastira) u ovom „svetom predjelu”?"
 
-#: mop/data/projects/holdura.py:78
+#: mop/data/projects/holdura.py:73
 msgid "holdura_description_5"
 msgstr ""
 "（2） Da li je nestabilna vjerska pripadnost lokalnih vladara imala uticaj "
 "na „sveti predio” i đe su latinska ili vizantijska mjesta bogosluženja "
 "tokom vremena transformisana ili superponirana?"
 
-#: mop/data/projects/holdura.py:79
+#: mop/data/projects/holdura.py:74
 msgid "holdura_description_6"
 msgstr ""
 "（3） Da li se religiozni i kulturni uticaj latinske i vizantijske "
@@ -1259,7 +1284,7 @@ msgstr ""
 "onlajn <a href=\"https://map.geo.univie.ac.at/bew/\" class=\"link-"
 "primary\">aplikaciju sa kartom</a>."
 
-#: mop/data/projects/holdura.py:80
+#: mop/data/projects/holdura.py:75
 msgid "holdura_description_7"
 msgstr ""
 "Projekat je izvodljiv isključivo kroz multidisciplinarni pristup i "
@@ -1274,13 +1299,13 @@ msgstr ""
 "class=\"link-primary\">„Cultural Heritage in Times of World War I: The "
 "Case of the Austro-Hungarian Relief Map of Montenegro (1916-1918)”</a>."
 
-#: mop/data/projects/idcew.py:8
+#: mop/data/projects/idcew.py:9
 msgid "The Church of the Holy Trinity in Sopoćani Monastery in the 1970s"
 msgstr ""
 "Crkva Svete Trojice u manastiru Sopoćani sedamdesetih godina prošlog "
 "vijeka"
 
-#: mop/data/projects/idcew.py:11 mop/data/projects/idcew.py:19
+#: mop/data/projects/idcew.py:12 mop/data/projects/idcew.py:19
 #: mop/data/projects/idcew.py:27
 msgid "Photograph Collection \"Dipl. Kfm. Wolfgang Milan (1924-2015)\""
 msgstr "Zbirka fotografija „Dipl. ekon. Wolfgang Milan (1924-2015)”"
@@ -1307,7 +1332,7 @@ msgid ""
 "Monastery in 2007"
 msgstr "Crkva Blagoveštenja Presvete Bogorodice u manastiru Gradac 2007. godine"
 
-#: mop/data/projects/idcew.py:45
+#: mop/data/projects/idcew.py:43
 msgid ""
 "Helen – a Catholic Noblewoman, Serbian Queen and Interreligious Donor "
 "connecting East and West in the 13th/14th Centuries (IDCEW)"
@@ -1315,7 +1340,7 @@ msgstr ""
 "Jelena – katolička plemkinja, srpska kraljica i međureligijski donator "
 "koji povezuje Istok i Zapad u 13. i 14. vijeku (IDCEW)"
 
-#: mop/data/projects/idcew.py:61
+#: mop/data/projects/idcew.py:57
 msgid "idcew_description_1"
 msgstr ""
 "Projekat ima za cilj da se bavi životom i djelima srednjevjekovne srpske "
@@ -1329,7 +1354,7 @@ msgstr ""
 "porodici Anžujaca. Mnoga pitanja u vezi sa njenim životom, državom i "
 "zadužbinama zahtijevaju dalja detaljna istraživanja."
 
-#: mop/data/projects/idcew.py:62
+#: mop/data/projects/idcew.py:58
 msgid "idcew_description_2"
 msgstr ""
 "Ova pitanja obuhvataju:\n"
@@ -1353,15 +1378,15 @@ msgstr ""
 "recepciju kraljice Jelene u srpskoj umjetnosti 18. i 19. vijeka</li>\n"
 "</ul>"
 
-#: mop/data/projects/rhr.py:8
+#: mop/data/projects/rhr.py:9
 msgid "The French King Louis XIV (1638-1715)"
 msgstr "Francuski kralj Luj XIV (1638-1715)"
 
-#: mop/data/projects/rhr.py:14
+#: mop/data/projects/rhr.py:16
 msgid "The Crusaders conquer Constantinople (Eugène Delacroix, 1840)"
 msgstr "Krstaši osvajaju Carigrad (Eugène Delacroix, 1840)"
 
-#: mop/data/projects/rhr.py:24
+#: mop/data/projects/rhr.py:27
 msgid ""
 "Reception of the Serbian King Petar I in Skopje in 1912, depicted in a "
 "French illustration"
@@ -1369,11 +1394,11 @@ msgstr ""
 "Doček srpskog kralja Petra I u Skoplju 1912. godine, prikazan na "
 "francuskoj ilustraciji"
 
-#: mop/data/projects/rhr.py:30
+#: mop/data/projects/rhr.py:34
 msgid "The Greek and Serbian pavilions at the World Exhibition in Paris in 1900"
 msgstr "Grčki i srpski paviljon na Svjetskoj izložbi u Parizu 1900. godine"
 
-#: mop/data/projects/rhr.py:40
+#: mop/data/projects/rhr.py:42
 msgid ""
 "The Reception History of Rumelia in Austria and France (Late 17th- Early "
 "20th Centuries) (RHR)"
@@ -1417,7 +1442,7 @@ msgstr ""
 "stvaranju snažnih, i često sukobljenih, nacionalnih narativa i identiteta"
 " na Balkanu."
 
-#: mop/data/projects/tarsr.py:20
+#: mop/data/projects/tarsr.py:19
 msgid ""
 "The Road Tunnel in Honour of the German Emperor Wilhelm II from 1916 in "
 "the Valley of the River Vardar"
@@ -1425,21 +1450,21 @@ msgstr ""
 "Drumski tunel u čast njemačkog cara Vilhelma II iz 1916. godine u dolini "
 "rijeke Vardar"
 
-#: mop/data/projects/tarsr.py:27
+#: mop/data/projects/tarsr.py:26
 msgid ""
 "Inscription in Honour of the German Emperor Wilhelm II at the Entrance to"
 " the Road Tunnel"
 msgstr "Natpis u čast njemačkog cara Vilhelma II na ulazu u drumski tunel"
 
-#: mop/data/projects/tarsr.py:34
+#: mop/data/projects/tarsr.py:33
 msgid "German Military Cemetery from the First World War near Bitola"
 msgstr "Njemačko vojničko groblje iz Prvog svjetskog rata kod Bitolja"
 
-#: mop/data/projects/tarsr.py:39
+#: mop/data/projects/tarsr.py:38
 msgid "War Relics from the First World War in Mariovo"
 msgstr "Ratni ostaci iz Prvog svjetskog rata u Mariovu"
 
-#: mop/data/projects/tarsr.py:48
+#: mop/data/projects/tarsr.py:45
 msgid ""
 "Tracing Archaeological Remains and Scholarly Research of the Central "
 "Powers in the Region of Prilep-Bitola during WW I (1915-1918)"
@@ -1447,24 +1472,24 @@ msgstr ""
 "Praćenje arheoloških ostataka i naučnog istraživanja Centralnih sila u "
 "oblasti Prilepa i Bitolja tokom Prvog svjetskog rata (1915-1918)"
 
-#: mop/data/projects/tarsr.py:56 mop/data/projects/tarsr.py:59
-#: mop/data/projects/tarsr.py:62
+#: mop/data/projects/tarsr.py:53 mop/data/projects/tarsr.py:56
+#: mop/data/projects/tarsr.py:58
 msgid "Skopje"
 msgstr "Skoplje"
 
-#: mop/data/projects/tarsr.py:60
+#: mop/data/projects/tarsr.py:56
 msgid "Prilep"
 msgstr "Prilep"
 
-#: mop/data/projects/tarsr.py:61
+#: mop/data/projects/tarsr.py:57
 msgid "Bitola"
 msgstr "Bitolj"
 
-#: mop/data/projects/tarsr.py:63
+#: mop/data/projects/tarsr.py:59
 msgid "Paris"
 msgstr "Pariz"
 
-#: mop/data/projects/tarsr.py:68
+#: mop/data/projects/tarsr.py:64
 msgid "tracing_description_1"
 msgstr ""
 "Naš projekat ima za cilj da osvijetli južni dio Balkanskog poluostrva "
@@ -1473,14 +1498,14 @@ msgstr ""
 "fronta</span> ili <span class=\"fst-italic\">Makedonskog fronta</span> u "
 "današnjoj Republici Sjevernoj Makedoniji."
 
-#: mop/data/projects/tarsr.py:69
+#: mop/data/projects/tarsr.py:65
 msgid "tracing_description_2"
 msgstr ""
 "Usko povezan sa ratovima i oružanim sukobima je njihov razorni uticaj na "
 "svjetsku kulturna baštinu. U našem projektu želimo da pratimo pitanje "
 "kulturne baštine i istraživanja o njoj tokom Prvog svjetskog rata."
 
-#: mop/data/projects/tarsr.py:70
+#: mop/data/projects/tarsr.py:66
 msgid "tracing_description_3"
 msgstr ""
 "Razni istorijski i crkveni spomenici teško su stradali u razaranjima duž "
@@ -1491,11 +1516,11 @@ msgstr ""
 " u regionu iz vizantijskog i postvizantijskog doba kako bi se dobila "
 "sveobuhvatna slika o odgovarajućoj kulturnoj baštini."
 
-#: mop/data/projects/tarsr.py:71
+#: mop/data/projects/tarsr.py:67
 msgid "tracing_description_4"
 msgstr "Istraživaće se tri pitanja:"
 
-#: mop/data/projects/tarsr.py:72
+#: mop/data/projects/tarsr.py:68
 msgid "tracing_description_5"
 msgstr ""
 "<ul>\n"
@@ -1510,7 +1535,7 @@ msgstr ""
 "žičare, groblja)?</li>\n"
 "</ul>"
 
-#: mop/data/projects/tarsr.py:73
+#: mop/data/projects/tarsr.py:69
 msgid "tracing_description_6"
 msgstr ""
 "Projekat i njegovi novi pristupi i metode u istorijskoj geografiji "
@@ -1522,19 +1547,19 @@ msgstr ""
 "target=\"_blank\">https://www.derstandard.at/story/3000000234089/im-"
 "fadenkreuz-der-kriegsfotografie</a>"
 
-#: mop/data/projects/tib_balkan.py:8 mop/data/projects/tib_balkan.py:13
+#: mop/data/projects/tib_balkan.py:8 mop/data/projects/tib_balkan.py:12
 msgid "The Monastery of Saint Naum on Lake Ohrid"
 msgstr "Manastir Sveti Naum na Ohridskom jezeru"
 
-#: mop/data/projects/tib_balkan.py:18 mop/data/projects/tib_balkan.py:23
+#: mop/data/projects/tib_balkan.py:16 mop/data/projects/tib_balkan.py:20
 msgid "The Church of Sveti Jovan Kaneo in Ohrid"
 msgstr "Crkva Sveti Jovan Kaneo u Ohridu"
 
-#: mop/data/projects/tib_balkan.py:31
+#: mop/data/projects/tib_balkan.py:26
 msgid "Reverse Engineering of the Tabula Imperii Byzantini Balkans"
 msgstr "Obratni inženjering projekta Tabula Imperii Byzantini Balkans"
 
-#: mop/data/projects/tib_balkan.py:43
+#: mop/data/projects/tib_balkan.py:37
 msgid "tib_balkan_description_1"
 msgstr ""
 "Profesor dr Herbert Hunger (1914-2000) najavio je 1966. godine osnivanje "
@@ -1546,7 +1571,7 @@ msgstr ""
 "i regija od pozne antike do ranog modernog doba. Od 1960-ih godina "
 "istraživanje je fokusirano na Balkansko poluostrvo i Malu Aziju."
 
-#: mop/data/projects/tib_balkan.py:44
+#: mop/data/projects/tib_balkan.py:38
 msgid "tib_balkan_description_2"
 msgstr ""
 "Od 1976. godine u redovnim intervalima objavljuju se TIB sveske o "
@@ -1559,7 +1584,7 @@ msgstr ""
 "relevantnih regija dosegne granicu na Dunavu kao śevernu granicu "
 "Vizantijskog carstva."
 
-#: mop/data/projects/tib_balkan.py:45
+#: mop/data/projects/tib_balkan.py:39
 msgid "tib_balkan_description_3"
 msgstr ""
 "U projektu „Obratni inženjering projekta Tabula Imperii Byzantini "
@@ -1575,24 +1600,24 @@ msgstr ""
 "arhivirane podatke, čuvajući ih za budućnost i čineći ih dostupnim "
 "istraživačima i javnosti (vidjeti opciju Istraži u nastavku)."
 
-#: mop/data/projects/vlachs.py:19 mop/data/projects/vlachs.py:25
-#: mop/data/projects/vlachs.py:31
+#: mop/data/projects/vlachs.py:18 mop/data/projects/vlachs.py:23
+#: mop/data/projects/vlachs.py:28
 msgid "A Sheepflock in the Village of Oxynon, Greece."
 msgstr "Stado ovaca u selu Oksinon, Grčka."
 
-#: mop/data/projects/vlachs.py:38
+#: mop/data/projects/vlachs.py:34
 msgid "Nomadic Infrastructure in the Historical Region of Macedonia (14th Cent.)"
 msgstr "Nomadska infrastruktura u istorijskoj regiji Makedoniji (14. vijek)"
 
-#: mop/data/projects/vlachs.py:48
+#: mop/data/projects/vlachs.py:42
 msgid "The Winter Pastures in the Historical Region of Macedonia (14th Cent.)"
 msgstr "Zimski pašnjaci u istorijskoj regiji Makedoniji (14. vijek)"
 
-#: mop/data/projects/vlachs.py:56
+#: mop/data/projects/vlachs.py:49
 msgid "The Summer Pastures in the Historical Region of Macedonia (14th Cent.)"
 msgstr "Ljetnji pašnjaci u istorijskoj regiji Makedoniji (14. vijek)"
 
-#: mop/data/projects/vlachs.py:64
+#: mop/data/projects/vlachs.py:56
 msgid ""
 "The Distribution of Vlach Temporary Settlements (Katuni) in the "
 "Historical Region of Macedonia (14th Cent.)"
@@ -1600,7 +1625,7 @@ msgstr ""
 "Raspored privremenih vlaških naselja (katuna) u istorijskoj oblasti "
 "Makedoniji (14. vijek)"
 
-#: mop/data/projects/vlachs.py:72
+#: mop/data/projects/vlachs.py:63
 msgid ""
 "The Source-Based Presence of Vlachs in the Historical Region of Macedonia"
 " (14th Cent.)"
@@ -1608,7 +1633,7 @@ msgstr ""
 "Prisustvo Vlaha u istorijskoj oblasti Makedoniji prema izvorima (14. "
 "vijek)"
 
-#: mop/data/projects/vlachs.py:82
+#: mop/data/projects/vlachs.py:71
 msgid ""
 "The Ethnonym of the Vlachs in the Written Sources and the Toponymy in the"
 " Historical Region of Macedonia (11th-16th Cent.)"
@@ -1616,7 +1641,7 @@ msgstr ""
 "Etnonim Vlaha u pisanim izvorima i toponimiji u istorijskoj oblasti "
 "Makedoniji (11–16. vijek)"
 
-#: mop/data/projects/vlachs.py:100
+#: mop/data/projects/vlachs.py:87
 msgid "vlachs_description_1"
 msgstr ""
 "Projekat pod nazivom „Etnonim Vlaha u pisanim izvorima i toponimiji u "
@@ -1630,7 +1655,7 @@ msgstr ""
 " u trajanju od dvije godine (2016–2018) i predstavlja dodatnu, novu "
 "studiju slučaja u okviru inicijative „Mape moći”."
 
-#: mop/data/projects/vlachs.py:101
+#: mop/data/projects/vlachs.py:88
 msgid "vlachs_description_2"
 msgstr ""
 "Istorijska regija Makedonija na raskrsnici pravoslavlja, "
@@ -1699,6 +1724,35 @@ msgstr "Artefakti"
 #: mop/model/explore.py:26
 msgid "Physical objects"
 msgstr "Fizički predmeti"
+
+#: mop/templates/_events_list.html:305
+msgid ""
+"Presentations, workshops, awards and publications from the Maps of Power "
+"initiative."
+msgstr ""
+
+#: mop/templates/_events_list.html:314
+#, fuzzy
+msgid "Filter"
+msgstr "Datoteke"
+
+#: mop/templates/_events_list.html:317 mop/templates/literature.html:78
+msgid "All"
+msgstr ""
+
+#: mop/templates/_events_list.html:339
+#, fuzzy
+msgid "Search events…"
+msgstr "Pretraži u"
+
+#: mop/templates/_events_list.html:339
+#, fuzzy
+msgid "Search events"
+msgstr "Pretraži u"
+
+#: mop/templates/_events_list.html:406
+msgid "No events found for the selected filter."
+msgstr ""
 
 #: mop/templates/about.html:16
 msgid "about_text_1"
@@ -1965,7 +2019,7 @@ msgstr ""
 "prilikom pripreme rukopisa za našu seriju, molimo koristite sljedeća "
 "uputstva:"
 
-#: mop/templates/histgeo.html:191 mop/templates/literature.html:207
+#: mop/templates/histgeo.html:191 mop/templates/literature.html:217
 msgid "Download PDF"
 msgstr "Preuzmi PDF"
 
@@ -1977,7 +2031,7 @@ msgstr "fontovi"
 msgid "histgeo_fonts_1"
 msgstr "molimo koristite ove vrste fontova za staroslovenski:"
 
-#: mop/templates/imprint.html:7 mop/templates/layout.html:130
+#: mop/templates/imprint.html:7 mop/templates/layout.html:104
 msgid "imprint"
 msgstr "impresum"
 
@@ -2002,7 +2056,7 @@ msgstr ""
 "Pravno lice javnog prava (Službeni list (BGBl) 569/1921 u verziji iz "
 "Službenog lista (BGBl) I 31/2018)"
 
-#: mop/templates/imprint.html:14 mop/templates/layout.html:105
+#: mop/templates/imprint.html:14 mop/templates/layout.html:79
 msgid "Austria"
 msgstr "Austrija"
 
@@ -2133,19 +2187,19 @@ msgstr ""
 msgid "Further information on data protection on websites of the OeAW."
 msgstr "Dodatne informacije o zaštiti podataka na veb stranicama OeAW-a."
 
-#: mop/templates/layout.html:99
+#: mop/templates/layout.html:73
 msgid "contact"
 msgstr "kontakt"
 
-#: mop/templates/layout.html:103
+#: mop/templates/layout.html:77
 msgid "Division of Byzantine Research"
 msgstr "Odjeljenje za vizantološka istraživanja"
 
-#: mop/templates/layout.html:105
+#: mop/templates/layout.html:79
 msgid "Europe"
 msgstr "Evropa"
 
-#: mop/templates/layout.html:121
+#: mop/templates/layout.html:95
 msgid "navigation"
 msgstr "navigacija"
 
@@ -2169,54 +2223,50 @@ msgstr "link"
 msgid "recording"
 msgstr "snimak"
 
-#: mop/templates/literature.html:52
+#: mop/templates/literature.html:62
 #, fuzzy
 msgid "Literature & Publications"
 msgstr "Publikacije"
 
-#: mop/templates/literature.html:54
+#: mop/templates/literature.html:64
 msgid ""
 "Explore academic research and publication records across the initiative's"
 " projects."
 msgstr ""
 
-#: mop/templates/literature.html:64
+#: mop/templates/literature.html:74
 #, fuzzy
 msgid "Filter by Project"
 msgstr "Istraži"
 
-#: mop/templates/literature.html:68
-msgid "All"
-msgstr ""
-
-#: mop/templates/literature.html:99 mop/templates/literature.html:147
+#: mop/templates/literature.html:109 mop/templates/literature.html:157
 #, fuzzy
 msgid "General Reading"
 msgstr "Dodatna literatura"
 
-#: mop/templates/literature.html:112
+#: mop/templates/literature.html:122
 msgid "Search by author, title, year..."
 msgstr ""
 
-#: mop/templates/literature.html:194
+#: mop/templates/literature.html:204
 #, fuzzy
 msgid "Cite"
 msgstr "Aktivno"
 
-#: mop/templates/literature.html:200 mop/templates/macros.html:30
+#: mop/templates/literature.html:210 mop/templates/macros.html:30
 msgid "Open external link"
 msgstr "Otvori spoljni link"
 
-#: mop/templates/literature.html:201
+#: mop/templates/literature.html:211
 #, fuzzy
 msgid "Link"
 msgstr "link"
 
-#: mop/templates/literature.html:208
+#: mop/templates/literature.html:218
 msgid "PDF"
 msgstr ""
 
-#: mop/templates/literature.html:274
+#: mop/templates/literature.html:289
 msgid "Copied! ✔️"
 msgstr ""
 
@@ -2224,35 +2274,35 @@ msgstr ""
 msgid "Download file"
 msgstr "Preuzmi datoteku"
 
-#: mop/templates/macros.html:64
+#: mop/templates/macros.html:57 mop/templates/macros.html:58
 msgid "Search"
 msgstr "mart"
 
-#: mop/templates/macros.html:86
+#: mop/templates/macros.html:102
 msgid "License & Attribution"
 msgstr "Licenca i pripisivanje"
 
-#: mop/templates/macros.html:88
+#: mop/templates/macros.html:104
 msgid "All data shown here is licensed under the"
 msgstr "Svi prikazani podaci su licencirani pod"
 
-#: mop/templates/macros.html:90 mop/templates/macros.html:103
+#: mop/templates/macros.html:106 mop/templates/macros.html:119
 msgid "Creative Commons Attribution 4.0 International (CC-BY 4.0) License"
 msgstr "Creative Commons Autorstvo 4.0 Međunarodna (CC-BY 4.0) licenca"
 
-#: mop/templates/macros.html:92
+#: mop/templates/macros.html:108
 msgid "Please attribute to"
 msgstr "Molimo pripišite:"
 
-#: mop/templates/macros.html:96
+#: mop/templates/macros.html:112
 msgid "Principal Investigator(s)"
 msgstr "Rukovodilac/oci projekta"
 
-#: mop/templates/macros.html:99
+#: mop/templates/macros.html:115
 msgid "License & Academic Attribution"
 msgstr "Licenca i akademsko pripisivanje"
 
-#: mop/templates/macros.html:101
+#: mop/templates/macros.html:117
 msgid ""
 "All dataset resources and research data presented across these projects "
 "are licensed under the"
@@ -2260,7 +2310,7 @@ msgstr ""
 "Svi resursi skupova podataka i istraživački podaci predstavljeni u ovim "
 "projektima licencirani su pod"
 
-#: mop/templates/macros.html:105
+#: mop/templates/macros.html:121
 msgid ""
 "Please credit and attribute the respective project Principal "
 "Investigator(s) (PI) or the project leader Mihailo Popović when "
@@ -2271,15 +2321,7 @@ msgstr ""
 "rukovodiocu projekta Mihailu Popoviću prilikom izvoza, vizuelizacije ili "
 "objavljivanja bilo kog izvedenog naučnog rada sa ovog portala."
 
-#: mop/templates/navbar.html:61
-msgid "Other"
-msgstr "Ostalo"
-
-#: mop/templates/navbar.html:73 mop/templates/navbar.html:80
-msgid "This translation was generated using AI."
-msgstr "Ovaj prevod je generisan pomoću vještačke inteligencije (AI)."
-
-#: mop/templates/project_details.html:63 mop/templates/project_details.html:433
+#: mop/templates/project_details.html:63 mop/templates/project_details.html:781
 #: mop/templates/projects.html:113 mop/templates/projects.html:146
 #: mop/templates/projects.html:224 mop/templates/projects.html:277
 #: mop/templates/projects.html:661
@@ -2338,31 +2380,113 @@ msgstr "Mapiranje prostornih koordinata..."
 msgid "Downloading geographical locations from OpenAtlas."
 msgstr "Preuzimanje geografskih lokacija sa OpenAtlas-a."
 
-#: mop/templates/project_details.html:265
+#: mop/templates/project_details.html:274
+#, fuzzy
+msgid "Search entities…"
+msgstr "Analitika istraživanja"
+
+#: mop/templates/project_details.html:279
+#, fuzzy
+msgid "Clear"
+msgstr "Klasa"
+
+#: mop/templates/explore/project_entity_view.html:698
+#: mop/templates/explore/project_explore_table.html:50
+#: mop/templates/project_details.html:312
+msgid "Name"
+msgstr "Ime"
+
+#: mop/templates/explore/project_entity_view.html:699
+#: mop/templates/explore/project_explore_table.html:51
+#: mop/templates/project_details.html:313
+msgid "Class"
+msgstr "Klasa"
+
+#: mop/templates/explore/project_entity_view.html:701
+#: mop/templates/project_details.html:314
+msgid "Begin"
+msgstr "Početak"
+
+#: mop/templates/explore/project_entity_view.html:702
+#: mop/templates/project_details.html:315
+msgid "End"
+msgstr "Kraj"
+
+#: mop/templates/project_details.html:316
+msgid "Type"
+msgstr ""
+
+#: mop/templates/explore/project_entity_view.html:25
+#: mop/templates/explore/project_entity_view.html:521
+#: mop/templates/explore/project_entity_view.html:530
+#: mop/templates/explore/project_entity_view.html:707
+#: mop/templates/explore/project_explore_table.html:52
+#: mop/templates/project_details.html:317
+msgid "Description"
+msgstr "Opis"
+
+#: mop/templates/project_details.html:318
+#, fuzzy
+msgid "No entities found."
+msgstr "Entiteti (čvorovi)"
+
+#: mop/templates/project_details.html:319
+msgid "Try a different search or select another category."
+msgstr ""
+
+#: mop/templates/project_details.html:320
+msgid "Loading entities…"
+msgstr ""
+
+#: mop/templates/project_details.html:321
+#, fuzzy
+msgid "Page"
+msgstr "stranice"
+
+#: mop/templates/project_details.html:322
+msgid "of"
+msgstr ""
+
+#: mop/templates/project_details.html:323
+#: mop/templates/project_details.html:613
 msgid "results"
 msgstr "Rezultati"
 
-#: mop/templates/project_details.html:303
+#: mop/templates/explore/project_explore_table.html:98
+#: mop/templates/explore/project_explore_table.html:99
+#: mop/templates/project_details.html:324
+msgid "Search in"
+msgstr "Pretraži u"
+
+#: mop/templates/project_details.html:493
+msgid "Could not load data."
+msgstr ""
+
+#: mop/templates/project_details.html:494
+msgid "The data service may be temporarily unavailable."
+msgstr ""
+
+#: mop/templates/project_details.html:651
 msgid "publications"
 msgstr "Publikacije"
 
-#: mop/templates/project_details.html:313
+#: mop/templates/project_details.html:661
 msgid "presentations"
 msgstr "Prezentacije"
 
-#: mop/templates/project_details.html:387 mop/templates/projects.html:887
+#: mop/templates/project_details.html:735 mop/templates/projects.html:887
 msgid "No description available."
 msgstr "Opis"
 
-#: mop/templates/project_details.html:390 mop/templates/projects.html:890
+#: mop/templates/project_details.html:738 mop/templates/projects.html:890
 msgid "View Details"
 msgstr "Prikaži detalje"
 
-#: mop/templates/project_details.html:436 mop/templates/projects.html:225
+#: mop/templates/project_details.html:784 mop/templates/projects.html:225
 msgid "Upcoming"
 msgstr "Ruhpolding"
 
-#: mop/templates/project_details.html:439 mop/templates/projects.html:114
+#: mop/templates/project_details.html:787 mop/templates/projects.html:114
 #: mop/templates/projects.html:226 mop/templates/projects.html:281
 #: mop/templates/projects.html:666
 msgid "Completed"
@@ -2623,60 +2747,60 @@ msgstr "Generisanje mrežnog grafa..."
 msgid "Fetching entities and computing relations from the database."
 msgstr "Preuzimanje entiteta i izračunavanje odnosa iz baze podataka."
 
-#: mop/templates/explore/project_entity_view.html:235
+#: mop/templates/explore/project_entity_view.html:274
 #: mop/templates/projects.html:475
 msgid "Legend (Click to toggle)"
 msgstr "Legenda (Kliknite za prebacivanje)"
 
-#: mop/templates/explore/project_entity_view.html:224
-#: mop/templates/explore/project_entity_view.html:242
+#: mop/templates/explore/project_entity_view.html:263
+#: mop/templates/explore/project_entity_view.html:281
 #: mop/templates/projects.html:478 mop/templates/projects.html:507
 msgid "Place"
 msgstr "Mjesto"
 
-#: mop/templates/explore/project_entity_view.html:246
+#: mop/templates/explore/project_entity_view.html:285
 #: mop/templates/projects.html:482
 msgid "Person"
 msgstr "Osoba"
 
-#: mop/templates/explore/project_entity_view.html:250
+#: mop/templates/explore/project_entity_view.html:289
 #: mop/templates/projects.html:486
 msgid "Group"
 msgstr "Grupa"
 
-#: mop/templates/explore/project_entity_view.html:254
+#: mop/templates/explore/project_entity_view.html:293
 #: mop/templates/projects.html:490
 msgid "Event / Activity"
 msgstr "Događaj / aktivnost"
 
-#: mop/templates/explore/project_entity_view.html:258
+#: mop/templates/explore/project_entity_view.html:297
 #: mop/templates/projects.html:494
 msgid "Artifact"
 msgstr "Artefakt"
 
-#: mop/templates/explore/project_entity_view.html:262
+#: mop/templates/explore/project_entity_view.html:301
 #: mop/templates/projects.html:498
 msgid "Literature / Source"
 msgstr "Literatura / izvor"
 
-#: mop/templates/explore/project_entity_view.html:222
+#: mop/templates/explore/project_entity_view.html:261
 #: mop/templates/projects.html:505
 msgid "Node Details"
 msgstr "Detalji o čvoru"
 
-#: mop/templates/explore/project_entity_view.html:226
+#: mop/templates/explore/project_entity_view.html:265
 #: mop/templates/projects.html:509
 msgid "ID"
 msgstr "ID"
 
 #: mop/templates/explore/project_entity_view.html:34
-#: mop/templates/explore/project_entity_view.html:227
-#: mop/templates/explore/project_entity_view.html:639
+#: mop/templates/explore/project_entity_view.html:266
+#: mop/templates/explore/project_entity_view.html:678
 #: mop/templates/projects.html:510
 msgid "Relations"
 msgstr "Odnosi"
 
-#: mop/templates/explore/project_entity_view.html:229
+#: mop/templates/explore/project_entity_view.html:268
 #: mop/templates/projects.html:512
 msgid "View Entity"
 msgstr "Prikaži entitet"
@@ -2702,21 +2826,13 @@ msgstr ""
 msgid "properties"
 msgstr "Svojstva"
 
-#: mop/templates/explore/project_entity_view.html:25
-#: mop/templates/explore/project_entity_view.html:482
-#: mop/templates/explore/project_entity_view.html:491
-#: mop/templates/explore/project_entity_view.html:668
-#: mop/templates/explore/project_explore_table.html:52
-msgid "Description"
-msgstr "Opis"
-
 #: mop/templates/explore/project_entity_view.html:28
-#: mop/templates/explore/project_entity_view.html:575
+#: mop/templates/explore/project_entity_view.html:614
 msgid "Narrative Connections"
 msgstr "Narativne veze"
 
 #: mop/templates/explore/project_entity_view.html:37
-#: mop/templates/explore/project_entity_view.html:737
+#: mop/templates/explore/project_entity_view.html:790
 msgid "files"
 msgstr "Datoteke"
 
@@ -2725,67 +2841,67 @@ msgstr "Datoteke"
 msgid "Cite Entry"
 msgstr "prikaži entitet"
 
-#: mop/templates/explore/project_entity_view.html:122
+#: mop/templates/explore/project_entity_view.html:133
 msgid "Period"
 msgstr "Period"
 
-#: mop/templates/explore/project_entity_view.html:187
+#: mop/templates/explore/project_entity_view.html:226
 msgid "Map"
 msgstr "Mapa"
 
-#: mop/templates/explore/project_entity_view.html:192
+#: mop/templates/explore/project_entity_view.html:231
 msgid "Network"
 msgstr "Njujork"
 
-#: mop/templates/explore/project_entity_view.html:197
+#: mop/templates/explore/project_entity_view.html:236
 msgid "Timeline"
 msgstr "vrijeme"
 
-#: mop/templates/explore/project_entity_view.html:238
+#: mop/templates/explore/project_entity_view.html:277
 msgid "Selected Entity"
 msgstr "Izabrani entitet"
 
-#: mop/templates/explore/project_entity_view.html:269
+#: mop/templates/explore/project_entity_view.html:308
 msgid "Depth"
 msgstr "Dubina"
 
-#: mop/templates/explore/project_entity_view.html:281
+#: mop/templates/explore/project_entity_view.html:320
 msgid "Labels"
 msgstr "Oznake"
 
-#: mop/templates/explore/project_entity_view.html:287
+#: mop/templates/explore/project_entity_view.html:326
 msgid "Spacing"
 msgstr "Razmak"
 
-#: mop/templates/explore/project_entity_view.html:289
+#: mop/templates/explore/project_entity_view.html:328
 msgid "Compact"
 msgstr "Kompaktno"
 
-#: mop/templates/explore/project_entity_view.html:290
+#: mop/templates/explore/project_entity_view.html:329
 msgid "Normal"
 msgstr "Normalno"
 
-#: mop/templates/explore/project_entity_view.html:291
+#: mop/templates/explore/project_entity_view.html:330
 msgid "Wide"
 msgstr "Široko"
 
-#: mop/templates/explore/project_entity_view.html:292
+#: mop/templates/explore/project_entity_view.html:331
 msgid "Extra Wide"
 msgstr "Veoma široko"
 
-#: mop/templates/explore/project_entity_view.html:299
+#: mop/templates/explore/project_entity_view.html:338
 msgid "Fullscreen"
 msgstr "Preko cijelog ekrana"
 
-#: mop/templates/explore/project_entity_view.html:305
+#: mop/templates/explore/project_entity_view.html:344
 msgid "Export"
 msgstr "Izvoz"
 
-#: mop/templates/explore/project_entity_view.html:316
+#: mop/templates/explore/project_entity_view.html:355
 msgid "Export Graph as Image"
 msgstr "Izvezi graf kao sliku"
 
-#: mop/templates/explore/project_entity_view.html:321
+#: mop/templates/explore/project_entity_view.html:360
 msgid ""
 "Configure the style, format, and enhancements for your network "
 "visualization image download."
@@ -2793,59 +2909,59 @@ msgstr ""
 "Konfigurišite stil, format i poboljšanja za preuzimanje slike "
 "vizuelizacije mreže."
 
-#: mop/templates/explore/project_entity_view.html:326
+#: mop/templates/explore/project_entity_view.html:365
 msgid "File Format"
 msgstr "Format datoteke"
 
-#: mop/templates/explore/project_entity_view.html:332
+#: mop/templates/explore/project_entity_view.html:371
 msgid "PNG Image"
 msgstr "PNG slika"
 
-#: mop/templates/explore/project_entity_view.html:333
+#: mop/templates/explore/project_entity_view.html:372
 msgid "Lossless & Transparent"
 msgstr "Bez gubitaka i providno"
 
-#: mop/templates/explore/project_entity_view.html:340
+#: mop/templates/explore/project_entity_view.html:379
 msgid "JPEG Image"
 msgstr "JPEG slika"
 
-#: mop/templates/explore/project_entity_view.html:341
+#: mop/templates/explore/project_entity_view.html:380
 msgid "High Compatibility"
 msgstr "Visoka kompatibilnost"
 
-#: mop/templates/explore/project_entity_view.html:349
+#: mop/templates/explore/project_entity_view.html:388
 msgid "Background Theme"
 msgstr "Tema pozadine"
 
-#: mop/templates/explore/project_entity_view.html:355
+#: mop/templates/explore/project_entity_view.html:394
 msgid "Transparent"
 msgstr "Providno"
 
-#: mop/templates/explore/project_entity_view.html:362
+#: mop/templates/explore/project_entity_view.html:401
 msgid "Solid Light"
 msgstr "Jednobojno svijetlo"
 
-#: mop/templates/explore/project_entity_view.html:369
+#: mop/templates/explore/project_entity_view.html:408
 msgid "Deep Dark"
 msgstr "Duboka tama"
 
-#: mop/templates/explore/project_entity_view.html:378
+#: mop/templates/explore/project_entity_view.html:417
 msgid "Cancel"
 msgstr "Otkaži"
 
-#: mop/templates/explore/project_entity_view.html:381
+#: mop/templates/explore/project_entity_view.html:420
 msgid "Generate & Download"
 msgstr "Generiši i preuzmi"
 
-#: mop/templates/explore/project_entity_view.html:454
+#: mop/templates/explore/project_entity_view.html:493
 msgid "Lifecycle phase of"
 msgstr "Faza životnog ciklusa"
 
-#: mop/templates/explore/project_entity_view.html:466
+#: mop/templates/explore/project_entity_view.html:505
 msgid "No Timeline Events"
 msgstr "Nema vremenskih događaja"
 
-#: mop/templates/explore/project_entity_view.html:467
+#: mop/templates/explore/project_entity_view.html:506
 msgid ""
 "We couldn't find any chronological events or relations with dates for "
 "this entity."
@@ -2853,64 +2969,47 @@ msgstr ""
 "Nismo uspjeli da pronađemo hronološke događaje ili relacije sa datumima "
 "za ovaj entitet."
 
-#: mop/templates/explore/project_entity_view.html:591
-#: mop/templates/explore/project_entity_view.html:972
+#: mop/templates/explore/project_entity_view.html:630
+#: mop/templates/explore/project_entity_view.html:1025
 msgid "Show more"
 msgstr "Prikaži više"
 
-#: mop/templates/explore/project_entity_view.html:621
+#: mop/templates/explore/project_entity_view.html:660
 msgid "view entity"
 msgstr "prikaži entitet"
 
-#: mop/templates/explore/project_entity_view.html:659
-#: mop/templates/explore/project_explore_table.html:50
-msgid "Name"
-msgstr "Ime"
-
-#: mop/templates/explore/project_entity_view.html:660
-#: mop/templates/explore/project_explore_table.html:51
-msgid "Class"
-msgstr "Klasa"
-
-#: mop/templates/explore/project_entity_view.html:662
-msgid "Begin"
-msgstr "Početak"
-
-#: mop/templates/explore/project_entity_view.html:663
-msgid "End"
-msgstr "Kraj"
-
-#: mop/templates/explore/project_entity_view.html:666
+#: mop/templates/explore/project_entity_view.html:705
 msgid "Relation Type"
 msgstr "Tip odnosa"
 
-#: mop/templates/explore/project_entity_view.html:716
+#: mop/templates/explore/project_entity_view.html:754
+#: mop/templates/explore/project_entity_view.html:755
 msgid "Search..."
 msgstr "Pretraži..."
 
-#: mop/templates/explore/project_entity_view.html:780
+#: mop/templates/explore/project_entity_view.html:833
 msgid "Cite this Entry"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:785
+#: mop/templates/explore/project_entity_view.html:838
 msgid ""
 "Choose your preferred academic style to cite this entry. Click copy to "
 "save it to your clipboard."
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:808
-#: mop/templates/explore/project_entity_view.html:817
-#: mop/templates/explore/project_entity_view.html:826
-#: mop/templates/explore/project_entity_view.html:835
+#: mop/templates/explore/project_entity_view.html:861
+#: mop/templates/explore/project_entity_view.html:870
+#: mop/templates/explore/project_entity_view.html:879
+#: mop/templates/explore/project_entity_view.html:888
 msgid "Copy to clipboard"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:843
+#: mop/templates/explore/project_entity_view.html:896
 #, fuzzy
 msgid "Close"
 msgstr "Klasa"
 
-#: mop/templates/explore/project_entity_view.html:976
+#: mop/templates/explore/project_entity_view.html:1029
 msgid "Show less"
 msgstr "Prikaži manje"
 
@@ -2923,10 +3022,6 @@ msgid "We are working on providing data for this section as soon as possible."
 msgstr ""
 "Radimo na tome da obezbijedimo podatke za ovaj odjeljak što je prije "
 "moguće."
-
-#: mop/templates/explore/project_explore_table.html:92
-msgid "Search in"
-msgstr "Pretraži u"
 
 #~ msgid "histgeo"
 #~ msgstr "HistGeo"
@@ -2958,4 +3053,13 @@ msgstr "Pretraži u"
 
 #~ msgid "Beyond East and West"
 #~ msgstr "Iznad Istoka i Zapada"
+
+#~ msgid "December"
+#~ msgstr "decembar"
+
+#~ msgid "Other"
+#~ msgstr "Ostalo"
+
+#~ msgid "This translation was generated using AI."
+#~ msgstr "Ovaj prevod je generisan pomoću vještačke inteligencije (AI)."
 

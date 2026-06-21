@@ -26,6 +26,18 @@ types = {
         'name': _('press_release'),
         'bs_icon': 'bi-newspaper'}}
 event_list = [{
+    'id': 'lange_nacht_der_forschung_240426',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2026, 4, 24)}",
+    'who': '',
+    'icon': 'lange_nacht_der_forschung_240426.jpg',
+    'title': _('Lange Nacht der Forschung 2026'),
+    'description': _('lange_nacht_der_forschung_240426'),
+    'attachment': [{
+        'path': '',
+        'type': ''
+    }]
+}, {
     'id': 'brno_summer_school_260625',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2025, 6, 26)}",
