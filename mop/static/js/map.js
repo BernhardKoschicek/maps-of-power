@@ -163,6 +163,16 @@ function pointToLayer(feature, latlng) {
     });
 }
 
+// Helper to escape HTML characters
+function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&#039;');
+}
+
 // Interactive popups for map features
 function onEachFeature(feature, layer) {
     if (feature.properties) {
@@ -178,7 +188,13 @@ function onEachFeature(feature, layer) {
         // Add title and description
         popupContent += '<h6 class="fw-bold mb-1 text-dark" style="font-size:13px; margin:0 0 4px 0;">' + feature.properties.title + '</h6>';
         if (feature.properties.description) {
-            popupContent += '<p class="text-muted mb-2" style="font-size: 11px; margin:0 0 6px 0; line-height: 1.4;">' + feature.properties.description + '</p>';
+            var desc = feature.properties.description;
+            if (desc.length > 200) {
+                var shortDesc = escapeHTML(desc.slice(0, 200)) + '...';
+                popupContent += '<p class="text-muted mb-2" style="font-size: 11px; margin:0 0 6px 0; line-height: 1.4;">' + shortDesc + '</p>';
+            } else {
+                popupContent += '<p class="text-muted mb-2" style="font-size: 11px; margin:0 0 6px 0; line-height: 1.4;">' + escapeHTML(desc) + '</p>';
+            }
         }
         
         // Add View Entity button for related entities
