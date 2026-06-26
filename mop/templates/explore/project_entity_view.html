@@ -192,7 +192,7 @@
                     <a href="{{ ns.main_img.url }}" data-fancybox="gallery-main"
                        data-caption="{{ ns.main_img.title }}{% if ns.main_img.description %} - {{ ns.main_img.description }}{% endif %}">
                       <div class="ratio ratio-1x1">
-                        <img src="{{ ns.main_img.iiif_thumbnail_url }}"
+                        <img src="{{ ns.main_img.iiif_thumbnail_url or (ns.main_img.url + '?image_size=thumbnail') }}"
                              class="object-fit-cover w-100 h-100"
                              alt="{{ ns.main_img.title }}">
                       </div>

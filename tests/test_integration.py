@@ -203,11 +203,19 @@ def test_api_project_places_route() -> None:
     assert 'places' in data
     assert isinstance(data['places'], list)
 
-    # Test no oaID case for 'rhr'
-    response = client.get('/api/places/rhr')
-    assert response.status_code == 200
-    data = response.json
-    assert data == {'places': []}
+    # Test no oaID case
+    from mop.data.projects.projects import project_data
+    original_oaid = project_data['rhr'].get('oaID')
+    if 'oaID' in project_data['rhr']:
+        del project_data['rhr']['oaID']
+    try:
+        response = client.get('/api/places/rhr')
+        assert response.status_code == 200
+        data = response.json
+        assert data == {'places': []}
+    finally:
+        if original_oaid is not None:
+            project_data['rhr']['oaID'] = original_oaid
 
     # Test project not found case
     response = client.get('/api/places/nonexistent')
