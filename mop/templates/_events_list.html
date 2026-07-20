@@ -213,6 +213,8 @@
     color: #6c757d;
     line-height: 1.6;
     margin: 0;
+  }
+  .ev-card-description.collapsed {
     /* clamp to 3 lines */
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -245,16 +247,19 @@
     gap: 1.25rem;
   }
   .ev-preview-card {
+    display: block;
     background: #fff;
     border-radius: var(--card-radius);
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(0,0,0,.06);
     overflow: hidden;
     transition: box-shadow var(--transition-smooth), transform var(--transition-smooth);
+    color: inherit;
   }
   .ev-preview-card:hover {
     box-shadow: var(--card-shadow-hover);
     transform: translateY(-3px);
+    color: inherit;
   }
   .ev-preview-card img {
     width: 100%;
@@ -287,6 +292,7 @@
     transform: scale(1);
   }
   .ev-card, .ev-preview-card {
+    cursor: pointer;
     transition: box-shadow var(--transition-smooth),
                 transform   var(--transition-smooth),
                 opacity     var(--transition-smooth);
@@ -395,7 +401,7 @@
           </div>
           <h3 class="ev-card-title">{{ event['title'] }}</h3>
           {% if event['description'] | string | trim %}
-          <p class="ev-card-description">{{ event['description'] }}</p>
+          <p class="ev-card-description collapsed">{{ event['description'] }}</p>
           {% endif %}
         </div>
       </div>
@@ -484,6 +490,31 @@ document.addEventListener('DOMContentLoaded', function () {
   if (searchInput) {
     searchInput.addEventListener('input', applyFilters);
   }
+
+  // Add click listener to expand/collapse event cards
+  const eventsCards = document.querySelectorAll('.ev-card');
+  eventsCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const desc = this.querySelector('.ev-card-description');
+      if (desc) {
+        desc.classList.toggle('collapsed');
+      }
+    });
+  });
+
+  // Handle preview card clicks to avoid nested link issues
+  const previewCards = document.querySelectorAll('.ev-preview-card');
+  previewCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      // If the user clicked a link inside the description, let it handle the click
+      if (e.target.tagName === 'A') return;
+
+      const targetUrl = this.getAttribute('data-href');
+      if (targetUrl) {
+        window.location.href = targetUrl;
+      }
+    });
+  });
 });
 </script>
 
@@ -496,7 +527,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="events-grid-preview">
       {% for event in events %}
         {% if event['icon'] %}
-        <div class="ev-preview-card">
+        <div class="ev-preview-card" data-href="{{ url_for('events') }}#ev-{{ event['id'] }}">
           <img src="{{ url_for('static', filename='images/' + event['icon'], v=ASSETS_VERSION) }}"
                alt="{{ event['title'] }}"
                loading="lazy">
@@ -523,6 +554,9 @@ document.addEventListener('DOMContentLoaded', function () {
               {{ event['type']['name'] }}
             </span>
             <h3>{{ event['title'] }}</h3>
+            {% if event['description'] | string | trim %}
+            <p class="ev-card-description collapsed">{{ event['description'] }}</p>
+            {% endif %}
             <div class="ev-card-date"><i class="bi bi-calendar3"></i> {{ event['date'] }}</div>
           </div>
         </div>

@@ -26,6 +26,18 @@ types = {
         'name': _('press_release'),
         'bs_icon': 'bi-newspaper'}}
 event_list = [{
+    'id': 'imc_leeds_26',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2026, 7, 7)}",
+    'who': '',
+    'icon': 'imc_leed_26.jpg',
+    'title': _('Session at the IMC in Leeds'),
+    'description': _('imc_leeds_26'),
+    'attachment': [{
+        'path': '',
+        'type': ''
+    }]
+}, {
     'id': 'lange_nacht_der_forschung_240426',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2026, 4, 24)}",

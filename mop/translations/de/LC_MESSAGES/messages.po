@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-06-21 16:37+0200\n"
+"POT-Creation-Date: 2026-07-20 17:26+0200\n"
 "PO-Revision-Date: 2026-03-01 00:46+0100\n"
 "Last-Translator: \n"
 "Language: de\n"
@@ -32,7 +32,7 @@ msgstr "projekte"
 msgid "atlas"
 msgstr "Atlas"
 
-#: mop/templates/_events_list.html:303 mop/templates/_events_list.html:495
+#: mop/templates/_events_list.html:306 mop/templates/_events_list.html:509
 #: mop/util.py:44
 msgid "events"
 msgstr "ereignisse"
@@ -42,25 +42,25 @@ msgstr "ereignisse"
 msgid "literature"
 msgstr "Literatur"
 
-#: mop/templates/literature.html:192 mop/views.py:106
+#: mop/templates/literature.html:192 mop/views.py:116
 msgid "pp."
 msgstr "S."
 
-#: mop/views.py:492
+#: mop/views.py:525
 msgid "An error occurred"
 msgstr "Ein Fehler ist aufgetreten"
 
-#: mop/views.py:494
+#: mop/views.py:527
 msgid "An unexpected error occurred. Please try again later."
 msgstr ""
 "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später "
 "noch einmal."
 
-#: mop/views.py:497
+#: mop/views.py:530
 msgid "Page Not Found"
 msgstr "Seite nicht gefunden"
 
-#: mop/views.py:499
+#: mop/views.py:532
 msgid ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
@@ -68,21 +68,21 @@ msgstr ""
 "Die von Ihnen eingegebenen Koordinaten scheinen außerhalb des gültigen "
 "Bereichs zu liegen. Die gesuchte Seite existiert nicht."
 
-#: mop/views.py:502
+#: mop/views.py:535
 msgid "Access Denied"
 msgstr "Zugriff verweigert"
 
-#: mop/views.py:504
+#: mop/views.py:537
 msgid "You do not have permission to access this area. Restricted coordinates."
 msgstr ""
 "Sie haben keine Berechtigung, auf diesen Bereich zuzugreifen. "
 "Eingeschränkte Koordinaten."
 
-#: mop/views.py:507
+#: mop/views.py:540
 msgid "I'm a Teapot"
 msgstr "Ich bin eine Teekanne"
 
-#: mop/views.py:509
+#: mop/views.py:542
 msgid ""
 "The server refuses the attempt to brew coffee with a teapot. Yes, this is"
 " a real error."
@@ -90,11 +90,11 @@ msgstr ""
 "Der Server weigert sich, Kaffee mit einer Teekanne zuzubereiten. Ja, dies"
 " ist ein echter Fehler."
 
-#: mop/views.py:526 mop/views.py:531
+#: mop/views.py:559 mop/views.py:564
 msgid "Internal Server Error"
 msgstr "Interner Serverfehler"
 
-#: mop/views.py:533
+#: mop/views.py:566
 msgid ""
 "An unexpected server error occurred. Our cartographers are looking into "
 "it."
@@ -103,7 +103,7 @@ msgstr ""
 "arbeiten bereits an einer Lösung."
 
 #: mop/data/events.py:8 mop/data/events.py:11
-#: mop/templates/_events_list.html:320
+#: mop/templates/_events_list.html:323
 msgid "presentation"
 msgstr "präsentation"
 
@@ -111,11 +111,11 @@ msgstr "präsentation"
 msgid "award"
 msgstr "auszeichnung"
 
-#: mop/data/events.py:17 mop/templates/_events_list.html:323
+#: mop/data/events.py:17 mop/templates/_events_list.html:326
 msgid "science_fair"
 msgstr "wissenschaftsmesse"
 
-#: mop/data/events.py:20 mop/templates/_events_list.html:326
+#: mop/data/events.py:20 mop/templates/_events_list.html:329
 msgid "book_release"
 msgstr "buch Veröffentlichung"
 
@@ -123,15 +123,28 @@ msgstr "buch Veröffentlichung"
 msgid "blogpost"
 msgstr "blogpost"
 
-#: mop/data/events.py:26 mop/templates/_events_list.html:329
+#: mop/data/events.py:26 mop/templates/_events_list.html:332
 msgid "press_release"
 msgstr "pressemitteilung"
 
+#: mop/data/events.py:29
+msgid "imc_leeds_26"
+msgstr ""
+"Auch heuer durften wir wieder eine Session (Nr. 725) beim International "
+"Medieval Congress in Leeds anbieten. Diese trug den Titel „The Confluence"
+" of Temporality in (In)Tangibility between Culture and Nature in Medieval"
+" Heritage“ und hat zu spannenden Diskussionen über die Gegenwart und "
+"Zukunft der Historischen Geographie angeregt."
+
 #: mop/data/events.py:34
+msgid "Session at the IMC in Leeds"
+msgstr "Session auf dem IMC in Leeds"
+
+#: mop/data/events.py:46
 msgid "Lange Nacht der Forschung 2026"
 msgstr "Lange Nacht der Forschung 2026"
 
-#: mop/data/events.py:35
+#: mop/data/events.py:47
 msgid "lange_nacht_der_forschung_240426"
 msgstr ""
 "Bei der Langen Nacht der Forschung am 24. April 2026 an der ÖAW in Wien "
@@ -140,11 +153,11 @@ msgstr ""
 "des Projektes „Digitale Geisteswissenschaften am Beispiel des Schlosses "
 "Ebreichsdorf im niederösterreichischen Industrieviertel“ präsentiert."
 
-#: mop/data/events.py:46
+#: mop/data/events.py:58
 msgid "Summer School in Brno"
 msgstr "Sommerschule in Brünn"
 
-#: mop/data/events.py:47
+#: mop/data/events.py:59
 msgid "brno_summer_school_260625"
 msgstr ""
 "Žarko Vujošević und Mihailo Popović haben bei der Sommerschule "
@@ -154,11 +167,11 @@ msgstr ""
 "href=\"https://archivnictvi.phil.muni.cz/en/news-and-events/events"
 "/scriptorium-brunense-1\" target=\"_blank\">Mehr Information dazu</a>"
 
-#: mop/data/events.py:57
+#: mop/data/events.py:69
 msgid "Discourse on DH and AI"
 msgstr "Diskurs über DH und KI"
 
-#: mop/data/events.py:58
+#: mop/data/events.py:70
 msgid "heidelberg_200625"
 msgstr ""
 "Am 20. Juni 2025 hat Mihailo Popović einen Vortrag zu DH und KI mit dem "
@@ -170,11 +183,11 @@ msgstr ""
 "Geographie, Byzantinistik und Südosteuropaforschung“ an der Universität "
 "Heidelberg gehalten</a>."
 
-#: mop/data/events.py:68
+#: mop/data/events.py:80
 msgid "Report in the Newspaper Die Presse"
 msgstr "Bericht in der Zeitung Die Presse"
 
-#: mop/data/events.py:69
+#: mop/data/events.py:81
 msgid "presse_03052025"
 msgstr ""
 "Die Tageszeitung Die Presse berichtet in ihrer Printausgabe vom 3. Mai "
@@ -184,11 +197,11 @@ msgstr ""
 "feldforschung-mit-notizbuch-kompass-und-melone\" target=\"_blank\">Die "
 "Presse</a>"
 
-#: mop/data/events.py:79
+#: mop/data/events.py:91
 msgid "Lecture at the Haus Wittgenstein"
 msgstr "Vortrag im Haus Wittgenstein"
 
-#: mop/data/events.py:80
+#: mop/data/events.py:92
 msgid "wittgenstein_13022025"
 msgstr ""
 "Am 13. Februar 2025 hat Mihailo Popović einen Vortrag mit dem Titel "
@@ -197,11 +210,11 @@ msgstr ""
 "Lesnovski und Joakim Osogovski“ im Rahmen des Lectorium Bulgaricum im "
 "Haus Wittgenstein in Wien gehalten."
 
-#: mop/data/events.py:90
+#: mop/data/events.py:102
 msgid "Workshop in Oxford"
 msgstr "Workshop in Oxford"
 
-#: mop/data/events.py:91
+#: mop/data/events.py:103
 msgid "workshop_oxford_300524"
 msgstr ""
 "Ende Mai 2024 nahm Mihailo Popović an einem Workshop <a "
@@ -212,11 +225,11 @@ msgstr ""
 "hielt, der sich dem Bereich \"Sakrale Topographie\" der Maps of Power "
 "Initiative zuordnen lässt."
 
-#: mop/data/events.py:102
+#: mop/data/events.py:114
 msgid "The Long Night of Research in Vienna"
 msgstr "Die Lange Nacht der Forschung in Wien"
 
-#: mop/data/events.py:103
+#: mop/data/events.py:115
 msgid "lange_nacht_der_forschung_240524"
 msgstr ""
 "Am Freitag, 24. Mai 2024, nahm Mihailo Popović an der Langen Nacht der "
@@ -228,11 +241,11 @@ msgstr ""
 "(1915-1918)\"</a> als Poster, das zum Bereich \"Kulturerbe\" der Maps of "
 "Power Initiative beiträgt."
 
-#: mop/data/events.py:114
+#: mop/data/events.py:126
 msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
 msgstr "Überreichung einer Festschrift an Johannes Koder"
 
-#: mop/data/events.py:115
+#: mop/data/events.py:127
 msgid "koder_festschrift_230424"
 msgstr ""
 "Aus Anlaß des 80. Geburtstags von Professor Johannes Koder brachten "
@@ -249,11 +262,11 @@ msgstr ""
 "/der-den-kodax-tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-"
 "vratislav-zervan-ralf-c-mueller/</a>"
 
-#: mop/data/events.py:125
+#: mop/data/events.py:137
 msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr "Zwei Vorträge über die Nützlichkeit von OpenAtlas"
 
-#: mop/data/events.py:126
+#: mop/data/events.py:138
 msgid "belgrade_190923"
 msgstr ""
 "Am 19. September 2023 haben Bernhard Koschiček-Krombholz und Mihailo St. "
@@ -266,11 +279,11 @@ msgstr ""
 "Rhomaioi. Der Prozess der Byzantinisierung auf dem Zentralbalkan (Ende "
 "10. - Mitte 13. Jahrhundert)“ zu Aspekten der Digital Humanities aus."
 
-#: mop/data/events.py:136
+#: mop/data/events.py:148
 msgid "Workshop on Medieval Athos in Oxford"
 msgstr "Workshop über den mittelalterlichen Athos in Oxford"
 
-#: mop/data/events.py:137
+#: mop/data/events.py:149
 msgid "athos_oxford_290923"
 msgstr ""
 "Am 29. September 2023 hielt Mihailo St. Popović einen Vortrag mit dem "
@@ -279,11 +292,11 @@ msgstr ""
 "Franciscan Friars“ im Rahmen des Workshops „A Special Relationship? "
 "Gender on Medieval Mount Athos“ in Oxford, Großbritannien."
 
-#: mop/data/events.py:147
+#: mop/data/events.py:159
 msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr "Vortrag über die Krone des Heiligen Königs Stefan Dečanski"
 
-#: mop/data/events.py:148
+#: mop/data/events.py:160
 msgid "tripps_070923"
 msgstr ""
 "Professor Dr. Johannes Tripps (Hochschule für Technik, Wirtschaft und "
@@ -295,11 +308,11 @@ msgstr ""
 "href=\"https://www.youtube.com/@MapsOfPower\" target=\"_blank\" class"
 "=\"link-primary\">https://www.youtube.com/@MapsOfPower</a>"
 
-#: mop/data/events.py:158
+#: mop/data/events.py:170
 msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr "TIB Balkan auf dem IMC Leeds 2023"
 
-#: mop/data/events.py:159
+#: mop/data/events.py:171
 msgid "imc_leeds_23"
 msgstr ""
 "MitarbeiterInnen des Teams TIB Balkan haben gemeinsam mit KollegInnen des"
@@ -310,11 +323,11 @@ msgstr ""
 "Titel „Entanglements across Medieval Space, Objects, and Data“ am 6. Juli"
 " 2023 beim IMC Leeds präsentiert."
 
-#: mop/data/events.py:169
+#: mop/data/events.py:181
 msgid "presentation on MECERN conference"
 msgstr "Präsentation auf der MECERN-Konferenz"
 
-#: mop/data/events.py:170
+#: mop/data/events.py:182
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan und Mihailo Popović haben an der MECERN Konferenz "
@@ -323,11 +336,11 @@ msgstr ""
 " of Saint Archangel Michael in the Balkans and Central Europe in Medieval"
 " Times“ gehalten."
 
-#: mop/data/events.py:182
+#: mop/data/events.py:194
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "Präsentation in der Serbischen Akademie der Wissenschaften und Künste"
 
-#: mop/data/events.py:183
+#: mop/data/events.py:195
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović wurde vom Institut für Byzantinistik der Serbischen "
@@ -1819,34 +1832,38 @@ msgstr "Artefakte"
 msgid "Physical objects"
 msgstr "Physische Objekte"
 
-#: mop/templates/_events_list.html:305
+#: mop/templates/_events_list.html:308
 msgid ""
 "Presentations, workshops, awards and publications from the Maps of Power "
 "initiative."
 msgstr ""
 
-#: mop/templates/_events_list.html:314
+#: mop/templates/_events_list.html:317
 #, fuzzy
 msgid "Filter"
 msgstr "Dateien"
 
-#: mop/templates/_events_list.html:317 mop/templates/literature.html:78
+#: mop/templates/_events_list.html:320 mop/templates/literature.html:78
 msgid "All"
 msgstr "Alle"
 
-#: mop/templates/_events_list.html:339
+#: mop/templates/_events_list.html:342
 #, fuzzy
 msgid "Search events…"
 msgstr "Suchen in"
 
-#: mop/templates/_events_list.html:339
+#: mop/templates/_events_list.html:342
 #, fuzzy
 msgid "Search events"
 msgstr "Suchen in"
 
-#: mop/templates/_events_list.html:406
+#: mop/templates/_events_list.html:409
 msgid "No events found for the selected filter."
 msgstr ""
+
+#: mop/templates/_events_list.html:550
+msgid "View all events"
+msgstr "Alle Ereignisse anzeigen"
 
 #: mop/templates/about.html:16
 msgid "about_text_1"

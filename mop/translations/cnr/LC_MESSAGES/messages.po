@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-06-21 16:37+0200\n"
+"POT-Creation-Date: 2026-07-20 17:26+0200\n"
 "PO-Revision-Date: 2026-05-25 22:38+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: sr_Latn_ME\n"
@@ -33,7 +33,7 @@ msgstr "Projekti"
 msgid "atlas"
 msgstr "Atlas"
 
-#: mop/templates/_events_list.html:303 mop/templates/_events_list.html:495
+#: mop/templates/_events_list.html:306 mop/templates/_events_list.html:509
 #: mop/util.py:44
 msgid "events"
 msgstr "Događaji"
@@ -43,23 +43,23 @@ msgstr "Događaji"
 msgid "literature"
 msgstr "Literatura"
 
-#: mop/templates/literature.html:192 mop/views.py:106
+#: mop/templates/literature.html:192 mop/views.py:116
 msgid "pp."
 msgstr ""
 
-#: mop/views.py:492
+#: mop/views.py:525
 msgid "An error occurred"
 msgstr "Došlo je do greške"
 
-#: mop/views.py:494
+#: mop/views.py:527
 msgid "An unexpected error occurred. Please try again later."
 msgstr "Došlo je do neočekivane greške. Molimo pokušajte ponovo kasnije."
 
-#: mop/views.py:497
+#: mop/views.py:530
 msgid "Page Not Found"
 msgstr "Stranica nije pronađena"
 
-#: mop/views.py:499
+#: mop/views.py:532
 msgid ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
@@ -67,36 +67,36 @@ msgstr ""
 "Unijete koordinate izgledaju van granica. Stranica koju tražite ne "
 "postoji."
 
-#: mop/views.py:502
+#: mop/views.py:535
 msgid "Access Denied"
 msgstr "Pristup odbijen"
 
-#: mop/views.py:504
+#: mop/views.py:537
 msgid "You do not have permission to access this area. Restricted coordinates."
 msgstr "Nemate dozvolu za pristup ovoj oblasti. Ograničene koordinate."
 
-#: mop/views.py:507
+#: mop/views.py:540
 msgid "I'm a Teapot"
 msgstr "Ja sam čajnik"
 
-#: mop/views.py:509
+#: mop/views.py:542
 msgid ""
 "The server refuses the attempt to brew coffee with a teapot. Yes, this is"
 " a real error."
 msgstr "Server odbija pokušaj kuvanja kafe čajnikom. Da, ovo je stvarna greška."
 
-#: mop/views.py:526 mop/views.py:531
+#: mop/views.py:559 mop/views.py:564
 msgid "Internal Server Error"
 msgstr "Unutrašnja greška servera"
 
-#: mop/views.py:533
+#: mop/views.py:566
 msgid ""
 "An unexpected server error occurred. Our cartographers are looking into "
 "it."
 msgstr "Došlo je do neočekivane greške na serveru. Naši kartografi je istražuju."
 
 #: mop/data/events.py:8 mop/data/events.py:11
-#: mop/templates/_events_list.html:320
+#: mop/templates/_events_list.html:323
 msgid "presentation"
 msgstr "prezentacija"
 
@@ -104,11 +104,11 @@ msgstr "prezentacija"
 msgid "award"
 msgstr "nagrada"
 
-#: mop/data/events.py:17 mop/templates/_events_list.html:323
+#: mop/data/events.py:17 mop/templates/_events_list.html:326
 msgid "science_fair"
 msgstr "sajam nauke"
 
-#: mop/data/events.py:20 mop/templates/_events_list.html:326
+#: mop/data/events.py:20 mop/templates/_events_list.html:329
 msgid "book_release"
 msgstr "objavljivanje knjige"
 
@@ -116,11 +116,27 @@ msgstr "objavljivanje knjige"
 msgid "blogpost"
 msgstr "blog post"
 
-#: mop/data/events.py:26 mop/templates/_events_list.html:329
+#: mop/data/events.py:26 mop/templates/_events_list.html:332
 msgid "press_release"
 msgstr "saopštenje za javnost"
 
 #: mop/data/events.py:34
+#, fuzzy
+msgid "Session at the IMC in Leeds"
+msgstr "TIB Balkan na IMC Leeds 2023"
+
+#: mop/data/events.py:35
+#, fuzzy
+msgid "imc_leeds_26"
+msgstr ""
+"Istraživači projekta TIB Balkan predstavili su svoje najnovije naučne "
+"rezultate zajedno sa kolegama iz Prirodnjačkog muzeja u Beču, Društva "
+"Ludwig Boltzmann, Univerziteta primijenjenih nauka u Lajpcigu (HTWK "
+"Leipzig), Univerziteta u Beogradu i ACDH-CH Austrijske akademije nauka u "
+"tri sesije pod nazivom „Entanglements across Medieval Space, Objects, and"
+" Data” 6. jula 2023. godine na IMC Leedsu."
+
+#: mop/data/events.py:46
 #, fuzzy
 msgid "Lange Nacht der Forschung 2026"
 msgstr ""
@@ -131,7 +147,7 @@ msgstr ""
 "Bitola during WW I (1915-1918)”</a> kao poster, što predstavlja doprinos "
 "sekciji „Kulturna baština” Inicijative Maps of Power."
 
-#: mop/data/events.py:35
+#: mop/data/events.py:47
 #, fuzzy
 msgid "lange_nacht_der_forschung_240426"
 msgstr ""
@@ -142,11 +158,11 @@ msgstr ""
 "Bitola during WW I (1915-1918)”</a> kao poster, što predstavlja doprinos "
 "sekciji „Kulturna baština” Inicijative Maps of Power."
 
-#: mop/data/events.py:46
+#: mop/data/events.py:58
 msgid "Summer School in Brno"
 msgstr "Ljetnja škola u Brnu"
 
-#: mop/data/events.py:47
+#: mop/data/events.py:59
 msgid "brno_summer_school_260625"
 msgstr ""
 "Žarko Vujošević i Mihailo Popović održali su zajedničko predavanje o "
@@ -156,11 +172,11 @@ msgstr ""
 "events/events/scriptorium-brunense-1\" target=\"_blank\">Više "
 "informacija</a>"
 
-#: mop/data/events.py:57
+#: mop/data/events.py:69
 msgid "Discourse on DH and AI"
 msgstr "Diskurs o digitalnoj humanistici i vještačkoj inteligenciji"
 
-#: mop/data/events.py:58
+#: mop/data/events.py:70
 msgid "heidelberg_200625"
 msgstr ""
 "Mihailo Popović je 20. juna 2025. održao predavanje o digitalnoj "
@@ -172,11 +188,11 @@ msgstr ""
 " Historiske Geografije, Vizantologije i Istraživanja Jugoistočne Evrope” "
 "na Univerzitetu u Hajdelbergu</a>."
 
-#: mop/data/events.py:68
+#: mop/data/events.py:80
 msgid "Report in the Newspaper Die Presse"
 msgstr "Izvještaj u novinama Die Presse"
 
-#: mop/data/events.py:69
+#: mop/data/events.py:81
 msgid "presse_03052025"
 msgstr ""
 "U svom štampanom izdanju od 3. maja 2025. godine, dnevni list Die Presse "
@@ -186,11 +202,11 @@ msgstr ""
 "href=\"https://www.diepresse.com/19640086/auf-feldforschung-mit-"
 "notizbuch-kompass-und-melone\" target=\"_blank\">Die Presse</a>"
 
-#: mop/data/events.py:79
+#: mop/data/events.py:91
 msgid "Lecture at the Haus Wittgenstein"
 msgstr "Predavanje u kući Vitgenštajn"
 
-#: mop/data/events.py:80
+#: mop/data/events.py:92
 msgid "wittgenstein_13022025"
 msgstr ""
 "Mihailo Popović je 13. februara 2025. godine održao predavanje pod "
@@ -199,11 +215,11 @@ msgstr ""
 "Gavrilo Lesnovski und Joakim Osogovski” u okviru Lectorium Bulgaricum-a u"
 " kući Vitgenštajn u Beču."
 
-#: mop/data/events.py:90
+#: mop/data/events.py:102
 msgid "Workshop in Oxford"
 msgstr "Radionica u Oksfordu"
 
-#: mop/data/events.py:91
+#: mop/data/events.py:103
 msgid "workshop_oxford_300524"
 msgstr ""
 "Krajem maja 2024. godine Mihailo Popović je učestvovao na radionici <a "
@@ -213,11 +229,11 @@ msgstr ""
 "Wilderness in the Medieval Balkans and How to Overcome Them”, koji se "
 "može svrstati u sekciju „Sveta topografija” Inicijative Maps of Power."
 
-#: mop/data/events.py:102
+#: mop/data/events.py:114
 msgid "The Long Night of Research in Vienna"
 msgstr "Duga noć istraživanja u Beču"
 
-#: mop/data/events.py:103
+#: mop/data/events.py:115
 msgid "lange_nacht_der_forschung_240524"
 msgstr ""
 "U petak, 24. maja 2024. godine, Mihailo Popović je učestvovao u Dugoj "
@@ -227,11 +243,11 @@ msgstr ""
 "Bitola during WW I (1915-1918)”</a> kao poster, što predstavlja doprinos "
 "sekciji „Kulturna baština” Inicijative Maps of Power."
 
-#: mop/data/events.py:114
+#: mop/data/events.py:126
 msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
 msgstr "Predstavljanje zbornika u čast Johannesa Kodera"
 
-#: mop/data/events.py:115
+#: mop/data/events.py:127
 msgid "koder_festschrift_230424"
 msgstr ""
 "Povodom 80. rođendana Johannesa Kodera, prijatelji, saradnici, studenti i"
@@ -247,11 +263,11 @@ msgstr ""
 "/der-den-kodax-tanzt-hommage-an-johannes-koder_von_mihailo-st-popovic-"
 "vratislav-zervan-ralf-c-mueller/</a>"
 
-#: mop/data/events.py:125
+#: mop/data/events.py:137
 msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr "Dvije prezentacije o korisnosti OpenAtlasa"
 
-#: mop/data/events.py:126
+#: mop/data/events.py:138
 msgid "belgrade_190923"
 msgstr ""
 "Dana 19. septembra 2023. godine Bernhard Koschiček-Krombholz i Mihailo "
@@ -264,11 +280,11 @@ msgstr ""
 "of Byzantinization in the Central Balkans (Late 10th – Mid-13th Century)”"
 " o aspektima digitalne humanistike."
 
-#: mop/data/events.py:136
+#: mop/data/events.py:148
 msgid "Workshop on Medieval Athos in Oxford"
 msgstr "Radionica o srednjevjekovnom Atosu u Oksfordu"
 
-#: mop/data/events.py:137
+#: mop/data/events.py:149
 msgid "athos_oxford_290923"
 msgstr ""
 "Dana 29. septembra 2023. godine Mihailo St. Popović je izložio rad pod "
@@ -277,11 +293,11 @@ msgstr ""
 "Monks and Franciscan Friars” na radionici „A Special Relationship? Gender"
 " on Medieval Mount Athos” u Oksfordu, Velika Britanija."
 
-#: mop/data/events.py:147
+#: mop/data/events.py:159
 msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr "Rad o kruni Svetog kralja Stefana Dečanskog"
 
-#: mop/data/events.py:148
+#: mop/data/events.py:160
 msgid "tripps_070923"
 msgstr ""
 "Profesor dr Johannes Trips (Univerzitet primijenjenih nauka u Lajpcigu) "
@@ -293,11 +309,11 @@ msgstr ""
 "href=\"https://www.youtube.com/@MapsOfPower\" target=\"_blank\" class"
 "=\"link-primary\">https://www.youtube.com/@MapsOfPower</a>"
 
-#: mop/data/events.py:158
+#: mop/data/events.py:170
 msgid "TIB Balkans at the IMC Leeds 2023"
 msgstr "TIB Balkan na IMC Leeds 2023"
 
-#: mop/data/events.py:159
+#: mop/data/events.py:171
 msgid "imc_leeds_23"
 msgstr ""
 "Istraživači projekta TIB Balkan predstavili su svoje najnovije naučne "
@@ -307,11 +323,11 @@ msgstr ""
 "tri sesije pod nazivom „Entanglements across Medieval Space, Objects, and"
 " Data” 6. jula 2023. godine na IMC Leedsu."
 
-#: mop/data/events.py:169
+#: mop/data/events.py:181
 msgid "presentation on MECERN conference"
 msgstr "prezentacija na MECERN konferenciji"
 
-#: mop/data/events.py:170
+#: mop/data/events.py:182
 msgid "mecern_2023"
 msgstr ""
 "Vratislav Zervan i Mihailo Popović učestvovali su na MECERN konferenciji "
@@ -320,11 +336,11 @@ msgstr ""
 "Hagiogeography of Saint Archangel Michael in the Balkans and Central "
 "Europe in Medieval Times”."
 
-#: mop/data/events.py:182
+#: mop/data/events.py:194
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr "prezentacija u Srpskoj akademiji nauka i umjetnosti"
 
-#: mop/data/events.py:183
+#: mop/data/events.py:195
 msgid "serbian_academy_220223"
 msgstr ""
 "Mihailo Popović je na poziv Instituta za vizantološke studije Srpske "
@@ -1725,34 +1741,39 @@ msgstr "Artefakti"
 msgid "Physical objects"
 msgstr "Fizički predmeti"
 
-#: mop/templates/_events_list.html:305
+#: mop/templates/_events_list.html:308
 msgid ""
 "Presentations, workshops, awards and publications from the Maps of Power "
 "initiative."
 msgstr ""
 
-#: mop/templates/_events_list.html:314
+#: mop/templates/_events_list.html:317
 #, fuzzy
 msgid "Filter"
 msgstr "Datoteke"
 
-#: mop/templates/_events_list.html:317 mop/templates/literature.html:78
+#: mop/templates/_events_list.html:320 mop/templates/literature.html:78
 msgid "All"
 msgstr ""
 
-#: mop/templates/_events_list.html:339
+#: mop/templates/_events_list.html:342
 #, fuzzy
 msgid "Search events…"
 msgstr "Pretraži u"
 
-#: mop/templates/_events_list.html:339
+#: mop/templates/_events_list.html:342
 #, fuzzy
 msgid "Search events"
 msgstr "Pretraži u"
 
-#: mop/templates/_events_list.html:406
+#: mop/templates/_events_list.html:409
 msgid "No events found for the selected filter."
 msgstr ""
+
+#: mop/templates/_events_list.html:550
+#, fuzzy
+msgid "View all events"
+msgstr "Pretraži u"
 
 #: mop/templates/about.html:16
 msgid "about_text_1"
