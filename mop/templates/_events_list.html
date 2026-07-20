@@ -448,8 +448,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const previewCards = document.querySelectorAll('.ev-preview-card');
   previewCards.forEach(card => {
     card.addEventListener('click', function(e) {
-      // If the user clicked a link inside the description, let it handle the click
-      if (e.target.tagName === 'A') return;
+      // If the user clicked a link inside the description or the "more..." button, let it handle the click
+      if (e.target.closest('a')) return;
 
       const targetUrl = this.getAttribute('data-href');
       if (targetUrl) {
