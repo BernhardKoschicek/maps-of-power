@@ -267,7 +267,8 @@
     object-fit: cover;
   }
   .ev-preview-card-body {
-    padding: .85rem 1rem;
+    position: relative;
+    padding: .85rem 1rem 2.2rem;
   }
   .ev-preview-card-body h3 {
     font-size: .88rem;
@@ -279,6 +280,23 @@
   .ev-preview-card-body .ev-type-badge {
     font-size: .65rem;
     padding: .15rem .5rem;
+  }
+  .ev-preview-more {
+    position: absolute;
+    bottom: .8rem;
+    right: 1rem;
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--bs-primary, #73734a);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    transition: color var(--transition-smooth);
+  }
+  .ev-preview-more:hover {
+    color: var(--ev-presentation);
+    text-decoration: underline;
   }
 
   /* ── Animation for filter transitions ────────────────────────── */
@@ -416,11 +434,37 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  const eventsCards = document.querySelectorAll('.ev-card');
+  eventsCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const desc = this.querySelector('.ev-card-description');
+      if (desc) {
+        desc.classList.toggle('collapsed');
+      }
+    });
+  });
+
+  // Handle preview card clicks to avoid nested link issues
+  const previewCards = document.querySelectorAll('.ev-preview-card');
+  previewCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      // If the user clicked a link inside the description, let it handle the click
+      if (e.target.tagName === 'A') return;
+
+      const targetUrl = this.getAttribute('data-href');
+      if (targetUrl) {
+        window.location.href = targetUrl;
+      }
+    });
+  });
+
+  {% if standalone %}
   const pills      = document.querySelectorAll('.ev-filter-pill');
   const cards      = document.querySelectorAll('.ev-card');
   const yearDivs   = document.querySelectorAll('.ev-year-divider');
   const searchInput= document.getElementById('ev-search');
   const noResults  = document.getElementById('ev-no-results');
+
   let activeFilter = 'all';
 
   function applyFilters() {
@@ -490,31 +534,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (searchInput) {
     searchInput.addEventListener('input', applyFilters);
   }
-
-  // Add click listener to expand/collapse event cards
-  const eventsCards = document.querySelectorAll('.ev-card');
-  eventsCards.forEach(card => {
-    card.addEventListener('click', function() {
-      const desc = this.querySelector('.ev-card-description');
-      if (desc) {
-        desc.classList.toggle('collapsed');
-      }
-    });
-  });
-
-  // Handle preview card clicks to avoid nested link issues
-  const previewCards = document.querySelectorAll('.ev-preview-card');
-  previewCards.forEach(card => {
-    card.addEventListener('click', function(e) {
-      // If the user clicked a link inside the description, let it handle the click
-      if (e.target.tagName === 'A') return;
-
-      const targetUrl = this.getAttribute('data-href');
-      if (targetUrl) {
-        window.location.href = targetUrl;
-      }
-    });
-  });
+  {% endif %}
 });
 </script>
 
@@ -558,6 +578,9 @@ document.addEventListener('DOMContentLoaded', function () {
             <p class="ev-card-description collapsed">{{ event['description'] }}</p>
             {% endif %}
             <div class="ev-card-date"><i class="bi bi-calendar3"></i> {{ event['date'] }}</div>
+            <a href="{{ url_for('events') }}#ev-{{ event['id'] }}" class="ev-preview-more">
+              {{ _('more...') }} <i class="bi bi-chevron-right"></i>
+            </a>
           </div>
         </div>
         {% endif %}

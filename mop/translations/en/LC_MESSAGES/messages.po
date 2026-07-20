@@ -1803,9 +1803,12 @@ msgid "No events found for the selected filter."
 msgstr ""
 
 #: mop/templates/_events_list.html:550
-#, fuzzy
 msgid "View all events"
-msgstr "Search in"
+msgstr "View all events"
+
+#: mop/templates/_events_list.html:582
+msgid "more..."
+msgstr "more..."
 
 #: mop/templates/about.html:16
 msgid "about_text_1"
