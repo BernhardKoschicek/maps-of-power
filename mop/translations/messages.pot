@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-07-20 17:26+0200\n"
+"POT-Creation-Date: 2026-08-21 21:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr ""
 msgid "atlas"
 msgstr ""
 
-#: mop/templates/_events_list.html:306 mop/templates/_events_list.html:509
+#: mop/templates/_events_list.html:327 mop/templates/_events_list.html:546
 #: mop/util.py:44
 msgid "events"
 msgstr ""
@@ -41,58 +41,58 @@ msgstr ""
 msgid "literature"
 msgstr ""
 
-#: mop/templates/literature.html:192 mop/views.py:116
+#: mop/templates/literature.html:192 mop/views.py:114
 msgid "pp."
 msgstr ""
 
-#: mop/views.py:525
+#: mop/views.py:523
 msgid "An error occurred"
 msgstr ""
 
-#: mop/views.py:527
+#: mop/views.py:525
 msgid "An unexpected error occurred. Please try again later."
 msgstr ""
 
-#: mop/views.py:530
+#: mop/views.py:528
 msgid "Page Not Found"
 msgstr ""
 
-#: mop/views.py:532
+#: mop/views.py:530
 msgid ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
 msgstr ""
 
-#: mop/views.py:535
+#: mop/views.py:533
 msgid "Access Denied"
 msgstr ""
 
-#: mop/views.py:537
+#: mop/views.py:535
 msgid "You do not have permission to access this area. Restricted coordinates."
 msgstr ""
 
-#: mop/views.py:540
+#: mop/views.py:538
 msgid "I'm a Teapot"
 msgstr ""
 
-#: mop/views.py:542
+#: mop/views.py:540
 msgid ""
 "The server refuses the attempt to brew coffee with a teapot. Yes, this is"
 " a real error."
 msgstr ""
 
-#: mop/views.py:559 mop/views.py:564
+#: mop/views.py:557 mop/views.py:562
 msgid "Internal Server Error"
 msgstr ""
 
-#: mop/views.py:566
+#: mop/views.py:564
 msgid ""
 "An unexpected server error occurred. Our cartographers are looking into "
 "it."
 msgstr ""
 
 #: mop/data/events.py:8 mop/data/events.py:11
-#: mop/templates/_events_list.html:323
+#: mop/templates/_events_list.html:344
 msgid "presentation"
 msgstr ""
 
@@ -100,11 +100,11 @@ msgstr ""
 msgid "award"
 msgstr ""
 
-#: mop/data/events.py:17 mop/templates/_events_list.html:326
+#: mop/data/events.py:17 mop/templates/_events_list.html:347
 msgid "science_fair"
 msgstr ""
 
-#: mop/data/events.py:20 mop/templates/_events_list.html:329
+#: mop/data/events.py:20 mop/templates/_events_list.html:350
 msgid "book_release"
 msgstr ""
 
@@ -112,7 +112,7 @@ msgstr ""
 msgid "blogpost"
 msgstr ""
 
-#: mop/data/events.py:26 mop/templates/_events_list.html:332
+#: mop/data/events.py:26 mop/templates/_events_list.html:353
 msgid "press_release"
 msgstr ""
 
@@ -1114,34 +1114,34 @@ msgstr ""
 msgid "Physical objects"
 msgstr ""
 
-#: mop/templates/_events_list.html:308
+#: mop/templates/_events_list.html:329
 msgid ""
 "Presentations, workshops, awards and publications from the Maps of Power "
 "initiative."
 msgstr ""
 
-#: mop/templates/_events_list.html:317
+#: mop/templates/_events_list.html:338
 msgid "Filter"
 msgstr ""
 
-#: mop/templates/_events_list.html:320 mop/templates/literature.html:78
+#: mop/templates/_events_list.html:341 mop/templates/literature.html:78
 msgid "All"
 msgstr ""
 
-#: mop/templates/_events_list.html:342
+#: mop/templates/_events_list.html:363
 msgid "Search events…"
 msgstr ""
 
-#: mop/templates/_events_list.html:342
+#: mop/templates/_events_list.html:363
 msgid "Search events"
 msgstr ""
 
-#: mop/templates/_events_list.html:409
+#: mop/templates/_events_list.html:430
 msgid "No events found for the selected filter."
 msgstr ""
 
-#: mop/templates/_events_list.html:550
-msgid "View all events"
+#: mop/templates/_events_list.html:582
+msgid "more..."
 msgstr ""
 
 #: mop/templates/about.html:16
@@ -1496,42 +1496,23 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: mop/templates/macros.html:102
+#: mop/templates/macros.html:101
 msgid "License & Attribution"
 msgstr ""
 
-#: mop/templates/macros.html:104
+#: mop/templates/macros.html:103
 msgid "All data shown here is licensed under the"
 msgstr ""
 
-#: mop/templates/macros.html:106 mop/templates/macros.html:119
-msgid "Creative Commons Attribution 4.0 International (CC-BY 4.0) License"
+#: mop/templates/macros.html:104
+msgid "Creative Commons Attribution 4.0 International (CC BY 4.0) License"
 msgstr ""
 
-#: mop/templates/macros.html:108
-msgid "Please attribute to"
-msgstr ""
-
-#: mop/templates/macros.html:112
-msgid "Principal Investigator(s)"
-msgstr ""
-
-#: mop/templates/macros.html:115
-msgid "License & Academic Attribution"
-msgstr ""
-
-#: mop/templates/macros.html:117
+#: mop/templates/macros.html:105
 msgid ""
-"All dataset resources and research data presented across these projects "
-"are licensed under the"
-msgstr ""
-
-#: mop/templates/macros.html:121
-msgid ""
-"Please credit and attribute the respective project Principal "
-"Investigator(s) (PI) or the project leader Mihailo Popović when "
-"exporting, visualizing, or publishing any derivative scientific work from"
-" this portal."
+"Attribution: Please use the citation tool available at each specific data"
+" record. To cite the project as a whole, please attribute to: Mihailo "
+"Popović (Principal Investigator), Maps of Power."
 msgstr ""
 
 #: mop/templates/project_details.html:63 mop/templates/project_details.html:781

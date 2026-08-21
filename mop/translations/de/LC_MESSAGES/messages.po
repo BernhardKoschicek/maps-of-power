@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-07-20 17:26+0200\n"
+"POT-Creation-Date: 2026-08-21 21:21+0200\n"
 "PO-Revision-Date: 2026-03-01 00:46+0100\n"
 "Last-Translator: \n"
 "Language: de\n"
@@ -32,7 +32,7 @@ msgstr "projekte"
 msgid "atlas"
 msgstr "Atlas"
 
-#: mop/templates/_events_list.html:306 mop/templates/_events_list.html:509
+#: mop/templates/_events_list.html:327 mop/templates/_events_list.html:546
 #: mop/util.py:44
 msgid "events"
 msgstr "ereignisse"
@@ -42,25 +42,25 @@ msgstr "ereignisse"
 msgid "literature"
 msgstr "Literatur"
 
-#: mop/templates/literature.html:192 mop/views.py:116
+#: mop/templates/literature.html:192 mop/views.py:114
 msgid "pp."
 msgstr "S."
 
-#: mop/views.py:525
+#: mop/views.py:523
 msgid "An error occurred"
 msgstr "Ein Fehler ist aufgetreten"
 
-#: mop/views.py:527
+#: mop/views.py:525
 msgid "An unexpected error occurred. Please try again later."
 msgstr ""
 "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später "
 "noch einmal."
 
-#: mop/views.py:530
+#: mop/views.py:528
 msgid "Page Not Found"
 msgstr "Seite nicht gefunden"
 
-#: mop/views.py:532
+#: mop/views.py:530
 msgid ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
@@ -68,21 +68,21 @@ msgstr ""
 "Die von Ihnen eingegebenen Koordinaten scheinen außerhalb des gültigen "
 "Bereichs zu liegen. Die gesuchte Seite existiert nicht."
 
-#: mop/views.py:535
+#: mop/views.py:533
 msgid "Access Denied"
 msgstr "Zugriff verweigert"
 
-#: mop/views.py:537
+#: mop/views.py:535
 msgid "You do not have permission to access this area. Restricted coordinates."
 msgstr ""
 "Sie haben keine Berechtigung, auf diesen Bereich zuzugreifen. "
 "Eingeschränkte Koordinaten."
 
-#: mop/views.py:540
+#: mop/views.py:538
 msgid "I'm a Teapot"
 msgstr "Ich bin eine Teekanne"
 
-#: mop/views.py:542
+#: mop/views.py:540
 msgid ""
 "The server refuses the attempt to brew coffee with a teapot. Yes, this is"
 " a real error."
@@ -90,11 +90,11 @@ msgstr ""
 "Der Server weigert sich, Kaffee mit einer Teekanne zuzubereiten. Ja, dies"
 " ist ein echter Fehler."
 
-#: mop/views.py:559 mop/views.py:564
+#: mop/views.py:557 mop/views.py:562
 msgid "Internal Server Error"
 msgstr "Interner Serverfehler"
 
-#: mop/views.py:566
+#: mop/views.py:564
 msgid ""
 "An unexpected server error occurred. Our cartographers are looking into "
 "it."
@@ -103,7 +103,7 @@ msgstr ""
 "arbeiten bereits an einer Lösung."
 
 #: mop/data/events.py:8 mop/data/events.py:11
-#: mop/templates/_events_list.html:323
+#: mop/templates/_events_list.html:344
 msgid "presentation"
 msgstr "präsentation"
 
@@ -111,11 +111,11 @@ msgstr "präsentation"
 msgid "award"
 msgstr "auszeichnung"
 
-#: mop/data/events.py:17 mop/templates/_events_list.html:326
+#: mop/data/events.py:17 mop/templates/_events_list.html:347
 msgid "science_fair"
 msgstr "wissenschaftsmesse"
 
-#: mop/data/events.py:20 mop/templates/_events_list.html:329
+#: mop/data/events.py:20 mop/templates/_events_list.html:350
 msgid "book_release"
 msgstr "buch Veröffentlichung"
 
@@ -123,11 +123,15 @@ msgstr "buch Veröffentlichung"
 msgid "blogpost"
 msgstr "blogpost"
 
-#: mop/data/events.py:26 mop/templates/_events_list.html:332
+#: mop/data/events.py:26 mop/templates/_events_list.html:353
 msgid "press_release"
 msgstr "pressemitteilung"
 
-#: mop/data/events.py:29
+#: mop/data/events.py:34
+msgid "Session at the IMC in Leeds"
+msgstr "Session auf dem IMC in Leeds"
+
+#: mop/data/events.py:35
 msgid "imc_leeds_26"
 msgstr ""
 "Auch heuer durften wir wieder eine Session (Nr. 725) beim International "
@@ -135,10 +139,6 @@ msgstr ""
 " of Temporality in (In)Tangibility between Culture and Nature in Medieval"
 " Heritage“ und hat zu spannenden Diskussionen über die Gegenwart und "
 "Zukunft der Historischen Geographie angeregt."
-
-#: mop/data/events.py:34
-msgid "Session at the IMC in Leeds"
-msgstr "Session auf dem IMC in Leeds"
 
 #: mop/data/events.py:46
 msgid "Lange Nacht der Forschung 2026"
@@ -1832,38 +1832,34 @@ msgstr "Artefakte"
 msgid "Physical objects"
 msgstr "Physische Objekte"
 
-#: mop/templates/_events_list.html:308
+#: mop/templates/_events_list.html:329
 msgid ""
 "Presentations, workshops, awards and publications from the Maps of Power "
 "initiative."
 msgstr ""
 
-#: mop/templates/_events_list.html:317
+#: mop/templates/_events_list.html:338
 #, fuzzy
 msgid "Filter"
 msgstr "Dateien"
 
-#: mop/templates/_events_list.html:320 mop/templates/literature.html:78
+#: mop/templates/_events_list.html:341 mop/templates/literature.html:78
 msgid "All"
 msgstr "Alle"
 
-#: mop/templates/_events_list.html:342
+#: mop/templates/_events_list.html:363
 #, fuzzy
 msgid "Search events…"
 msgstr "Suchen in"
 
-#: mop/templates/_events_list.html:342
+#: mop/templates/_events_list.html:363
 #, fuzzy
 msgid "Search events"
 msgstr "Suchen in"
 
-#: mop/templates/_events_list.html:409
+#: mop/templates/_events_list.html:430
 msgid "No events found for the selected filter."
 msgstr ""
-
-#: mop/templates/_events_list.html:550
-msgid "View all events"
-msgstr "Alle Ereignisse anzeigen"
 
 #: mop/templates/_events_list.html:582
 msgid "more..."
@@ -2413,49 +2409,27 @@ msgstr "Datei herunterladen"
 msgid "Search"
 msgstr "Suchen"
 
-#: mop/templates/macros.html:102
+#: mop/templates/macros.html:101
 msgid "License & Attribution"
 msgstr "Lizenz & Zitationshinweis"
 
-#: mop/templates/macros.html:104
+#: mop/templates/macros.html:103
 msgid "All data shown here is licensed under the"
 msgstr "Alle hier gezeigten Daten stehen unter der"
 
-#: mop/templates/macros.html:106 mop/templates/macros.html:119
-msgid "Creative Commons Attribution 4.0 International (CC-BY 4.0) License"
-msgstr "Creative Commons Namensnennung 4.0 International (CC-BY 4.0) Lizenz"
+#: mop/templates/macros.html:104
+msgid "Creative Commons Attribution 4.0 International (CC BY 4.0) License"
+msgstr "Creative Commons Namensnennung 4.0 International (CC BY 4.0) Lizenz"
 
-#: mop/templates/macros.html:108
-msgid "Please attribute to"
-msgstr "Bitte wie folgt zitieren"
-
-#: mop/templates/macros.html:112
-msgid "Principal Investigator(s)"
-msgstr "Projektleitung"
-
-#: mop/templates/macros.html:115
-msgid "License & Academic Attribution"
-msgstr "Lizenz & Wissenschaftliche Zuschreibung"
-
-#: mop/templates/macros.html:117
+#: mop/templates/macros.html:105
 msgid ""
-"All dataset resources and research data presented across these projects "
-"are licensed under the"
+"Attribution: Please use the citation tool available at each specific data"
+" record. To cite the project as a whole, please attribute to: Mihailo "
+"Popović (Principal Investigator), Maps of Power."
 msgstr ""
-"Alle in diesen Projekten präsentierten Datensätze und Forschungsdaten "
-"stehen unter der"
-
-#: mop/templates/macros.html:121
-msgid ""
-"Please credit and attribute the respective project Principal "
-"Investigator(s) (PI) or the project leader Mihailo Popović when "
-"exporting, visualizing, or publishing any derivative scientific work from"
-" this portal."
-msgstr ""
-"Bitte nennen und zitieren Sie die jeweiligen Projektleiter (PIs) oder den"
-" Gesamtprojektleiter Mihailo Popović, wenn Sie Daten aus diesem Portal "
-"exportieren, visualisieren oder darauf basierende wissenschaftliche "
-"Arbeiten veröffentlichen."
+"Zitation: Bitte nutzen Sie für einzelne Datenobjekte die jeweilige "
+"Zitierfunktion direkt beim Datensatz. Für das Gesamtprojekt zitieren Sie "
+"bitte: Mihailo Popović (Projektleitung), Maps of Power."
 
 #: mop/templates/project_details.html:63 mop/templates/project_details.html:781
 #: mop/templates/projects.html:113 mop/templates/projects.html:146
@@ -3235,4 +3209,40 @@ msgstr ""
 
 #~ msgid "This translation was generated using AI."
 #~ msgstr "Diese Übersetzung wurde mithilfe von KI generiert."
+
+#~ msgid "View all events"
+#~ msgstr "Alle Ereignisse anzeigen"
+
+#~ msgid "Please attribute to"
+#~ msgstr "Bitte wie folgt zitieren"
+
+#~ msgid "Principal Investigator(s)"
+#~ msgstr "Projektleitung"
+
+#~ msgid "License & Academic Attribution"
+#~ msgstr "Lizenz & Wissenschaftliche Zuschreibung"
+
+#~ msgid ""
+#~ "All dataset resources and research data"
+#~ " presented across these projects are "
+#~ "licensed under the"
+#~ msgstr ""
+#~ "Alle in diesen Projekten präsentierten "
+#~ "Datensätze und Forschungsdaten stehen unter"
+#~ " der"
+
+#~ msgid ""
+#~ "Please credit and attribute the "
+#~ "respective project Principal Investigator(s) "
+#~ "(PI) or the project leader Mihailo "
+#~ "Popović when exporting, visualizing, or "
+#~ "publishing any derivative scientific work "
+#~ "from this portal."
+#~ msgstr ""
+#~ "Bitte nennen und zitieren Sie die "
+#~ "jeweiligen Projektleiter (PIs) oder den "
+#~ "Gesamtprojektleiter Mihailo Popović, wenn Sie"
+#~ " Daten aus diesem Portal exportieren, "
+#~ "visualisieren oder darauf basierende "
+#~ "wissenschaftliche Arbeiten veröffentlichen."
 

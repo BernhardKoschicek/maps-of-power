@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-07-20 17:26+0200\n"
+"POT-Creation-Date: 2026-08-21 21:21+0200\n"
 "PO-Revision-Date: 2026-05-25 22:38+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: sr_Latn_ME\n"
@@ -33,7 +33,7 @@ msgstr "Projekti"
 msgid "atlas"
 msgstr "Atlas"
 
-#: mop/templates/_events_list.html:306 mop/templates/_events_list.html:509
+#: mop/templates/_events_list.html:327 mop/templates/_events_list.html:546
 #: mop/util.py:44
 msgid "events"
 msgstr "Događaji"
@@ -43,23 +43,23 @@ msgstr "Događaji"
 msgid "literature"
 msgstr "Literatura"
 
-#: mop/templates/literature.html:192 mop/views.py:116
+#: mop/templates/literature.html:192 mop/views.py:114
 msgid "pp."
 msgstr ""
 
-#: mop/views.py:525
+#: mop/views.py:523
 msgid "An error occurred"
 msgstr "Došlo je do greške"
 
-#: mop/views.py:527
+#: mop/views.py:525
 msgid "An unexpected error occurred. Please try again later."
 msgstr "Došlo je do neočekivane greške. Molimo pokušajte ponovo kasnije."
 
-#: mop/views.py:530
+#: mop/views.py:528
 msgid "Page Not Found"
 msgstr "Stranica nije pronađena"
 
-#: mop/views.py:532
+#: mop/views.py:530
 msgid ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
@@ -67,36 +67,36 @@ msgstr ""
 "Unijete koordinate izgledaju van granica. Stranica koju tražite ne "
 "postoji."
 
-#: mop/views.py:535
+#: mop/views.py:533
 msgid "Access Denied"
 msgstr "Pristup odbijen"
 
-#: mop/views.py:537
+#: mop/views.py:535
 msgid "You do not have permission to access this area. Restricted coordinates."
 msgstr "Nemate dozvolu za pristup ovoj oblasti. Ograničene koordinate."
 
-#: mop/views.py:540
+#: mop/views.py:538
 msgid "I'm a Teapot"
 msgstr "Ja sam čajnik"
 
-#: mop/views.py:542
+#: mop/views.py:540
 msgid ""
 "The server refuses the attempt to brew coffee with a teapot. Yes, this is"
 " a real error."
 msgstr "Server odbija pokušaj kuvanja kafe čajnikom. Da, ovo je stvarna greška."
 
-#: mop/views.py:559 mop/views.py:564
+#: mop/views.py:557 mop/views.py:562
 msgid "Internal Server Error"
 msgstr "Unutrašnja greška servera"
 
-#: mop/views.py:566
+#: mop/views.py:564
 msgid ""
 "An unexpected server error occurred. Our cartographers are looking into "
 "it."
 msgstr "Došlo je do neočekivane greške na serveru. Naši kartografi je istražuju."
 
 #: mop/data/events.py:8 mop/data/events.py:11
-#: mop/templates/_events_list.html:323
+#: mop/templates/_events_list.html:344
 msgid "presentation"
 msgstr "prezentacija"
 
@@ -104,11 +104,11 @@ msgstr "prezentacija"
 msgid "award"
 msgstr "nagrada"
 
-#: mop/data/events.py:17 mop/templates/_events_list.html:326
+#: mop/data/events.py:17 mop/templates/_events_list.html:347
 msgid "science_fair"
 msgstr "sajam nauke"
 
-#: mop/data/events.py:20 mop/templates/_events_list.html:329
+#: mop/data/events.py:20 mop/templates/_events_list.html:350
 msgid "book_release"
 msgstr "objavljivanje knjige"
 
@@ -116,7 +116,7 @@ msgstr "objavljivanje knjige"
 msgid "blogpost"
 msgstr "blog post"
 
-#: mop/data/events.py:26 mop/templates/_events_list.html:332
+#: mop/data/events.py:26 mop/templates/_events_list.html:353
 msgid "press_release"
 msgstr "saopštenje za javnost"
 
@@ -1741,39 +1741,38 @@ msgstr "Artefakti"
 msgid "Physical objects"
 msgstr "Fizički predmeti"
 
-#: mop/templates/_events_list.html:308
+#: mop/templates/_events_list.html:329
 msgid ""
 "Presentations, workshops, awards and publications from the Maps of Power "
 "initiative."
 msgstr ""
 
-#: mop/templates/_events_list.html:317
+#: mop/templates/_events_list.html:338
 #, fuzzy
 msgid "Filter"
 msgstr "Datoteke"
 
-#: mop/templates/_events_list.html:320 mop/templates/literature.html:78
+#: mop/templates/_events_list.html:341 mop/templates/literature.html:78
 msgid "All"
 msgstr ""
 
-#: mop/templates/_events_list.html:342
+#: mop/templates/_events_list.html:363
 #, fuzzy
 msgid "Search events…"
 msgstr "Pretraži u"
 
-#: mop/templates/_events_list.html:342
+#: mop/templates/_events_list.html:363
 #, fuzzy
 msgid "Search events"
 msgstr "Pretraži u"
 
-#: mop/templates/_events_list.html:409
+#: mop/templates/_events_list.html:430
 msgid "No events found for the selected filter."
 msgstr ""
 
-#: mop/templates/_events_list.html:550
-#, fuzzy
-msgid "View all events"
-msgstr "Pretraži u"
+#: mop/templates/_events_list.html:582
+msgid "more..."
+msgstr ""
 
 #: mop/templates/about.html:16
 msgid "about_text_1"
@@ -2299,48 +2298,27 @@ msgstr "Preuzmi datoteku"
 msgid "Search"
 msgstr "mart"
 
-#: mop/templates/macros.html:102
+#: mop/templates/macros.html:101
 msgid "License & Attribution"
 msgstr "Licenca i pripisivanje"
 
-#: mop/templates/macros.html:104
+#: mop/templates/macros.html:103
 msgid "All data shown here is licensed under the"
 msgstr "Svi prikazani podaci su licencirani pod"
 
-#: mop/templates/macros.html:106 mop/templates/macros.html:119
-msgid "Creative Commons Attribution 4.0 International (CC-BY 4.0) License"
-msgstr "Creative Commons Autorstvo 4.0 Međunarodna (CC-BY 4.0) licenca"
+#: mop/templates/macros.html:104
+msgid "Creative Commons Attribution 4.0 International (CC BY 4.0) License"
+msgstr "Creative Commons Autorstvo 4.0 Međunarodna (CC BY 4.0) licenca"
 
-#: mop/templates/macros.html:108
-msgid "Please attribute to"
-msgstr "Molimo pripišite:"
-
-#: mop/templates/macros.html:112
-msgid "Principal Investigator(s)"
-msgstr "Rukovodilac/oci projekta"
-
-#: mop/templates/macros.html:115
-msgid "License & Academic Attribution"
-msgstr "Licenca i akademsko pripisivanje"
-
-#: mop/templates/macros.html:117
+#: mop/templates/macros.html:105
 msgid ""
-"All dataset resources and research data presented across these projects "
-"are licensed under the"
+"Attribution: Please use the citation tool available at each specific data"
+" record. To cite the project as a whole, please attribute to: Mihailo "
+"Popović (Principal Investigator), Maps of Power."
 msgstr ""
-"Svi resursi skupova podataka i istraživački podaci predstavljeni u ovim "
-"projektima licencirani su pod"
-
-#: mop/templates/macros.html:121
-msgid ""
-"Please credit and attribute the respective project Principal "
-"Investigator(s) (PI) or the project leader Mihailo Popović when "
-"exporting, visualizing, or publishing any derivative scientific work from"
-" this portal."
-msgstr ""
-"Molimo navedite i pripišite odgovarajućem rukovodiocu projekta (PI) ili "
-"rukovodiocu projekta Mihailu Popoviću prilikom izvoza, vizuelizacije ili "
-"objavljivanja bilo kog izvedenog naučnog rada sa ovog portala."
+"Zitiranje: Molimo koristite funkciju citiranja dostupnu direktno uz svaki "
+"pojedinačni zapis podataka. Za cijeli projekat, molimo navedite: Mihailo "
+"Popović (rukovodilac projekta), Maps of Power."
 
 #: mop/templates/project_details.html:63 mop/templates/project_details.html:781
 #: mop/templates/projects.html:113 mop/templates/projects.html:146
@@ -3083,4 +3061,39 @@ msgstr ""
 
 #~ msgid "This translation was generated using AI."
 #~ msgstr "Ovaj prevod je generisan pomoću vještačke inteligencije (AI)."
+
+#~ msgid "View all events"
+#~ msgstr "Pretraži u"
+
+#~ msgid "Please attribute to"
+#~ msgstr "Molimo pripišite:"
+
+#~ msgid "Principal Investigator(s)"
+#~ msgstr "Rukovodilac/oci projekta"
+
+#~ msgid "License & Academic Attribution"
+#~ msgstr "Licenca i akademsko pripisivanje"
+
+#~ msgid ""
+#~ "All dataset resources and research data"
+#~ " presented across these projects are "
+#~ "licensed under the"
+#~ msgstr ""
+#~ "Svi resursi skupova podataka i "
+#~ "istraživački podaci predstavljeni u ovim "
+#~ "projektima licencirani su pod"
+
+#~ msgid ""
+#~ "Please credit and attribute the "
+#~ "respective project Principal Investigator(s) "
+#~ "(PI) or the project leader Mihailo "
+#~ "Popović when exporting, visualizing, or "
+#~ "publishing any derivative scientific work "
+#~ "from this portal."
+#~ msgstr ""
+#~ "Molimo navedite i pripišite odgovarajućem "
+#~ "rukovodiocu projekta (PI) ili rukovodiocu "
+#~ "projekta Mihailu Popoviću prilikom izvoza, "
+#~ "vizuelizacije ili objavljivanja bilo kog "
+#~ "izvedenog naučnog rada sa ovog portala."
 

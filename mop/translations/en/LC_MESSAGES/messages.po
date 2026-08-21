@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-07-20 17:26+0200\n"
+"POT-Creation-Date: 2026-08-21 21:21+0200\n"
 "PO-Revision-Date: 2026-03-01 00:49+0100\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -32,7 +32,7 @@ msgstr "projects"
 msgid "atlas"
 msgstr "Atlas"
 
-#: mop/templates/_events_list.html:306 mop/templates/_events_list.html:509
+#: mop/templates/_events_list.html:327 mop/templates/_events_list.html:546
 #: mop/util.py:44
 msgid "events"
 msgstr "events"
@@ -42,23 +42,23 @@ msgstr "events"
 msgid "literature"
 msgstr "literature"
 
-#: mop/templates/literature.html:192 mop/views.py:116
+#: mop/templates/literature.html:192 mop/views.py:114
 msgid "pp."
 msgstr ""
 
-#: mop/views.py:525
+#: mop/views.py:523
 msgid "An error occurred"
 msgstr "An error occurred"
 
-#: mop/views.py:527
+#: mop/views.py:525
 msgid "An unexpected error occurred. Please try again later."
 msgstr "An unexpected error occurred. Please try again later."
 
-#: mop/views.py:530
+#: mop/views.py:528
 msgid "Page Not Found"
 msgstr "Page Not Found"
 
-#: mop/views.py:532
+#: mop/views.py:530
 msgid ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
@@ -66,19 +66,19 @@ msgstr ""
 "The coordinates you entered seem to be out of bounds. The page you are "
 "looking for does not exist."
 
-#: mop/views.py:535
+#: mop/views.py:533
 msgid "Access Denied"
 msgstr "Access Denied"
 
-#: mop/views.py:537
+#: mop/views.py:535
 msgid "You do not have permission to access this area. Restricted coordinates."
 msgstr "You do not have permission to access this area. Restricted coordinates."
 
-#: mop/views.py:540
+#: mop/views.py:538
 msgid "I'm a Teapot"
 msgstr "I'm a Teapot"
 
-#: mop/views.py:542
+#: mop/views.py:540
 msgid ""
 "The server refuses the attempt to brew coffee with a teapot. Yes, this is"
 " a real error."
@@ -86,11 +86,11 @@ msgstr ""
 "The server refuses the attempt to brew coffee with a teapot. Yes, this is"
 " a real error."
 
-#: mop/views.py:559 mop/views.py:564
+#: mop/views.py:557 mop/views.py:562
 msgid "Internal Server Error"
 msgstr "Internal Server Error"
 
-#: mop/views.py:566
+#: mop/views.py:564
 msgid ""
 "An unexpected server error occurred. Our cartographers are looking into "
 "it."
@@ -99,7 +99,7 @@ msgstr ""
 "it."
 
 #: mop/data/events.py:8 mop/data/events.py:11
-#: mop/templates/_events_list.html:323
+#: mop/templates/_events_list.html:344
 msgid "presentation"
 msgstr "presentation"
 
@@ -107,11 +107,11 @@ msgstr "presentation"
 msgid "award"
 msgstr "award"
 
-#: mop/data/events.py:17 mop/templates/_events_list.html:326
+#: mop/data/events.py:17 mop/templates/_events_list.html:347
 msgid "science_fair"
 msgstr "science fair"
 
-#: mop/data/events.py:20 mop/templates/_events_list.html:329
+#: mop/data/events.py:20 mop/templates/_events_list.html:350
 msgid "book_release"
 msgstr "book release"
 
@@ -119,11 +119,15 @@ msgstr "book release"
 msgid "blogpost"
 msgstr "blogpost"
 
-#: mop/data/events.py:26 mop/templates/_events_list.html:332
+#: mop/data/events.py:26 mop/templates/_events_list.html:353
 msgid "press_release"
 msgstr "press release"
 
-#: mop/data/events.py:29
+#: mop/data/events.py:34
+msgid "Session at the IMC in Leeds"
+msgstr "Session at the IMC in Leeds"
+
+#: mop/data/events.py:35
 msgid "imc_leeds_26"
 msgstr ""
 "Once again this year, we were able to present a session (No. 725) at the "
@@ -132,10 +136,6 @@ msgstr ""
 " Heritage” and sparked fascinating discussions about the present and "
 "future of historical geography."
 
-#: mop/data/events.py:34
-msgid "Session at the IMC in Leeds"
-msgstr "Session at the IMC in Leeds"
-
 #: mop/data/events.py:46
 msgid "Lange Nacht der Forschung 2026"
 msgstr "Long Night of Research 2026"
@@ -143,11 +143,11 @@ msgstr "Long Night of Research 2026"
 #: mop/data/events.py:47
 msgid "lange_nacht_der_forschung_240426"
 msgstr ""
-"At the Long Night of Research on 24 April 2026 at the Austrian Academy of "
-"Sciences in Vienna, Nikola Arnautović and Mihailo Popović gave a "
+"At the Long Night of Research on 24 April 2026 at the Austrian Academy of"
+" Sciences in Vienna, Nikola Arnautović and Mihailo Popović gave a "
 "presentation to the audience on the topic “Do you know what Historical "
-"Geography is?”, sharing information and results from the project “Digital "
-"Humanities using the Example of the Castle of Ebreichsdorf in the Lower "
+"Geography is?”, sharing information and results from the project “Digital"
+" Humanities using the Example of the Castle of Ebreichsdorf in the Lower "
 "Austrian Industrial District”."
 
 #: mop/data/events.py:58
@@ -1773,38 +1773,34 @@ msgstr "Artefacts"
 msgid "Physical objects"
 msgstr "Physical objects"
 
-#: mop/templates/_events_list.html:308
+#: mop/templates/_events_list.html:329
 msgid ""
 "Presentations, workshops, awards and publications from the Maps of Power "
 "initiative."
 msgstr ""
 
-#: mop/templates/_events_list.html:317
+#: mop/templates/_events_list.html:338
 #, fuzzy
 msgid "Filter"
 msgstr "Files"
 
-#: mop/templates/_events_list.html:320 mop/templates/literature.html:78
+#: mop/templates/_events_list.html:341 mop/templates/literature.html:78
 msgid "All"
 msgstr ""
 
-#: mop/templates/_events_list.html:342
+#: mop/templates/_events_list.html:363
 #, fuzzy
 msgid "Search events…"
 msgstr "Search in"
 
-#: mop/templates/_events_list.html:342
+#: mop/templates/_events_list.html:363
 #, fuzzy
 msgid "Search events"
 msgstr "Search in"
 
-#: mop/templates/_events_list.html:409
+#: mop/templates/_events_list.html:430
 msgid "No events found for the selected filter."
 msgstr ""
-
-#: mop/templates/_events_list.html:550
-msgid "View all events"
-msgstr "View all events"
 
 #: mop/templates/_events_list.html:582
 msgid "more..."
@@ -2339,44 +2335,27 @@ msgstr "Download file"
 msgid "Search"
 msgstr "Search"
 
-#: mop/templates/macros.html:102
+#: mop/templates/macros.html:101
 msgid "License & Attribution"
-msgstr ""
+msgstr "License & Attribution"
+
+#: mop/templates/macros.html:103
+msgid "All data shown here is licensed under the"
+msgstr "All data shown here is licensed under the"
 
 #: mop/templates/macros.html:104
-msgid "All data shown here is licensed under the"
-msgstr ""
+msgid "Creative Commons Attribution 4.0 International (CC BY 4.0) License"
+msgstr "Creative Commons Attribution 4.0 International (CC BY 4.0) License"
 
-#: mop/templates/macros.html:106 mop/templates/macros.html:119
-msgid "Creative Commons Attribution 4.0 International (CC-BY 4.0) License"
-msgstr ""
-
-#: mop/templates/macros.html:108
-msgid "Please attribute to"
-msgstr ""
-
-#: mop/templates/macros.html:112
-#, fuzzy
-msgid "Principal Investigator(s)"
-msgstr "Project Investigator"
-
-#: mop/templates/macros.html:115
-msgid "License & Academic Attribution"
-msgstr ""
-
-#: mop/templates/macros.html:117
+#: mop/templates/macros.html:105
 msgid ""
-"All dataset resources and research data presented across these projects "
-"are licensed under the"
+"Attribution: Please use the citation tool available at each specific data"
+" record. To cite the project as a whole, please attribute to: Mihailo "
+"Popović (Principal Investigator), Maps of Power."
 msgstr ""
-
-#: mop/templates/macros.html:121
-msgid ""
-"Please credit and attribute the respective project Principal "
-"Investigator(s) (PI) or the project leader Mihailo Popović when "
-"exporting, visualizing, or publishing any derivative scientific work from"
-" this portal."
-msgstr ""
+"Attribution: Please use the citation tool available at each specific data"
+" record. To cite the project as a whole, please attribute to: Mihailo "
+"Popović (Principal Investigator), Maps of Power."
 
 #: mop/templates/project_details.html:63 mop/templates/project_details.html:781
 #: mop/templates/projects.html:113 mop/templates/projects.html:146
@@ -3162,4 +3141,34 @@ msgstr "We are working on providing data for this section as soon as possible."
 
 #~ msgid "This translation was generated using AI."
 #~ msgstr "This translation was generated using AI."
+
+#~ msgid "View all events"
+#~ msgstr "View all events"
+
+#~ msgid "Creative Commons Attribution 4.0 International (CC-BY 4.0) License"
+#~ msgstr ""
+
+#~ msgid "Please attribute to"
+#~ msgstr ""
+
+#~ msgid "Principal Investigator(s)"
+#~ msgstr "Project Investigator"
+
+#~ msgid "License & Academic Attribution"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "All dataset resources and research data"
+#~ " presented across these projects are "
+#~ "licensed under the"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please credit and attribute the "
+#~ "respective project Principal Investigator(s) "
+#~ "(PI) or the project leader Mihailo "
+#~ "Popović when exporting, visualizing, or "
+#~ "publishing any derivative scientific work "
+#~ "from this portal."
+#~ msgstr ""
 

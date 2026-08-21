@@ -98,30 +98,14 @@
       <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" alt="CC-BY" style="height: 20px;">
     </div>
     <div>
-      {% if pi_list %}
-        <h6 class="fw-bold mb-1 text-dark">{{ _('License & Attribution') }}</h6>
-        <p class="text-muted small mb-0 lh-base">
-          {{ _('All data shown here is licensed under the') }} 
-          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="fw-semibold link-primary text-decoration-none">
-            {{ _('Creative Commons Attribution 4.0 International (CC-BY 4.0) License') }}
-          </a>.
-          {{ _('Please attribute to') }}: 
-          <span class="fw-semibold text-dark">
-            {{ pi_list | join(', ') }}
-          </span> 
-          ({{ _('Principal Investigator(s)') }}).
-        </p>
-      {% else %}
-        <h5 class="fw-bold mb-1 text-dark">{{ _('License & Academic Attribution') }}</h5>
-        <p class="text-muted small mb-0 lh-base">
-          {{ _('All dataset resources and research data presented across these projects are licensed under the') }} 
-          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="fw-semibold link-primary text-decoration-none">
-            {{ _('Creative Commons Attribution 4.0 International (CC-BY 4.0) License') }}
-          </a>.
-          {{ _('Please credit and attribute the respective project Principal Investigator(s) (PI) or the project leader Mihailo Popović when exporting, visualizing, or publishing any derivative scientific work from this portal.') }}
-        </p>
-      {% endif %}
+      <h6 class="fw-bold mb-1 text-dark">{{ _('License & Attribution') }}</h6>
+      <p class="text-muted small mb-0 lh-base">
+        {{ _('All data shown here is licensed under the') }} 
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="fw-semibold link-primary text-decoration-none">{{ _('Creative Commons Attribution 4.0 International (CC BY 4.0) License') }}</a>.
+        {{ _('Attribution: Please use the citation tool available at each specific data record. To cite the project as a whole, please attribute to: Mihailo Popović (Principal Investigator), Maps of Power.') }}
+      </p>
     </div>
   </div>
 </div>
 {% endmacro %}
+
