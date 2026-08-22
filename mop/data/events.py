@@ -26,6 +26,18 @@ types = {
         'name': _('press_release'),
         'bs_icon': 'bi-newspaper'}}
 event_list = [{
+    'id': 'didip_230726',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2026, 7, 23)}",
+    'who': '',
+    'icon': 'didip_230726.jpg',
+    'title': _('Presentation at the DiDip Conference'),
+    'description': _('didip_230726'),
+    'attachment': [{
+        'path': '',
+        'type': ''
+    }]
+}, {
     'id': 'imc_leeds_26',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2026, 7, 7)}",

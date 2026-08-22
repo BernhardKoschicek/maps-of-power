@@ -3,6 +3,16 @@ from flask_babel import lazy_gettext as _
 from mop.util import get_table_dates_formatted
 
 presentations = [{
+    'presenter': 'Marija Đokić Petrović, Mihailo Popović',
+    'title': 'KI-gestützte Analyse österreichischer Archivmaterialien: '
+    'Das Beispiel Schloss Ebreichsdorf (14.-17. Jahrhundert)',
+    'conference': 'DiDip: From Digital to Distant Diplomatics',
+    'location': [_('Graz')],
+    'date': get_table_dates_formatted(2026, 7, 23),
+    'external_link': '',
+    'download': 'DjokicPetrovicPopovic_DiDip_Poster.pdf',
+    'category': ['dgse']
+}, {
     'presenter': 'Nikola Arnautović, Mihailo Popović',
     'title': 'Wissen Sie, was Historische Geographie ist?',
     'conference': 'Lange Nacht der Forschung 2026',

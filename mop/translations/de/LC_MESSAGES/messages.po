@@ -128,6 +128,18 @@ msgid "press_release"
 msgstr "pressemitteilung"
 
 #: mop/data/events.py:34
+msgid "Presentation at the DiDip Conference"
+msgstr "Vortrag bei der DiDip Konferenz"
+
+#: mop/data/events.py:35
+msgid "didip_230726"
+msgstr ""
+"Am 23. Juli 2026 hat Marija Đokić Petrović ein Poster mit dem Titel "
+"„KI-gestützte Analyse österreichischer Archivmaterialien: Das Beispiel "
+"Schloss Ebreichsdorf (14.-17. Jahrhundert)“ bei der Konferenz „DiDip: From "
+"Digital to Distant Diplomatics“ an der Universität Graz präsentiert."
+
+#: mop/data/events.py:46
 msgid "Session at the IMC in Leeds"
 msgstr "Session auf dem IMC in Leeds"
 
@@ -918,6 +930,10 @@ msgid "exter"
 msgstr "Exeter"
 
 #: mop/data/presentations.py:9
+msgid "Graz"
+msgstr "Graz"
+
+#: mop/data/presentations.py:19
 msgid "Wien"
 msgstr "Wien"
 

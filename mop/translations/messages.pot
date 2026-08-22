@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-08-21 21:21+0200\n"
+"POT-Creation-Date: 2026-08-22 16:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
+"Generated-By: Babel 2.18.0\n"
 
 #: mop/util.py:36
 msgid "about"
@@ -37,7 +37,7 @@ msgid "events"
 msgstr ""
 
 #: mop/templates/explore/project_entity_view.html:31
-#: mop/templates/explore/project_entity_view.html:647 mop/util.py:46
+#: mop/templates/explore/project_entity_view.html:653 mop/util.py:46
 msgid "literature"
 msgstr ""
 
@@ -117,122 +117,130 @@ msgid "press_release"
 msgstr ""
 
 #: mop/data/events.py:34
-msgid "Session at the IMC in Leeds"
+msgid "Presentation at the DiDip Conference"
 msgstr ""
 
 #: mop/data/events.py:35
-msgid "imc_leeds_26"
+msgid "didip_230726"
 msgstr ""
 
 #: mop/data/events.py:46
-msgid "Lange Nacht der Forschung 2026"
+msgid "Session at the IMC in Leeds"
 msgstr ""
 
 #: mop/data/events.py:47
-msgid "lange_nacht_der_forschung_240426"
+msgid "imc_leeds_26"
 msgstr ""
 
 #: mop/data/events.py:58
-msgid "Summer School in Brno"
+msgid "Lange Nacht der Forschung 2026"
 msgstr ""
 
 #: mop/data/events.py:59
-msgid "brno_summer_school_260625"
-msgstr ""
-
-#: mop/data/events.py:69
-msgid "Discourse on DH and AI"
+msgid "lange_nacht_der_forschung_240426"
 msgstr ""
 
 #: mop/data/events.py:70
-msgid "heidelberg_200625"
+msgid "Summer School in Brno"
 msgstr ""
 
-#: mop/data/events.py:80
-msgid "Report in the Newspaper Die Presse"
+#: mop/data/events.py:71
+msgid "brno_summer_school_260625"
 msgstr ""
 
 #: mop/data/events.py:81
-msgid "presse_03052025"
+msgid "Discourse on DH and AI"
 msgstr ""
 
-#: mop/data/events.py:91
-msgid "Lecture at the Haus Wittgenstein"
+#: mop/data/events.py:82
+msgid "heidelberg_200625"
 msgstr ""
 
 #: mop/data/events.py:92
-msgid "wittgenstein_13022025"
+msgid "Report in the Newspaper Die Presse"
 msgstr ""
 
-#: mop/data/events.py:102
-msgid "Workshop in Oxford"
+#: mop/data/events.py:93
+msgid "presse_03052025"
 msgstr ""
 
 #: mop/data/events.py:103
-msgid "workshop_oxford_300524"
+msgid "Lecture at the Haus Wittgenstein"
+msgstr ""
+
+#: mop/data/events.py:104
+msgid "wittgenstein_13022025"
 msgstr ""
 
 #: mop/data/events.py:114
-msgid "The Long Night of Research in Vienna"
+msgid "Workshop in Oxford"
 msgstr ""
 
 #: mop/data/events.py:115
-msgid "lange_nacht_der_forschung_240524"
+msgid "workshop_oxford_300524"
 msgstr ""
 
 #: mop/data/events.py:126
-msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
+msgid "The Long Night of Research in Vienna"
 msgstr ""
 
 #: mop/data/events.py:127
-msgid "koder_festschrift_230424"
-msgstr ""
-
-#: mop/data/events.py:137
-msgid "Two Presentations on the Usefulness of OpenAtlas"
+msgid "lange_nacht_der_forschung_240524"
 msgstr ""
 
 #: mop/data/events.py:138
-msgid "belgrade_190923"
+msgid "Presentation of an Edited Volume in Honor of Johannes Koder"
 msgstr ""
 
-#: mop/data/events.py:148
-msgid "Workshop on Medieval Athos in Oxford"
+#: mop/data/events.py:139
+msgid "koder_festschrift_230424"
 msgstr ""
 
 #: mop/data/events.py:149
-msgid "athos_oxford_290923"
+msgid "Two Presentations on the Usefulness of OpenAtlas"
 msgstr ""
 
-#: mop/data/events.py:159
-msgid "Paper on the Crown of the Saint King Stefan Dečanski"
+#: mop/data/events.py:150
+msgid "belgrade_190923"
 msgstr ""
 
 #: mop/data/events.py:160
-msgid "tripps_070923"
+msgid "Workshop on Medieval Athos in Oxford"
 msgstr ""
 
-#: mop/data/events.py:170
-msgid "TIB Balkans at the IMC Leeds 2023"
+#: mop/data/events.py:161
+msgid "athos_oxford_290923"
 msgstr ""
 
 #: mop/data/events.py:171
-msgid "imc_leeds_23"
+msgid "Paper on the Crown of the Saint King Stefan Dečanski"
 msgstr ""
 
-#: mop/data/events.py:181
-msgid "presentation on MECERN conference"
+#: mop/data/events.py:172
+msgid "tripps_070923"
 msgstr ""
 
 #: mop/data/events.py:182
-msgid "mecern_2023"
+msgid "TIB Balkans at the IMC Leeds 2023"
+msgstr ""
+
+#: mop/data/events.py:183
+msgid "imc_leeds_23"
+msgstr ""
+
+#: mop/data/events.py:193
+msgid "presentation on MECERN conference"
 msgstr ""
 
 #: mop/data/events.py:194
+msgid "mecern_2023"
+msgstr ""
+
+#: mop/data/events.py:206
 msgid "presentation at the Serbian Academy of Sciences and Arts"
 msgstr ""
 
-#: mop/data/events.py:195
+#: mop/data/events.py:207
 msgid "serbian_academy_220223"
 msgstr ""
 
@@ -542,8 +550,8 @@ msgid "Brăila"
 msgstr ""
 
 #: mop/data/literature.py:60 mop/data/literature.py:83
-#: mop/data/presentations.py:63 mop/data/presentations.py:84
-#: mop/data/presentations.py:93 mop/data/presentations.py:154
+#: mop/data/presentations.py:73 mop/data/presentations.py:94
+#: mop/data/presentations.py:103 mop/data/presentations.py:164
 #: mop/data/projects/idcew.py:52 mop/data/projects/idcew.py:54
 msgid "Belgrade"
 msgstr ""
@@ -553,7 +561,7 @@ msgid "Darmstadt"
 msgstr ""
 
 #: mop/data/literature.py:94 mop/data/literature.py:115
-#: mop/data/presentations.py:167
+#: mop/data/presentations.py:177
 msgid "Leipzig"
 msgstr ""
 
@@ -610,53 +618,57 @@ msgstr ""
 msgid "exter"
 msgstr ""
 
-#: mop/data/presentations.py:9
+#: mop/data/presentations.py:10
+msgid "Graz"
+msgstr ""
+
+#: mop/data/presentations.py:19
 msgid "Wien"
 msgstr ""
 
-#: mop/data/presentations.py:21
+#: mop/data/presentations.py:31
 msgid "Heidelberg"
 msgstr ""
 
-#: mop/data/presentations.py:30
+#: mop/data/presentations.py:40
 msgid "Ebreichsdorf"
 msgstr ""
 
-#: mop/data/presentations.py:41 mop/data/presentations.py:104
-#: mop/data/presentations.py:114 mop/data/presentations.py:123
-#: mop/data/presentations.py:133 mop/data/presentations.py:144
-#: mop/data/presentations.py:210 mop/data/presentations.py:230
-#: mop/data/presentations.py:241 mop/data/presentations.py:251
-#: mop/data/presentations.py:261 mop/data/presentations.py:271
-#: mop/data/presentations.py:280
+#: mop/data/presentations.py:51 mop/data/presentations.py:114
+#: mop/data/presentations.py:124 mop/data/presentations.py:133
+#: mop/data/presentations.py:143 mop/data/presentations.py:154
+#: mop/data/presentations.py:220 mop/data/presentations.py:240
+#: mop/data/presentations.py:251 mop/data/presentations.py:261
+#: mop/data/presentations.py:271 mop/data/presentations.py:281
+#: mop/data/presentations.py:290
 msgid "Leeds"
 msgstr ""
 
-#: mop/data/presentations.py:51 mop/data/presentations.py:189
-#: mop/data/presentations.py:290 mop/data/presentations.py:300
+#: mop/data/presentations.py:61 mop/data/presentations.py:199
+#: mop/data/presentations.py:300 mop/data/presentations.py:310
 #: mop/data/projects/idcew.py:51 mop/data/projects/tarsr.py:52
 #: mop/data/projects/tarsr.py:60 mop/templates/imprint.html:14
 #: mop/templates/layout.html:79
 msgid "Vienna"
 msgstr ""
 
-#: mop/data/presentations.py:62
+#: mop/data/presentations.py:72
 msgid "The Society of the Friends of Holy Mount Athos"
 msgstr ""
 
-#: mop/data/presentations.py:75
+#: mop/data/presentations.py:85
 msgid "Oxford"
 msgstr ""
 
-#: mop/data/presentations.py:177
+#: mop/data/presentations.py:187
 msgid "Los Angeles"
 msgstr ""
 
-#: mop/data/presentations.py:200
+#: mop/data/presentations.py:210
 msgid "Thessaloniki"
 msgstr ""
 
-#: mop/data/presentations.py:220
+#: mop/data/presentations.py:230
 msgid "Florenz"
 msgstr ""
 
@@ -1582,24 +1594,24 @@ msgstr ""
 msgid "Clear"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:698
+#: mop/templates/explore/project_entity_view.html:704
 #: mop/templates/explore/project_explore_table.html:50
 #: mop/templates/project_details.html:312
 msgid "Name"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:699
+#: mop/templates/explore/project_entity_view.html:705
 #: mop/templates/explore/project_explore_table.html:51
 #: mop/templates/project_details.html:313
 msgid "Class"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:701
+#: mop/templates/explore/project_entity_view.html:707
 #: mop/templates/project_details.html:314
 msgid "Begin"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:702
+#: mop/templates/explore/project_entity_view.html:708
 #: mop/templates/project_details.html:315
 msgid "End"
 msgstr ""
@@ -1608,10 +1620,11 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
+#: mop/templates/explore/pid_landing.html:36
 #: mop/templates/explore/project_entity_view.html:25
-#: mop/templates/explore/project_entity_view.html:521
-#: mop/templates/explore/project_entity_view.html:530
-#: mop/templates/explore/project_entity_view.html:707
+#: mop/templates/explore/project_entity_view.html:527
+#: mop/templates/explore/project_entity_view.html:536
+#: mop/templates/explore/project_entity_view.html:713
 #: mop/templates/explore/project_explore_table.html:52
 #: mop/templates/project_details.html:317
 msgid "Description"
@@ -1914,60 +1927,60 @@ msgstr ""
 msgid "Fetching entities and computing relations from the database."
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:274
+#: mop/templates/explore/project_entity_view.html:280
 #: mop/templates/projects.html:475
 msgid "Legend (Click to toggle)"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:263
-#: mop/templates/explore/project_entity_view.html:281
+#: mop/templates/explore/project_entity_view.html:269
+#: mop/templates/explore/project_entity_view.html:287
 #: mop/templates/projects.html:478 mop/templates/projects.html:507
 msgid "Place"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:285
+#: mop/templates/explore/project_entity_view.html:291
 #: mop/templates/projects.html:482
 msgid "Person"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:289
+#: mop/templates/explore/project_entity_view.html:295
 #: mop/templates/projects.html:486
 msgid "Group"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:293
+#: mop/templates/explore/project_entity_view.html:299
 #: mop/templates/projects.html:490
 msgid "Event / Activity"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:297
+#: mop/templates/explore/project_entity_view.html:303
 #: mop/templates/projects.html:494
 msgid "Artifact"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:301
+#: mop/templates/explore/project_entity_view.html:307
 #: mop/templates/projects.html:498
 msgid "Literature / Source"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:261
+#: mop/templates/explore/project_entity_view.html:267
 #: mop/templates/projects.html:505
 msgid "Node Details"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:265
+#: mop/templates/explore/project_entity_view.html:271
 #: mop/templates/projects.html:509
 msgid "ID"
 msgstr ""
 
 #: mop/templates/explore/project_entity_view.html:34
-#: mop/templates/explore/project_entity_view.html:266
-#: mop/templates/explore/project_entity_view.html:678
+#: mop/templates/explore/project_entity_view.html:272
+#: mop/templates/explore/project_entity_view.html:684
 #: mop/templates/projects.html:510
 msgid "Relations"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:268
+#: mop/templates/explore/project_entity_view.html:274
 #: mop/templates/projects.html:512
 msgid "View Entity"
 msgstr ""
@@ -1988,189 +2001,198 @@ msgstr ""
 msgid "Select All"
 msgstr ""
 
+#: mop/templates/explore/pid_landing.html:29
+#: mop/templates/explore/project_entity_view.html:852
+msgid "Copy"
+msgstr ""
+
+#: mop/templates/explore/pid_landing.html:42
+msgid "Raw LOD Data"
+msgstr ""
+
 #: mop/templates/explore/project_entity_view.html:23
-#: mop/templates/explore/project_entity_view.html:115
+#: mop/templates/explore/project_entity_view.html:121
 msgid "properties"
 msgstr ""
 
 #: mop/templates/explore/project_entity_view.html:28
-#: mop/templates/explore/project_entity_view.html:614
+#: mop/templates/explore/project_entity_view.html:620
 msgid "Narrative Connections"
 msgstr ""
 
 #: mop/templates/explore/project_entity_view.html:37
-#: mop/templates/explore/project_entity_view.html:790
+#: mop/templates/explore/project_entity_view.html:796
 msgid "files"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:103
+#: mop/templates/explore/project_entity_view.html:109
 msgid "Cite Entry"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:133
+#: mop/templates/explore/project_entity_view.html:139
 msgid "Period"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:226
+#: mop/templates/explore/project_entity_view.html:232
 msgid "Map"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:231
+#: mop/templates/explore/project_entity_view.html:237
 msgid "Network"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:236
+#: mop/templates/explore/project_entity_view.html:242
 msgid "Timeline"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:277
+#: mop/templates/explore/project_entity_view.html:283
 msgid "Selected Entity"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:308
+#: mop/templates/explore/project_entity_view.html:314
 msgid "Depth"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:320
+#: mop/templates/explore/project_entity_view.html:326
 msgid "Labels"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:326
+#: mop/templates/explore/project_entity_view.html:332
 msgid "Spacing"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:328
+#: mop/templates/explore/project_entity_view.html:334
 msgid "Compact"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:329
+#: mop/templates/explore/project_entity_view.html:335
 msgid "Normal"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:330
+#: mop/templates/explore/project_entity_view.html:336
 msgid "Wide"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:331
+#: mop/templates/explore/project_entity_view.html:337
 msgid "Extra Wide"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:338
+#: mop/templates/explore/project_entity_view.html:344
 msgid "Fullscreen"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:344
+#: mop/templates/explore/project_entity_view.html:350
 msgid "Export"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:355
+#: mop/templates/explore/project_entity_view.html:361
 msgid "Export Graph as Image"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:360
+#: mop/templates/explore/project_entity_view.html:366
 msgid ""
 "Configure the style, format, and enhancements for your network "
 "visualization image download."
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:365
+#: mop/templates/explore/project_entity_view.html:371
 msgid "File Format"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:371
+#: mop/templates/explore/project_entity_view.html:377
 msgid "PNG Image"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:372
+#: mop/templates/explore/project_entity_view.html:378
 msgid "Lossless & Transparent"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:379
+#: mop/templates/explore/project_entity_view.html:385
 msgid "JPEG Image"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:380
+#: mop/templates/explore/project_entity_view.html:386
 msgid "High Compatibility"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:388
+#: mop/templates/explore/project_entity_view.html:394
 msgid "Background Theme"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:394
+#: mop/templates/explore/project_entity_view.html:400
 msgid "Transparent"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:401
+#: mop/templates/explore/project_entity_view.html:407
 msgid "Solid Light"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:408
+#: mop/templates/explore/project_entity_view.html:414
 msgid "Deep Dark"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:417
+#: mop/templates/explore/project_entity_view.html:423
 msgid "Cancel"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:420
+#: mop/templates/explore/project_entity_view.html:426
 msgid "Generate & Download"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:493
+#: mop/templates/explore/project_entity_view.html:499
 msgid "Lifecycle phase of"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:505
+#: mop/templates/explore/project_entity_view.html:511
 msgid "No Timeline Events"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:506
+#: mop/templates/explore/project_entity_view.html:512
 msgid ""
 "We couldn't find any chronological events or relations with dates for "
 "this entity."
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:630
-#: mop/templates/explore/project_entity_view.html:1025
+#: mop/templates/explore/project_entity_view.html:636
+#: mop/templates/explore/project_entity_view.html:1047
 msgid "Show more"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:660
+#: mop/templates/explore/project_entity_view.html:666
 msgid "view entity"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:705
+#: mop/templates/explore/project_entity_view.html:711
 msgid "Relation Type"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:754
-#: mop/templates/explore/project_entity_view.html:755
+#: mop/templates/explore/project_entity_view.html:760
+#: mop/templates/explore/project_entity_view.html:761
 msgid "Search..."
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:833
+#: mop/templates/explore/project_entity_view.html:839
 msgid "Cite this Entry"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:838
+#: mop/templates/explore/project_entity_view.html:844
 msgid ""
 "Choose your preferred academic style to cite this entry. Click copy to "
 "save it to your clipboard."
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:861
-#: mop/templates/explore/project_entity_view.html:870
 #: mop/templates/explore/project_entity_view.html:879
 #: mop/templates/explore/project_entity_view.html:888
+#: mop/templates/explore/project_entity_view.html:897
+#: mop/templates/explore/project_entity_view.html:906
 msgid "Copy to clipboard"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:896
+#: mop/templates/explore/project_entity_view.html:914
 msgid "Close"
 msgstr ""
 
-#: mop/templates/explore/project_entity_view.html:1029
+#: mop/templates/explore/project_entity_view.html:1051
 msgid "Show less"
 msgstr ""
 

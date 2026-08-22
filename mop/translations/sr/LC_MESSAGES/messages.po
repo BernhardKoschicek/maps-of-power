@@ -119,6 +119,18 @@ msgid "press_release"
 msgstr "саопштење за јавност"
 
 #: mop/data/events.py:34
+msgid "Presentation at the DiDip Conference"
+msgstr "Презентација на DiDip конференцији"
+
+#: mop/data/events.py:35
+msgid "didip_230726"
+msgstr ""
+"Марија Ђокић Петровић је 23. јула 2026. године представила постер под "
+"називом „KI-gestützte Analyse österreichischer Archivmaterialien: Das Beispiel "
+"Schloss Ebreichsdorf (14.-17. Jahrhundert)“ на конференцији „DiDip: From "
+"Digital to Distant Diplomatics“ на Универзитету у Грацу."
+
+#: mop/data/events.py:46
 #, fuzzy
 msgid "Session at the IMC in Leeds"
 msgstr "ТИБ Балкан на ИМЦ Лидс 2023"
@@ -877,6 +889,10 @@ msgid "exter"
 msgstr "Ексетер"
 
 #: mop/data/presentations.py:9
+msgid "Graz"
+msgstr "Грац"
+
+#: mop/data/presentations.py:19
 msgid "Wien"
 msgstr "Беч"
 

@@ -126,6 +126,18 @@ msgid "press_release"
 msgstr "δελτίο τύπου"
 
 #: mop/data/events.py:34
+msgid "Presentation at the DiDip Conference"
+msgstr "Παρουσίαση στο συνέδριο DiDip"
+
+#: mop/data/events.py:35
+msgid "didip_230726"
+msgstr ""
+"Στις 23 Ιουλίου 2026, η Marija Đokić Petrović παρουσίασε μια αφίσα με τίτλο "
+"«KI-gestützte Analyse österreichischer Archivmaterialien: Das Beispiel "
+"Schloss Ebreichsdorf (14.-17. Jahrhundert)» στο συνέδριο «DiDip: From Digital "
+"to Distant Diplomatics» στο Πανεπιστήμιο του Γκρατς."
+
+#: mop/data/events.py:46
 #, fuzzy
 msgid "Session at the IMC in Leeds"
 msgstr "Το TIB Balkans στο IMC Leeds 2023"
@@ -920,6 +932,10 @@ msgid "exter"
 msgstr "Έξετερ"
 
 #: mop/data/presentations.py:9
+msgid "Graz"
+msgstr "Γκρατς"
+
+#: mop/data/presentations.py:19
 msgid "Wien"
 msgstr "Βιέννη"
 
