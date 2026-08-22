@@ -87,11 +87,17 @@
         {% endif %}
       </div>
       <div class="col-md-4 text-md-end mt-3 mt-md-0">
-        <div class="btn-group shadow-sm">
+          {% if entity.pid_url %}
+          <a href="{{ entity.pid_url }}.json"
+             target="_blank" class="btn btn-outline-primary" title="JSON-LD">
+            <i class="bi bi-filetype-json fs-4"></i>
+          </a>
+          {% else %}
           <a href="{{ api_path }}/entity_presentation_view/{{ entity.id_ }}"
              target="_blank" class="btn btn-outline-primary" title="JSON">
             <i class="bi bi-filetype-json fs-4"></i>
           </a>
+          {% endif %}
           <a href="{{ api_path }}/entity/{{ entity.id_ }}?format=turtle"
              target="_blank" class="btn btn-outline-primary" title="XML">
             <i class="bi bi-filetype-xml fs-4"></i>
@@ -837,6 +843,18 @@
               <div class="modal-body p-4">
                 <p class="text-muted small mb-4">{{ _('Choose your preferred academic style to cite this entry. Click copy to save it to your clipboard.') }}</p>
 
+                {% if entity.pid_url %}
+                <div class="mb-4">
+                  <label class="form-label text-muted small text-uppercase fw-semibold mb-1">Persistent Identifier (PID)</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control font-monospace" value="{{ entity.pid_url }}" id="entityPidInput" readonly>
+                    <button class="btn btn-outline-secondary" type="button" onclick="navigator.clipboard.writeText('{{ entity.pid_url }}')">
+                      <i class="bi bi-clipboard me-1"></i> {{ _('Copy') }}
+                    </button>
+                  </div>
+                </div>
+                {% endif %}
+
                 <!-- Citation Tabs -->
                 <ul class="nav nav-tabs border-0 portal-tabs mb-3 d-flex flex-wrap gap-1" id="citationTabs" role="tablist">
                   <li class="nav-item" role="presentation">
@@ -946,29 +964,33 @@
                   const apaPIs = getAPAAuthor(rawPIs);
                   const bibtexPIs = getBibTeXAuthor(rawPIs);
                   const title = "{{ entity.name }}" || "Entity View";
-                  const currentUrl = window.location.href;
+                  {% if entity.pid_url %}
+                  const citationUrl = "{{ entity.pid_url }}";
+                  {% else %}
+                  const citationUrl = window.location.href;
+                  {% endif %}
                   const currentYear = new Date().getFullYear();
                   const currentDate = new Date().toISOString().split('T')[0];
 
                   // Generate APA 7
-                  document.getElementById('citation-apa').innerHTML = `${apaPIs} (${currentYear}). <i>${title}</i>. In Maps of Power: Historical Geography & Digital Humanities. <a href="${currentUrl}" target="_blank" class="text-decoration-none">${currentUrl}</a>`;
+                  document.getElementById('citation-apa').innerHTML = `${apaPIs} (${currentYear}). <i>${title}</i>. In Maps of Power: Historical Geography & Digital Humanities. <a href="${citationUrl}" target="_blank" class="text-decoration-none">${citationUrl}</a>`;
 
                   // Generate BibTeX
                   const citationKey = "mapsofpower_entity_" + (window.entityId || "entry");
                   document.getElementById('citation-bibtex').textContent = `@misc{${citationKey},\n` +
                       `  author = {${bibtexPIs}},\n` +
                       `  title = {{"{{"}}${title}{{"}}"}},\n` +
-                      `  howpublished = {${currentUrl}},\n` +
+                      `  howpublished = {${citationUrl}},\n` +
                       `  year = {${currentYear}},\n` +
                       `  note = {Accessed: ${currentDate}},\n` +
                       `  urldate = {${currentDate}}\n` +
                       `}`;
 
                   // Generate Chicago
-                  document.getElementById('citation-chicago').innerHTML = `${cleanedPIs}. "${title}." <i>Maps of Power: Historical Geography & Digital Humanities</i>. ${currentYear}. <a href="${currentUrl}" target="_blank" class="text-decoration-none">${currentUrl}</a> (accessed ${currentDate}).`;
+                  document.getElementById('citation-chicago').innerHTML = `${cleanedPIs}. "${title}." <i>Maps of Power: Historical Geography & Digital Humanities</i>. ${currentYear}. <a href="${citationUrl}" target="_blank" class="text-decoration-none">${citationUrl}</a> (accessed ${currentDate}).`;
 
                   // Generate MLA 9
-                  document.getElementById('citation-mla').innerHTML = `${cleanedPIs}. "${title}." <i>Maps of Power: Historical Geography & Digital Humanities</i>, ${currentYear}, <a href="${currentUrl}" target="_blank" class="text-decoration-none">${currentUrl}</a>. Accessed ${currentDate}.`;
+                  document.getElementById('citation-mla').innerHTML = `${cleanedPIs}. "${title}." <i>Maps of Power: Historical Geography & Digital Humanities</i>, ${currentYear}, <a href="${citationUrl}" target="_blank" class="text-decoration-none">${citationUrl}</a>. Accessed ${currentDate}.`;
               });
 
               // Clipboard copy logic

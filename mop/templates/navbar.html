@@ -23,7 +23,7 @@
             <li class="nav-item">
               <a
                   class="nav-link text-secondary text-capitalize
-                  {{ 'fw-bold' if request.endpoint and url_for(request.endpoint) == item.to }}"
+                  {{ 'fw-bold' if request.path == item.to }}"
                   target="{{ '_blank' if item.to.startswith('http') else '' }}"
                   href="{{ item.to }}">{{ item.name }}</a>
             </li>

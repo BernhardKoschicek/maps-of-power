@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% with bg='bg-dark' %}
+  {% include 'navbar.html' %}
+{% endwith %}
+{% block title %}{{ entity.get('_label') or entity.get('label') or entity.get('name') or entity.get('title') or ('Entity ' ~ base62_id) }}{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="card shadow-sm border-0 mb-4">
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap gap-2">
+            <div>
+              <span class="badge bg-secondary text-uppercase mb-2">{{ entity.get('type', 'Entity') }}</span>
+              <h2 class="text-primary fw-bold mb-1">
+                {{ entity.get('_label') or entity.get('label') or entity.get('name') or entity.get('title') or ('Entity ' ~ base62_id) }}
+              </h2>
+            </div>
+            <a href="{{ url_for('pid_resolver', base62_id=base62_id ~ '.json') }}" class="btn btn-outline-primary btn-sm">
+              <i class="bi bi-filetype-json me-1"></i> JSON-LD
+            </a>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label text-muted small text-uppercase fw-semibold mb-1">Persistent Identifier (PID)</label>
+            <div class="input-group">
+              <input type="text" class="form-control font-monospace" value="{{ citation_link }}" id="pidCitationInput" readonly>
+              <button class="btn btn-outline-secondary" type="button" onclick="navigator.clipboard.writeText('{{ citation_link }}')">
+                <i class="bi bi-clipboard me-1"></i> {{ _('Copy') }}
+              </button>
+            </div>
+          </div>
+
+          {% if entity.get('description') or entity.get('notes') %}
+            <div class="mb-4">
+              <h5 class="fw-semibold text-secondary">{{ _('Description') }}</h5>
+              <p class="text-muted">{{ entity.get('description') or entity.get('notes') }}</p>
+            </div>
+          {% endif %}
+
+          <div class="mb-3">
+            <h5 class="fw-semibold text-secondary mb-2">{{ _('Raw LOD Data') }}</h5>
+            <pre class="bg-dark text-light p-3 rounded" style="max-height: 400px; overflow-y: auto;"><code>{{ entity | tojson(indent=2) }}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

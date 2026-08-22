@@ -1,11 +1,13 @@
 from dataclasses import dataclass, field
 import os
 from typing import Any, Optional, List, Dict
+from flask import request
 from pydantic import BaseModel, Field
 
 from mop.model.types import Types, EntityTypeModel
 from mop.model.util import split_date_string, format_date, uc_first
 from mop.model.api_calls import get_entity_presentation
+from mop.pid import uuid_to_base62
 
 # --- Pydantic Models for API Response ---
 
@@ -94,6 +96,7 @@ class RelatedEntityModel(BaseModel):
 
 class PresentationViewModel(BaseModel):
     id: int
+    uuid: Optional[str] = None
     systemClass: str = Field(..., alias="systemClass")
     viewClass: str = Field(..., alias="viewClass")
     title: str
@@ -199,6 +202,7 @@ class Entity:
     name: str
     description: str
     system_class: str
+    uuid: Optional[str] = None
     types: Optional[List[Types]] = None
     alias: Optional[str] = None
     relations: Optional[Dict[str, List[Relation]]] = None
@@ -217,6 +221,7 @@ class Entity:
         if data is not None:
             # Legacy initialization from standard list endpoints (/view_class)
             self.id_ = str(data['@id'].rsplit('/', 1)[-1])
+            self.uuid = data.get('uuid')
             self.name = data['properties']['title']
             self.description = self.get_description(data.get('descriptions'))
             self.system_class = uc_first(data['systemClass'].replace('_', ' '))
@@ -231,6 +236,7 @@ class Entity:
         else:
             # Keyword initialization from factories
             self.id_ = str(kwargs.get('id_'))
+            self.uuid = kwargs.get('uuid')
             self.name = kwargs.get('name', '')
             self.description = kwargs.get('description', '')
             self.system_class = kwargs.get('system_class', '')
@@ -243,12 +249,33 @@ class Entity:
             self.end = kwargs.get('end')
             self.geometry = kwargs.get('geometry')
 
+    @property
+    def base62_id(self) -> Optional[str]:
+        if self.uuid:
+            try:
+                return uuid_to_base62(self.uuid)
+            except Exception:  # pragma: no cover
+                return None
+        return None
+
+    @property
+    def pid_url(self) -> Optional[str]:
+        b62 = self.base62_id
+        if b62:
+            try:
+                return f"{request.host_url.rstrip('/')}/id/{b62}"
+            except Exception:  # pragma: no cover
+                return f"/id/{b62}"
+        return None
+
     @staticmethod
     def get_description(data: Optional[List[Dict[str, Any]]]) -> str:
         return [i['value'] for i in data][0] if data else ''
 
     @classmethod
-    def get_entity_from_oa(cls, id_: int, api_path: Optional[str] = None) -> 'Entity':
+    def get_entity_from_oa(
+            cls, id_: int,
+            api_path: Optional[str] = None) -> 'Entity':
         raw_data = get_entity_presentation(id_, api_path=api_path)
         model = PresentationViewModel.model_validate(raw_data)
         return cls.from_model(model)
@@ -417,6 +444,7 @@ class Entity:
 
         return cls(
             id_=str(m.id),
+            uuid=m.uuid,
             name=m.title,
             description=m.description or "",
             system_class=uc_first(m.systemClass.replace('_', ' ')),
