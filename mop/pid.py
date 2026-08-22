@@ -197,14 +197,33 @@ def extract_numeric_entity_id(data: dict[str, Any]) -> int | None:
     return None
 
 
-@app.route('/id/<base62_id>', strict_slashes=False)
-@app.route('/id/<base62_id>.json', strict_slashes=False)
+def is_uuid(identifier: str) -> bool:
+    """Check if a string is a valid standard or compact UUID."""
+    if not isinstance(identifier, str):
+        return False
+    val = identifier.strip()
+    if len(val) not in (32, 36):
+        return False
+    try:
+        uuid_obj = uuid.UUID(val)
+        return str(uuid_obj) == val.lower() or uuid_obj.hex == val.lower()
+    except (ValueError, AttributeError):
+        return False
+
+
+@app.route('/id/<identifier>', strict_slashes=False)
+@app.route(
+    '/id/<identifier>.json',
+    endpoint='pid_resolver_json',
+    strict_slashes=False)
 def pid_resolver(
-        base62_id: str) -> Response | str | tuple[Response, int]:
-    """Persistent Identifier (PID) endpoint with content negotiation."""
+        identifier: str) -> Response | str | tuple[Response, int]:
+    """Dual PID endpoint supporting both Base62 strings and raw UUIDs."""
     is_json_route = request.path.endswith('.json')
-    if is_json_route and base62_id.endswith('.json'):
-        base62_id = base62_id[:-5]
+    if is_json_route and identifier.endswith('.json'):
+        raw_id = identifier[:-5]
+    else:
+        raw_id = identifier
 
     accept_header = request.headers.get('Accept', '')
     prefers_json = (
@@ -216,14 +235,25 @@ def pid_resolver(
         or 'application/json' in accept_header
         or 'application/ld+json' in accept_header)
 
-    try:
-        uuid_str = base62_to_uuid(base62_id)
-    except ValueError:
-        if prefers_json:
-            return jsonify({
-                'error': 'Invalid Base62 identifier',
-                'code': 400}), 400
-        abort(400)
+    request_domain = request.host_url.rstrip('/')
+
+    if is_uuid(raw_id):
+        uuid_obj = uuid.UUID(raw_id.strip())
+        uuid_str = str(uuid_obj)
+        base62_id = uuid_to_base62(uuid_obj)
+
+        if not prefers_json:
+            return redirect(f"{request_domain}/id/{base62_id}", code=301)
+    else:
+        base62_id = raw_id
+        try:
+            uuid_str = base62_to_uuid(base62_id)
+        except ValueError:
+            if prefers_json:
+                return jsonify({
+                    'error': 'Invalid Base62 identifier',
+                    'code': 400}), 400
+            abort(400)
 
     raw_data = fetch_entity_by_uuid(uuid_str)
     if raw_data is None:
@@ -231,7 +261,6 @@ def pid_resolver(
             return jsonify({'error': 'Entity not found', 'code': 404}), 404
         abort(404)
 
-    request_domain = request.host_url.rstrip('/')
     rewritten_data = rewrite_json_urls(raw_data, request_domain)
     citation_link = f"{request_domain}/id/{base62_id}"
 

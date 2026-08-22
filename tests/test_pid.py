@@ -8,7 +8,7 @@ from flask.testing import FlaskClient
 from mop.model.entity import Entity
 from mop.pid import (
     base62_to_uuid, extract_numeric_entity_id, fetch_entity_by_uuid,
-    get_backend_api_bases, rewrite_json_urls, uuid_to_base62)
+    get_backend_api_bases, is_uuid, rewrite_json_urls, uuid_to_base62)
 
 
 def test_base62_uuid_roundtrip() -> None:
@@ -287,3 +287,79 @@ def test_entity_pid_properties(app: Flask) -> None:
                        system_class="Place")
     assert e_no_uuid.base62_id is None
     assert e_no_uuid.pid_url is None
+
+
+def test_is_uuid() -> None:
+    # Valid hyphenated UUIDs
+    assert is_uuid("a3bb189e-8bf9-4888-9912-ace4e6543002") is True
+    assert is_uuid("A3BB189E-8BF9-4888-9912-ACE4E6543002") is True
+    assert is_uuid("00000000-0000-0000-0000-000000000000") is True
+
+    # Valid compact 32-char hex UUIDs
+    assert is_uuid("a3bb189e8bf948889912ace4e6543002") is True
+    assert is_uuid("A3BB189E8BF948889912ACE4E6543002") is True
+
+    # Invalid / Base62 strings
+    assert is_uuid("5GvfCfXj7PvWsCq10s9DqP") is False
+    assert is_uuid("not-a-valid-uuid-format") is False
+    assert is_uuid("") is False
+    assert is_uuid(12345) is False  # type: ignore
+
+
+@patch("mop.pid.fetch_entity_by_uuid")
+def test_pid_resolver_uuid_html_301_redirect(
+        mock_fetch: MagicMock, client: FlaskClient) -> None:
+    target_uuid = "a3bb189e-8bf9-4888-9912-ace4e6543002"
+    expected_b62 = uuid_to_base62(target_uuid)
+
+    # Browser requests standard UUID via HTML -> 301 Redirect to Base62 PID
+    response = client.get(
+        f"/id/{target_uuid}", headers={"Accept": "text/html"})
+    assert response.status_code == 301
+    assert response.headers["Location"].endswith(f"/id/{expected_b62}")
+
+    # Compact 32-char hex UUID -> 301 Redirect to Base62 PID
+    compact_uuid = target_uuid.replace("-", "")
+    response_compact = client.get(
+        f"/id/{compact_uuid}", headers={"Accept": "text/html"})
+    assert response_compact.status_code == 301
+    assert response_compact.headers["Location"].endswith(f"/id/{expected_b62}")
+
+    # Verify no backend call was made during 301 redirect
+    mock_fetch.assert_not_called()
+
+
+@patch("mop.pid.fetch_entity_by_uuid")
+def test_pid_resolver_uuid_json_no_redirect(
+        mock_fetch: MagicMock, client: FlaskClient, app: Flask) -> None:
+    target_uuid = "a3bb189e-8bf9-4888-9912-ace4e6543002"
+    expected_b62 = uuid_to_base62(target_uuid)
+    app.config['MOP_API_PATH'] = 'https://mop.backend/api/'
+
+    mock_fetch.return_value = {
+        "@id": f"https://mop.backend/api/uuid/{target_uuid}",
+        "_label": "UUID Test Entity",
+        "type": "Place"}
+
+    # 1. Access with .json suffix on UUID -> 200 JSON directly (no redirect)
+    resp_suffix = client.get(f"/id/{target_uuid}.json")
+    assert resp_suffix.status_code == 200
+    assert resp_suffix.content_type == "application/json"
+    data = resp_suffix.get_json()
+    assert data["_label"] == "UUID Test Entity"
+    assert data["@id"] == f"http://localhost/id/{expected_b62}"
+    assert f"<http://localhost/id/{expected_b62}>; rel=\"canonical\"" in (
+        resp_suffix.headers.get("Link", ""))
+
+    # 2. Access with Accept: application/json -> 200 JSON directly
+    resp_accept = client.get(
+        f"/id/{target_uuid}", headers={"Accept": "application/json"})
+    assert resp_accept.status_code == 200
+    assert resp_accept.get_json()["_label"] == "UUID Test Entity"
+
+    # 3. Access with Accept: application/ld+json -> 200 JSON-LD directly
+    resp_ld = client.get(
+        f"/id/{target_uuid}", headers={"Accept": "application/ld+json"})
+    assert resp_ld.status_code == 200
+    assert resp_ld.content_type == "application/ld+json"
+    assert resp_ld.get_json()["_label"] == "UUID Test Entity"
