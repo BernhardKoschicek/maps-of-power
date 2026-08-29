@@ -3,10 +3,7 @@
 VERSION = '0.1.0'
 LANGUAGES = {
     'de': 'Deutsch',
-    'en': 'English',
-    'sr': 'Српски',
-    'el': 'Ελληνικά',
-    'cnr': 'Crnogorski'}
+    'en': 'English'}
 DEBUG = False
 SECRET_KEY = '1E600383250F0F63E9627E650B683DCE'
 

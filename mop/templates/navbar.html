@@ -1,91 +1,110 @@
-<nav class="navbar navbar-dark {{ bg }} navbar-expand-lg" >
-    <div class="container">
-      <div class="col-2">
-        <a class="navbar-brand" href="{{ url_for('about') }}">
-          <img src="{{ url_for('static', filename='images/mop_logo_inv.svg', v=ASSETS_VERSION) }}"
-               alt="Maps of Power Logo" height="150"
-               class="d-inline-block align-text-top">
-        </a>
+<nav class="navbar navbar-dark {{ bg }} navbar-expand-lg" id="mainNavbar">
+  <div class="container position-relative">
+    <a class="navbar-brand d-flex align-items-center py-2" href="{{ url_for('about') }}">
+      <img src="{{ url_for('static', filename='images/mop_logo_inv.svg', v=ASSETS_VERSION) }}"
+           alt="Maps of Power Logo"
+           class="navbar-logo d-inline-block">
+    </a>
+
+    <!-- Mobile controls (Language Dropdown Button + Hamburger Toggler) -->
+    <div class="d-flex align-items-center gap-2 d-lg-none">
+      <div class="dropdown">
+        <button class="btn btn-language dropdown-toggle d-flex align-items-center gap-1"
+                type="button"
+                id="languageDropdownMobile"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+          <i class="bi bi-globe2"></i>
+          <span class="d-none d-sm-inline">{{ AVAILABLE_LANGUAGES.get(CURRENT_LANGUAGE, CURRENT_LANGUAGE) }}</span>
+          <span class="d-inline d-sm-none text-uppercase">{{ CURRENT_LANGUAGE }}</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="languageDropdownMobile">
+          {% for lang_code, lang_name in AVAILABLE_LANGUAGES.items() %}
+            <li>
+              {% if CURRENT_LANGUAGE == lang_code %}
+                <span class="dropdown-item active fw-bold">
+                  {{ lang_name }}
+                </span>
+              {% else %}
+                <a class="dropdown-item" href="{{ url_for('set_language', language=lang_code) }}">
+                  {{ lang_name }}
+                </a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
       </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+
+      <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNavDropdown"
               aria-controls="navbarNavDropdown"
               aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse container-fluid col-8"
-           id="navbarNavDropdown">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-          {% for item in navbar %}
-            {% if not loop.first %}
-              <div class="vr text-secondary"></div>
-            {% endif %}
-            <li class="nav-item">
-              <a
-                  class="nav-link text-secondary text-capitalize
-                  {{ 'fw-bold' if request.path == item.to }}"
-                  target="{{ '_blank' if item.to.startswith('http') else '' }}"
-                  href="{{ item.to }}">{{ item.name }}</a>
+    </div>
+
+    <!-- Navigation links & Desktop Language Dropdown -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 py-2 py-lg-0 align-items-lg-center">
+        {% for item in navbar %}
+          {% if not loop.first %}
+            <div class="vr text-secondary d-none d-lg-inline-block mx-1"></div>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link text-secondary text-capitalize px-lg-3
+                      {{ 'fw-bold active' if request.path == item.to else '' }}"
+               target="{{ '_blank' if item.to.startswith('http') else '' }}"
+               href="{{ item.to }}">{{ item.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <!-- Desktop Language Dropdown Button -->
+      <div class="dropdown d-none d-lg-block">
+        <button class="btn btn-language dropdown-toggle d-flex align-items-center gap-1"
+                type="button"
+                id="languageDropdownDesktop"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+          <i class="bi bi-globe2 me-1"></i>
+          <span>{{ AVAILABLE_LANGUAGES.get(CURRENT_LANGUAGE, CURRENT_LANGUAGE) }}</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="languageDropdownDesktop">
+          {% for lang_code, lang_name in AVAILABLE_LANGUAGES.items() %}
+            <li>
+              {% if CURRENT_LANGUAGE == lang_code %}
+                <span class="dropdown-item active fw-bold">
+                  {{ lang_name }}
+                </span>
+              {% else %}
+                <a class="dropdown-item" href="{{ url_for('set_language', language=lang_code) }}">
+                  {{ lang_name }}
+                </a>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>
       </div>
-      <div
-          class="translation list-group list-group-flush align-end d-lg-block col-2">
-        <div class="list-group-item bg-transparent text-center">
-          {% if CURRENT_LANGUAGE == 'de' %}
-            <span class="fw-bold text-secondary">Deutsch</span>
-          {% else %}
-            <a href="{{ url_for('set_language', language='de') }}"
-               class="text-decoration-none fw-normal text-secondary">
-              Deutsch
-            </a>
-          {% endif %}
+
+      <!-- Mobile-only language section inside the collapsed menu -->
+      <div class="d-lg-none pt-3 mt-2 border-top border-secondary border-opacity-25">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="text-white-50 small fw-bold text-uppercase">
+            <i class="bi bi-globe2 me-1"></i>{{ _('language') }}
+          </span>
         </div>
-        <div class="list-group-item bg-transparent text-center">
-          {% if CURRENT_LANGUAGE == 'en' %}
-            <span class="fw-bold text-secondary">English</span>
-          {% else %}
-            <a href="{{ url_for('set_language', language='en') }}"
-               class="text-decoration-none fw-normal text-secondary">
-              English
+        <div class="d-flex flex-wrap gap-2">
+          {% for lang_code, lang_name in AVAILABLE_LANGUAGES.items() %}
+            <a href="{{ url_for('set_language', language=lang_code) }}"
+               class="btn btn-sm
+                      {{ 'btn-primary text-white fw-bold' if CURRENT_LANGUAGE == lang_code
+                         else 'btn-outline-secondary text-light' }}">
+              {{ lang_name }}
             </a>
-          {% endif %}
-        </div>
-        <div class="list-group-item bg-transparent text-center dropdown">
-          <a class="{# dropdown-toggle #}text-decoration-none {% if CURRENT_LANGUAGE not in ['de', 'en'] %}fw-bold text-secondary{% else %}fw-normal text-secondary{% endif %}"
-             href="#" role="button" id="otherLanguagesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            {% if CURRENT_LANGUAGE not in ['de', 'en'] %}
-              {{ AVAILABLE_LANGUAGES[CURRENT_LANGUAGE] }}
-            {% else %}
-              {# {{ _('Other') }}#}
-            {% endif %}
-          </a>
-{#          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="otherLanguagesDropdown"#}
-{#              style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(8px); border-radius: 12px; border: 1px solid rgba(0,0,0,0.15);">#}
-{#            {% for lang_code, lang_name in AVAILABLE_LANGUAGES.items() %}#}
-{#              {% if lang_code not in ['de', 'en'] %}#}
-{#                <li>#}
-{#                  {% if CURRENT_LANGUAGE == lang_code %}#}
-{#                    <span class="dropdown-item active fw-bold bg-primary text-white d-flex align-items-center justify-content-between">#}
-{#                      {{ lang_name }}#}
-{#                      {% if lang_code in ['el', 'sr', 'cnr'] %}#}
-{#                        <i class="bi bi-robot ms-2 text-white-50" title="{{ _('This translation was generated using AI.') }}" style="font-size: 0.9rem;"></i>#}
-{#                      {% endif %}#}
-{#                    </span>#}
-{#                  {% else %}#}
-{#                    <a class="dropdown-item text-secondary fw-normal d-flex align-items-center justify-content-between" href="{{ url_for('set_language', language=lang_code) }}">#}
-{#                      {{ lang_name }}#}
-{#                      {% if lang_code in ['el', 'sr', 'cnr'] %}#}
-{#                        <i class="bi bi-robot ms-2 text-primary" title="{{ _('This translation was generated using AI.') }}" style="font-size: 0.9rem;"></i>#}
-{#                      {% endif %}#}
-{#                    </a>#}
-{#                  {% endif %}#}
-{#                </li>#}
-{#              {% endif %}#}
-{#            {% endfor %}#}
-{#          </ul>#}
+          {% endfor %}
         </div>
       </div>
     </div>
-  </nav>
+
+  </div>
+</nav>

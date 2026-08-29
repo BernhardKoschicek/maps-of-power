@@ -1,7 +1,4 @@
 {% extends "layout.html" %}
-{% with bg='bg-dark' %}
-  {% include 'navbar.html' %}
-{% endwith %}
 {% block title %}{{ entity.name }}{% endblock %}
 {% block content %}
   {% from "macros.html" import license_banner %}
@@ -41,7 +38,7 @@
     <div class="row g-4">
 
       <!-- Left Column: Glassmorphic Scrollspy Nav Menu -->
-      <div class="col-12 col-md-3 col-xl-2">
+      <div class="col-12 col-lg-3 col-xl-2 d-none d-lg-block">
         <div id="floating-navbar" class="list-group details-scrollspy-menu">
           {% for id, label in side_nav %}
             <a class="list-group-item list-group-item-action" href="#{{ id }}">{{ label }}</a>
@@ -50,7 +47,7 @@
       </div>
 
       <!-- Center Column: Core Content -->
-      <div class="col-12 col-md-9 col-xl-10 position-relative" id="main-content">
+      <div class="col-12 col-lg-9 col-xl-10 position-relative" id="main-content">
 
         <!-- Elevated Breadcrumbs Path -->
         <div class="mb-4">
@@ -1100,6 +1097,7 @@
       const navLinks = document.querySelectorAll('#floating-navbar a');
 
       function updateActiveState() {
+        if (window.innerWidth < 992) return;
         let activeId = null;
         const scrollPosition = window.scrollY + 180; // offset for detection
 

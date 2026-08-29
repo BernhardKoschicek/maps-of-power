@@ -62,6 +62,11 @@
 <body class="bg-light position-relative">
 {% from 'macros.html' import create_table with context %}
 <header>
+  {% block header %}
+    {% with bg='bg-dark' %}
+      {% include 'navbar.html' %}
+    {% endwith %}
+  {% endblock %}
 </header>
 <main>
   {% block content %}{% endblock %}
@@ -131,17 +136,6 @@
 </footer>
 </body>
 <script>
-  const navbarCollapse = document.getElementById('navbarNavDropdown');
-  const myElement = document.querySelector('.translation');
-
-  navbarCollapse.addEventListener('show.bs.collapse', function () {
-    myElement.classList.add('d-none');
-  });
-
-  navbarCollapse.addEventListener('hide.bs.collapse', function () {
-    myElement.classList.remove('d-none');
-  });
-
   const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
   const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl, {html: true})

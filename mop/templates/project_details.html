@@ -1,7 +1,4 @@
 {% extends "layout.html" %}
-{% with bg='bg-dark' %}
-  {% include 'navbar.html' %}
-{% endwith %}
 {% block title %}{{ project.title }}{% endblock %}
 {% block content %}
   {% from "macros.html" import license_banner %}

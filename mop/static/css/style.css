@@ -78,7 +78,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 10;
     background-image: linear-gradient(180deg,
     rgb(56, 67, 86) 10%,
     rgba(56, 67, 86, 0.1) 60%,
@@ -588,4 +588,118 @@ height: auto; /* Ensures the image scales down proportionally if larger than 200
         transform: translateY(0);
     }
 }
+
+/* Responsive Navigation & Language Dropdown */
+.navbar-logo {
+    height: 55px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    transition: height 0.2s ease-in-out;
+}
+
+.btn-language {
+    color: var(--bs-accent2, #9eaec0);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.35rem 0.65rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-language:hover,
+.btn-language:focus,
+.btn-language[aria-expanded="true"] {
+    color: #ffffff;
+    border-color: var(--bs-secondary, #a0c223);
+    background-color: rgba(160, 194, 35, 0.15);
+}
+
+.navbar .dropdown-menu {
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: var(--bs-dark);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 1050;
+    min-width: 170px;
+}
+
+.navbar .dropdown-item {
+    color: var(--bs-accent2, #9eaec0);
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.navbar .dropdown-item.active {
+    background-color: var(--bs-primary, #246d8b);
+    color: #ffffff;
+}
+
+/* Mobile Breakpoint (< 992px) */
+@media (max-width: 991.98px) {
+    .hero-section {
+        position: relative;
+        height: auto;
+        min-height: auto;
+        padding-bottom: 0;
+        overflow: visible;
+        background-color: var(--bs-dark);
+    }
+
+    .overlay {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        background-image: none;
+        background-color: var(--bs-dark);
+        z-index: 10;
+    }
+
+    .yt-background {
+        display: none !important;
+    }
+
+    .navbar-collapse {
+        background-color: rgba(33, 37, 41, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 1rem 1.25rem;
+        margin-top: 0.75rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.65rem 0.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 1.05rem;
+    }
+
+    .navbar-nav .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+}
+
+/* Desktop Breakpoint (>= 992px) */
+@media (min-width: 992px) {
+    .navbar-logo {
+        height: 120px;
+    }
+    .overlay {
+        z-index: 10;
+    }
+}
+
 

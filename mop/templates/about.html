@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
+{% block header %}{% endblock %}
 {% block content %}
 
   <section class="hero-section">
-    <iframe class="yt-background" allow="autoplay"
+    <iframe class="yt-background d-none d-lg-block" allow="autoplay" loading="lazy"
             src="https://www.youtube-nocookie.com/embed/xF5oxko1SWg?autoplay=1&mute=1&controls=0&disablekb=1&loop=1&playlist=xF5oxko1SWg&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&fs=0">
     </iframe>
     <div class="overlay">
@@ -79,6 +80,12 @@
     </div>
   </section>
   <script>
+      if (window.innerWidth < 992) {
+          const yt = document.querySelector('.yt-background');
+          if (yt) {
+              yt.removeAttribute('src');
+          }
+      }
       window.addEventListener('load', function () {
           baguetteBox.run('.categories', {
               animation: 'fadeIn',
