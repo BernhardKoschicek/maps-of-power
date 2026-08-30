@@ -250,10 +250,11 @@ def get_reader_pages(volume_key: str) -> list[dict[str, Any]]:
     num_pages = vol['pages']
     vol_num = vol['id']
     base_url = f'/static/repository/books/{clean_key}/'
+    pad = 4 if num_pages >= 1000 else 3
 
     pages = []
     for i in range(1, num_pages + 1):
-        filename = f'TIB{vol_num}_Seite_{i:03d}.jpg'
+        filename = f'TIB{vol_num}_Seite_{i:0{pad}d}.jpg'
         pages.append({
             'page_num': i,
             'filename': filename,

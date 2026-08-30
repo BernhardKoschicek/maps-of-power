@@ -13,6 +13,9 @@ class TibBookReader {
         this.volumeTitle = options.volumeTitle || 'TIB Reader';
         this.pages = options.pages || [];
         this.totalPages = this.pages.length;
+        this.isModal = options.isModal ?? false;
+        this.updateHash = options.updateHash ?? (!this.isModal);
+        this.onPageChange = options.onPageChange || null;
         this.currentPage = options.initialPage || 1;
         this.isSpread = options.isSpread ?? false;
 
@@ -24,13 +27,21 @@ class TibBookReader {
         this.startX = 0;
         this.startY = 0;
 
+        // Bound event handler references for clean removal
+        this._onMouseMove = null;
+        this._onMouseUp = null;
+        this._onKeyDown = null;
+        this._onHashChange = null;
+
         this.init();
     }
 
     init() {
         this.renderStructure();
         this.bindEvents();
-        this.checkUrlHash();
+        if (this.updateHash) {
+            this.checkUrlHash();
+        }
         this.goToPage(this.currentPage);
     }
 
@@ -101,7 +112,7 @@ class TibBookReader {
                 </div>
 
                 <div class="tib-thumb-drawer" id="thumbDrawer">
-                    ${this.pages.map((p, idx) => `
+                    ${this.pages.map((p) => `
                         <div class="tib-thumb-item ${p.page_num === this.currentPage ? 'active' : ''}"
                              data-page="${p.page_num}" title="Page ${p.page_num}">
                             <img class="tib-thumb-img" src="${p.url}" alt="P. ${p.page_num}" loading="lazy">
@@ -157,8 +168,11 @@ class TibBookReader {
 
         // Pan & Drag events on viewport
         this.viewport.addEventListener('mousedown', (e) => this.startDrag(e));
-        window.addEventListener('mousemove', (e) => this.onDrag(e));
-        window.addEventListener('mouseup', () => this.endDrag());
+
+        this._onMouseMove = (e) => this.onDrag(e);
+        this._onMouseUp = () => this.endDrag();
+        window.addEventListener('mousemove', this._onMouseMove);
+        window.addEventListener('mouseup', this._onMouseUp);
 
         // Wheel Zoom
         this.viewport.addEventListener('wheel', (e) => {
@@ -167,8 +181,9 @@ class TibBookReader {
             this.changeZoom(delta);
         }, { passive: false });
 
-        // Keyboard Shortcuts
-        window.addEventListener('keydown', (e) => {
+        // Keyboard Shortcuts (only when reader container is visible)
+        this._onKeyDown = (e) => {
+            if (!this.container || !this.container.offsetParent) return;
             if (['input', 'textarea'].includes(document.activeElement?.tagName.toLowerCase())) return;
             if (e.key === 'ArrowLeft') this.prevPage();
             if (e.key === 'ArrowRight') this.nextPage();
@@ -176,10 +191,14 @@ class TibBookReader {
             if (e.key === '-') this.changeZoom(-0.2);
             if (e.key === '0') this.resetZoom();
             if (e.key.toLowerCase() === 'f') this.toggleFullscreen();
-        });
+        };
+        window.addEventListener('keydown', this._onKeyDown);
 
-        // Listen to hash change
-        window.addEventListener('hashchange', () => this.checkUrlHash());
+        // Listen to hash change only if updateHash is enabled
+        if (this.updateHash) {
+            this._onHashChange = () => this.checkUrlHash();
+            window.addEventListener('hashchange', this._onHashChange);
+        }
     }
 
     checkUrlHash() {
@@ -198,16 +217,20 @@ class TibBookReader {
         if (pageNumber > this.totalPages) pageNumber = this.totalPages;
 
         this.currentPage = pageNumber;
-        this.pageInput.value = this.currentPage;
+        if (this.pageInput) this.pageInput.value = this.currentPage;
 
-        // Update URL hash
-        if (window.location.hash !== `#page/${this.currentPage}`) {
+        // Update URL hash only if enabled
+        if (this.updateHash && window.location.hash !== `#page/${this.currentPage}`) {
             history.replaceState(null, '', `#page/${this.currentPage}`);
         }
 
         this.renderPages();
         this.updateThumbnails();
         this.preloadAdjacent();
+
+        if (typeof this.onPageChange === 'function') {
+            this.onPageChange(this.currentPage);
+        }
     }
 
     prevPage() {
@@ -332,6 +355,14 @@ class TibBookReader {
         } else {
             document.exitFullscreen().catch(() => {});
         }
+    }
+
+    destroy() {
+        if (this._onMouseMove) window.removeEventListener('mousemove', this._onMouseMove);
+        if (this._onMouseUp) window.removeEventListener('mouseup', this._onMouseUp);
+        if (this._onKeyDown) window.removeEventListener('keydown', this._onKeyDown);
+        if (this._onHashChange) window.removeEventListener('hashchange', this._onHashChange);
+        if (this.container) this.container.innerHTML = '';
     }
 }
 

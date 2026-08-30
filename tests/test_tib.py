@@ -83,7 +83,10 @@ def test_get_reader_pages():
     pages = get_reader_pages('tib1')
     assert len(pages) == 315
     assert pages[0]['page_num'] == 1
-    assert 'TIB1_Seite_001.jpg' in pages[0]['url']
+    pages13 = get_reader_pages('tib13')
+    assert len(pages13) == 1367
+    assert pages13[0]['filename'] == 'TIB13_Seite_0001.jpg'
+    assert pages13[577]['filename'] == 'TIB13_Seite_0578.jpg'
 
     assert not get_reader_pages('tib14')
     assert not get_reader_pages('nonexistent')

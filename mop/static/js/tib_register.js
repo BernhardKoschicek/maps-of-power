@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const paginationContainer = document.getElementById('tibPagination');
     const limitSelect = document.getElementById('tibLimitSelect');
     const loadingSpinner = document.getElementById('tibLoadingSpinner');
+    const modalEl = document.getElementById('tibReaderModal');
 
     if (!tableBody) return;
 
@@ -84,8 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const rowsHtml = data.results.map(row => {
             const volKey = `tib${row.volume_id}`;
             const hasReader = readerVolumes.includes(volKey);
+            const safeName = escapeHtml(row.name);
 
-            // Render citation pills
+            // Render citation pills using data attributes for clean event delegation
             const citationsHtml = (row.pages || []).map(cit => {
                 const isMainClass = cit.is_main ? 'tib-citation-main' : '';
                 const targetPg = cit.target_page || cit.page_start || 1;
@@ -93,7 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (hasReader) {
                     return `
                         <button type="button" class="tib-citation-pill ${isMainClass}"
-                                onclick="openTibReaderModal('${volKey}', ${targetPg}, '${escapeHtml(row.name)}')"
+                                data-volume="${volKey}"
+                                data-page="${targetPg}"
+                                data-name="${safeName}"
                                 title="Open in Book Reader (Page ${targetPg})">
                             <i class="bi bi-book-half me-1"></i>${escapeHtml(cit.display_str)}
                         </button>
@@ -108,8 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }).join('');
 
             const readerActionBtn = hasReader ? `
-                <button type="button" class="btn btn-sm btn-outline-primary rounded-pill px-3"
-                        onclick="openTibReaderModal('${volKey}', ${row.pages?.[0]?.target_page || 1}, '${escapeHtml(row.name)}')">
+                <button type="button" class="btn btn-sm btn-outline-primary rounded-pill px-3 btn-tib-reader"
+                        data-volume="${volKey}"
+                        data-page="${row.pages?.[0]?.target_page || 1}"
+                        data-name="${safeName}">
                     <i class="bi bi-book me-1"></i>Reader
                 </button>
             ` : `
@@ -141,6 +147,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         tableBody.innerHTML = rowsHtml;
     }
+
+    // Delegated click handler on tableBody for citation buttons
+    tableBody.addEventListener('click', (e) => {
+        const btn = e.target.closest('.tib-citation-pill, .btn-tib-reader');
+        if (btn && btn.dataset.volume) {
+            e.preventDefault();
+            const vol = btn.dataset.volume;
+            const page = parseInt(btn.dataset.page, 10) || 1;
+            const name = btn.dataset.name || '';
+            openTibReaderModal(vol, page, name);
+        }
+    });
 
     function renderPagination(total, limit, offset) {
         if (!paginationContainer) return;
@@ -185,7 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (endP < totalPages) {
             if (endP < totalPages - 1) html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
-            html += `<li class="page-item"><button class="page-link rounded-circle" data-page="${totalPages}">${totalPages}</button></li>`;
+            html += `<li class="page-item"><button class="page-link rounded-circle" data-page="${totalPages}">
+                ${totalPages}</button></li>`;
         }
 
         // Next Button
@@ -202,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Bind clicks
         paginationContainer.querySelectorAll('button[data-page]').forEach(btn => {
-            btn.addEventListener('click', (e) => {
+            btn.addEventListener('click', () => {
                 const targetP = parseInt(btn.dataset.page, 10);
                 if (targetP && targetP !== currentP) {
                     fetchResults(targetP);
@@ -213,15 +232,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateUrlParams() {
-        const url = new URL(window.location);
+        const url = new URL('/tib/register', window.location.origin);
         if (currentQuery) url.searchParams.set('q', currentQuery);
-        else url.searchParams.delete('q');
-
         if (currentVolume && currentVolume !== 'all') url.searchParams.set('vol', currentVolume);
-        else url.searchParams.delete('vol');
-
         if (currentPage > 1) url.searchParams.set('page', currentPage);
-        else url.searchParams.delete('page');
 
         history.replaceState(null, '', url.toString());
     }
@@ -295,9 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Global Modal Reader Launcher
     window.openTibReaderModal = function(volumeKey, targetPage = 1, toponymName = '') {
-        const modalEl = document.getElementById('tibReaderModal');
         if (!modalEl) {
-            // Fallback: open in new tab
             window.open(`/tib/reader/${volumeKey}#page/${targetPage}`, '_blank');
             return;
         }
@@ -306,11 +318,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalContainer = document.getElementById('tibModalReaderContainer');
         const openWindowBtn = document.getElementById('tibModalOpenWindowBtn');
 
-        if (modalTitle) {
-            modalTitle.textContent = `${toponymName ? toponymName + ' — ' : ''}${volumeKey.toUpperCase()} (Page ${targetPage})`;
+        const updateModalHeader = (pg) => {
+            if (modalTitle) {
+                const prefix = toponymName ? `${toponymName} — ` : '';
+                modalTitle.textContent = `${prefix}${volumeKey.toUpperCase()} (Page ${pg})`;
+            }
+            if (openWindowBtn) {
+                openWindowBtn.href = `/tib/reader/${volumeKey}#page/${pg}`;
+            }
+        };
+
+        updateModalHeader(targetPage);
+        const bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+
+        // If reader instance already exists for this volume, jump directly to targetPage
+        if (modalReaderInstance && modalReaderInstance.volumeKey === volumeKey) {
+            modalReaderInstance.goToPage(targetPage);
+            bsModal.show();
+            return;
         }
-        if (openWindowBtn) {
-            openWindowBtn.href = `/tib/reader/${volumeKey}#page/${targetPage}`;
+
+        // If volume changed, destroy previous reader instance
+        if (modalReaderInstance && typeof modalReaderInstance.destroy === 'function') {
+            modalReaderInstance.destroy();
+            modalReaderInstance = null;
         }
 
         // Fetch reader pages and init
@@ -323,10 +354,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         volumeKey: volumeKey,
                         volumeTitle: `${volumeKey.toUpperCase()} Book Reader`,
                         pages: data.pages,
-                        initialPage: targetPage
+                        initialPage: targetPage,
+                        isModal: true,
+                        updateHash: false,
+                        onPageChange: (pg) => updateModalHeader(pg)
                     });
 
-                    const bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
                     bsModal.show();
                 } else {
                     alert('No digital scans available for this volume.');
@@ -337,6 +370,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Could not load reader scans.');
             });
     };
+
+    // Clean up any leftover hash when closing modal
+    if (modalEl) {
+        modalEl.addEventListener('hidden.bs.modal', () => {
+            if (window.location.hash.startsWith('#page/')) {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+        });
+    }
 
     // Initial Load from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
