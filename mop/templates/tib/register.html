@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+{% from 'macros.html' import license_banner with context %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tib.css', v=ASSETS_VERSION) }}">
+
+<div class="container-fluid px-lg-5 mt-5 pt-4 mb-5">
+  <!-- Top Navigation Bar -->
+  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div class="d-flex align-items-center gap-3">
+      <a href="{{ url_for('tib_overview') }}" class="btn btn-outline-secondary rounded-pill px-3 py-2"
+         title="{{ _('Back to TIB Overview') }}">
+        <i class="bi bi-arrow-left me-1"></i>TIB Hub
+      </a>
+      <div>
+        <h2 class="fw-bold text-dark mb-0">
+          {% if active_vol %}
+            {{ active_vol.title }}
+          {% else %}
+            Complete TIB Toponym Register
+          {% endif %}
+        </h2>
+        <span class="text-muted small">Tabula Imperii Byzantini &middot; Historical Toponyms</span>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center gap-2">
+      {% if active_vol and active_vol.has_reader %}
+        <a href="{{ url_for('tib_reader', volume_key=active_vol.key) }}"
+           class="btn btn-secondary text-white rounded-pill px-3 py-2 fw-semibold">
+          <i class="bi bi-book me-2"></i>Open Volume Reader
+        </a>
+      {% endif %}
+      <span class="badge bg-primary text-white rounded-pill px-3 py-2" id="tibResultCount">
+        Loading...
+      </span>
+    </div>
+  </div>
+
+  <!-- Search & Filter Card -->
+  <div class="card tib-card p-3 p-md-4 mb-4 border-0 shadow-sm">
+    <div class="row g-3 align-items-center">
+      <!-- Search Input -->
+      <div class="col-12 col-md-6 col-lg-7">
+        <div class="tib-search-box">
+          <i class="bi bi-search"></i>
+          <input type="text" id="tibSearchInput" class="form-control tib-search-input bg-light"
+                 placeholder="Search toponyms, notes, commentaries (e.g. Acheloos, Lemnos, 52)..."
+                 autocomplete="off">
+          <button type="button" id="tibSearchClear" class="tib-search-clear d-none" title="Clear Search">
+            &times;
+          </button>
+        </div>
+      </div>
+
+      <!-- Volume Selector Dropdown -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <select id="tibVolumeSelect" class="form-select form-select-lg rounded-pill border-2 fs-6 shadow-none">
+          <option value="all" {{ 'selected' if selected_key == 'all' else '' }}>
+            All Volumes (70,191 Toponyms)
+          </option>
+          {% for v in volumes if v.published %}
+            <option value="{{ v.key }}" {{ 'selected' if selected_key == v.key else '' }}>
+              {{ v.name }}: {{ v.title }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Rows Per Page Selector -->
+      <div class="col-12 col-sm-6 col-md-2 col-lg-2">
+        <select id="tibLimitSelect" class="form-select form-select-lg rounded-pill border-2 fs-6 shadow-none text-center">
+          <option value="25">25 per page</option>
+          <option value="50" selected>50 per page</option>
+          <option value="100">100 per page</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table Container Card -->
+  <div class="card tib-card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="position-relative">
+      <!-- Loading Spinner Indicator -->
+      <div id="tibLoadingSpinner" class="position-absolute top-50 start-50 translate-middle d-none" style="z-index: 5;">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="tib-table mb-0">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Toponym</th>
+              <th style="width: 10%;">Volume</th>
+              <th style="width: 35%;">Pages &amp; Commentaries</th>
+              <th style="width: 22%;">Notes / Cross-references</th>
+              <th style="width: 8%;" class="text-end pe-3">Reader</th>
+            </tr>
+          </thead>
+          <tbody id="tibTableBody">
+            <tr>
+              <td colspan="5" class="text-center py-5 text-muted">
+                <div class="spinner-border spinner-border-sm text-primary me-2"></div>
+                Loading register data...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pagination Footer -->
+    <div class="card-footer bg-white border-0 py-3 d-flex justify-content-center">
+      <nav id="tibPagination" aria-label="Register pagination"></nav>
+    </div>
+  </div>
+
+  {{ license_banner() }}
+</div>
+
+<!-- Modal Overlay for Book Reader -->
+<div class="modal fade tib-reader-modal" id="tibReaderModal" tabindex="-1" aria-labelledby="tibModalReaderTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header bg-dark text-white border-bottom border-secondary border-opacity-25 py-2 px-3">
+        <h5 class="modal-title fs-6 fw-bold d-flex align-items-center gap-2" id="tibModalReaderTitle">
+          <i class="bi bi-book text-secondary"></i>Book Reader
+        </h5>
+        <div class="d-flex align-items-center gap-2">
+          <a href="#" id="tibModalOpenWindowBtn" target="_blank"
+             class="btn btn-sm btn-outline-light rounded-pill px-3" title="Open in dedicated page">
+            <i class="bi bi-box-arrow-up-right me-1"></i>Full Window
+          </a>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="modal-body p-0" id="tibModalReaderContainer" style="height: 82vh;">
+        <!-- Injected dynamically by tib_register.js -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/tib_reader.js', v=ASSETS_VERSION) }}"></script>
+<script src="{{ url_for('static', filename='js/tib_register.js', v=ASSETS_VERSION) }}"></script>
+{% endblock %}

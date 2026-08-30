@@ -41,6 +41,8 @@ def inject_menu() -> dict[str, Any]:
         'to': url_for('frontend')}, {
         'name': 'histgeo',
         'to': url_for('histgeo')}, {
+        'name': 'TIB',
+        'to': url_for('tib_overview')}, {
         'name': _('events'),
         'to': url_for('events')}, {
         'name': _('literature'),

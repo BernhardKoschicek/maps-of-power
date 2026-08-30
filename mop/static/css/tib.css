@@ -1,0 +1,358 @@
+/* ==========================================================================
+   TIB (Tabula Imperii Byzantini) Stylesheet for Maps of Power
+   Adheres to Maps of Power STYLE_GUIDE.md
+   Colors: Primary #246d8b, Secondary #a0c223, Dark #384356, Light #eaedf1
+   ========================================================================== */
+
+/* Glassmorphism Cards */
+.tib-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(36, 109, 139, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tib-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(36, 109, 139, 0.16);
+}
+
+.tib-card-icon {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transition: transform 0.35s ease;
+}
+
+.tib-card:hover .tib-card-icon {
+  transform: scale(1.03);
+}
+
+.tib-icon-container {
+  overflow: hidden;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-color: #384356;
+}
+
+/* Hero Section */
+.tib-hero {
+  background: linear-gradient(135deg, #384356 0%, #246d8b 100%);
+  color: #ffffff;
+  border-radius: 1.25rem;
+  padding: 3.5rem 2rem;
+  box-shadow: 0 12px 36px rgba(36, 109, 139, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.tib-hero::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(160, 194, 35, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Citation Badges */
+.tib-citation-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.55rem;
+  margin: 0.15rem 0.2rem;
+  border-radius: 50rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background-color: #eaedf1;
+  color: #246d8b;
+  border: 1px solid rgba(36, 109, 139, 0.2);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.tib-citation-pill:hover {
+  background-color: #246d8b;
+  color: #ffffff;
+  border-color: #246d8b;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(36, 109, 139, 0.3);
+}
+
+.tib-citation-main {
+  font-weight: 700;
+  background-color: #eef6e2;
+  color: #3b520c;
+  border-color: #a0c223;
+}
+
+.tib-citation-main:hover {
+  background-color: #a0c223;
+  color: #ffffff;
+  border-color: #a0c223;
+}
+
+/* Volume Badges */
+.tib-volume-badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 50rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background-color: rgba(36, 109, 139, 0.12);
+  color: #246d8b;
+  border: 1px solid rgba(36, 109, 139, 0.25);
+  white-space: nowrap;
+}
+
+/* Search Controls */
+.tib-search-box {
+  position: relative;
+}
+
+.tib-search-box .bi-search {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #246d8b;
+  font-size: 1.1rem;
+}
+
+.tib-search-input {
+  padding-left: 3rem !important;
+  padding-right: 2.5rem !important;
+  height: 3.2rem;
+  font-size: 1.05rem;
+  border-radius: 50rem;
+  border: 2px solid rgba(36, 109, 139, 0.25);
+  transition: all 0.25s ease;
+}
+
+.tib-search-input:focus {
+  border-color: #246d8b;
+  box-shadow: 0 0 0 0.25rem rgba(36, 109, 139, 0.2);
+}
+
+.tib-search-clear {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.tib-search-clear:hover {
+  color: #246d8b;
+}
+
+/* Filter Pills */
+.tib-filter-pill {
+  border-radius: 50rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #384356;
+  background-color: #ffffff;
+  border: 1px solid rgba(56, 67, 86, 0.2);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tib-filter-pill:hover,
+.tib-filter-pill.active {
+  background-color: #246d8b;
+  color: #ffffff;
+  border-color: #246d8b;
+  box-shadow: 0 2px 6px rgba(36, 109, 139, 0.25);
+}
+
+/* Modern Table */
+.tib-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.tib-table thead th {
+  background-color: #f8fafc;
+  color: #384356;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.tib-table tbody td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.92rem;
+}
+
+.tib-table tbody tr:hover {
+  background-color: rgba(36, 109, 139, 0.04);
+}
+
+.tib-toponym-name {
+  font-weight: 600;
+  color: #246d8b;
+}
+
+/* Modern Book Reader Interface */
+.tib-reader-modal .modal-dialog {
+  max-width: 96vw;
+  height: 94vh;
+  margin: 2vh auto;
+}
+
+.tib-reader-modal .modal-content {
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #252c38;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tib-reader-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #1f242e;
+  color: #eaedf1;
+  user-select: none;
+}
+
+.tib-reader-toolbar {
+  background: #2b3341;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.6rem 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.tib-reader-viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #2e3746 0%, #1a1f28 100%);
+  cursor: grab;
+}
+
+.tib-reader-viewport:active {
+  cursor: grabbing;
+}
+
+.tib-reader-canvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  transition: transform 0.15s ease-out;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.tib-reader-page {
+  max-height: 80vh;
+  max-width: 46vw;
+  object-fit: contain;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.tib-reader-spread {
+  display: flex;
+  gap: 2px;
+  background-color: #11141a;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.tib-btn-reader {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #eaedf1;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.88rem;
+  transition: all 0.2s ease;
+}
+
+.tib-btn-reader:hover {
+  background-color: #246d8b;
+  color: #ffffff;
+  border-color: #246d8b;
+}
+
+.tib-btn-reader.active {
+  background-color: #a0c223;
+  color: #ffffff;
+  border-color: #a0c223;
+}
+
+/* Page Thumbnail Drawer */
+.tib-thumb-drawer {
+  background-color: #222834;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  height: 90px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  gap: 0.6rem;
+  scrollbar-width: thin;
+  scrollbar-color: #246d8b #1a1f28;
+}
+
+.tib-thumb-item {
+  height: 70px;
+  width: 50px;
+  flex-shrink: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: all 0.2s ease;
+}
+
+.tib-thumb-item:hover,
+.tib-thumb-item.active {
+  opacity: 1;
+  border-color: #a0c223;
+  transform: scale(1.05);
+}
+
+.tib-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

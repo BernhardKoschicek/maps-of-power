@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% from 'macros.html' import license_banner with context %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tib.css', v=ASSETS_VERSION) }}">
+
+<div class="container mt-5 pt-4 mb-5">
+  <!-- TIB Hero Section -->
+  <div class="tib-hero mb-5">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <img src="{{ url_for('static', filename='images/tib/digtib.png', v=ASSETS_VERSION) }}"
+               alt="DigTIB Logo" style="height: 52px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));">
+          <h1 class="display-5 fw-bold mb-0 text-white">Tabula Imperii Byzantini</h1>
+        </div>
+        <p class="lead text-light mb-4 opacity-90">
+          The long-term research project of the Austrian Academy of Sciences (ÖAW) exploring the historical
+          geography, settlements, communications, and monuments of the Byzantine Empire.
+        </p>
+
+        <!-- Quick Search Box -->
+        <form action="{{ url_for('tib_register') }}" method="GET" class="tib-search-box mb-4">
+          <i class="bi bi-search"></i>
+          <input type="text" name="q" class="form-control tib-search-input bg-white text-dark shadow-sm"
+                 placeholder="Search across all 70,000+ toponyms (e.g. Acheloos, Lemnos, Abydos)...">
+        </form>
+
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge bg-white text-dark px-3 py-2 rounded-pill shadow-sm">
+            <i class="bi bi-geo-alt-fill text-primary me-1"></i>{{ total_toponyms|default(70191) }} Toponyms
+          </span>
+          <span class="badge bg-white text-dark px-3 py-2 rounded-pill shadow-sm">
+            <i class="bi bi-journal-bookmark-fill text-primary me-1"></i>18 Volumes
+          </span>
+          <span class="badge bg-white text-dark px-3 py-2 rounded-pill shadow-sm">
+            <i class="bi bi-book-half text-secondary me-1"></i>{{ total_scans|default(9) }} Digital Book Readers
+          </span>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center d-none d-lg-block">
+        <a href="{{ url_for('tib_register', volume_key='all') }}"
+           class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold shadow-sm">
+          <i class="bi bi-table me-2"></i>Open Complete Register
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complete Register Banner Card -->
+  <div class="card tib-card p-4 mb-5 border-0 shadow-sm">
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-3">
+        <div class="bg-primary text-white rounded-circle p-3 d-flex align-items-center justify-content-center"
+             style="width: 56px; height: 56px;">
+          <i class="bi bi-collection-fill fs-3"></i>
+        </div>
+        <div>
+          <h4 class="mb-1 fw-bold text-primary">Complete Toponym Register (TIB 1–15)</h4>
+          <p class="text-muted mb-0 small">
+            Consolidated index of all published volumes with fast diacritic-tolerant search, citations, and reader links.
+          </p>
+        </div>
+      </div>
+      <a href="{{ url_for('tib_register', volume_key='all') }}"
+         class="btn btn-primary rounded-pill px-4 py-2 text-nowrap fw-semibold">
+        <i class="bi bi-search me-2"></i>Browse All {{ total_toponyms|default(70191) }} Entries
+      </a>
+    </div>
+  </div>
+
+  <!-- Section Header -->
+  <div class="d-flex align-items-center justify-content-between mb-4">
+    <div>
+      <h3 class="fw-bold text-dark mb-1">TIB Volumes</h3>
+      <p class="text-muted small mb-0">Browse individual volumes, registers, and digitised book editions.</p>
+    </div>
+  </div>
+
+  <!-- Volume Cards Grid -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+    {% for vol in volumes %}
+      <div class="col">
+        <div class="card h-100 tib-card border-0 d-flex flex-column">
+          <div class="tib-icon-container position-relative">
+            <img src="{{ url_for('static', filename='images/tib/' + vol.key + '_register_icon.jpg', v=ASSETS_VERSION) }}"
+                 alt="{{ vol.name }}" class="tib-card-icon" loading="lazy">
+            <span class="position-absolute top-0 end-0 m-3 badge {{ 'bg-success' if vol.published else 'bg-secondary' }} rounded-pill px-3 py-1 shadow-sm">
+              {{ _('Published') if vol.published else _('In Preparation') }}
+            </span>
+          </div>
+
+          <div class="card-body p-4 d-flex flex-column justify-content-between flex-grow-1">
+            <div>
+              <h5 class="card-title fw-bold text-primary mb-2">{{ vol.title }}</h5>
+              <p class="card-text text-muted small mb-3">
+                <i class="bi bi-person me-1"></i>{{ vol.authors }}
+              </p>
+            </div>
+
+            <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+              <div>
+                {% if vol.published and vol.toponym_count > 0 %}
+                  <span class="badge bg-light text-primary border small">
+                    {{ vol.toponym_count }} {{ _('toponyms') }}
+                  </span>
+                {% else %}
+                  <span class="badge bg-light text-muted border small">
+                    {{ _('forthcoming') }}
+                  </span>
+                {% endif %}
+              </div>
+
+              <div class="d-flex gap-2">
+                {% if vol.published %}
+                  <a href="{{ url_for('tib_register', volume_key=vol.key) }}"
+                     class="btn btn-sm btn-outline-primary rounded-pill px-3" title="{{ _('View Toponym Register') }}">
+                    <i class="bi bi-table me-1"></i>Register
+                  </a>
+                {% endif %}
+
+                {% if vol.has_reader %}
+                  <a href="{{ url_for('tib_reader', volume_key=vol.key) }}"
+                     class="btn btn-sm btn-secondary text-white rounded-pill px-3" title="{{ _('Open Book Reader') }}">
+                    <i class="bi bi-book me-1"></i>Reader
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  {{ license_banner() }}
+</div>
+{% endblock %}

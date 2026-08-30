@@ -23,7 +23,7 @@ babel = Babel(app, locale_selector=get_locale)
 cache = Cache(app)
 
 # pylint: disable=wrong-import-position, import-outside-toplevel
-from mop import data, display, pid, util, views  # noqa: E402, F401
+from mop import data, display, pid, tib_views, util, views  # noqa: E402, F401
 
 ROOT_PATH = Path(__file__).parent
 

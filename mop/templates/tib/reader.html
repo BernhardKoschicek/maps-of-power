@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tib.css', v=ASSETS_VERSION) }}">
+
+<div class="container-fluid px-0" style="height: calc(100vh - 65px);">
+  <div id="fullPageReader" style="height: 100%;"></div>
+</div>
+
+<script src="{{ url_for('static', filename='js/tib_reader.js', v=ASSETS_VERSION) }}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const pages = {{ pages | tojson }};
+    const volume = {{ volume | tojson }};
+    const initialPage = {{ initialPage | default(1) }};
+
+    new TibBookReader('fullPageReader', {
+        volumeKey: volume.key,
+        volumeTitle: volume.title,
+        pages: pages,
+        initialPage: initialPage,
+        isSpread: false
+    });
+});
+</script>
+{% endblock %}
