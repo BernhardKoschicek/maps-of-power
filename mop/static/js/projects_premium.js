@@ -260,6 +260,11 @@ window.initPremiumProjectsPortal = function (projectsData) {
   // ==========================================
   function parseDateString(str) {
     if (!str) return null;
+    if (typeof str === "string" &&
+        (str.toLowerCase().includes("ongoing") ||
+         str.toLowerCase().includes("fortlaufend"))) {
+      return new Date(2099, 11, 31);
+    }
     const parts = str.split(".");
     if (parts.length !== 3) return null;
     return new Date(parts[2], parts[1] - 1, parts[0]);

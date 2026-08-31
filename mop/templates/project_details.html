@@ -648,7 +648,80 @@
               <i class="bi bi-book me-2"></i>{{ _('publications') }}
             </a>
           </h4>
-          {{ create_table(publications, 'publications', 3) }}
+
+          {% set pub_categories = ['Volumes', 'VTIB', 'HistGeo', 'Monographs', 'Articles'] %}
+          {% set ns = namespace(has_subdivided=false) %}
+          {% for p in publications %}
+            {% if p.type in pub_categories %}
+              {% set ns.has_subdivided = true %}
+            {% endif %}
+          {% endfor %}
+
+          {% if ns.has_subdivided %}
+            <!-- Subdivided Publication Tabs: Volumes, VTIB, HistGeo, Monographs, Articles -->
+            <ul class="nav nav-pills justify-content-center mb-4 gap-2 flex-wrap" id="pubPills" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active rounded-pill px-3 py-1.5 fw-semibold border shadow-sm"
+                        id="tab-pub-all" data-bs-toggle="pill" data-bs-target="#content-pub-all"
+                        type="button" role="tab" aria-controls="content-pub-all" aria-selected="true">
+                  {{ _('All') }} <span class="badge bg-secondary text-white ms-1">{{ publications|length }}</span>
+                </button>
+              </li>
+              {% for cat in pub_categories %}
+                {% set cat_items = [] %}
+                {% for p in publications if p.type == cat %}
+                  {% set _ = cat_items.append(p) %}
+                {% endfor %}
+                {% if cat_items|length > 0 %}
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-3 py-1.5 fw-semibold border shadow-sm"
+                            id="tab-pub-{{ cat|lower }}" data-bs-toggle="pill"
+                            data-bs-target="#content-pub-{{ cat|lower }}" type="button" role="tab"
+                            aria-controls="content-pub-{{ cat|lower }}" aria-selected="false">
+                      {{ cat }} <span class="badge bg-secondary text-white ms-1">{{ cat_items|length }}</span>
+                    </button>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+
+            <div class="tab-content" id="pubPillsContent">
+              <div class="tab-pane fade show active" id="content-pub-all" role="tabpanel" aria-labelledby="tab-pub-all">
+                {{ create_table(publications, 'publications_all', 3) }}
+              </div>
+              {% for cat in pub_categories %}
+                {% set cat_items = [] %}
+                {% for p in publications if p.type == cat %}
+                  {% set _ = cat_items.append(p) %}
+                {% endfor %}
+                {% if cat_items|length > 0 %}
+                  <div class="tab-pane fade" id="content-pub-{{ cat|lower }}" role="tabpanel" aria-labelledby="tab-pub-{{ cat|lower }}">
+                    <div class="card bg-light border-0 rounded-4 p-3 mb-4 text-center">
+                      {% if cat == 'Volumes' %}
+                        <h5 class="fw-bold mb-1 text-primary">Tabula Imperii Byzantini (TIB Volumes)</h5>
+                        <p class="text-muted small mb-0">{{ _('The volumes of the series Tabula Imperii Byzantini (TIB) of the Austrian Academy of Sciences are the main scholarly result of the project TIB and have been published since 1976.') }}</p>
+                      {% elif cat == 'VTIB' %}
+                        <h5 class="fw-bold mb-1 text-primary">Veröffentlichungen der Kommission für die Tabula Imperii Byzantini (VTIB)</h5>
+                        <p class="text-muted small mb-0">{{ _('Accompanying series of the Austrian Academy of Sciences published between 1973 and 2006, replaced by the series Veröffentlichungen zur Byzanzforschung.') }}</p>
+                      {% elif cat == 'HistGeo' %}
+                        <h5 class="fw-bold mb-1 text-primary">Studies in Historical Geography and Cultural Heritage (HistGeo)</h5>
+                        <p class="text-muted small mb-0">{{ _('Scholarly series founded by Mihailo St. Popović and edited with Andreas Külzer in order to innovate historical-geographical research in Byzantine Studies.') }}</p>
+                      {% elif cat == 'Monographs' %}
+                        <h5 class="fw-bold mb-1 text-primary">{{ _('Monographs & Edited Volumes') }}</h5>
+                        <p class="text-muted small mb-0">{{ _('Scholarly monographs and edited volumes continuously published on various topics of the Historical Geography of Byzantium.') }}</p>
+                      {% elif cat == 'Articles' %}
+                        <h5 class="fw-bold mb-1 text-primary">{{ _('Articles & Research Papers') }}</h5>
+                        <p class="text-muted small mb-0">{{ _('Scholarly research articles published by project leaders and co-workers in international peer-reviewed journals.') }}</p>
+                      {% endif %}
+                    </div>
+                    {{ create_table(cat_items, 'publications_' + cat|lower, 3) }}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ create_table(publications, 'publications', 3) }}
+          {% endif %}
         {% endif %}
 
         <!-- Presentations -->
@@ -766,6 +839,11 @@
       const today = new Date();
       const parseDateStr = (str) => {
         if (!str) return null;
+        if (typeof str === "string" &&
+            (str.toLowerCase().includes("ongoing") ||
+             str.toLowerCase().includes("fortlaufend"))) {
+          return new Date(2099, 11, 31);
+        }
         const parts = str.split(".");
         return new Date(parts[2], parts[1] - 1, parts[0]);
       };
@@ -818,6 +896,13 @@
 
       window.addEventListener('scroll', updateActiveState);
       updateActiveState(); // Initial call
+
+      // Trigger layout recalculation on publication tabs switch
+      document.querySelectorAll('#pubPills button[data-bs-toggle="pill"]').forEach(tabBtn => {
+        tabBtn.addEventListener('shown.bs.tab', () => {
+          window.dispatchEvent(new Event('resize'));
+        });
+      });
     });
   </script>
 {% endblock %}

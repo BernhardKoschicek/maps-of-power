@@ -207,4 +207,174 @@ event_list = [{
         'description': _('serbian_academy_220223'),
         'attachment': [{
             'path': '',
-            'type': ''}]}]
+            'type': ''}]}, {
+        'id': 'les_ciutats_mediterranies_151222',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2022, 12, 15)}",
+        'who': [team['mpopovic']],
+        'icon': 'lead_seals_2022.jpg',
+        'title': _('Presentation in Barcelona'),
+        'description': _(
+            'Andreas Külzer and Mihailo Popović gave a joint paper entitled '
+            '"Reality and Mirage in the Eastern Mediterranean. The Long Term '
+            'Project Tabula Imperii Byzantini and its Reconstruction Work of '
+            'Late Antique and Medieval Settlements" at the conference '
+            '“Les ciutats mediterrànies. Realitat i miratge” in Barcelona '
+            'on 15 December 2022.'),
+        'attachment': [{
+            'path': '/repository/Prog_Ciutats_Mediterranies_2022.pdf',
+            'type': 'pdf'}]}, {
+        'id': 'tib11_promotion_141122',
+        'type': types['award'],
+        'date': f"{get_dates_formatted(2022, 11, 14)}",
+        'who': [team['mpopovic']],
+        'icon': 'tib11_promotion.jpg',
+        'title': _('Promotion Event for TIB 11'),
+        'description': _(
+            'On Monday, 14 November 2022, the TIB volume "Macedonia, '
+            'Southern Part" (TIB 11) was presented to the public at the '
+            'Austrian Academy of Sciences in Vienna.'),
+        'attachment': [{
+            'path': '/repository/ABF_Buchpraesentation_TIB_11.pdf',
+            'type': 'pdf'}]}, {
+        'id': 'histgeo_leipzig_101122',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2022, 11, 10)}",
+        'who': [team['mpopovic']],
+        'icon': 'histgeo_leipzig_22.jpg',
+        'title': _('Presentation in Leipzig'),
+        'description': _(
+            'Mihailo Popović presented a paper in Leipzig on the historical '
+            'geography of Byzantium and the ongoing research of the TIB on '
+            '10 November 2022.'),
+        'attachment': [{
+            'path': '/repository/Popovic_11_22.pdf',
+            'type': 'pdf'}]}, {
+        'id': 'aieb_roundtable_220822',
+        'type': types['presentation'],
+        'date': '22.08.2022-27.08.2022',
+        'who': [team['mpopovic']],
+        'icon': 'aieb_roundtable_icon.jpg',
+        'title': _(
+            '24th International Congress of Byzantine Studies in '
+            'Venice and Padua'),
+        'description': _(
+            'The AIEB Commission for the Historical Geography and Spatial '
+            'Analysis of Byzantium organised a Round Table entitled '
+            '"Historical Geography of Byzantium in a Digital Age: Chances '
+            'and Risks" at the 24th International Congress of Byzantine '
+            'Studies in Venice and Padua (22–27 August 2022).'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]}, {
+        'id': 'hypotheses_post_150822',
+        'type': types['blog_post'],
+        'date': f"{get_dates_formatted(2022, 8, 15)}",
+        'who': [team['bkoschicek'], team['mpopovic']],
+        'icon': 'blog_post.png',
+        'title': _('Blogpost on "OpenAtlas und historische Geographie"'),
+        'description': _(
+            'The paper "OpenAtlas und historische Geographie: Die Tabula '
+            'Imperii Byzantini (Balkan) im digitalen Zeitalter" by Bernhard '
+            'Koschiček-Krombholz and Mihailo St. Popović was discussed and '
+            'commented in a blogpost on dhc.hypotheses.org.'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]}, {
+        'id': 'tib11_release_260722',
+        'type': types['book_release'],
+        'date': f"{get_dates_formatted(2022, 7, 26)}",
+        'who': [team['mpopovic']],
+        'icon': 'tib11_release.jpg',
+        'title': _('TIB Volume 11, Macedonia, Southern Part Published'),
+        'description': _(
+            'Publication of TIB Volume 11 ("Macedonia, Southern Part") '
+            'written by Peter Soustal with Andreas Pülz and Mihailo St. '
+            'Popović as co-authors.'),
+        'attachment': [{
+            'path': '/repository/TIB_11_macedonia_southern_part.pdf',
+            'type': 'pdf'}]}, {
+        'id': 'imc_leeds_060722',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2022, 7, 6)}",
+        'who': [team['mpopovic']],
+        'icon': 'leeds_22_icon.jpg',
+        'title': _('Presentation at the IMC in Leeds 2022'),
+        'description': _(
+            'During the International Medieval Congress (IMC) in Leeds '
+            'from 4 to 7 July 2022, the team of the TIB Balkans presented '
+            'its research in sessions on historical geography and spatial '
+            'analysis.'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]}, {
+        'id': 'seminar_koeln_230622',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2022, 6, 23)}",
+        'who': [team['bkoschicek'], team['mpopovic']],
+        'icon': 'koeln_icon.jpg',
+        'title': _('Presentation at the University of Cologne'),
+        'description': _(
+            'Bernhard Koschiček-Krombholz and Mihailo St. Popović presented '
+            'a paper on "OpenAtlas und historische Geographie: Die Tabula '
+            'Imperii Byzantini (Balkan) im digitalen Zeitalter" at a Digital '
+            'Humanities colloquium of the University of Cologne.'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]}, {
+        'id': 'lange_nacht_200522',
+        'type': types['science_fair'],
+        'date': f"{get_dates_formatted(2022, 5, 20)}",
+        'who': [team['mpopovic']],
+        'icon': 'lange_nacht_icon.jpg',
+        'title': _('TIB at the Lange Nacht der Forschung 2022'),
+        'description': _(
+            'The Long-Term Project Tabula Imperii Byzantini communicated '
+            'its newest research output to the public at the Austrian '
+            'nationwide Lange Nacht der Forschung 2022 with discovery '
+            'activities and presentations.'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]}, {
+        'id': 'global_eurasia_120522',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2022, 5, 12)}",
+        'who': [team['mpopovic']],
+        'icon': 'global_eurasia_icon.jpg',
+        'title': _(
+            'Presentation at "Global Eurasia – Comparison and Connectivity '
+            'II"'),
+        'description': _(
+            'Mihailo Popović presented a paper on the TIB at the conference '
+            '“Global Eurasia – Comparison and Connectivity II: Agency, '
+            'Networks and Transregional Contexts” at the IMAFO (ÖAW).'),
+        'attachment': [{
+            'path': '',
+            'type': ''}]}, {
+        'id': 'lead_seals_190422',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2022, 4, 19)}",
+        'who': [team['mpopovic']],
+        'icon': 'lead_seals_2022.jpg',
+        'title': _('Congress on Byzantine Thrace: Lead Seals'),
+        'description': _(
+            'The TIB and its researchers took part substantially in the '
+            'conference “Lead Seals in Byzantine Thrace” at the IMAFO of '
+            'the ÖAW on 19 April 2022.'),
+        'attachment': [{
+            'path': '/repository/Lead-Seals-in-Byzantine-Thrace.pdf',
+            'type': 'pdf'}]}, {
+        'id': 'seminar_series_010422',
+        'type': types['presentation'],
+        'date': f"{get_dates_formatted(2022, 4, 1)}",
+        'who': [team['mpopovic']],
+        'icon': 'seminar_series_icon.jpg',
+        'title': _('Lecture on Digital Humanities in Historical Geography'),
+        'description': _(
+            'Mihailo Popović gave an online lecture entitled “On the Use '
+            'and Usefulness of Digital Humanities in the Historical '
+            'Geography of Byzantium” on 1 April 2022 as part of the '
+            'seminar series “The Balkans Between Empires”.'),
+        'attachment': [{
+            'path': '/repository/Seminar-Poster-Popovic.pdf',
+            'type': 'pdf'}]}]

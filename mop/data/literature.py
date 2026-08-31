@@ -1,10 +1,16 @@
+"""Literature and publications database for Maps of Power."""
+
+import json
+from pathlib import Path
+
 from flask_babel import lazy_gettext as _
 
 literatures = [{
     'author': 'Mihailo St. Popović',
-    'title': 'Српске племкиње и монаштво у средњем веку: поређење Јелене Анжујске '
-    'и Маре Бранковић у њиховим односима према бенедиктинцима/фрањевцима '
-    'и светогорским монасима, in: Дванаеста казивања о Светој Гори',
+    'title': 'Српске племкиње и монаштво у средњем веку: '
+    'поређење Јелене Анжујске и Маре Бранковић у њиховим односима '
+    'према бенедиктинцима/фрањевцима и светогорским монасима, in: '
+    'Дванаеста казивања о Светој Гори',
     'locations': [_('Belgrad')],
     'date': '2025',
     'pages': '57-80',
@@ -29,9 +35,9 @@ literatures = [{
 }, {
     'author': 'Mihailo St. Popović, Branka Vranešević,'
     ' Moisés Hernández Cordero, Johannes Tripps,',
-    'title': 'On the Subject of Imperial Dignity: a Contribution to the Study of '
-    'the Crown of King Stefan Uroš III Dečanski in the Monastery of '
-    'Cetinje. Zbornik Matice srpske za likovne umetnosti 52',
+    'title': 'On the Subject of Imperial Dignity: a Contribution to '
+    'the Study of the Crown of King Stefan Uroš III Dečanski in the '
+    'Monastery of Cetinje. Zbornik Matice srpske za likovne umetnosti 52',
     'locations': [_('Novi Sad')],
     'date': '2024',
     'pages': '27-50',
@@ -40,9 +46,9 @@ literatures = [{
     'category': ['holdura']
 }, {
     'author': 'Mihailo St. Popović',
-    'title': 'Byzantium and the Balkans in the Middle Ages through the Looking '
-    'Glass of Historical Geography (Romanian Academy, Institute of '
-    'Archaeology of Iaşi, Florilegium magistrorum historiae '
+    'title': 'Byzantium and the Balkans in the Middle Ages through the '
+    'Looking Glass of Historical Geography (Romanian Academy, Institute '
+    'of Archaeology of Iaşi, Florilegium magistrorum historiae '
     'archaeologiaeque Antiquitatis et Medii Aevi 25). Bucureşti–Brăila '
     '(Editura Academiei Române, Editura Istros a Muzeului Brăilei '
     '„Carol I“)',
@@ -76,10 +82,10 @@ literatures = [{
     'category': ['holdura']
 }, {
     'author': 'Mihailo St. Popović, Dorota Vargová, Branka Vranešević',
-    'title': 'A Combined Approach to the Reconstruction of the “Sacred Landscape” '
-    'of Duklja and Raška in the Times of Stefan Nemanja based on '
-    'Historical Geography, Art and Church History. Zbornik Radova '
-    'Vizantološkog Instituta 60/2',
+    'title': 'A Combined Approach to the Reconstruction of the '
+    '“Sacred Landscape” of Duklja and Raška in the Times of Stefan '
+    'Nemanja based on Historical Geography, Art and Church History. '
+    'Zbornik Radova Vizantološkog Instituta 60/2',
     'locations': [_('Belgrade')],
     'date': '2023',
     'pages': '899-928',
@@ -132,9 +138,9 @@ literatures = [{
     'category': ['holdura']
 }, {
     'author': 'A. Bracanović, M. Breier, M. Hernández Cordero ' + _('etc.'),
-    'title': 'On the Crossroads between East and West: Geocommunicating Medieval '
-    'Sacred Landscapes in Today’s Montenegro – First Project Results. '
-    'DOI: 10.25536/2022q004',
+    'title': 'On the Crossroads between East and West: '
+    'Geocommunicating Medieval Sacred Landscapes in Today’s '
+    'Montenegro – First Project Results. DOI: 10.25536/2022q004',
     'locations': [_('Krems')],
     'date': '2022',
     'pages': '33',
@@ -149,7 +155,8 @@ literatures = [{
     'locations': '',
     'date': '2008',
     'pages': '370-377',
-    'external_link': 'https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A6545',
+    'external_link': 'https://www.dora.lib4ri.ch/wsl/islandora/'
+    'object/wsl%3A6545',
     'download': '',
     'category': ['further']
 }, {
@@ -204,7 +211,8 @@ literatures = [{
             'pages': '157-180, 231-238',
             'external_link': '',
             'download': '',
-            'category': ['further']
+            'category': ['tib'],
+            'type': 'HistGeo'
         }, {
             'author': 'Mihailo St. Popović',
             'title': 'A Race Against Time: The Impact of Contemporary '
@@ -250,3 +258,8 @@ literatures = [{
             'external_link': 'https://doi.org/10.30687/978-88-6969-590-2/008',
             'download': '',
             'category': ['further']}]
+
+_JSON_PATH = Path(__file__).resolve().parent / 'tib_publications.json'
+if _JSON_PATH.exists():
+    with open(_JSON_PATH, encoding='utf-8') as _f:
+        literatures.extend(json.load(_f))

@@ -124,7 +124,8 @@ def literature() -> str:
             'external_link': lit.get('external_link', ''),
             'download': lit.get('download', ''),
             'categories': norm_cats,
-            'citation_text': citation_text}
+            'citation_text': citation_text,
+            'type': lit.get('type', '')}
         processed_literatures.append(processed_lit)
 
     return render_template(

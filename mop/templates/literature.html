@@ -4,6 +4,7 @@
 <style>
     /* Styling variables and specific color codes for projects */
     :root {
+        --color-tib: #1f6f8b;
         --color-idcew: #1e3a8a;
         --color-tarsr: #991b1b;
         --color-holdura: #73734a;
@@ -11,18 +12,22 @@
         --color-default: #4b5563;
     }
     
+    .border-start-tib { border-left: 4px solid var(--color-tib) !important; }
     .border-start-idcew { border-left: 4px solid var(--color-idcew) !important; }
     .border-start-tarsr { border-left: 4px solid var(--color-tarsr) !important; }
     .border-start-holdura { border-left: 4px solid var(--color-holdura) !important; }
     .border-start-further { border-left: 4px solid var(--color-further) !important; }
     .border-start-default { border-left: 4px solid var(--color-default) !important; }
 
+    .bg-tib { background-color: var(--color-tib) !important; }
     .bg-idcew { background-color: var(--color-idcew) !important; }
     .bg-tarsr { background-color: var(--color-tarsr) !important; }
     .bg-holdura { background-color: var(--color-holdura) !important; }
     .bg-further { background-color: var(--color-further) !important; }
 
     /* Custom button styles for projects */
+    .btn-outline-tib { color: var(--color-tib); border-color: var(--color-tib); }
+    .btn-outline-tib:hover, .btn-tib { background-color: var(--color-tib); color: white; border-color: var(--color-tib); }
     .btn-outline-idcew { color: var(--color-idcew); border-color: var(--color-idcew); }
     .btn-outline-idcew:hover, .btn-idcew { background-color: var(--color-idcew); color: white; border-color: var(--color-idcew); }
     .btn-outline-tarsr { color: var(--color-tarsr); border-color: var(--color-tarsr); }
@@ -85,7 +90,7 @@
                 {% endfor %}
                 
                 {# Explicitly list known main projects first if present #}
-                {% for proj in ['idcew', 'tarsr', 'holdura'] %}
+                {% for proj in ['tib', 'idcew', 'tarsr', 'holdura'] %}
                     {% if proj in active_categories %}
                         <a href="#" class="btn btn-sm btn-outline-{{ proj }} rounded-pill filter-pill" data-filter="{{ proj }}">
                             {{ proj | upper }}
@@ -94,7 +99,7 @@
                 {% endfor %}
                 
                 {# Render any other project acronyms #}
-                {% for c in active_categories if c not in ['idcew', 'tarsr', 'holdura', 'further'] %}
+                {% for c in active_categories if c not in ['tib', 'idcew', 'tarsr', 'holdura', 'further'] %}
                     <a href="#" class="btn btn-sm btn-outline-primary rounded-pill filter-pill" data-filter="{{ c }}">
                         {{ c | upper }}
                     </a>
@@ -121,9 +126,25 @@
         </div>
     </div>
 
+    <!-- Publication Type Filter Sub-bar -->
+    <div class="d-flex flex-wrap align-items-center gap-2 mb-4 p-2 bg-light rounded-pill border">
+        <span class="text-muted small ms-3 fw-semibold">
+            <i class="bi bi-tag-fill me-1"></i>{{ _('Publication Type') }}:
+        </span>
+        <a href="#" class="btn btn-xs btn-dark rounded-pill type-filter-pill active" data-type-filter="all">
+            {{ _('All Types') }}
+        </a>
+        {% for t in ['Volumes', 'VTIB', 'HistGeo', 'Monographs', 'Articles'] %}
+            <a href="#" class="btn btn-xs btn-outline-secondary rounded-pill type-filter-pill" data-type-filter="{{ t|lower }}">
+                {{ t }}
+            </a>
+        {% endfor %}
+    </div>
+
     <!-- Vertical Stack of Custom Publication Cards -->
     <div id="literature-stack" class="d-flex flex-column gap-3">
         {% set badge_classes = {
+            'tib': 'bg-tib',
             'idcew': 'bg-idcew',
             'tarsr': 'bg-tarsr',
             'holdura': 'bg-holdura',
@@ -131,6 +152,7 @@
         } %}
         
         {% set border_classes = {
+            'tib': 'border-start-tib',
             'idcew': 'border-start-idcew',
             'tarsr': 'border-start-tarsr',
             'holdura': 'border-start-holdura',
@@ -143,7 +165,8 @@
             
             <div class="card border-0 shadow-sm rounded-3 publication-card {{ border_class }}" 
                  data-project="{{ lit.categories | join(' ') }}" 
-                 data-search="{{ (lit.author + ' ' + lit.title + ' ' + lit.date + ' ' + (lit.locations | join(' '))) | lower }}">
+                 data-type="{{ (lit.type if lit.type else '') | lower }}"
+                 data-search="{{ (lit.author + ' ' + lit.title + ' ' + lit.date + ' ' + (lit.locations | join(' ')) + ' ' + (lit.type if lit.type else '')) | lower }}">
                 <div class="card-body p-4">
                     
                     <!-- Header with Badge, Project Link, and Date -->
@@ -162,6 +185,12 @@
                                         <i class="bi bi-box-arrow-up-right me-1"></i>{{ projects[first_cat].title }}
                                     </a>
                                 {% endif %}
+                            {% endif %}
+
+                            {% if lit.type %}
+                                <span class="badge bg-white text-dark border py-1.5 px-2.5 rounded-pill small fw-semibold">
+                                    <i class="bi bi-bookmark-fill text-primary me-1" style="font-size: 0.72rem;"></i>{{ lit.type }}
+                                </span>
                             {% endif %}
                         </div>
                         <div class="text-muted small">
@@ -229,12 +258,14 @@
     document.addEventListener("DOMContentLoaded", function () {
         const searchInput = document.getElementById("search-input");
         const filterPills = document.querySelectorAll(".filter-pill");
+        const typeFilterPills = document.querySelectorAll(".type-filter-pill");
         const publicationCards = document.querySelectorAll(".publication-card");
         let activeFilter = "all";
+        let activeTypeFilter = "all";
 
         // Main filter & search routine
         function filterList() {
-            const query = searchInput.value.toLowerCase().trim();
+            const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
             publicationCards.forEach(card => {
                 const projectsAttr = card.getAttribute("data-project") || "";
                 const projectsList = projectsAttr.split(" ");
@@ -242,11 +273,15 @@
                 // 1. Project category match
                 const matchesCategory = (activeFilter === "all") || projectsList.includes(activeFilter);
                 
-                // 2. Search query match
+                // 2. Publication type match
+                const cardType = (card.getAttribute("data-type") || "").toLowerCase();
+                const matchesType = (activeTypeFilter === "all") || (cardType === activeTypeFilter);
+
+                // 3. Search query match
                 const searchText = card.getAttribute("data-search") || "";
                 const matchesSearch = searchText.includes(query);
                 
-                if (matchesCategory && matchesSearch) {
+                if (matchesCategory && matchesType && matchesSearch) {
                     card.style.display = "block";
                 } else {
                     card.style.display = "none";
@@ -259,7 +294,7 @@
             searchInput.addEventListener("input", filterList);
         }
 
-        // Pill click filter event listeners
+        // Project pill click filter event listeners
         filterPills.forEach(pill => {
             pill.addEventListener("click", function (e) {
                 e.preventDefault();
@@ -267,17 +302,32 @@
                 // Update active state classes
                 filterPills.forEach(p => {
                     const f = p.getAttribute("data-filter");
-                    const colorClass = ['idcew', 'tarsr', 'holdura', 'further'].includes(f) ? f : 'primary';
+                    const colorClass = ['tib', 'idcew', 'tarsr', 'holdura', 'further'].includes(f) ? f : 'primary';
                     p.classList.remove("active", `btn-${colorClass}`);
                     p.classList.add(`btn-outline-${colorClass}`);
                 });
                 
                 const f = this.getAttribute("data-filter");
-                const colorClass = ['idcew', 'tarsr', 'holdura', 'further'].includes(f) ? f : 'primary';
+                const colorClass = ['tib', 'idcew', 'tarsr', 'holdura', 'further'].includes(f) ? f : 'primary';
                 this.classList.add("active", `btn-${colorClass}`);
                 this.classList.remove(`btn-outline-${colorClass}`);
                 
                 activeFilter = f;
+                filterList();
+            });
+        });
+
+        // Publication type pill click event listeners
+        typeFilterPills.forEach(pill => {
+            pill.addEventListener("click", function (e) {
+                e.preventDefault();
+                typeFilterPills.forEach(p => {
+                    p.classList.remove("active", "btn-dark");
+                    p.classList.add("btn-outline-secondary");
+                });
+                this.classList.add("active", "btn-dark");
+                this.classList.remove("btn-outline-secondary");
+                activeTypeFilter = this.getAttribute("data-type-filter");
                 filterList();
             });
         });
