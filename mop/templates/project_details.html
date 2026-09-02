@@ -206,13 +206,21 @@
           {% endif %}
 
           {% if project.videos %}
-            <div class="row pt-4 justify-content-center g-3">
+            <div class="pt-4">
               {% for video in project.videos %}
-                <div class="col-12 col-md-8 text-center">
-                  <div class="ratio ratio-16x9 rounded-4 overflow-hidden border shadow-sm">
+                {% if '<div class="col-' in video %}
+                  <div class="row justify-content-center align-items-center g-3 mb-4">
                     {{ video | safe }}
                   </div>
-                </div>
+                {% else %}
+                  <div class="row justify-content-center g-3 mb-4">
+                    <div class="col-12 col-md-8 text-center">
+                      <div class="ratio ratio-16x9 rounded-4 overflow-hidden border shadow-sm">
+                        {{ video | safe }}
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
               {% endfor %}
             </div>
           {% endif %}
