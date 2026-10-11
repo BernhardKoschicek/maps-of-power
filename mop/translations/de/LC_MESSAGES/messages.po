@@ -1719,6 +1719,42 @@ msgstr ""
 "bewahren sie für die Zukunft und machen sie der Forschung und "
 "Öffentlichkeit zugänglich (s. u. Erkunden)."
 
+#: mop/data/projects/tib_balkan.py:38
+msgid "tib_balkan_intro_21st_century"
+msgstr ""
+"Im 21. Jahrhundert sind wir Zeugen eines rasanten technischen Fortschritts und einer dynamischen Veränderung unserer Lebenswelten. Die Rückbesinnung der Menschheit auf die Umwelt und das Bewusstsein der Menschen über globale klimatische Veränderungen regen die Frage an, wie unsere Vorfahren im Mittelalter gelebt haben und wie sie ihre Umwelt gestaltet und wahrgenommen haben.\n"
+"Wie waren damalige Landschaften beschaffen? Welche Siedlungen gab es? Wie sahen diese aus? Wurden sie in schriftlichen Quellen (z. B. Urkunden) dokumentiert, und wenn ja, auf welche Weise? Welche Rolle spielten Flüsse, Seen und Gebirge in der Raumwahrnehmung des Mittelalters? Warum wurden Kirchen, Klöster und Burgen an bestimmten Orten errichtet? Wohin führten Straßen und wie waren sie beschaffen? All dies sind Fragen, mit denen sich die historische Geographie befasst."
+
+#: mop/data/projects/tib_balkan.py:39
+msgid "tib_balkan_surveys"
+msgstr ""
+"Bereisungen: Ein nicht wegzudenkender Bestandteil unserer Arbeit in der TIB Balkan sind Bereisungen in jene Gebiete der Balkanhalbinsel, über die wir forschen und schreiben. Unsere Vorbereitungen auf solche Bereisungen fußen auf dem Lesen von spätantiken und mittelalterlichen schriftlichen Quellen sowie der Sekundärliteratur, der Erfassung von mittelalterlichen Ortsnamen (Toponymen) und ihrem Abgleich mit Karten des 19. und 20. Jahrhunderts und der Identifizierung von relevanten Kulturdenkmälern vor Ort (Kirchen, Klöstern, Burgen, etc.). Daraus entstehen weiterführende Fragen, die nur bei der Bereisung im Arbeitsgebiet selbst, oft nur im Gespräch mit der lokalen Bevölkerung, beantwortet werden können. Wenn das Manuskript eines TIB Bandes einen gewissen Umfang erreicht hat und eine große Anzahl von Fragen von uns gesammelt wurde, planen wir die Route unserer Bereisung sehr genau und treten unsere Forschungsaufgabe als Zweierteam an. Vital ist dabei unsere Zusammenarbeit mit den zuständigen Behörden, Forschungseinrichtungen und FachkollegInnen vor Ort."
+
+#: mop/data/projects/tib_balkan.py:40
+msgid "tib_balkan_cartography"
+msgstr ""
+"Kartographie: Die erwähnten Bereisungen helfen uns, genaue Lokalisierungen von Denkmälern zu machen und das Fortbestehen alter Ortsnamen (Toponyme) zu überprüfen. Beide Aspekte lassen sich nicht über frei zugängliche Satellitenaufnahmen erfolgreich verwirklichen. Im ersten Fall verhindert oft der dichte Bewuchs vor Ort eine genaue Lokalisierung aus der Luft, im zweiten Fall kann nur das Gespräch mit der lokalen Bevölkerung Klarheit bringen. Wir nehmen für jedes Denkmal einen GPS Punkt, was uns bei der Erstellung und Bearbeitung sowohl unserer TIB Bände als auch unserer TIB Karte im Maßstab 1 : 800.000 mit der jetzigen Siedlungsstruktur als Grundlage sehr hilft. Dadurch können die LeserInnen unserer Bände die Daten zur mittelalterlichen Besiedlung des jeweiligen Gebietes mit dem jetzigen Siedlungsbild abgleichen und schriftliche Inhalte verorten."
+
+#: mop/data/projects/tib_balkan.py:27
+msgid ""
+"With archaeologist Prof. Dr. Viktor Lilčikj and his Lada Niva on the way to "
+"the site of Bonče, Republic of North Macedonia (2016)"
+msgstr ""
+"Mit dem Archäologen Prof. Dr. Viktor Lilčikj und seiner Lada Niva auf dem Weg "
+"zur Fundstätte Bonče, Republik Nordmazedonien (2016)"
+
+#: mop/data/projects/tib_balkan.py:32
+msgid ""
+"Processing schedule for the volumes of the TIB Balkan (Johannes Koder, "
+"1960s, TIB Archive)"
+msgstr ""
+"Bearbeitungsplan für die Bände der TIB Balkan (Johannes Koder, 1960er Jahre, "
+"TIB Archiv)"
+
+#: mop/templates/project_details.html:166
+msgid "Former Employees"
+msgstr "Ehemalige Mitarbeiter"
+
 #: mop/data/projects/vlachs.py:18 mop/data/projects/vlachs.py:23
 #: mop/data/projects/vlachs.py:28
 msgid "A Sheepflock in the Village of Oxynon, Greece."

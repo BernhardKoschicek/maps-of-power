@@ -31,7 +31,7 @@
             <i class="bi bi-geo-alt-fill text-primary me-1"></i>{{ total_toponyms|default(70191) }} Toponyms
           </span>
           <span class="badge bg-white text-dark px-3 py-2 rounded-pill shadow-sm">
-            <i class="bi bi-journal-bookmark-fill text-primary me-1"></i>18 Volumes
+            <i class="bi bi-journal-bookmark-fill text-primary me-1"></i>{{ volumes|length }} Volumes
           </span>
           <span class="badge bg-white text-dark px-3 py-2 rounded-pill shadow-sm">
             <i class="bi bi-book-half text-secondary me-1"></i>{{ total_scans|default(9) }} Digital Book Readers
@@ -48,7 +48,7 @@
   </div>
 
   <!-- Complete Register Banner Card -->
-  <div class="card tib-card p-4 mb-5 border-0 shadow-sm">
+  <div class="card tib-card p-4 mb-4 border-0 shadow-sm">
     <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
       <div class="d-flex align-items-center gap-3">
         <div class="bg-primary text-white rounded-circle p-3 d-flex align-items-center justify-content-center"
@@ -69,11 +69,33 @@
     </div>
   </div>
 
+  <!-- Research Project TIB Balkan Banner Card -->
+  <div class="card tib-card p-4 mb-5 border-0 shadow-sm" style="background: linear-gradient(135deg, #2b303a 0%, #3f4756 100%); color: white;">
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-3">
+        <div class="bg-warning text-dark rounded-circle p-3 d-flex align-items-center justify-content-center"
+             style="width: 56px; height: 56px;">
+          <i class="bi bi-compass-fill fs-3"></i>
+        </div>
+        <div>
+          <h4 class="mb-1 fw-bold text-white">{{ _('Reverse Engineering of the Tabula Imperii Byzantini Balkans') }}</h4>
+          <p class="text-light opacity-90 mb-0 small">
+            {{ _('Research initiative dedicated to analyzing Byzantine communication routes, settlement patterns, and historical topography across the Balkan peninsula using HGIS and digital methods.') }}
+          </p>
+        </div>
+      </div>
+      <a href="{{ url_for('projects', title='tib_balkan') }}"
+         class="btn btn-warning rounded-pill px-4 py-2 text-nowrap fw-semibold text-dark">
+        <i class="bi bi-arrow-right-circle me-2"></i>{{ _('Explore Project') }}
+      </a>
+    </div>
+  </div>
+
   <!-- Section Header -->
   <div class="d-flex align-items-center justify-content-between mb-4">
     <div>
       <h3 class="fw-bold text-dark mb-1">TIB Volumes</h3>
-      <p class="text-muted small mb-0">Browse individual volumes, registers, and digitised book editions.</p>
+      <p class="text-muted small mb-0">Browse individual volumes, registers, digitised book editions, and volumes in preparation.</p>
     </div>
   </div>
 
@@ -112,6 +134,13 @@
               </div>
 
               <div class="d-flex gap-2">
+                {% if vol.description %}
+                  <button type="button" class="btn btn-sm btn-outline-info rounded-pill px-3"
+                          data-bs-toggle="modal" data-bs-target="#volModal{{ vol.id }}" title="{{ _('Volume Information') }}">
+                    <i class="bi bi-info-circle me-1"></i>{{ _('Details') }}
+                  </button>
+                {% endif %}
+
                 {% if vol.published %}
                   <a href="{{ url_for('tib_register', volume_key=vol.key) }}"
                      class="btn btn-sm btn-outline-primary rounded-pill px-3" title="{{ _('View Toponym Register') }}">
@@ -132,6 +161,43 @@
       </div>
     {% endfor %}
   </div>
+
+  <!-- Volume Details Modals -->
+  {% for vol in volumes if vol.description %}
+    <div class="modal fade" id="volModal{{ vol.id }}" tabindex="-1" aria-labelledby="volModalLabel{{ vol.id }}" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header bg-light">
+            <h5 class="modal-title fw-bold text-primary" id="volModalLabel{{ vol.id }}">
+              <i class="bi bi-book me-2"></i>{{ vol.title }}
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <p class="text-muted small mb-3">
+              <strong>{{ _('Author(s):') }}</strong> {{ vol.authors }}
+            </p>
+            <div class="border-top pt-3">
+              <p class="text-dark" style="line-height: 1.7;">
+                {{ vol.description }}
+              </p>
+            </div>
+            {% if vol.id in [16, 17] %}
+              <div class="alert alert-info d-flex align-items-center justify-content-between mt-4 mb-0 py-2 px-3">
+                <span class="small"><i class="bi bi-compass me-2"></i>{{ _('Part of the TIB Balkans research area.') }}</span>
+                <a href="{{ url_for('projects', title='tib_balkan') }}" class="btn btn-sm btn-primary rounded-pill">
+                  {{ _('TIB Balkan Project') }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+          <div class="modal-footer bg-light py-2">
+            <button type="button" class="btn btn-secondary btn-sm rounded-pill px-3" data-bs-dismiss="modal">{{ _('Close') }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 
   {{ license_banner() }}
 </div>

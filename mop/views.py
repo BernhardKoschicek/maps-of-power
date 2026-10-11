@@ -4,7 +4,7 @@ from typing import Any, cast, Optional
 
 import numpy
 import requests
-from flask import abort, jsonify, render_template, request, session
+from flask import abort, jsonify, render_template, request, session, url_for
 from flask_babel import lazy_gettext as _
 from werkzeug import Response
 from werkzeug.exceptions import HTTPException
@@ -136,8 +136,10 @@ def literature() -> str:
 
 @app.route('/projects')
 @app.route('/projects/<title>')
-def projects(title: str | None = None) -> str:
+def projects(title: str | None = None) -> Response | str:
     if title:
+        if title == 'tib':
+            return redirect(url_for('tib_overview'))
         if title not in project_data:
             abort(404)
         return render_template(
@@ -146,7 +148,8 @@ def projects(title: str | None = None) -> str:
             presentations=get_dict_entries_by_category(title, presentations),
             publications=get_dict_entries_by_category(title, literatures),
             view_classes=view_classes)
-    return render_template('projects.html', projects=project_data)
+    portal_projects = {k: v for k, v in project_data.items() if k != 'tib'}
+    return render_template('projects.html', projects=portal_projects)
 
 
 @app.route('/projects')

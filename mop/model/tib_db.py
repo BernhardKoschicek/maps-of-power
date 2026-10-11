@@ -105,15 +105,48 @@ VOLUMES_INFO: list[dict[str, Any]] = [
     {'id': 16, 'key': 'tib16', 'name': 'TIB 16',
      'title': 'TIB 16 Macedonia, Northern Part',
      'authors': 'Mihailo Popović',
-     'published': False, 'has_reader': False, 'pages': 0},
+     'published': False, 'has_reader': False, 'pages': 0,
+     'description': (
+         'The volume 16 of the TIB entitled "Macedonia, Northern Part" '
+         'comprises the Early Byzantine province of Macedonia Secunda and '
+         'parts of the provinces Macedonia Prima, Dardania, Epirus Nova, '
+         'Praevalitana and Dacia Mediterranea. It is closely connected to the '
+         'volume on "Macedonia, Southern Part" (TIB 11, Peter Soustal). Since '
+         'the historical area of Macedonia is today divided between Greece, '
+         'the Republic of North Macedonia and Bulgaria, the volume "Macedonia, '
+         'Northern Part" (TIB 16) covers the whole territory of North '
+         'Macedonia and two districts of Bulgaria (namely Kjustendil and '
+         'Blagoevgrad). The volume on "Macedonia, Northern Part" thus bridges '
+         'the gap between the volumes TIB 6 "Thrace" and TIB 11 "Macedonia, '
+         'Southern Part". The research for this volume is based on written '
+         'sources (mainly in Greek, Latin, Old Slavonic and Ottoman), '
+         'monuments, archaeological reports and a vast variety of toponyms, as '
+         'well as extensive secondary literature, mostly in the South Slavic '
+         'languages. Research trips to the area are regularly conducted.')},
     {'id': 17, 'key': 'tib17', 'name': 'TIB 17',
      'title': 'TIB 17 Nea Epeiros and Praevalis',
      'authors': 'Andreas Külzer',
-     'published': False, 'has_reader': False, 'pages': 0},
-    {'id': 18, 'key': 'tib18', 'name': 'TIB 18',
-     'title': 'TIB 18 Caria',
-     'authors': 'Friedrich Hild',
-     'published': False, 'has_reader': False, 'pages': 0}]
+     'published': False, 'has_reader': False, 'pages': 0,
+     'description': (
+         'The volume 17 of the TIB entitled "Nea Epeiros and Praevalis" '
+         'comprises the Early Byzantine provinces of the same name. It is a '
+         'systematic continuation of the scholarly endeavour in accordance '
+         'with the excellently evaluated working plan of the Long-Term-Project '
+         'TIB of the Austrian Academy of Sciences towards the Adriatic Sea and, '
+         'thus, closing the gap between the volumes TIB 16 "Macedonia, '
+         'Northern Part" and TIB 3 "Nikopolis and Kephallēnia". The volume '
+         '"Nea Epeiros and Praevalis" covers the whole territory of today’s '
+         'Montenegro, the northern part of Albania and the district of Raška '
+         '(Novi Pazar) in Serbia. The research for this volume is based on '
+         'written sources (mainly in Greek, Latin, Old Slavonic and Ottoman), '
+         'monuments, archaeological reports and a vast variety of toponyms, as '
+         'well as extensive secondary literature, mostly in the South Slavic '
+         'languages. A special emphasis is put on the Cultural Heritage in the '
+         'area of research and especially on Austro-Hungarian archival '
+         'material on the region kept in the Austrian State Archives. Research '
+         'trips to the area are regularly conducted, during which '
+         'applications deriving from geoinformatics (e.g. Historical '
+         'Geographic Information Systems / HGIS) are used.')}]
 
 
 def get_db_connection() -> sqlite3.Connection:

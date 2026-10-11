@@ -1662,6 +1662,42 @@ msgstr ""
 "the future and making it accessible to researchers and the public (see "
 "Explore below)."
 
+#: mop/data/projects/tib_balkan.py:38
+msgid "tib_balkan_intro_21st_century"
+msgstr ""
+"In the 21st century, we are witnessing rapid technological progress and a dynamic change in our living environments. Humanity's reflection on the environment and awareness of global climatic changes stimulate the question of how our ancestors lived in the Middle Ages and how they shaped and perceived their environment.\n"
+"What were the landscapes like at that time? What settlements were there? What did they look like? Were they documented in written sources (e.g. charters), and if so, in what way? What role did rivers, lakes and mountains play in the perception of space in the Middle Ages? Why were churches, monasteries and castles built in certain places? Where did roads lead to and what were they like? These are all questions that historical geography deals with."
+
+#: mop/data/projects/tib_balkan.py:39
+msgid "tib_balkan_surveys"
+msgstr ""
+"Surveys: An indispensable part of our work at the TIB Balkan are the trips to the areas of the Balkan Peninsula on which we research and write. Our preparations for such trips are based on the reading of late antique and medieval written sources as well as secondary literature, the recording of medieval place names (toponyms) and their comparison with maps of the 19th and 20th centuries, and the identification of relevant cultural monuments on site (churches, monasteries, castles, etc.). This leads to further questions, which can only be answered during the travel in the working area itself, often only in conversation with the local population. When the manuscript of a TIB volume has reached a certain size and a large number of questions have been collected by us, we plan the route of our tour very precisely and start our research task as a team of two. Vital in this process is our cooperation with the relevant authorities, research institutions and professional colleagues on site."
+
+#: mop/data/projects/tib_balkan.py:40
+msgid "tib_balkan_cartography"
+msgstr ""
+"Cartography: The mentioned travels help us to make exact localizations of monuments and to check the persistence of old place names (toponyms). Both aspects cannot be successfully realized by means of freely accessible satellite images. In the first case, dense vegetation on site often prevents accurate localization from the air; in the second case, only conversation with the local population can provide clarity. We take a GPS point for each monument, which helps us a lot in creating and editing both our TIB volumes and our TIB map at a scale of 1 : 800,000 with the present settlement structure as a basis. This allows the readers of our volumes to match the data on the medieval settlement of the respective area with the present settlement pattern and to locate written content."
+
+#: mop/data/projects/tib_balkan.py:27
+msgid ""
+"With archaeologist Prof. Dr. Viktor Lilčikj and his Lada Niva on the way to "
+"the site of Bonče, Republic of North Macedonia (2016)"
+msgstr ""
+"With archaeologist Prof. Dr. Viktor Lilčikj and his Lada Niva on the way to "
+"the site of Bonče, Republic of North Macedonia (2016)"
+
+#: mop/data/projects/tib_balkan.py:32
+msgid ""
+"Processing schedule for the volumes of the TIB Balkan (Johannes Koder, "
+"1960s, TIB Archive)"
+msgstr ""
+"Processing schedule for the volumes of the TIB Balkan (Johannes Koder, "
+"1960s, TIB Archive)"
+
+#: mop/templates/project_details.html:166
+msgid "Former Employees"
+msgstr "Former Employees"
+
 #: mop/data/projects/vlachs.py:18 mop/data/projects/vlachs.py:23
 #: mop/data/projects/vlachs.py:28
 msgid "A Sheepflock in the Village of Oxynon, Greece."

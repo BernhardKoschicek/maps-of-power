@@ -73,12 +73,15 @@ def test_citation_commentary_formatting():
 def test_get_volume_metadata():
     """Test volume metadata structure and page counts."""
     volumes = get_volume_metadata()
-    assert len(volumes) == 18
+    assert len(volumes) == 17
+    assert not any(v['key'] == 'tib18' for v in volumes)
     tib1 = next(v for v in volumes if v['key'] == 'tib1')
     assert tib1['published'] is True
     assert tib1['has_reader'] is True
     assert tib1['pages'] == 315
     assert tib1['toponym_count'] == 2209
+    tib16 = next(v for v in volumes if v['key'] == 'tib16')
+    assert 'Macedonia, Northern Part' in tib16['description']
 
 
 def test_get_reader_pages():
@@ -166,21 +169,20 @@ def test_tib_project_definition(client):
     assert 'Friedrich Hild' in tib['employees']
     assert 'Despoina Ariantzi' in tib['employees']
 
-    # Test /projects overview includes tib
+    # Test /projects overview includes tib_balkan and excludes overarching tib hub
     res_projects = client.get('/projects')
     assert res_projects.status_code == 200
-    assert b'data-acronym="tib"' in res_projects.data
+    assert b'data-acronym="tib_balkan"' in res_projects.data
+    assert b'data-acronym="tib"' not in res_projects.data
 
-    # Test /projects/tib detail page
-    res_details = client.get('/projects/tib')
-    assert res_details.status_code == 200
-    assert b'Tabula Imperii Byzantini (TIB)' in res_details.data
-    assert b'Hellas und Thessalia' in res_details.data
-    assert b'tab-pub-volumes' in res_details.data
-    assert b'tab-pub-vtib' in res_details.data
-    assert b'tab-pub-histgeo' in res_details.data
-    assert b'tab-pub-monographs' in res_details.data
-    assert b'tab-pub-articles' in res_details.data
+    # Test /projects/tib redirects to /tib overview hub
+    res_redirect = client.get('/projects/tib')
+    assert res_redirect.status_code == 302
+    assert res_redirect.headers['Location'] == '/tib'
+
+    res_followed = client.get('/projects/tib', follow_redirects=True)
+    assert res_followed.status_code == 200
+    assert b'Tabula Imperii Byzantini' in res_followed.data
 
 
 def test_tib_events_migrated(client):
@@ -235,3 +237,25 @@ def test_tib_publications_migrated(client):
     assert b'data-type-filter="volumes"' in res.data
     assert b'data-type-filter="vtib"' in res.data
     assert b'data-type-filter="histgeo"' in res.data
+
+
+def test_tib_navbar_and_balkan_project(client):
+    """Test that navbar has TIB next to Literature and TIB Balkan project is linked."""
+    res_tib = client.get('/tib')
+    assert res_tib.status_code == 200
+    assert b'Reverse Engineering of the Tabula Imperii Byzantini Balkans' in res_tib.data
+    assert b'/projects/tib_balkan' in res_tib.data
+    assert b'TIB 16 Macedonia, Northern Part' in res_tib.data
+    assert b'TIB 17 Nea Epeiros and Praevalis' in res_tib.data
+    # Verify TIB 18 is not on page
+    assert b'TIB 18 Caria' not in res_tib.data
+
+    res_proj = client.get('/projects/tib_balkan')
+    assert res_proj.status_code == 200
+    assert b'Mihailo Popov' in res_proj.data
+    assert b'Bernhard' in res_proj.data
+    assert b'Elisabeth Charlotte Beer' in res_proj.data
+    assert b'Dorota' in res_proj.data
+    assert b'lada_niva_bonce.jpg' in res_proj.data
+    assert b'balkan_cartographie_koder.png' in res_proj.data
+
