@@ -16,13 +16,53 @@ def get_table_dates_formatted(year: int, month: int, day: int) -> str:
     return datetime(year, month, day).strftime('%Y/%m/%d')
 
 
-def youtube_iframe(link_: str) -> str:
-    return '<iframe width="560" height="315" ' \
-           f'src="{link_}" ' \
-           'title="YouTube video  player" ' \
-           'allow="accelerometer; autoplay; clipboard-write;  ' \
-           'encrypted-media; gyroscope; picture-in-picture" ' \
-           'allowfullscreen></iframe>'
+def youtube_iframe(
+        link_: str,
+        left_logo: Optional[str] = None,
+        right_logo: Optional[str] = None) -> str:
+    if not left_logo and not right_logo:
+        return '<div class="col-12 col-md-8 text-center">' \
+               '<div class="ratio ratio-16x9 rounded-4 overflow-hidden border shadow-sm">' \
+               f'<iframe width="560" height="315" src="{link_}" ' \
+               'title="YouTube video player" ' \
+               'allow="accelerometer; autoplay; clipboard-write; ' \
+               'encrypted-media; gyroscope; picture-in-picture" ' \
+               'allowfullscreen></iframe>' \
+               '</div>' \
+               '</div>'
+
+    left_col = (
+        '<div class="col-6 col-md-2 order-2 order-md-1 d-flex align-items-center justify-content-center p-2">'
+        f'<img src="{left_logo}" class="img-fluid video-image-size" alt="">'
+        '</div>'
+    ) if left_logo else '<div class="col-md-2 d-none d-md-block"></div>'
+
+    video_col = (
+        '<div class="col-12 col-md-8 order-1 order-md-2 text-center">'
+        '<div class="ratio ratio-16x9 rounded-4 overflow-hidden border shadow-sm">'
+        f'<iframe width="560" height="315" src="{link_}" '
+        'title="YouTube video player" '
+        'allow="accelerometer; autoplay; clipboard-write; '
+        'encrypted-media; gyroscope; picture-in-picture" '
+        'allowfullscreen></iframe>'
+        '</div>'
+        '</div>'
+    )
+
+    right_col = (
+        '<div class="col-6 col-md-2 order-3 order-md-3 d-flex align-items-center justify-content-center p-2">'
+        f'<img src="{right_logo}" class="img-fluid video-image-size" alt="">'
+        '</div>'
+    ) if right_logo else '<div class="col-md-2 d-none d-md-block"></div>'
+
+    return f'{left_col}\n{video_col}\n{right_col}'
+
+
+def youtube_iframe_with_logos(
+        link_: str,
+        left_logo: Optional[str] = None,
+        right_logo: Optional[str] = None) -> str:
+    return youtube_iframe(link_, left_logo=left_logo, right_logo=right_logo)
 
 
 def get_image_frame(filepath: str) -> str:

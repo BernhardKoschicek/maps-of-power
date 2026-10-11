@@ -143,3 +143,33 @@ def test_project_api_routing() -> None:
     # None or invalid project acronyms should default to MOP
     assert get_project_api_path(None) == 'https://openatlas.maps-of-power.at/api/'
     assert get_project_api_path('invalid') == 'https://openatlas.maps-of-power.at/api/'
+
+
+def test_youtube_iframe_helpers(client: FlaskClient) -> None:
+    from mop.util import youtube_iframe, youtube_iframe_with_logos
+
+    # Simple iframe without logos
+    simple_html = youtube_iframe('https://www.youtube.com/embed/test')
+    assert 'iframe' in simple_html
+    assert 'https://www.youtube.com/embed/test' in simple_html
+    assert 'col-md-8' in simple_html
+
+    # Iframe with single and both logos
+    with_both = youtube_iframe_with_logos(
+        'https://www.youtube.com/embed/test',
+        left_logo='/static/images/left.png',
+        right_logo='/static/images/right.png',
+    )
+    assert '/static/images/left.png' in with_both
+    assert '/static/images/right.png' in with_both
+    assert 'order-md-1' in with_both
+    assert 'order-md-2' in with_both
+    assert 'order-md-3' in with_both
+
+    # Test holdura project page rendering
+    response = client.get('/projects/holdura')
+    assert response.status_code == 200
+    assert b'apox_schwarz.png' in response.data
+    assert b'ram_schwarz.png' in response.data
+    assert b'NV4TT4QnFNI' in response.data
+

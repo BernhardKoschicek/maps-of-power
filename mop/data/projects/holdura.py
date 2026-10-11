@@ -1,7 +1,12 @@
 from flask_babel import lazy_gettext as _
 
 from mop.data.institutes import institutes
-from mop.util import get_dates_formatted, get_image_frame, youtube_iframe
+from mop.util import (
+    get_dates_formatted,
+    get_image_frame,
+    youtube_iframe,
+    youtube_iframe_with_logos,
+)
 
 results = {
     'text': [_('holdura_result_text_1'),
@@ -77,8 +82,9 @@ project_holdura = {
     'icon': 'holdura_icon.jpg',
     'images': images,
     'videos': [
-        get_image_frame('/static/images/projects/holdura/apox_schwarz.png'),
-        youtube_iframe('https://www.youtube-nocookie.com/embed/NV4TT4QnFNI'),
-        get_image_frame('/static/images/projects/holdura/ram_schwarz.png')],
+        youtube_iframe_with_logos(
+            'https://www.youtube-nocookie.com/embed/NV4TT4QnFNI',
+            left_logo='/static/images/projects/holdura/apox_schwarz.png',
+            right_logo='/static/images/projects/holdura/ram_schwarz.png')],
     'oaID': '117730',
     'api': 'mop', }

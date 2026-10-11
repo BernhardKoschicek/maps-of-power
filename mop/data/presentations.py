@@ -3,6 +3,19 @@ from flask_babel import lazy_gettext as _
 from mop.util import get_table_dates_formatted
 
 presentations = [{
+    'presenter': 'Mihailo Popović',
+    'title': 'Maria Candia – the Icon of the Holy Mother of God from Crete '
+    'and its Veneration in the St. Michael’s Church in Vienna',
+    'conference': 'Round Table: Central Europe Under the Wings of the '
+    'Double–Headed Eagle: Miraculous Images of the Virgin Mary in '
+    'Churches and Monasteries beyond Byzantium, 25th International '
+    'Congress of Byzantine Studies, Byzantium Beyond Byzantium',
+    'location': [_('Vienna')],
+    'date': get_table_dates_formatted(2026, 8, 28),
+    'external_link': '',
+    'download': '',
+    'category': ['rhr']
+}, {
     'presenter': 'Marija Đokić Petrović, Mihailo Popović',
     'title': 'KI-gestützte Analyse österreichischer Archivmaterialien: '
     'Das Beispiel Schloss Ebreichsdorf (14.-17. Jahrhundert)',
