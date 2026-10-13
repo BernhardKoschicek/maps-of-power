@@ -14,7 +14,7 @@
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License" />
   </a>
-  <img src="https://img.shields.io/badge/python-3.10%20%7C%203.13-blue.svg?style=flat-square" alt="Python Versions" />
+  <img src="https://img.shields.io/badge/python-3.13+-blue.svg?style=flat-square" alt="Python Versions" />
 </p>
 
 ---
@@ -43,13 +43,21 @@ The successfully completed cluster project **["Digitising Patterns of Power (DPP
 ### 📋 Prerequisites
 
 Ensure you have the following installed:
-*   [Python 3.10+](https://www.python.org/downloads/)
+*   [Python 3.13+](https://www.python.org/downloads/)
+*   [uv](https://docs.astral.sh/uv/) (Astral's fast Python package and project manager)
 *   [Node.js 18+ and npm](https://nodejs.org/)
-*   ImageMagick (for `libmagickwand-dev`)
+*   [Redis](https://redis.io/) (used for caching via Flask-Caching)
+*   ImageMagick (for `libmagickwand-dev` C-bindings)
 
-On Debian/Ubuntu systems, install system-level requirements:
+On Debian/Ubuntu systems, install system-level packages:
 ```bash
-sudo apt install libmagickwand-dev python3 python3-venv nodejs npm
+sudo apt update
+sudo apt install libmagickwand-dev redis-server python3 nodejs npm
+```
+
+Install `uv` (if not already installed):
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### 📦 Setup & Dependency Management
@@ -61,49 +69,70 @@ sudo apt install libmagickwand-dev python3 python3-venv nodejs npm
     ```
 
 2.  **Deterministic Python Setup (using `uv`)**
-    This project uses `uv` for modern, deterministic dependency management:
+    Install all dependencies into a virtual environment using `uv` (targets Python 3.13 specified in `.python-version`):
     ```bash
-    # Pin Python version and sync all virtualenv dependencies
-    uv python pin 3.10
     uv sync
     ```
 
-3.  **Frontend Setup**
+3.  **Local Instance Configuration**
+    Create your instance configuration file from the provided example template:
+    ```bash
+    cp instance/example_production.py instance/production.py
+    ```
+    Adjust settings in `instance/production.py` if needed (e.g., API endpoints or Redis cache URL).
+
+4.  **Frontend Setup**
+    Install frontend dependencies via npm:
     ```bash
     cd mop/static
     npm install
     cd ../..
     ```
+    *Note: Frontend assets are served directly from `mop/static/node_modules/` by Flask; no separate compilation or build step is required.*
 
 ---
 
 ## 🏃 Running the Application
 
-Start the Flask backend and the development assets concurrently:
+1.  **Ensure Redis is running** (for caching):
+    ```bash
+    sudo systemctl status redis-server || sudo systemctl start redis-server
+    ```
 
-```bash
-# Start Flask Backend (in the root directory)
-uv run python runserver.py
-
-# Run Frontend Assets (in mop/static directory)
-cd mop/static
-npm run dev
-```
+2.  **Start the Flask Backend**:
+    ```bash
+    uv run python runserver.py
+    ```
+    The application will be accessible at [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
 
 ---
 
-## 🧪 Tests & Security
+## 🧪 Tests & Quality
 
-###  pytest & Code Coverage
-We maintain an extremely high testing standard (**96.4%+** code coverage). Run the test suite and output a detailed coverage report locally:
+### 🧪 pytest & Code Coverage
+We maintain a high testing standard (**93%+** code coverage). Run the test suite and output a detailed coverage report locally:
 ```bash
 uv run pytest --cov=. --cov-report=term-missing
 ```
 
 ### 🔒 Security Audits
-We run automated SAST scans on every single push. Run code vulnerability checks locally:
+Run SAST vulnerability checks with Bandit (excluding local virtualenv and test fixtures):
 ```bash
-uvx bandit -r . -ll -x .venv,tests
+uvx bandit -r . -ll -x ./.venv,./tests
+```
+
+Run dependency vulnerability scans (CVE audits):
+```bash
+uv export --all-groups --output-file requirements.txt
+uvx pip-audit -r requirements.txt --disable-pip
+rm -f requirements.txt
+```
+
+### 🔍 Linting & Type Checking
+Run static analysis and type checks using configured tools:
+```bash
+uv run mypy mop scripts runserver.py
+uv run pylint mop
 ```
 
 ---
@@ -112,18 +141,23 @@ uvx bandit -r . -ll -x .venv,tests
 
 ```
 maps-of-power/
+├── badges/             # Dynamic coverage badge SVGs
 ├── .github/
-│   ├── badges/         # Dynamic coverage SVGs
-│   └── workflows/      # ci-security.yml workflow definitions
-├── mop/                # Core application directory
-│   ├── static/         # Frontend static assets (JS/CSS)
+│   └── workflows/      # CI & security pipeline workflows
+├── instance/           # Instance configuration (production.py, example configs)
+├── mop/                # Core application package
+│   ├── data/           # Structured data, projects, and narratives
+│   ├── model/          # Data models and OpenAtlas API integration
+│   ├── static/         # Frontend static assets and node_modules
 │   ├── templates/      # Jinja2 Flask templates
 │   └── ...
-├── api/                # RESTful API endpoints
+├── api/                # OpenAPI specification (openapi.json)
+├── scripts/            # CLI utilities and database build scripts
 ├── tests/              # Pytest integration & unit test suites
 ├── pyproject.toml      # Dependency & project configurations
 ├── uv.lock             # Deterministic dependency lockfile
-└── README.md           # This document
+├── .python-version     # Target Python version (3.13)
+└── README.md           # Project documentation
 ```
 
 ## 📄 License
