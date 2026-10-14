@@ -3,9 +3,17 @@
 {% block content %}
 
   <section class="hero-section">
-    <iframe class="yt-background d-none d-lg-block" allow="autoplay" loading="lazy"
-            src="https://www.youtube-nocookie.com/embed/xF5oxko1SWg?autoplay=1&mute=1&controls=0&disablekb=1&loop=1&playlist=xF5oxko1SWg&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&fs=0">
-    </iframe>
+    {% if has_local_hero_video %}
+      <video class="yt-background d-none d-lg-block" autoplay muted loop playsinline preload="auto"
+             poster="{{ url_for('static', filename='images/hero_poster.jpg', v=ASSETS_VERSION) }}"
+             style="object-fit: cover;">
+        <source src="{{ url_for('main.serve_media', filename='videos/hero.mp4') }}" type="video/mp4">
+      </video>
+    {% else %}
+      <iframe class="yt-background d-none d-lg-block" allow="autoplay" loading="lazy"
+              src="https://www.youtube-nocookie.com/embed/xF5oxko1SWg?autoplay=1&mute=1&controls=0&disablekb=1&loop=1&playlist=xF5oxko1SWg&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&fs=0">
+      </iframe>
+    {% endif %}
     <div class="overlay">
       {% include 'navbar.html' %}
     </div>
@@ -81,9 +89,13 @@
   </section>
   <script>
       if (window.innerWidth < 992) {
-          const yt = document.querySelector('.yt-background');
-          if (yt) {
-              yt.removeAttribute('src');
+          const heroMedia = document.querySelector('.yt-background');
+          if (heroMedia) {
+              if (heroMedia.tagName === 'VIDEO') {
+                  heroMedia.pause();
+              } else {
+                  heroMedia.removeAttribute('src');
+              }
           }
       }
       window.addEventListener('load', function () {

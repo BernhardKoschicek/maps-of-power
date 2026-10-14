@@ -44,10 +44,12 @@ def get_project_api_path(project_acronym: str | None) -> str:
 
 @main_bp.route('/')
 def about() -> str:
+    has_video = (_get_media_folder() / 'videos' / 'hero.mp4').exists()
     return render_template(
         'about.html',
         category_images=image_gallery(category_images),
-        events=event_list)
+        events=event_list,
+        has_local_hero_video=has_video)
 
 
 @main_bp.route('/events')
@@ -378,6 +380,11 @@ def serve_legacy_books(filename: str) -> Response:
 @main_bp.route('/static/repository/<path:filename>')
 def serve_legacy_repository(filename: str) -> Response:
     return send_from_directory(_get_media_folder() / 'repository', filename)
+
+
+@main_bp.route('/static/videos/<path:filename>')
+def serve_legacy_videos(filename: str) -> Response:
+    return send_from_directory(_get_media_folder() / 'videos', filename)
 
 
 @explore_bp.route('/api/network/<int:id_>')

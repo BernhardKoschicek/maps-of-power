@@ -7,6 +7,7 @@ mkdir -p "${STORAGE}/data" \
          "${STORAGE}/media/images" \
          "${STORAGE}/media/thumbnails" \
          "${STORAGE}/media/books" \
+         "${STORAGE}/media/videos" \
          "${STORAGE}/media/repository"
 
 exec "$@"

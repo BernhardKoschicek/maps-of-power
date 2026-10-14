@@ -44,6 +44,7 @@ RUN mkdir -p /app/storage/data \
              /app/storage/media/images \
              /app/storage/media/thumbnails \
              /app/storage/media/books \
+             /app/storage/media/videos \
              /app/storage/media/repository && \
     chown -R appuser:appuser /app/storage && \
     chmod +x /app/entrypoint.sh

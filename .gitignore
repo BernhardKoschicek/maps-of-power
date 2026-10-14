@@ -69,6 +69,7 @@ db.sqlite3-journal
 *.7z
 storage/media/books/
 storage/media/thumbnails/
+storage/media/videos/
 
 # Flask stuff:
 instance/*
