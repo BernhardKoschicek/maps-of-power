@@ -67,7 +67,7 @@ db.sqlite3-journal
 *.sql.gz
 *.sql.7z
 *.7z
-mop/static/repository/books/
+storage/media/books/
 
 # Flask stuff:
 instance/*

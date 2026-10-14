@@ -4,8 +4,8 @@ from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
-source_folder = ROOT_DIR / "mop/static/images/projects"
-target_folder = ROOT_DIR / "mop/static/thumbnails"
+source_folder = ROOT_DIR / "storage/media/images/projects"
+target_folder = ROOT_DIR / "storage/media/thumbnails"
 
 THUMBNAIL_WIDTH = 400
 THUMBNAIL_HEIGHT = 400

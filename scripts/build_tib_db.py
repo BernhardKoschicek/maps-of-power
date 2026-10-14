@@ -309,6 +309,8 @@ def build_database(
 
 
 if __name__ == '__main__':
+    from pathlib import Path
+    root_dir = Path(__file__).resolve().parent.parent
     SOURCE_DIR = '/home/bkoschicek/www/tib/tib/data/register'
-    TARGET_DB = '/home/bkoschicek/www/maps-of-power/mop/data/tib_register.db'
+    TARGET_DB = str(root_dir / 'storage' / 'data' / 'tib_register.db')
     build_database(SOURCE_DIR, TARGET_DB)

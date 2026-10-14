@@ -1,11 +1,12 @@
 import json
+from pathlib import Path
 import re
 from typing import Any, cast, Optional
 
 import requests
 from flask import (
-    Blueprint, abort, current_app, jsonify, render_template, request, session,
-    url_for)
+    Blueprint, abort, current_app, jsonify, render_template, request,
+    send_from_directory, session, url_for)
 from flask_babel import lazy_gettext as _
 from werkzeug import Response
 from werkzeug.exceptions import HTTPException
@@ -329,6 +330,42 @@ def iiif_viewer() -> str:
 @main_bp.route('/frontend')
 def frontend() -> Response:
     return redirect("https://atlas.maps-of-power.at/")
+
+
+DEFAULT_MEDIA_PATH = (
+    Path(__file__).resolve().parent.parent / 'storage' / 'media')
+
+
+def _get_media_folder() -> Path:
+    configured = get_app_config('MEDIA_FOLDER', None)
+    if configured:
+        return Path(configured)
+    return DEFAULT_MEDIA_PATH
+
+
+@main_bp.route('/media/<path:filename>')
+def serve_media(filename: str) -> Response:
+    return send_from_directory(_get_media_folder(), filename)
+
+
+@main_bp.route('/static/images/<path:filename>')
+def serve_legacy_images(filename: str) -> Response:
+    return send_from_directory(_get_media_folder() / 'images', filename)
+
+
+@main_bp.route('/static/thumbnails/<path:filename>')
+def serve_legacy_thumbnails(filename: str) -> Response:
+    return send_from_directory(_get_media_folder() / 'thumbnails', filename)
+
+
+@main_bp.route('/static/repository/books/<path:filename>')
+def serve_legacy_books(filename: str) -> Response:
+    return send_from_directory(_get_media_folder() / 'books', filename)
+
+
+@main_bp.route('/static/repository/<path:filename>')
+def serve_legacy_repository(filename: str) -> Response:
+    return send_from_directory(_get_media_folder() / 'repository', filename)
 
 
 @explore_bp.route('/api/network/<int:id_>')

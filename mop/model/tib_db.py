@@ -12,8 +12,19 @@ import sqlite3
 from typing import Any
 import unicodedata
 
-DB_PATH = (
-    Path(__file__).resolve().parent.parent / 'data' / 'tib_register.db')
+from mop.extensions import get_app_config
+
+DEFAULT_DB_PATH = (
+    Path(__file__).resolve().parent.parent.parent
+    / 'storage' / 'data' / 'tib_register.db')
+DB_PATH = DEFAULT_DB_PATH
+
+
+def get_db_path() -> Path:
+    configured = get_app_config('TIB_DB_PATH', None)
+    if configured:
+        return Path(configured)
+    return DEFAULT_DB_PATH
 
 GREEK_TO_LATIN = {
     'Α': 'A', 'α': 'a', 'Ά': 'A', 'ά': 'a',
@@ -151,7 +162,8 @@ VOLUMES_INFO: list[dict[str, Any]] = [
 
 def get_db_connection() -> sqlite3.Connection:
     """Return a read-only SQLite connection to the TIB register."""
-    db_uri = f'file:{DB_PATH.as_posix()}?mode=ro'
+    db_path = get_db_path()
+    db_uri = f'file:{db_path.as_posix()}?mode=ro'
     conn = sqlite3.connect(db_uri, uri=True)
     conn.row_factory = sqlite3.Row
     return conn
@@ -282,7 +294,7 @@ def get_reader_pages(volume_key: str) -> list[dict[str, Any]]:
 
     num_pages = vol['pages']
     vol_num = vol['id']
-    base_url = f'/static/repository/books/{clean_key}/'
+    base_url = f'/media/books/{clean_key}/'
     pad = 4 if num_pages >= 1000 else 3
 
     pages = []

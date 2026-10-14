@@ -12,9 +12,13 @@ from mop.util import inject_menu
 from mop.views import explore_bp, main_bp
 
 ROOT_PATH = Path(__file__).parent
+BASE_PATH = ROOT_PATH.parent
+STORAGE_PATH = BASE_PATH / 'storage'
+DATA_PATH = STORAGE_PATH / 'data'
+MEDIA_PATH = STORAGE_PATH / 'media'
 STATIC_PATH = ROOT_PATH / 'static'
-IMAGE_PATH = STATIC_PATH / 'images'
-THUMBNAIL_PATH = STATIC_PATH / 'thumbnails'
+IMAGE_PATH = MEDIA_PATH / 'images'
+THUMBNAIL_PATH = MEDIA_PATH / 'thumbnails'
 
 ASSETS_VERSION = int(time.time())
 
@@ -99,9 +103,13 @@ app = create_app()
 
 __all__ = [
     'ASSETS_VERSION',
+    'BASE_PATH',
+    'DATA_PATH',
     'IMAGE_PATH',
+    'MEDIA_PATH',
     'ROOT_PATH',
     'STATIC_PATH',
+    'STORAGE_PATH',
     'THUMBNAIL_PATH',
     'app',
     'babel',
