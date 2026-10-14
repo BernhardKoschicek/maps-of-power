@@ -591,6 +591,13 @@ def api_explore_count(
         return jsonify({'error': str(e), 'count': 0}), 500
 
 
+@main_bp.route('/health')
+def health() -> Response:
+    return jsonify({
+        'status': 'ok',
+        'version': get_app_config('VERSION', '0.1.0')})
+
+
 @main_bp.app_errorhandler(HTTPException)
 def handle_http_exception(
         e: HTTPException) -> tuple[Response, int] | tuple[str, int]:

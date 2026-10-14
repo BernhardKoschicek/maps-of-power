@@ -1,0 +1,36 @@
+# Git and VCS
+.git/
+.gitignore
+.github/
+
+# Development environments and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+env/
+venv/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coveragerc
+htmlcov/
+
+# Local data and large media (mounted via container volumes)
+storage/
+instance/
+scratch/
+
+# Documentation / Markdown
+*.md
+!README.md

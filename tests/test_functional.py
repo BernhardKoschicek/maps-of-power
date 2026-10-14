@@ -7,6 +7,12 @@ def test_about_route(client: FlaskClient) -> None:
     assert b'Maps of Power' in response.data
 
 
+def test_health_route(client: FlaskClient) -> None:
+    response = client.get('/health')
+    assert response.status_code == 200
+    assert response.json == {'status': 'ok', 'version': '0.1.0'}
+
+
 def test_events_route(client: FlaskClient) -> None:
     response = client.get('/events')
     assert response.status_code == 200
@@ -136,13 +142,15 @@ def test_api_project_network_routes(client: FlaskClient) -> None:
 
 def test_project_api_routing() -> None:
     from mop.views import get_project_api_path
+    ortho_url = 'https://openatlas.orthodoxes-europa.at/api/'
+    mop_url = 'https://openatlas.maps-of-power.at/api/'
     # 'rhr' project has 'api': 'ortho'
-    assert get_project_api_path('rhr') == 'https://openatlas.orthodoxes-europa.at/api/'
+    assert get_project_api_path('rhr') == ortho_url
     # 'holdura' project does not have 'api': 'ortho'
-    assert get_project_api_path('holdura') == 'https://openatlas.maps-of-power.at/api/'
+    assert get_project_api_path('holdura') == mop_url
     # None or invalid project acronyms should default to MOP
-    assert get_project_api_path(None) == 'https://openatlas.maps-of-power.at/api/'
-    assert get_project_api_path('invalid') == 'https://openatlas.maps-of-power.at/api/'
+    assert get_project_api_path(None) == mop_url
+    assert get_project_api_path('invalid') == mop_url
 
 
 def test_youtube_iframe_helpers(client: FlaskClient) -> None:
