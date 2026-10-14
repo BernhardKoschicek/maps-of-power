@@ -1,4 +1,47 @@
+import uuid
 from typing import Any
+
+BASE62_ALPHABET = (
+    "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+BASE62_BASE = 62
+
+
+def uuid_to_base62(uuid_val: str | uuid.UUID) -> str:
+    """Convert a standard UUID string or object into a Base62 string."""
+    if isinstance(uuid_val, str):
+        u = uuid.UUID(uuid_val.strip())
+    elif isinstance(uuid_val, uuid.UUID):
+        u = uuid_val
+    else:
+        raise TypeError("uuid_val must be a string or uuid.UUID instance")
+
+    num = u.int
+    if num == 0:
+        return BASE62_ALPHABET[0]
+
+    digits: list[str] = []
+    while num > 0:
+        num, rem = divmod(num, BASE62_BASE)
+        digits.append(BASE62_ALPHABET[rem])
+    return "".join(reversed(digits))
+
+
+def base62_to_uuid(base62_str: str) -> str:
+    """Convert a Base62 string back into a hyphenated UUID string."""
+    if not isinstance(base62_str, str) or not base62_str:
+        raise ValueError("Base62 string must be a non-empty string")
+
+    num = 0
+    for char in base62_str:
+        idx = BASE62_ALPHABET.find(char)
+        if idx == -1:
+            raise ValueError(f"Invalid character '{char}' in Base62 string")
+        num = num * BASE62_BASE + idx
+
+    if num >= (1 << 128):
+        raise ValueError("Base62 value out of range for 128-bit UUID")
+
+    return str(uuid.UUID(int=num))
 
 
 def uc_first(string: str) -> str:

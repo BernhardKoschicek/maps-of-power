@@ -2,15 +2,16 @@ import json
 import re
 from typing import Any, cast, Optional
 
-import numpy
 import requests
-from flask import abort, jsonify, render_template, request, session, url_for
+from flask import (
+    Blueprint, abort, current_app, jsonify, render_template, request, session,
+    url_for)
 from flask_babel import lazy_gettext as _
 from werkzeug import Response
 from werkzeug.exceptions import HTTPException
 from werkzeug.utils import redirect
 
-from mop import app, cache
+from mop.extensions import cache, get_app_config
 from mop.data.events import event_list
 from mop.data.histgeo import lectures, newsletters, volumes
 from mop.data.images import category_images
@@ -23,18 +24,23 @@ from mop.model.entity import Entity
 from mop.model.explore import (
     get_oa_by_view_class, system_classes, view_classes)
 from mop.model.narrative import NarrativeGenerator
-from mop.util import get_dict_entries_by_category, get_types_sorted
+from mop.util import (
+    array_split, get_dict_entries_by_category, get_types_sorted)
+
+main_bp = Blueprint('main', __name__)
+explore_bp = Blueprint('explore', __name__)
 
 
 def get_project_api_path(project_acronym: str | None) -> str:
     if project_acronym and project_acronym in project_data:
         api_type = project_data[project_acronym].get('api')
         if api_type == 'ortho':
-            return app.config.get('ORTHO_API_PATH', '')
-    return app.config.get('MOP_API_PATH', '')
+            return get_app_config('ORTHO_API_PATH', '')
+    return get_app_config('MOP_API_PATH', '')
 
 
-@app.route('/')
+
+@main_bp.route('/')
 def about() -> str:
     return render_template(
         'about.html',
@@ -42,13 +48,13 @@ def about() -> str:
         events=event_list)
 
 
-@app.route('/events')
+@main_bp.route('/events')
 def events() -> str:
     return render_template('events.html', events=event_list)
 
 
-@app.route('/histgeo')
-@app.route('/histgeo/<int:id_>')
+@main_bp.route('/histgeo')
+@main_bp.route('/histgeo/<int:id_>')
 def histgeo(id_: int | None = None) -> str:
     if id_:
         if id_ not in lectures:
@@ -61,18 +67,18 @@ def histgeo(id_: int | None = None) -> str:
         volumes=volumes)
 
 
-@app.route('/imprint')
+@main_bp.route('/imprint')
 def imprint() -> str:
     return render_template('imprint.html')
 
 
-@app.route('/language=<language>')
+@main_bp.route('/language=<language>')
 def set_language(language: str | None = None) -> Response:
     session['language'] = language
-    return redirect(request.referrer)
+    return redirect(request.referrer or url_for('main.about'))
 
 
-@app.route('/literature')
+@main_bp.route('/literature')
 def literature() -> str:
     processed_literatures = []
     for lit in literatures:
@@ -134,8 +140,8 @@ def literature() -> str:
         projects=project_data)
 
 
-@app.route('/projects')
-@app.route('/projects/<title>')
+@explore_bp.route('/projects')
+@explore_bp.route('/projects/<title>')
 def projects(title: str | None = None) -> Response | str:
     if title:
         if title == 'tib':
@@ -152,17 +158,21 @@ def projects(title: str | None = None) -> Response | str:
     return render_template('projects.html', projects=portal_projects)
 
 
-@app.route('/projects')
-@app.route('/projects/<project>/explore/<view>')
-def project_explore_table(project: str, view: str) -> str:
-    if project not in project_data or view not in view_classes:
+@explore_bp.route('/projects')
+@explore_bp.route('/projects/<project>/explore/<view>')
+def project_explore_table(
+        project: str | None = None,
+        view: str | None = None) -> str:
+    if (not project or not view or project not in project_data
+            or view not in view_classes):
         abort(404)
     data = []
     try:
         api_path = get_project_api_path(project)
-        data = get_oa_by_view_class(view, project_data[project]['oaID'], api_path=api_path)
+        data = get_oa_by_view_class(
+            view, project_data[project]['oaID'], api_path=api_path)
     except Exception as e:  # pragma: no cover
-        app.logger.error("Error fetching open access data: %s", e)
+        current_app.logger.error("Error fetching open access data: %s", e)
     return render_template(
         'explore/project_explore_table.html',
         data=data,
@@ -171,9 +181,8 @@ def project_explore_table(project: str, view: str) -> str:
         view=view)
 
 
-@app.route('/projects')
-@app.route('/entity/<int:id_>')
-@app.route('/projects/<project>/explore/<view>/<int:id_>')
+@explore_bp.route('/entity/<int:id_>')
+@explore_bp.route('/projects/<project>/explore/<view>/<int:id_>')
 # pylint: disable=too-many-locals, too-many-branches, too-many-statements
 def entity_project_view(
         id_: int, project: str | None = None, view: str | None = None) -> str:
@@ -292,7 +301,7 @@ def entity_project_view(
         'explore/project_entity_view.html',
         entity=entity,
         type_hierarchy=get_types_sorted(entity.types or []),
-        images=(numpy.array_split(cast(Any, entity.depictions), 4)
+        images=(array_split(cast(Any, entity.depictions), 4)
                 if entity.depictions else None),
         relations=relations,
         related_places=related_places,
@@ -304,25 +313,25 @@ def entity_project_view(
         api_path=api_path)
 
 
-@app.route('/software')
+@main_bp.route('/software')
 def software() -> str:
     return render_template('software.html')
 
 
-@app.route('/iiif_viewer')
+@main_bp.route('/iiif_viewer')
 def iiif_viewer() -> str:
     manifest = request.args.get('manifest')
     manifest = f'{manifest}?url={request.url_root}entity/'
     return render_template('iiif_viewer.html', manifest=manifest)
 
 
-@app.route('/atlas')
-@app.route('/frontend')
+@main_bp.route('/atlas')
+@main_bp.route('/frontend')
 def frontend() -> Response:
     return redirect("https://atlas.maps-of-power.at/")
 
 
-@app.route('/api/network/<int:id_>')
+@explore_bp.route('/api/network/<int:id_>')
 def network_api(id_: int) -> Response | tuple[Response, int]:
     depth = request.args.get('depth', default=2, type=int)
     project = request.args.get('project')
@@ -336,7 +345,7 @@ def network_api(id_: int) -> Response | tuple[Response, int]:
         return jsonify({"error": str(e)}), 500
 
 
-@app.route('/api/places/<project_acronym>')
+@explore_bp.route('/api/places/<project_acronym>')
 def api_project_places(
         project_acronym: str) -> Response | tuple[Response, int]:
     if project_acronym not in project_data:
@@ -361,7 +370,8 @@ def api_project_places(
         return jsonify({"error": str(e)}), 500
 
 
-@app.route('/api/network/project/<project_acronym>')
+# pylint: disable=too-many-return-statements
+@explore_bp.route('/api/network/project/<project_acronym>')
 def api_project_network(
         project_acronym: str) -> Response | tuple[Response, int]:
     if project_acronym == "all":
@@ -371,16 +381,26 @@ def api_project_network(
             oa_id = proj.get('oaID')
             if not oa_id:
                 continue
-            ids_to_add = [int(x) for x in (oa_id if isinstance(oa_id, list) else [oa_id]) if str(x).isdigit()]
+            ids_to_add = [
+                int(x)
+                for x in (oa_id if isinstance(oa_id, list) else [oa_id])
+                if str(x).isdigit()]
             if proj.get('api') == 'ortho':
                 ortho_ids.extend(ids_to_add)
             else:
                 mop_ids.extend(ids_to_add)
 
         try:
-            mop_res = get_network_visualisation(mop_ids, api_path=get_project_api_path('mop')) if mop_ids else {'results': []}
-            ortho_res = get_network_visualisation(ortho_ids, api_path=get_project_api_path('rhr')) if ortho_ids else {'results': []}
-            combined_results = mop_res.get('results', []) + ortho_res.get('results', [])
+            mop_res = (
+                get_network_visualisation(
+                    mop_ids, api_path=get_project_api_path('mop'))
+                if mop_ids else {'results': []})
+            ortho_res = (
+                get_network_visualisation(
+                    ortho_ids, api_path=get_project_api_path('rhr'))
+                if ortho_ids else {'results': []})
+            combined_results = (
+                mop_res.get('results', []) + ortho_res.get('results', []))
             return jsonify({'results': combined_results})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -390,7 +410,10 @@ def api_project_network(
         oa_id = project_data[project_acronym].get('oaID')
         if not oa_id:
             return jsonify({'results': []})
-        linked_to_ids = [int(x) for x in (oa_id if isinstance(oa_id, list) else [oa_id]) if str(x).isdigit()]
+        linked_to_ids = [
+            int(x)
+            for x in (oa_id if isinstance(oa_id, list) else [oa_id])
+            if str(x).isdigit()]
         if not linked_to_ids:
             return jsonify({'results': []})
         try:
@@ -407,7 +430,7 @@ def _fetch_table_rows(
         view: str, oa_ids: tuple[str, ...], page: int, sort: str, column: str,
         search: str, api_path: Optional[str] = None) -> dict[str, Any]:
     """Proxy call to OpenAtlas /table_rows/ — cached server-side."""
-    base = (api_path or app.config.get('MOP_API_PATH', '')).rstrip('/')
+    base = (api_path or get_app_config('MOP_API_PATH', '')).rstrip('/')
     url = f"{base}/0.4/table_rows/"
     params: dict[str, Any] = {
         'view_classes': view,
@@ -446,8 +469,10 @@ def _fetch_table_rows(
 
 
 @cache.memoize(timeout=3600)
-def _fetch_table_rows_count(view: str, oa_ids: tuple[str, ...], api_path: Optional[str] = None) -> int:
-    base = (api_path or app.config.get('MOP_API_PATH', '')).rstrip('/')
+def _fetch_table_rows_count(
+        view: str, oa_ids: tuple[str, ...],
+        api_path: Optional[str] = None) -> int:
+    base = (api_path or get_app_config('MOP_API_PATH', '')).rstrip('/')
     url = f"{base}/0.4/table_rows/"
     params: dict[str, Any] = {
         'view_classes': view,
@@ -464,7 +489,7 @@ def _fetch_table_rows_count(view: str, oa_ids: tuple[str, ...], api_path: Option
 
 def _get_proxies() -> dict[str, str] | None:
     """Alias to avoid import conflict with the module-level helper."""
-    proxy = app.config.get('API_PROXY')
+    proxy = get_app_config('API_PROXY')
     if not proxy:
         return None
     return {'http': proxy, 'https': proxy}  # pragma: no cover
@@ -474,7 +499,7 @@ def get_proxies() -> dict[str, str] | None:
     return _get_proxies()
 
 
-@app.route('/api/explore/<project_acronym>/<view>')
+@explore_bp.route('/api/explore/<project_acronym>/<view>')
 def api_explore_entities(
         project_acronym: str,
         view: str) -> Response | tuple[Response, int]:
@@ -491,13 +516,14 @@ def api_explore_entities(
     search = request.args.get('search', '').strip()
     try:
         api_path = get_project_api_path(project_acronym)
-        data = _fetch_table_rows(view, oa_ids, page, sort, column, search, api_path=api_path)
+        data = _fetch_table_rows(
+            view, oa_ids, page, sort, column, search, api_path=api_path)
         return jsonify(data)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 
-@app.route('/api/explore/<project_acronym>/<view>/count')
+@explore_bp.route('/api/explore/<project_acronym>/<view>/count')
 def api_explore_count(
         project_acronym: str,
         view: str) -> Response | tuple[Response, int]:
@@ -516,7 +542,7 @@ def api_explore_count(
         return jsonify({'error': str(e), 'count': 0}), 500
 
 
-@app.errorhandler(HTTPException)
+@main_bp.app_errorhandler(HTTPException)
 def handle_http_exception(
         e: HTTPException) -> tuple[Response, int] | tuple[str, int]:
     if request.path.startswith('/api/'):
@@ -548,17 +574,18 @@ def handle_http_exception(
         'error.html', code=code, title=title, description=description), code
 
 
-@app.errorhandler(Exception)
+@main_bp.app_errorhandler(Exception)
 def handle_generic_exception(
         e: Exception
 ) -> (Response | tuple[str, int] | tuple[Response, int]):  # pragma: no cover
     if isinstance(e, HTTPException):
         return handle_http_exception(e)
 
-    app.logger.error("Unhandled exception: %s", e, exc_info=True)
+    current_app.logger.error("Unhandled exception: %s", e, exc_info=True)
 
     if request.path.startswith('/api/'):
-        return jsonify({'error': _('Internal Server Error'), 'code': 500}), 500
+        return jsonify({
+            'error': _('Internal Server Error'), 'code': 500}), 500
 
     return render_template(
         'error.html',

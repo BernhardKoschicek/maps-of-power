@@ -2,16 +2,16 @@ from typing import Generator
 import pytest
 from flask import Flask
 from flask.testing import FlaskClient, FlaskCliRunner
-from mop import app as flask_app
+from mop import create_app
 
 
 @pytest.fixture
 def app() -> Generator[Flask, None, None]:
-    flask_app.config.update({
-        'TESTING': True, })
-    from mop import cache
-    cache.init_app(flask_app, config={'CACHE_TYPE': 'NullCache'})
-    yield flask_app
+    test_app = create_app({
+        'TESTING': True,
+        'CACHE_TYPE': 'NullCache'})
+    with test_app.app_context():
+        yield test_app
 
 
 @pytest.fixture

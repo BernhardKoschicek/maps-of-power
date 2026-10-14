@@ -1,119 +1,114 @@
 from dataclasses import dataclass, field
 import os
-from typing import Any, Optional, List, Dict
+from typing import Any, Dict, List, Optional
 from flask import request
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 from mop.model.types import Types, EntityTypeModel
-from mop.model.util import split_date_string, format_date, uc_first
+from mop.model.util import (
+    format_date, split_date_string, uc_first, uuid_to_base62)
 from mop.model.api_calls import get_entity_presentation
-from mop.pid import uuid_to_base62
 
 # --- Pydantic Models for API Response ---
 
 
 class TimeRangeSubModel(BaseModel):
-    earliest: Optional[str] = None
-    latest: Optional[str] = None
-    comment: Optional[str] = None
+    earliest: str | None = None
+    latest: str | None = None
+    comment: str | None = None
 
 
 class TimeRangeModel(BaseModel):
-    start: Optional[TimeRangeSubModel] = None
-    end: Optional[TimeRangeSubModel] = None
+    start: TimeRangeSubModel | None = None
+    end: TimeRangeSubModel | None = None
 
 
 class ExternalReferenceModel(BaseModel):
-    id: Optional[str] = None
-    identifier: Optional[str] = None
-    referenceSystem: Optional[str] = Field(None, alias="referenceSystem")
-    referenceURL: Optional[str] = Field(None, alias="referenceURL")
-    resolverURL: Optional[str] = Field(None, alias="resolverURL")
-    type: Optional[str] = None
+    model_config = ConfigDict(populate_by_name=True)
 
-    class Config:
-        populate_by_name = True
+    id: str | None = None
+    identifier: str | None = None
+    referenceSystem: str | None = Field(None, alias="referenceSystem")
+    referenceURL: str | None = Field(None, alias="referenceURL")
+    resolverURL: str | None = Field(None, alias="resolverURL")
+    type: str | None = None
 
 
 class PresentationFileModel(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
     id: int
     title: str
-    license: Optional[str] = None
-    licenseHolder: Optional[str] = Field(None, alias="licenseHolder")
+    license: str | None = None
+    licenseHolder: str | None = Field(None, alias="licenseHolder")
     mimetype: str
     url: str
-    publicShareable: Optional[bool] = Field(None, alias="publicShareable")
-    IIIFBasePath: Optional[str] = Field(None, alias="IIIFBasePath")
-    IIIFManifest: Optional[str] = Field(None, alias="IIIFManifest")
-    creator: Optional[str] = None
-    fromSuperEntity: Optional[bool] = Field(None, alias="fromSuperEntity")
-    mainImage: Optional[bool] = Field(None, alias="mainImage")
-
-    class Config:
-        populate_by_name = True
+    publicShareable: bool | None = Field(None, alias="publicShareable")
+    IIIFBasePath: str | None = Field(None, alias="IIIFBasePath")
+    IIIFManifest: str | None = Field(None, alias="IIIFManifest")
+    creator: str | None = None
+    fromSuperEntity: bool | None = Field(None, alias="fromSuperEntity")
+    mainImage: bool | None = Field(None, alias="mainImage")
 
 
 class PresentationReferenceModel(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
     id: int
     systemClass: str = Field(..., alias="systemClass")
     title: str
-    type: Optional[str] = None
-    typeId: Optional[int] = Field(None, alias="typeId")
-    citation: Optional[str] = None
-    pages: Optional[str] = None
-
-    class Config:
-        populate_by_name = True
+    type: str | None = None
+    typeId: int | None = Field(None, alias="typeId")
+    citation: str | None = None
+    pages: str | None = None
 
 
 class RelationTypeModel(BaseModel):
-    property: str
-    type: Optional[str] = None
-    description: Optional[str] = None
-    when: Optional[TimeRangeModel] = None
-    relationTo: int = Field(..., alias="relationTo")
+    model_config = ConfigDict(populate_by_name=True)
 
-    class Config:
-        populate_by_name = True
+    property: str
+    type: str | None = None
+    description: str | None = None
+    when: TimeRangeModel | None = None
+    relationTo: int = Field(..., alias="relationTo")
 
 
 class RelatedEntityModel(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
     id: int
     systemClass: str = Field(..., alias="systemClass")
-    viewClass: Optional[str] = Field(None, alias="viewClass")
-    title: Optional[str] = Field("", alias="title")
-    description: Optional[str] = None
-    aliases: List[str] = Field(default_factory=list)
-    geometries: Optional[Dict[str, Any]] = None
-    when: Optional[TimeRangeModel] = None
-    relationTypes: List[RelationTypeModel] = Field(
+    viewClass: str | None = Field(None, alias="viewClass")
+    title: str | None = Field("", alias="title")
+    description: str | None = None
+    aliases: list[str] = Field(default_factory=list)
+    geometries: dict[str, Any] | None = None
+    when: TimeRangeModel | None = None
+    relationTypes: list[RelationTypeModel] = Field(
         default_factory=list, alias="relationTypes")
-    standardType: Optional[Dict[str, Any]] = Field(None, alias="standardType")
-
-    class Config:
-        populate_by_name = True
+    standardType: dict[str, Any] | None = Field(None, alias="standardType")
 
 
 class PresentationViewModel(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
     id: int
-    uuid: Optional[str] = None
+    uuid: str | None = None
     systemClass: str = Field(..., alias="systemClass")
     viewClass: str = Field(..., alias="viewClass")
     title: str
-    description: Optional[str] = None
-    aliases: List[str] = Field(default_factory=list)
-    externalReferenceSystems: Optional[List[ExternalReferenceModel]] = Field(
+    description: str | None = None
+    aliases: list[str] = Field(default_factory=list)
+    externalReferenceSystems: list[ExternalReferenceModel] | None = Field(
         None, alias="externalReferenceSystems")
-    files: Optional[List[PresentationFileModel]] = None
-    geometries: Optional[Dict[str, Any]] = None
-    references: Optional[List[PresentationReferenceModel]] = None
-    relations: Dict[str,
-                    List[RelatedEntityModel]] = Field(default_factory=dict)
-    types: Optional[List[EntityTypeModel]] = None
-    when: Optional[TimeRangeModel] = None
+    files: list[PresentationFileModel] | None = None
+    geometries: dict[str, Any] | None = None
+    references: list[PresentationReferenceModel] | None = None
+    relations: dict[str, list[RelatedEntityModel]] = Field(
+        default_factory=dict)
+    types: list[EntityTypeModel] | None = None
+    when: TimeRangeModel | None = None
 
-    class Config:
-        populate_by_name = True
 
 
 # --- Helper functions for parsing ---

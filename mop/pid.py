@@ -5,14 +5,15 @@ from typing import Any
 
 import requests
 from flask import (
-    Response, abort, jsonify, redirect, render_template, request, url_for)
+    Blueprint, abort, current_app, jsonify, redirect, render_template, request,
+    url_for)
+from werkzeug import Response
 
-from mop import app
+from mop.extensions import get_app_config
 from mop.model.api_calls import get_proxies
+from mop.model.util import base62_to_uuid, uuid_to_base62
 
-BASE62_ALPHABET = (
-    "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-BASE62_BASE = 62
+pid_bp = Blueprint('pid', __name__)
 
 URL_KEYS = {
     '@id', 'id', 'url', 'href', 'next', 'previous', 'link', 'seeAlso',
@@ -23,56 +24,18 @@ UUID_REGEX = re.compile(
     r'[0-9a-fA-F]{4}-[0-9a-fA-F]{12})')
 
 
-def uuid_to_base62(uuid_val: str | uuid.UUID) -> str:
-    """Convert a standard UUID string or object into a Base62 string."""
-    if isinstance(uuid_val, str):
-        u = uuid.UUID(uuid_val.strip())
-    elif isinstance(uuid_val, uuid.UUID):
-        u = uuid_val
-    else:
-        raise TypeError("uuid_val must be a string or uuid.UUID instance")
-
-    num = u.int
-    if num == 0:
-        return BASE62_ALPHABET[0]
-
-    digits: list[str] = []
-    while num > 0:
-        num, rem = divmod(num, BASE62_BASE)
-        digits.append(BASE62_ALPHABET[rem])
-    return "".join(reversed(digits))
-
-
-def base62_to_uuid(base62_str: str) -> str:
-    """Convert a Base62 string back into a hyphenated UUID string."""
-    if not isinstance(base62_str, str) or not base62_str:
-        raise ValueError("Base62 string must be a non-empty string")
-
-    num = 0
-    for char in base62_str:
-        idx = BASE62_ALPHABET.find(char)
-        if idx == -1:
-            raise ValueError(f"Invalid character '{char}' in Base62 string")
-        num = num * BASE62_BASE + idx
-
-    if num >= (1 << 128):
-        raise ValueError("Base62 value out of range for 128-bit UUID")
-
-    return str(uuid.UUID(int=num))
-
-
 def get_backend_api_bases() -> list[str]:
     """Return a list of configured backend API base URLs."""
     bases: list[str] = []
-    mop_base = app.config.get('MOP_API_PATH', '')
+    mop_base = get_app_config('MOP_API_PATH', '')
     if mop_base:
         bases.append(mop_base.rstrip('/'))
 
-    ortho_base = app.config.get('ORTHO_API_PATH', '')
+    ortho_base = get_app_config('ORTHO_API_PATH', '')
     if ortho_base and ortho_base.rstrip('/') not in bases:
         bases.append(ortho_base.rstrip('/'))
 
-    custom_base = app.config.get('OPENATLAS_API_BASE', '')
+    custom_base = get_app_config('OPENATLAS_API_BASE', '')
     if custom_base and custom_base.rstrip('/') not in bases:
         bases.append(custom_base.rstrip('/'))
 
@@ -100,7 +63,7 @@ def fetch_entity_by_uuid(uuid_str: str) -> dict[str, Any] | None:
                 if response.status_code == 404:
                     continue
             except Exception as e:
-                app.logger.warning("Error fetching %s: %s", url, e)
+                current_app.logger.warning("Error fetching %s: %s", url, e)
                 continue
     return None
 
@@ -211,8 +174,8 @@ def is_uuid(identifier: str) -> bool:
         return False
 
 
-@app.route('/id/<identifier>', strict_slashes=False)
-@app.route(
+@pid_bp.route('/id/<identifier>', strict_slashes=False)
+@pid_bp.route(
     '/id/<identifier>.json',
     endpoint='pid_resolver_json',
     strict_slashes=False)

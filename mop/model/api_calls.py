@@ -1,18 +1,14 @@
 from typing import Any, List, Optional
 
 import requests
-
 from werkzeug.exceptions import NotFound
 
-from mop import app, cache
+from mop.extensions import cache, get_app_config
 from mop.model.typetree import TypeTree
-
-# Proxies are initialized here, but we should ensure app.config is ready.
-# In Flask, app.config is populated when the app is created.
 
 
 def get_proxies() -> dict[str, str] | None:
-    proxy = app.config.get('API_PROXY')
+    proxy = get_app_config('API_PROXY')
     if not proxy:
         return None
     return {  # pragma: no cover
@@ -23,7 +19,8 @@ def get_proxies() -> dict[str, str] | None:
 def _get_api_path(api_path: Optional[str] = None) -> str:
     if api_path:
         return api_path
-    return app.config.get('MOP_API_PATH', '')
+    return get_app_config('MOP_API_PATH', '')
+
 
 
 @cache.memoize()

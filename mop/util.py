@@ -5,7 +5,6 @@ from flask import url_for
 from flask_babel import lazy_gettext as _
 
 from mop.model.types import Types
-from mop import app
 
 
 def get_dates_formatted(year: int, month: int, day: int) -> str:
@@ -70,7 +69,6 @@ def get_image_frame(filepath: str) -> str:
            'class="img-fluid video-image-size" alt="">'
 
 
-@app.context_processor
 def inject_menu() -> dict[str, Any]:
     navbar = [{
         'name': _('about'),
@@ -106,3 +104,11 @@ def get_types_sorted(types: list[Types]) -> Optional[dict[str, Any]]:
     for type_ in types:
         type_hierarchy.setdefault(type_.root, []).append(type_)
     return type_hierarchy
+
+
+def array_split(lst: list[Any], num_chunks: int) -> list[list[Any]]:
+    """Split a list into num_chunks nearly equal sublists."""
+    k, m = divmod(len(lst), num_chunks)
+    return [
+        lst[i * k + min(i, m):(i + 1) * k + min(i + 1, m)]
+        for i in range(num_chunks)]

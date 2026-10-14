@@ -237,7 +237,7 @@ def search_toponyms(
     ) if where_clauses else ''
 
     # Count total matching rows
-    count_sql = f'SELECT COUNT(*) as total FROM toponyms t {where_str}'
+    count_sql = f'SELECT COUNT(*) as total FROM toponyms t {where_str}'  # nosec B608
     cur.execute(count_sql, params)
     total = cur.fetchone()['total']
 
@@ -249,7 +249,7 @@ def search_toponyms(
         {where_str}
         ORDER BY t.volume_id ASC, t.name COLLATE NOCASE ASC
         LIMIT ? OFFSET ?
-    '''
+    '''  # nosec B608
     cur.execute(select_sql, params + [limit, offset])
 
     results = []

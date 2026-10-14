@@ -173,3 +173,11 @@ def test_youtube_iframe_helpers(client: FlaskClient) -> None:
     assert b'ram_schwarz.png' in response.data
     assert b'NV4TT4QnFNI' in response.data
 
+
+def test_array_split() -> None:
+    from mop.util import array_split
+    assert array_split([], 4) == [[], [], [], []]
+    chunks = array_split(list(range(10)), 4)
+    assert chunks == [[0, 1, 2], [3, 4, 5], [6, 7], [8, 9]]
+
+

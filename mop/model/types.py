@@ -1,26 +1,26 @@
 from dataclasses import dataclass
-from typing import Any, Dict, Optional, List
-from pydantic import BaseModel, Field
+from typing import Any
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class TypeHierarchyEntryModel(BaseModel):
     label: str
     identifier: str
-    descriptions: Optional[str] = None
+    descriptions: str | None = None
 
 
 class EntityTypeModel(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
     id: int
     title: str
     isStandard: bool = Field(..., alias="isStandard")
-    descriptions: Optional[str] = None
-    typeHierarchy: Optional[List[TypeHierarchyEntryModel]] = Field(
+    descriptions: str | None = None
+    typeHierarchy: list[TypeHierarchyEntryModel] | None = Field(
         None, alias="typeHierarchy")
-    unit: Optional[str] = None
-    value: Optional[str] = None
+    unit: str | None = None
+    value: str | None = None
 
-    class Config:
-        populate_by_name = True
 
 
 @dataclass
@@ -28,12 +28,12 @@ class Types:
     label: str
     hierarchy: str
     value: Any
-    unit: Optional[str]
+    unit: str | None
     description: Any
     identifier: str
     root: str
 
-    def __init__(self, data: Optional[Dict[str, Any]] = None, **kwargs: Any):
+    def __init__(self, data: dict[str, Any] | None = None, **kwargs: Any):
         if data is not None:
             self.label = data['label']
             self.hierarchy = data['hierarchy']
