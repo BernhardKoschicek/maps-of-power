@@ -47,12 +47,11 @@ Ensure you have the following installed:
 *   [uv](https://docs.astral.sh/uv/) (Astral's fast Python package and project manager)
 *   [Node.js 18+ and npm](https://nodejs.org/)
 *   [Redis](https://redis.io/) (used for caching via Flask-Caching)
-*   ImageMagick (for `libmagickwand-dev` C-bindings)
 
 On Debian/Ubuntu systems, install system-level packages:
 ```bash
 sudo apt update
-sudo apt install libmagickwand-dev redis-server python3 nodejs npm
+sudo apt install redis-server python3 nodejs npm
 ```
 
 Install `uv` (if not already installed):

@@ -234,7 +234,7 @@ def build_database(
     for filepath in files:
         ns: dict[str, Any] = {}
         with open(filepath, 'r', encoding='utf-8') as fp:
-            exec(fp.read(), ns)  # pylint: disable=exec-used
+            exec(fp.read(), ns)  # pylint: disable=exec-used  # nosec B102
 
         vol_rows: list[dict[str, Any]] = []
         for v in ns.values():

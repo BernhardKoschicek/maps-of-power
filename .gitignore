@@ -63,6 +63,10 @@ db.sqlite3-journal
 *.db
 *.db-shm
 *.db-wal
+*.sql
+*.sql.gz
+*.sql.7z
+*.7z
 mop/static/repository/books/
 
 # Flask stuff:
