@@ -15,6 +15,7 @@
     <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License" />
   </a>
   <img src="https://img.shields.io/badge/python-3.13+-blue.svg?style=flat-square" alt="Python Versions" />
+  <img src="https://img.shields.io/badge/podman-ready-purple.svg?style=flat-square" alt="Podman Ready" />
 </p>
 
 ---
@@ -23,115 +24,99 @@ The research initiative **Maps of Power** serves the methodological and interdis
 
 Founded in 2019 under the title **"Maps of Power: Historical Atlas of Places, Borderzones and Migration Dynamics in Byzantium (TIB Balkans)"**, it emerged from the idea of deepening historical-geographical research methodologically and broadening it thematically.
 
-Building on the long-running project **[Tabula Imperii Byzantini (TIB)](https://tib.oeaw.ac.at/)** — conducted at the *Austrian Academy of Sciences (Vienna)* since 1966 — the initiative aims to expand the spatial focus of the TIB beyond the Byzantine world to include other European regions of the Middle Ages.
+Building on the long-running project **[Tabula Imperii Byzantini (TIB)](https://tib.oeaw.ac.at/)** — conducted at the *Austrian Academy of Sciences (ÖAW, Vienna)* since 1966 — the initiative aims to expand the spatial focus of the TIB beyond the Byzantine world to include other European regions of the Middle Ages.
 
-The successfully completed cluster project **["Digitising Patterns of Power (DPP): Peripherical Mountains in the Medieval World"](https://dpp.oeaw.ac.at/)** can be seen as a methodological and conceptual precursor to this work.
+The successfully completed cluster project **["Digitising Patterns of Power (DPP): Peripherical Mountains in the Medieval World"](https://dpp.oeaw.ac.at/)** serves as a methodological and conceptual precursor.
 
 ---
 
 ## 🚀 Key Features
 
-*   **Interactive Maps**: High-fidelity mapping of historical regions, borderzones, and migration dynamics.
-*   **Historical Geography Analytics**: Visualizing networks and spatial developments across periods.
-*   **State-of-the-Art CI/CD & Security**: Automated security audits (Bandit), dependency vulnerability checks (pip-audit), and automated test suites with high-coverage reporting.
-*   **Modern Python Tooling**: Fully integrated with [uv](https://docs.astral.sh/uv/) for lightning-fast package management and deterministic environments.
+*   **Interactive Maps & Exploration**: High-fidelity mapping of historical regions, borderzones, toponyms, and migration dynamics.
+*   **Digital TIB Hub**: Integrated digital edition of Tabula Imperii Byzantini volumes, interactive registers, toponym search, and modern HTML5 book reader.
+*   **Container-Ready (Podman & Docker)**: Rootless, daemonless OCI containers (`Containerfile`, `compose.yaml`) with unprivileged user UID 1000 and Redis caching.
+*   **Separated & Scalable Media Storage**: Clean distinction between code and persistent data (`storage/data/` for SQLite, `storage/media/` for high-res book scans, images, and repository PDFs).
+*   **Automated Thumbnails**: Zero-overhead incremental thumbnail generator via Pillow with Git hooks (`post-merge`, `post-checkout`) and on-demand Flask fallback.
+*   **Continuous Deployment Pipeline**: Push-based GitHub Actions deployment workflow (`.github/workflows/deploy.yml`) and server-side update automation (`scripts/deploy.sh`).
+*   **Rigorous Quality Assurance**: 100% test pass rate with **93.5%+** coverage, strict typing (`mypy`), and SAST security audits (`bandit`, `pip-audit`).
 
 ---
 
-## 🛠️ Installation & Setup
+## ⚡ Quick Start
 
-### 📋 Prerequisites
+### Option 1: Local Development (with `uv`)
 
-Ensure you have the following installed:
-*   [Python 3.13+](https://www.python.org/downloads/)
-*   [uv](https://docs.astral.sh/uv/) (Astral's fast Python package and project manager)
-*   [Node.js 18+ and npm](https://nodejs.org/)
-*   [Redis](https://redis.io/) (used for caching via Flask-Caching)
+Prerequisites: Python 3.13+ and [uv](https://docs.astral.sh/uv/).
 
-On Debian/Ubuntu systems, install system-level packages:
 ```bash
-sudo apt update
-sudo apt install redis-server python3 nodejs npm
+# 1. Clone repository
+git clone https://github.com/BernhardKoschicek/maps-of-power.git
+cd maps-of-power
+
+# 2. Install dependencies into virtual environment
+uv sync
+
+# 3. Install Git hooks (automatically manages thumbnails on pull)
+uv run python scripts/setup_git_hooks.py
+
+# 4. Start local development server
+uv run python runserver.py
+```
+Open [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your browser.
+
+---
+
+### Option 2: Containerized (with `podman compose`)
+
+Prerequisites: [Podman](https://podman.io/) (available via `apt install podman podman-compose`).
+
+```bash
+# Build and start Maps of Power + Redis cache in background
+podman compose up -d
+
+# Check logs
+podman compose logs -f
+
+# Verify health
+curl http://127.0.0.1:5000/health
 ```
 
-Install `uv` (if not already installed):
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
+---
 
-### 📦 Setup & Dependency Management
+## 📖 Production Deployment Guide
 
-1.  **Clone the Repository**
-    ```bash
-    git clone https://github.com/BernhardKoschicek/maps-of-power.git
-    cd maps-of-power
-    ```
+For comprehensive, step-by-step instructions on deploying Maps of Power in production on Debian / Ubuntu servers — including **Nginx reverse proxy**, **Let's Encrypt SSL**, **systemd service configuration**, and **automated CI/CD pipelines** — please read:
 
-2.  **Deterministic Python Setup (using `uv`)**
-    Install all dependencies into a virtual environment using `uv` (targets Python 3.13 specified in `.python-version`):
-    ```bash
-    uv sync
-    ```
-
-3.  **Local Instance Configuration**
-    Create your instance configuration file from the provided example template:
-    ```bash
-    cp instance/example_production.py instance/production.py
-    ```
-    Adjust settings in `instance/production.py` if needed (e.g., API endpoints or Redis cache URL).
-
-4.  **Frontend Setup**
-    Install frontend dependencies via npm:
-    ```bash
-    cd mop/static
-    npm install
-    cd ../..
-    ```
-    *Note: Frontend assets are served directly from `mop/static/node_modules/` by Flask; no separate compilation or build step is required.*
+👉 **[INSTALL.md — Complete Production Deployment Guide](INSTALL.md)**
 
 ---
 
-## 🏃 Running the Application
+## 🧪 Tests & Quality Assurance
 
-1.  **Ensure Redis is running** (for caching):
-    ```bash
-    sudo systemctl status redis-server || sudo systemctl start redis-server
-    ```
-
-2.  **Start the Flask Backend**:
-    ```bash
-    uv run python runserver.py
-    ```
-    The application will be accessible at [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
-
----
-
-## 🧪 Tests & Quality
-
-### 🧪 pytest & Code Coverage
-We maintain a high testing standard (**93%+** code coverage). Run the test suite and output a detailed coverage report locally:
+### Run Test Suite & Coverage
 ```bash
 uv run pytest --cov=. --cov-report=term-missing
 ```
 
-### 🔒 Security Audits
-Run SAST vulnerability checks with Bandit (excluding local virtualenv and test fixtures):
+### Static Type Checking (`mypy`)
 ```bash
-uvx bandit -r . -ll -x ./.venv,./tests
+uv run mypy mop scripts runserver.py gunicorn.conf.py
 ```
 
-Run dependency vulnerability scans (CVE audits):
+### Code Linter (`pylint`)
 ```bash
+uv run pylint mop gunicorn.conf.py
+```
+
+### Security Audits (`bandit` & `pip-audit`)
+```bash
+# Static application security testing (SAST)
+uvx bandit -r . -ll -x ./.venv,./tests
+
+# Dependency vulnerability scanning (CVEs)
 uv export --all-groups --output-file requirements.txt
 uvx pip-audit -r requirements.txt --disable-pip
 rm -f requirements.txt
-```
-
-### 🔍 Linting & Type Checking
-Run static analysis and type checks using configured tools:
-```bash
-uv run mypy mop scripts runserver.py
-uv run pylint mop
 ```
 
 ---
@@ -140,24 +125,39 @@ uv run pylint mop
 
 ```
 maps-of-power/
-├── badges/             # Dynamic coverage badge SVGs
-├── .github/
-│   └── workflows/      # CI & security pipeline workflows
-├── instance/           # Instance configuration (production.py, example configs)
-├── mop/                # Core application package
-│   ├── data/           # Structured data, projects, and narratives
-│   ├── model/          # Data models and OpenAtlas API integration
-│   ├── static/         # Frontend static assets and node_modules
-│   ├── templates/      # Jinja2 Flask templates
+├── Containerfile           # Multi-stage OCI/Podman container definition
+├── Dockerfile              # Symlink to Containerfile for Docker tooling
+├── compose.yaml            # Podman Compose service definition (Web + Redis)
+├── gunicorn.conf.py        # Production Gunicorn WSGI configuration
+├── entrypoint.sh           # Container startup & directory initialization
+├── config.py               # 12-factor application configuration
+├── pyproject.toml          # Project dependencies & tool configurations
+├── uv.lock                 # Deterministic dependency lockfile
+├── INSTALL.md              # Production installation & Debian setup guide
+├── mop/                    # Core application package
+│   ├── data/               # Structured metadata, projects, and narratives
+│   ├── display/            # Image gallery & dynamic thumbnail generation
+│   ├── model/              # Data models, TIB SQLite database & OpenAtlas API
+│   ├── static/             # UI static assets (CSS, JS, fonts, SVGs)
+│   ├── templates/          # Jinja2 templates (overview, TIB, reader, views)
+│   ├── tib_views.py        # Tabula Imperii Byzantini routes & reader API
+│   ├── views.py            # Main application routes & media serving
 │   └── ...
-├── api/                # OpenAPI specification (openapi.json)
-├── scripts/            # CLI utilities and database build scripts
-├── tests/              # Pytest integration & unit test suites
-├── pyproject.toml      # Dependency & project configurations
-├── uv.lock             # Deterministic dependency lockfile
-├── .python-version     # Target Python version (3.13)
-└── README.md           # Project documentation
+├── storage/                # Persistent data directory (excluded from git)
+│   ├── data/               # SQLite database (tib_register.db)
+│   └── media/              # Media assets (books/, images/, repository/, thumbnails/)
+├── scripts/                # Automation utilities
+│   ├── deploy.sh           # Automated deployment & pull update script
+│   ├── setup_git_hooks.py  # Git hooks installer (post-merge / post-checkout)
+│   ├── thumbnail_generation.py # Incremental Pillow thumbnail generator
+│   └── build_tib_db.py     # TIB database builder
+├── tests/                  # Pytest integration, unit, and functional test suites
+└── .github/workflows/      # GitHub Actions CI/CD workflows
+    ├── ci-security.yml     # Tests, mypy, security audits, and container build
+    └── deploy.yml          # Automated deployment to production server via SSH
 ```
+
+---
 
 ## 📄 License
 
