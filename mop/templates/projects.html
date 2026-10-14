@@ -142,8 +142,9 @@
                 <div class="premium-icon-container">
                   <span class="status-pill status-active" id="status-pill-{{ project['acronym'] }}">{{ _('Active') }}</span>
                   {% if project.icon %}
-                    <img src="{{ url_for('static', filename='images/projects/' + (project['icon_path'] if project.get('icon_path') else project['acronym']) + '/' + project['icon']) }}"
+                    <img src="{{ url_for('static', filename='thumbnails/' + project['icon'], v=ASSETS_VERSION) }}"
                          alt="{{ project['acronym'] }} icon"
+                         loading="lazy"
                          style="max-height: 90px; max-width: 75%; object-fit: contain; border-radius: 10px;">
                   {% else %}
                     <i class="bi bi-diagram-3 text-primary opacity-50" style="font-size: 3.5rem;"></i>

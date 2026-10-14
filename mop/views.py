@@ -20,6 +20,7 @@ from mop.data.literature import literatures
 from mop.data.presentations import presentations
 from mop.data.projects.projects import project_data
 from mop.display.image import image_gallery
+from mop.display.thumbnail import ensure_thumbnail
 from mop.model.api_calls import get_ego_network, get_network_visualisation
 from mop.model.entity import Entity
 from mop.model.explore import (
@@ -343,19 +344,30 @@ def _get_media_folder() -> Path:
     return DEFAULT_MEDIA_PATH
 
 
+@main_bp.route('/media/thumbnails/<path:filename>')
+@main_bp.route('/static/thumbnails/<path:filename>')
+def serve_legacy_thumbnails(filename: str) -> Response:
+    media_folder = _get_media_folder()
+    thumb = ensure_thumbnail(filename, media_folder)
+    if thumb and thumb.exists():
+        return send_from_directory(thumb.parent, thumb.name)
+    return send_from_directory(media_folder / 'thumbnails', filename)
+
+
 @main_bp.route('/media/<path:filename>')
 def serve_media(filename: str) -> Response:
-    return send_from_directory(_get_media_folder(), filename)
+    media_folder = _get_media_folder()
+    if filename.startswith('thumbnails/'):
+        thumb_name = filename[len('thumbnails/'):]
+        thumb = ensure_thumbnail(thumb_name, media_folder)
+        if thumb and thumb.exists():
+            return send_from_directory(thumb.parent, thumb.name)
+    return send_from_directory(media_folder, filename)
 
 
 @main_bp.route('/static/images/<path:filename>')
 def serve_legacy_images(filename: str) -> Response:
     return send_from_directory(_get_media_folder() / 'images', filename)
-
-
-@main_bp.route('/static/thumbnails/<path:filename>')
-def serve_legacy_thumbnails(filename: str) -> Response:
-    return send_from_directory(_get_media_folder() / 'thumbnails', filename)
 
 
 @main_bp.route('/static/repository/books/<path:filename>')
