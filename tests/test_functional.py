@@ -10,6 +10,7 @@ def test_about_route(client: FlaskClient) -> None:
 def test_events_route(client: FlaskClient) -> None:
     response = client.get('/events')
     assert response.status_code == 200
+    assert b'byzantine_congress_250826' in response.data
 
 
 def test_histgeo_index_route(client: FlaskClient) -> None:
