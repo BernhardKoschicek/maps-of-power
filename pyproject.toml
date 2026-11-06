@@ -26,5 +26,36 @@ dev = [
     "types-requests>=2.32.0",
 ]
 
+[tool.pytest.ini_options]
+addopts = "-W default -ra -q --no-header --cov=mop --cov=tests --cov-report=html --cov-report=term --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["mop"]
+
+[tool.coverage.report]
+precision = 2
+sort = "Cover"
+skip_covered = true
+
 [tool.mypy]
 explicit_package_bases = true
+allow_untyped_decorators = true
+disallow_subclassing_any = false
+ignore_missing_imports = true
+no_warn_return_any = true
+strict = true
+
+[tool.pylint.main]
+ignore = ["mop.wsgi"]
+extension-pkg-allow-list = ["lxml"]
+
+[tool.pylint.messages_control]
+disable = ["missing-docstring", "broad-except", "duplicate-code"]
+
+[tool.pylint.basic]
+good-names = ["bc", "c", "e", "ex", "f", "i", "id", "ip", "j", "js", "k", "l", "op", "Run", "r", "rv", "to", "x", "y", "_"]
+
+[tool.pylint.format]
+max-line-length = 79

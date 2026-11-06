@@ -1,8 +1,0 @@
-[run]
-branch = True
-source = mop
-
-[report]
-precision = 2
-sort = Cover
-skip_covered = True

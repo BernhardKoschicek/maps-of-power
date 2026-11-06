@@ -1,7 +1,7 @@
 # 🗺️ Maps of Power
 
 <p align="center">
-  <img src="mop/static/images/mop_logo.svg" alt="Maps of Power Logo" width="180px" style="margin-bottom: 20px;" />
+  <img src="storage/media/images/mop_logo.svg" alt="Maps of Power Logo" width="180px" style="margin-bottom: 20px;" />
 </p>
 
 <p align="center">
@@ -87,7 +87,7 @@ curl http://127.0.0.1:5000/health
 
 For comprehensive, step-by-step instructions on deploying Maps of Power in production on Debian / Ubuntu servers — including **Nginx reverse proxy**, **Let's Encrypt SSL**, **systemd service configuration**, and **automated CI/CD pipelines** — please read:
 
-👉 **[INSTALL.md — Complete Production Deployment Guide](INSTALL.md)**
+👉 **[docs/INSTALL.md — Complete Production Deployment Guide](docs/INSTALL.md)**
 
 ---
 
@@ -126,14 +126,15 @@ rm -f requirements.txt
 ```
 maps-of-power/
 ├── Containerfile           # Multi-stage OCI/Podman container definition
-├── Dockerfile              # Symlink to Containerfile for Docker tooling
 ├── compose.yaml            # Podman Compose service definition (Web + Redis)
 ├── gunicorn.conf.py        # Production Gunicorn WSGI configuration
-├── entrypoint.sh           # Container startup & directory initialization
+├── mop.wsgi                # Apache mod_wsgi entry point
 ├── config.py               # 12-factor application configuration
-├── pyproject.toml          # Project dependencies & tool configurations
+├── pyproject.toml          # Project dependencies & tool configurations (pytest, mypy, pylint, coverage)
 ├── uv.lock                 # Deterministic dependency lockfile
-├── INSTALL.md              # Production installation & Debian setup guide
+├── docs/                   # Documentation
+│   ├── INSTALL.md          # Production installation & Debian setup guide
+│   └── STYLE_GUIDE.md      # Code and UI style guidelines
 ├── mop/                    # Core application package
 │   ├── data/               # Structured metadata, projects, and narratives
 │   ├── display/            # Image gallery & dynamic thumbnail generation
@@ -143,10 +144,11 @@ maps-of-power/
 │   ├── tib_views.py        # Tabula Imperii Byzantini routes & reader API
 │   ├── views.py            # Main application routes & media serving
 │   └── ...
-├── storage/                # Persistent data directory (excluded from git)
+├── storage/                # Persistent data directory
 │   ├── data/               # SQLite database (tib_register.db)
 │   └── media/              # Media assets (books/, images/, repository/, thumbnails/)
 ├── scripts/                # Automation utilities
+│   ├── entrypoint.sh       # Container startup & directory initialization
 │   ├── deploy.sh           # Automated deployment & pull update script
 │   ├── setup_git_hooks.py  # Git hooks installer (post-merge / post-checkout)
 │   ├── thumbnail_generation.py # Incremental Pillow thumbnail generator

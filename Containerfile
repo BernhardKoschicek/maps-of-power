@@ -16,7 +16,7 @@ RUN uv sync --frozen --no-dev --no-install-project
 # Copy application source
 COPY mop/ mop/
 COPY scripts/ scripts/
-COPY config.py runserver.py gunicorn.conf.py entrypoint.sh ./
+COPY config.py runserver.py gunicorn.conf.py ./
 
 # Finalize venv with project code
 RUN uv sync --frozen --no-dev
@@ -47,7 +47,7 @@ RUN mkdir -p /app/storage/data \
              /app/storage/media/videos \
              /app/storage/media/repository && \
     chown -R appuser:appuser /app/storage && \
-    chmod +x /app/entrypoint.sh
+    chmod +x /app/scripts/entrypoint.sh
 
 ENV PATH="/app/.venv/bin:$PATH" \
     PYTHONUNBUFFERED=1 \
@@ -62,5 +62,5 @@ EXPOSE 5000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:5000/health || exit 1
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app/scripts/entrypoint.sh"]
 CMD ["gunicorn", "--config", "gunicorn.conf.py", "mop:app"]
