@@ -15,7 +15,7 @@
   <meta property="og:description" content="The research initiative 'Maps of Power' serves the methodological and interdisciplinary networking of scholars from the field of Historical Geography.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ request.url }}">
-  <meta property="og:image" content="{{ url_for('static', filename='images/mop_logo.svg', _external=True) }}">
+  <meta property="og:image" content="{{ url_for('main.serve_media', filename='images/mop_logo.svg', _external=True) }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
   <link rel="apple-touch-icon" sizes="180x180"
@@ -90,7 +90,7 @@
       </div>
       <div class="col d-flex justify-content-center align-items-center">
         <a class="navbar-brand" href="/">
-          <img src="{{ url_for('static', filename='images/mop_logo.svg', v=ASSETS_VERSION) }}"
+          <img src="{{ url_for('main.serve_media', filename='images/mop_logo.svg', v=ASSETS_VERSION) }}"
                alt="Maps of Power Logo"
                height="200"
                class="d-inline-block">
@@ -115,19 +115,19 @@
   <div class="d-flex justify-content-center align-items-center flex-wrap">
     <a href="https://www.oeaw.ac.at/" target="_blank" class="mx-3 my-2 logo-container">
       <img
-        src="{{ url_for('static', filename='images/institutes/oeaw.png', v=ASSETS_VERSION) }}"
+        src="{{ url_for('main.serve_media', filename='images/institutes/oeaw.png', v=ASSETS_VERSION) }}"
         alt="Austrian Academy of Sciences"
         height="70">
     </a>
     <a href="https://www.oeaw.ac.at/imafo/home" target="_blank" class="mx-3 my-2 logo-container">
       <img
-        src="{{ url_for('static', filename='images/institutes/imafo.png', v=ASSETS_VERSION) }}"
+        src="{{ url_for('main.serve_media', filename='images/institutes/imafo.png', v=ASSETS_VERSION) }}"
         alt="Institute for Medieval Studies"
         height="70">
     </a>
     <a href="https://www.univie.ac.at/" target="_blank" class="mx-3 my-2 logo-container">
       <img
-        src="{{ url_for('static', filename='images/institutes/uni_vienna.png', v=ASSETS_VERSION) }}"
+        src="{{ url_for('main.serve_media', filename='images/institutes/uni_vienna.png', v=ASSETS_VERSION) }}"
         alt="University of Vienna"
         height="70">
     </a>

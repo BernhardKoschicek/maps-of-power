@@ -204,7 +204,7 @@
                       <div class="position-absolute bottom-0 end-0 p-2 bg-white bg-opacity-75 rounded-start-3 shadow-sm" style="z-index: 10;">
                         <a href="{{ url_for('iiif_viewer', manifest=ns.main_img.iiif_manifest) }}"
                            target="_blank" class="d-inline-block">
-                          <img src="{{ url_for('static', filename='images/icons/iiif.png', v=ASSETS_VERSION) }}"
+                          <img src="{{ url_for('main.serve_media', filename='images/icons/iiif.png', v=ASSETS_VERSION) }}"
                                alt="iiif_logo" style="width: 24px">
                         </a>
                       </div>
@@ -809,7 +809,7 @@
                       {% if img.iiif_manifest %}
                         <a href="{{ url_for('iiif_viewer', manifest=img.iiif_manifest) }}"
                            target="_blank" class="d-inline-block">
-                          <img src="{{ url_for('static', filename='images/icons/iiif.png', v=ASSETS_VERSION) }}"
+                          <img src="{{ url_for('main.serve_media', filename='images/icons/iiif.png', v=ASSETS_VERSION) }}"
                                alt="iiif_logo" style="width: 24px">
                         </a>
                       {% endif %}

@@ -238,7 +238,7 @@
                                 </a>
                             {% endif %}
                             {% if lit.download %}
-                                <a href="{{ url_for('static', filename='repository/' + lit.download, v=ASSETS_VERSION ) }}" 
+                                <a href="{{ url_for('main.serve_media', filename='repository/' + lit.download, v=ASSETS_VERSION ) }}" 
                                    class="btn btn-xs btn-outline-success py-1.5 px-3 text-uppercase fw-bold" 
                                    target="_blank" title="{{ _('Download PDF') }}" style="font-size: 0.7rem; letter-spacing: 0.05em;">
                                     <i class="bi bi-file-earmark-arrow-down-fill me-1"></i>{{ _('PDF') }}

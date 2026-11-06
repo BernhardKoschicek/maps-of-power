@@ -10,7 +10,7 @@
     <div class="row align-items-center">
       <div class="col-lg-8">
         <div class="d-flex align-items-center gap-3 mb-3">
-          <img src="{{ url_for('static', filename='images/tib/digtib.png', v=ASSETS_VERSION) }}"
+          <img src="{{ url_for('main.serve_media', filename='images/tib/digtib.png', v=ASSETS_VERSION) }}"
                alt="DigTIB Logo" style="height: 52px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));">
           <h1 class="display-5 fw-bold mb-0 text-white">Tabula Imperii Byzantini</h1>
         </div>
@@ -105,7 +105,7 @@
       <div class="col">
         <div class="card h-100 tib-card border-0 d-flex flex-column">
           <div class="tib-icon-container position-relative">
-            <img src="{{ url_for('static', filename='thumbnails/' + vol.key + '_register_icon.jpg', v=ASSETS_VERSION) }}"
+            <img src="{{ url_for('main.serve_media', filename='thumbnails/' + vol.key + '_register_icon.jpg', v=ASSETS_VERSION) }}"
                  alt="{{ vol.name }}" class="tib-card-icon" loading="lazy">
             <span class="position-absolute top-0 end-0 m-3 badge {{ 'bg-success' if vol.published else 'bg-secondary' }} rounded-pill px-3 py-1 shadow-sm">
               {{ _('Published') if vol.published else _('In Preparation') }}

@@ -13,12 +13,14 @@ def image_gallery(images: dict[str, Any]) -> str:
         escaped_citation = escape(value["citation"])
         escaped_desc = escape(value.get("description", ""))
 
+        img_url = url_for('main.serve_media', filename=f'images/{escaped_src}')
+        thumb_url = url_for(
+            'main.serve_media', filename=f'thumbnails/{escaped_src}')
         html += '<div class="col-lg-3"><figure class="figure">'
         html += (
-            f'<a href="{url_for("static", filename="images/" + escaped_src)}"'
+            f'<a href="{img_url}"'
             f' data-caption="{escaped_caption}, {escaped_citation}">'
-            f'<img src='
-            f'"{url_for("static", filename="thumbnails/" + escaped_src)}"'
+            f'<img src="{thumb_url}"'
             f' alt="{escaped_key}" class="img-fluid p-4"></a>')
         if escaped_desc:
             html += f'<p>{escaped_desc}</p>'

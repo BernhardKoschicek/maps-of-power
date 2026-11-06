@@ -5,7 +5,7 @@
   <section class="hero-section">
     {% if has_local_hero_video %}
       <video class="yt-background d-none d-lg-block" autoplay muted loop playsinline preload="auto"
-             poster="{{ url_for('static', filename='images/hero_poster.jpg', v=ASSETS_VERSION) }}"
+             poster="{{ url_for('main.serve_media', filename='images/hero_poster.jpg', v=ASSETS_VERSION) }}"
              style="object-fit: cover;">
         <source src="{{ url_for('main.serve_media', filename='videos/hero.mp4') }}" type="video/mp4">
       </video>

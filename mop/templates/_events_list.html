@@ -403,7 +403,7 @@
            id="ev-{{ event['id'] }}">
         {% if event['icon'] %}
         <div class="ev-card-img-wrap">
-          <img src="{{ url_for('static', filename='thumbnails/' + event['icon'], v=ASSETS_VERSION) }}"
+          <img src="{{ url_for('main.serve_media', filename='thumbnails/' + event['icon'], v=ASSETS_VERSION) }}"
                alt="{{ event['title'] }}"
                loading="lazy">
         </div>
@@ -549,7 +549,7 @@ document.addEventListener('DOMContentLoaded', function () {
       {% for event in events %}
         {% if event['icon'] %}
         <div class="ev-preview-card" data-href="{{ url_for('events') }}#ev-{{ event['id'] }}">
-          <img src="{{ url_for('static', filename='thumbnails/' + event['icon'], v=ASSETS_VERSION) }}"
+          <img src="{{ url_for('main.serve_media', filename='thumbnails/' + event['icon'], v=ASSETS_VERSION) }}"
                alt="{{ event['title'] }}"
                loading="lazy">
           <div class="ev-preview-card-body">

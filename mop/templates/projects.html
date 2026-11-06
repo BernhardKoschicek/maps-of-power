@@ -142,7 +142,7 @@
                 <div class="premium-icon-container">
                   <span class="status-pill status-active" id="status-pill-{{ project['acronym'] }}">{{ _('Active') }}</span>
                   {% if project.icon %}
-                    <img src="{{ url_for('static', filename='thumbnails/' + project['icon'], v=ASSETS_VERSION) }}"
+                    <img src="{{ url_for('main.serve_media', filename='thumbnails/' + project['icon'], v=ASSETS_VERSION) }}"
                          alt="{{ project['acronym'] }} icon"
                          loading="lazy"
                          style="max-height: 90px; max-width: 75%; object-fit: contain; border-radius: 10px;">

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark {{ bg }} navbar-expand-lg" id="mainNavbar">
   <div class="container position-relative">
     <a class="navbar-brand d-flex align-items-center py-2" href="{{ url_for('about') }}">
-      <img src="{{ url_for('static', filename='images/mop_logo_inv.svg', v=ASSETS_VERSION) }}"
+      <img src="{{ url_for('main.serve_media', filename='images/mop_logo_inv.svg', v=ASSETS_VERSION) }}"
            alt="Maps of Power Logo"
            class="navbar-logo d-inline-block">
     </a>

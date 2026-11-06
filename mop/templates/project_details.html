@@ -108,7 +108,7 @@
                     {% for fund in project.funded_by %}
                       <a href="{{ fund.url }}" target="_blank" class="logo-ite/um" title="{{ fund.name }}">
                         <img
-                          src="{{ url_for('static', filename='images/institutes/'+fund.logo, v=ASSETS_VERSION) }}"
+                          src="{{ url_for('main.serve_media', filename='images/institutes/'+fund.logo, v=ASSETS_VERSION) }}"
                           alt="{{ fund.name }}"
                           class="img-fluid">
                       </a>
@@ -123,7 +123,7 @@
                   {% for host in project.host_institutes %}
                     <a href="{{ host.url }}" target="_blank" class="logo-item" title="{{ host.name }}">
                       <img
-                        src="{{ url_for('static', filename='images/institutes/'+host.logo, v=ASSETS_VERSION) }}"
+                        src="{{ url_for('main.serve_media', filename='images/institutes/'+host.logo, v=ASSETS_VERSION) }}"
                         alt="{{ host.name }}"
                         class="img-fluid">
                     </a>
@@ -200,10 +200,10 @@
               {% for img in project.images %}
                 <div class="col-6 col-lg-3">
                   <figure class="figure p-2 h-100 d-flex flex-column mb-0">
-                    <a href="{{ url_for('static', filename='images/projects/' + project.acronym + '/' + img.src, v=ASSETS_VERSION) }}"
+                    <a href="{{ url_for('main.serve_media', filename='images/projects/' + project.acronym + '/' + img.src, v=ASSETS_VERSION) }}"
                        data-caption="{{ img.description }}, {{ img.citation }}"
                        style="display:block; overflow:hidden; border-radius:6px;">
-                      <img src="{{ url_for('static', filename="thumbnails/" + img.src, v=ASSETS_VERSION) }}"
+                      <img src="{{ url_for('main.serve_media', filename="thumbnails/" + img.src, v=ASSETS_VERSION) }}"
                            alt="{{ img.src }}"
                            class="img-fluid w-100" style="object-fit:cover; height:150px;">
                     </a>
@@ -649,7 +649,7 @@
                     <a href="{{ link.link }}" class="text-decoration-none d-block p-3 rounded-4 bg-light border hover-translate" target="_blank" style="transition: transform 0.25s ease;">
                   {% endif %}
                   {% if link.file %}
-                    <a href="{{ url_for('static', filename='repository/' + link.file, v=ASSETS_VERSION) }}" class="text-decoration-none d-block p-3 rounded-4 bg-light border hover-translate" style="transition: transform 0.25s ease;">
+                    <a href="{{ url_for('main.serve_media', filename='repository/' + link.file, v=ASSETS_VERSION) }}" class="text-decoration-none d-block p-3 rounded-4 bg-light border hover-translate" style="transition: transform 0.25s ease;">
                   {% endif %}
                     <i class="{{ link.icon }} display-6 text-accent2 mb-2 d-block"></i>
                     <span class="small fw-bold text-dark d-block" style="font-size:0.8rem;">{{ link.label }}</span>

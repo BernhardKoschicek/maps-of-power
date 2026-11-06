@@ -4,7 +4,7 @@
     <!-- HistGeo Banner Section -->
     <div class="row mb-4">
       <div class="col-12 text-center">
-        <img src="{{ url_for('static', filename='images/histgeo_logo.png', v=ASSETS_VERSION) }}"
+        <img src="{{ url_for('main.serve_media', filename='images/histgeo_logo.png', v=ASSETS_VERSION) }}"
              alt="Logo Historical Geography" class="img-fluid w-100 rounded shadow-sm">
       </div>
     </div>
@@ -150,7 +150,7 @@
                     {% endif %}
                   </div>
                   <div class="col-md-3 text-center">
-                    <img src="{{ url_for('static', filename='images/vol-' + number | string + '.png', v=ASSETS_VERSION) }}"
+                    <img src="{{ url_for('main.serve_media', filename='images/vol-' + number | string + '.png', v=ASSETS_VERSION) }}"
                          alt="vol-{{ number }}" class="img-fluid rounded shadow-sm"
                          loading="lazy" style="max-height: 250px;">
                   </div>
@@ -182,7 +182,7 @@
             <p class="small text-muted mb-4">
               {{ _('histgeo_citation_1') }}
             </p>
-            <a href="{{ url_for('static', filename='repository/Studies-in-Historical-Geography-and-Cultural-Heritage_Instructions.pdf', v=ASSETS_VERSION) }}"
+            <a href="{{ url_for('main.serve_media', filename='repository/Studies-in-Historical-Geography-and-Cultural-Heritage_Instructions.pdf', v=ASSETS_VERSION) }}"
                class="d-inline-block p-3 border rounded text-decoration-none link-dark bg-white shadow-sm hover-shadow"
                target="_blank">
               <i class="bi bi-file-earmark-pdf text-danger fs-1"></i>

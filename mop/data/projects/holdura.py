@@ -84,7 +84,7 @@ project_holdura = {
     'videos': [
         youtube_iframe_with_logos(
             'https://www.youtube-nocookie.com/embed/NV4TT4QnFNI',
-            left_logo='/static/images/projects/holdura/apox_schwarz.png',
-            right_logo='/static/images/projects/holdura/ram_schwarz.png')],
+            left_logo='/media/images/projects/holdura/apox_schwarz.png',
+            right_logo='/media/images/projects/holdura/ram_schwarz.png')],
     'oaID': '117730',
     'api': 'mop', }
