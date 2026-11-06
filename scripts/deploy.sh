@@ -45,6 +45,11 @@ fi
 
 echo "==> [3/5] Applying updates (Mode: ${DEPLOY_MODE})..."
 
+# Ensure git hooks are installed regardless of deployment mode
+if command -v python3 >/dev/null 2>&1; then
+    python3 scripts/setup_git_hooks.py || true
+fi
+
 if [ "${DEPLOY_MODE}" = "container" ]; then
     echo "==> Building and restarting container services via compose..."
     if command -v podman >/dev/null 2>&1 && podman compose version >/dev/null 2>&1; then

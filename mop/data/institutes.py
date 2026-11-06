@@ -134,13 +134,13 @@ institutes = {
     'tib': {
         'name': _('Tabula Imperii Byzantini'),
         'url': 'https://tib.oeaw.ac.at',
-        'logo': 'tib.png',
+        'logo': 'TIB-logo.png',
         'member': '',
         'address': ''},
     'uai': {
         'name': _('Union Académique Internationale'),
         'url': 'http://www.uai-iua.org/en',
-        'logo': 'uai.jpg',
+        'logo': 'uai.png',
         'member': '',
         'address': ''},
     'noe': {

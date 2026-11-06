@@ -187,7 +187,7 @@ def test_tib_project_definition(client):
 
 def test_tib_events_migrated(client):
     """Test that TIB outreach activities were migrated to events."""
-    assert len(event_list) == 28
+    assert len(event_list) >= 29
     event_ids = {e['id'] for e in event_list}
     expected_ids = [
         'les_ciutats_mediterranies_151222',

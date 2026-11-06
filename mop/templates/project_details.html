@@ -106,7 +106,7 @@
                   <div class="details-sidebar-label">{{ _('Funded by') }}:</div>
                   <div class="logo-grid">
                     {% for fund in project.funded_by %}
-                      <a href="{{ fund.url }}" target="_blank" class="logo-ite/um" title="{{ fund.name }}">
+                      <a href="{{ fund.url }}" target="_blank" class="logo-item" title="{{ fund.name }}">
                         <img
                           src="{{ url_for('main.serve_media', filename='images/institutes/'+fund.logo, v=ASSETS_VERSION) }}"
                           alt="{{ fund.name }}"

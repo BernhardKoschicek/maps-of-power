@@ -10,4 +10,9 @@ mkdir -p "${STORAGE}/data" \
          "${STORAGE}/media/videos" \
          "${STORAGE}/media/repository"
 
+# Automatically generate any missing thumbnails on container startup
+if [ -f "/app/scripts/thumbnail_generation.py" ]; then
+    python /app/scripts/thumbnail_generation.py || true
+fi
+
 exec "$@"
