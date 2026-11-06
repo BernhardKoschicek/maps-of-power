@@ -26,6 +26,18 @@ types = {
         'name': _('press_release'),
         'bs_icon': 'bi-newspaper'}}
 event_list = [{
+    'id': 'byzantine_congress_250826',
+    'type': types['presentation'],
+    'date': f"{get_dates_formatted(2026, 8, 25)}",
+    'who': [team['mpopovic']],
+    'icon': 'byzantine_congress_250826.jpg',
+    'title': _('New Directions for Historical Geography'),
+    'description': _('byzantine_congress_250826'),
+    'attachment': [{
+        'path': '',
+        'type': ''
+    }]
+}, {
     'id': 'didip_230726',
     'type': types['presentation'],
     'date': f"{get_dates_formatted(2026, 7, 23)}",
