@@ -20,6 +20,11 @@
         "vis-network": "^10.1.0"
     },
     "name": "mop",
+    "overrides": {
+        "deepmerge": "4.1.2",
+        "dompurify": "^3.4.17",
+        "uuid": "^14.0.3"
+    },
     "scripts": {
         "dev": "echo 'No frontend build step required. Dependencies are served directly from node_modules.'"
     }
