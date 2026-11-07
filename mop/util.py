@@ -20,25 +20,29 @@ def youtube_iframe(
         left_logo: Optional[str] = None,
         right_logo: Optional[str] = None) -> str:
     if not left_logo and not right_logo:
-        return '<div class="col-12 col-md-8 text-center">' \
-               '<div class="ratio ratio-16x9 rounded-4 overflow-hidden border shadow-sm">' \
-               f'<iframe width="560" height="315" src="{link_}" ' \
-               'title="YouTube video player" ' \
-               'allow="accelerometer; autoplay; clipboard-write; ' \
-               'encrypted-media; gyroscope; picture-in-picture" ' \
-               'allowfullscreen></iframe>' \
-               '</div>' \
-               '</div>'
+        return (
+            '<div class="col-12 col-md-8 text-center">'
+            '<div class="ratio ratio-16x9 rounded-4 '
+            'overflow-hidden border shadow-sm">'
+            f'<iframe width="560" height="315" src="{link_}" '
+            'title="YouTube video player" '
+            'allow="accelerometer; autoplay; clipboard-write; '
+            'encrypted-media; gyroscope; picture-in-picture" '
+            'allowfullscreen></iframe>'
+            '</div>'
+            '</div>')
 
     left_col = (
-        '<div class="col-6 col-md-2 order-2 order-md-1 d-flex align-items-center justify-content-center p-2">'
+        '<div class="col-6 col-md-2 order-2 order-md-1 '
+        'd-flex align-items-center justify-content-center p-2">'
         f'<img src="{left_logo}" class="img-fluid video-image-size" alt="">'
         '</div>'
     ) if left_logo else '<div class="col-md-2 d-none d-md-block"></div>'
 
     video_col = (
         '<div class="col-12 col-md-8 order-1 order-md-2 text-center">'
-        '<div class="ratio ratio-16x9 rounded-4 overflow-hidden border shadow-sm">'
+        '<div class="ratio ratio-16x9 rounded-4 '
+        'overflow-hidden border shadow-sm">'
         f'<iframe width="560" height="315" src="{link_}" '
         'title="YouTube video player" '
         'allow="accelerometer; autoplay; clipboard-write; '
@@ -49,7 +53,8 @@ def youtube_iframe(
     )
 
     right_col = (
-        '<div class="col-6 col-md-2 order-3 order-md-3 d-flex align-items-center justify-content-center p-2">'
+        '<div class="col-6 col-md-2 order-3 order-md-3 '
+        'd-flex align-items-center justify-content-center p-2">'
         f'<img src="{right_logo}" class="img-fluid video-image-size" alt="">'
         '</div>'
     ) if right_logo else '<div class="col-md-2 d-none d-md-block"></div>'

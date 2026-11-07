@@ -231,3 +231,26 @@ def test_title_narrative_icon() -> None:
         "Acquired their noble title or administrative rank through the "
         "transaction of" in narratives[0]['text'])
     assert narratives[0]['icon'] == 'bi-award'
+
+
+def test_narrative_html_escaping() -> None:
+    rel = Relation(
+        relation_to_id="111",
+        label="<script>alert(1)</script>",
+        system_class="Place",
+        begin="1300<img src=x>",
+        end="1350",
+        type=None,
+        description="",
+        geometry=None,
+        properties=["crm:P74_has_current_or_former_residence"])
+    entity = Entity(
+        id_="222",
+        name="John Doe",
+        description="",
+        system_class="Person",
+        relations={"places": [rel]})
+    narratives = NarrativeGenerator.generate(entity)
+    assert "<script>" not in narratives[0]['text']
+    assert "&lt;script&gt;alert(1)&lt;/script&gt;" in narratives[0]['text']
+    assert "&lt;img src=x&gt;" in narratives[0]['text']

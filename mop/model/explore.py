@@ -53,7 +53,9 @@ system_classes = {
 
 
 def get_oa_by_view_class(
-        view: str, project_id: str | list[str], api_path: Optional[str] = None) -> list[Optional[Entity]]:
+        view: str,
+        project_id: str | list[str],
+        api_path: Optional[str] = None) -> list[Optional[Entity]]:
     if view not in view_classes:
         return []
 

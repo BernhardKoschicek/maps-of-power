@@ -135,8 +135,9 @@ volumes = {
         'and Cultural Heritage 4). Vienna–Novi Sad (Akademska '
         'knjiga) 2022.'},
     5: {
-        'title': 'Wilderness Revisited: Its Essence, Perception, Description and '
-        'Image in Byzantium and Beyond',
+        'title': (
+            'Wilderness Revisited: Its Essence, Perception, Description and '
+            'Image in Byzantium and Beyond'),
         'author': 'Mihailo St. Popović ' + _('eds.'),
         'abstract': [],
         'order': '',

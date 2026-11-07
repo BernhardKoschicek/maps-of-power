@@ -27,8 +27,9 @@ images = [
     {
         'src': 'lada_niva_bonce.jpg',
         'description': _(
-            'With archaeologist Prof. Dr. Viktor Lilčikj and his Lada Niva on '
-            'the way to the site of Bonče, Republic of North Macedonia (2016)'),
+            'With archaeologist Prof. Dr. Viktor Lilčikj and his Lada Niva '
+            'on the way to the site of Bonče, Republic of North Macedonia '
+            '(2016)'),
         'citation': 'Mihailo St. Popović, TIB 16',
         'category': ['tib_balkan']},
     {

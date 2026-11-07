@@ -3,8 +3,6 @@ from flask_babel import lazy_gettext as _
 from mop.data.institutes import institutes
 from mop.util import (
     get_dates_formatted,
-    get_image_frame,
-    youtube_iframe,
     youtube_iframe_with_logos,
 )
 

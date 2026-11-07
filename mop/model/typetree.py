@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import Any, Dict, List
 
 
+# pylint: disable=too-many-instance-attributes
 @dataclass
 class TypeTree:
     id: int

@@ -1,6 +1,7 @@
 import re
 from typing import Any
 from flask import url_for
+from markupsafe import escape
 from mop.model.entity import Entity, Relation
 
 
@@ -20,9 +21,12 @@ def build_target_link(
             f"/projects/{project}/explore/{view}/{rel.relation_to_id}"
             if project and view else f"/entity/{rel.relation_to_id}")
 
+    safe_url = escape(url)
+    safe_label = escape(rel.label)
     link_html = (
-        f'<a href="{url}" class="link-primary fw-bold text-decoration-none">'
-        f'{rel.label}</a>')
+        f'<a href="{safe_url}" '
+        f'class="link-primary fw-bold text-decoration-none">'
+        f'{safe_label}</a>')
 
     # Format and append date range if available
     if rel.begin or rel.end:
@@ -37,7 +41,9 @@ def build_target_link(
             else:
                 date_str = begin_part or end_part
         if date_str:
-            link_html += f' <span class="text-muted small">({date_str})</span>'
+            safe_date = escape(date_str)
+            link_html += (
+                f' <span class="text-muted small">({safe_date})</span>')
 
     return link_html
 
@@ -172,7 +178,7 @@ class ActorRelationshipConfig(NarrativePropertyConfig):
                 target_links.append(link_html)
 
             targets_str = join_targets(target_links)
-            narrative_text = f"{term} {targets_str}."
+            narrative_text = f"{escape(term)} {targets_str}."
             narratives.append({"text": narrative_text, "icon": self.icon})
 
         return narratives
@@ -352,6 +358,7 @@ NARRATIVE_CONFIGS = {
         icon="bi-diagram-3")}
 
 
+# pylint: disable=too-few-public-methods
 class NarrativeGenerator:
 
     @staticmethod

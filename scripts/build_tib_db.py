@@ -4,56 +4,27 @@ Parses 14 volume datasets, normalizes Greek and diacritic characters,
 formats citations as '52 (A. 75)', and builds SQLite tables and FTS5 index.
 """
 
+import ast
 import glob
 import json
 import os
 from pathlib import Path
 import re
 import sqlite3
+import sys
 from typing import Any
-import unicodedata
 
-# Map Greek characters and homoglyphs to Latin equivalents
-GREEK_TO_LATIN = {
-    'Α': 'A', 'α': 'a', 'Ά': 'A', 'ά': 'a',
-    'Β': 'B', 'β': 'b',
-    'Γ': 'G', 'γ': 'g',
-    'Δ': 'D', 'δ': 'd',
-    'Ε': 'E', 'ε': 'e', 'Έ': 'E', 'é': 'e',
-    'Ζ': 'Z', 'ζ': 'z',
-    'Η': 'E', 'η': 'e', 'Ή': 'E', 'ή': 'e',
-    'Θ': 'Th', 'θ': 'th',
-    'Ι': 'I', 'ι': 'i', 'Ί': 'I', 'ί': 'i', 'ϊ': 'i', 'ΐ': 'i',
-    'Κ': 'K', 'κ': 'k',
-    'Λ': 'L', 'λ': 'l',
-    'Μ': 'M', 'μ': 'm',
-    'Ν': 'N', 'ν': 'n',
-    'Ξ': 'X', 'ξ': 'x',
-    'Ο': 'O', 'ο': 'o', 'Ό': 'O', 'ό': 'o',
-    'Π': 'P', 'π': 'p',
-    'Ρ': 'R', 'ρ': 'r',
-    'Σ': 'S', 'σ': 's', 'ς': 's',
-    'Τ': 'T', 'τ': 't',
-    'Υ': 'Y', 'υ': 'y', 'Ύ': 'Y', 'ύ': 'y', 'ϋ': 'y', 'ΰ': 'y',
-    'Φ': 'Ph', 'φ': 'ph',
-    'Χ': 'Ch', 'χ': 'ch',
-    'Ψ': 'Ps', 'ψ': 'ps',
-    'Ω': 'O', 'ω': 'o', 'Ώ': 'O', 'ώ': 'o'}
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from mop.model.tib_db import (  # pylint: disable=wrong-import-position
+    GREEK_TO_LATIN, normalize_search_term as normalize_for_search)
 
-def normalize_for_search(text: str) -> str:
-    """Normalize text for diacritic-insensitive and Greek-tolerant search."""
-    if not text:
-        return ''
-    # 1. Map Greek homoglyphs and transliterations
-    chars = [GREEK_TO_LATIN.get(c, c) for c in text]
-    s = ''.join(chars)
-    # 2. Decompose unicode accents and remove combining diacritics
-    decomposed = unicodedata.normalize('NFKD', s)
-    stripped = ''.join(c for c in decomposed if not unicodedata.combining(c))
-    # 3. Replace common ligatures and punctuation
-    cleaned = stripped.replace('ß', 'ss').replace('’', "'").replace('`', "'")
-    return cleaned.lower().strip()
+__all__ = [
+    'GREEK_TO_LATIN',
+    'build_database',
+    'normalize_for_search',
+    'parse_page_citations',
+]
 
 
 # pylint: disable=too-many-locals,too-many-branches,too-many-statements
@@ -232,15 +203,15 @@ def build_database(
     total_pages = 0
 
     for filepath in files:
-        ns: dict[str, Any] = {}
-        with open(filepath, 'r', encoding='utf-8') as fp:
-            exec(fp.read(), ns)  # pylint: disable=exec-used  # nosec B102
-
         vol_rows: list[dict[str, Any]] = []
-        for v in ns.values():
-            if isinstance(v, list):
-                vol_rows = v
-                break
+        with open(filepath, 'r', encoding='utf-8') as fp:
+            tree = ast.parse(fp.read(), filename=filepath)
+        for node in tree.body:
+            if isinstance(node, ast.Assign):
+                val = ast.literal_eval(node.value)
+                if isinstance(val, list):
+                    vol_rows = val
+                    break
 
         if not vol_rows:
             continue
@@ -309,7 +280,6 @@ def build_database(
 
 
 if __name__ == '__main__':
-    from pathlib import Path
     root_dir = Path(__file__).resolve().parent.parent
     SOURCE_DIR = '/home/bkoschicek/www/tib/tib/data/register'
     TARGET_DB = str(root_dir / 'storage' / 'data' / 'tib_register.db')

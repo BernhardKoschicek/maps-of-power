@@ -7,8 +7,9 @@ images = [
     {
         'src': 'rhr_louis_XIV.jpg',
         'description': _('The French King Louis XIV (1638-1715)'),
-        'citation': 'Von Hyacinthe Rigaud - wartburg.edu[toter Link], Gemeinfrei, '
-        'https://commons.wikimedia.org/w/index.php?curid=482613',
+        'citation': (
+            'Von Hyacinthe Rigaud - wartburg.edu[toter Link], Gemeinfrei, '
+            'https://commons.wikimedia.org/w/index.php?curid=482613'),
         'category': ['rhr']},
     {
         'src': 'rhr_eugene_ferdinand_victor_delacroix.jpg',

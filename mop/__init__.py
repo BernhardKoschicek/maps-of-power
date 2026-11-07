@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 import time
 from typing import Any
@@ -70,13 +69,6 @@ def create_app(config: dict[str, Any] | None = None) -> Flask:
         raise error
 
     application.url_build_error_handlers.append(_handle_url_build_error)
-
-    @application.before_request
-    def before_request() -> None:
-        proxy = application.config.get('API_PROXY')
-        if proxy:
-            os.environ['http_proxy'] = proxy
-            os.environ['https_proxy'] = proxy
 
     @application.context_processor
     def inject_conf_var() -> dict[str, Any]:

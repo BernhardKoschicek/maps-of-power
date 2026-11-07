@@ -4,6 +4,7 @@ Provides query methods for the Tabula Imperii Byzantini (TIB) SQLite
 register, including diacritic-tolerant and Greek homoglyph search.
 """
 
+from contextlib import closing
 from functools import lru_cache
 import json
 from pathlib import Path
@@ -124,16 +125,17 @@ VOLUMES_INFO: list[dict[str, Any]] = [
          'Praevalitana and Dacia Mediterranea. It is closely connected to the '
          'volume on "Macedonia, Southern Part" (TIB 11, Peter Soustal). Since '
          'the historical area of Macedonia is today divided between Greece, '
-         'the Republic of North Macedonia and Bulgaria, the volume "Macedonia, '
-         'Northern Part" (TIB 16) covers the whole territory of North '
-         'Macedonia and two districts of Bulgaria (namely Kjustendil and '
-         'Blagoevgrad). The volume on "Macedonia, Northern Part" thus bridges '
-         'the gap between the volumes TIB 6 "Thrace" and TIB 11 "Macedonia, '
-         'Southern Part". The research for this volume is based on written '
-         'sources (mainly in Greek, Latin, Old Slavonic and Ottoman), '
-         'monuments, archaeological reports and a vast variety of toponyms, as '
-         'well as extensive secondary literature, mostly in the South Slavic '
-         'languages. Research trips to the area are regularly conducted.')},
+         'the Republic of North Macedonia and Bulgaria, the volume '
+         '"Macedonia, Northern Part" (TIB 16) covers the whole territory of '
+         'North Macedonia and two districts of Bulgaria (namely Kjustendil '
+         'and Blagoevgrad). The volume on "Macedonia, Northern Part" thus '
+         'bridges the gap between the volumes TIB 6 "Thrace" and TIB 11 '
+         '"Macedonia, Southern Part". The research for this volume is based '
+         'on written sources (mainly in Greek, Latin, Old Slavonic and '
+         'Ottoman), monuments, archaeological reports and a vast variety of '
+         'toponyms, as well as extensive secondary literature, mostly in the '
+         'South Slavic languages. Research trips to the area are regularly '
+         'conducted.')},
     {'id': 17, 'key': 'tib17', 'name': 'TIB 17',
      'title': 'TIB 17 Nea Epeiros and Praevalis',
      'authors': 'Andreas Külzer',
@@ -142,22 +144,23 @@ VOLUMES_INFO: list[dict[str, Any]] = [
          'The volume 17 of the TIB entitled "Nea Epeiros and Praevalis" '
          'comprises the Early Byzantine provinces of the same name. It is a '
          'systematic continuation of the scholarly endeavour in accordance '
-         'with the excellently evaluated working plan of the Long-Term-Project '
-         'TIB of the Austrian Academy of Sciences towards the Adriatic Sea and, '
-         'thus, closing the gap between the volumes TIB 16 "Macedonia, '
-         'Northern Part" and TIB 3 "Nikopolis and Kephallēnia". The volume '
-         '"Nea Epeiros and Praevalis" covers the whole territory of today’s '
-         'Montenegro, the northern part of Albania and the district of Raška '
-         '(Novi Pazar) in Serbia. The research for this volume is based on '
-         'written sources (mainly in Greek, Latin, Old Slavonic and Ottoman), '
-         'monuments, archaeological reports and a vast variety of toponyms, as '
-         'well as extensive secondary literature, mostly in the South Slavic '
-         'languages. A special emphasis is put on the Cultural Heritage in the '
-         'area of research and especially on Austro-Hungarian archival '
-         'material on the region kept in the Austrian State Archives. Research '
-         'trips to the area are regularly conducted, during which '
-         'applications deriving from geoinformatics (e.g. Historical '
-         'Geographic Information Systems / HGIS) are used.')}]
+         'with the excellently evaluated working plan of the '
+         'Long-Term-Project TIB of the Austrian Academy of Sciences towards '
+         'the Adriatic Sea and, thus, closing the gap between the volumes '
+         'TIB 16 "Macedonia, Northern Part" and TIB 3 "Nikopolis and '
+         'Kephallēnia". The volume "Nea Epeiros and Praevalis" covers the '
+         'whole territory of today’s Montenegro, the northern part of Albania '
+         'and the district of Raška (Novi Pazar) in Serbia. The research for '
+         'this volume is based on written sources (mainly in Greek, Latin, '
+         'Old Slavonic and Ottoman), monuments, archaeological reports and a '
+         'vast variety of toponyms, as well as extensive secondary '
+         'literature, mostly in the South Slavic languages. A special '
+         'emphasis is put on the Cultural Heritage in the area of research '
+         'and especially on Austro-Hungarian archival material on the region '
+         'kept in the Austrian State Archives. Research trips to the area are '
+         'regularly conducted, during which applications deriving from '
+         'geoinformatics (e.g. Historical Geographic Information Systems / '
+         'HGIS) are used.')}]
 
 
 def get_db_connection() -> sqlite3.Connection:
@@ -177,21 +180,20 @@ def normalize_search_term(text: str) -> str:
     s = ''.join(chars)
     decomposed = unicodedata.normalize('NFKD', s)
     stripped = ''.join(c for c in decomposed if not unicodedata.combining(c))
-    return stripped.replace('ß', 'ss').lower().strip()
+    cleaned = stripped.replace('ß', 'ss').replace('’', "'").replace('`', "'")
+    return cleaned.lower().strip()
 
 
 @lru_cache(maxsize=1)
 def get_volume_counts() -> dict[int, int]:
     """Return dictionary of volume_id to total toponym count."""
     try:
-        conn = get_db_connection()
-        cur = conn.cursor()
-        cur.execute(
-            'SELECT volume_id, COUNT(*) as cnt '
-            'FROM toponyms GROUP BY volume_id')
-        counts = {row['volume_id']: row['cnt'] for row in cur.fetchall()}
-        conn.close()
-        return counts
+        with closing(get_db_connection()) as conn:
+            cur = conn.cursor()
+            cur.execute(
+                'SELECT volume_id, COUNT(*) as cnt '
+                'FROM toponyms GROUP BY volume_id')
+            return {row['volume_id']: row['cnt'] for row in cur.fetchall()}
     except sqlite3.Error:
         return {}
 
@@ -217,9 +219,6 @@ def search_toponyms(
     """Search toponyms by query and optional volume filter."""
     clean_q = query.strip()
     norm_q = normalize_search_term(clean_q)
-
-    conn = get_db_connection()
-    cur = conn.cursor()
 
     params: list[Any] = []
     where_clauses: list[str] = []
@@ -248,39 +247,43 @@ def search_toponyms(
         'WHERE ' + ' AND '.join(where_clauses)
     ) if where_clauses else ''
 
-    # Count total matching rows
-    count_sql = f'SELECT COUNT(*) as total FROM toponyms t {where_str}'  # nosec B608
-    cur.execute(count_sql, params)
-    total = cur.fetchone()['total']
+    with closing(get_db_connection()) as conn:
+        cur = conn.cursor()
 
-    # Fetch paginated results
-    select_sql = f'''
-        SELECT t.id, t.name, t.notes, t.volume, t.volume_id,
-               t.pages_json, t.pages_display
-        FROM toponyms t
-        {where_str}
-        ORDER BY t.volume_id ASC, t.name COLLATE NOCASE ASC
-        LIMIT ? OFFSET ?
-    '''  # nosec B608
-    cur.execute(select_sql, params + [limit, offset])
+        # Count total matching rows
+        count_sql = (
+            'SELECT COUNT(*) as total '
+            f'FROM toponyms t {where_str}')  # nosec B608
+        cur.execute(count_sql, params)
+        total = cur.fetchone()['total']
 
-    results = []
-    for row in cur.fetchall():
-        try:
-            pages = json.loads(row['pages_json'])
-        except (json.JSONDecodeError, TypeError):
-            pages = []
+        # Fetch paginated results
+        select_sql = f'''
+            SELECT t.id, t.name, t.notes, t.volume, t.volume_id,
+                   t.pages_json, t.pages_display
+            FROM toponyms t
+            {where_str}
+            ORDER BY t.volume_id ASC, t.name COLLATE NOCASE ASC
+            LIMIT ? OFFSET ?
+        '''  # nosec B608
+        cur.execute(select_sql, params + [limit, offset])
 
-        results.append({
-            'id': row['id'],
-            'name': row['name'],
-            'notes': row['notes'],
-            'volume': row['volume'],
-            'volume_id': row['volume_id'],
-            'pages': pages,
-            'pages_display': row['pages_display']})
+        results = []
+        for row in cur.fetchall():
+            try:
+                pages = json.loads(row['pages_json'])
+            except (json.JSONDecodeError, TypeError):
+                pages = []
 
-    conn.close()
+            results.append({
+                'id': row['id'],
+                'name': row['name'],
+                'notes': row['notes'],
+                'volume': row['volume'],
+                'volume_id': row['volume_id'],
+                'pages': pages,
+                'pages_display': row['pages_display']})
+
     return {'total': total, 'limit': limit, 'offset': offset,
             'results': results}
 

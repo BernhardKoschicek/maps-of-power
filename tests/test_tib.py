@@ -1,7 +1,9 @@
 """Unit and integration tests for TIB register and reader functionality."""
 
 # pylint: disable=redefined-outer-name
+from typing import Generator
 import pytest
+from flask.testing import FlaskClient
 from mop import app
 from mop.data.events import event_list
 from mop.data.literature import literatures
@@ -12,14 +14,14 @@ from mop.model.tib_db import (
 
 
 @pytest.fixture
-def client():
+def client() -> Generator[FlaskClient, None, None]:
     """Create Flask test client."""
     app.config['TESTING'] = True
     with app.test_client() as test_client:
         yield test_client
 
 
-def test_normalize_search_term():
+def test_normalize_search_term() -> None:
     """Test diacritic folding and Greek homoglyph conversion."""
     assert normalize_search_term('Αchelōοs') == 'acheloos'
     assert normalize_search_term('Acheloos') == 'acheloos'
@@ -29,7 +31,7 @@ def test_normalize_search_term():
     assert normalize_search_term('') == ''
 
 
-def test_search_toponyms_all():
+def test_search_toponyms_all() -> None:
     """Test querying all toponyms without search term."""
     result = search_toponyms(limit=25, offset=0)
     assert result['total'] == 70191
@@ -40,7 +42,7 @@ def test_search_toponyms_all():
     assert 'pages_display' in first
 
 
-def test_search_toponyms_by_volume():
+def test_search_toponyms_by_volume() -> None:
     """Test filtering toponyms by volume ID."""
     res_tib1 = search_toponyms(volume_id=1, limit=50)
     assert res_tib1['total'] == 2209
@@ -49,7 +51,7 @@ def test_search_toponyms_by_volume():
     assert res_tib2['total'] == 2199
 
 
-def test_search_greek_and_diacritic_tolerance():
+def test_search_greek_and_diacritic_tolerance() -> None:
     """Test that searching with or without accents finds Greek names."""
     res1 = search_toponyms(query='acheloos')
     assert res1['total'] > 0
@@ -62,7 +64,7 @@ def test_search_greek_and_diacritic_tolerance():
     assert any('Lēmnos' in n or 'Lemnos' in n for n in names2)
 
 
-def test_citation_commentary_formatting():
+def test_citation_commentary_formatting() -> None:
     """Test that commentary citations are formatted as '52 (A. 75)'."""
     res = search_toponyms(query='Aidepsos', volume_id=1)
     assert res['total'] > 0
@@ -70,7 +72,7 @@ def test_citation_commentary_formatting():
     assert '52 (A. 75)' in item['pages_display']
 
 
-def test_get_volume_metadata():
+def test_get_volume_metadata() -> None:
     """Test volume metadata structure and page counts."""
     volumes = get_volume_metadata()
     assert len(volumes) == 17
@@ -84,7 +86,7 @@ def test_get_volume_metadata():
     assert 'Macedonia, Northern Part' in tib16['description']
 
 
-def test_get_reader_pages():
+def test_get_reader_pages() -> None:
     """Test page retrieval for book reader."""
     pages = get_reader_pages('tib1')
     assert len(pages) == 315
@@ -98,7 +100,7 @@ def test_get_reader_pages():
     assert not get_reader_pages('nonexistent')
 
 
-def test_tib_overview_route(client):
+def test_tib_overview_route(client: FlaskClient) -> None:
     """Test GET /tib overview route."""
     response = client.get('/tib')
     assert response.status_code == 200
@@ -106,7 +108,7 @@ def test_tib_overview_route(client):
     assert b'TIB 1 Hellas and Thessaly' in response.data
 
 
-def test_tib_register_route(client):
+def test_tib_register_route(client: FlaskClient) -> None:
     """Test GET /tib/register routes."""
     res_all = client.get('/tib/register')
     assert res_all.status_code == 200
@@ -120,7 +122,7 @@ def test_tib_register_route(client):
     assert res_404.status_code == 404
 
 
-def test_tib_reader_route(client):
+def test_tib_reader_route(client: FlaskClient) -> None:
     """Test GET /tib/reader/<volume> route."""
     res_reader = client.get('/tib/reader/tib1')
     assert res_reader.status_code == 200
@@ -131,7 +133,7 @@ def test_tib_reader_route(client):
     assert res_no_reader.status_code == 404
 
 
-def test_api_tib_search(client):
+def test_api_tib_search(client: FlaskClient) -> None:
     """Test /api/tib/search endpoint."""
     res = client.get('/api/tib/search?q=Lemnos&limit=10')
     assert res.status_code == 200
@@ -141,7 +143,7 @@ def test_api_tib_search(client):
     assert data['query'] == 'Lemnos'
 
 
-def test_api_tib_reader_pages(client):
+def test_api_tib_reader_pages(client: FlaskClient) -> None:
     """Test /api/tib/reader/<volume>/pages endpoint."""
     res = client.get('/api/tib/reader/tib1/pages')
     assert res.status_code == 200
@@ -153,7 +155,7 @@ def test_api_tib_reader_pages(client):
     assert res_404.status_code == 404
 
 
-def test_tib_project_definition(client):
+def test_tib_project_definition(client: FlaskClient) -> None:
     """Test TIB project metadata and project routes."""
     assert 'tib' in project_data
     tib = project_data['tib']
@@ -185,7 +187,7 @@ def test_tib_project_definition(client):
     assert b'Tabula Imperii Byzantini' in res_followed.data
 
 
-def test_tib_events_migrated(client):
+def test_tib_events_migrated(client: FlaskClient) -> None:
     """Test that TIB outreach activities were migrated to events."""
     assert len(event_list) >= 29
     event_ids = {e['id'] for e in event_list}
@@ -212,7 +214,7 @@ def test_tib_events_migrated(client):
     assert b'tib11_promotion_141122' in res.data
 
 
-def test_tib_publications_migrated(client):
+def test_tib_publications_migrated(client: FlaskClient) -> None:
     """Test that TIB publications were migrated to literature."""
     assert len(literatures) >= 200
     tib_lits = [l for l in literatures if 'tib' in l.get('category', [])]
@@ -239,7 +241,7 @@ def test_tib_publications_migrated(client):
     assert b'data-type-filter="histgeo"' in res.data
 
 
-def test_tib_navbar_and_balkan_project(client):
+def test_tib_navbar_and_balkan_project(client: FlaskClient) -> None:
     """Test that navbar has TIB next to Literature and TIB Balkan project is linked."""
     res_tib = client.get('/tib')
     assert res_tib.status_code == 200

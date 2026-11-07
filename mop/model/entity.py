@@ -143,6 +143,7 @@ def get_geometry_data(geometries: Optional[Dict[str, Any]]) -> Optional[Any]:
 
 
 # --- Dataclasses used in Views & Templates ---
+# pylint: disable=too-many-instance-attributes,invalid-name
 
 
 @dataclass
@@ -275,17 +276,9 @@ class Entity:
         model = PresentationViewModel.model_validate(raw_data)
         return cls.from_model(model)
 
-    @classmethod
-    def from_model(cls, m: PresentationViewModel) -> 'Entity':
-        # 1. Format dates
-        begin, end = format_time_range(m.when)
-
-        # 2. Parse types
-        types_list = ([Types.from_model(t)
-                       for t in m.types] if m.types else None)
-
-        # 3. Parse depictions (files)
-        depictions_list = []
+    @staticmethod
+    def _parse_depictions(m: PresentationViewModel) -> list[Depiction]:
+        depictions_list: list[Depiction] = []
         if m.files:  # pragma: no cover
             for f in m.files:
                 dep = Depiction(
@@ -306,32 +299,68 @@ class Entity:
                     main_image=(
                         f.mainImage if f.mainImage is not None else False))
                 depictions_list.append(dep)
+        return depictions_list
 
-        # 4. Parse external links
-        links_list = []
+    @staticmethod
+    def _parse_links(m: PresentationViewModel) -> list[ExternalLink]:
+        links_list: list[ExternalLink] = []
         if m.externalReferenceSystems:  # pragma: no cover
             for ref in m.externalReferenceSystems:
                 links_list.append(
                     ExternalLink(
                         identifier=ref.referenceURL or ref.identifier or "",
                         referenceSystem=ref.referenceSystem or ""))
+        return links_list
 
-        # 5. Parse relations
-        mapped_relations: Dict[str, List[Relation]] = {}
-        places = []
-        actors = []
-        events = []
-        artifacts = []
-        references = []
-        sources = []
-        source_translations = []
-        administrative_unit = []
-        others = []
+    @staticmethod
+    def _build_relation_obj(rel: RelatedEntityModel) -> Relation:
+        rel_begin, rel_end = format_time_range(rel.when)
+        rel_type = ", ".join([
+            rt.type for rt in rel.relationTypes
+            if rt.type]) if rel.relationTypes else None
+        raw_begin_val = (
+            rel.when.start.earliest if
+            (rel.when and rel.when.start) else None)
+        raw_end_val = (
+            rel.when.end.latest if
+            (rel.when and rel.when.end) else None)
+        properties = ([
+            rt.property for rt in rel.relationTypes
+            if rt.property] if rel.relationTypes else [])
+        is_inverse = any(
+            p.split("_", 1)[0].endswith("i") for p in properties)
 
-        # Populate literature references from the top-level references field
+        return Relation(
+            relation_to_id=str(rel.id),
+            label=rel.title or "",
+            system_class=uc_first(rel.systemClass.replace('_', ' ')),
+            begin=rel_begin,
+            end=rel_end,
+            type=rel_type,
+            description=rel.description or "",
+            geometry=get_geometry_data(rel.geometries),
+            properties=properties,
+            inverse=is_inverse,
+            raw_begin=raw_begin_val,
+            raw_end=raw_end_val)
+
+    @classmethod
+    def _parse_relations(
+            cls, m: PresentationViewModel) -> Dict[str, List[Relation]]:
+        buckets: Dict[str, List[Relation]] = {
+            'places': [],
+            'actors': [],
+            'events': [],
+            'artifacts': [],
+            'references': [],
+            'sources': [],
+            'source_translations': [],
+            'administrative_unit': [],
+            'others': []}
+
         if m.references:  # pragma: no cover
             for p_ref in m.references:
-                references.append(
+                buckets['references'].append(
                     Relation(
                         relation_to_id=str(p_ref.id),
                         label=p_ref.title or "",
@@ -343,88 +372,39 @@ class Entity:
                         description=p_ref.citation,
                         geometry=None))
 
-        # Populate all other relations
-        for sys_class_key, rel_list in m.relations.items():
+        sc_to_bucket = {
+            'place': 'places',
+            'feature': 'places',
+            'stratigraphic_unit': 'places',
+            'group': 'actors',
+            'person': 'actors',
+            'acquisition': 'events',
+            'activity': 'events',
+            'event': 'events',
+            'move': 'events',
+            'production': 'events',
+            'creation': 'events',
+            'artifact': 'artifacts',
+            'human_remains': 'artifacts',
+            'source': 'sources',
+            'source_translation': 'source_translations',
+            'text': 'source_translations',
+            'administrative_unit': 'administrative_unit'}
+
+        for rel_list in m.relations.values():
             for rel in rel_list:
-                rel_begin, rel_end = format_time_range(rel.when)
-                rel_type = ", ".join([
-                    rt.type for rt in rel.relationTypes
-                    if rt.type]) if rel.relationTypes else None
-                raw_begin_val = (
-                    rel.when.start.earliest if
-                    (rel.when and rel.when.start) else None)
-                raw_end_val = (
-                    rel.when.end.latest if
-                    (rel.when and rel.when.end) else None)
-                properties = ([
-                    rt.property for rt in rel.relationTypes
-                    if rt.property] if rel.relationTypes else [])
-                is_inverse = any(
-                    p.split("_", 1)[0].endswith("i") for p in properties)
-
-                rel_obj = Relation(
-                    relation_to_id=str(rel.id),
-                    label=rel.title or "",
-                    system_class=uc_first(rel.systemClass.replace('_', ' ')),
-                    begin=rel_begin,
-                    end=rel_end,
-                    type=rel_type,
-                    description=rel.description or "",
-                    geometry=get_geometry_data(rel.geometries),
-                    properties=properties,
-                    inverse=is_inverse,
-                    raw_begin=raw_begin_val,
-                    raw_end=raw_end_val)
-
                 sc = rel.systemClass.lower()
-                if sc in ['place', 'feature', 'stratigraphic_unit']:
-                    places.append(rel_obj)
-                elif sc in ['group', 'person']:
-                    actors.append(rel_obj)
-                elif sc in ['acquisition', 'activity', 'event', 'move',
-                            'production', 'creation']:
-                    events.append(rel_obj)
-                elif sc in ['artifact', 'human_remains']:  # pragma: no cover
-                    artifacts.append(rel_obj)
-                elif sc == 'source':  # pragma: no cover
-                    sources.append(rel_obj)
-                elif sc in ['source_translation', 'text']:  # pragma: no cover
-                    source_translations.append(rel_obj)
-                elif sc == 'administrative_unit':  # pragma: no cover
-                    administrative_unit.append(rel_obj)
-                elif sc in ['bibliography', 'edition', 'external_reference',
-                            'reference_system', 'file']:  # pragma: no cover
-                    if sc in ['bibliography', 'edition', 'external_reference']:
-                        # Avoid duplicates from top-level references
-                        pass
-                    else:
-                        others.append(rel_obj)
-                else:  # pragma: no cover
-                    others.append(rel_obj)
+                if sc in ('bibliography', 'edition', 'external_reference'):
+                    continue
+                bucket_key = sc_to_bucket.get(sc, 'others')
+                buckets[bucket_key].append(cls._build_relation_obj(rel))
 
-        if places:  # pragma: no cover
-            mapped_relations['places'] = places
-        if actors:
-            mapped_relations['actors'] = actors
-        if events:
-            mapped_relations['events'] = events
-        if artifacts:  # pragma: no cover
-            mapped_relations['artifacts'] = artifacts
-        if references:
-            mapped_relations['references'] = references
-        if sources:  # pragma: no cover
-            mapped_relations['sources'] = sources
-        if source_translations:  # pragma: no cover
-            mapped_relations['source_translations'] = source_translations
-        if administrative_unit:  # pragma: no cover
-            mapped_relations['administrative_unit'] = administrative_unit
-        if others:  # pragma: no cover
-            mapped_relations['others'] = others
+        return {k: v for k, v in buckets.items() if v}
 
-        begin_from = (
-            m.when.start.earliest if (m.when and m.when.start) else None)
-        end_from = (m.when.end.latest if (m.when and m.when.end) else None)
-
+    @staticmethod
+    def _resolve_geometry(
+            m: PresentationViewModel,
+            mapped_relations: Dict[str, List[Relation]]) -> Optional[Any]:
         geometry = get_geometry_data(m.geometries)
         if not geometry:
             for rel_group in mapped_relations.values():
@@ -432,10 +412,22 @@ class Entity:
                     if (mapped_rel.geometry
                             and any("P46" in p
                                     for p in mapped_rel.properties)):
-                        geometry = mapped_rel.geometry
-                        break
-                if geometry:
-                    break
+                        return mapped_rel.geometry
+        return geometry
+
+    @classmethod
+    def from_model(cls, m: PresentationViewModel) -> 'Entity':
+        begin, end = format_time_range(m.when)
+        types_list = ([Types.from_model(t)
+                       for t in m.types] if m.types else None)
+        depictions_list = cls._parse_depictions(m)
+        links_list = cls._parse_links(m)
+        mapped_relations = cls._parse_relations(m)
+
+        begin_from = (
+            m.when.start.earliest if (m.when and m.when.start) else None)
+        end_from = (m.when.end.latest if (m.when and m.when.end) else None)
+        geometry = cls._resolve_geometry(m, mapped_relations)
 
         return cls(
             id_=str(m.id),

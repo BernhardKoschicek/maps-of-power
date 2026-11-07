@@ -64,6 +64,10 @@ def test_ensure_thumbnail_on_demand(tmp_path: Path) -> None:
         "nonexistent.jpg", media_dir, width=50, height=50)
     assert missing is None
 
+    # Glob metacharacters and invalid extensions are rejected
+    assert ensure_thumbnail("*.jpg", media_dir) is None
+    assert ensure_thumbnail("sample.txt", media_dir) is None
+
 
 def test_generate_all_thumbnails_script(tmp_path: Path) -> None:
     """Test bulk generation script with incremental skipping."""

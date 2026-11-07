@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import secrets
 
 # Don't edit this file. To override settings please use instance/production.py
 # or environment variables.
@@ -16,7 +17,7 @@ LANGUAGES = {
     'de': 'Deutsch',
     'en': 'English'}
 DEBUG = os.environ.get('DEBUG', 'False').lower() in ('true', '1')
-SECRET_KEY = os.environ.get('SECRET_KEY', '1E600383250F0F63E9627E650B683DCE')
+SECRET_KEY = os.environ.get('SECRET_KEY') or secrets.token_hex(32)
 
 # Security
 SESSION_COOKIE_SECURE = os.environ.get(

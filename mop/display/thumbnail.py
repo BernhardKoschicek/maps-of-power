@@ -1,3 +1,4 @@
+from functools import lru_cache
 from pathlib import Path
 import sys
 from PIL import Image, ImageFile
@@ -7,6 +8,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 THUMBNAIL_WIDTH = 400
 THUMBNAIL_HEIGHT = 400
 VALID_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tiff", ".webp"}
+GLOB_METACHARS = {"*", "?", "[", "]"}
 
 
 def generate_single_thumbnail(
@@ -44,6 +46,20 @@ def generate_single_thumbnail(
         return False
 
 
+@lru_cache(maxsize=16)
+def _build_image_index(images_dir: Path) -> dict[str, Path]:
+    """Build a cached mapping of image filename to its full path."""
+    if not images_dir.exists():
+        return {}
+    index: dict[str, Path] = {}
+    for path in images_dir.rglob('*'):
+        if (path.is_file()
+                and path.suffix.lower() in VALID_EXTENSIONS
+                and path.name not in index):
+            index[path.name] = path
+    return index
+
+
 def ensure_thumbnail(
         filename: str,
         media_folder: Path,
@@ -51,20 +67,26 @@ def ensure_thumbnail(
         height: int = THUMBNAIL_HEIGHT) -> Path | None:
     """Return thumbnail path, generating on-demand if it does not exist."""
     name = Path(filename).name
-    flat_thumb = media_folder / 'thumbnails' / name
+    if (not name
+            or any(c in name for c in GLOB_METACHARS)
+            or Path(name).suffix.lower() not in VALID_EXTENSIONS):
+        return None
+
+    thumbs_root = (media_folder / 'thumbnails').resolve()
+    flat_thumb = thumbs_root / name
     if flat_thumb.exists():
         return flat_thumb
 
-    exact_thumb = media_folder / 'thumbnails' / filename
-    if exact_thumb.exists():
+    exact_thumb = (thumbs_root / filename).resolve()
+    if exact_thumb.is_relative_to(thumbs_root) and exact_thumb.exists():
         return exact_thumb
 
-    images_dir = media_folder / 'images'
-    matched = list(images_dir.rglob(name))
-    if not matched:
+    images_dir = (media_folder / 'images').resolve()
+    image_index = _build_image_index(images_dir)
+    source_path = image_index.get(name)
+    if not source_path or not source_path.exists():
         return None
 
-    source_path = matched[0]
     if generate_single_thumbnail(source_path, flat_thumb, width, height):
         return flat_thumb
     return None  # pragma: no cover

@@ -548,6 +548,7 @@
                   {% if entity.description %}
                     <div class="tab-pane fade show active lh-lg" id="desc-pane" role="tabpanel" aria-labelledby="desc-tab" tabindex="0">
                       {{ entity.description
+                      | e
                       | replace('\n', '<br>')
                       | replace('Hist.:', '<span class="fw-bold text-muted">Hist.:</span>')
                       | replace('Mon.:', '<span class="fw-bold text-muted">Mon.:</span>')
@@ -557,6 +558,7 @@
                   {% for r in relations['source_translations'] %}
                     <div class="tab-pane fade {% if not entity.description and loop.first %}show active{% endif %} lh-lg" id="trans-{{ r.relation_to_id }}-pane" role="tabpanel" aria-labelledby="trans-{{ r.relation_to_id }}-tab" tabindex="0">
                       {{ r.description
+                      | e
                       | replace('\n', '<br>')
                       | replace('Hist.:', '<span class="fw-bold text-muted">Hist.:</span>')
                       | replace('Mon.:', '<span class="fw-bold text-muted">Mon.:</span>')
@@ -569,6 +571,7 @@
               <div class="card-body p-4">
                 <div id="description-text" class="lh-lg">
                   {{ entity.description
+                  | e
                   | replace('\n', '<br>')
                   | replace('Hist.:', '<span class="fw-bold text-muted">Hist.:</span>')
                   | replace('Mon.:', '<span class="fw-bold text-muted">Mon.:</span>')
@@ -955,22 +958,35 @@
                   return names.join(', ') + ', & ' + last;
               }
 
+              function escapeHtml(str) {
+                  return String(str || '')
+                      .replace(/&/g, '&amp;')
+                      .replace(/</g, '&lt;')
+                      .replace(/>/g, '&gt;')
+                      .replace(/"/g, '&quot;')
+                      .replace(/'/g, '&#039;');
+              }
+
               citationModal.addEventListener('show.bs.modal', function() {
                   const rawPIs = window.projectPIs || "Mihailo Popović";
                   const cleanedPIs = cleanNames(rawPIs);
                   const apaPIs = getAPAAuthor(rawPIs);
                   const bibtexPIs = getBibTeXAuthor(rawPIs);
-                  const title = "{{ entity.name }}" || "Entity View";
+                  const title = {{ (entity.name or 'Entity View') | tojson }};
                   {% if entity.pid_url %}
-                  const citationUrl = "{{ entity.pid_url }}";
+                  const citationUrl = {{ entity.pid_url | tojson }};
                   {% else %}
                   const citationUrl = window.location.href;
                   {% endif %}
                   const currentYear = new Date().getFullYear();
                   const currentDate = new Date().toISOString().split('T')[0];
+                  const safeTitle = escapeHtml(title);
+                  const safeCleanedPIs = escapeHtml(cleanedPIs);
+                  const safeApaPIs = escapeHtml(apaPIs);
+                  const safeUrl = escapeHtml(citationUrl);
 
                   // Generate APA 7
-                  document.getElementById('citation-apa').innerHTML = `${apaPIs} (${currentYear}). <i>${title}</i>. In Maps of Power: Historical Geography & Digital Humanities. <a href="${citationUrl}" target="_blank" class="text-decoration-none">${citationUrl}</a>`;
+                  document.getElementById('citation-apa').innerHTML = `${safeApaPIs} (${currentYear}). <i>${safeTitle}</i>. In Maps of Power: Historical Geography & Digital Humanities. <a href="${safeUrl}" target="_blank" class="text-decoration-none">${safeUrl}</a>`;
 
                   // Generate BibTeX
                   const citationKey = "mapsofpower_entity_" + (window.entityId || "entry");
@@ -984,10 +1000,10 @@
                       `}`;
 
                   // Generate Chicago
-                  document.getElementById('citation-chicago').innerHTML = `${cleanedPIs}. "${title}." <i>Maps of Power: Historical Geography & Digital Humanities</i>. ${currentYear}. <a href="${citationUrl}" target="_blank" class="text-decoration-none">${citationUrl}</a> (accessed ${currentDate}).`;
+                  document.getElementById('citation-chicago').innerHTML = `${safeCleanedPIs}. "${safeTitle}." <i>Maps of Power: Historical Geography & Digital Humanities</i>. ${currentYear}. <a href="${safeUrl}" target="_blank" class="text-decoration-none">${safeUrl}</a> (accessed ${currentDate}).`;
 
                   // Generate MLA 9
-                  document.getElementById('citation-mla').innerHTML = `${cleanedPIs}. "${title}." <i>Maps of Power: Historical Geography & Digital Humanities</i>, ${currentYear}, <a href="${citationUrl}" target="_blank" class="text-decoration-none">${citationUrl}</a>. Accessed ${currentDate}.`;
+                  document.getElementById('citation-mla').innerHTML = `${safeCleanedPIs}. "${safeTitle}." <i>Maps of Power: Historical Geography & Digital Humanities</i>, ${currentYear}, <a href="${safeUrl}" target="_blank" class="text-decoration-none">${safeUrl}</a>. Accessed ${currentDate}.`;
               });
 
               // Clipboard copy logic
@@ -1055,16 +1071,6 @@
               }
           });
       });
-  </script>
-
-
-  <script>
-      function toggleIcon(key) {
-          const icon = document.getElementById('icon-' + key);
-          if (icon) {
-              icon.classList.toggle('rotate-180');
-          }
-      }
   </script>
   <script>
       const gisData = {% if entity.geometry %}{{ entity.geometry | tojson }}{% else %}null{% endif %};

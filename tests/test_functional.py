@@ -40,6 +40,17 @@ def test_set_language_route(client: FlaskClient) -> None:
         headers={'Referer': '/'},
     )
     assert response.status_code == 302
+    assert response.headers['Location'].endswith('/')
+    with client.session_transaction() as sess:
+        assert sess['language'] == 'de'
+
+    # Reject external open redirect and unsupported language codes
+    ext_resp = client.get(
+        '/language=invalid_lang',
+        headers={'Referer': 'https://evil.example.com/phishing'},
+    )
+    assert ext_resp.status_code == 302
+    assert 'evil.example.com' not in ext_resp.headers['Location']
     with client.session_transaction() as sess:
         assert sess['language'] == 'de'
 

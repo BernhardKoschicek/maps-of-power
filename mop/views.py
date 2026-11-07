@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import re
 from typing import Any, cast, Optional
+from urllib.parse import urlsplit
 
 import requests
 from flask import (
@@ -78,8 +79,16 @@ def imprint() -> str:
 
 @main_bp.route('/language=<language>')
 def set_language(language: str | None = None) -> Response:
-    session['language'] = language
-    return redirect(request.referrer or url_for('main.about'))
+    allowed_languages = current_app.config.get('LANGUAGES', {})
+    if language and language in allowed_languages:
+        session['language'] = language
+    target = url_for('main.about')
+    if request.referrer:
+        parsed_ref = urlsplit(request.referrer)
+        if (parsed_ref.scheme in ('', 'http', 'https')
+                and parsed_ref.netloc in ('', request.host)):
+            target = request.referrer
+    return redirect(target)
 
 
 @main_bp.route('/literature')
@@ -162,7 +171,6 @@ def projects(title: str | None = None) -> Response | str:
     return render_template('projects.html', projects=portal_projects)
 
 
-@explore_bp.route('/projects')
 @explore_bp.route('/projects/<project>/explore/<view>')
 def project_explore_table(
         project: str | None = None,
@@ -398,7 +406,8 @@ def network_api(id_: int) -> Response | tuple[Response, int]:
     except HTTPException:
         raise
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        current_app.logger.error("Error in network_api: %s", e)
+        return jsonify({"error": "Internal server error"}), 500
 
 
 @explore_bp.route('/api/places/<project_acronym>')
@@ -423,7 +432,8 @@ def api_project_places(
                     'description': p.description or ''})
         return jsonify({'places': simplified})
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        current_app.logger.error("Error in api_project_places: %s", e)
+        return jsonify({"error": "Internal server error"}), 500
 
 
 # pylint: disable=too-many-return-statements
@@ -459,7 +469,8 @@ def api_project_network(
                 mop_res.get('results', []) + ortho_res.get('results', []))
             return jsonify({'results': combined_results})
         except Exception as e:
-            return jsonify({"error": str(e)}), 500
+            current_app.logger.error("Error in api_project_network: %s", e)
+            return jsonify({"error": "Internal server error"}), 500
     else:
         if project_acronym not in project_data:
             return jsonify({'error': 'Project not found'}), 404
@@ -477,7 +488,8 @@ def api_project_network(
             data = get_network_visualisation(linked_to_ids, api_path=api_path)
             return jsonify(data)
         except Exception as e:
-            return jsonify({"error": str(e)}), 500
+            current_app.logger.error("Error in api_project_network: %s", e)
+            return jsonify({"error": "Internal server error"}), 500
 
 
 # pylint: disable=too-many-arguments, too-many-positional-arguments
@@ -576,7 +588,8 @@ def api_explore_entities(
             view, oa_ids, page, sort, column, search, api_path=api_path)
         return jsonify(data)
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        current_app.logger.error("Error in api_explore_entities: %s", e)
+        return jsonify({'error': 'Internal server error'}), 500
 
 
 @explore_bp.route('/api/explore/<project_acronym>/<view>/count')
@@ -595,7 +608,8 @@ def api_explore_count(
         count = _fetch_table_rows_count(view, oa_ids, api_path=api_path)
         return jsonify({'count': count})
     except Exception as e:
-        return jsonify({'error': str(e), 'count': 0}), 500
+        current_app.logger.error("Error in api_explore_count: %s", e)
+        return jsonify({'error': 'Internal server error', 'count': 0}), 500
 
 
 @main_bp.route('/health')

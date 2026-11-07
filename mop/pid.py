@@ -9,11 +9,23 @@ from flask import (
     url_for)
 from werkzeug import Response
 
-from mop.extensions import get_app_config
+from mop.extensions import cache, get_app_config
 from mop.model.api_calls import get_proxies
 from mop.model.util import base62_to_uuid, uuid_to_base62
 
 pid_bp = Blueprint('pid', __name__)
+
+__all__ = [
+    'base62_to_uuid',
+    'extract_numeric_entity_id',
+    'fetch_entity_by_uuid',
+    'get_backend_api_bases',
+    'is_uuid',
+    'pid_bp',
+    'pid_resolver',
+    'rewrite_json_urls',
+    'uuid_to_base62',
+]
 
 URL_KEYS = {
     '@id', 'id', 'url', 'href', 'next', 'previous', 'link', 'seeAlso',
@@ -42,6 +54,7 @@ def get_backend_api_bases() -> list[str]:
     return bases
 
 
+@cache.memoize(timeout=3600)
 def fetch_entity_by_uuid(uuid_str: str) -> dict[str, Any] | None:
     """Fetch entity data from OpenAtlas backend by UUID."""
     bases = get_backend_api_bases()
@@ -57,7 +70,7 @@ def fetch_entity_by_uuid(uuid_str: str) -> dict[str, Any] | None:
         for url in urls_to_try:
             try:
                 response = requests.get(
-                    url, headers=headers, proxies=proxies, timeout=30)
+                    url, headers=headers, proxies=proxies, timeout=10)
                 if response.status_code == 200:
                     return response.json()
                 if response.status_code == 404:
@@ -86,8 +99,8 @@ def rewrite_json_urls(
                     try:
                         b62 = uuid_to_base62(match.group(1))
                         return f"{frontend_pid_base}/{b62}"
-                    except Exception:  # pragma: no cover
-                        pass
+                    except (ValueError, TypeError):  # pragma: no cover
+                        continue
         return val
 
     if isinstance(data, dict):

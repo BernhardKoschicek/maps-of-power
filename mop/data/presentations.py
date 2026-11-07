@@ -121,8 +121,9 @@ presentations = [{
     'category': ['holdura']
 }, {
     'presenter': 'Branka Vranešević',
-    'title': 'Initials with Teratological Motifs in the Belgrade Prophetologion: '
-    'Witnesses of Entanglement between East and West',
+    'title': (
+        'Initials with Teratological Motifs in the Belgrade Prophetologion: '
+        'Witnesses of Entanglement between East and West'),
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2023, 7, 6),
@@ -131,8 +132,9 @@ presentations = [{
     'category': ['holdura']
 }, {
     'presenter': 'Johannes Tripps',
-    'title': 'Objects of Private Devotion as Witnesses to Entanglement between '
-    'Venice and the Árpád and Nemanjić Dynasties',
+    'title': (
+        'Objects of Private Devotion as Witnesses to Entanglement between '
+        'Venice and the Árpád and Nemanjić Dynasties'),
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2023, 7, 6),
@@ -160,9 +162,10 @@ presentations = [{
     'category': ['holdura']
 }, {
     'presenter': 'Dorota Vargová',
-    'title': 'Stefan Uroš I and Helen of Anjou: The Royal Couple\'s Influence on '
-    'the Confessional Structure of the Principality of Zeta in the Late '
-    '13th and Early 14th Century ',
+    'title': (
+        'Stefan Uroš I and Helen of Anjou: The Royal Couple\'s Influence on '
+        'the Confessional Structure of the Principality of Zeta in the Late '
+        '13th and Early 14th Century '),
     'conference': 'International Medieval Congress',
     'location': [_('Leeds')],
     'date': get_table_dates_formatted(2023, 7, 6),
@@ -207,8 +210,9 @@ presentations = [{
     'title': 'Historical Geography, Digital Humanities and Database Systems: '
     'an Approach to reconstruct “Sacred Landscapes” – the Case of '
     'Medieval Duklja and Raška (today’s Montenegro and Serbia)',
-    'conference': 'Global Eurasia, Workshop II: Handlungsspielräume, Netzwerke und '
-    'transregionale Kontexte',
+    'conference': (
+        'Global Eurasia, Workshop II: Handlungsspielräume, Netzwerke und '
+        'transregionale Kontexte'),
     'location': [_('Vienna')],
     'date': get_table_dates_formatted(2022, 5, 12),
     'external_link': '',
@@ -236,7 +240,8 @@ presentations = [{
     'download': '',
     'category': ['holdura']
 }, {
-    'presenter': 'Markus Breier, Karel Kriz, Lukas Neugebauer, Alexander Pucher',
+    'presenter': (
+        'Markus Breier, Karel Kriz, Lukas Neugebauer, Alexander Pucher'),
     'title': 'Beyond East and West – '
     'Geocommunicating Historical Sacred Landscapes',
     'conference': '30th International Cartographic Conference 2021',
@@ -319,7 +324,8 @@ presentations = [{
     'presenter': 'Markus Breier',
     'title': 'The Sacred Landscape of Medieval Montenegro: '
     'Map-Based Communication',
-    'conference': '5. Geographie-Werkstatt des Österreichischem Geographieverbands',
+    'conference': (
+        '5. Geographie-Werkstatt des Österreichischem Geographieverbands'),
     'location': [_('Vienna')],
     'date': get_table_dates_formatted(2022, 9, 20),
     'external_link': '',

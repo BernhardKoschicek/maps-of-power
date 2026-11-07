@@ -43,7 +43,9 @@ def get_view_class(
 
 
 @cache.memoize()
-def system_class_results(parameter: str, api_path: Optional[str] = None) -> list[dict[str, Any]]:
+def system_class_results(
+        parameter: str,
+        api_path: Optional[str] = None) -> list[dict[str, Any]]:
     base = _get_api_path(api_path).rstrip('/')
     url = f"{base}/system_class/"
     return requests.get(
@@ -52,7 +54,9 @@ def system_class_results(parameter: str, api_path: Optional[str] = None) -> list
 
 
 @cache.memoize()
-def get_typed_entities_all_results(id_: int, api_path: Optional[str] = None) -> list[dict[str, Any]]:
+def get_typed_entities_all_results(
+        id_: int,
+        api_path: Optional[str] = None) -> list[dict[str, Any]]:
     base = _get_api_path(api_path).rstrip('/')
     url = f"{base}/type_entities_all/"
     return requests.get(
@@ -69,7 +73,9 @@ def get_type_tree(api_path: Optional[str] = None) -> List[TypeTree]:
 
 
 @cache.memoize()
-def get_entity_presentation(id_: int, api_path: Optional[str] = None) -> dict[str, Any]:
+def get_entity_presentation(
+        id_: int,
+        api_path: Optional[str] = None) -> dict[str, Any]:
     base = _get_api_path(api_path).rstrip('/')
     url = f"{base}/entity_presentation_view/{id_}"
     response = requests.get(url, proxies=get_proxies(), timeout=30)
@@ -106,7 +112,10 @@ EXCLUDE_SYSTEM_CLASSES = [
 
 
 @cache.memoize()
-def get_ego_network(id_: int, depth: int = 2, api_path: Optional[str] = None) -> dict[str, Any]:
+def get_ego_network(
+        id_: int,
+        depth: int = 2,
+        api_path: Optional[str] = None) -> dict[str, Any]:
     depth_ = max(1, min(5, depth))
     base = _get_api_path(api_path).rstrip('/')
     url = f"{base}/ego_network_visualisation/{id_}"
