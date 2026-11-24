@@ -61,13 +61,20 @@
                 <a href="{{ url_for('projects', title=path[0]) }}" class="link-primary text-decoration-none">{{ path[0] }}</a>
               </li>
               {% endif %}
+              {% set mapped_view = system_classes.get(entity.system_class | lower | replace(' ', '_')) %}
+              {% if path[0] and mapped_view in ['actor', 'place', 'event', 'source', 'reference', 'artifact'] %}
               <li class="breadcrumb-item">
                 <a href="{{
                   url_for('project_explore_table',
                   project=path[0],
-                  view=system_classes[entity.system_class | lower]) }}"
-                  class="link-primary text-decoration-none">{{ system_classes[entity.system_class | lower] }}</a>
+                  view=mapped_view) }}"
+                  class="link-primary text-decoration-none">{{ mapped_view }}</a>
               </li>
+              {% elif mapped_view or entity.system_class %}
+              <li class="breadcrumb-item text-muted">
+                {{ mapped_view or entity.system_class }}
+              </li>
+              {% endif %}
               <li class="breadcrumb-item active text-muted" aria-current="page">
                 {{ entity.name }}
               </li>

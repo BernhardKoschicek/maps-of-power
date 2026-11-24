@@ -279,3 +279,24 @@ def test_entity_geometry_fallback_p46() -> None:
     entity = Entity.from_model(m)
     assert entity.geometry is not None
     assert entity.geometry["geometry"]["coordinates"] == [10.0, 20.0]
+
+
+def test_entity_presentation_null_view_class() -> None:
+    from mop.model.entity import PresentationViewModel
+    model = PresentationViewModel.model_validate({
+        "id": 134543,
+        "systemClass": "object_location",
+        "viewClass": None,
+        "title": "Location of Kavadarci"})
+    entity = Entity.from_model(model)
+    assert entity.id_ == "134543"
+    assert entity.system_class == "Object location"
+    assert entity.name == "Location of Kavadarci"
+
+    model_no_title = PresentationViewModel.model_validate({
+        "id": 134544,
+        "systemClass": "type_tools",
+        "viewClass": None,
+        "title": None})
+    entity_no_title = Entity.from_model(model_no_title)
+    assert entity_no_title.name == ""

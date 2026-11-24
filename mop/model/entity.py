@@ -98,8 +98,8 @@ class PresentationViewModel(BaseModel):
     id: int
     uuid: Optional[str] = None
     systemClass: str = Field(..., alias="systemClass")
-    viewClass: str = Field(..., alias="viewClass")
-    title: str
+    viewClass: Optional[str] = Field(None, alias="viewClass")
+    title: Optional[str] = Field("", alias="title")
     description: Optional[str] = None
     aliases: List[str] = Field(default_factory=list)
     externalReferenceSystems: Optional[List[ExternalReferenceModel]] = Field(
@@ -445,7 +445,7 @@ class Entity:
         return cls(
             id_=str(m.id),
             uuid=m.uuid,
-            name=m.title,
+            name=m.title or "",
             description=m.description or "",
             system_class=uc_first(m.systemClass.replace('_', ' ')),
             types=types_list,

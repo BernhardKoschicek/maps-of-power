@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 from flask.testing import FlaskClient
 
 
@@ -173,4 +175,33 @@ def test_youtube_iframe_helpers(client: FlaskClient) -> None:
     assert b'apox_schwarz.png' in response.data
     assert b'ram_schwarz.png' in response.data
     assert b'NV4TT4QnFNI' in response.data
+
+
+def test_entity_view_null_view_class_routes(client: FlaskClient) -> None:
+    with patch('mop.model.entity.get_entity_presentation') as mock_pres:
+        mock_pres.return_value = {
+            "id": 999991,
+            "systemClass": "object_location",
+            "viewClass": None,
+            "title": "Mock Object Location"}
+        response = client.get('/entity/999991')
+        assert response.status_code == 200
+        assert b'Mock Object Location' in response.data
+
+        proj_response = client.get('/projects/idcew/explore/place/999991')
+        assert proj_response.status_code == 200
+        assert b'/projects/idcew/explore/place' in proj_response.data
+
+        mock_pres.return_value = {
+            "id": 999992,
+            "systemClass": "type_tools",
+            "viewClass": None,
+            "title": "Mock Type Tool"}
+        response_tool = client.get('/entity/999992')
+        assert response_tool.status_code == 200
+        assert b'Mock Type Tool' in response_tool.data
+
+        proj_tool = client.get('/projects/idcew/explore/place/999992')
+        assert proj_tool.status_code == 200
+        assert b'Type tools' in proj_tool.data
 
