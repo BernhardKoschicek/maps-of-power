@@ -133,6 +133,13 @@ def test_tib_reader_route(client: FlaskClient) -> None:
     assert res_no_reader.status_code == 404
 
 
+def test_tib_reader_initial_page_param(client: FlaskClient) -> None:
+    """Test GET /tib/reader/<volume>?page=42 forwards initial_page."""
+    res = client.get('/tib/reader/tib1?page=42')
+    assert res.status_code == 200
+    assert b'const initialPage = 42;' in res.data
+
+
 def test_api_tib_search(client: FlaskClient) -> None:
     """Test /api/tib/search endpoint."""
     res = client.get('/api/tib/search?q=Lemnos&limit=10')

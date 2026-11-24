@@ -29,6 +29,9 @@ dev = [
 [tool.pytest.ini_options]
 addopts = "-W default -ra -q --no-header --cov=mop --cov=tests --cov-report=html --cov-report=term --cov-report=term-missing"
 testpaths = ["tests"]
+markers = [
+    "live_api: tests requiring live external OpenAtlas API connectivity",
+]
 
 [tool.coverage.run]
 branch = true

@@ -106,8 +106,18 @@ def test_software_route(client: FlaskClient) -> None:
 
 
 def test_iiif_viewer_route(client: FlaskClient) -> None:
-    response = client.get('/iiif_viewer?manifest=http://example.org/manifest')
+    trusted = 'https://openatlas.maps-of-power.at/iiif_manifest/123'
+    response = client.get(f'/iiif_viewer?manifest={trusted}')
     assert response.status_code == 200
+    assert (
+        b'"loadedManifest": '
+        b'"https://openatlas.maps-of-power.at/iiif_manifest/123?url='
+        in response.data)
+
+    for bad in ('', 'http://evil.example.org/manifest', 'javascript:alert(1)'):
+        bad_resp = client.get(f'/iiif_viewer?manifest={bad}')
+        assert bad_resp.status_code == 400
+    assert client.get('/iiif_viewer').status_code == 400
 
 
 def test_atlas_redirect_route(client: FlaskClient) -> None:
@@ -230,3 +240,30 @@ def test_entity_view_null_view_class_routes(client: FlaskClient) -> None:
         proj_tool = client.get('/projects/idcew/explore/place/999992')
         assert proj_tool.status_code == 200
         assert b'Type tools' in proj_tool.data
+
+
+def test_security_headers_and_explore_validation(client: FlaskClient) -> None:
+    health = client.get('/health')
+    assert health.status_code == 200
+    assert 'Content-Security-Policy' in health.headers
+    assert health.headers.get('Referrer-Policy') == (
+        'strict-origin-when-cross-origin')
+    assert 'Permissions-Policy' in health.headers
+    assert health.headers.get('X-XSS-Protection') == '0'
+
+    with patch('mop.views._fetch_table_rows',
+               return_value={'results': [], 'pagination': {}}) as mock_rows:
+        resp = client.get(
+            '/api/explore/vlachs/actor?page=-5&sort=DROP&column=HACK')
+        assert resp.status_code == 200
+        mock_rows.assert_called_once()
+        _, _, page, sort, col, search = mock_rows.call_args[0]
+        assert page == 1
+        assert sort == 'asc'
+        assert col == 'name'
+        assert search == ''
+
+    with patch('mop.views.get_oa_by_view_class',
+               side_effect=RuntimeError('upstream down')):
+        err_resp = client.get('/projects/vlachs/explore/actor')
+        assert err_resp.status_code == 503

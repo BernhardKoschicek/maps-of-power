@@ -11,7 +11,7 @@ def build_target_link(
         view: str | None = None) -> str:
     try:
         url = url_for(
-            'entity_project_view',
+            'explore.entity_project_view',
             id_=rel.relation_to_id,
             project=project,
             view=view)

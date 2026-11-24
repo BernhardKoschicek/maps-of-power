@@ -28,7 +28,7 @@ var map = L.map('map').setView([30, 0], 2);
 
     var rawPIs = (typeof window.projectPIs !== 'undefined') ? window.projectPIs : 'Mihailo Popović';
     var cleanedPIs = cleanNames(rawPIs);
-    watermarkDiv.innerHTML = '<span style="font-weight: bold;">Maps of Power</span> | CC-BY 4.0 &copy; ' + cleanedPIs;
+    watermarkDiv.innerHTML = '<span style="font-weight: bold;">Maps of Power</span> | CC-BY 4.0 &copy; ' + escapeHTML(cleanedPIs);
     
     var mapEl = document.getElementById('map');
     if (mapEl) {
@@ -183,10 +183,10 @@ function onEachFeature(feature, layer) {
         // Add sleek category badge
         popupContent += '<span class="badge mb-2 d-inline-block text-capitalize" style="background:' + 
                         (categoryColors[getFeatureCategory(feature)]?.stroke || '#868e96') + '; color:#fff; font-size: 9px; padding: 2px 6px; border-radius: 4px;">' + 
-                        catLabel + '</span>';
+                        escapeHTML(catLabel) + '</span>';
         
         // Add title and description
-        popupContent += '<h6 class="fw-bold mb-1 text-dark" style="font-size:13px; margin:0 0 4px 0;">' + feature.properties.title + '</h6>';
+        popupContent += '<h6 class="fw-bold mb-1 text-dark" style="font-size:13px; margin:0 0 4px 0;">' + escapeHTML(feature.properties.title || '') + '</h6>';
         if (feature.properties.description) {
             var desc = feature.properties.description;
             if (desc.length > 200) {
@@ -199,7 +199,7 @@ function onEachFeature(feature, layer) {
         
         // Add View Entity button for related entities
         if (feature.properties.id && getFeatureCategory(feature) !== 'selected' && window.entityViewUrlTemplate) {
-            var url = window.entityViewUrlTemplate.replace('999999', feature.properties.id);
+            var url = window.entityViewUrlTemplate.replace('999999', encodeURIComponent(feature.properties.id));
             popupContent += '<hr style="margin:6px 0; opacity:0.15;">' +
                             '<a href="' + url + '" class="btn btn-primary btn-sm text-white rounded-pill px-3 py-1 w-100 text-center d-flex align-items-center justify-content-center" style="font-size:11px; font-weight:600; text-decoration:none;">' +
                             '<i class="bi bi-eye me-1"></i>View Entity</a>';

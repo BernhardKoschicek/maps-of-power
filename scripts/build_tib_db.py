@@ -156,31 +156,10 @@ def build_database(
         );
     ''')
 
-    cur.execute('''
-        CREATE TABLE toponym_pages (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            toponym_id INTEGER NOT NULL REFERENCES toponyms(id)
-                ON DELETE CASCADE,
-            volume_id INTEGER NOT NULL,
-            page_start INTEGER,
-            page_end INTEGER,
-            page_str TEXT NOT NULL,
-            suffix TEXT DEFAULT '',
-            commentary TEXT,
-            is_main INTEGER NOT NULL DEFAULT 0,
-            target_page INTEGER,
-            display_str TEXT NOT NULL,
-            seq INTEGER NOT NULL
-        );
-    ''')
-
-    cur.execute('CREATE INDEX idx_toponyms_vol ON toponyms(volume_id);')
+    cur.execute(
+        'CREATE INDEX idx_toponyms_vol_name '
+        'ON toponyms(volume_id ASC, name COLLATE NOCASE ASC);')
     cur.execute('CREATE INDEX idx_toponyms_norm ON toponyms(name_normalized);')
-    cur.execute(
-        'CREATE INDEX idx_pages_lookup ON toponym_pages('
-        'volume_id, page_start);')
-    cur.execute(
-        'CREATE INDEX idx_pages_toponym ON toponym_pages(toponym_id);')
 
     # Full-Text Search (FTS5) table with unicode61 remove_diacritics
     cur.execute('''
@@ -200,7 +179,6 @@ def build_database(
     # Load and process volume files
     files = sorted(glob.glob(os.path.join(source_dir, 'tib*.py')))
     total_toponyms = 0
-    total_pages = 0
 
     for filepath in files:
         vol_rows: list[dict[str, Any]] = []
@@ -244,22 +222,7 @@ def build_database(
                 name, name_norm, notes, notes_norm,
                 vol_name, vol_id, json.dumps(citations), pages_display))
 
-            toponym_id = cur.lastrowid
             total_toponyms += 1
-
-            for c in citations:
-                cur.execute('''
-                    INSERT INTO toponym_pages (
-                        toponym_id, volume_id, page_start, page_end,
-                        page_str, suffix, commentary, is_main,
-                        target_page, display_str, seq
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                ''', (
-                    toponym_id, vol_id, c['page_start'], c['page_end'],
-                    c['page_str'], c['suffix'], c['commentary'],
-                    1 if c['is_main'] else 0, c['target_page'],
-                    c['display_str'], c['seq']))
-                total_pages += 1
 
     # Populate FTS5 index
     print('Building FTS5 index...')
@@ -275,8 +238,8 @@ def build_database(
     conn.close()
 
     db_size = os.path.getsize(target_db_path) / 1024 / 1024
-    print(f'Done! Successfully indexed {total_toponyms} toponyms and '
-          f'{total_pages} page citations. Database size: {db_size:.2f} MB')
+    print(f'Done! Successfully indexed {total_toponyms} toponyms. '
+          f'Database size: {db_size:.2f} MB')
 
 
 if __name__ == '__main__':

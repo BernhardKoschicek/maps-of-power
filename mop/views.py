@@ -158,7 +158,7 @@ def literature() -> str:
 def projects(title: str | None = None) -> Response | str:
     if title:
         if title == 'tib':
-            return redirect(url_for('tib_overview'))
+            return redirect(url_for('tib.tib_overview'))
         if title not in project_data:
             abort(404)
         return render_template(
@@ -174,23 +174,28 @@ def projects(title: str | None = None) -> Response | str:
 @explore_bp.route('/projects/<project>/explore/<view>')
 def project_explore_table(
         project: str | None = None,
-        view: str | None = None) -> str:
+        view: str | None = None) -> str | tuple[str, int]:
     if (not project or not view or project not in project_data
             or view not in view_classes):
         abort(404)
     data = []
+    upstream_failed = False
     try:
         api_path = get_project_api_path(project)
         data = get_oa_by_view_class(
             view, project_data[project]['oaID'], api_path=api_path)
     except Exception as e:  # pragma: no cover
+        upstream_failed = True
         current_app.logger.error("Error fetching open access data: %s", e)
-    return render_template(
+    rendered = render_template(
         'explore/project_explore_table.html',
         data=data,
         project=project_data[project],
         view_classes=view_classes[view],
         view=view)
+    if upstream_failed:
+        return rendered, 503
+    return rendered
 
 
 @explore_bp.route('/entity/<int:id_>')
@@ -330,10 +335,35 @@ def software() -> str:
     return render_template('software.html')
 
 
+def _get_allowed_iiif_hosts() -> set[str]:
+    hosts: set[str] = set()
+    for cfg_key in ('MOP_API_PATH', 'ORTHO_API_PATH', 'OPENATLAS_API_BASE'):
+        val = str(get_app_config(cfg_key, '')).strip()
+        if val:
+            parsed = urlsplit(val)
+            if parsed.hostname:
+                hosts.add(parsed.hostname.lower())
+    for extra in get_app_config('IIIF_ALLOWED_HOSTS', []) or []:
+        if extra:
+            hosts.add(str(extra).strip().lower())
+    req_host = urlsplit(f'http://{request.host}').hostname
+    if req_host:
+        hosts.add(req_host.lower())
+    return hosts
+
+
 @main_bp.route('/iiif_viewer')
 def iiif_viewer() -> str:
-    manifest = request.args.get('manifest')
-    manifest = f'{manifest}?url={request.url_root}entity/'
+    raw_manifest = (request.args.get('manifest') or '').strip()
+    if not raw_manifest:
+        abort(400)
+    parsed = urlsplit(raw_manifest)
+    if (parsed.scheme not in ('http', 'https')
+            or not parsed.hostname
+            or parsed.hostname.lower() not in _get_allowed_iiif_hosts()):
+        abort(400)
+    sep = '&' if parsed.query else '?'
+    manifest = f'{raw_manifest}{sep}url={request.url_root}entity/'
     return render_template('iiif_viewer.html', manifest=manifest)
 
 
@@ -410,26 +440,58 @@ def network_api(id_: int) -> Response | tuple[Response, int]:
         return jsonify({"error": "Internal server error"}), 500
 
 
+@cache.memoize(timeout=3600)
+def _get_cached_project_places(
+        project_acronym: str,
+        oa_ids: tuple[str, ...]) -> list[dict[str, Any]]:
+    api_path = get_project_api_path(project_acronym)
+    places = get_oa_by_view_class(
+        'place', list(oa_ids), api_path=api_path)
+    simplified: list[dict[str, Any]] = []
+    for p in places:
+        if p and p.geometry:
+            simplified.append({
+                'id': p.id_,
+                'name': p.name,
+                'system_class': p.system_class,
+                'geometry': p.geometry,
+                'description': (p.description or '')[:220],
+                'project': project_acronym.upper()})
+    return simplified
+
+
 @explore_bp.route('/api/places/<project_acronym>')
 def api_project_places(
         project_acronym: str) -> Response | tuple[Response, int]:
+    if project_acronym == 'all':
+        try:
+            combined: list[dict[str, Any]] = []
+            for acronym, proj in project_data.items():
+                if acronym == 'tib':
+                    continue
+                oa_id = proj.get('oaID')
+                if not oa_id:
+                    continue
+                oa_key = (
+                    tuple(str(x) for x in oa_id)
+                    if isinstance(oa_id, list) else (str(oa_id),))
+                combined.extend(
+                    _get_cached_project_places(acronym, oa_key))
+            return jsonify({'places': combined})
+        except Exception as e:
+            current_app.logger.error("Error in api_project_places: %s", e)
+            return jsonify({"error": "Internal server error"}), 500
+
     if project_acronym not in project_data:
         return jsonify({'error': 'Project not found'}), 404
     oa_id = project_data[project_acronym].get('oaID')
     if not oa_id:
         return jsonify({'places': []})
+    oa_key = (
+        tuple(str(x) for x in oa_id)
+        if isinstance(oa_id, list) else (str(oa_id),))
     try:
-        api_path = get_project_api_path(project_acronym)
-        places = get_oa_by_view_class('place', oa_id, api_path=api_path)
-        simplified = []
-        for p in places:
-            if p and p.geometry:
-                simplified.append({
-                    'id': p.id_,
-                    'name': p.name,
-                    'system_class': p.system_class,
-                    'geometry': p.geometry,
-                    'description': p.description or ''})
+        simplified = _get_cached_project_places(project_acronym, oa_key)
         return jsonify({'places': simplified})
     except Exception as e:
         current_app.logger.error("Error in api_project_places: %s", e)
@@ -492,12 +554,16 @@ def api_project_network(
             return jsonify({"error": "Internal server error"}), 500
 
 
+ALLOWED_TABLE_COLUMNS = {
+    'begin', 'class', 'description', 'end', 'name', 'type'}
+ALLOWED_SORT_DIRECTIONS = {'asc', 'desc'}
+
+
 # pylint: disable=too-many-arguments, too-many-positional-arguments
-@cache.memoize(timeout=3600)
-def _fetch_table_rows(
+def _fetch_table_rows_uncached(
         view: str, oa_ids: tuple[str, ...], page: int, sort: str, column: str,
         search: str, api_path: Optional[str] = None) -> dict[str, Any]:
-    """Proxy call to OpenAtlas /table_rows/ — cached server-side."""
+    """Proxy call to OpenAtlas /table_rows/."""
     base = (api_path or get_app_config('MOP_API_PATH', '')).rstrip('/')
     url = f"{base}/0.4/table_rows/"
     params: dict[str, Any] = {
@@ -534,6 +600,16 @@ def _fetch_table_rows(
             'name': row[5] or '',
             'type': row[6] if len(row) > 6 else '', })
     return {'results': rows, 'pagination': data.get('pagination', {})}
+
+
+# pylint: disable=too-many-arguments, too-many-positional-arguments
+@cache.memoize(timeout=3600)
+def _fetch_table_rows(
+        view: str, oa_ids: tuple[str, ...], page: int, sort: str, column: str,
+        search: str, api_path: Optional[str] = None) -> dict[str, Any]:
+    """Cached proxy call to OpenAtlas /table_rows/ for non-search queries."""
+    return _fetch_table_rows_uncached(
+        view, oa_ids, page, sort, column, search, api_path=api_path)
 
 
 @cache.memoize(timeout=3600)
@@ -578,14 +654,20 @@ def api_explore_entities(
         return jsonify({'results': [], 'pagination': {}})
     oa_ids: tuple[str, ...] = (
         tuple(oa_id) if isinstance(oa_id, list) else (str(oa_id),))
-    page = request.args.get('page', 1, type=int)
-    sort = request.args.get('sort', 'asc')
-    column = request.args.get('column', 'name')
-    search = request.args.get('search', '').strip()
+    page = max(1, min(request.args.get('page', 1, type=int), 10000))
+    raw_sort = request.args.get('sort', 'asc').lower()
+    sort = raw_sort if raw_sort in ALLOWED_SORT_DIRECTIONS else 'asc'
+    raw_col = request.args.get('column', 'name').lower()
+    column = raw_col if raw_col in ALLOWED_TABLE_COLUMNS else 'name'
+    search = request.args.get('search', '').strip()[:100]
     try:
         api_path = get_project_api_path(project_acronym)
-        data = _fetch_table_rows(
-            view, oa_ids, page, sort, column, search, api_path=api_path)
+        if search:
+            data = _fetch_table_rows_uncached(
+                view, oa_ids, page, sort, column, search, api_path=api_path)
+        else:
+            data = _fetch_table_rows(
+                view, oa_ids, page, sort, column, search, api_path=api_path)
         return jsonify(data)
     except Exception as e:
         current_app.logger.error("Error in api_explore_entities: %s", e)

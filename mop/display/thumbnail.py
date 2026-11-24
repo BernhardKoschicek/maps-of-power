@@ -1,6 +1,8 @@
 from functools import lru_cache
+import os
 from pathlib import Path
 import sys
+import tempfile
 from PIL import Image, ImageFile
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
@@ -38,8 +40,21 @@ def generate_single_thumbnail(
                     and target_file.suffix.lower() in {".jpg", ".jpeg"}):
                 cropped = cropped.convert("RGB")
 
-            cropped.save(target_file)
-            return True
+            tmp_path: Path | None = None
+            try:
+                with tempfile.NamedTemporaryFile(
+                        dir=target_file.parent,
+                        suffix=target_file.suffix,
+                        delete=False) as tmp_file:
+                    tmp_path = Path(tmp_file.name)
+                cropped.save(tmp_path)
+                os.chmod(tmp_path, 0o644)
+                os.replace(tmp_path, target_file)
+                tmp_path = None
+                return True
+            finally:
+                if tmp_path is not None and tmp_path.exists():
+                    tmp_path.unlink(missing_ok=True)
     except Exception as exc:  # pragma: no cover
         print(f"Error creating thumbnail for {source_file}: {exc}",
               file=sys.stderr)

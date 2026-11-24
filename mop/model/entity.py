@@ -4,6 +4,7 @@ from typing import Any, Dict, List, Optional
 from flask import request
 from pydantic import BaseModel, ConfigDict, Field
 
+from mop.extensions import get_app_config
 from mop.model.types import Types, EntityTypeModel
 from mop.model.util import (
     format_date, split_date_string, uc_first, uuid_to_base62)
@@ -258,6 +259,10 @@ class Entity:
     def pid_url(self) -> Optional[str]:
         b62 = self.base62_id
         if b62:
+            configured = str(
+                get_app_config('PUBLIC_BASE_URL', '')).strip().rstrip('/')
+            if configured:
+                return f"{configured}/id/{b62}"
             try:
                 return f"{request.host_url.rstrip('/')}/id/{b62}"
             except Exception:  # pragma: no cover

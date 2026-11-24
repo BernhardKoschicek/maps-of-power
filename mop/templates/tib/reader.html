@@ -12,7 +12,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const pages = {{ pages | tojson }};
     const volume = {{ volume | tojson }};
-    const initialPage = {{ initialPage | default(1) }};
+    const initialPage = {{ initial_page | default(1) | tojson }};
 
     new TibBookReader('fullPageReader', {
         volumeKey: volume.key,

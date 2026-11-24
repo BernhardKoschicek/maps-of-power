@@ -32,6 +32,16 @@
         default: { color: '#ced4da' }
     };
 
+    function escapeHtml(str) {
+        if (str === null || str === undefined) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
     function getPaletteCategory(systemClass) {
         if (!systemClass) return 'default';
         const sc = systemClass.toLowerCase();
@@ -332,7 +342,7 @@
                         const palette = isCenter ? COLOR_PALETTE['center'] : (COLOR_PALETTE[category] || COLOR_PALETTE['default']);
                         classElem.innerHTML = `
                             <span class="badge text-capitalize" style="background: #fff; color: ${palette.color}; border: 1px solid ${palette.color}; padding: 4px 10px;">
-                                ${nodeData.systemClass.replace('_', ' ')}
+                                ${escapeHtml((nodeData.systemClass || '').replace('_', ' '))}
                             </span>
                         `;
                     }
@@ -383,7 +393,7 @@
         } catch (error) {
             console.error("Failed to render network:", error);
             if (loaderText) {
-                loaderText.innerHTML = `<span class="text-danger fw-semibold">Failed to load network.</span><br><small class="text-muted">${error.message}</small>`;
+                loaderText.innerHTML = `<span class="text-danger fw-semibold">Failed to load network.</span><br><small class="text-muted">${escapeHtml(error.message)}</small>`;
             }
         }
     }

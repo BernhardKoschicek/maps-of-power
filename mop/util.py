@@ -77,19 +77,19 @@ def get_image_frame(filepath: str) -> str:
 def inject_menu() -> dict[str, Any]:
     navbar = [{
         'name': _('about'),
-        'to': url_for('about')}, {
+        'to': url_for('main.about')}, {
         'name': _('projects'),
-        'to': url_for('projects')}, {
+        'to': url_for('explore.projects')}, {
         'name': _('atlas'),
-        'to': url_for('frontend')}, {
+        'to': url_for('main.frontend')}, {
         'name': 'histgeo',
-        'to': url_for('histgeo')}, {
+        'to': url_for('main.histgeo')}, {
         'name': _('events'),
-        'to': url_for('events')}, {
+        'to': url_for('main.events')}, {
         'name': _('literature'),
-        'to': url_for('literature')}, {
+        'to': url_for('main.literature')}, {
         'name': 'TIB',
-        'to': url_for('tib_overview')}]
+        'to': url_for('tib.tib_overview')}]
     return {'navbar': navbar}
 
 

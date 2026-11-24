@@ -23,6 +23,18 @@ def _get_api_path(api_path: Optional[str] = None) -> str:
 
 
 
+def _fetch_json(
+        url: str,
+        params: Optional[dict[str, Any]] = None) -> dict[str, Any]:
+    response = requests.get(
+        url, params=params, proxies=get_proxies(), timeout=30)
+    if response.status_code == 404:  # pragma: no cover
+        raise NotFound(f"Resource not found: {url}")
+    response.raise_for_status()
+    data = response.json()
+    return data if isinstance(data, dict) else {}
+
+
 @cache.memoize()
 def get_view_class(
         parameter: str,
@@ -33,13 +45,9 @@ def get_view_class(
     if '?' in parameter:
         # Legacy support: if the parameter is a full query string
         # like 'actor?limit=1'
-        url = f"{base}/view_class/{parameter}"
-        return requests.get(
-            url, proxies=get_proxies(), timeout=30).json()['results']
+        return _fetch_json(url).get('results', [])
 
-    return requests.get(
-        url, params=params, proxies=get_proxies(),
-        timeout=30).json()['results']
+    return _fetch_json(url, params=params).get('results', [])
 
 
 @cache.memoize()
@@ -47,10 +55,8 @@ def system_class_results(
         parameter: str,
         api_path: Optional[str] = None) -> list[dict[str, Any]]:
     base = _get_api_path(api_path).rstrip('/')
-    url = f"{base}/system_class/"
-    return requests.get(
-        f"{url}{parameter}", proxies=get_proxies(),
-        timeout=30).json()['results']
+    url = f"{base}/system_class/{parameter}"
+    return _fetch_json(url).get('results', [])
 
 
 @cache.memoize()
@@ -58,17 +64,15 @@ def get_typed_entities_all_results(
         id_: int,
         api_path: Optional[str] = None) -> list[dict[str, Any]]:
     base = _get_api_path(api_path).rstrip('/')
-    url = f"{base}/type_entities_all/"
-    return requests.get(
-        f"{url}{id_}", proxies=get_proxies(), timeout=30).json()['results']
+    url = f"{base}/type_entities_all/{id_}"
+    return _fetch_json(url).get('results', [])
 
 
 @cache.memoize()
 def get_type_tree(api_path: Optional[str] = None) -> List[TypeTree]:
     base = _get_api_path(api_path).rstrip('/')
     url = f"{base}/type_tree/"
-    type_tree = requests.get(
-        url, proxies=get_proxies(), timeout=30).json()['typeTree']
+    type_tree = _fetch_json(url).get('typeTree', {})
     return [TypeTree(types) for types in type_tree.values()]
 
 

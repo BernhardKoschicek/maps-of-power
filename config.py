@@ -17,7 +17,49 @@ LANGUAGES = {
     'de': 'Deutsch',
     'en': 'English'}
 DEBUG = os.environ.get('DEBUG', 'False').lower() in ('true', '1')
-SECRET_KEY = os.environ.get('SECRET_KEY') or secrets.token_hex(32)
+
+INSECURE_SECRET_PLACEHOLDERS = {
+    'insecure-dev-key-change-in-production',
+    'change-this-to-a-secure-random-secret-key-32-chars',
+    'generate-a-long-random-string-here'}
+
+
+def _load_or_create_secret_key(data_dir: Path) -> str:
+    env_key = os.environ.get('SECRET_KEY', '').strip()
+    if env_key and env_key not in INSECURE_SECRET_PLACEHOLDERS:
+        return env_key
+
+    key_file = data_dir / '.secret_key'
+    try:
+        data_dir.mkdir(parents=True, exist_ok=True)
+        flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL
+        fd = os.open(key_file, flags, 0o600)
+        generated = secrets.token_hex(32)
+        try:
+            os.write(fd, generated.encode('utf-8'))
+        finally:
+            os.close(fd)
+        return generated
+    except FileExistsError:
+        existing = key_file.read_text(encoding='utf-8').strip()
+        if existing:
+            return existing
+    except OSError:
+        pass
+    return secrets.token_hex(32)
+
+
+SECRET_KEY = _load_or_create_secret_key(DATA_DIR)
+
+_RAW_TRUSTED = os.environ.get('TRUSTED_HOSTS', '')
+TRUSTED_HOSTS: list[str] | None = (
+    [h.strip() for h in _RAW_TRUSTED.split(',') if h.strip()] or None)
+USE_PROXY_FIX = os.environ.get(
+    'USE_PROXY_FIX', 'False').lower() in ('true', '1')
+PUBLIC_BASE_URL = os.environ.get('PUBLIC_BASE_URL', '').strip().rstrip('/')
+IIIF_ALLOWED_HOSTS = [
+    h.strip() for h in os.environ.get('IIIF_ALLOWED_HOSTS', '').split(',')
+    if h.strip()]
 
 # Security
 SESSION_COOKIE_SECURE = os.environ.get(

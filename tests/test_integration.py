@@ -1,3 +1,6 @@
+from unittest.mock import patch
+import pytest
+
 from mop.model.api_calls import (
     get_type_tree,
     get_entity,
@@ -21,6 +24,7 @@ from mop.util import (
 )
 
 
+@pytest.mark.live_api
 def test_api_get_type_tree() -> None:
     trees = get_type_tree()
     assert isinstance(trees, list)
@@ -28,6 +32,7 @@ def test_api_get_type_tree() -> None:
         assert hasattr(trees[0], 'id')
 
 
+@pytest.mark.live_api
 def test_api_get_entity() -> None:
     data = get_entity(124486)
     assert isinstance(data, dict)
@@ -35,27 +40,32 @@ def test_api_get_entity() -> None:
     assert 'properties' in data
 
 
+@pytest.mark.live_api
 def test_api_get_view_class() -> None:
     results = get_view_class('actor?limit=1')
     assert isinstance(results, list)
 
 
+@pytest.mark.live_api
 def test_api_system_class_results() -> None:
     results = system_class_results('person?limit=1')
     assert isinstance(results, list)
 
 
+@pytest.mark.live_api
 def test_api_get_typed_entities_all_results() -> None:
     results = get_typed_entities_all_results(124486)
     assert isinstance(results, list)
 
 
+@pytest.mark.live_api
 def test_api_get_ego_network() -> None:
     results = get_ego_network(237, 1)
     assert isinstance(results, dict)
     assert 'results' in results
 
 
+@pytest.mark.live_api
 def test_api_get_entity_presentation() -> None:
     from mop.model.api_calls import get_entity_presentation
     data = get_entity_presentation(124486)
@@ -65,6 +75,7 @@ def test_api_get_entity_presentation() -> None:
     assert 'relations' in data
 
 
+@pytest.mark.live_api
 def test_entity_model() -> None:
     entity = Entity.get_entity_from_oa(124486)
     assert isinstance(entity, Entity)
@@ -133,6 +144,7 @@ def test_util_get_types_sorted() -> None:
     assert res == {'Root': [t]}
 
 
+@pytest.mark.live_api
 def test_explore_get_oa_by_view_class() -> None:
     from mop.model.explore import get_oa_by_view_class
     # Test invalid view
@@ -191,6 +203,7 @@ def test_display_image_gallery() -> None:
     assert 'img2' in result
 
 
+@pytest.mark.live_api
 def test_api_project_places_route() -> None:
     from mop import app
     client = app.test_client()
@@ -300,3 +313,22 @@ def test_entity_presentation_null_view_class() -> None:
         "title": None})
     entity_no_title = Entity.from_model(model_no_title)
     assert entity_no_title.name == ""
+
+
+def test_api_places_all_aggregated() -> None:
+    from mop import app
+    client = app.test_client()
+    mock_place = [{
+        'id': '1',
+        'name': 'Test',
+        'system_class': 'Place',
+        'geometry': {'type': 'Point', 'coordinates': [1, 2]},
+        'description': 'Desc',
+        'project': 'IDCEW'}]
+    with patch('mop.views._get_cached_project_places',
+               return_value=mock_place):
+        resp = client.get('/api/places/all')
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data is not None
+        assert len(data['places']) >= 1

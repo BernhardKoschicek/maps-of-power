@@ -6,6 +6,16 @@
 
 window.initPremiumProjectsPortal = function (projectsData) {
   console.log("Initializing premium projects portal with data count:", Object.keys(projectsData).length);
+
+  function escapeHtml(str) {
+    if (str === null || str === undefined) return "";
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
   
   // Track Leaflet map instances for compare deck to avoid re-init crashes
   const microMaps = {};
@@ -42,20 +52,27 @@ window.initPremiumProjectsPortal = function (projectsData) {
         });
       }
 
+      let tiltRaf = null;
       card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const w = rect.width;
-        const h = rect.height;
-        
-        // Calculate tilt
-        const rotateX = -((y - h / 2) / h) * 12; // max 12 deg
-        const rotateY = ((x - w / 2) / w) * 12;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        card.style.setProperty("--mouse-x", `${(x / w) * 100}%`);
-        card.style.setProperty("--mouse-y", `${(y / h) * 100}%`);
+        if (tiltRaf) return;
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        tiltRaf = requestAnimationFrame(() => {
+          tiltRaf = null;
+          const rect = card.getBoundingClientRect();
+          const x = clientX - rect.left;
+          const y = clientY - rect.top;
+          const w = rect.width;
+          const h = rect.height;
+
+          // Calculate tilt
+          const rotateX = -((y - h / 2) / h) * 12; // max 12 deg
+          const rotateY = ((x - w / 2) / w) * 12;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+          card.style.setProperty("--mouse-x", `${(x / w) * 100}%`);
+          card.style.setProperty("--mouse-y", `${(y / h) * 100}%`);
+        });
       });
 
       card.addEventListener("mouseleave", () => {
@@ -138,27 +155,27 @@ window.initPremiumProjectsPortal = function (projectsData) {
       const teamSize = (proj.pi ? proj.pi.length : 0) + (proj.employees ? proj.employees.length : 0);
 
       columnsHtml += `
-        <td class="compare-td text-dark" id="col-compare-${acronym}">
+        <td class="compare-td text-dark" id="col-compare-${escapeHtml(acronym)}">
           <div class="compare-project-head">
-            <h5 class="fw-bold mb-0 text-primary">${proj.title} (${proj.acronym.toUpperCase()})</h5>
-            <button class="compare-close-btn text-muted" data-acronym="${acronym}">&times;</button>
+            <h5 class="fw-bold mb-0 text-primary">${escapeHtml(proj.title)} (${escapeHtml(proj.acronym.toUpperCase())})</h5>
+            <button class="compare-close-btn text-muted" data-acronym="${escapeHtml(acronym)}">&times;</button>
           </div>
           <hr class="my-2">
           <div class="mb-3">
             <span class="d-block small text-muted fw-bold text-uppercase">Timeline</span>
-            <span class="small fw-semibold"><i class="bi bi-calendar-range me-1"></i> ${proj.begin} &mdash; ${proj.end}</span>
+            <span class="small fw-semibold"><i class="bi bi-calendar-range me-1"></i> ${escapeHtml(proj.begin)} &mdash; ${escapeHtml(proj.end)}</span>
           </div>
           <div class="mb-3">
             <span class="d-block small text-muted fw-bold text-uppercase">Project Investigator (PI)</span>
-            <span class="small fw-semibold">${piList}</span>
+            <span class="small fw-semibold">${escapeHtml(piList)}</span>
           </div>
           <div class="mb-3">
             <span class="d-block small text-muted fw-bold text-uppercase">Host Institution</span>
-            <span class="small" style="font-size:0.8rem;">${hosting}</span>
+            <span class="small" style="font-size:0.8rem;">${escapeHtml(hosting)}</span>
           </div>
           <div class="mb-3">
             <span class="d-block small text-muted fw-bold text-uppercase">Funding Body</span>
-            <span class="small" style="font-size:0.8rem;">${funding}</span>
+            <span class="small" style="font-size:0.8rem;">${escapeHtml(funding)}</span>
           </div>
           <div class="mb-3">
             <span class="d-block small text-muted fw-bold text-uppercase">Team Count</span>
@@ -166,7 +183,7 @@ window.initPremiumProjectsPortal = function (projectsData) {
           </div>
           <div>
             <span class="d-block small text-muted fw-bold text-uppercase mb-1">Dataset Coordinates Map</span>
-            <div class="micro-map-container" id="micro-map-${acronym}"></div>
+            <div class="micro-map-container" id="micro-map-${escapeHtml(acronym)}"></div>
           </div>
         </td>
       `;
@@ -220,7 +237,7 @@ window.initPremiumProjectsPortal = function (projectsData) {
     microMaps[acronym] = m;
 
     // Load locations for this project via map api
-    const url = `/api/project/places/${acronym}`;
+    const url = `/api/places/${encodeURIComponent(acronym)}`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -331,11 +348,11 @@ window.initPremiumProjectsPortal = function (projectsData) {
       row.setAttribute("data-end-year", end.getFullYear());
 
       row.innerHTML = `
-        <div class="roadmap-label" title="${proj.title}">${proj.acronym.toUpperCase()}</div>
+        <div class="roadmap-label" title="${escapeHtml(proj.title)}">${escapeHtml(proj.acronym.toUpperCase())}</div>
         <div class="roadmap-bar-container">
           <div class="roadmap-bar ${statusClass}" 
                style="left: ${startPct}%; width: ${widthPct}%;"
-               data-acronym="${acronym}">
+               data-acronym="${escapeHtml(acronym)}">
           </div>
         </div>
       `;
@@ -345,7 +362,9 @@ window.initPremiumProjectsPortal = function (projectsData) {
 
     // Handle Tooltip actions
     const tooltip = document.getElementById("roadmap-hover-tooltip");
+    const roadmapGrid = document.querySelector(".roadmap-grid");
     const bars = document.querySelectorAll(".roadmap-bar");
+    let cachedGridRect = null;
 
     bars.forEach(bar => {
       bar.addEventListener("mouseenter", (e) => {
@@ -353,26 +372,33 @@ window.initPremiumProjectsPortal = function (projectsData) {
         const proj = projectsData[acronym];
         if (!proj) return;
 
+        cachedGridRect = roadmapGrid ? roadmapGrid.getBoundingClientRect() : null;
+
         // Count team members
         const teamSize = (proj.pi ? proj.pi.length : 0) + (proj.employees ? proj.employees.length : 0);
 
         tooltip.innerHTML = `
-          <h6 class="fw-bold text-primary mb-1">${proj.title}</h6>
-          <div class="small text-muted mb-2"><strong>Acronym:</strong> ${proj.acronym.toUpperCase()}</div>
-          <div class="small mb-1"><strong>Duration:</strong> ${proj.begin} - ${proj.end}</div>
-          <div class="small mb-1"><strong>PI:</strong> ${proj.pi ? proj.pi[0] : 'N/A'}</div>
+          <h6 class="fw-bold text-primary mb-1">${escapeHtml(proj.title)}</h6>
+          <div class="small text-muted mb-2"><strong>Acronym:</strong> ${escapeHtml(proj.acronym.toUpperCase())}</div>
+          <div class="small mb-1"><strong>Duration:</strong> ${escapeHtml(proj.begin)} - ${escapeHtml(proj.end)}</div>
+          <div class="small mb-1"><strong>PI:</strong> ${escapeHtml(proj.pi ? proj.pi[0] : 'N/A')}</div>
           <div class="small"><strong>Researchers:</strong> ${teamSize}</div>
         `;
         tooltip.classList.add("show");
       });
 
+      let tipRaf = null;
       bar.addEventListener("mousemove", (e) => {
-        const containerRect = document.querySelector(".roadmap-grid").getBoundingClientRect();
-        const left = e.clientX - containerRect.left;
-        const top = e.clientY - containerRect.top;
-        
-        tooltip.style.left = `${left}px`;
-        tooltip.style.top = `${top}px`;
+        if (tipRaf || !cachedGridRect) return;
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        tipRaf = requestAnimationFrame(() => {
+          tipRaf = null;
+          const left = clientX - cachedGridRect.left;
+          const top = clientY - cachedGridRect.top;
+          tooltip.style.left = `${left}px`;
+          tooltip.style.top = `${top}px`;
+        });
       });
 
       bar.addEventListener("mouseleave", () => {
@@ -534,7 +560,7 @@ window.initPremiumProjectsPortal = function (projectsData) {
                 stroke="${color}" 
                 stroke-dasharray="${strokeDashArray}" 
                 stroke-dashoffset="${strokeDashOffset}"
-                data-name="${name}" 
+                data-name="${escapeHtml(name)}" 
                 data-count="${count}"
                 data-pct="${pct.toFixed(0)}">
         </circle>
@@ -548,8 +574,8 @@ window.initPremiumProjectsPortal = function (projectsData) {
     // Add center labels
     svgHtml += `
       <div class="chart-center-label text-dark">
-        <span class="d-block fw-bold fs-4" id="${containerId}-center-val">${total}</span>
-        <span class="text-muted text-uppercase" style="font-size:0.6rem; letter-spacing:0.05em; font-weight:700;">${centerLabelText}</span>
+        <span class="d-block fw-bold fs-4" id="${escapeHtml(containerId)}-center-val">${total}</span>
+        <span class="text-muted text-uppercase" style="font-size:0.6rem; letter-spacing:0.05em; font-weight:700;">${escapeHtml(centerLabelText)}</span>
       </div>
     `;
 
@@ -566,7 +592,7 @@ window.initPremiumProjectsPortal = function (projectsData) {
         item.innerHTML = `
           <div class="d-flex align-items-center">
             <span class="legend-color-box" style="background:${color};"></span>
-            <span class="fw-semibold text-truncate" style="max-width:180px;" title="${name}">${name}</span>
+            <span class="fw-semibold text-truncate" style="max-width:180px;" title="${escapeHtml(name)}">${escapeHtml(name)}</span>
           </div>
           <span class="fw-bold ms-2">${count}</span>
         `;
@@ -620,7 +646,7 @@ window.initPremiumProjectsPortal = function (projectsData) {
       const role = roles[name] || "Researcher";
 
       const projBadgesHtml = Array.from(projSet).map(acronym => 
-        `<span class="collab-badge-project">${acronym.toUpperCase()}</span>`
+        `<span class="collab-badge-project">${escapeHtml(acronym.toUpperCase())}</span>`
       ).join("");
 
       const card = document.createElement("div");
@@ -630,8 +656,8 @@ window.initPremiumProjectsPortal = function (projectsData) {
 
       card.innerHTML = `
         <div class="collab-info">
-          <span class="collab-name">${name}</span>
-          <span class="collab-role">${role}</span>
+          <span class="collab-name">${escapeHtml(name)}</span>
+          <span class="collab-role">${escapeHtml(role)}</span>
           <div class="collab-badges">
             ${projBadgesHtml}
           </div>

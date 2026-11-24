@@ -4,16 +4,18 @@ Provides query methods for the Tabula Imperii Byzantini (TIB) SQLite
 register, including diacritic-tolerant and Greek homoglyph search.
 """
 
-from contextlib import closing
 from functools import lru_cache
 import json
 from pathlib import Path
 import re
 import sqlite3
+import threading
 from typing import Any
 import unicodedata
 
 from mop.extensions import get_app_config
+
+_db_local = threading.local()
 
 DEFAULT_DB_PATH = (
     Path(__file__).resolve().parent.parent.parent
@@ -164,11 +166,21 @@ VOLUMES_INFO: list[dict[str, Any]] = [
 
 
 def get_db_connection() -> sqlite3.Connection:
-    """Return a read-only SQLite connection to the TIB register."""
+    """Return a cached per-thread read-only SQLite connection."""
     db_path = get_db_path()
     db_uri = f'file:{db_path.as_posix()}?mode=ro'
+    cached_conn: sqlite3.Connection | None = getattr(_db_local, 'conn', None)
+    cached_uri: str | None = getattr(_db_local, 'uri', None)
+    if cached_conn is not None and cached_uri == db_uri:
+        return cached_conn
+    if cached_conn is not None:
+        cached_conn.close()
     conn = sqlite3.connect(db_uri, uri=True)
     conn.row_factory = sqlite3.Row
+    conn.execute('PRAGMA query_only = ON;')
+    conn.execute('PRAGMA temp_store = MEMORY;')
+    _db_local.conn = conn
+    _db_local.uri = db_uri
     return conn
 
 
@@ -188,12 +200,12 @@ def normalize_search_term(text: str) -> str:
 def get_volume_counts() -> dict[int, int]:
     """Return dictionary of volume_id to total toponym count."""
     try:
-        with closing(get_db_connection()) as conn:
-            cur = conn.cursor()
-            cur.execute(
-                'SELECT volume_id, COUNT(*) as cnt '
-                'FROM toponyms GROUP BY volume_id')
-            return {row['volume_id']: row['cnt'] for row in cur.fetchall()}
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute(
+            'SELECT volume_id, COUNT(*) as cnt '
+            'FROM toponyms GROUP BY volume_id')
+        return {row['volume_id']: row['cnt'] for row in cur.fetchall()}
     except sqlite3.Error:
         return {}
 
@@ -247,17 +259,14 @@ def search_toponyms(
         'WHERE ' + ' AND '.join(where_clauses)
     ) if where_clauses else ''
 
-    with closing(get_db_connection()) as conn:
-        cur = conn.cursor()
+    conn = get_db_connection()
+    cur = conn.cursor()
 
-        # Count total matching rows
-        count_sql = (
-            'SELECT COUNT(*) as total '
-            f'FROM toponyms t {where_str}')  # nosec B608
-        cur.execute(count_sql, params)
-        total = cur.fetchone()['total']
-
-        # Fetch paginated results
+    if not norm_q:
+        counts = get_volume_counts()
+        total = (
+            counts.get(volume_id, 0)
+            if volume_id is not None else sum(counts.values()))
         select_sql = f'''
             SELECT t.id, t.name, t.notes, t.volume, t.volume_id,
                    t.pages_json, t.pages_display
@@ -267,22 +276,45 @@ def search_toponyms(
             LIMIT ? OFFSET ?
         '''  # nosec B608
         cur.execute(select_sql, params + [limit, offset])
+        fetched_rows = cur.fetchall()
+    else:
+        select_sql = f'''
+            SELECT t.id, t.name, t.notes, t.volume, t.volume_id,
+                   t.pages_json, t.pages_display,
+                   COUNT(*) OVER() as total_count
+            FROM toponyms t
+            {where_str}
+            ORDER BY t.volume_id ASC, t.name COLLATE NOCASE ASC
+            LIMIT ? OFFSET ?
+        '''  # nosec B608
+        cur.execute(select_sql, params + [limit, offset])
+        fetched_rows = cur.fetchall()
+        if fetched_rows:
+            total = int(fetched_rows[0]['total_count'])
+        elif offset == 0:
+            total = 0
+        else:
+            count_sql = (
+                'SELECT COUNT(*) as total '
+                f'FROM toponyms t {where_str}')  # nosec B608
+            cur.execute(count_sql, params)
+            total = cur.fetchone()['total']
 
-        results = []
-        for row in cur.fetchall():
-            try:
-                pages = json.loads(row['pages_json'])
-            except (json.JSONDecodeError, TypeError):
-                pages = []
+    results = []
+    for row in fetched_rows:
+        try:
+            pages = json.loads(row['pages_json'])
+        except (json.JSONDecodeError, TypeError):
+            pages = []
 
-            results.append({
-                'id': row['id'],
-                'name': row['name'],
-                'notes': row['notes'],
-                'volume': row['volume'],
-                'volume_id': row['volume_id'],
-                'pages': pages,
-                'pages_display': row['pages_display']})
+        results.append({
+            'id': row['id'],
+            'name': row['name'],
+            'notes': row['notes'],
+            'volume': row['volume'],
+            'volume_id': row['volume_id'],
+            'pages': pages,
+            'pages_display': row['pages_display']})
 
     return {'total': total, 'limit': limit, 'offset': offset,
             'results': results}

@@ -32,6 +32,8 @@ class TibBookReader {
         this._onMouseUp = null;
         this._onKeyDown = null;
         this._onHashChange = null;
+        this._thumbsRendered = false;
+        this._thumbObserver = null;
 
         this.init();
     }
@@ -111,14 +113,7 @@ class TibBookReader {
                     </div>
                 </div>
 
-                <div class="tib-thumb-drawer" id="thumbDrawer">
-                    ${this.pages.map((p) => `
-                        <div class="tib-thumb-item ${p.page_num === this.currentPage ? 'active' : ''}"
-                             data-page="${p.page_num}" title="Page ${p.page_num}">
-                            <img class="tib-thumb-img" src="${p.url}" alt="P. ${p.page_num}" loading="lazy">
-                        </div>
-                    `).join('')}
-                </div>
+                <div class="tib-thumb-drawer d-none" id="thumbDrawer"></div>
             </div>
         `;
 
@@ -152,9 +147,15 @@ class TibBookReader {
         // Fullscreen
         this.container.querySelector('#btnFullscreen').addEventListener('click', () => this.toggleFullscreen());
 
-        // Thumbnail Drawer toggle
+        // Thumbnail Drawer toggle (render and hydrate thumbnails lazily on demand)
         this.container.querySelector('#btnToggleThumbs').addEventListener('click', () => {
+            const willShow = this.thumbDrawer.classList.contains('d-none');
             this.thumbDrawer.classList.toggle('d-none');
+            if (willShow) {
+                this.ensureThumbsRendered();
+                this.updateThumbnails();
+                this.hydrateVisibleThumbs();
+            }
         });
 
         // Thumbnail click events
@@ -303,7 +304,50 @@ class TibBookReader {
         });
     }
 
+    ensureThumbsRendered() {
+        if (this._thumbsRendered || !this.thumbDrawer) return;
+        this._thumbsRendered = true;
+        this.thumbDrawer.innerHTML = this.pages.map((p) => `
+            <div class="tib-thumb-item ${p.page_num === this.currentPage ? 'active' : ''}"
+                 data-page="${p.page_num}" title="Page ${p.page_num}">
+                <img class="tib-thumb-img" data-src="${p.url}" alt="P. ${p.page_num}">
+            </div>
+        `).join('');
+
+        if ('IntersectionObserver' in window) {
+            this._thumbObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target.querySelector('img[data-src]');
+                        if (img && !img.getAttribute('src')) {
+                            img.setAttribute('src', img.dataset.src);
+                        }
+                        this._thumbObserver.unobserve(entry.target);
+                    }
+                });
+            }, { root: this.thumbDrawer, rootMargin: '300px' });
+
+            this.thumbDrawer.querySelectorAll('.tib-thumb-item').forEach((item) => {
+                this._thumbObserver.observe(item);
+            });
+        }
+    }
+
+    hydrateVisibleThumbs() {
+        if (!this._thumbsRendered || !this.thumbDrawer) return;
+        const start = Math.max(1, this.currentPage - 25);
+        const end = Math.min(this.totalPages, this.currentPage + 25);
+        for (let p = start; p <= end; p++) {
+            const img = this.thumbDrawer.querySelector(`.tib-thumb-item[data-page="${p}"] img[data-src]`);
+            if (img && !img.getAttribute('src')) {
+                img.setAttribute('src', img.dataset.src);
+            }
+        }
+    }
+
     updateThumbnails() {
+        if (!this.thumbDrawer || this.thumbDrawer.classList.contains('d-none')) return;
+        this.ensureThumbsRendered();
         const active = this.thumbDrawer.querySelector('.tib-thumb-item.active');
         if (active) active.classList.remove('active');
 
@@ -312,6 +356,7 @@ class TibBookReader {
             current.classList.add('active');
             current.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
         }
+        this.hydrateVisibleThumbs();
     }
 
     changeZoom(delta) {
@@ -362,6 +407,10 @@ class TibBookReader {
         if (this._onMouseUp) window.removeEventListener('mouseup', this._onMouseUp);
         if (this._onKeyDown) window.removeEventListener('keydown', this._onKeyDown);
         if (this._onHashChange) window.removeEventListener('hashchange', this._onHashChange);
+        if (this._thumbObserver) {
+            this._thumbObserver.disconnect();
+            this._thumbObserver = null;
+        }
         if (this.container) this.container.innerHTML = '';
     }
 }

@@ -74,6 +74,7 @@ storage/media/videos/
 # Flask stuff:
 instance/*
 !instance/example_*
+.secret_key
 .webassets-cache
 
 # Scrapy stuff:

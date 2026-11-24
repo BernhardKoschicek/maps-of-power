@@ -1134,7 +1134,14 @@
         }
       }
 
-      window.addEventListener('scroll', updateActiveState);
+      let scrollRaf = null;
+      window.addEventListener('scroll', function () {
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(function () {
+          scrollRaf = null;
+          updateActiveState();
+        });
+      }, { passive: true });
       updateActiveState(); // Initial call
     });
   </script>

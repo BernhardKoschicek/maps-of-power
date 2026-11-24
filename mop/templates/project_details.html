@@ -797,8 +797,18 @@
         });
         detailMap.addLayer(markerCluster);
 
+        function escHtml(str) {
+          if (str === null || str === undefined) return "";
+          return String(str)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+        }
+
         // Fetch coordinate markers
-        fetch(`{{ url_for('api_project_places', project_acronym=project.acronym) }}`)
+        fetch(`{{ url_for('explore.api_project_places', project_acronym=project.acronym) }}`)
           .then(res => res.json())
           .then(data => {
             if (data.places && data.places.length > 0) {
@@ -813,15 +823,15 @@
                   if (!isNaN(latLng[0]) && !isNaN(latLng[1])) {
                     const marker = L.marker(latLng);
 
-                    const exploreUrl = `/projects/${projectAcronym.toLowerCase()}/explore/place/${place.id}`;
+                    const exploreUrl = `/projects/${encodeURIComponent(projectAcronym.toLowerCase())}/explore/place/${encodeURIComponent(place.id)}`;
                     const popupHtml = `
                       <div class="p-1 text-dark">
-                        <h6 class="fw-bold text-primary mb-1">${place.name}</h6>
+                        <h6 class="fw-bold text-primary mb-1">${escHtml(place.name)}</h6>
                         <span class="badge bg-secondary text-dark rounded-pill mb-2 px-2 py-0.5 small" style="font-size:0.65rem;">
-                          ${place.system_class}
+                          ${escHtml(place.system_class)}
                         </span>
                         <p class="text-muted small mb-2 text-truncate" style="max-width: 180px;">
-                          ${place.description || '{{ _("No description available.") }}'}
+                          ${escHtml(place.description || '{{ _("No description available.") }}')}
                         </p>
                         <a href="${exploreUrl}" class="btn btn-primary btn-xs text-white fw-bold d-block text-center rounded-pill py-1 small" style="font-size:0.75rem; text-decoration:none;">
                           {{ _('View Details') }} <i class="bi bi-chevron-right ms-1"></i>
@@ -913,7 +923,14 @@
         }
       }
 
-      window.addEventListener('scroll', updateActiveState);
+      let scrollRaf = null;
+      window.addEventListener('scroll', function () {
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(function () {
+          scrollRaf = null;
+          updateActiveState();
+        });
+      }, { passive: true });
       updateActiveState(); // Initial call
 
       // Trigger layout recalculation on publication tabs switch

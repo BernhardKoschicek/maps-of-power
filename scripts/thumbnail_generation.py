@@ -1,49 +1,16 @@
 from pathlib import Path
 import sys
 import time
-from PIL import Image, ImageFile
-
-ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from mop.display.thumbnail import (  # pylint: disable=wrong-import-position
+    VALID_EXTENSIONS, generate_single_thumbnail)
+
 DEFAULT_SOURCE = ROOT_DIR / "storage" / "media" / "images"
 DEFAULT_TARGET = ROOT_DIR / "storage" / "media" / "thumbnails"
-
-THUMBNAIL_WIDTH = 400
-THUMBNAIL_HEIGHT = 400
-VALID_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tiff", ".webp"}
-
-
-def generate_single_thumbnail(source_file: Path, target_file: Path) -> bool:
-    """Generate a single 400x400 center-cropped thumbnail."""
-    try:
-        target_file.parent.mkdir(parents=True, exist_ok=True)
-        with Image.open(source_file) as img:
-            orig_w, orig_h = img.size
-            if orig_w > 0:
-                new_h = int(orig_h * (THUMBNAIL_WIDTH / orig_w))
-                resized = img.resize(
-                    (THUMBNAIL_WIDTH, new_h), Image.Resampling.LANCZOS)
-            else:
-                resized = img
-
-            if resized.height > THUMBNAIL_HEIGHT:
-                top = (resized.height - THUMBNAIL_HEIGHT) // 2
-                cropped = resized.crop(
-                    (0, top, THUMBNAIL_WIDTH, top + THUMBNAIL_HEIGHT))
-            else:
-                cropped = resized
-
-            if (cropped.mode in ("RGBA", "P")
-                    and target_file.suffix.lower() in {".jpg", ".jpeg"}):
-                cropped = cropped.convert("RGB")
-
-            cropped.save(target_file)
-            return True
-    except Exception as exc:  # pragma: no cover
-        print(f"Error creating thumbnail for {source_file}: {exc}",
-              file=sys.stderr)
-        return False
 
 
 def generate_all_thumbnails(

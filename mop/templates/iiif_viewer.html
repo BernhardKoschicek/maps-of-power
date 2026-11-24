@@ -19,16 +19,16 @@
         "highlightAllAnnotations": true
       },
       "workspace": {
-        "type": "{{ "mosaic" if manifests|length < 9 else 'elastic' }}"
+        "type": {{ ("mosaic" if (manifests | default([]) | length) < 9 else "elastic") | tojson }}
       },
-      "language": "{{ session.language }}",
+      "language": {{ (session.get("language") or CURRENT_LANGUAGE or "en") | tojson }},
       "availableLanguages": {
         "de": "Deutsch",
         "en": "English",
         "fr": "Français"
       },
       "windows": [
-          {"loadedManifest": "{{ manifest }}"},
+          {"loadedManifest": {{ manifest | tojson }}}
       ]
     };
     Mirador.viewer(config);

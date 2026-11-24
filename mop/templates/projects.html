@@ -797,7 +797,17 @@
         });
       }
 
-      const apiBaseUrl = "{{ url_for('api_project_places', project_acronym='PLACEHOLDER') }}";
+      const apiBaseUrl = "{{ url_for('explore.api_project_places', project_acronym='PLACEHOLDER') }}";
+
+      function escHtml(str) {
+        if (str === null || str === undefined) return "";
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
 
       async function fetchMapPlaces(projectAcronym) {
         if (!mapLoader) return;
@@ -811,38 +821,20 @@
         allPlacesCache = [];
 
         try {
-          if (projectAcronym === "all") {
-            // Aggregate places from all active projects
-            const activeProjects = [];
-            {% for project in projects.values() %}
-              {% if project.oaID %}
-                activeProjects.push("{{ project['acronym'] }}");
-              {% endif %}
-            {% endfor %}
-
-            const fetchPromises = activeProjects.map(proj => 
-              fetch(apiBaseUrl.replace('PLACEHOLDER', proj))
-                .then(res => res.json())
-                .then(data => {
-                  if (data.places) {
-                    data.places.forEach(p => p.project = proj.toUpperCase());
-                    return data.places;
-                  }
-                  return [];
-                })
-                .catch(() => [])
-            );
-
-            const results = await Promise.all(fetchPromises);
-            results.forEach(placesList => {
-              allPlacesCache = allPlacesCache.concat(placesList);
+          const response = await fetch(apiBaseUrl.replace('PLACEHOLDER', encodeURIComponent(projectAcronym)));
+          const data = await response.json();
+          if (data.places) {
+            data.places.forEach(p => {
+              if (!p.project) {
+                p.project = projectAcronym.toUpperCase();
+              }
             });
-          } else {
-            const response = await fetch(apiBaseUrl.replace('PLACEHOLDER', projectAcronym));
-            const data = await response.json();
-            if (data.places) {
-              data.places.forEach(p => p.project = projectAcronym.toUpperCase());
-              allPlacesCache = data.places;
+            allPlacesCache = data.places;
+            if (projectAcronym === "all") {
+              const statsMapped = document.getElementById("stats-mapped-places");
+              if (statsMapped) {
+                statsMapped.textContent = allPlacesCache.length.toLocaleString();
+              }
             }
           }
 
@@ -874,15 +866,15 @@
               const marker = L.marker(latLng);
 
               // Popup content
-              const exploreUrl = `/projects/${place.project.toLowerCase()}/explore/place/${place.id}`;
+              const exploreUrl = `/projects/${encodeURIComponent((place.project || '').toLowerCase())}/explore/place/${encodeURIComponent(place.id)}`;
               const popupContent = `
                 <div class="p-1">
-                  <h6 class="fw-bold text-primary mb-1">${place.name}</h6>
+                  <h6 class="fw-bold text-primary mb-1">${escHtml(place.name)}</h6>
                   <span class="badge bg-secondary text-dark rounded-pill mb-2 px-2 py-1 small" style="font-size:0.65rem;">
-                    ${place.system_class} &bull; ${place.project}
+                    ${escHtml(place.system_class)} &bull; ${escHtml(place.project)}
                   </span>
                   <p class="text-muted small mb-2 text-truncate" style="max-width: 200px;">
-                    ${place.description || '{{ _("No description available.") }}'}
+                    ${escHtml(place.description || '{{ _("No description available.") }}')}
                   </p>
                   <a href="${exploreUrl}" class="btn btn-primary btn-xs text-white fw-bold d-block text-center rounded-pill py-1 small" style="font-size:0.75rem;">
                     {{ _('View Details') }} <i class="bi bi-chevron-right ms-1"></i>
@@ -940,11 +932,6 @@
           }
         });
       }
-
-      // Checkbox event listeners
-      document.querySelectorAll(".network-project-checkbox").forEach(chk => {
-        chk.addEventListener("change", updateNetworkFromCheckboxes);
-      });
 
       async function updateNetworkFromCheckboxes() {
         const checkedBoxes = document.querySelectorAll(".network-project-checkbox:checked");
@@ -1385,7 +1372,7 @@
                 const palette = COLOR_PALETTE[category] || COLOR_PALETTE['default'];
                 classElem.innerHTML = `
                   <span class="badge text-capitalize" style="background: #fff; color: ${palette.color}; border: 1px solid ${palette.color}; padding: 4px 10px;">
-                    ${(node.systemClass || 'default').replace('_', ' ')}
+                    ${escHtml((node.systemClass || 'default').replace('_', ' '))}
                   </span>
                 `;
               }
@@ -1464,18 +1451,6 @@
           }
         });
       }
-
-      setTimeout(async () => {
-        try {
-          const response = await fetch(apiBaseUrl.replace('PLACEHOLDER', 'idcew')); // simple test
-          if (response.ok) {
-            const statsMapped = document.getElementById("stats-mapped-places");
-            if (statsMapped) {
-              statsMapped.textContent = "5,069";
-            }
-          }
-        } catch (e) {}
-      }, 2000);
 
     });
   </script>

@@ -1,8 +1,9 @@
+import os
 from pathlib import Path
-import time
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from flask import Flask, Response, current_app, request, session, url_for
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 from mop.extensions import babel, cache, set_default_app
 from mop.pid import pid_bp
@@ -19,7 +20,18 @@ STATIC_PATH = ROOT_PATH / 'static'
 IMAGE_PATH = MEDIA_PATH / 'images'
 THUMBNAIL_PATH = MEDIA_PATH / 'thumbnails'
 
-ASSETS_VERSION = int(time.time())
+
+def _compute_assets_version() -> int:
+    env_ver = os.environ.get('ASSETS_VERSION', '').strip()
+    if env_ver.isdigit():
+        return int(env_ver)
+    try:
+        return int((BASE_PATH / 'pyproject.toml').stat().st_mtime)
+    except OSError:  # pragma: no cover
+        return 1
+
+
+ASSETS_VERSION = _compute_assets_version()
 
 
 def get_locale() -> str:
@@ -45,6 +57,13 @@ def create_app(config: dict[str, Any] | None = None) -> Flask:
 
     if config:
         application.config.update(config)
+
+    if application.config.get('USE_PROXY_FIX'):
+        setattr(
+            application,
+            'wsgi_app',
+            ProxyFix(
+                application.wsgi_app, x_for=1, x_proto=1, x_host=1))
 
     set_default_app(application)
 
@@ -85,14 +104,37 @@ def create_app(config: dict[str, Any] | None = None) -> Flask:
             'max-age=31536000; includeSubDomains')
         response.headers['X-Content-Type-Options'] = 'nosniff'
         response.headers['X-Frame-Options'] = 'SAMEORIGIN'
-        response.headers['X-XSS-Protection'] = '1; mode=block'
+        response.headers['X-XSS-Protection'] = '0'
+        response.headers['Referrer-Policy'] = (
+            'strict-origin-when-cross-origin')
+        response.headers['Permissions-Policy'] = (
+            'geolocation=(), microphone=(), camera=()')
+        response.headers['Content-Security-Policy'] = (
+            "base-uri 'self'; frame-ancestors 'self'; object-src 'none'")
         return response
 
     return application
 
 
-app = create_app()
+if TYPE_CHECKING:
+    app: Flask
 
+# pylint: disable=invalid-name
+_lazy_app: Flask | None = None
+
+
+def __getattr__(name: str) -> Any:
+    # pylint: disable=global-statement
+    global _lazy_app
+    if name == 'app':
+        if _lazy_app is None:
+            _lazy_app = create_app()
+        return _lazy_app
+    raise AttributeError(
+        f"module {__name__!r} has no attribute {name!r}")
+
+
+# pylint: disable=undefined-all-variable
 __all__ = [
     'ASSETS_VERSION',
     'BASE_PATH',

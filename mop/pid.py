@@ -36,6 +36,14 @@ UUID_REGEX = re.compile(
     r'[0-9a-fA-F]{4}-[0-9a-fA-F]{12})')
 
 
+def get_public_request_domain() -> str:
+    """Return configured canonical public domain or current request host."""
+    configured = str(get_app_config('PUBLIC_BASE_URL', '')).strip()
+    if configured:
+        return configured.rstrip('/')
+    return request.host_url.rstrip('/')
+
+
 def get_backend_api_bases() -> list[str]:
     """Return a list of configured backend API base URLs."""
     bases: list[str] = []
@@ -211,7 +219,7 @@ def pid_resolver(
         or 'application/json' in accept_header
         or 'application/ld+json' in accept_header)
 
-    request_domain = request.host_url.rstrip('/')
+    request_domain = get_public_request_domain()
 
     if is_uuid(raw_id):
         uuid_obj = uuid.UUID(raw_id.strip())
@@ -254,7 +262,7 @@ def pid_resolver(
 
     numeric_id = extract_numeric_entity_id(raw_data)
     if numeric_id is not None:
-        return redirect(url_for('entity_project_view', id_=numeric_id))
+        return redirect(url_for('explore.entity_project_view', id_=numeric_id))
 
     return render_template(
         'explore/pid_landing.html',
