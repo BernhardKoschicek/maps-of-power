@@ -108,6 +108,11 @@ window.initPremiumProjectsPortal = function (projectsData) {
   }
 
   function updateComparisonDrawer() {
+    const countBadge = document.getElementById("compare-count-badge");
+    if (countBadge) {
+      countBadge.textContent = `${selectedToCompare.length} / 3`;
+    }
+
     const drawer = document.getElementById("project-compare-drawer");
     if (!drawer) return;
 

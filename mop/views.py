@@ -1,4 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
+from functools import lru_cache
 from pathlib import Path
 from typing import Any, cast
 from urllib.parse import urlsplit
@@ -107,24 +108,15 @@ def set_language(language: str | None = None) -> Response:
     return redirect(target)
 
 
-@main_bp.route('/literature')
-def literature() -> str:
-    processed_literatures = []
+@lru_cache(maxsize=4)
+def _build_processed_literatures(pp_label: str) -> tuple[dict[str, Any], ...]:
+    processed_literatures: list[dict[str, Any]] = []
     for lit in literatures:
-        # Pre-process categories
         cats = lit.get('category', [])
-        norm_cats = []
-        for c in cats:
-            if c in project_data:
-                norm_cats.append(c)
-        if not norm_cats:
-            norm_cats.append('further')
+        norm_cats = [c for c in cats if c in project_data] or ['further']
 
-        # Pre-render citation string: Author, Title. Location, Year. pp. Pages.
         author = lit.get('author', '').strip()
         title = lit.get('title', '').strip()
-
-        # Form location string
         locs = lit.get('locations', [])
         if isinstance(locs, list):
             loc_str = ', '.join(str(loc) for loc in locs if loc)
@@ -146,11 +138,9 @@ def literature() -> str:
         if date:
             citation_parts.append(date)
         if pages:
-            citation_parts.append(f'{_("pp.")} {pages}')
+            citation_parts.append(f'{pp_label} {pages}')
 
-        citation_text = ', '.join(citation_parts) + '.'
-
-        processed_lit = {
+        processed_literatures.append({
             'author': lit.get('author', ''),
             'title': lit.get('title', ''),
             'locations': lit.get('locations', []),
@@ -159,10 +149,15 @@ def literature() -> str:
             'external_link': lit.get('external_link', ''),
             'download': lit.get('download', ''),
             'categories': norm_cats,
-            'citation_text': citation_text,
-            'type': lit.get('type', '')}
-        processed_literatures.append(processed_lit)
+            'citation_text': ', '.join(citation_parts) + '.',
+            'type': lit.get('type', '')})
+    return tuple(processed_literatures)
 
+
+@main_bp.route('/literature')
+def literature() -> str:
+    processed_literatures = list(
+        _build_processed_literatures(str(_("pp."))))
     return render_template(
         'literature.html',
         literatures=processed_literatures,
@@ -175,6 +170,7 @@ def _serialize_portal_projects(
     for acronym, proj in portal_projects.items():
         serialized[acronym] = {
             'acronym': str(proj.get('acronym', acronym)),
+            'api': str(proj.get('api') or 'mop'),
             'title': str(proj.get('title', '')),
             'begin': str(proj.get('begin', '')),
             'end': str(proj.get('end', '')),
@@ -463,38 +459,70 @@ def api_project_places(
         return jsonify({"error": "Internal server error"}), 500
 
 
+def _fetch_network_for_backend(
+        app_obj: Flask,
+        ids: list[int],
+        api_path: str) -> dict[str, Any]:
+    with app_obj.app_context():
+        return get_network_visualisation(ids, api_path=api_path)
+
+
+def _collect_all_network_tasks() -> list[tuple[str, list[int], str]]:
+    mop_ids: list[int] = []
+    ortho_ids: list[int] = []
+    for proj in project_data.values():
+        oa_id = proj.get('oaID')
+        if not oa_id:
+            continue
+        ids_to_add = [
+            int(x)
+            for x in (oa_id if isinstance(oa_id, list) else [oa_id])
+            if str(x).isdigit()]
+        if proj.get('api') == 'ortho':
+            ortho_ids.extend(ids_to_add)
+        else:
+            mop_ids.extend(ids_to_add)
+
+    tasks: list[tuple[str, list[int], str]] = []
+    if mop_ids:
+        tasks.append(('mop', mop_ids, get_app_config('MOP_API_PATH', '')))
+    if ortho_ids:
+        tasks.append(
+            ('ortho', ortho_ids, get_app_config('ORTHO_API_PATH', '')))
+    return tasks
+
+
+def _fetch_all_project_networks() -> list[Any]:
+    tasks = _collect_all_network_tasks()
+    if not tasks:
+        return []
+    app_obj = cast(
+        Flask,
+        cast(Any, current_app)._get_current_object())  # pylint: disable=W0212
+    combined_results: list[Any] = []
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        futures = [
+            (
+                api_key,
+                executor.submit(
+                    _fetch_network_for_backend, app_obj, ids, api_path))
+            for api_key, ids, api_path in tasks]
+        for api_key, fut in futures:
+            res = fut.result()
+            for item in res.get('results', []):
+                combined_results.append(
+                    {**item, 'api': api_key}
+                    if isinstance(item, dict) else item)
+    return combined_results
+
+
 # pylint: disable=too-many-return-statements
 @explore_bp.route('/api/network/project/<project_acronym>')
 def api_project_network(
         project_acronym: str) -> Response | tuple[Response, int]:
     if project_acronym == "all":
-        mop_ids = []
-        ortho_ids = []
-        for proj in project_data.values():
-            oa_id = proj.get('oaID')
-            if not oa_id:
-                continue
-            ids_to_add = [
-                int(x)
-                for x in (oa_id if isinstance(oa_id, list) else [oa_id])
-                if str(x).isdigit()]
-            if proj.get('api') == 'ortho':
-                ortho_ids.extend(ids_to_add)
-            else:
-                mop_ids.extend(ids_to_add)
-
         try:
-            mop_res = (
-                get_network_visualisation(
-                    mop_ids, api_path=get_project_api_path('mop'))
-                if mop_ids else {'results': []})
-            ortho_res = (
-                get_network_visualisation(
-                    ortho_ids, api_path=get_project_api_path('rhr'))
-                if ortho_ids else {'results': []})
-            combined_results = (
-                mop_res.get('results', []) + ortho_res.get('results', []))
-            return jsonify({'results': combined_results})
+            return jsonify({'results': _fetch_all_project_networks()})
         except Exception as e:
             current_app.logger.error("Error in api_project_network: %s", e)
             return jsonify({"error": "Internal server error"}), 500
@@ -512,8 +540,9 @@ def api_project_network(
             return jsonify({'results': []})
         try:
             api_path = get_project_api_path(project_acronym)
+            api_key = str(project_data[project_acronym].get('api') or 'mop')
             data = get_network_visualisation(linked_to_ids, api_path=api_path)
-            return jsonify(data)
+            return jsonify({**data, 'api': api_key})
         except Exception as e:
             current_app.logger.error("Error in api_project_network: %s", e)
             return jsonify({"error": "Internal server error"}), 500
@@ -522,6 +551,8 @@ def api_project_network(
 ALLOWED_TABLE_COLUMNS = {
     'begin', 'class', 'description', 'end', 'name', 'type'}
 ALLOWED_SORT_DIRECTIONS = {'asc', 'desc'}
+MAX_EXPLORE_PAGE = 1000
+MAX_CACHED_EXPLORE_PAGE = 50
 
 
 @explore_bp.route('/api/explore/<project_acronym>/<view>')
@@ -535,7 +566,8 @@ def api_explore_entities(
         return jsonify({'results': [], 'pagination': {}})
     oa_ids: tuple[str, ...] = (
         tuple(oa_id) if isinstance(oa_id, list) else (str(oa_id),))
-    page = max(1, min(request.args.get('page', 1, type=int), 10000))
+    page = max(
+        1, min(request.args.get('page', 1, type=int), MAX_EXPLORE_PAGE))
     raw_sort = request.args.get('sort', 'asc').lower()
     sort = raw_sort if raw_sort in ALLOWED_SORT_DIRECTIONS else 'asc'
     raw_col = request.args.get('column', 'name').lower()
@@ -543,7 +575,7 @@ def api_explore_entities(
     search = request.args.get('search', '').strip()[:100]
     try:
         api_path = get_project_api_path(project_acronym)
-        if search:
+        if search or page > MAX_CACHED_EXPLORE_PAGE:
             data = _fetch_table_rows_uncached(
                 view, oa_ids, page, sort, column, search, api_path=api_path)
         else:

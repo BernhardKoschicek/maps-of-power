@@ -408,7 +408,7 @@
                   {% for project in projects.values() %}
                     {% if project.oaID %}
                       <div class="form-check mb-2">
-                        <input class="form-check-input network-project-checkbox" type="checkbox" value="{{ project['acronym'] }}" id="chk-proj-{{ project['acronym'] }}" checked>
+                        <input class="form-check-input network-project-checkbox" type="checkbox" value="{{ project['acronym'] }}" data-api="{{ project.get('api') or 'mop' }}" id="chk-proj-{{ project['acronym'] }}" checked>
                         <label class="form-check-label small fw-semibold text-dark" for="chk-proj-{{ project['acronym'] }}">
                           {{ project['title'] }} ({{ project['acronym'].upper() }})
                         </label>
@@ -506,7 +506,7 @@
                 </div>
                 <div class="small text-muted mb-1">{{ _('ID') }}: <span id="detail-node-id">-</span></div>
                 <div class="small text-muted mb-2">{{ _('Relations') }}: <span id="detail-node-relations">-</span></div>
-                <a id="detail-node-link" href="#" target="_blank" class="btn btn-sm btn-primary rounded-pill w-100 mt-2 d-flex align-items-center justify-content-center text-white fw-bold">
+                <a id="detail-node-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary rounded-pill w-100 mt-2 d-flex align-items-center justify-content-center text-white fw-bold">
                   <i class="bi bi-eye me-1"></i>{{ _('View Entity') }}
                 </a>
               </div>
@@ -949,17 +949,29 @@
 
           await Promise.all(fetchPromises);
 
-          // Combine results from all active projects
+          const projectApiMap = {};
+          document.querySelectorAll(".network-project-checkbox").forEach(chk => {
+            projectApiMap[chk.value] = chk.dataset.api || 'mop';
+          });
+
+          // Combine results from all active projects using backend-namespaced IDs
           const combinedResults = [];
-          const seenIds = new Set();
+          const seenKeys = new Set();
 
           selectedProjects.forEach(proj => {
             const data = projectNetworkCache[proj];
+            const apiKey = (data && data.api) || projectApiMap[proj] || 'mop';
             if (data && data.results) {
               data.results.forEach(item => {
-                if (!seenIds.has(item.id)) {
-                  seenIds.add(item.id);
-                  combinedResults.push(item);
+                const nodeKey = `${apiKey}:${item.id}`;
+                if (!seenKeys.has(nodeKey)) {
+                  seenKeys.add(nodeKey);
+                  combinedResults.push({
+                    ...item,
+                    _nodeKey: nodeKey,
+                    _rawId: item.id,
+                    _api: apiKey
+                  });
                 }
               });
             }
@@ -1152,7 +1164,7 @@
           return !hiddenCategories.has(category);
         });
 
-        const nodeIds = new Set(filteredResults.map(item => item.id));
+        const nodeIds = new Set(filteredResults.map(item => item._nodeKey));
 
         const GraphConstructor = typeof graphology !== 'undefined' && graphology.Graph ? graphology.Graph : null;
         const SigmaConstructor = typeof Sigma !== 'undefined' ? Sigma : (typeof sigma !== 'undefined' && sigma.Sigma ? sigma.Sigma : null);
@@ -1165,20 +1177,27 @@
         const graph = new GraphConstructor();
 
         // 1. Gather all nodes and assign their projects
-        const nodeProjects = {}; // nodeId -> array of project acronyms
-        const nodeData = {}; // nodeId -> item data
+        const nodeProjects = {}; // nodeKey -> array of project acronyms
+        const nodeData = {}; // nodeKey -> item data
+        const projectApiMap = {};
+        document.querySelectorAll(".network-project-checkbox").forEach(chk => {
+          projectApiMap[chk.value] = chk.dataset.api || 'mop';
+        });
+
+        filteredResults.forEach(item => {
+          nodeData[item._nodeKey] = item;
+          nodeProjects[item._nodeKey] = [];
+        });
 
         selectedProjects.forEach(proj => {
           const data = projectNetworkCache[proj];
+          const apiKey = (data && data.api) || projectApiMap[proj] || 'mop';
           if (data && data.results) {
             data.results.forEach(item => {
-              if (nodeIds.has(item.id)) {
-                if (!nodeProjects[item.id]) {
-                  nodeProjects[item.id] = [];
-                  nodeData[item.id] = item;
-                }
-                if (!nodeProjects[item.id].includes(proj)) {
-                  nodeProjects[item.id].push(proj);
+              const nodeKey = `${apiKey}:${item.id}`;
+              if (nodeIds.has(nodeKey)) {
+                if (!nodeProjects[nodeKey].includes(proj)) {
+                  nodeProjects[nodeKey].push(proj);
                 }
               }
             });
@@ -1267,8 +1286,8 @@
           const palette = COLOR_PALETTE[category] || COLOR_PALETTE['default'];
           const size = 4; // Uniform node size
 
-          graph.addNode(item.id.toString(), {
-            label: item.label || `ID: ${item.id}`,
+          graph.addNode(item._nodeKey, {
+            label: item.label || `ID: ${item._rawId ?? item.id}`,
             x: x,
             y: y,
             initialX: x,
@@ -1284,13 +1303,13 @@
         filteredResults.forEach(item => {
           if (item.relations) {
             item.relations.forEach(targetId => {
-              const s = item.id;
-              const t = targetId;
-              if (nodeIds.has(t)) {
-                const edgeKey = s < t ? `${s}-${t}` : `${t}-${s}`;
+              const sKey = item._nodeKey;
+              const tKey = `${item._api}:${targetId}`;
+              if (nodeIds.has(tKey)) {
+                const edgeKey = sKey < tKey ? `${sKey}|${tKey}` : `${tKey}|${sKey}`;
                 if (!edgeSet.has(edgeKey)) {
                   edgeSet.add(edgeKey);
-                  graph.addEdge(s.toString(), t.toString(), {
+                  graph.addEdge(sKey, tKey, {
                     color: '#e9ecef',
                     size: 1.2
                   });
@@ -1345,6 +1364,23 @@
             renderLabels: true
           });
 
+          function buildNodeEntityUrl(node, projs) {
+            const rawId = encodeURIComponent(node._rawId ?? node.id);
+            const primaryProj = projs && projs.length > 0 ? projs[0] : null;
+            if (primaryProj) {
+              const viewMap = {
+                place: 'place', person: 'actor', group: 'actor',
+                event: 'event', artifact: 'artifact',
+                bibliography: 'reference', source: 'source',
+                source_translation: 'source'
+              };
+              const cat = getPaletteCategory(node.systemClass);
+              const view = viewMap[cat] || 'place';
+              return `/projects/${encodeURIComponent(primaryProj)}/explore/${view}/${rawId}`;
+            }
+            return `/entity/${rawId}`;
+          }
+
           // Handle click on node to show details panel popup
           networkInstance.on("clickNode", function (event) {
             const clickedNodeId = event.node;
@@ -1358,7 +1394,8 @@
               const relationsElem = document.getElementById('detail-node-relations');
               const linkElem = document.getElementById('detail-node-link');
 
-              if (titleElem) titleElem.innerText = node.label || `ID: ${node.id}`;
+              const rawId = node._rawId ?? node.id;
+              if (titleElem) titleElem.innerText = node.label || `ID: ${rawId}`;
               if (classElem) {
                 const category = getPaletteCategory(node.systemClass);
                 const palette = COLOR_PALETTE[category] || COLOR_PALETTE['default'];
@@ -1368,11 +1405,11 @@
                   </span>
                 `;
               }
-              if (idElem) idElem.innerText = node.id;
+              if (idElem) idElem.innerText = rawId;
               if (relationsElem) relationsElem.innerText = node.relations ? node.relations.length : 0;
               
               if (linkElem) {
-                linkElem.href = `/entity/${node.id}`;
+                linkElem.href = buildNodeEntityUrl(node, nodeProjects[clickedNodeId]);
               }
 
               detailPanel.classList.remove('d-none');
@@ -1380,8 +1417,9 @@
           });
 
           networkInstance.on("doubleClickNode", function (event) {
-            const nodeId = event.node;
-            window.open(`/entity/${nodeId}`, '_blank');
+            const node = nodeData[event.node];
+            if (!node) return;
+            window.open(buildNodeEntityUrl(node, nodeProjects[event.node]), '_blank', 'noopener,noreferrer');
           });
         }
       }

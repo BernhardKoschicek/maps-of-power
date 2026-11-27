@@ -8,8 +8,9 @@ from flask.testing import FlaskClient
 from mop import create_app
 from mop.model.entity import Entity
 from mop.pid import (
-    base62_to_uuid, extract_numeric_entity_id, fetch_entity_by_uuid,
-    get_backend_api_bases, is_uuid, rewrite_json_urls, uuid_to_base62)
+    base62_to_uuid, clear_negative_cache, extract_numeric_entity_id,
+    fetch_entity_by_uuid, get_backend_api_bases, is_uuid, rewrite_json_urls,
+    uuid_to_base62)
 
 
 def test_base62_uuid_roundtrip() -> None:
@@ -74,6 +75,7 @@ def test_rewrite_json_urls() -> None:
         "href": f"{backend_base}/{target_uuid}",
         "description": f"See {backend_base}/uuid/{target_uuid} for info.",
         "external_link": "https://en.wikipedia.org/wiki/Constantinople",
+        "href_query": f"https://other.example/?next={backend_base}/uuid/{target_uuid}",
         "nested": {
             "link": f"{backend_base}/uuid/{target_uuid}",
             "notes": "Do not touch this text."},
@@ -92,6 +94,8 @@ def test_rewrite_json_urls() -> None:
         f"See {backend_base}/uuid/{target_uuid} for info.")
     assert rewritten["external_link"] == (
         "https://en.wikipedia.org/wiki/Constantinople")
+    assert rewritten["href_query"] == (
+        f"https://other.example/?next={backend_base}/uuid/{target_uuid}")
     assert rewritten["nested"]["link"] == expected_pid_url
     assert rewritten["nested"]["notes"] == "Do not touch this text."
     assert rewritten["items"][0]["@id"] == expected_pid_url
@@ -137,6 +141,8 @@ def test_extract_numeric_entity_id() -> None:
     assert extract_numeric_entity_id(data_by_uri) == 555
 
     assert extract_numeric_entity_id({}) is None
+    assert extract_numeric_entity_id({"id": True}) is None
+    assert extract_numeric_entity_id({"id": False}) is None
     assert extract_numeric_entity_id("not-a-dict") is None  # type: ignore
 
 
@@ -155,20 +161,23 @@ def test_fetch_entity_by_uuid(
     mock_resp_200.json.return_value = {"id": 123, "name": "Success"}
     mock_get.return_value = mock_resp_200
 
+    clear_negative_cache()
     result = fetch_entity_by_uuid(target_uuid)
     assert result == {"id": 123, "name": "Success"}
 
-    # Scenario 2: 404 on first, 200 on fallback
+    # Scenario 2: 404 on first backend, 200 on second backend
     mock_resp_404 = MagicMock()
     mock_resp_404.status_code = 404
 
+    clear_negative_cache()
     mock_get.side_effect = [
-        mock_resp_404, mock_resp_404, mock_resp_404,
+        mock_resp_404, mock_resp_404,
         mock_resp_200]
     result = fetch_entity_by_uuid(target_uuid)
     assert result == {"id": 123, "name": "Success"}
 
     # Scenario 3: Exception or all 404
+    clear_negative_cache()
     mock_get.side_effect = Exception("Network timeout")
     result = fetch_entity_by_uuid(target_uuid)
     assert result is None
@@ -391,11 +400,11 @@ def test_fetch_entity_by_uuid_does_not_cache_none() -> None:
     resp_200 = MagicMock(status_code=200)
     resp_200.json.return_value = {"id": 77}
 
+    clear_negative_cache()
     with cached_app.app_context():
         with patch("mop.pid.get_http_session") as mock_session:
             mock_session.return_value.get.side_effect = [
-                RuntimeError("boom"), RuntimeError("boom"),
-                RuntimeError("boom"), resp_200]
+                RuntimeError("boom"), RuntimeError("boom"), resp_200]
             assert fetch_entity_by_uuid(target_uuid) is None
             assert fetch_entity_by_uuid(target_uuid) == {"id": 77}
 
@@ -407,6 +416,8 @@ def test_fetch_entity_by_uuid_does_not_cache_none() -> None:
             assert (
                 mock_session_404.return_value.get.call_count
                 == calls_after_first)
+            from mop.extensions import cache as ext_cache
+            assert ext_cache.get(f"pid:uuid:{missing_uuid}") is None
 
 
 @patch("mop.pid.fetch_entity_by_uuid")

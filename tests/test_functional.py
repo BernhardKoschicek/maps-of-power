@@ -388,3 +388,82 @@ def test_entity_view_export_links_no_double_slash(
         assert resp.status_code == 200
         assert b'/api//entity/' not in resp.data
         assert b'/api/entity/999994?format=turtle' in resp.data
+
+
+def test_entity_view_safe_fancybox_and_collapse_listeners(
+        client: FlaskClient) -> None:
+    with patch('mop.model.entity.get_entity_presentation') as mock_pres:
+        mock_pres.return_value = {
+            "id": 999995,
+            "systemClass": "place",
+            "viewClass": "place",
+            "title": "Lightbox Check",
+            "relations": {
+                "actor": [{
+                    "id": 10,
+                    "systemClass": "person",
+                    "title": "Related Person",
+                    "relationTypes": []}]}}
+        html = client.get('/entity/999995').get_data(as_text=True)
+        assert 'onshow=' not in html
+        assert 'onhide=' not in html
+        assert 'data-icon-target="icon-actors"' in html
+        assert 'span.textContent = raw;' in html
+
+
+def test_explore_high_page_bypasses_cache(client: FlaskClient) -> None:
+    with patch('mop.views._fetch_table_rows') as mock_cached, \
+         patch('mop.views._fetch_table_rows_uncached',
+               return_value={'results': [], 'pagination': {}}) as mock_uncached:
+        resp = client.get('/api/explore/vlachs/actor?page=51')
+        assert resp.status_code == 200
+        mock_cached.assert_not_called()
+        mock_uncached.assert_called_once()
+
+
+def test_api_project_network_backend_tagging_and_projects_template(
+        client: FlaskClient) -> None:
+    with patch('mop.views.get_network_visualisation',
+               return_value={'results': [{'id': 1, 'label': 'X'}]}) as mock_net:
+        rhr_resp = client.get('/api/network/project/rhr')
+        assert rhr_resp.status_code == 200
+        assert rhr_resp.get_json()['api'] == 'ortho'
+
+        all_resp = client.get('/api/network/project/all')
+        assert all_resp.status_code == 200
+        all_results = all_resp.get_json()['results']
+        apis_seen = {item['api'] for item in all_results}
+        assert apis_seen == {'mop', 'ortho'}
+        assert mock_net.call_count >= 2
+
+    projects_html = client.get('/projects').get_data(as_text=True)
+    assert 'data-api="ortho"' in projects_html
+    assert 'buildNodeEntityUrl' in projects_html
+
+
+def test_get_view_class_memoizes_independent_of_dict_order() -> None:
+    from mop import create_app
+    from mop.model.api_calls import get_view_class
+
+    local_app = create_app({
+        'TESTING': True,
+        'CACHE_TYPE': 'SimpleCache',
+        'MOP_API_PATH': 'https://example.org/api/'})
+    with local_app.app_context():
+        with patch('mop.model.api_calls._fetch_json',
+                   return_value={'results': [{'id': 1}]}) as mock_fetch:
+            r1 = get_view_class(
+                'place', params={'limit': 0, 'type_id': '1'})
+            r2 = get_view_class(
+                'place', params={'type_id': '1', 'limit': 0})
+            assert r1 == r2 == [{'id': 1}]
+            assert mock_fetch.call_count == 1
+
+
+def test_literature_caches_per_locale(client: FlaskClient) -> None:
+    with client.session_transaction() as sess:
+        sess['language'] = 'en'
+    assert client.get('/literature').status_code == 200
+    with client.session_transaction() as sess:
+        sess['language'] = 'de'
+    assert client.get('/literature').status_code == 200

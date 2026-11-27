@@ -12,6 +12,7 @@
     let currentDepth = 2;
     let rawNodesData = [];
     let currentCenterId = null;
+    let activeFetchController = null;
     
     // Set to keep track of globally deactivated node classes
     const hiddenCategories = new Set();
@@ -56,7 +57,7 @@
         return 'default';
     }
 
-    async function fetchNetworkData(id, depth) {
+    async function fetchNetworkData(id, depth, signal) {
         const cacheKey = `${id}-${depth}`;
         if (fetchCache[cacheKey]) {
             return fetchCache[cacheKey];
@@ -64,9 +65,9 @@
         let projectParam = '';
         const pathSegments = window.location.pathname.split('/').filter(Boolean);
         if (pathSegments.length > 1 && pathSegments[0] === 'projects') {
-            projectParam = `&project=${pathSegments[1]}`;
+            projectParam = `&project=${encodeURIComponent(pathSegments[1])}`;
         }
-        const response = await fetch(`/api/network/${id}?depth=${depth}${projectParam}`);
+        const response = await fetch(`/api/network/${id}?depth=${depth}${projectParam}`, { signal });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -232,7 +233,7 @@
             const size = isCenter ? 15 : Math.min(22, Math.max(7, 7 + deg * 0.4));
 
             graph.addNode(item.id.toString(), {
-                label: labelsEnabled ? (item.label || `ID: ${item.id}`) : '',
+                label: item.label || `ID: ${item.id}`,
                 x: 0,
                 y: 0,
                 size: size,
@@ -278,7 +279,7 @@
 
             network = new SigmaConstructor(graph, container, {
                 allowOuterBounds: true,
-                renderLabels: true
+                renderLabels: labelsEnabled
             });
 
             // Node Dragging Interaction
@@ -371,6 +372,12 @@
         const overlay = document.getElementById('network-overlay');
         const loaderText = document.getElementById('network-loader-text');
         const detailPanel = document.getElementById('network-node-detail');
+
+        if (activeFetchController) {
+            activeFetchController.abort();
+        }
+        activeFetchController = new AbortController();
+        const signal = activeFetchController.signal;
         
         if (overlay) {
             overlay.classList.remove('d-none');
@@ -384,17 +391,19 @@
         }
 
         try {
-            const rawData = await fetchNetworkData(id, depth);
+            const rawData = await fetchNetworkData(id, depth, signal);
+            if (signal.aborted) return;
             rawNodesData = rawData.results || [];
             currentCenterId = id;
             
             renderNetworkGraph();
 
-            if (overlay) {
+            if (overlay && !signal.aborted) {
                 overlay.style.opacity = '0';
                 setTimeout(() => overlay.classList.add('d-none'), 300);
             }
         } catch (error) {
+            if (error && error.name === 'AbortError') return;
             console.error("Failed to render network:", error);
             if (loaderText) {
                 loaderText.innerHTML = `<span class="text-danger fw-semibold">Failed to load network.</span><br><small class="text-muted">${escapeHtml(error.message)}</small>`;
@@ -535,7 +544,12 @@
         if (labelToggle) {
             labelToggle.addEventListener('change', function (e) {
                 labelsEnabled = e.target.checked;
-                renderNetworkGraph();
+                if (network) {
+                    network.setSetting('renderLabels', labelsEnabled);
+                    network.refresh();
+                } else {
+                    renderNetworkGraph();
+                }
             });
         }
 
@@ -680,7 +694,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        const currentEntityId = window.gisDataEntityId || (typeof entityName !== 'undefined' ? 237 : null);
+        const currentEntityId = window.gisDataEntityId || null;
         
         if (!currentEntityId) return;
 

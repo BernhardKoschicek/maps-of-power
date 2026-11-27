@@ -1,5 +1,8 @@
+from collections import OrderedDict
 import json
 import re
+import threading
+import time
 import uuid
 from typing import Any
 
@@ -62,47 +65,91 @@ def get_backend_api_bases() -> list[str]:
     return bases
 
 
-_NOT_FOUND_SENTINEL = '__PID_NOT_FOUND__'
+_NEGATIVE_CACHE_MAX = 1024
+_NEGATIVE_CACHE_TTL = 60.0
+_PID_FETCH_TIMEOUT = (2, 4)
+_PID_TOTAL_DEADLINE = 8.0
+_neg_lock = threading.Lock()
+_neg_cache: OrderedDict[tuple[tuple[str, ...], str], float] = OrderedDict()
+
+
+def clear_negative_cache() -> None:
+    """Clear the bounded in-memory negative lookup cache."""
+    with _neg_lock:
+        _neg_cache.clear()
+
+
+def _is_negatively_cached(key: tuple[tuple[str, ...], str]) -> bool:
+    now = time.monotonic()
+    with _neg_lock:
+        expires_at = _neg_cache.get(key)
+        if expires_at is None:
+            return False
+        if now < expires_at:
+            _neg_cache.move_to_end(key)
+            return True
+        _neg_cache.pop(key, None)
+        return False
+
+
+def _mark_negatively_cached(key: tuple[tuple[str, ...], str]) -> None:
+    expires_at = time.monotonic() + _NEGATIVE_CACHE_TTL
+    with _neg_lock:
+        _neg_cache[key] = expires_at
+        _neg_cache.move_to_end(key)
+        while len(_neg_cache) > _NEGATIVE_CACHE_MAX:
+            _neg_cache.popitem(last=False)
+
+
+def _probe_uuid_endpoints(
+        bases: list[str],
+        uuid_str: str) -> tuple[dict[str, Any] | None, bool]:
+    headers = {'Accept': 'application/ld+json, application/json'}
+    proxies = get_proxies()
+    session = get_http_session()
+    had_error = False
+    deadline = time.monotonic() + _PID_TOTAL_DEADLINE
+
+    for base in bases:
+        for url in (f"{base}/uuid/{uuid_str}", f"{base}/entity/{uuid_str}"):
+            if time.monotonic() >= deadline:
+                return None, True
+            try:
+                response = session.get(
+                    url,
+                    headers=headers,
+                    proxies=proxies,
+                    timeout=_PID_FETCH_TIMEOUT)
+                if response.status_code == 200:
+                    data = response.json()
+                    if isinstance(data, dict):
+                        return data, False
+                elif response.status_code != 404:
+                    had_error = True
+            except Exception as e:
+                had_error = True
+                current_app.logger.warning("Error fetching %s: %s", url, e)
+    return None, had_error
 
 
 def fetch_entity_by_uuid(uuid_str: str) -> dict[str, Any] | None:
     """Fetch entity data from OpenAtlas backend by UUID."""
     cache_key = f"pid:uuid:{uuid_str}"
     cached = cache.get(cache_key)
-    if cached == _NOT_FOUND_SENTINEL:
-        return None
     if isinstance(cached, dict):
         return cached
 
     bases = get_backend_api_bases()
-    proxies = get_proxies()
-    headers = {
-        'Accept': 'application/ld+json, application/json'}
-    session = get_http_session()
-    had_error = False
+    neg_key = (tuple(bases), uuid_str)
+    if bases and _is_negatively_cached(neg_key):
+        return None
 
-    for base in bases:
-        urls_to_try = [
-            f"{base}/uuid/{uuid_str}",
-            f"{base}/{uuid_str}",
-            f"{base}/entity/{uuid_str}"]
-        for url in urls_to_try:
-            try:
-                response = session.get(
-                    url, headers=headers, proxies=proxies, timeout=(3, 8))
-                if response.status_code == 200:
-                    data = response.json()
-                    if isinstance(data, dict):
-                        cache.set(cache_key, data, timeout=3600)
-                        return data
-                elif response.status_code != 404:
-                    had_error = True
-            except Exception as e:
-                had_error = True
-                current_app.logger.warning("Error fetching %s: %s", url, e)
-                continue
+    data, had_error = _probe_uuid_endpoints(bases, uuid_str)
+    if data is not None:
+        cache.set(cache_key, data, timeout=3600)
+        return data
     if bases and not had_error:
-        cache.set(cache_key, _NOT_FOUND_SENTINEL, timeout=60)
+        _mark_negatively_cached(neg_key)
     return None
 
 
@@ -118,7 +165,7 @@ def rewrite_json_urls(
 
     def _rewrite_string_url(val: str) -> str:
         for base in backend_bases:
-            if val.startswith(base) or base in val:
+            if val == base or val.startswith(f"{base}/"):
                 match = UUID_REGEX.search(val)
                 if match:
                     try:
@@ -171,6 +218,8 @@ def extract_numeric_entity_id(data: dict[str, Any]) -> int | None:
         return None
 
     def _to_int(val: Any) -> int | None:
+        if isinstance(val, bool):
+            return None
         if isinstance(val, int):
             return val
         if isinstance(val, str) and val.isdigit():

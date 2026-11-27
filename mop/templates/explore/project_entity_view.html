@@ -717,7 +717,7 @@
               <i class="bi bi-chevron-down text-primary transition-icon" id="icon-{{ key }}"></i>
             </div>
 
-            <div class="collapse" id="collapse-{{ key }}" onshow="toggleIcon('{{ key }}')" onhide="toggleIcon('{{ key }}')">
+            <div class="collapse" id="collapse-{{ key }}" data-icon-target="icon-{{ key }}">
               <div class="card-body p-4 pt-0">
                 <div class="table-responsive">
                 <table id="table-{{ key }}" class="table table-hover align-middle w-100 mb-0">
@@ -1059,17 +1059,23 @@
       document.addEventListener("DOMContentLoaded", function() {
           if (typeof Fancybox !== 'undefined') {
               Fancybox.bind("[data-fancybox]", {
-                  // Your custom options
+                  caption: (_fancybox, slide) => {
+                      const raw = slide.triggerEl?.dataset.caption || '';
+                      if (!raw) return '';
+                      const span = document.createElement('span');
+                      span.textContent = raw;
+                      return span;
+                  }
               });
           }
-      });
 
-      function toggleIcon(key) {
-          const icon = document.getElementById('icon-' + key);
-          if (icon) {
-              icon.classList.toggle('rotate-180');
-          }
-      }
+          document.querySelectorAll('.collapse[data-icon-target]').forEach(el => {
+              const icon = document.getElementById(el.dataset.iconTarget);
+              if (!icon) return;
+              el.addEventListener('show.bs.collapse', () => icon.classList.add('rotate-180'));
+              el.addEventListener('hide.bs.collapse', () => icon.classList.remove('rotate-180'));
+          });
+      });
 
       // Narrative connections toggle logic
       document.addEventListener("DOMContentLoaded", function() {

@@ -12,6 +12,28 @@ from mop.extensions import cache, get_app_config
 from mop.model.typetree import TypeTree
 
 _session_local = threading.local()
+DEFAULT_HTTP_TIMEOUT: tuple[int, int] = (4, 20)
+
+
+def _freeze_value(val: Any) -> Any:
+    if isinstance(val, list):
+        return tuple(_freeze_value(v) for v in val)
+    if isinstance(val, dict):
+        return tuple((k, _freeze_value(v)) for k, v in sorted(val.items()))
+    return val
+
+
+def _freeze_params(
+        params: Optional[dict[str, Any]]) -> tuple[tuple[str, Any], ...]:
+    if not params:
+        return ()
+    return tuple((k, _freeze_value(v)) for k, v in sorted(params.items()))
+
+
+def _thaw_value(val: Any) -> Any:
+    if isinstance(val, tuple):
+        return [_thaw_value(v) for v in val]
+    return val
 
 
 def get_http_session() -> requests.Session:
@@ -48,7 +70,10 @@ def _fetch_json(
         url: str,
         params: Optional[dict[str, Any]] = None) -> dict[str, Any]:
     response = get_http_session().get(
-        url, params=params, proxies=get_proxies(), timeout=30)
+        url,
+        params=params,
+        proxies=get_proxies(),
+        timeout=DEFAULT_HTTP_TIMEOUT)
     if response.status_code == 404:  # pragma: no cover
         raise NotFound(f"Resource not found: {url}")
     response.raise_for_status()
@@ -57,9 +82,9 @@ def _fetch_json(
 
 
 @cache.memoize()
-def get_view_class(
+def _get_view_class_cached(
         parameter: str,
-        params: Optional[dict[str, Any]] = None,
+        frozen_params: tuple[tuple[str, Any], ...],
         api_path: Optional[str] = None) -> list[dict[str, Any]]:
     base = _get_api_path(api_path).rstrip('/')
     url = f"{base}/view_class/{parameter}"
@@ -68,7 +93,18 @@ def get_view_class(
         # like 'actor?limit=1'
         return _fetch_json(url).get('results', [])
 
+    params = (
+        {k: _thaw_value(v) for k, v in frozen_params}
+        if frozen_params else None)
     return _fetch_json(url, params=params).get('results', [])
+
+
+def get_view_class(
+        parameter: str,
+        params: Optional[dict[str, Any]] = None,
+        api_path: Optional[str] = None) -> list[dict[str, Any]]:
+    return _get_view_class_cached(
+        parameter, _freeze_params(params), api_path=api_path)
 
 
 @cache.memoize()
@@ -103,7 +139,8 @@ def get_entity_presentation(
         api_path: Optional[str] = None) -> dict[str, Any]:
     base = _get_api_path(api_path).rstrip('/')
     url = f"{base}/entity_presentation_view/{id_}"
-    response = get_http_session().get(url, proxies=get_proxies(), timeout=30)
+    response = get_http_session().get(
+        url, proxies=get_proxies(), timeout=DEFAULT_HTTP_TIMEOUT)
     if response.status_code == 404:  # pragma: no cover
         raise NotFound(f"Entity with ID {id_} not found in the external API.")
     response.raise_for_status()
@@ -116,7 +153,7 @@ def get_entity(id_: int, api_path: Optional[str] = None) -> dict[str, Any]:
     base = _get_api_path(api_path).rstrip('/')
     url = f"{base}/entity/"
     response = get_http_session().get(
-        f"{url}{id_}", proxies=get_proxies(), timeout=30)
+        f"{url}{id_}", proxies=get_proxies(), timeout=DEFAULT_HTTP_TIMEOUT)
     if response.status_code == 404:  # pragma: no cover
         raise NotFound(f"Entity with ID {id_} not found in the external API.")
     response.raise_for_status()
@@ -149,7 +186,10 @@ def get_ego_network(
         'depth': depth_,
         'exclude_system_classes': EXCLUDE_SYSTEM_CLASSES}
     response = get_http_session().get(
-        url, params=params, proxies=get_proxies(), timeout=30)
+        url,
+        params=params,
+        proxies=get_proxies(),
+        timeout=DEFAULT_HTTP_TIMEOUT)
     if response.status_code == 404:  # pragma: no cover
         raise NotFound(f"Ego network not found for ID {id_}.")
     response.raise_for_status()
@@ -157,21 +197,34 @@ def get_ego_network(
 
 
 @cache.memoize()
+def _get_network_visualisation_cached(
+        linked_to_ids: tuple[int, ...],
+        exclude_system_classes: tuple[str, ...],
+        api_path: Optional[str] = None) -> dict[str, Any]:
+    base = _get_api_path(api_path).rstrip('/')
+    url = f"{base}/network_visualisation/"
+    params: Any = {
+        'exclude_system_classes': list(exclude_system_classes),
+        'linked_to_ids': list(linked_to_ids)}
+    response = get_http_session().get(
+        url,
+        params=params,
+        proxies=get_proxies(),
+        timeout=DEFAULT_HTTP_TIMEOUT)
+    response.raise_for_status()
+    return response.json()
+
+
 def get_network_visualisation(
         linked_to_ids: list[int],
         exclude_system_classes: Optional[list[str]] = None,
         api_path: Optional[str] = None) -> dict[str, Any]:
-    if exclude_system_classes is None:
-        exclude_system_classes = EXCLUDE_SYSTEM_CLASSES
-    base = _get_api_path(api_path).rstrip('/')
-    url = f"{base}/network_visualisation/"
-    params: Any = {
-        'exclude_system_classes': exclude_system_classes,
-        'linked_to_ids': linked_to_ids}
-    response = get_http_session().get(
-        url, params=params, proxies=get_proxies(), timeout=30)
-    response.raise_for_status()
-    return response.json()
+    norm_ids = tuple(sorted(set(linked_to_ids)))
+    norm_excludes = tuple(
+        exclude_system_classes
+        if exclude_system_classes is not None else EXCLUDE_SYSTEM_CLASSES)
+    return _get_network_visualisation_cached(
+        norm_ids, norm_excludes, api_path=api_path)
 
 
 # pylint: disable=too-many-arguments, too-many-positional-arguments
@@ -197,7 +250,10 @@ def fetch_table_rows_uncached(
                 'values': [search],
                 'logicalOperator': 'and'}]})
     response = get_http_session().get(
-        url, params=params, proxies=get_proxies(), timeout=30)
+        url,
+        params=params,
+        proxies=get_proxies(),
+        timeout=DEFAULT_HTTP_TIMEOUT)
     response.raise_for_status()
     data = response.json()
     rows = []
@@ -240,7 +296,10 @@ def fetch_table_rows_count(
         'count': 'true',
         'type_id': list(oa_ids), }
     response = get_http_session().get(
-        url, params=params, proxies=get_proxies(), timeout=30)
+        url,
+        params=params,
+        proxies=get_proxies(),
+        timeout=DEFAULT_HTTP_TIMEOUT)
     response.raise_for_status()
     try:
         return int(response.text.strip())
