@@ -4,6 +4,17 @@ from mop.util import get_table_dates_formatted
 
 presentations = [{
     'presenter': 'Mihailo Popović',
+    'title': 'Historische Geographie neu denken: Eine Fallstudie zum '
+    'Schloß Ebreichsdorf im niederösterreichischen Industrieviertel',
+    'conference': 'Österreichische Gesellschaft für Mittelalter- und '
+    'Neuzeitarchäologie',
+    'location': [_('Wien')],
+    'date': get_table_dates_formatted(2026, 11, 11),
+    'external_link': '',
+    'download': 'MPopovic_Ebreichsdorf.pdf',
+    'category': ['dgse']
+}, {
+    'presenter': 'Mihailo Popović',
     'title': 'Maria Candia – the Icon of the Holy Mother of God from Crete '
     'and its Veneration in the St. Michael’s Church in Vienna',
     'conference': 'Round Table: Central Europe Under the Wings of the '
