@@ -73,9 +73,9 @@ def tib_reader(volume_key: str) -> str:
 @tib_bp.route('/api/tib/search')
 def api_tib_search() -> Any:
     """Search endpoint for TIB toponyms with diacritic tolerance."""
-    q = request.args.get('q', default='', type=str).strip()
+    q = request.args.get('q', default='', type=str).strip()[:200]
     volume_param = request.args.get('volume', default='', type=str).strip()
-    limit = min(request.args.get('limit', default=50, type=int), 200)
+    limit = max(1, min(request.args.get('limit', default=50, type=int), 200))
     offset = max(request.args.get('offset', default=0, type=int), 0)
 
     volume_id: int | None = None

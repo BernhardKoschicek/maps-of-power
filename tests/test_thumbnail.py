@@ -100,3 +100,14 @@ def test_serve_media_thumbnails_endpoint(client: FlaskClient) -> None:
     assert res.content_type.startswith('image/')
     assert len(res.data) > 0
     res.close()
+
+
+def test_generate_single_thumbnail_extreme_aspect_ratio(
+        tmp_path: Path) -> None:
+    """Extreme panoramic images must clamp new_h >= 1 instead of crashing."""
+    src = tmp_path / "pano.png"
+    Image.new("RGB", (10000, 5), color=(1, 2, 3)).save(src)
+    dst = tmp_path / "pano_thumb.jpg"
+    assert generate_single_thumbnail(src, dst, width=400, height=400) is True
+    with Image.open(dst) as out:
+        assert out.size[1] >= 1

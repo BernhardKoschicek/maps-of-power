@@ -2,7 +2,8 @@ import os
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
-from flask import Flask, Response, current_app, request, session, url_for
+from flask import (
+    Flask, Response, abort, current_app, request, session, url_for)
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 from mop.extensions import babel, cache, set_default_app
@@ -35,10 +36,10 @@ ASSETS_VERSION = _compute_assets_version()
 
 
 def get_locale() -> str:
-    lang = session.get('language')
-    if lang:
-        return str(lang)
     try:
+        lang = session.get('language')
+        if lang:
+            return str(lang)
         return (
             request.accept_languages.best_match(
                 current_app.config['LANGUAGES'])
@@ -98,10 +99,27 @@ def create_app(config: dict[str, Any] | None = None) -> Flask:
 
     application.context_processor(inject_menu)
 
+    @application.before_request
+    def _block_non_runtime_static() -> None:
+        if not request.path.startswith('/static/'):
+            return
+        rel = request.path[len('/static/'):]
+        if rel in ('package.json', 'package-lock.json') or rel.startswith(
+                'scss/'):
+            abort(404)
+        if rel.startswith('node_modules/'):
+            allowed_exts = {
+                '.js', '.css', '.map', '.woff', '.woff2', '.ttf', '.eot',
+                '.svg', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico'}
+            if Path(rel).suffix.lower() not in allowed_exts:
+                abort(404)
+
     @application.after_request
     def apply_caching(response: Response) -> Response:
-        response.headers['Strict-Transport-Security'] = (
-            'max-age=31536000; includeSubDomains')
+        if request.is_secure or application.config.get(
+                'SESSION_COOKIE_SECURE'):
+            response.headers['Strict-Transport-Security'] = (
+                'max-age=31536000; includeSubDomains')
         response.headers['X-Content-Type-Options'] = 'nosniff'
         response.headers['X-Frame-Options'] = 'SAMEORIGIN'
         response.headers['X-XSS-Protection'] = '0'
@@ -110,6 +128,15 @@ def create_app(config: dict[str, Any] | None = None) -> Flask:
         response.headers['Permissions-Policy'] = (
             'geolocation=(), microphone=(), camera=()')
         response.headers['Content-Security-Policy'] = (
+            "default-src 'self'; "
+            "script-src 'self' 'unsafe-inline'; "
+            "style-src 'self' 'unsafe-inline'; "
+            "img-src 'self' data: blob: https:; "
+            "font-src 'self' data:; "
+            "frame-src 'self' https://www.youtube-nocookie.com "
+            "https://www.youtube.com https://t210d45f9.emailsys2a.net; "
+            "connect-src 'self' https:; "
+            "worker-src 'self' blob:; "
             "base-uri 'self'; frame-ancestors 'self'; object-src 'none'")
         return response
 

@@ -15,7 +15,7 @@ from pathlib import Path
 import re
 from typing import Any
 
-from mop import app
+from flask import Flask
 from mop.data.events import event_list
 from mop.data.histgeo import lectures, newsletters, volumes
 from mop.data.images import category_images
@@ -136,7 +136,7 @@ def _check_histgeo_and_publications(missing: list[str]) -> None:
             missing.append(f"Publication/Presentation #{idx} download: {dl}")
 
 
-def test_all_data_dictionary_assets_exist() -> None:
+def test_all_data_dictionary_assets_exist(app: Flask) -> None:
     """Verify every icon, image, logo, and PDF in mop/data/ exists on disk."""
     missing: list[str] = []
     _check_events_and_categories(missing)

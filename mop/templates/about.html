@@ -1,4 +1,11 @@
 {% extends "layout.html" %}
+{% block extra_head %}
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='node_modules/baguettebox.js/dist/baguetteBox.css', v=ASSETS_VERSION) }}">
+  <script
+    src="{{ url_for('static', filename='node_modules/baguettebox.js/dist/baguetteBox.js', v=ASSETS_VERSION) }}"
+    defer></script>
+{% endblock %}
 {% block header %}{% endblock %}
 {% block content %}
 

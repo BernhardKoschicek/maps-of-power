@@ -1,6 +1,7 @@
 from unittest.mock import patch
 from flask.testing import FlaskClient
 from werkzeug.exceptions import Forbidden, ImATeapot, InternalServerError
+from mop.model.api_calls import get_http_session
 
 
 def test_404_error_page(client: FlaskClient) -> None:
@@ -33,7 +34,7 @@ def test_404_bad_explore_project(client: FlaskClient) -> None:
 
 
 def test_api_error_returns_json(client: FlaskClient) -> None:
-    with patch('requests.get') as mock_get:
+    with patch.object(get_http_session(), 'get') as mock_get:
         mock_get.return_value.status_code = 404
         response = client.get('/api/network/999999')
         assert response.status_code == 404

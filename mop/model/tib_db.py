@@ -4,6 +4,7 @@ Provides query methods for the Tabula Imperii Byzantini (TIB) SQLite
 register, including diacritic-tolerant and Greek homoglyph search.
 """
 
+import atexit
 from functools import lru_cache
 import json
 from pathlib import Path
@@ -16,6 +17,8 @@ import unicodedata
 from mop.extensions import get_app_config
 
 _db_local = threading.local()
+_conns_lock = threading.Lock()
+_open_conns: set[sqlite3.Connection] = set()
 
 DEFAULT_DB_PATH = (
     Path(__file__).resolve().parent.parent.parent
@@ -165,22 +168,69 @@ VOLUMES_INFO: list[dict[str, Any]] = [
          'HGIS) are used.')}]
 
 
+def close_db_connection() -> None:
+    """Close and clear the current thread's cached SQLite connection."""
+    conn: sqlite3.Connection | None = getattr(_db_local, 'conn', None)
+    if conn is not None:
+        with _conns_lock:
+            _open_conns.discard(conn)
+        try:
+            conn.close()
+        except sqlite3.Error:  # pragma: no cover
+            pass
+    _db_local.conn = None
+    _db_local.uri = None
+    _db_local.stat_key = None
+
+
+def close_all_connections() -> None:
+    """Close all tracked SQLite connections across threads."""
+    with _conns_lock:
+        conns = list(_open_conns)
+        _open_conns.clear()
+    for conn in conns:
+        try:
+            conn.close()
+        except sqlite3.Error:  # pragma: no cover
+            pass
+    _db_local.conn = None
+    _db_local.uri = None
+    _db_local.stat_key = None
+
+
+atexit.register(close_all_connections)
+
+
 def get_db_connection() -> sqlite3.Connection:
     """Return a cached per-thread read-only SQLite connection."""
     db_path = get_db_path()
     db_uri = f'file:{db_path.as_posix()}?mode=ro'
+    try:
+        st = db_path.stat()
+        stat_key: tuple[int, int] | None = (st.st_ino, st.st_mtime_ns)
+    except OSError:  # pragma: no cover
+        stat_key = None
+
     cached_conn: sqlite3.Connection | None = getattr(_db_local, 'conn', None)
     cached_uri: str | None = getattr(_db_local, 'uri', None)
-    if cached_conn is not None and cached_uri == db_uri:
+    cached_stat: tuple[int, int] | None = getattr(
+        _db_local, 'stat_key', None)
+    if (cached_conn is not None
+            and cached_uri == db_uri
+            and cached_stat == stat_key):
         return cached_conn
     if cached_conn is not None:
-        cached_conn.close()
+        close_db_connection()
+
     conn = sqlite3.connect(db_uri, uri=True)
     conn.row_factory = sqlite3.Row
     conn.execute('PRAGMA query_only = ON;')
     conn.execute('PRAGMA temp_store = MEMORY;')
+    with _conns_lock:
+        _open_conns.add(conn)
     _db_local.conn = conn
     _db_local.uri = db_uri
+    _db_local.stat_key = stat_key
     return conn
 
 
@@ -196,17 +246,26 @@ def normalize_search_term(text: str) -> str:
     return cleaned.lower().strip()
 
 
-@lru_cache(maxsize=1)
+@lru_cache(maxsize=4)
+def _get_volume_counts_cached(
+        _db_key: tuple[str, int, int]) -> dict[int, int]:
+    """Query and cache volume counts keyed by DB path and file stat."""
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(
+        'SELECT volume_id, COUNT(*) as cnt '
+        'FROM toponyms GROUP BY volume_id')
+    return {row['volume_id']: row['cnt'] for row in cur.fetchall()}
+
+
 def get_volume_counts() -> dict[int, int]:
     """Return dictionary of volume_id to total toponym count."""
     try:
-        conn = get_db_connection()
-        cur = conn.cursor()
-        cur.execute(
-            'SELECT volume_id, COUNT(*) as cnt '
-            'FROM toponyms GROUP BY volume_id')
-        return {row['volume_id']: row['cnt'] for row in cur.fetchall()}
-    except sqlite3.Error:
+        db_path = get_db_path()
+        st = db_path.stat()
+        return _get_volume_counts_cached(
+            (db_path.as_posix(), st.st_ino, st.st_mtime_ns))
+    except (OSError, sqlite3.Error):
         return {}
 
 
@@ -229,7 +288,9 @@ def search_toponyms(
         limit: int = 50,
         offset: int = 0) -> dict[str, Any]:
     """Search toponyms by query and optional volume filter."""
-    clean_q = query.strip()
+    limit = max(1, min(limit, 200))
+    offset = max(0, offset)
+    clean_q = query.strip()[:200]
     norm_q = normalize_search_term(clean_q)
 
     params: list[Any] = []
@@ -239,12 +300,17 @@ def search_toponyms(
         where_clauses.append('t.volume_id = ?')
         params.append(volume_id)
 
+    has_fts = False
     if norm_q:
         # FTS5 search expression with prefix wildcard
         # Sanitize query for FTS5 (remove special punctuation)
         safe_q = re.sub(r'[\'\"*^\-:()]', ' ', norm_q).strip()
-        terms = [f'"{t}"*' for t in safe_q.split() if t]
-        fts_expr = ' '.join(terms) if terms else f'"{norm_q}"*'
+        terms = [f'"{t}"*' for t in safe_q.split() if t][:10]
+        if not terms:
+            return {
+                'total': 0, 'limit': limit, 'offset': offset, 'results': []}
+        fts_expr = ' '.join(terms)
+        has_fts = True
 
         fts_sql = '''
             t.id IN (
@@ -262,7 +328,7 @@ def search_toponyms(
     conn = get_db_connection()
     cur = conn.cursor()
 
-    if not norm_q:
+    if not has_fts:
         counts = get_volume_counts()
         total = (
             counts.get(volume_id, 0)
@@ -287,18 +353,22 @@ def search_toponyms(
             ORDER BY t.volume_id ASC, t.name COLLATE NOCASE ASC
             LIMIT ? OFFSET ?
         '''  # nosec B608
-        cur.execute(select_sql, params + [limit, offset])
-        fetched_rows = cur.fetchall()
-        if fetched_rows:
-            total = int(fetched_rows[0]['total_count'])
-        elif offset == 0:
-            total = 0
-        else:
-            count_sql = (
-                'SELECT COUNT(*) as total '
-                f'FROM toponyms t {where_str}')  # nosec B608
-            cur.execute(count_sql, params)
-            total = cur.fetchone()['total']
+        try:
+            cur.execute(select_sql, params + [limit, offset])
+            fetched_rows = cur.fetchall()
+            if fetched_rows:
+                total = int(fetched_rows[0]['total_count'])
+            elif offset == 0:
+                total = 0
+            else:
+                count_sql = (
+                    'SELECT COUNT(*) as total '
+                    f'FROM toponyms t {where_str}')  # nosec B608
+                cur.execute(count_sql, params)
+                total = cur.fetchone()['total']
+        except sqlite3.OperationalError:  # pragma: no cover
+            return {
+                'total': 0, 'limit': limit, 'offset': offset, 'results': []}
 
     results = []
     for row in fetched_rows:

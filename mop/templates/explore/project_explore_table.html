@@ -1,4 +1,11 @@
 {% extends "layout.html" %}
+{% block extra_head %}
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='node_modules/simple-datatables/dist/style.css', v=ASSETS_VERSION) }}">
+  <script
+    src="{{ url_for('static', filename='node_modules/simple-datatables/dist/umd/simple-datatables.js', v=ASSETS_VERSION) }}"
+    defer></script>
+{% endblock %}
 {% block content %}
   <div class="container mt-4 mb-4">
     <nav aria-label="breadcrumb">

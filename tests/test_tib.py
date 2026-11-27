@@ -1,24 +1,15 @@
 """Unit and integration tests for TIB register and reader functionality."""
 
-# pylint: disable=redefined-outer-name
-from typing import Generator
-import pytest
+import sqlite3
+from unittest.mock import patch
+
 from flask.testing import FlaskClient
-from mop import app
 from mop.data.events import event_list
 from mop.data.literature import literatures
 from mop.data.projects.projects import project_data
 from mop.model.tib_db import (
-    get_reader_pages, get_volume_metadata, normalize_search_term,
-    search_toponyms)
-
-
-@pytest.fixture
-def client() -> Generator[FlaskClient, None, None]:
-    """Create Flask test client."""
-    app.config['TESTING'] = True
-    with app.test_client() as test_client:
-        yield test_client
+    _get_volume_counts_cached, get_reader_pages, get_volume_counts,
+    get_volume_metadata, normalize_search_term, search_toponyms)
 
 
 def test_normalize_search_term() -> None:
@@ -178,7 +169,7 @@ def test_tib_project_definition(client: FlaskClient) -> None:
     assert 'Friedrich Hild' in tib['employees']
     assert 'Despoina Ariantzi' in tib['employees']
 
-    # Test /projects overview includes tib_balkan and excludes overarching tib hub
+    # Test /projects overview excludes overarching tib hub
     res_projects = client.get('/projects')
     assert res_projects.status_code == 200
     assert b'data-acronym="tib_balkan"' in res_projects.data
@@ -249,10 +240,12 @@ def test_tib_publications_migrated(client: FlaskClient) -> None:
 
 
 def test_tib_navbar_and_balkan_project(client: FlaskClient) -> None:
-    """Test that navbar has TIB next to Literature and TIB Balkan project is linked."""
+    """Test that navbar has TIB and TIB Balkan project is linked."""
     res_tib = client.get('/tib')
     assert res_tib.status_code == 200
-    assert b'Reverse Engineering of the Tabula Imperii Byzantini Balkans' in res_tib.data
+    assert (
+        b'Reverse Engineering of the Tabula Imperii Byzantini Balkans'
+        in res_tib.data)
     assert b'/projects/tib_balkan' in res_tib.data
     assert b'TIB 16 Macedonia, Northern Part' in res_tib.data
     assert b'TIB 17 Nea Epeiros and Praevalis' in res_tib.data
@@ -268,3 +261,42 @@ def test_tib_navbar_and_balkan_project(client: FlaskClient) -> None:
     assert b'lada_niva_bonce.jpg' in res_proj.data
     assert b'balkan_cartographie_koder.png' in res_proj.data
 
+
+def test_api_tib_search_bounds_and_fts_safety(client: FlaskClient) -> None:
+    """Verify negative/huge limits are clamped and malformed FTS queries."""
+    res_neg = client.get('/api/tib/search?limit=-1')
+    assert res_neg.status_code == 200
+    data_neg = res_neg.get_json()
+    assert data_neg['limit'] == 1
+    assert len(data_neg['results']) == 1
+
+    res_huge = client.get('/api/tib/search?limit=999')
+    assert res_huge.status_code == 200
+    data_huge = res_huge.get_json()
+    assert data_huge['limit'] == 200
+    assert len(data_huge['results']) == 200
+
+    for bad_q in ('%22', '***', '()'):
+        res_punct = client.get(f'/api/tib/search?q={bad_q}')
+        assert res_punct.status_code == 200
+        data_punct = res_punct.get_json()
+        assert data_punct['total'] == 0
+        assert data_punct['results'] == []
+
+    long_q = 'a+' * 150
+    res_long = client.get(f'/api/tib/search?q={long_q}')
+    assert res_long.status_code == 200
+    assert len(res_long.get_json()['query']) <= 200
+
+
+def test_get_volume_counts_does_not_cache_errors(client: FlaskClient) -> None:
+    """Transient sqlite3 errors must not permanently cache empty counts."""
+    assert client is not None
+    _get_volume_counts_cached.cache_clear()
+    with patch(
+            'mop.model.tib_db.get_db_connection',
+            side_effect=sqlite3.OperationalError('transient failure')):
+        assert not get_volume_counts()
+
+    counts = get_volume_counts()
+    assert counts.get(1) == 2209

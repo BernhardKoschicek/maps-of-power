@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLimit = limitSelect ? parseInt(limitSelect.value, 10) : 50;
     let debounceTimer = null;
     let modalReaderInstance = null;
+    let activeFetchController = null;
 
     // Cache of reader page availability per volume
     const readerVolumes = ['tib1', 'tib2', 'tib3', 'tib4', 'tib5', 'tib6', 'tib7', 'tib12', 'tib13'];
@@ -29,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function fetchResults(page = 1) {
         currentPage = page;
         const offset = (currentPage - 1) * currentLimit;
+
+        if (activeFetchController) {
+            activeFetchController.abort();
+        }
+        activeFetchController = new AbortController();
+        const signal = activeFetchController.signal;
 
         if (loadingSpinner) loadingSpinner.classList.remove('d-none');
         tableBody.style.opacity = '0.4';
@@ -40,14 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
             offset: offset
         });
 
-        fetch(`/api/tib/search?${params.toString()}`)
-            .then(res => res.json())
+        fetch(`/api/tib/search?${params.toString()}`, { signal })
+            .then(res => {
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                return res.json();
+            })
             .then(data => {
                 renderTable(data);
                 renderPagination(data.total, data.limit, data.offset);
                 updateUrlParams();
             })
             .catch(err => {
+                if (err.name === 'AbortError') return;
                 console.error('TIB search error:', err);
                 tableBody.innerHTML = `
                     <tr>
@@ -58,8 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             })
             .finally(() => {
-                if (loadingSpinner) loadingSpinner.classList.add('d-none');
-                tableBody.style.opacity = '1.0';
+                if (!signal.aborted) {
+                    if (loadingSpinner) loadingSpinner.classList.add('d-none');
+                    tableBody.style.opacity = '1.0';
+                }
             });
     }
 
@@ -244,7 +257,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!query || !text) return escapeHtml(text);
         const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const re = new RegExp(`(${safeQuery})`, 'gi');
-        return escapeHtml(text).replace(re, '<mark class="bg-warning text-dark p-0">$1</mark>');
+        return String(text).split(re).map((part, idx) => (
+            idx % 2 === 1
+                ? `<mark class="bg-warning text-dark p-0">${escapeHtml(part)}</mark>`
+                : escapeHtml(part)
+        )).join('');
     }
 
     function escapeHtml(str) {
@@ -390,7 +407,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (urlParams.has('vol')) {
         currentVolume = urlParams.get('vol');
         if (volumeSelect) volumeSelect.value = currentVolume;
-        const activePill = document.querySelector(`.tib-filter-pill[data-volume="${currentVolume}"]`);
+        const escapedVol = (typeof CSS !== 'undefined' && CSS.escape)
+            ? CSS.escape(currentVolume)
+            : String(currentVolume).replace(/["\\]/g, '\\$&');
+        const activePill = document.querySelector(`.tib-filter-pill[data-volume="${escapedVol}"]`);
         if (activePill) {
             document.querySelectorAll('.tib-filter-pill').forEach(p => p.classList.remove('active'));
             activePill.classList.add('active');

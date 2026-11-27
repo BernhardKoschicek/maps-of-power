@@ -697,16 +697,24 @@ window.initPremiumProjectsPortal = function (projectsData) {
   // Listen to bootstrap tab switches to draw layouts properly
   const roadmapTab = document.getElementById("projects-tab-timeline-roadmap");
   const analyticsTab = document.getElementById("projects-tab-research-analytics");
+  let roadmapInitialized = false;
+  let analyticsInitialized = false;
 
   if (roadmapTab) {
     roadmapTab.addEventListener("shown.bs.tab", () => {
-      initTimelineRoadmap();
+      if (!roadmapInitialized) {
+        roadmapInitialized = true;
+        initTimelineRoadmap();
+      }
     });
   }
 
   if (analyticsTab) {
     analyticsTab.addEventListener("shown.bs.tab", () => {
-      initAnalyticsDashboard();
+      if (!analyticsInitialized) {
+        analyticsInitialized = true;
+        initAnalyticsDashboard();
+      }
     });
   }
 };

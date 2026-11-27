@@ -34,30 +34,15 @@
         href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet"
         href="{{ url_for('static', filename='node_modules/bootstrap-icons/font/bootstrap-icons.css', v=ASSETS_VERSION) }}">
-  <link rel="stylesheet"
-        href="{{ url_for('static', filename='node_modules/baguettebox.js/dist/baguetteBox.css', v=ASSETS_VERSION) }}">
-  <link rel="stylesheet"
-        href="{{ url_for('static', filename='node_modules/simple-datatables/dist/style.css', v=ASSETS_VERSION) }}">
-  <link rel="stylesheet"
-        href="{{ url_for('static', filename='node_modules/@fancyapps/ui/dist/fancybox/fancybox.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/color.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css', v=ASSETS_VERSION) }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/boxes_background.css', v=ASSETS_VERSION) }}">
 
   <script
-    src="{{ url_for('static', filename='node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js', v=ASSETS_VERSION) }}"></script>
-  <script src="{{ url_for('static', filename='node_modules/muuri/dist/muuri.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/simple-datatables/dist/umd/simple-datatables.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/@popperjs/core/dist/umd/popper.min.js', v=ASSETS_VERSION) }}"></script>
-  <script
-    src="{{ url_for('static', filename='node_modules/baguettebox.js/dist/baguetteBox.js', v=ASSETS_VERSION) }}"></script>
-
-
+    src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', v=ASSETS_VERSION) }}"
+    defer></script>
+  {% block extra_head %}{% endblock %}
 </head>
 <body class="bg-light position-relative">
 {% from 'macros.html' import create_table with context %}
@@ -134,13 +119,78 @@
   </div>
 </div>
 </footer>
-</body>
 <script>
-  const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-  const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl, {html: true})
-  })
+  document.addEventListener('DOMContentLoaded', function () {
+    const safeInternalUrl = function (rawUrl) {
+      return (typeof rawUrl === 'string' && rawUrl.startsWith('/') && !rawUrl.startsWith('//')) ? rawUrl : '#';
+    };
+
+    const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+    popoverTriggerList.forEach(function (el) {
+      const kind = el.dataset.popoverKind;
+      if (kind === 'reference') {
+        const titleLink = document.createElement('a');
+        titleLink.href = safeInternalUrl(el.dataset.popoverUrl || '');
+        titleLink.className = 'text-decoration-none link-primary';
+        titleLink.textContent = el.dataset.popoverLabel || '';
+
+        const bodyWrap = document.createElement('div');
+        const p = document.createElement('p');
+        p.className = 'small mb-2';
+        p.textContent = el.dataset.popoverDesc || '';
+        bodyWrap.appendChild(p);
+
+        const cta = document.createElement('a');
+        cta.href = safeInternalUrl(el.dataset.popoverUrl || '');
+        cta.className = 'btn btn-sm btn-accent2';
+        cta.textContent = el.dataset.popoverCta || 'view entity';
+        bodyWrap.appendChild(cta);
+
+        new bootstrap.Popover(el, {
+          html: true,
+          title: titleLink,
+          content: bodyWrap
+        });
+      } else if (kind === 'type') {
+        const titleWrap = document.createElement('span');
+        const hierarchy = el.dataset.popoverHierarchy || '';
+        if (hierarchy) {
+          titleWrap.appendChild(document.createTextNode(hierarchy + ' > '));
+        }
+        const typeLink = document.createElement('a');
+        typeLink.href = safeInternalUrl(el.dataset.popoverUrl || '');
+        typeLink.className = 'text-decoration-none link-primary';
+        typeLink.textContent = el.dataset.popoverLabel || '';
+        titleWrap.appendChild(typeLink);
+
+        const desc = el.dataset.popoverDesc || '';
+        const bodyWrap = document.createElement('div');
+        if (desc) {
+          const p = document.createElement('p');
+          p.className = 'mb-0';
+          p.textContent = desc;
+          bodyWrap.appendChild(p);
+        }
+
+        new bootstrap.Popover(el, {
+          html: true,
+          title: titleWrap,
+          content: bodyWrap
+        });
+      } else {
+        new bootstrap.Popover(el, { html: false });
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest('.js-copy-btn[data-copy-target]');
+      if (!btn) return;
+      const targetEl = document.getElementById(btn.dataset.copyTarget);
+      if (targetEl && navigator.clipboard) {
+        navigator.clipboard.writeText(targetEl.value || targetEl.textContent || '');
+      }
+    });
+  });
 </script>
-
-
+</body>
 </html>

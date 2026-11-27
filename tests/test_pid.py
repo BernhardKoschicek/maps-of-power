@@ -5,6 +5,7 @@ import pytest
 from flask import Flask
 from flask.testing import FlaskClient
 
+from mop import create_app
 from mop.model.entity import Entity
 from mop.pid import (
     base62_to_uuid, extract_numeric_entity_id, fetch_entity_by_uuid,
@@ -139,10 +140,12 @@ def test_extract_numeric_entity_id() -> None:
     assert extract_numeric_entity_id("not-a-dict") is None  # type: ignore
 
 
-@patch("mop.pid.requests.get")
-def test_fetch_entity_by_uuid(mock_get: MagicMock, app: Flask) -> None:
+@patch("mop.pid.get_http_session")
+def test_fetch_entity_by_uuid(
+        mock_session: MagicMock, app: Flask) -> None:
     app.config['MOP_API_PATH'] = 'https://mop.backend/api/'
     app.config['ORTHO_API_PATH'] = 'https://ortho.backend/api/'
+    mock_get = mock_session.return_value.get
 
     target_uuid = "a3bb189e-8bf9-4888-9912-ace4e6543002"
 
@@ -363,3 +366,46 @@ def test_pid_resolver_uuid_json_no_redirect(
     assert resp_ld.status_code == 200
     assert resp_ld.content_type == "application/ld+json"
     assert resp_ld.get_json()["_label"] == "UUID Test Entity"
+
+
+def test_pid_resolver_uuid_redirect_ignores_spoofed_host(
+        client: FlaskClient) -> None:
+    target_uuid = "00000000-0000-0000-0000-000000000001"
+    resp = client.get(
+        f"/id/{target_uuid}",
+        headers={"Host": "evil.example", "Accept": "text/html"})
+    assert resp.status_code == 301
+    assert "evil.example" not in resp.headers["Location"]
+    assert resp.headers["Location"].endswith("/id/1")
+
+
+def test_fetch_entity_by_uuid_does_not_cache_none() -> None:
+    cached_app = create_app({
+        'TESTING': True,
+        'CACHE_TYPE': 'SimpleCache',
+        'MOP_API_PATH': 'https://mop.backend/api/'})
+    target_uuid = "a3bb189e-8bf9-4888-9912-ace4e6543002"
+    resp_404 = MagicMock(status_code=404)
+    resp_200 = MagicMock(status_code=200)
+    resp_200.json.return_value = {"id": 77}
+
+    with cached_app.app_context():
+        with patch("mop.pid.get_http_session") as mock_session:
+            mock_session.return_value.get.side_effect = [
+                resp_404, resp_404, resp_404,
+                resp_404, resp_404, resp_404,
+                resp_200]
+            assert fetch_entity_by_uuid(target_uuid) is None
+            assert fetch_entity_by_uuid(target_uuid) == {"id": 77}
+
+
+@patch("mop.pid.fetch_entity_by_uuid")
+def test_pid_landing_no_inline_onclick(
+        mock_fetch: MagicMock, client: FlaskClient) -> None:
+    target_uuid = "a3bb189e-8bf9-4888-9912-ace4e6543002"
+    b62 = uuid_to_base62(target_uuid)
+    mock_fetch.return_value = {"_label": "Safe Landing"}
+    resp = client.get(f"/id/{b62}", headers={"Accept": "text/html"})
+    assert resp.status_code == 200
+    assert b'data-copy-target="pidCitationInput"' in resp.data
+    assert b'onclick=' not in resp.data

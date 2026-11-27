@@ -267,3 +267,84 @@ def test_security_headers_and_explore_validation(client: FlaskClient) -> None:
                side_effect=RuntimeError('upstream down')):
         err_resp = client.get('/projects/vlachs/explore/actor')
         assert err_resp.status_code == 503
+
+
+def test_iiif_viewer_rejects_spoofed_host_header(client: FlaskClient) -> None:
+    resp = client.get(
+        '/iiif_viewer?manifest=https://evil.example/manifest.json',
+        headers={'Host': 'evil.example'})
+    assert resp.status_code == 400
+
+
+def test_set_language_rejects_backslash_and_spoofed_host(
+        client: FlaskClient) -> None:
+    resp_bs = client.get(
+        '/language=en', headers={'Referer': '/\\evil.example'})
+    assert resp_bs.status_code == 302
+    assert 'evil.example' not in resp_bs.headers['Location']
+
+    resp_host = client.get(
+        '/language=en',
+        headers={
+            'Host': 'evil.example',
+            'Referer': 'https://evil.example/phish'})
+    assert resp_host.status_code == 302
+    assert resp_host.headers['Location'] == '/phish'
+
+
+def test_static_blocks_package_json_and_csp_hardened(
+        client: FlaskClient) -> None:
+    assert client.get('/static/package.json').status_code == 404
+    assert client.get('/static/package-lock.json').status_code == 404
+    health = client.get('/health')
+    csp = health.headers.get('Content-Security-Policy', '')
+    assert "default-src 'self'" in csp
+    assert 'script-src' in csp
+
+
+def test_network_api_clamps_depth_before_cache(client: FlaskClient) -> None:
+    with patch(
+            'mop.views.get_ego_network',
+            return_value={'results': []}) as mock_net:
+        resp = client.get('/api/network/237?depth=99')
+        assert resp.status_code == 200
+        mock_net.assert_called_once()
+        assert mock_net.call_args[0] == (237, 5)
+
+
+def test_entity_view_sanitizes_links_and_popovers(
+        client: FlaskClient) -> None:
+    with patch('mop.model.entity.get_entity_presentation') as mock_pres:
+        mock_pres.return_value = {
+            "id": 999993,
+            "uuid": "a3bb189e-8bf9-4888-9912-ace4e6543002",
+            "systemClass": "place",
+            "viewClass": "place",
+            "title": "Hardened Entity",
+            "externalReferenceSystems": [
+                {
+                    "referenceURL": "javascript:alert(1)",
+                    "referenceSystem": "BadSys"},
+                {
+                    "referenceURL": "https://example.org/ref",
+                    "referenceSystem": "GoodSys"}],
+            "references": [
+                {
+                    "id": 42,
+                    "systemClass": "bibliography",
+                    "title": "<script>alert(1)</script>",
+                    "citation": "<b>bad</b>"}],
+            "types": [
+                {
+                    "id": 7,
+                    "title": "TypeA",
+                    "isStandard": True,
+                    "descriptions": "<img src=x>",
+                    "typeHierarchy": []}]}
+        resp = client.get('/entity/999993')
+        assert resp.status_code == 200
+        assert b'javascript:alert(1)' not in resp.data
+        assert b'https://example.org/ref' in resp.data
+        assert b'data-popover-kind="reference"' in resp.data
+        assert b'data-popover-kind="type"' in resp.data
+        assert b'onclick=' not in resp.data

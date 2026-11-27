@@ -67,4 +67,7 @@ def get_oa_by_view_class(
         'type_id': project_id}
 
     results = get_view_class(view, params=params, api_path=api_path)
-    return [Entity(entry['features'][0]) for entry in results]
+    return [
+        Entity(entry['features'][0])
+        for entry in results
+        if isinstance(entry, dict) and entry.get('features')]

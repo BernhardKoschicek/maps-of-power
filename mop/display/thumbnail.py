@@ -24,7 +24,7 @@ def generate_single_thumbnail(
         with Image.open(source_file) as img:
             orig_w, orig_h = img.size
             if orig_w > 0:
-                new_h = int(orig_h * (width / orig_w))
+                new_h = max(1, int(orig_h * (width / orig_w)))
                 resized = img.resize(
                     (width, new_h), Image.Resampling.LANCZOS)
             else:
@@ -62,7 +62,9 @@ def generate_single_thumbnail(
 
 
 @lru_cache(maxsize=16)
-def _build_image_index(images_dir: Path) -> dict[str, Path]:
+def _build_image_index(
+        images_dir: Path,
+        _mtime_ns: int = 0) -> dict[str, Path]:
     """Build a cached mapping of image filename to its full path."""
     if not images_dir.exists():
         return {}
@@ -97,8 +99,16 @@ def ensure_thumbnail(
         return exact_thumb
 
     images_dir = (media_folder / 'images').resolve()
-    image_index = _build_image_index(images_dir)
+    try:
+        dir_mtime = images_dir.stat().st_mtime_ns if images_dir.exists() else 0
+    except OSError:  # pragma: no cover
+        dir_mtime = 0
+    image_index = _build_image_index(images_dir, dir_mtime)
     source_path = image_index.get(name)
+    if not source_path or not source_path.exists():
+        _build_image_index.cache_clear()
+        image_index = _build_image_index(images_dir, dir_mtime)
+        source_path = image_index.get(name)
     if not source_path or not source_path.exists():
         return None
 

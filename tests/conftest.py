@@ -3,6 +3,7 @@ import pytest
 from flask import Flask
 from flask.testing import FlaskClient, FlaskCliRunner
 from mop import create_app
+from mop.model.tib_db import close_db_connection
 
 
 @pytest.fixture
@@ -12,6 +13,7 @@ def app() -> Generator[Flask, None, None]:
         'CACHE_TYPE': 'NullCache'})
     with test_app.app_context():
         yield test_app
+    close_db_connection()
 
 
 @pytest.fixture

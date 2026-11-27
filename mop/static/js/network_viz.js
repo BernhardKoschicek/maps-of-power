@@ -85,14 +85,6 @@
             iterations = numNodes > 200 ? 80 : (numNodes > 80 ? 120 : 200);
         }
 
-        // Pre-build adjacency for O(1) neighbor lookup
-        const adjacency = {};
-        nodes.forEach(n => { adjacency[n] = []; });
-        graph.forEachEdge((edge, attrs, source, target) => {
-            adjacency[source].push(target);
-            adjacency[target].push(source);
-        });
-
         // Optimal spacing constant (Fruchterman-Reingold)
         const area = 800 * 600;
         const k = Math.sqrt(area / numNodes) * 1.2;
@@ -270,7 +262,19 @@
         });
 
         if (graph.order > 0) {
-            applySpringLayout(graph);
+            const PHYSICS_THRESHOLD = 150;
+            if (graph.order <= PHYSICS_THRESHOLD) {
+                applySpringLayout(graph);
+            } else {
+                const nodes = graph.nodes();
+                const spacing = 45 * spacingFactor;
+                nodes.forEach((node, idx) => {
+                    const angle = idx * 2.39996;
+                    const r = spacing * Math.sqrt(idx);
+                    graph.setNodeAttribute(node, 'x', r * Math.cos(angle));
+                    graph.setNodeAttribute(node, 'y', r * Math.sin(angle));
+                });
+            }
 
             network = new SigmaConstructor(graph, container, {
                 allowOuterBounds: true,

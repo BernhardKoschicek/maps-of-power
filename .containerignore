@@ -34,3 +34,8 @@ scratch/
 # Documentation / Markdown
 *.md
 !README.md
+
+# Non-runtime frontend files
+mop/static/package.json
+mop/static/package-lock.json
+mop/static/scss/

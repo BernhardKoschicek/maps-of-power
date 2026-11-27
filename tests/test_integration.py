@@ -1,4 +1,6 @@
 from unittest.mock import patch
+from flask import Flask
+from flask.testing import FlaskClient
 import pytest
 
 from mop.model.api_calls import (
@@ -9,7 +11,9 @@ from mop.model.api_calls import (
     get_typed_entities_all_results,
     get_ego_network,
 )
-from mop.model.entity import Entity
+from mop.model.entity import Entity, PresentationViewModel, Relation
+from mop.model.explore import get_oa_by_view_class
+from mop.model.presentation import build_entity_timeline
 from mop.model.util import (
     uc_first,
     split_date_string,
@@ -183,8 +187,7 @@ def test_model_util_format_date_fallbacks() -> None:
                     '31.12.2026') == 'between ab.cd.efgh and 31.12.2026')
 
 
-def test_display_image_gallery() -> None:
-    from mop import app
+def test_display_image_gallery(app: Flask) -> None:
     from mop.display.image import image_gallery
     images = {
         'img1': {
@@ -315,9 +318,7 @@ def test_entity_presentation_null_view_class() -> None:
     assert entity_no_title.name == ""
 
 
-def test_api_places_all_aggregated() -> None:
-    from mop import app
-    client = app.test_client()
+def test_api_places_all_aggregated(client: FlaskClient) -> None:
     mock_place = [{
         'id': '1',
         'name': 'Test',
@@ -332,3 +333,37 @@ def test_api_places_all_aggregated() -> None:
         data = resp.get_json()
         assert data is not None
         assert len(data['places']) >= 1
+
+
+def test_entity_preserves_begin_from_end_from_and_timeline_sort() -> None:
+    model = PresentationViewModel.model_validate({
+        "id": 100,
+        "systemClass": "place",
+        "title": "Constantinople",
+        "when": {
+            "start": {"earliest": "1204-05-01"},
+            "end": {"latest": "1453-05-29"}}})
+    entity = Entity.from_model(model)
+    assert entity.begin_from == "1204-05-01"
+    assert entity.end_from == "1453-05-29"
+
+    rel = Relation(
+        relation_to_id="200",
+        label="Mid Event",
+        system_class="Event",
+        begin="01.01.1300",
+        end=None,
+        type=None,
+        description=None,
+        geometry=None,
+        raw_begin="1300-01-01")
+    timeline = build_entity_timeline(entity, {"events": [rel]})
+    assert [ev["sort_date"] for ev in timeline] == [
+        "1204-05-01", "1300-01-01", "1453-05-29"]
+
+
+def test_explore_skips_missing_features() -> None:
+    with patch(
+            'mop.model.explore.get_view_class',
+            return_value=[{'features': []}, {}]):
+        assert get_oa_by_view_class('place', '1') == []

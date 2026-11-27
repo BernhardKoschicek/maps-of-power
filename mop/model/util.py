@@ -1,5 +1,6 @@
-import uuid
 from typing import Any
+from urllib.parse import urlsplit
+import uuid
 
 BASE62_ALPHABET = (
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -71,6 +72,19 @@ def format_date(
             except ValueError:
                 pass
     return f'between {date_from} and {date_to}' if date_to else date_from
+
+
+def sanitize_external_url(url: str | None) -> str:
+    """Allow only http/https external URLs with a valid network location."""
+    if not url:
+        return ''
+    cleaned = url.strip()
+    if not cleaned:
+        return ''
+    parsed = urlsplit(cleaned)
+    if parsed.scheme.lower() in ('http', 'https') and parsed.netloc:
+        return cleaned
+    return ''
 
 
 def flatten_list_and_remove_duplicates(list_: list[Any]) -> list[Any]:

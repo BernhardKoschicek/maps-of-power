@@ -3,14 +3,13 @@ import re
 import uuid
 from typing import Any
 
-import requests
 from flask import (
     Blueprint, abort, current_app, jsonify, redirect, render_template, request,
     url_for)
 from werkzeug import Response
 
 from mop.extensions import cache, get_app_config
-from mop.model.api_calls import get_proxies
+from mop.model.api_calls import get_http_session, get_proxies
 from mop.model.util import base62_to_uuid, uuid_to_base62
 
 pid_bp = Blueprint('pid', __name__)
@@ -62,13 +61,18 @@ def get_backend_api_bases() -> list[str]:
     return bases
 
 
-@cache.memoize(timeout=3600)
 def fetch_entity_by_uuid(uuid_str: str) -> dict[str, Any] | None:
     """Fetch entity data from OpenAtlas backend by UUID."""
+    cache_key = f"pid:uuid:{uuid_str}"
+    cached = cache.get(cache_key)
+    if isinstance(cached, dict):
+        return cached
+
     bases = get_backend_api_bases()
     proxies = get_proxies()
     headers = {
         'Accept': 'application/ld+json, application/json'}
+    session = get_http_session()
 
     for base in bases:
         urls_to_try = [
@@ -77,10 +81,13 @@ def fetch_entity_by_uuid(uuid_str: str) -> dict[str, Any] | None:
             f"{base}/entity/{uuid_str}"]
         for url in urls_to_try:
             try:
-                response = requests.get(
-                    url, headers=headers, proxies=proxies, timeout=10)
+                response = session.get(
+                    url, headers=headers, proxies=proxies, timeout=(3, 8))
                 if response.status_code == 200:
-                    return response.json()
+                    data = response.json()
+                    if isinstance(data, dict):
+                        cache.set(cache_key, data, timeout=3600)
+                        return data
                 if response.status_code == 404:
                     continue
             except Exception as e:
@@ -195,6 +202,14 @@ def is_uuid(identifier: str) -> bool:
         return False
 
 
+def _get_uuid_redirect_target(base62_id: str) -> str:
+    configured = str(
+        get_app_config('PUBLIC_BASE_URL', '')).strip().rstrip('/')
+    if configured:
+        return f"{configured}/id/{base62_id}"
+    return url_for('pid.pid_resolver', identifier=base62_id)
+
+
 @pid_bp.route('/id/<identifier>', strict_slashes=False)
 @pid_bp.route(
     '/id/<identifier>.json',
@@ -204,10 +219,9 @@ def pid_resolver(
         identifier: str) -> Response | str | tuple[Response, int]:
     """Dual PID endpoint supporting both Base62 strings and raw UUIDs."""
     is_json_route = request.path.endswith('.json')
-    if is_json_route and identifier.endswith('.json'):
-        raw_id = identifier[:-5]
-    else:
-        raw_id = identifier
+    raw_id = (
+        identifier[:-5]
+        if is_json_route and identifier.endswith('.json') else identifier)
 
     accept_header = request.headers.get('Accept', '')
     prefers_json = (
@@ -227,7 +241,7 @@ def pid_resolver(
         base62_id = uuid_to_base62(uuid_obj)
 
         if not prefers_json:
-            return redirect(f"{request_domain}/id/{base62_id}", code=301)
+            return redirect(_get_uuid_redirect_target(base62_id), code=301)
     else:
         base62_id = raw_id
         try:

@@ -1,12 +1,10 @@
-import json
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-import re
-from typing import Any, cast, Optional
+from typing import Any, cast
 from urllib.parse import urlsplit
 
-import requests
 from flask import (
-    Blueprint, abort, current_app, jsonify, render_template, request,
+    Blueprint, Flask, abort, current_app, jsonify, render_template, request,
     send_from_directory, session, url_for)
 from flask_babel import lazy_gettext as _
 from werkzeug import Response
@@ -22,11 +20,17 @@ from mop.data.presentations import presentations
 from mop.data.projects.projects import project_data
 from mop.display.image import image_gallery
 from mop.display.thumbnail import ensure_thumbnail
-from mop.model.api_calls import get_ego_network, get_network_visualisation
+from mop.model.api_calls import (
+    fetch_table_rows as _fetch_table_rows,
+    fetch_table_rows_count as _fetch_table_rows_count,
+    fetch_table_rows_uncached as _fetch_table_rows_uncached,
+    get_ego_network, get_network_visualisation)
 from mop.model.entity import Entity
 from mop.model.explore import (
     get_oa_by_view_class, system_classes, view_classes)
 from mop.model.narrative import NarrativeGenerator
+from mop.model.presentation import (
+    build_entity_timeline, prepare_entity_geometries)
 from mop.util import (
     array_split, get_dict_entries_by_category, get_types_sorted)
 
@@ -85,9 +89,21 @@ def set_language(language: str | None = None) -> Response:
     target = url_for('main.about')
     if request.referrer:
         parsed_ref = urlsplit(request.referrer)
+        allowed_hosts = {request.host}
+        pub_url = str(get_app_config('PUBLIC_BASE_URL', '')).strip()
+        if pub_url:
+            pub_netloc = urlsplit(pub_url).netloc
+            if pub_netloc:
+                allowed_hosts.add(pub_netloc)
+        path = parsed_ref.path or '/'
         if (parsed_ref.scheme in ('', 'http', 'https')
-                and parsed_ref.netloc in ('', request.host)):
-            target = request.referrer
+                and parsed_ref.netloc in ('', *allowed_hosts)
+                and path.startswith('/')
+                and not path.startswith('//')
+                and '\\' not in path):
+            target = (
+                f"{path}?{parsed_ref.query}"
+                if parsed_ref.query else path)
     return redirect(target)
 
 
@@ -200,7 +216,6 @@ def project_explore_table(
 
 @explore_bp.route('/entity/<int:id_>')
 @explore_bp.route('/projects/<project>/explore/<view>/<int:id_>')
-# pylint: disable=too-many-locals, too-many-branches, too-many-statements
 def entity_project_view(
         id_: int, project: str | None = None, view: str | None = None) -> str:
     if (project is not None
@@ -211,101 +226,8 @@ def entity_project_view(
     api_path = get_project_api_path(project)
     entity = Entity.get_entity_from_oa(id_, api_path=api_path)
     relations = entity.relations or {}
-
-    def normalize_and_inject_geojson(
-            geojson_obj: Any,
-            properties: dict[str, Any]) -> list[dict[str, Any]]:
-        if not geojson_obj:  # pragma: no cover
-            return []
-        if not isinstance(geojson_obj, dict):  # pragma: no cover
-            return []
-        obj_type = geojson_obj.get('type')
-        features = []
-        if obj_type == 'FeatureCollection':
-            for f in geojson_obj.get('features', []):
-                if isinstance(f, dict):  # pragma: no cover
-                    f_copy = dict(f)
-                    f_copy['properties'] = dict(f_copy.get('properties') or {})
-                    for k, v in properties.items():
-                        f_copy['properties'][k] = v
-                    features.append(f_copy)
-        elif obj_type == 'Feature':
-            f_copy = dict(geojson_obj)
-            f_copy['properties'] = dict(f_copy.get('properties') or {})
-            for k, v in properties.items():
-                f_copy['properties'][k] = v
-            features.append(f_copy)
-        elif obj_type in {'Point', 'MultiPoint', 'LineString',
-                          'MultiLineString', 'Polygon', 'MultiPolygon',
-                          'GeometryCollection'}:
-            features.append({
-                "type": "Feature",
-                "geometry": geojson_obj,
-                "properties": dict(properties)})
-        return features
-
-    # Standardize main entity geometry
-    main_geometry = None
-    if entity.geometry:  # pragma: no cover
-        features = normalize_and_inject_geojson(
-            entity.geometry, {
-                "title": entity.name,
-                "description": entity.description or "",
-                "systemClass": "selected",
-                "id": entity.id_})
-        if features:
-            main_geometry = {"type": "FeatureCollection", "features": features}
-    entity.geometry = main_geometry
-
-    # Standardize related entity geometries
-    related_places = []
-    seen_ids = set()
-    for rel_group, rel_list in relations.items():
-        for rel in rel_list:
-            if rel.geometry and rel.relation_to_id not in seen_ids:
-                seen_ids.add(rel.relation_to_id)
-                features = normalize_and_inject_geojson(
-                    rel.geometry, {
-                        "title": rel.label,
-                        "description": rel.description or "",
-                        "systemClass": rel.system_class,
-                        "id": rel.relation_to_id})
-                related_places.extend(features)
-
-    # Gather and sort all timeline events
-    timeline_events = []
-    for rel_group, rel_list in relations.items():
-        if rel_group in ['references', 'sources', 'source_translations',
-                         'others']:
-            continue
-        for rel in rel_list:
-            if rel.begin:
-                sort_date = rel.raw_begin or rel.begin
-                timeline_events.append({
-                    "is_main": False,
-                    "relation": rel,
-                    "sort_date": sort_date,
-                    "category": rel_group})
-
-    if entity.begin:  # pragma: no cover
-        timeline_events.append({
-            "is_main": True,
-            "label": f"Start of {entity.name}",
-            "type": "Lifecycle Start",
-            "begin": entity.begin,
-            "sort_date": entity.begin_from or entity.begin,
-            "system_class": entity.system_class})
-    if entity.end:  # pragma: no cover
-        timeline_events.append({
-            "is_main": True,
-            "label": f"End of {entity.name}",
-            "type": "Lifecycle End",
-            "begin": entity.end,
-            "sort_date": entity.end_from or entity.end,
-            "system_class": entity.system_class})
-
-    timeline_events.sort(key=lambda x: str(x['sort_date'] or ''))
-
+    related_places = prepare_entity_geometries(entity, relations)
+    timeline_events = build_entity_timeline(entity, relations)
     narratives = NarrativeGenerator.generate(
         entity, project=project, view=view)
 
@@ -337,7 +259,9 @@ def software() -> str:
 
 def _get_allowed_iiif_hosts() -> set[str]:
     hosts: set[str] = set()
-    for cfg_key in ('MOP_API_PATH', 'ORTHO_API_PATH', 'OPENATLAS_API_BASE'):
+    for cfg_key in (
+            'MOP_API_PATH', 'ORTHO_API_PATH', 'OPENATLAS_API_BASE',
+            'PUBLIC_BASE_URL'):
         val = str(get_app_config(cfg_key, '')).strip()
         if val:
             parsed = urlsplit(val)
@@ -346,9 +270,6 @@ def _get_allowed_iiif_hosts() -> set[str]:
     for extra in get_app_config('IIIF_ALLOWED_HOSTS', []) or []:
         if extra:
             hosts.add(str(extra).strip().lower())
-    req_host = urlsplit(f'http://{request.host}').hostname
-    if req_host:
-        hosts.add(req_host.lower())
     return hosts
 
 
@@ -362,8 +283,10 @@ def iiif_viewer() -> str:
             or not parsed.hostname
             or parsed.hostname.lower() not in _get_allowed_iiif_hosts()):
         abort(400)
+    pub_base = str(get_app_config('PUBLIC_BASE_URL', '')).strip().rstrip('/')
+    root_url = f"{pub_base}/" if pub_base else request.url_root
     sep = '&' if parsed.query else '?'
-    manifest = f'{raw_manifest}{sep}url={request.url_root}entity/'
+    manifest = f'{raw_manifest}{sep}url={root_url}entity/'
     return render_template('iiif_viewer.html', manifest=manifest)
 
 
@@ -427,7 +350,7 @@ def serve_legacy_videos(filename: str) -> Response:
 
 @explore_bp.route('/api/network/<int:id_>')
 def network_api(id_: int) -> Response | tuple[Response, int]:
-    depth = request.args.get('depth', default=2, type=int)
+    depth = max(1, min(5, request.args.get('depth', default=2, type=int)))
     project = request.args.get('project')
     try:
         api_path = get_project_api_path(project)
@@ -460,12 +383,20 @@ def _get_cached_project_places(
     return simplified
 
 
+def _fetch_places_for_project(
+        app_obj: Flask,
+        acronym: str,
+        oa_key: tuple[str, ...]) -> list[dict[str, Any]]:
+    with app_obj.app_context():
+        return _get_cached_project_places(acronym, oa_key)
+
+
 @explore_bp.route('/api/places/<project_acronym>')
 def api_project_places(
         project_acronym: str) -> Response | tuple[Response, int]:
     if project_acronym == 'all':
         try:
-            combined: list[dict[str, Any]] = []
+            targets: list[tuple[str, tuple[str, ...]]] = []
             for acronym, proj in project_data.items():
                 if acronym == 'tib':
                     continue
@@ -475,8 +406,19 @@ def api_project_places(
                 oa_key = (
                     tuple(str(x) for x in oa_id)
                     if isinstance(oa_id, list) else (str(oa_id),))
-                combined.extend(
-                    _get_cached_project_places(acronym, oa_key))
+                targets.append((acronym, oa_key))
+            combined: list[dict[str, Any]] = []
+            if targets:
+                app_obj = cast(
+                    Flask,
+                    cast(Any, current_app)._get_current_object())  # pylint: disable=W0212
+                with ThreadPoolExecutor(max_workers=4) as executor:
+                    futures = [
+                        executor.submit(
+                            _fetch_places_for_project, app_obj, acr, key)
+                        for acr, key in targets]
+                    for fut in futures:
+                        combined.extend(fut.result())
             return jsonify({'places': combined})
         except Exception as e:
             current_app.logger.error("Error in api_project_places: %s", e)
@@ -557,90 +499,6 @@ def api_project_network(
 ALLOWED_TABLE_COLUMNS = {
     'begin', 'class', 'description', 'end', 'name', 'type'}
 ALLOWED_SORT_DIRECTIONS = {'asc', 'desc'}
-
-
-# pylint: disable=too-many-arguments, too-many-positional-arguments
-def _fetch_table_rows_uncached(
-        view: str, oa_ids: tuple[str, ...], page: int, sort: str, column: str,
-        search: str, api_path: Optional[str] = None) -> dict[str, Any]:
-    """Proxy call to OpenAtlas /table_rows/."""
-    base = (api_path or get_app_config('MOP_API_PATH', '')).rstrip('/')
-    url = f"{base}/0.4/table_rows/"
-    params: dict[str, Any] = {
-        'view_classes': view,
-        'sort': sort,
-        'column': column,
-        'page': page,
-        'table_columns': [
-            'begin', 'class', 'description', 'end', 'name', 'type'],
-        'type_id': list(oa_ids), }
-    if search:
-        params['search'] = json.dumps({
-            'entityName': [{
-                'operator': 'like',
-                'values': [search],
-                'logicalOperator': 'and'}]})
-    response = requests.get(
-        url, params=params, proxies=get_proxies(), timeout=30)
-    response.raise_for_status()
-    data = response.json()
-    rows = []
-    for row in data.get('results', []):
-        if not isinstance(row, list) or len(row) < 6:
-            continue
-        m = re.search(r'\bid="(\d+)"', str(row[0]))
-        if not m:
-            continue
-        rows.append({
-            'id': int(m.group(1)),
-            'begin': row[1] or '',
-            'class_': row[2] or '',
-            'description': row[3] or '',
-            'end': row[4] or '',
-            'name': row[5] or '',
-            'type': row[6] if len(row) > 6 else '', })
-    return {'results': rows, 'pagination': data.get('pagination', {})}
-
-
-# pylint: disable=too-many-arguments, too-many-positional-arguments
-@cache.memoize(timeout=3600)
-def _fetch_table_rows(
-        view: str, oa_ids: tuple[str, ...], page: int, sort: str, column: str,
-        search: str, api_path: Optional[str] = None) -> dict[str, Any]:
-    """Cached proxy call to OpenAtlas /table_rows/ for non-search queries."""
-    return _fetch_table_rows_uncached(
-        view, oa_ids, page, sort, column, search, api_path=api_path)
-
-
-@cache.memoize(timeout=3600)
-def _fetch_table_rows_count(
-        view: str, oa_ids: tuple[str, ...],
-        api_path: Optional[str] = None) -> int:
-    base = (api_path or get_app_config('MOP_API_PATH', '')).rstrip('/')
-    url = f"{base}/0.4/table_rows/"
-    params: dict[str, Any] = {
-        'view_classes': view,
-        'count': 'true',
-        'type_id': list(oa_ids), }
-    response = requests.get(
-        url, params=params, proxies=get_proxies(), timeout=30)
-    response.raise_for_status()
-    try:
-        return int(response.text.strip())
-    except ValueError:
-        return 0
-
-
-def _get_proxies() -> dict[str, str] | None:
-    """Alias to avoid import conflict with the module-level helper."""
-    proxy = get_app_config('API_PROXY')
-    if not proxy:
-        return None
-    return {'http': proxy, 'https': proxy}  # pragma: no cover
-
-
-def get_proxies() -> dict[str, str] | None:
-    return _get_proxies()
 
 
 @explore_bp.route('/api/explore/<project_acronym>/<view>')

@@ -62,6 +62,7 @@ IIIF_ALLOWED_HOSTS = [
     if h.strip()]
 
 # Security
+SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = os.environ.get(
     'SESSION_COOKIE_SECURE', 'False').lower() in ('true', '1')
 REMEMBER_COOKIE_SECURE = True

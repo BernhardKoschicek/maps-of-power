@@ -1,4 +1,9 @@
 {% extends "layout.html" %}
+{% block extra_head %}
+  <script
+    src="{{ url_for('static', filename='node_modules/muuri/dist/muuri.js', v=ASSETS_VERSION) }}"
+    defer></script>
+{% endblock %}
 {% block content %}
   <div class="container mt-5 pt-5">
     <!-- HistGeo Banner Section -->

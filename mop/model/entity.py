@@ -7,7 +7,8 @@ from pydantic import BaseModel, ConfigDict, Field
 from mop.extensions import get_app_config
 from mop.model.types import Types, EntityTypeModel
 from mop.model.util import (
-    format_date, split_date_string, uc_first, uuid_to_base62)
+    format_date, sanitize_external_url, split_date_string, uc_first,
+    uuid_to_base62)
 from mop.model.api_calls import get_entity_presentation
 
 # --- Pydantic Models for API Response ---
@@ -230,6 +231,8 @@ class Entity:
             self.begin = None
             self.end = None
             self.geometry = get_geometry_data(data.get('geometry'))
+            self.begin_from = None
+            self.end_from = None
         else:
             # Keyword initialization from factories
             self.id_ = str(kwargs.get('id_'))
@@ -245,6 +248,8 @@ class Entity:
             self.begin = kwargs.get('begin')
             self.end = kwargs.get('end')
             self.geometry = kwargs.get('geometry')
+            self.begin_from = kwargs.get('begin_from')
+            self.end_from = kwargs.get('end_from')
 
     @property
     def base62_id(self) -> Optional[str]:
@@ -271,7 +276,12 @@ class Entity:
 
     @staticmethod
     def get_description(data: Optional[List[Dict[str, Any]]]) -> str:
-        return [i['value'] for i in data][0] if data else ''
+        if not data:
+            return ''
+        for item in data:
+            if isinstance(item, dict) and 'value' in item:
+                return str(item['value'] or '')
+        return ''
 
     @classmethod
     def get_entity_from_oa(
@@ -286,20 +296,25 @@ class Entity:
         depictions_list: list[Depiction] = []
         if m.files:  # pragma: no cover
             for f in m.files:
+                safe_url = sanitize_external_url(f.url)
+                safe_iiif_base = sanitize_external_url(f.IIIFBasePath)
+                safe_iiif_manifest = sanitize_external_url(f.IIIFManifest)
+                ext = (
+                    os.path.splitext(safe_url.rsplit('/', 1)[-1])[1]
+                    if safe_url else "")
                 dep = Depiction(
                     link=str(f.id),
                     title=f.title,
                     license=f.license or "",
-                    url=f.url,
+                    url=safe_url,
                     creator=f.creator or "",
                     license_holder=f.licenseHolder or "",
                     public_shareable=f.publicShareable if
                     (f.publicShareable is not None) else True,
                     mimetype=f.mimetype,
-                    iiif_base_path=f.IIIFBasePath or "",
-                    iiif_manifest=f.IIIFManifest or "",
-                    extension=os.path.splitext(f.url.rsplit('/', 1)[-1])[1]
-                    if f.url else "",
+                    iiif_base_path=safe_iiif_base,
+                    iiif_manifest=safe_iiif_manifest,
+                    extension=ext,
                     description="",
                     main_image=(
                         f.mainImage if f.mainImage is not None else False))
@@ -311,10 +326,13 @@ class Entity:
         links_list: list[ExternalLink] = []
         if m.externalReferenceSystems:  # pragma: no cover
             for ref in m.externalReferenceSystems:
-                links_list.append(
-                    ExternalLink(
-                        identifier=ref.referenceURL or ref.identifier or "",
-                        referenceSystem=ref.referenceSystem or ""))
+                safe_ident = sanitize_external_url(
+                    ref.referenceURL or ref.identifier)
+                if safe_ident:
+                    links_list.append(
+                        ExternalLink(
+                            identifier=safe_ident,
+                            referenceSystem=ref.referenceSystem or ""))
         return links_list
 
     @staticmethod
