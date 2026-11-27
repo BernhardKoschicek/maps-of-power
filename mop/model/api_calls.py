@@ -1,5 +1,7 @@
+from http.cookiejar import DefaultCookiePolicy
 import json
 import re
+import threading
 from typing import Any, List, Optional
 
 import requests
@@ -9,15 +11,21 @@ from werkzeug.exceptions import NotFound
 from mop.extensions import cache, get_app_config
 from mop.model.typetree import TypeTree
 
-_http_session = requests.Session()
-_http_adapter = HTTPAdapter(pool_connections=10, pool_maxsize=20)
-_http_session.mount('http://', _http_adapter)
-_http_session.mount('https://', _http_adapter)
+_session_local = threading.local()
 
 
 def get_http_session() -> requests.Session:
-    """Return the shared pooled requests Session."""
-    return _http_session
+    """Return a thread-local pooled requests Session without cookies."""
+    session: Optional[requests.Session] = getattr(
+        _session_local, 'session', None)
+    if session is None:
+        session = requests.Session()
+        session.cookies.set_policy(DefaultCookiePolicy(allowed_domains=[]))
+        adapter = HTTPAdapter(pool_connections=10, pool_maxsize=20)
+        session.mount('http://', adapter)
+        session.mount('https://', adapter)
+        _session_local.session = session
+    return session
 
 
 def get_proxies() -> dict[str, str] | None:

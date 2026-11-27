@@ -289,7 +289,7 @@ def search_toponyms(
         offset: int = 0) -> dict[str, Any]:
     """Search toponyms by query and optional volume filter."""
     limit = max(1, min(limit, 200))
-    offset = max(0, offset)
+    offset = max(0, min(offset, 100000))
     clean_q = query.strip()[:200]
     norm_q = normalize_search_term(clean_q)
 
@@ -333,6 +333,10 @@ def search_toponyms(
         total = (
             counts.get(volume_id, 0)
             if volume_id is not None else sum(counts.values()))
+        if offset >= total:
+            return {
+                'total': total, 'limit': limit, 'offset': offset,
+                'results': []}
         select_sql = f'''
             SELECT t.id, t.name, t.notes, t.volume, t.volume_id,
                    t.pages_json, t.pages_display

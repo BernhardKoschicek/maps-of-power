@@ -239,7 +239,10 @@ window.initPremiumProjectsPortal = function (projectsData) {
     // Load locations for this project via map api
     const url = `/api/places/${encodeURIComponent(acronym)}`;
     fetch(url)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
       .then(data => {
         if (data.places && data.places.length > 0) {
           const bounds = L.latLngBounds();

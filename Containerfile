@@ -2,7 +2,7 @@
 FROM python:3.13-slim-bookworm AS builder
 
 # Install uv for fast, deterministic dependency resolution
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.11.27 /uv /bin/uv
 
 ENV UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy

@@ -169,6 +169,26 @@ def literature() -> str:
         projects=project_data)
 
 
+def _serialize_portal_projects(
+        portal_projects: dict[str, Any]) -> dict[str, Any]:
+    serialized: dict[str, Any] = {}
+    for acronym, proj in portal_projects.items():
+        serialized[acronym] = {
+            'acronym': str(proj.get('acronym', acronym)),
+            'title': str(proj.get('title', '')),
+            'begin': str(proj.get('begin', '')),
+            'end': str(proj.get('end', '')),
+            'pi': [str(p) for p in (proj.get('pi') or [])],
+            'employees': [str(e) for e in (proj.get('employees') or [])],
+            'funded_by': [
+                {'name': str(f['name'] if isinstance(f, dict) else f)}
+                for f in (proj.get('funded_by') or [])],
+            'host_institutes': [
+                {'name': str(h['name'] if isinstance(h, dict) else h)}
+                for h in (proj.get('host_institutes') or [])]}
+    return serialized
+
+
 @explore_bp.route('/projects')
 @explore_bp.route('/projects/<title>')
 def projects(title: str | None = None) -> Response | str:
@@ -184,7 +204,10 @@ def projects(title: str | None = None) -> Response | str:
             publications=get_dict_entries_by_category(title, literatures),
             view_classes=view_classes)
     portal_projects = {k: v for k, v in project_data.items() if k != 'tib'}
-    return render_template('projects.html', projects=portal_projects)
+    return render_template(
+        'projects.html',
+        projects=portal_projects,
+        portal_projects_json=_serialize_portal_projects(portal_projects))
 
 
 @explore_bp.route('/projects/<project>/explore/<view>')

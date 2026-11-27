@@ -1,15 +1,20 @@
+from pathlib import Path
+import threading
 from unittest.mock import patch
 from flask import Flask
 from flask.testing import FlaskClient
 import pytest
+import requests
 
+import config
 from mop.model.api_calls import (
-    get_type_tree,
     get_entity,
+    get_ego_network,
+    get_http_session,
+    get_type_tree,
+    get_typed_entities_all_results,
     get_view_class,
     system_class_results,
-    get_typed_entities_all_results,
-    get_ego_network,
 )
 from mop.model.entity import Entity, PresentationViewModel, Relation
 from mop.model.explore import get_oa_by_view_class
@@ -367,3 +372,32 @@ def test_explore_skips_missing_features() -> None:
             'mop.model.explore.get_view_class',
             return_value=[{'features': []}, {}]):
         assert get_oa_by_view_class('place', '1') == []
+
+
+def test_get_http_session_thread_local_and_cookieless() -> None:
+    main_sess = get_http_session()
+    other_sessions: list[requests.Session] = []
+
+    def worker() -> None:
+        other_sessions.append(get_http_session())
+
+    t = threading.Thread(target=worker)
+    t.start()
+    t.join()
+
+    assert len(other_sessions) == 1
+    assert other_sessions[0] is not main_sess
+    policy = main_sess.cookies.get_policy()  # type: ignore[attr-defined]
+    assert tuple(policy.allowed_domains()) == ()
+
+
+def test_load_or_create_secret_key_atomic(tmp_path: Path) -> None:
+    load_fn = getattr(config, '_load_or_create_secret_key')
+    with patch.dict('os.environ', {'SECRET_KEY': ''}, clear=False):
+        key1 = load_fn(tmp_path)
+        key2 = load_fn(tmp_path)
+    key_file = tmp_path / '.secret_key'
+    assert key_file.exists()
+    assert (key_file.stat().st_mode & 0o777) == 0o600
+    assert key1 == key2
+    assert len(key1) == 64

@@ -3,6 +3,8 @@ import os
 from pathlib import Path
 import sys
 import tempfile
+import threading
+import time
 from PIL import Image, ImageFile
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
@@ -11,6 +13,9 @@ THUMBNAIL_WIDTH = 400
 THUMBNAIL_HEIGHT = 400
 VALID_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tiff", ".webp"}
 GLOB_METACHARS = {"*", "?", "[", "]"}
+INDEX_REFRESH_TTL_SECONDS = 30.0
+_index_lock = threading.Lock()
+_last_index_refresh: dict[Path, float] = {}
 
 
 def generate_single_thumbnail(
@@ -66,6 +71,8 @@ def _build_image_index(
         images_dir: Path,
         _mtime_ns: int = 0) -> dict[str, Path]:
     """Build a cached mapping of image filename to its full path."""
+    with _index_lock:
+        _last_index_refresh[images_dir] = time.monotonic()
     if not images_dir.exists():
         return {}
     index: dict[str, Path] = {}
@@ -106,9 +113,16 @@ def ensure_thumbnail(
     image_index = _build_image_index(images_dir, dir_mtime)
     source_path = image_index.get(name)
     if not source_path or not source_path.exists():
-        _build_image_index.cache_clear()
-        image_index = _build_image_index(images_dir, dir_mtime)
-        source_path = image_index.get(name)
+        now = time.monotonic()
+        with _index_lock:
+            last_ref = _last_index_refresh.get(images_dir, 0.0)
+            should_refresh = (now - last_ref) >= INDEX_REFRESH_TTL_SECONDS
+            if should_refresh:
+                _last_index_refresh[images_dir] = now
+                _build_image_index.cache_clear()
+        if should_refresh:
+            image_index = _build_image_index(images_dir, dir_mtime)
+            source_path = image_index.get(name)
     if not source_path or not source_path.exists():
         return None
 

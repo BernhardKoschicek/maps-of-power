@@ -383,8 +383,10 @@ def test_fetch_entity_by_uuid_does_not_cache_none() -> None:
     cached_app = create_app({
         'TESTING': True,
         'CACHE_TYPE': 'SimpleCache',
-        'MOP_API_PATH': 'https://mop.backend/api/'})
+        'MOP_API_PATH': 'https://mop.backend/api/',
+        'ORTHO_API_PATH': ''})
     target_uuid = "a3bb189e-8bf9-4888-9912-ace4e6543002"
+    missing_uuid = "00000000-0000-0000-0000-000000000099"
     resp_404 = MagicMock(status_code=404)
     resp_200 = MagicMock(status_code=200)
     resp_200.json.return_value = {"id": 77}
@@ -392,11 +394,19 @@ def test_fetch_entity_by_uuid_does_not_cache_none() -> None:
     with cached_app.app_context():
         with patch("mop.pid.get_http_session") as mock_session:
             mock_session.return_value.get.side_effect = [
-                resp_404, resp_404, resp_404,
-                resp_404, resp_404, resp_404,
-                resp_200]
+                RuntimeError("boom"), RuntimeError("boom"),
+                RuntimeError("boom"), resp_200]
             assert fetch_entity_by_uuid(target_uuid) is None
             assert fetch_entity_by_uuid(target_uuid) == {"id": 77}
+
+        with patch("mop.pid.get_http_session") as mock_session_404:
+            mock_session_404.return_value.get.return_value = resp_404
+            assert fetch_entity_by_uuid(missing_uuid) is None
+            calls_after_first = mock_session_404.return_value.get.call_count
+            assert fetch_entity_by_uuid(missing_uuid) is None
+            assert (
+                mock_session_404.return_value.get.call_count
+                == calls_after_first)
 
 
 @patch("mop.pid.fetch_entity_by_uuid")

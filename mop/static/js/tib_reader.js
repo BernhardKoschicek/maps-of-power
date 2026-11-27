@@ -47,13 +47,32 @@ class TibBookReader {
         this.goToPage(this.currentPage);
     }
 
+    _escapeHtml(str) {
+        if (str === null || str === undefined) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+    _safeUrl(url) {
+        if (typeof url !== 'string') return '';
+        const trimmed = url.trim();
+        if (trimmed.startsWith('/') && !trimmed.startsWith('//')) return trimmed;
+        if (/^https?:\/\//i.test(trimmed)) return trimmed;
+        return '';
+    }
+
     renderStructure() {
+        const safeTitle = this._escapeHtml(this.volumeTitle);
         this.container.innerHTML = `
             <div class="tib-reader-container">
                 <div class="tib-reader-toolbar">
                     <div class="d-flex align-items-center gap-2">
-                        <span class="fw-bold text-truncate" style="max-width: 260px;" title="${this.volumeTitle}">
-                            ${this.volumeTitle}
+                        <span class="fw-bold text-truncate" style="max-width: 260px;" title="${safeTitle}">
+                            ${safeTitle}
                         </span>
                         <span class="badge bg-secondary text-white small">${this.totalPages} Pages</span>
                     </div>
@@ -307,12 +326,16 @@ class TibBookReader {
     ensureThumbsRendered() {
         if (this._thumbsRendered || !this.thumbDrawer) return;
         this._thumbsRendered = true;
-        this.thumbDrawer.innerHTML = this.pages.map((p) => `
-            <div class="tib-thumb-item ${p.page_num === this.currentPage ? 'active' : ''}"
-                 data-page="${p.page_num}" title="Page ${p.page_num}">
-                <img class="tib-thumb-img" data-src="${p.url}" alt="P. ${p.page_num}">
+        this.thumbDrawer.innerHTML = this.pages.map((p) => {
+            const pNum = Number.parseInt(p.page_num, 10) || 0;
+            const safeUrl = this._escapeHtml(this._safeUrl(p.url));
+            return `
+            <div class="tib-thumb-item ${pNum === this.currentPage ? 'active' : ''}"
+                 data-page="${pNum}" title="Page ${pNum}">
+                <img class="tib-thumb-img" data-src="${safeUrl}" loading="lazy" decoding="async" alt="P. ${pNum}">
             </div>
-        `).join('');
+        `;
+        }).join('');
 
         if ('IntersectionObserver' in window) {
             this._thumbObserver = new IntersectionObserver((entries) => {
@@ -325,7 +348,7 @@ class TibBookReader {
                         this._thumbObserver.unobserve(entry.target);
                     }
                 });
-            }, { root: this.thumbDrawer, rootMargin: '300px' });
+            }, { root: this.thumbDrawer, rootMargin: '120px' });
 
             this.thumbDrawer.querySelectorAll('.tib-thumb-item').forEach((item) => {
                 this._thumbObserver.observe(item);
@@ -335,8 +358,8 @@ class TibBookReader {
 
     hydrateVisibleThumbs() {
         if (!this._thumbsRendered || !this.thumbDrawer) return;
-        const start = Math.max(1, this.currentPage - 25);
-        const end = Math.min(this.totalPages, this.currentPage + 25);
+        const start = Math.max(1, this.currentPage - 4);
+        const end = Math.min(this.totalPages, this.currentPage + 4);
         for (let p = start; p <= end; p++) {
             const img = this.thumbDrawer.querySelector(`.tib-thumb-item[data-page="${p}"] img[data-src]`);
             if (img && !img.getAttribute('src')) {

@@ -1,3 +1,5 @@
+import json
+import re
 from unittest.mock import patch
 
 from flask.testing import FlaskClient
@@ -348,3 +350,41 @@ def test_entity_view_sanitizes_links_and_popovers(
         assert b'data-popover-kind="reference"' in resp.data
         assert b'data-popover-kind="type"' in resp.data
         assert b'onclick=' not in resp.data
+
+
+def test_projects_json_uses_tojson_without_double_escaping(
+        client: FlaskClient) -> None:
+    html = client.get('/projects').get_data(as_text=True)
+    match = re.search(r'const projectsJson = (\{.*?\});', html, re.S)
+    assert match is not None
+    parsed = json.loads(match.group(1))
+    assert 'tib_balkan' in parsed
+    for proj in parsed.values():
+        assert '&amp;' not in proj['title']
+        assert '&#34;' not in proj['title']
+
+
+def test_youtube_iframe_escapes_and_sanitizes_urls() -> None:
+    from mop.util import youtube_iframe
+
+    html = str(youtube_iframe(
+        'javascript:alert(1)',
+        left_logo='//evil.example/logo.png',
+        right_logo='/static/images/ok.png'))
+    assert 'javascript:' not in html
+    assert '//evil.example' not in html
+    assert '/static/images/ok.png' in html
+
+
+def test_entity_view_export_links_no_double_slash(
+        client: FlaskClient) -> None:
+    with patch('mop.model.entity.get_entity_presentation') as mock_pres:
+        mock_pres.return_value = {
+            "id": 999994,
+            "systemClass": "place",
+            "viewClass": "place",
+            "title": "Slash Check"}
+        resp = client.get('/entity/999994')
+        assert resp.status_code == 200
+        assert b'/api//entity/' not in resp.data
+        assert b'/api/entity/999994?format=turtle' in resp.data

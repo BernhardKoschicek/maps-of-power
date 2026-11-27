@@ -76,7 +76,8 @@ def api_tib_search() -> Any:
     q = request.args.get('q', default='', type=str).strip()[:200]
     volume_param = request.args.get('volume', default='', type=str).strip()
     limit = max(1, min(request.args.get('limit', default=50, type=int), 200))
-    offset = max(request.args.get('offset', default=0, type=int), 0)
+    offset = max(
+        0, min(request.args.get('offset', default=0, type=int), 100000))
 
     volume_id: int | None = None
     if volume_param and volume_param != 'all':

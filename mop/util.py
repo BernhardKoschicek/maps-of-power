@@ -3,8 +3,10 @@ from typing import Any, Union, Optional
 
 from flask import url_for
 from flask_babel import lazy_gettext as _
+from markupsafe import Markup, escape
 
 from mop.model.types import Types
+from mop.model.util import sanitize_external_url
 
 
 def get_dates_formatted(year: int, month: int, day: int) -> str:
@@ -15,16 +17,32 @@ def get_table_dates_formatted(year: int, month: int, day: int) -> str:
     return datetime(year, month, day).strftime('%Y/%m/%d')
 
 
+def _sanitize_asset_src(src: str | None) -> str:
+    if not src:
+        return ''
+    cleaned = src.strip()
+    if (cleaned.startswith('/')
+            and not cleaned.startswith('//')
+            and '\\' not in cleaned):
+        return cleaned
+    return sanitize_external_url(cleaned)
+
+
 def youtube_iframe(
         link_: str,
         left_logo: Optional[str] = None,
-        right_logo: Optional[str] = None) -> str:
-    if not left_logo and not right_logo:
-        return (
+        right_logo: Optional[str] = None) -> Markup:
+    safe_link = escape(sanitize_external_url(link_))
+    safe_left = escape(_sanitize_asset_src(left_logo)) if left_logo else ''
+    safe_right = (
+        escape(_sanitize_asset_src(right_logo)) if right_logo else '')
+
+    if not safe_left and not safe_right:
+        return Markup(  # nosec B704
             '<div class="col-12 col-md-8 text-center">'
             '<div class="ratio ratio-16x9 rounded-4 '
             'overflow-hidden border shadow-sm">'
-            f'<iframe width="560" height="315" src="{link_}" '
+            f'<iframe width="560" height="315" src="{safe_link}" '
             'title="YouTube video player" '
             'allow="accelerometer; autoplay; clipboard-write; '
             'encrypted-media; gyroscope; picture-in-picture" '
@@ -35,15 +53,15 @@ def youtube_iframe(
     left_col = (
         '<div class="col-6 col-md-2 order-2 order-md-1 '
         'd-flex align-items-center justify-content-center p-2">'
-        f'<img src="{left_logo}" class="img-fluid video-image-size" alt="">'
+        f'<img src="{safe_left}" class="img-fluid video-image-size" alt="">'
         '</div>'
-    ) if left_logo else '<div class="col-md-2 d-none d-md-block"></div>'
+    ) if safe_left else '<div class="col-md-2 d-none d-md-block"></div>'
 
     video_col = (
         '<div class="col-12 col-md-8 order-1 order-md-2 text-center">'
         '<div class="ratio ratio-16x9 rounded-4 '
         'overflow-hidden border shadow-sm">'
-        f'<iframe width="560" height="315" src="{link_}" '
+        f'<iframe width="560" height="315" src="{safe_link}" '
         'title="YouTube video player" '
         'allow="accelerometer; autoplay; clipboard-write; '
         'encrypted-media; gyroscope; picture-in-picture" '
@@ -55,23 +73,25 @@ def youtube_iframe(
     right_col = (
         '<div class="col-6 col-md-2 order-3 order-md-3 '
         'd-flex align-items-center justify-content-center p-2">'
-        f'<img src="{right_logo}" class="img-fluid video-image-size" alt="">'
+        f'<img src="{safe_right}" class="img-fluid video-image-size" alt="">'
         '</div>'
-    ) if right_logo else '<div class="col-md-2 d-none d-md-block"></div>'
+    ) if safe_right else '<div class="col-md-2 d-none d-md-block"></div>'
 
-    return f'{left_col}\n{video_col}\n{right_col}'
+    return Markup(f'{left_col}\n{video_col}\n{right_col}')  # nosec B704
 
 
 def youtube_iframe_with_logos(
         link_: str,
         left_logo: Optional[str] = None,
-        right_logo: Optional[str] = None) -> str:
+        right_logo: Optional[str] = None) -> Markup:
     return youtube_iframe(link_, left_logo=left_logo, right_logo=right_logo)
 
 
-def get_image_frame(filepath: str) -> str:
-    return f'<img src="{filepath}" ' \
-           'class="img-fluid video-image-size" alt="">'
+def get_image_frame(filepath: str) -> Markup:
+    safe_path = escape(_sanitize_asset_src(filepath))
+    return Markup(  # nosec B704
+        f'<img src="{safe_path}" '
+        'class="img-fluid video-image-size" alt="">')
 
 
 def inject_menu() -> dict[str, Any]:

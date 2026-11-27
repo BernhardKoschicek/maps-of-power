@@ -103,22 +103,23 @@
         {% endif %}
       </div>
       <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          {% set api_base = (api_path or '').rstrip('/') %}
           {% if entity.pid_url %}
           <a href="{{ entity.pid_url }}.json"
              target="_blank" class="btn btn-outline-primary" title="JSON-LD">
             <i class="bi bi-filetype-json fs-4"></i>
           </a>
           {% else %}
-          <a href="{{ api_path }}/entity_presentation_view/{{ entity.id_ }}"
+          <a href="{{ api_base }}/entity_presentation_view/{{ entity.id_ }}"
              target="_blank" class="btn btn-outline-primary" title="JSON">
             <i class="bi bi-filetype-json fs-4"></i>
           </a>
           {% endif %}
-          <a href="{{ api_path }}/entity/{{ entity.id_ }}?format=turtle"
+          <a href="{{ api_base }}/entity/{{ entity.id_ }}?format=turtle"
              target="_blank" class="btn btn-outline-primary" title="XML">
             <i class="bi bi-filetype-xml fs-4"></i>
           </a>
-          <a href="{{ api_path }}/entity/{{ entity.id_ }}?export=csv"
+          <a href="{{ api_base }}/entity/{{ entity.id_ }}?export=csv"
              target="_blank" class="btn btn-outline-primary" title="CSV">
             <i class="bi bi-filetype-csv fs-4"></i>
           </a>

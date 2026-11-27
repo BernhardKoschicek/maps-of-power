@@ -288,6 +288,12 @@ def test_api_tib_search_bounds_and_fts_safety(client: FlaskClient) -> None:
     assert res_long.status_code == 200
     assert len(res_long.get_json()['query']) <= 200
 
+    res_off = client.get('/api/tib/search?offset=9999999')
+    assert res_off.status_code == 200
+    data_off = res_off.get_json()
+    assert data_off['offset'] == 100000
+    assert data_off['results'] == []
+
 
 def test_get_volume_counts_does_not_cache_errors(client: FlaskClient) -> None:
     """Transient sqlite3 errors must not permanently cache empty counts."""

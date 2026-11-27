@@ -40,7 +40,8 @@ def get_public_request_domain() -> str:
     configured = str(get_app_config('PUBLIC_BASE_URL', '')).strip()
     if configured:
         return configured.rstrip('/')
-    return request.host_url.rstrip('/')
+    raw_host_url = re.sub(r'[\r\n<>"\'\s]+', '', request.host_url)
+    return raw_host_url.rstrip('/')
 
 
 def get_backend_api_bases() -> list[str]:
@@ -61,10 +62,15 @@ def get_backend_api_bases() -> list[str]:
     return bases
 
 
+_NOT_FOUND_SENTINEL = '__PID_NOT_FOUND__'
+
+
 def fetch_entity_by_uuid(uuid_str: str) -> dict[str, Any] | None:
     """Fetch entity data from OpenAtlas backend by UUID."""
     cache_key = f"pid:uuid:{uuid_str}"
     cached = cache.get(cache_key)
+    if cached == _NOT_FOUND_SENTINEL:
+        return None
     if isinstance(cached, dict):
         return cached
 
@@ -73,6 +79,7 @@ def fetch_entity_by_uuid(uuid_str: str) -> dict[str, Any] | None:
     headers = {
         'Accept': 'application/ld+json, application/json'}
     session = get_http_session()
+    had_error = False
 
     for base in bases:
         urls_to_try = [
@@ -88,11 +95,14 @@ def fetch_entity_by_uuid(uuid_str: str) -> dict[str, Any] | None:
                     if isinstance(data, dict):
                         cache.set(cache_key, data, timeout=3600)
                         return data
-                if response.status_code == 404:
-                    continue
+                elif response.status_code != 404:
+                    had_error = True
             except Exception as e:
+                had_error = True
                 current_app.logger.warning("Error fetching %s: %s", url, e)
                 continue
+    if bases and not had_error:
+        cache.set(cache_key, _NOT_FOUND_SENTINEL, timeout=60)
     return None
 
 

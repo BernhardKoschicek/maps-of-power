@@ -421,12 +421,20 @@
               return url.toString();
             }
 
+            let explorerFetchController = null;
+
             function fetchEntities() {
+              if (explorerFetchController) {
+                explorerFetchController.abort();
+              }
+              explorerFetchController = new AbortController();
+              const signal = explorerFetchController.signal;
+
               showSkeleton();
               pagDiv.style.display = 'none';
               resultInfo.textContent = '';
 
-              fetch(buildUrl())
+              fetch(buildUrl(), { signal })
                 .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
                 .then(data => {
                   const results = data.results || [];
@@ -445,6 +453,7 @@
                   resultInfo.textContent = totalEntities + ' ' + LABELS.results;
                 })
                 .catch(err => {
+                  if (err.name === 'AbortError') return;
                   console.error('Explorer fetch error:', err);
                   renderEmpty(true);
                 });

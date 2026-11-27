@@ -548,46 +548,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Dynamic projects data generation for premium JS features
-      const projectsJson = {
-        {% for acronym, proj in projects.items() %}
-          "{{ acronym }}": {
-            "acronym": "{{ proj.acronym }}",
-            "title": "{{ proj.title | replace('"', '\\"') }}",
-            "begin": "{{ proj.begin }}",
-            "end": "{{ proj.end }}",
-            "pi": [
-              {% for p in proj.pi %}
-                "{{ p | replace('"', '\\"') }}"{% if not loop.last %},{% endif %}
-              {% endfor %}
-            ],
-            "employees": [
-              {% if proj.employees %}
-                {% for emp in proj.employees %}
-                  "{{ emp | replace('"', '\\"') }}"{% if not loop.last %},{% endif %}
-                {% endfor %}
-              {% endif %}
-            ],
-            "funded_by": [
-              {% if proj.funded_by %}
-                {% for f in proj.funded_by %}
-                  {
-                    "name": "{{ (f.name if f.name is defined else f) | replace('"', '\\"') }}"
-                  }{% if not loop.last %},{% endif %}
-                {% endfor %}
-              {% endif %}
-            ],
-            "host_institutes": [
-              {% if proj.host_institutes %}
-                {% for h in proj.host_institutes %}
-                  {
-                    "name": "{{ h.name | replace('"', '\\"') }}"
-                  }{% if not loop.last %},{% endif %}
-                {% endfor %}
-              {% endif %}
-            ]
-          }{% if not loop.last %},{% endif %}
-        {% endfor %}
-      };
+      const projectsJson = {{ portal_projects_json | tojson }};
 
       if (typeof initPremiumProjectsPortal === "function") {
         initPremiumProjectsPortal(projectsJson);
@@ -616,21 +577,26 @@
       const projectCards = document.querySelectorAll(".project-card-item");
       let activeCount = 0;
 
+      const parseProjectDate = (str) => {
+        if (!str) return null;
+        if (typeof str === "string" &&
+            (str.toLowerCase().includes("ongoing") ||
+             str.toLowerCase().includes("fortlaufend"))) {
+          return new Date(2099, 11, 31);
+        }
+        const parts = str.split(".");
+        if (parts.length !== 3) return null;
+        return new Date(parts[2], parts[1] - 1, parts[0]);
+      };
+
       projectCards.forEach(card => {
         const acronym = card.getAttribute("data-acronym").toUpperCase();
         const acronymLower = card.getAttribute("data-acronym");
         const beginStr = card.getAttribute("data-begin"); // e.g. "01.01.2026"
         const endStr = card.getAttribute("data-end");     // e.g. "31.12.2027"
 
-        const parseDate = (str) => {
-          if (!str) return null;
-          const parts = str.split(".");
-          if (parts.length !== 3) return null;
-          return new Date(parts[2], parts[1] - 1, parts[0]);
-        };
-
-        const beginDate = parseDate(beginStr);
-        const endDate = parseDate(endStr);
+        const beginDate = parseProjectDate(beginStr);
+        const endDate = parseProjectDate(endStr);
         const statusPill = document.getElementById(`status-pill-${acronymLower}`);
         const progressBar = document.getElementById(`progress-bar-${acronymLower}`);
 
@@ -698,13 +664,8 @@
           
           const beginStr = card.getAttribute("data-begin");
           const endStr = card.getAttribute("data-end");
-          const parseDate = (str) => {
-            if (!str) return null;
-            const parts = str.split(".");
-            return new Date(parts[2], parts[1] - 1, parts[0]);
-          };
-          const beginDate = parseDate(beginStr);
-          const endDate = parseDate(endStr);
+          const beginDate = parseProjectDate(beginStr);
+          const endDate = parseProjectDate(endStr);
           
           let isActive = false;
           if (beginDate && endDate) {
@@ -809,8 +770,16 @@
           .replace(/'/g, "&#039;");
       }
 
+      let mapFetchController = null;
+
       async function fetchMapPlaces(projectAcronym) {
         if (!mapLoader) return;
+        if (mapFetchController) {
+          mapFetchController.abort();
+        }
+        mapFetchController = new AbortController();
+        const signal = mapFetchController.signal;
+
         mapLoader.style.opacity = "1";
         mapLoader.style.display = "flex";
 
@@ -821,7 +790,13 @@
         allPlacesCache = [];
 
         try {
-          const response = await fetch(apiBaseUrl.replace('PLACEHOLDER', encodeURIComponent(projectAcronym)));
+          const response = await fetch(
+            apiBaseUrl.replace('PLACEHOLDER', encodeURIComponent(projectAcronym)),
+            { signal }
+          );
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
           const data = await response.json();
           if (data.places) {
             data.places.forEach(p => {
@@ -841,12 +816,15 @@
           renderPlacesOnMap(allPlacesCache);
 
         } catch (error) {
+          if (error.name === "AbortError") return;
           console.error("Failed to load places for map:", error);
         } finally {
-          mapLoader.style.opacity = "0";
-          setTimeout(() => {
-            mapLoader.style.display = "none";
-          }, 300);
+          if (!signal.aborted) {
+            mapLoader.style.opacity = "0";
+            setTimeout(() => {
+              mapLoader.style.display = "none";
+            }, 300);
+          }
         }
       }
 
@@ -933,9 +911,17 @@
         });
       }
 
+      let networkFetchController = null;
+
       async function updateNetworkFromCheckboxes() {
         const checkedBoxes = document.querySelectorAll(".network-project-checkbox:checked");
         const selectedProjects = Array.from(checkedBoxes).map(chk => chk.value);
+
+        if (networkFetchController) {
+          networkFetchController.abort();
+        }
+        networkFetchController = new AbortController();
+        const signal = networkFetchController.signal;
 
         if (selectedProjects.length === 0) {
           renderNetworkGraph([], []);
@@ -950,8 +936,11 @@
           // Fetch any missing project data in parallel
           const fetchPromises = selectedProjects.map(async proj => {
             if (!projectNetworkCache[proj]) {
-              const url = `/api/network/project/${proj}`;
-              const response = await fetch(url);
+              const url = `/api/network/project/${encodeURIComponent(proj)}`;
+              const response = await fetch(url, { signal });
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
               const data = await response.json();
               projectNetworkCache[proj] = data;
             }
@@ -979,12 +968,15 @@
           renderNetworkGraph(combinedResults, selectedProjects);
 
         } catch (error) {
+          if (error.name === "AbortError") return;
           console.error("Failed to load project networks:", error);
         } finally {
-          networkLoader.style.opacity = "0";
-          setTimeout(() => {
-            networkLoader.style.display = "none";
-          }, 300);
+          if (!signal.aborted) {
+            networkLoader.style.opacity = "0";
+            setTimeout(() => {
+              networkLoader.style.display = "none";
+            }, 300);
+          }
         }
       }
 

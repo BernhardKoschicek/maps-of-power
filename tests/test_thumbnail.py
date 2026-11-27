@@ -1,6 +1,7 @@
 """Unit and integration tests for thumbnail generation and serving."""
 
 from pathlib import Path
+from unittest.mock import patch
 from flask.testing import FlaskClient
 from PIL import Image
 
@@ -111,3 +112,27 @@ def test_generate_single_thumbnail_extreme_aspect_ratio(
     assert generate_single_thumbnail(src, dst, width=400, height=400) is True
     with Image.open(dst) as out:
         assert out.size[1] >= 1
+
+
+def test_missing_thumbnails_do_not_rescan_rglob_per_request(
+        tmp_path: Path) -> None:
+    """Repeated missing thumbnail lookups must not re-walk images/ each hit."""
+    media_dir = tmp_path / "media"
+    images_dir = media_dir / "images"
+    images_dir.mkdir(parents=True)
+    (media_dir / "thumbnails").mkdir(parents=True)
+    Image.new("RGB", (20, 20), color=(0, 0, 0)).save(images_dir / "one.jpg")
+
+    rglob_calls = 0
+    orig_rglob = Path.rglob
+
+    def counting_rglob(self: Path, pattern: str):  # type: ignore[no-untyped-def]
+        nonlocal rglob_calls
+        rglob_calls += 1
+        return orig_rglob(self, pattern)
+
+    with patch.object(Path, "rglob", counting_rglob):
+        for idx in range(5):
+            assert ensure_thumbnail(f"missing_{idx}.jpg", media_dir) is None
+
+    assert rglob_calls <= 1

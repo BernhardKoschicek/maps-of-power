@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 import secrets
+import tempfile
 
 # Don't edit this file. To override settings please use instance/production.py
 # or environment variables.
@@ -30,22 +31,37 @@ def _load_or_create_secret_key(data_dir: Path) -> str:
         return env_key
 
     key_file = data_dir / '.secret_key'
+    tmp_path: Path | None = None
     try:
         data_dir.mkdir(parents=True, exist_ok=True)
-        flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL
-        fd = os.open(key_file, flags, 0o600)
+        if key_file.exists():
+            existing = key_file.read_text(encoding='utf-8').strip()
+            if existing:
+                return existing
         generated = secrets.token_hex(32)
+        with tempfile.NamedTemporaryFile(
+                mode='w',
+                dir=data_dir,
+                prefix='.secret_key.',
+                delete=False,
+                encoding='utf-8') as tmp_file:
+            tmp_path = Path(tmp_file.name)
+            os.chmod(tmp_path, 0o600)
+            tmp_file.write(generated)
+            tmp_file.flush()
+            os.fsync(tmp_file.fileno())
         try:
-            os.write(fd, generated.encode('utf-8'))
-        finally:
-            os.close(fd)
-        return generated
-    except FileExistsError:
-        existing = key_file.read_text(encoding='utf-8').strip()
-        if existing:
-            return existing
+            os.link(tmp_path, key_file)
+            return generated
+        except FileExistsError:
+            existing = key_file.read_text(encoding='utf-8').strip()
+            if existing:
+                return existing
     except OSError:
         pass
+    finally:
+        if tmp_path is not None:
+            tmp_path.unlink(missing_ok=True)
     return secrets.token_hex(32)
 
 

@@ -4,6 +4,7 @@ Parses 14 volume datasets, normalizes Greek and diacritic characters,
 formats citations as '52 (A. 75)', and builds SQLite tables and FTS5 index.
 """
 
+import argparse
 import ast
 import glob
 import json
@@ -131,10 +132,14 @@ def build_database(
     print(f'Building TIB database at {target_db_path}...')
     target_path = Path(target_db_path)
     target_path.parent.mkdir(parents=True, exist_ok=True)
-    if target_path.exists():
-        target_path.unlink()
+    tmp_path = target_path.with_suffix('.db.tmp')
+    for sidecar in (
+            tmp_path,
+            Path(f'{tmp_path}-wal'),
+            Path(f'{tmp_path}-shm')):
+        sidecar.unlink(missing_ok=True)
 
-    conn = sqlite3.connect(str(target_path))
+    conn = sqlite3.connect(str(tmp_path))
     cur = conn.cursor()
 
     # Enable WAL mode for high performance concurrent reading
@@ -235,15 +240,41 @@ def build_database(
     ''')
 
     conn.commit()
+    cur.execute('PRAGMA wal_checkpoint(TRUNCATE);')
+    cur.execute('PRAGMA journal_mode = DELETE;')
     conn.close()
+
+    os.replace(tmp_path, target_path)
+    for sidecar in (
+            Path(f'{tmp_path}-wal'),
+            Path(f'{tmp_path}-shm'),
+            Path(f'{target_path}-wal'),
+            Path(f'{target_path}-shm')):
+        sidecar.unlink(missing_ok=True)
 
     db_size = os.path.getsize(target_db_path) / 1024 / 1024
     print(f'Done! Successfully indexed {total_toponyms} toponyms. '
           f'Database size: {db_size:.2f} MB')
 
 
-if __name__ == '__main__':
+def _parse_args() -> argparse.Namespace:
     root_dir = Path(__file__).resolve().parent.parent
-    SOURCE_DIR = '/home/bkoschicek/www/tib/tib/data/register'
-    TARGET_DB = str(root_dir / 'storage' / 'data' / 'tib_register.db')
-    build_database(SOURCE_DIR, TARGET_DB)
+    default_source = os.environ.get(
+        'TIB_REGISTER_SOURCE_DIR',
+        '/home/bkoschicek/www/tib/tib/data/register')
+    default_target = str(
+        root_dir / 'storage' / 'data' / 'tib_register.db')
+    parser = argparse.ArgumentParser(
+        description='Build TIB SQLite register database.')
+    parser.add_argument(
+        '--source-dir', default=default_source,
+        help='Directory containing tib*.py register files')
+    parser.add_argument(
+        '--target-db', default=default_target,
+        help='Output SQLite database path')
+    return parser.parse_args()
+
+
+if __name__ == '__main__':
+    args = _parse_args()
+    build_database(args.source_dir, args.target_db)
